@@ -2,7 +2,7 @@
 layout: home
 home: true
 
-lang: zh-CN
+lang: en
 title: xxx
 titleTemplate: Hi，终于等到你
 editLink: true
@@ -14,10 +14,10 @@ hero:
   tagline: "xxx"
   actions:
     - theme: brand
-      text: 入门指南
+      text: guide
       link: /guide/
     - theme: alt
-      text: 快速开始
+      text: quick-started
       link: /quick-started/
 
 features:

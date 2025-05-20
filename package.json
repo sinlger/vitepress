@@ -2,6 +2,7 @@
   "devDependencies": {
     "@mdi/font": "^7.4.47",
     "@types/node": "^22.15.19",
+    "vite": "^6.3.5",
     "vitepress": "^1.6.3",
     "vue": "^3.5.14",
     "vuetify": "^3.8.5"
@@ -11,5 +12,9 @@
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs"
+  },
+  "dependencies": {
+    "dayjs": "^1.11.13",
+    "markdown-it-mathjax3": "^4.3.2"
   }
 }
