@@ -13,7 +13,7 @@ export const sharedConfig = defineConfig({
   },
   metaChunk: true,
   lang: 'zh-CN', // 语言
-  title: "xxx", // 站点名称
+  title: "Unit Converter", // 站点名称
   titleTemplate: "Hi，终于等到你", // 网页标题
   description: "xxx、xxx", // 站点描述
   head: [ // favicon.ico 图标等
