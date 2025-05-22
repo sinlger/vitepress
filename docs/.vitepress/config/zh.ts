@@ -51,6 +51,7 @@ export const zhConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
       level: [1, 6],
       label: '目录'
     },
+    // outline:false
     //大纲顶部标题
     outlineTitle: '当前页大纲',
   }

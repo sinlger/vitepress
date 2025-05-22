@@ -44,9 +44,9 @@ import { ref } from 'vue'
 
 const features = ref([
   {
-    title:'数学转换器',
-    subtitle:'实现数值运算及数学表达式转换',
-    link:'/mathematics/'
+    title:'进制转换器',
+    subtitle:'实现不同进制之间的转换',
+    link:'/radix/'
   },{
     title:'时间转换器',
     subtitle:'完成不同时区及时间格式的转换',
