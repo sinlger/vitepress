@@ -3,7 +3,7 @@ import { defineConfig } from 'vitepress'
 import { loadEnv } from 'vite'
 const mode = process.env.NODE_ENV || 'development'
 const { VITE_BASE_URL } = loadEnv(mode, process.cwd())
-
+const fileAndStyles: Record<string, string> = {}
 console.log('Mode:', process.env.NODE_ENV)
 console.log('VITE_BASE_URL:', VITE_BASE_URL)
 
@@ -41,8 +41,28 @@ export const sharedConfig = defineConfig({
       port: 18089
     },
     ssr: {
-      noExternal: ['vuetify'],
+      noExternal: ['naive-ui', 'date-fns', 'vueuc'],
     },
+  },
+  postRender(context) {
+    const styleRegex = /<css-render-style>((.|\s)+)<\/css-render-style>/
+    const vitepressPathRegex = /<vitepress-path>(.+)<\/vitepress-path>/
+    const style = styleRegex.exec(context.content)?.[1]
+    const vitepressPath = vitepressPathRegex.exec(context.content)?.[1]
+    if (vitepressPath && style) {
+      fileAndStyles[vitepressPath] = style
+    }
+    context.content = context.content.replace(styleRegex, '')
+    context.content = context.content.replace(vitepressPathRegex, '')
+  },
+  transformHtml(code, id) {
+    const html = id.split('/').pop()
+    if (!html)
+      return
+    const style = fileAndStyles[`/${html}`]
+    if (style) {
+      return code.replace(/<\/head>/, `${style}</head>`)
+    }
   },
   // 站点地图
   sitemap: {
