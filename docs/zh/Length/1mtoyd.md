@@ -42,14 +42,17 @@ const rules = {
   }
 }
 const form = reactive({
-  number:null,
-  to:'',
-  from:'',
+  number:1,
+  to:'yd',
+  from:'m',
   result:'',
   title:'长度单位换算',
 })
+if(form.number){
+  form.result = `${form.number}${form.from} = ${convert(form.number).from(form.from).to(form.to)}${form.to}`
+}
 const convertHandler = (e) => {
-   e.preventDefault();
+   e?.preventDefault();
   formRef.value?.validate((errors)=>{
     if (!errors) {
       form.result = `${form.number}${form.from} = ${convert(form.number).from(form.from).to(form.to)}${form.to}`

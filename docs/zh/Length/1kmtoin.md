@@ -42,14 +42,17 @@ const rules = {
   }
 }
 const form = reactive({
-  number:null,
-  to:'',
-  from:'',
+  number:1,
+  to:'in',
+  from:'km',
   result:'',
   title:'长度单位换算',
 })
+if(form.number){
+  form.result = `${form.number}${form.from} = ${convert(form.number).from(form.from).to(form.to)}${form.to}`
+}
 const convertHandler = (e) => {
-   e.preventDefault();
+   e?.preventDefault();
   formRef.value?.validate((errors)=>{
     if (!errors) {
       form.result = `${form.number}${form.from} = ${convert(form.number).from(form.from).to(form.to)}${form.to}`
@@ -80,19 +83,9 @@ const convertHandler = (e) => {
 
 单位符号| 英文全称| 中文名称| 换算公式（以米为基准）| 示例换算
 ---|---|---|---|---
-nm| Nanometer| 纳米| 1 nm = 10⁻⁹ m| 1 m = 1,000,000,000 nm
-μm| Micrometer| 微米| 1 μm = 10⁻⁶ m| 1 m = 1,000,000 μm
-mm| Millimeter| 毫米| 1 mm = 10⁻³ m| 1 m = 1,000 mm
-cm| Centimeter| 厘米| 1 cm = 10⁻² m| 1 m = 100 cm
-m| Meter| 米| 基准单位| 1m = 1m
 km| Kilometer| 千米| 1 km = 10³ m| 1 m = 0.001 km
 in| Inch| 英寸| 1 in = 0.0254 m | 1 m ≈ 39.37 in
-yd| Yard| 码| 1 yd = 0.9144 m | 1 m ≈ 1.0936 yd
-ft-us| U.S. Survey Foot| 美制英尺| 1 ft-us ≈ 0.3048006 m| 1 m ≈ 3.28084 ft-us
-ft| Foot| 英尺| 1 ft = 0.3048 m | 1 m ≈ 3.28084 ft
-fathom| Fathom| 英寻| 1 fathom = 1.8288 m | 1 m ≈ 0.5468 fathom
-mi| Mile| 英里| 1 mi = 1,609.344 m | 1 m ≈ 0.00062137 mi
-nMi| Nautical mile| 海里| 1 nMi = 1,852 m| 1 m ≈ 0.00053996 nMi
+
 ## 换算方法说明
 
 ### 公制单位换算（nm/km）
@@ -116,10 +109,7 @@ nMi| Nautical mile| 海里| 1 nMi = 1,852 m| 1 m ≈ 0.00053996 nMi
 ## 实用提示
 
 - **单位差异注意**：
-  - 美制英尺（`ft-us`）与标准英尺（`ft`）差异极小（约 0.0000006 m），日常可通用。
   - 海里（`nMi`）专用于航海 / 航空，与英里（`mi`）不同。
 
 - **更多工具**：
   - 如需批量计算，推荐使用在线换算器，支持实时互转。
-
-此表综合了国际标准（SI）、英制及特殊用途单位，数据源自权威计量资料。若有特定场景需求（如科学计算或工程精度），可进一步提供细分换算系数。
