@@ -5,6 +5,7 @@ import DefaultTheme from 'vitepress/theme'
 import configureMeasurements from 'convert-units';
 import allMeasures from 'convert-units/definitions/all';
 import { defineComponent, h, inject } from 'vue'
+import Breadcrumb from './components/Breadcrumb.vue';
 const { Layout } = DefaultTheme
 const convert = configureMeasurements(allMeasures);
 const CssRenderStyle = defineComponent({
@@ -37,7 +38,10 @@ const NaiveUIProvider = defineComponent({
       { abstract: true, inlineThemeDisabled: true },
       {
         default: () => [
-          h(Layout, null, { default: this.$slots.default?.() }),
+          h(Layout, null, { 
+            default: this.$slots.default?.(),
+            'doc-before': () => h(Breadcrumb),
+           }),
           import.meta.env.SSR ? [h(CssRenderStyle), h(VitepressPath)] : null
         ]
       }
