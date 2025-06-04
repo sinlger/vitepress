@@ -6,10 +6,10 @@ lastUpdated: false
 # 长度单位换算
 ---
 <script setup>
-import {onMounted,ref} from 'vue'
+import { onMounted, ref, inject } from 'vue'
 import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
-
+const convert = inject('convert')
 const options =  [
   { label: '纳米', value: 'nm' },
   { label: '微米', value: 'μm' },
@@ -25,6 +25,7 @@ const options =  [
   { label: '英里', value: 'mi' },
   { label: '海里', value: 'nMi' }
 ];
+console.log(convert(1).from('l').to('ml'))
 </script>
 
 <n-form size="large">

@@ -2,9 +2,11 @@ import { setup } from '@css-render/vue3-ssr'
 import { NConfigProvider } from 'naive-ui'
 import { useRoute } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
+import configureMeasurements from 'convert-units';
+import allMeasures from 'convert-units/definitions/all';
 import { defineComponent, h, inject } from 'vue'
 const { Layout } = DefaultTheme
-
+const convert = configureMeasurements(allMeasures);
 const CssRenderStyle = defineComponent({
   setup() {
     const collect = inject('css-render-collect')
@@ -51,9 +53,7 @@ export default {
       const { collect } = setup(app)
       app.provide('css-render-collect', collect)
     } else {
-      
     }
-
-    // app.config.globalProperties.convert = convert;
+    app.provide('convert',convert);
   }
 }

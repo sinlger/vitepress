@@ -17,7 +17,7 @@
     "docs:preview": "vitepress preview docs"
   },
   "dependencies": {
-    "convert-units": "^2.3.4",
+    "convert-units": "3.0.0-beta.7",
     "dayjs": "^1.11.13",
     "markdown-it-mathjax3": "^4.3.2",
     "pangu": "^4.0.7"
