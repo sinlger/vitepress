@@ -2,6 +2,22 @@
 sidebar: false
 aside: false
 lastUpdated: false
+
+breadcrumb:
+  - - link: /
+      linkText: 首页
+  - - link: /Temperature/
+      linkText: 温度转换
+  - - link: /Temperature/Rankine-to-Kelvin
+      linkText: 兰金度转开尔文
+
+head:
+  - - meta
+    - name: description
+      content: "兰金度 (R) 转换到 开尔文 (K) 的在线工具。提供公式说明及示例，便于温度单位换算。"
+  - - meta
+    - name: keywords
+      content: "兰金度, 开尔文, 温度转换, R 到 K, 在线换算工具, 单位转换"
 ---
 # 兰金度 (R) 到 开尔文 (K) 的换算
 ---

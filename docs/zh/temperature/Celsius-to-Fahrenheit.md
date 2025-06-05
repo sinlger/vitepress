@@ -2,6 +2,21 @@
 sidebar: false
 aside: false
 lastUpdated: false
+breadcrumb: 
+  - - link: /
+      linkText: 首页
+  - - link: /Temperature
+      linkText: 温度转换
+  - - link: Celsius-to-Fahrenheit
+      linkText: 摄氏度转华氏度
+head:
+  - - meta
+    - name: description
+      content: "摄氏度 (°C) 转 华氏度 (°F) 的在线转换工具。了解如何进行温度单位换算并获取精确结果。"
+  - - meta
+    - name: keywords
+      content: "摄氏度, 华氏度, 温度转换, °C 到 °F, 在线转换工具, 摄氏度转华氏度"
+
 ---
 # 摄氏度 (°C) 到 华氏度 (°F) 的换算
 ---

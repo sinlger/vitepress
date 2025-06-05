@@ -2,6 +2,18 @@
 sidebar: false
 aside: false
 lastUpdated: false
+breadcrumb: 
+  - - link: /
+      linkText: 首页
+  - - link: Temperature
+      linkText: 温度转换
+head:
+  - - meta
+    - name: description
+      content: "温度单位转换指南。了解如何在摄氏度、华氏度、开尔文和兰金之间进行转换。"
+  - - meta
+    - name: keywords
+      content: "温度, 单位转换, 摄氏度, 华氏度, 开尔文, 兰金, 温度转换指南"
 ---
 # 温度单位转换
 ---

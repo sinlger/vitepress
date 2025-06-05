@@ -2,7 +2,6 @@ import { setup } from '@css-render/vue3-ssr'
 import { NConfigProvider,darkTheme  } from 'naive-ui'
 import { useRoute } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
-import { useData } from "vitepress";
 import configureMeasurements from 'convert-units';
 import allMeasures from 'convert-units/definitions/all';
 import { defineComponent, h, inject } from 'vue'

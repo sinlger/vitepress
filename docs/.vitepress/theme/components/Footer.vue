@@ -1,5 +1,8 @@
 <template>
-  <n-card title="其他单位转换方法">
+  <h1 style="font-size: 24px;font-weight: bold;">
+    其他单位转换方法
+  </h1>
+  <n-card :bordered="false">
     <n-grid x-gap="12" :cols="4">
       <n-gi v-for="(file, index) in footer[lang]" :key="index">
         <n-button text tag="a" :href="file.value" type="primary"> {{ file.label }} </n-button>

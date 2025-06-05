@@ -2,6 +2,22 @@
 sidebar: false
 aside: false
 lastUpdated: false
+
+breadcrumb:
+  - - link: /
+      linkText: 首页
+  - - link: /Temperature/
+      linkText: 温度转换
+  - - link: /Temperature/Rankine-to-Celsius
+      linkText: 兰金度转摄氏度
+
+head:
+  - - meta
+    - name: description
+      content: "兰金度 (R) 转换到 摄氏度 (°C) 的在线工具。提供公式说明及示例，便于温度单位换算。"
+  - - meta
+    - name: keywords
+      content: "兰金度, 摄氏度, 温度转换, R 到 °C, 在线换算工具, 单位转换"
 ---
 # 兰金度 (R) 到 摄氏度 (°C) 的换算
 ---
