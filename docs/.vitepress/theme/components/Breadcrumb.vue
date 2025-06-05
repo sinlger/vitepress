@@ -71,7 +71,7 @@ if (frontmatter.value.breadcrumb === true || typeof frontmatter.value.breadcrumb
 </script>
 
 <template>
-	<div class="breadcrumb" v-if="frontmatter.breadcrumb" v-html="breadcrumbHtml"></div>
+	<div>1212121212</div>
 </template>
 
 <style>

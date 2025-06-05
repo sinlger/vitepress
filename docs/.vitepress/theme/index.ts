@@ -1,11 +1,13 @@
 import { setup } from '@css-render/vue3-ssr'
-import { NConfigProvider } from 'naive-ui'
+import { NConfigProvider,darkTheme  } from 'naive-ui'
 import { useRoute } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
+import { useData } from "vitepress";
 import configureMeasurements from 'convert-units';
 import allMeasures from 'convert-units/definitions/all';
 import { defineComponent, h, inject } from 'vue'
 import Breadcrumb from './components/Breadcrumb.vue';
+import Footer from './components/Footer.vue';
 const { Layout } = DefaultTheme
 const convert = configureMeasurements(allMeasures);
 const CssRenderStyle = defineComponent({
@@ -38,10 +40,11 @@ const NaiveUIProvider = defineComponent({
       { abstract: true, inlineThemeDisabled: true },
       {
         default: () => [
-          h(Layout, null, { 
+          h(Layout, null, {
             default: this.$slots.default?.(),
             'doc-before': () => h(Breadcrumb),
-           }),
+            'doc-after': () => h(Footer),
+          }),
           import.meta.env.SSR ? [h(CssRenderStyle), h(VitepressPath)] : null
         ]
       }
@@ -58,6 +61,6 @@ export default {
       app.provide('css-render-collect', collect)
     } else {
     }
-    app.provide('convert',convert);
+    app.provide('convert', convert);
   }
 }
