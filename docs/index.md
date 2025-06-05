@@ -38,7 +38,7 @@ features:
     title: 时间
     details: 毫秒（ms）、秒（s）、分钟（min）、小时（h）、天（d）
     linkText: 开始使用
-    link: /getting-started
+    link: /Time
   - icon: 📏
     title: 长度
     details: 纳米（nm）、微米（μm）、毫米（mm）、厘米（cm）、千米（km）

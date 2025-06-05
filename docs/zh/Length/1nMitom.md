@@ -63,7 +63,7 @@ const convertHandler = (e) => {
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
   <n-form-item label="数值"  path="number">
-    <n-input-number size="large" style="width:100%" v-model:value="form.number"   placeholder="请输入要转化的数值" />
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要转换的数值" />
   </n-form-item>
   <n-form-item label="从" path="from">
     <n-select  size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
@@ -75,8 +75,10 @@ const convertHandler = (e) => {
     <n-button type="primary" style="width:100%" @click="convertHandler">转换</n-button>
   </n-form-item>
 </n-form>
-<n-card :title="form.title">
-{{form.result}}
+<n-card  embedded :bordered="false" hoverable>
+  <div  style="text-align:center">
+    <h1>{{form.result}}</h1>
+  </div>
 </n-card>
 
 ## 长度单位换算表
