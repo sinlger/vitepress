@@ -7,8 +7,9 @@ lastUpdated: false
 ---
 <script setup>
 import { onMounted, reactive, inject, ref } from 'vue'
-import { NButton, NForm, NFormItem, NInput, NInputNumber, NSelect, NCard, useMessage } from 'naive-ui'
+import { NButton, NForm, NFormItem, NInput, NInputNumber, NSelect, NCard, useMessage ,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
+import { temperatureFiles } from '../../files';
 
 const convert = inject('convert')
 
@@ -53,16 +54,16 @@ $$ °F = °C \times 1.8 + 32 $$
 - 100°C = 212°F
 
 ## 相关链接
-
-* [摄氏度 (°C) 到 开尔文 (K)](Celsius-to-Kelvin.md)
-* [摄氏度 (°C) 到 华氏度 (°F)](Celsius-to-Fahrenheit.md)
-* [摄氏度 (°C) 到 兰金度 (R)](Celsius-to-Rankine.md)
-* [开尔文 (K) 到 摄氏度 (°C)](Kelvin-to-Celsius.md)
-* [开尔文 (K) 到 华氏度 (°F)](Kelvin-to-Fahrenheit.md)
-* [开尔文 (K) 到 兰金度 (R)](Kelvin-to-Rankine.md)
-* [华氏度 (°F) 到 摄氏度 (°C)](Fahrenheit-to-Celsius.md)
-* [华氏度 (°F) 到 开尔文 (K)](Fahrenheit-to-Kelvin.md)
-* [华氏度 (°F) 到 兰金度 (R)](Fahrenheit-to-Rankine.md)
-* [兰金度 (R) 到 摄氏度 (°C)](Rankine-to-Celsius.md)
-* [兰金度 (R) 到 开尔文 (K)](Rankine-to-Kelvin.md)
-* [兰金度 (R) 到 华氏度 (°F)](Rankine-to-Fahrenheit.md)
+<n-grid x-gap="12" :cols="4">
+  <n-gi v-for="(file, index) in temperatureFiles" :key="index">
+    <n-button
+      text
+      tag="a"
+      :href="file.path"
+      target="_blank"
+      type="primary"
+    >
+      {{file.name}}
+    </n-button>
+  </n-gi>
+</n-grid>

@@ -1,8 +1,14 @@
+---
+sidebar: false
+aside: false
+lastUpdated: false
+---
 # 毫秒 (ms) 到 天 (d) 的换算
 
+---
 <script setup>
 import { onMounted, reactive, inject, ref } from 'vue'
-import { NButton, NForm, NFormItem, NInput, NInputNumber, NSelect, NCard, useMessage } from 'naive-ui'
+import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage,NGrid ,NGi  } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
 
 const convert = inject('convert')
@@ -31,8 +37,10 @@ const convertHandler = () => {
   </n-form-item>
 </n-form>
 
-<n-card title="换算结果">
-  {{ form.result }}
+<n-card  embedded :bordered="false" hoverable>
+  <div  style="text-align:center">
+    <h1>{{form.result}}</h1>
+  </div>
 </n-card>
 
 ## 公式

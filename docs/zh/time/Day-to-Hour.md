@@ -1,9 +1,15 @@
+---
+sidebar: false
+aside: false
+lastUpdated: false
+---
 # 天 (d) 到 小时 (h) 的换算
-
+---
 <script setup>
 import { onMounted, reactive, inject, ref } from 'vue'
-import { NButton, NForm, NFormItem, NInput, NInputNumber, NSelect, NCard, useMessage } from 'naive-ui'
+import { NButton, NForm, NFormItem, NInput, NInputNumber, NSelect, NCard, useMessage,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
+import { files } from './files';
 
 const convert = inject('convert')
 
@@ -31,8 +37,10 @@ const convertHandler = () => {
   </n-form-item>
 </n-form>
 
-<n-card title="换算结果">
-  {{ form.result }}
+<n-card  embedded :bordered="false" hoverable>
+  <div  style="text-align:center">
+    <h1>{{form.result}}</h1>
+  </div>
 </n-card>
 
 ## 公式
@@ -44,3 +52,18 @@ $$ h = d \times 24 $$
 - 1d = 24h
 - 5d = 120h
 - 0.1d = 2.4h
+
+## 相关连接
+<n-grid x-gap="12" :cols="4">
+  <n-gi v-for="(file, index) in files" :key="index">
+    <n-button
+      text
+      tag="a"
+      :href="file.path"
+      target="_blank"
+      type="primary"
+    >
+      {{file.name}}
+    </n-button>
+  </n-gi>
+</n-grid>

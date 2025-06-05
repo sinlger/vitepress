@@ -7,8 +7,9 @@ lastUpdated: false
 ---
 <script setup>
 import { onMounted, reactive, inject ,ref  } from 'vue'
-import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage  } from 'naive-ui'
+import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
+import { Time } from '../../files';
 const convert = inject('convert')
 const options =  [{ label: '纳秒', value: 'ns' },
 { label: '微秒', value: 'μs' },
@@ -51,6 +52,7 @@ const convertHandler = (e) => {
     }
   })
 }
+
 </script>
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
@@ -88,6 +90,7 @@ const convertHandler = (e) => {
 |month|Month|月|$1\ month \approx 2,592,000\ s$（注：基于30天平均近似，实际月份天数不固定）| 
 |year|Year|年|$1\ year \approx 31,536,000\ s$（注：基于365天近似，忽略闰年；精确年约365.25天）|  
 
+
 ## 说明
 
 - 数据来源：单位换算基于搜索结果综合得出：
@@ -101,3 +104,18 @@ const convertHandler = (e) => {
   - 近似值处理：month 和 year 的长度不固定（如月有28-31 天，年有365/366 天）。表格中使用常见近似（month = 30 天、year = 365 天），便于计算。如需精确值，建议使用工具或考虑闰年（如1 年平均≈31,557,600 秒）。
   - 换算基准：所有公式以秒为基准，便于单位间转换（如1 min = 60 s，则 min 到 h 可通过 s 间接计算）。
 
+
+## 相关连接
+<n-grid x-gap="12" :cols="4">
+  <n-gi v-for="(file, index) in Time" :key="index">
+    <n-button
+      text
+      tag="a"
+      :href="file.path"
+      target="_blank"
+      type="primary"
+    >
+      {{file.name}}
+    </n-button>
+  </n-gi>
+</n-grid>

@@ -1,5 +1,11 @@
+---
+sidebar: false
+aside: false
+lastUpdated: false
+---
 # 微秒 (μs) 到 周 (week) 的换算
 
+---
 <script setup>
 import { onMounted, reactive, inject, ref } from 'vue'
 import { NButton, NForm, NFormItem, NInput, NInputNumber, NSelect, NCard, useMessage, NList, NListItem } from 'naive-ui'
