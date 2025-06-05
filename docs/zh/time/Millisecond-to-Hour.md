@@ -10,6 +10,7 @@ lastUpdated: false
 import { onMounted, reactive, inject, ref } from 'vue'
 import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage,NGrid ,NGi  } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
+import { Time } from '../../files';
 
 const convert = inject('convert')
 
@@ -52,3 +53,16 @@ $$ h = \frac{ms}{3.6 \times 10^{6}} $$
 - 3.6 × 10⁶ ms = 1h
 - 1.8 × 10⁶ ms = 0.5h
 - 3.6 × 10⁵ ms = 0.1h
+## 相关连接
+<n-grid x-gap="12" :cols="4">
+  <n-gi v-for="(file, index) in Time" :key="index">
+    <n-button
+      text
+      tag="a"
+      :href="file.path"
+      type="primary"
+    >
+      {{file.name}}
+    </n-button>
+  </n-gi>
+</n-grid>

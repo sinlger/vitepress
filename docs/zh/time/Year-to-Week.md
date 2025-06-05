@@ -8,8 +8,9 @@ lastUpdated: false
 ---
 <script setup>
 import { onMounted, reactive, inject, ref } from 'vue'
-import { NButton, NForm, NFormItem, NInputNumber, NCard } from 'naive-ui'
+import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage,NGrid ,NGi  } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
+import { Time } from '../../files';
 
 const convert = inject('convert')
 
@@ -52,3 +53,16 @@ $$ week = year \times 52 $$
 - 1年 = 52周
 - 2年 = 104周
 - 0.5年 = 26周
+## 相关连接
+<n-grid x-gap="12" :cols="4">
+  <n-gi v-for="(file, index) in Time" :key="index">
+    <n-button
+      text
+      tag="a"
+      :href="file.path"
+      type="primary"
+    >
+      {{file.name}}
+    </n-button>
+  </n-gi>
+</n-grid>

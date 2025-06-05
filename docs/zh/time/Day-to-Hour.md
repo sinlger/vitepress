@@ -9,7 +9,7 @@ lastUpdated: false
 import { onMounted, reactive, inject, ref } from 'vue'
 import { NButton, NForm, NFormItem, NInput, NInputNumber, NSelect, NCard, useMessage,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
-import { files } from './files';
+import { Time } from '../../files';
 
 const convert = inject('convert')
 
@@ -55,12 +55,11 @@ $$ h = d \times 24 $$
 
 ## 相关连接
 <n-grid x-gap="12" :cols="4">
-  <n-gi v-for="(file, index) in files" :key="index">
+  <n-gi v-for="(file, index) in Time" :key="index">
     <n-button
       text
       tag="a"
       :href="file.path"
-      target="_blank"
       type="primary"
     >
       {{file.name}}

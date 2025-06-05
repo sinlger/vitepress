@@ -10,6 +10,7 @@ lastUpdated: false
 import { onMounted, reactive, inject, ref } from 'vue'
 import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage,NGrid ,NGi  } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
+import { Time } from '../../files';
 
 const convert = inject('convert')
 
@@ -52,3 +53,16 @@ $$ \mu s = month \times 2.592 \times 10^{12} $$
 - 1month = 2.592 × 10¹² μs
 - 5month = 1.296 × 10¹³ μs
 - 0.1month = 2.592 × 10¹¹ μs
+## 相关连接
+<n-grid x-gap="12" :cols="4">
+  <n-gi v-for="(file, index) in Time" :key="index">
+    <n-button
+      text
+      tag="a"
+      :href="file.path"
+      type="primary"
+    >
+      {{file.name}}
+    </n-button>
+  </n-gi>
+</n-grid>

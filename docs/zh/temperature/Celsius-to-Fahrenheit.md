@@ -60,7 +60,6 @@ $$ °F = °C \times 1.8 + 32 $$
       text
       tag="a"
       :href="file.path"
-      target="_blank"
       type="primary"
     >
       {{file.name}}

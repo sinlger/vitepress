@@ -10,6 +10,7 @@ lastUpdated: false
 import { onMounted, reactive, inject, ref } from 'vue'
 import { NButton, NForm, NFormItem, NInput, NInputNumber, NSelect, NCard, useMessage, NList, NListItem } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
+import { Time } from '../../files';
 
 const convert = inject('convert')
 
@@ -97,3 +98,16 @@ $$ week = \mu s \times 1.6534391534391535 \times 10^{-12} $$
 
 ### 换算说明
 1周 = 7天 = 168小时 = 10,080分钟 = 604,800秒 = 604,800,000,000 微秒 (6.048 × 10¹¹ μs)
+## 相关连接
+<n-grid x-gap="12" :cols="4">
+  <n-gi v-for="(file, index) in Time" :key="index">
+    <n-button
+      text
+      tag="a"
+      :href="file.path"
+      type="primary"
+    >
+      {{file.name}}
+    </n-button>
+  </n-gi>
+</n-grid>

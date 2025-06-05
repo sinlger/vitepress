@@ -60,7 +60,6 @@ $$ R = °F + 459.67 $$
       text
       tag="a"
       :href="file.path"
-      target="_blank"
       type="primary"
     >
       {{file.name}}

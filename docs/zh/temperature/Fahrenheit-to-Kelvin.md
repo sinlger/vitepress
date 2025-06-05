@@ -60,7 +60,6 @@ $$ K = \frac{°F - 32}{1.8} + 273.15 $$
       text
       tag="a"
       :href="file.path"
-      target="_blank"
       type="primary"
     >
       {{file.name}}

@@ -112,7 +112,6 @@ const convertHandler = (e) => {
       text
       tag="a"
       :href="file.path"
-      target="_blank"
       type="primary"
     >
       {{file.name}}

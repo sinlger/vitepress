@@ -10,6 +10,7 @@ lastUpdated: false
 import { onMounted, reactive, inject, ref } from 'vue'
 import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage,NGrid ,NGi  } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
+import { Time } from '../../files';
 
 const convert = inject('convert')
 
@@ -60,6 +61,19 @@ $$ year = \frac{\mu s}{3.1536 \times 10^{13}} $$
 其中分母 $ 3.1536 \times 10^{13} $ 表示一年中总的微秒数（基于每年 365 天计算）。
 
 ### 示例
-- $ 3.1536 \times 10^{13} \, \mu s = 1 \, \text{year} $
-- $ 3.1536 \times 10^{12} \, \mu s = 0.1 \, \text{year} $
-- $ 1.5768 \times 10^{13} \, \mu s = 0.5 \, \text{year} $
+$$ 3.1536 \times 10^{13} \, \mu s = 1 \, \text{year} $$
+$$ 3.1536 \times 10^{12} \, \mu s = 0.1 \, \text{year} $$
+$$ 1.5768 \times 10^{13} \, \mu s = 0.5 \, \text{year} $$
+## 相关连接
+<n-grid x-gap="12" :cols="4">
+  <n-gi v-for="(file, index) in Time" :key="index">
+    <n-button
+      text
+      tag="a"
+      :href="file.path"
+      type="primary"
+    >
+      {{file.name}}
+    </n-button>
+  </n-gi>
+</n-grid>

@@ -60,7 +60,6 @@ $$ R = (°C + 273.15) \times 1.8 $$
       text
       tag="a"
       :href="file.path"
-      target="_blank"
       type="primary"
     >
       {{file.name}}
