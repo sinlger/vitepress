@@ -2,6 +2,18 @@
 sidebar: false
 aside: false
 lastUpdated: false
+breadcrumb: 
+  - - link: /
+      linkText: 首页
+  - - link: Time
+      linkText: 时间转换
+head:
+  - - meta
+    - name: description
+      content: "时间单位换算指南。了解如何在纳秒、微秒、毫秒、秒、分钟、小时、天、周、月和年之间进行转换。"
+  - - meta
+    - name: keywords
+      content: "时间, 单位转换, 纳秒, 微秒, 毫秒, 秒, 分钟, 小时, 天, 周, 月, 年, 时间转换指南"
 ---
 # 时间单位换算
 ---
