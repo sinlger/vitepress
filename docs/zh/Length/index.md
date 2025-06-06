@@ -7,8 +7,9 @@ lastUpdated: false
 ---
 <script setup>
 import { onMounted, reactive, inject ,ref  } from 'vue'
-import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage  } from 'naive-ui'
+import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage,NGrid ,NGi  } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
+import { Length } from '../../files';
 const convert = inject('convert')
 const options =  [
   { label: '纳米', value: 'nm' },
@@ -125,3 +126,16 @@ nMi| Nautical mile| 海里| 1 nMi = 1,852 m| 1 m ≈ 0.00053996 nMi
   - 如需批量计算，推荐使用在线换算器，支持实时互转。
 
 此表综合了国际标准（SI）、英制及特殊用途单位，数据源自权威计量资料。若有特定场景需求（如科学计算或工程精度），可进一步提供细分换算系数。
+## 相关连接
+<n-grid x-gap="12" :cols="4">
+  <n-gi v-for="(file, index) in Length" :key="index">
+    <n-button
+      text
+      tag="a"
+      :href="file.path"
+      type="primary"
+    >
+      {{file.name}}
+    </n-button>
+  </n-gi>
+</n-grid>
