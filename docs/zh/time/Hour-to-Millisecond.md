@@ -2,6 +2,20 @@
 sidebar: false
 aside: false
 lastUpdated: false
+breadcrumb:
+  - - link: /
+      linkText: 首页
+  - - link: /zh/Time/
+      linkText: 时间转换
+  - - link: /zh/Time/Hour-to-Millisecond
+      linkText: 小时到毫秒
+head:
+  - - meta
+    - name: description
+      content: "小时 (h) 到 毫秒 (ms) 的时间单位换算指南。了解如何通过公式 h × 3.6 × 10⁶ 转换为毫秒。"
+  - - meta
+    - name: keywords
+      content: "时间, 单位转换, 小时, 毫秒, h, ms, 小时到毫秒, 时间转换指南"
 ---
 # 小时 (h) 到 毫秒 (ms) 的换算
 

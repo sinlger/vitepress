@@ -2,6 +2,20 @@
 sidebar: false
 aside: false
 lastUpdated: false
+breadcrumb:
+  - - link: /
+      linkText: 首页
+  - - link: /zh/Time/
+      linkText: 时间转换
+  - - link: /zh/Time/Nanosecond-to-Year
+      linkText: 纳秒到年
+head:
+  - - meta
+    - name: description
+      content: "纳秒 (ns) 到 年 (year) 的时间单位换算指南。了解如何通过公式 ns ÷ 3.154 × 10¹⁶ 转换为年。"
+  - - meta
+    - name: keywords
+      content: "时间, 单位转换, 纳秒, 年, ns, year, 纳秒到年, 时间转换指南"
 ---
 # 纳秒 (ns) 到 年 (year) 的换算
 

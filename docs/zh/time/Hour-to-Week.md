@@ -2,6 +2,20 @@
 sidebar: false
 aside: false
 lastUpdated: false
+breadcrumb:
+  - - link: /
+      linkText: 首页
+  - - link: /zh/Time/
+      linkText: 时间转换
+  - - link: /zh/Time/Hour-to-Week
+      linkText: 小时到周
+head:
+  - - meta
+    - name: description
+      content: "小时 (h) 到 周 (week) 的时间单位换算指南。了解如何通过公式 h ÷ 168 转换为周。"
+  - - meta
+    - name: keywords
+      content: "时间, 单位转换, 小时, 周, h, week, 小时到周, 时间转换指南"
 ---
 # 小时 (h) 到 周 (week) 的换算
 

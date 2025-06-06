@@ -2,6 +2,20 @@
 sidebar: false
 aside: false
 lastUpdated: false
+breadcrumb:
+  - - link: /
+      linkText: 首页
+  - - link: /zh/Time/
+      linkText: 时间转换
+  - - link: /zh/Time/Minute-to-Month
+      linkText: 分钟到月
+head:
+  - - meta
+    - name: description
+      content: "分钟 (min) 到 月 (month) 的时间单位换算指南。了解如何通过公式 min ÷ 43,800 转换为月。"
+  - - meta
+    - name: keywords
+      content: "时间, 单位转换, 分钟, 月, min, month, 分钟到月, 时间转换指南"
 ---
 # 分钟 (min) 到 月 (month) 的换算
 

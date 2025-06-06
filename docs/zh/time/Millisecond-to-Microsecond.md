@@ -2,6 +2,20 @@
 sidebar: false
 aside: false
 lastUpdated: false
+breadcrumb:
+  - - link: /
+      linkText: 首页
+  - - link: /zh/Time/
+      linkText: 时间转换
+  - - link: /zh/Time/Millisecond-to-Microsecond
+      linkText: 毫秒到微秒
+head:
+  - - meta
+    - name: description
+      content: "毫秒 (ms) 到 微秒 (μs) 的时间单位换算指南。了解如何通过公式 ms × 1,000 转换为微秒。"
+  - - meta
+    - name: keywords
+      content: "时间, 单位转换, 毫秒, 微秒, ms, μs, 毫秒到微秒, 时间转换指南"
 ---
 # 毫秒 (ms) 到 微秒 (μs) 的换算
 

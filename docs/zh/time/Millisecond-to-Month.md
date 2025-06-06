@@ -2,6 +2,20 @@
 sidebar: false
 aside: false
 lastUpdated: false
+breadcrumb:
+  - - link: /
+      linkText: 首页
+  - - link: /zh/Time/
+      linkText: 时间转换
+  - - link: /zh/Time/Millisecond-to-Month
+      linkText: 毫秒到月
+head:
+  - - meta
+    - name: description
+      content: "毫秒 (ms) 到 月 (month) 的时间单位换算指南。了解如何通过公式 ms ÷ 2,678,400,000 转换为月。"
+  - - meta
+    - name: keywords
+      content: "时间, 单位转换, 毫秒, 月, ms, month, 毫秒到月, 时间转换指南"
 ---
 # 毫秒 (ms) 到 月 (month) 的换算
 

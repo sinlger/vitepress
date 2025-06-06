@@ -2,6 +2,20 @@
 sidebar: false
 aside: false
 lastUpdated: false
+breadcrumb:
+  - - link: /
+      linkText: 首页
+  - - link: /zh/Time/
+      linkText: 时间转换
+  - - link: /zh/Time/Nanosecond-to-Day
+      linkText: 纳秒到天
+head:
+  - - meta
+    - name: description
+      content: "纳秒 (ns) 到 天 (day) 的时间单位换算指南。了解如何通过公式 ns ÷ 8.64 × 10¹³ 转换为天。"
+  - - meta
+    - name: keywords
+      content: "时间, 单位转换, 纳秒, 天, ns, day, 纳秒到天, 时间转换指南"
 ---
 # 纳秒 (ns) 到 天 (d) 的换算
 

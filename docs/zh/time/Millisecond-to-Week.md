@@ -2,6 +2,20 @@
 sidebar: false
 aside: false
 lastUpdated: false
+breadcrumb:
+  - - link: /
+      linkText: 首页
+  - - link: /zh/Time/
+      linkText: 时间转换
+  - - link: /zh/Time/Millisecond-to-Week
+      linkText: 毫秒到周
+head:
+  - - meta
+    - name: description
+      content: "毫秒 (ms) 到 周 (week) 的时间单位换算指南。了解如何通过公式 ms ÷ 604,800,000 转换为周。"
+  - - meta
+    - name: keywords
+      content: "时间, 单位转换, 毫秒, 周, ms, week, 毫秒到周, 时间转换指南"
 ---
 # 毫秒 (ms) 到 周 (week) 的换算
 

@@ -2,6 +2,20 @@
 sidebar: false
 aside: false
 lastUpdated: false
+breadcrumb:
+  - - link: /
+      linkText: 首页
+  - - link: /zh/Time/
+      linkText: 时间转换
+  - - link: /zh/Time/Nanosecond-to-Hour
+      linkText: 纳秒到小时
+head:
+  - - meta
+    - name: description
+      content: "纳秒 (ns) 到 小时 (hour) 的时间单位换算指南。了解如何通过公式 ns ÷ 3.6 × 10¹² 转换为小时。"
+  - - meta
+    - name: keywords
+      content: "时间, 单位转换, 纳秒, 小时, ns, hour, 纳秒到小时, 时间转换指南"
 ---
 # 纳秒 (ns) 到 小时 (h) 的换算
 

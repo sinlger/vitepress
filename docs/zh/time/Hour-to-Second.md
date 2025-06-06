@@ -2,6 +2,20 @@
 sidebar: false
 aside: false
 lastUpdated: false
+breadcrumb:
+  - - link: /
+      linkText: 首页
+  - - link: /zh/Time/
+      linkText: 时间转换
+  - - link: /zh/Time/Hour-to-Second
+      linkText: 小时到秒
+head:
+  - - meta
+    - name: description
+      content: "小时 (h) 到 秒 (s) 的时间单位换算指南。了解如何通过公式 h × 3600 转换为秒。"
+  - - meta
+    - name: keywords
+      content: "时间, 单位转换, 小时, 秒, h, s, 小时到秒, 时间转换指南"
 ---
 # 小时 (h) 到 秒 (s) 的换算
 

@@ -2,6 +2,20 @@
 sidebar: false
 aside: false
 lastUpdated: false
+breadcrumb:
+  - - link: /
+      linkText: 首页
+  - - link: /zh/Time/
+      linkText: 时间转换
+  - - link: /zh/Time/Year-to-Week
+      linkText: 年到周
+head:
+  - - meta
+    - name: description
+      content: "年 (year) 到 周 (week) 的时间单位换算指南。了解如何通过公式 year × 52.1428571429 转换为周。"
+  - - meta
+    - name: keywords
+      content: "时间, 单位转换, 年, 周, year, week, 年到周, 时间转换指南"
 ---
 # 年 (year) 到 周 (week) 的换算
 

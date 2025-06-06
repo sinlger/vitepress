@@ -2,6 +2,20 @@
 sidebar: false
 aside: false
 lastUpdated: false
+breadcrumb:
+  - - link: /
+      linkText: 首页
+  - - link: /zh/Time/
+      linkText: 时间转换
+  - - link: /zh/Time/Minute-to-Week
+      linkText: 分钟到周
+head:
+  - - meta
+    - name: description
+      content: "分钟 (min) 到 周 (week) 的时间单位换算指南。了解如何通过公式 min ÷ 10,080 转换为周。"
+  - - meta
+    - name: keywords
+      content: "时间, 单位转换, 分钟, 周, min, week, 分钟到周, 时间转换指南"
 ---
 # 分钟 (min) 到 周 (week) 的换算
 

@@ -2,6 +2,20 @@
 sidebar: false
 aside: false
 lastUpdated: false
+breadcrumb:
+  - - link: /
+      linkText: 首页
+  - - link: /zh/Time/
+      linkText: 时间转换
+  - - link: /zh/Time/Microsecond-to-Day
+      linkText: 微秒到天
+head:
+  - - meta
+    - name: description
+      content: "微秒 (μs) 到 天 (d) 的时间单位换算指南。了解如何通过公式 μs ÷ 86,400,000,000 转换为天。"
+  - - meta
+    - name: keywords
+      content: "时间, 单位转换, 微秒, 天, μs, d, 微秒到天, 时间转换指南"
 ---
 # 微秒 (μs) 到 天 (d) 的换算
 

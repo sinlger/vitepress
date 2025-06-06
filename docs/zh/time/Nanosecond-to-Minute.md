@@ -2,6 +2,20 @@
 sidebar: false
 aside: false
 lastUpdated: false
+breadcrumb:
+  - - link: /
+      linkText: 首页
+  - - link: /zh/Time/
+      linkText: 时间转换
+  - - link: /zh/Time/Nanosecond-to-Minute
+      linkText: 纳秒到分钟
+head:
+  - - meta
+    - name: description
+      content: "纳秒 (ns) 到 分钟 (min) 的时间单位换算指南。了解如何通过公式 ns ÷ 6 × 10¹⁰ 转换为分钟。"
+  - - meta
+    - name: keywords
+      content: "时间, 单位转换, 纳秒, 分钟, ns, min, 纳秒到分钟, 时间转换指南"
 ---
 # 纳秒 (ns) 到 分钟 (min) 的换算
 

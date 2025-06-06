@@ -2,6 +2,20 @@
 sidebar: false
 aside: false
 lastUpdated: false
+breadcrumb:
+  - - link: /
+      linkText: 首页
+  - - link: /zh/Time/
+      linkText: 时间转换
+  - - link: /zh/Time/Second-to-Nanosecond
+      linkText: 秒到纳秒
+head:
+  - - meta
+    - name: description
+      content: "秒 (s) 到 纳秒 (ns) 的时间单位换算指南。了解如何通过公式 s × 1,000,000,000 转换为纳秒。"
+  - - meta
+    - name: keywords
+      content: "时间, 单位转换, 秒, 纳秒, s, ns, 秒到纳秒, 时间转换指南"
 ---
 # 秒 (s) 到 纳秒 (ns) 的换算
 

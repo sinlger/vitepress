@@ -2,6 +2,20 @@
 sidebar: false
 aside: false
 lastUpdated: false
+breadcrumb:
+  - - link: /
+      linkText: 首页
+  - - link: /zh/Time/
+      linkText: 时间转换
+  - - link: /zh/Time/Second-to-Week
+      linkText: 秒到周
+head:
+  - - meta
+    - name: description
+      content: "秒 (s) 到 周 (week) 的时间单位换算指南。了解如何通过公式 s ÷ 604,800 转换为周。"
+  - - meta
+    - name: keywords
+      content: "时间, 单位转换, 秒, 周, s, week, 秒到周, 时间转换指南"
 ---
 # 秒 (s) 到 周 (week) 的换算
 

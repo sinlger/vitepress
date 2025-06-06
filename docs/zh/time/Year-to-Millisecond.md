@@ -2,6 +2,20 @@
 sidebar: false
 aside: false
 lastUpdated: false
+breadcrumb:
+  - - link: /
+      linkText: 首页
+  - - link: /zh/Time/
+      linkText: 时间转换
+  - - link: /zh/Time/Year-to-Millisecond
+      linkText: 年到毫秒
+head:
+  - - meta
+    - name: description
+      content: "年 (year) 到 毫秒 (ms) 的时间单位换算指南。了解如何通过公式 year × 3.1536 × 10⁷ 转换为毫秒。"
+  - - meta
+    - name: keywords
+      content: "时间, 单位转换, 年, 毫秒, year, ms, 年到毫秒, 时间转换指南"
 ---
 # 年 (year) 到 毫秒 (ms) 的换算
 

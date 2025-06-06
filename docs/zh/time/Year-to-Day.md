@@ -2,6 +2,20 @@
 sidebar: false
 aside: false
 lastUpdated: false
+breadcrumb:
+  - - link: /
+      linkText: 首页
+  - - link: /zh/Time/
+      linkText: 时间转换
+  - - link: /zh/Time/Year-to-Day
+      linkText: 年到天
+head:
+  - - meta
+    - name: description
+      content: "年 (year) 到 天 (d) 的时间单位换算指南。了解如何通过公式 year × 365 转换为天。"
+  - - meta
+    - name: keywords
+      content: "时间, 单位转换, 年, 天, year, d, 年到天, 时间转换指南"
 ---
 # 年 (year) 到 天 (d) 的换算
 

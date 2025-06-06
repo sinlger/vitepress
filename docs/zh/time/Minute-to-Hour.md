@@ -2,6 +2,20 @@
 sidebar: false
 aside: false
 lastUpdated: false
+breadcrumb:
+  - - link: /
+      linkText: 首页
+  - - link: /zh/Time/
+      linkText: 时间转换
+  - - link: /zh/Time/Minute-to-Hour
+      linkText: 分钟到小时
+head:
+  - - meta
+    - name: description
+      content: "分钟 (min) 到 小时 (h) 的时间单位换算指南。了解如何通过公式 min ÷ 60 转换为小时。"
+  - - meta
+    - name: keywords
+      content: "时间, 单位转换, 分钟, 小时, min, h, 分钟到小时, 时间转换指南"
 ---
 # 分钟 (min) 到 小时 (h) 的换算
 

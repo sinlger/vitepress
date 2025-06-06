@@ -2,6 +2,20 @@
 sidebar: false
 aside: false
 lastUpdated: false
+breadcrumb:
+  - - link: /
+      linkText: 首页
+  - - link: /zh/Time/
+      linkText: 时间转换
+  - - link: /zh/Time/Microsecond-to-Month
+      linkText: 微秒到月
+head:
+  - - meta
+    - name: description
+      content: "微秒 (μs) 到 月 (month) 的时间单位换算指南。了解如何通过公式 μs ÷ 2.628e+15 转换为月。"
+  - - meta
+    - name: keywords
+      content: "时间, 单位转换, 微秒, 月, μs, month, 微秒到月, 时间转换指南"
 ---
 # 微秒 (μs) 到 月 (month) 的换算
 

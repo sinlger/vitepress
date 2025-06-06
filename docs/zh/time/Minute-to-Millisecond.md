@@ -2,6 +2,20 @@
 sidebar: false
 aside: false
 lastUpdated: false
+breadcrumb:
+  - - link: /
+      linkText: 首页
+  - - link: /zh/Time/
+      linkText: 时间转换
+  - - link: /zh/Time/Minute-to-Millisecond
+      linkText: 分钟到毫秒
+head:
+  - - meta
+    - name: description
+      content: "分钟 (min) 到 毫秒 (ms) 的时间单位换算指南。了解如何通过公式 min × 60,000 转换为毫秒。"
+  - - meta
+    - name: keywords
+      content: "时间, 单位转换, 分钟, 毫秒, min, ms, 分钟到毫秒, 时间转换指南"
 ---
 # 分钟 (min) 到 毫秒 (ms) 的换算
 

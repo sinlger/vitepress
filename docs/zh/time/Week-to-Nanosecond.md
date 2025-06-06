@@ -2,6 +2,20 @@
 sidebar: false
 aside: false
 lastUpdated: false
+breadcrumb:
+  - - link: /
+      linkText: 首页
+  - - link: /zh/Time/
+      linkText: 时间转换
+  - - link: /zh/Time/Week-to-Nanosecond
+      linkText: 周到纳秒
+head:
+  - - meta
+    - name: description
+      content: "周 (week) 到 纳秒 (ns) 的时间单位换算指南。了解如何通过公式 week × 6.048 × 10¹⁴ 转换为纳秒。"
+  - - meta
+    - name: keywords
+      content: "时间, 单位转换, 周, 纳秒, week, ns, 周到纳秒, 时间转换指南"
 ---
 # 周 (week) 到 纳秒 (ns) 的换算
 

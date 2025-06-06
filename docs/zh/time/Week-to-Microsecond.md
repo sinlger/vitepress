@@ -2,6 +2,20 @@
 sidebar: false
 aside: false
 lastUpdated: false
+breadcrumb:
+  - - link: /
+      linkText: 首页
+  - - link: /zh/Time/
+      linkText: 时间转换
+  - - link: /zh/Time/Week-to-Microsecond
+      linkText: 周到微秒
+head:
+  - - meta
+    - name: description
+      content: "周 (week) 到 微秒 (μs) 的时间单位换算指南。了解如何通过公式 week × 604,800,000,000 转换为微秒。"
+  - - meta
+    - name: keywords
+      content: "时间, 单位转换, 周, 微秒, week, μs, 周到微秒, 时间转换指南"
 ---
 # 周 (week) 到 微秒 (μs) 的换算
 

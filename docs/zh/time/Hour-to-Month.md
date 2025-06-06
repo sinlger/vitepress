@@ -2,6 +2,20 @@
 sidebar: false
 aside: false
 lastUpdated: false
+breadcrumb:
+  - - link: /
+      linkText: 首页
+  - - link: /zh/Time/
+      linkText: 时间转换
+  - - link: /zh/Time/Hour-to-Month
+      linkText: 小时到月
+head:
+  - - meta
+    - name: description
+      content: "小时 (h) 到 月 (month) 的时间单位换算指南。了解如何通过公式 h ÷ 730.001 转换为月。"
+  - - meta
+    - name: keywords
+      content: "时间, 单位转换, 小时, 月, h, month, 小时到月, 时间转换指南"
 ---
 # 小时 (h) 到 月 (month) 的换算
 

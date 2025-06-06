@@ -2,6 +2,20 @@
 sidebar: false
 aside: false
 lastUpdated: false
+breadcrumb:
+  - - link: /
+      linkText: 首页
+  - - link: /zh/Time/
+      linkText: 时间转换
+  - - link: /zh/Time/Second-to-Millisecond
+      linkText: 秒到毫秒
+head:
+  - - meta
+    - name: description
+      content: "秒 (s) 到 毫秒 (ms) 的时间单位换算指南。了解如何通过公式 s × 1,000 转换为毫秒。"
+  - - meta
+    - name: keywords
+      content: "时间, 单位转换, 秒, 毫秒, s, ms, 秒到毫秒, 时间转换指南"
 ---
 # 秒 (s) 到 毫秒 (ms) 的换算
 
