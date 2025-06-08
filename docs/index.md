@@ -22,12 +22,12 @@ hero:
   text: "单位快速转换在线工具"
   tagline: "免费的在线单位换算计算器，包含重量、长度、面积、时间、温度和更多其他类别的单位换算器"
   actions:
-    - theme: brand
-      text: 开始使用
-      link: /dashbord
-    - theme: alt
-      text: GitHub
-      link: https://github.com/vuejs/vitepress
+    # - theme: brand
+    #   text: 开始使用
+    #   link: /dashbord
+    # - theme: alt
+    #   text: GitHub
+    #   link: https://github.com/vuejs/vitepress
 features:
   - icon: 
       dark: temperature-svgrepo-com.svg
