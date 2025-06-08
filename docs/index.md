@@ -10,10 +10,10 @@ lastUpdated: true
 head:
   - - meta
     - name: description
-      content: hello
+      content: 单位快速转换网站，为您提供便捷的各类单位转换服务，涵盖温度、长度、面积、时间等多种物理量的换算，操作简单，结果精准，满足您在学习、工作和生活中的单位转换需求，随时随地轻松转换。
   - - meta
     - name: keywords
-      content: super duper SEO
+      content: 单位转换, 快速转换工具, 温度转换, 长度转换, 面积转换, 时间转换, 物理量换算, 单位换算在线工具
 hero:
   image:
     src: /undraw_designing-components_kb05.svg
