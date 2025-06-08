@@ -89,7 +89,7 @@ $$ ha = cm² \div 100000000 $$
 掌握平方厘米到公顷的换算可以帮助您更好地理解和使用这些面积单位。希望本指南能为您提供有价值的参考。
 
 ## 相关连接
-<n-grid x-gap="12" :cols="4">
+<n-grid x-gap="12" :cols="3">
   <n-gi v-for="(file, index) in Area" :key="index">
     <n-button
       text

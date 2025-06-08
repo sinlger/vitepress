@@ -2,13 +2,29 @@
 sidebar: false
 aside: false
 lastUpdated: false
+breadcrumb:
+  - - link: /
+      linkText: 首页
+  - - link: /zh/Mass/
+      linkText: 质量转换
+  - - link: /zh/Mass/index
+      linkText: 质量单位换算
+head:
+  - - meta
+    - name: description
+      content: "质量单位换算指南，涵盖克 (g)、千克 (kg)、吨 (t)、磅 (lb)、盎司 (oz) 的详细换算公式与说明。"
+  - - meta
+    - name: keywords
+      content: "质量, 单位转换, 克, 千克, 吨, 磅, 盎司, 换算公式, 单位换算指南"
 ---
 # 重量单位换算
 ---
 <script setup>
 import { onMounted, reactive, inject ,ref  } from 'vue'
-import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage  } from 'naive-ui'
+import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage,NGrid ,NGi  } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
+import { Mass } from '../../files';
+
 const convert = inject('convert')
 const options =  [
   { "label": "微克", "value": "mcg" },
@@ -106,3 +122,17 @@ const convertHandler = (e) => {
   - 公吨 (mt/t)：国际通用，1000 kg；
   - 短吨 (st)：美制单位，约 907 kg；
   - 长吨 (lt)：英制单位，约 1016 kg。
+
+## 相关连接
+<n-grid x-gap="12" :cols="4">
+  <n-gi v-for="(file, index) in Mass" :key="index">
+    <n-button
+      text
+      tag="a"
+      :href="file.path"
+      type="primary"
+    >
+      {{file.name}}
+    </n-button>
+  </n-gi>
+</n-grid>
