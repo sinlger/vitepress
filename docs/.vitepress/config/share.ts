@@ -4,8 +4,6 @@ import { loadEnv } from 'vite'
 const mode = process.env.NODE_ENV || 'development'
 const { VITE_BASE_URL } = loadEnv(mode, process.cwd())
 const fileAndStyles: Record<string, string> = {}
-console.log('Mode:', process.env.NODE_ENV)
-console.log('VITE_BASE_URL:', VITE_BASE_URL)
 
 export const sharedConfig = defineConfig({
   rewrites: { // 很重要，
@@ -66,7 +64,7 @@ export const sharedConfig = defineConfig({
   },
   // 站点地图
   sitemap: {
-    hostname: 'https://你的网址.com',
+    hostname: 'https://vitepress-5tk.pages.dev',
   },
   markdown: { // markdown 配置
     math: true,

@@ -70,5 +70,5 @@ features:
     title: 更多
     details: Volume（体积）、Frequency（频率）、Speed（速度）、Pressure（压力）、Digital（数字）
     linkText: 查看更多
-    link: /dashbord
+    link: /
 ---
