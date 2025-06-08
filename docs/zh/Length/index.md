@@ -2,6 +2,20 @@
 sidebar: false
 aside: false
 lastUpdated: false
+breadcrumb:
+  - - link: /
+      linkText: 首页
+  - - link: /zh/Length/
+      linkText: 长度转换
+  - - link: /zh/Length/index
+      linkText: 长度单位换算
+head:
+  - - meta
+    - name: description
+      content: "长度单位换算指南，包括公制与英制单位之间的换算方法和公式。"
+  - - meta
+    - name: keywords
+      content: "长度, 单位转换, 公制, 英制, 换算公式, 米, 千米, 英寸, 码"
 ---
 # 长度单位换算
 ---
@@ -15,7 +29,7 @@ const options =  [
   { label: '纳米', value: 'nm' },
   { label: '微米', value: 'μm' },
   { label: '毫米', value: 'mm' },
-  { label: '厘米', value: 'cm' },
+  { label: '厘米', value: 'cm' },   
   { label: '米', value: 'm' },
   { label: '千米', value: 'km' },
   { label: '英寸', value: 'in' },
