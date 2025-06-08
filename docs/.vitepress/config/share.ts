@@ -14,8 +14,8 @@ export const sharedConfig = defineConfig({
   metaChunk: true,
   lang: 'zh-CN', // 语言
   title: "Unit Converter", // 站点名称
-  titleTemplate: "Hi，终于等到你", // 网页标题
-  description: "xxx、xxx", // 站点描述
+  titleTemplate: "Unit Converter - 支持多种单位的在线转换工具", // 网页标题
+  description: "Unit Converter 是一个多功能单位转换工具，支持长度、重量、体积、温度等多种单位转换，帮助用户快速解决日常或专业场景中的换算问题。", // 站点描述
   head: [ // favicon.ico 图标等
     ['link', { rel: "shortcut icon", href: `${VITE_BASE_URL}logo.svg` }],
     // 网站 favicon.ico 图标
@@ -27,9 +27,9 @@ export const sharedConfig = defineConfig({
     // 网页视口
     ['meta', { name: "viewport", content: "width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,shrink-to-fit=no" }],
     // 关键词和描述
-    ['meta', { name: "keywords", content: "xxx,xxx" }],
+    ['meta', { name: "keywords", content: "单位转换, 长度转换, 重量转换, 体积转换, 温度转换, 在线工具" }],
   ],
-  appearance: true, // 主题模式，默认浅色且开启切换
+  // appearance: true, // 主题模式，默认浅色且开启切换
   base: VITE_BASE_URL,
   lastUpdated: true, // 上次更新
   vite: {

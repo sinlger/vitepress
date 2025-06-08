@@ -5,8 +5,10 @@ lastUpdated: false
 breadcrumb: 
   - - link: /
       linkText: 首页
-  - - link: Temperature
+  - - link: /zh/Temperature/
       linkText: 温度转换
+  - - link: /zh/Temperature/index
+      linkText: 温度单位换算
 head:
   - - meta
     - name: description

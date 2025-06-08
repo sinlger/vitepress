@@ -5,8 +5,10 @@ lastUpdated: false
 breadcrumb: 
   - - link: /
       linkText: 首页
-  - - link: Time
+  - - link: /zh/Time/
       linkText: 时间转换
+  - - link: /zh/Time/index
+      linkText: 时间单位换算
 head:
   - - meta
     - name: description

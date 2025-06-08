@@ -6,24 +6,21 @@ export const zhNav: DefaultTheme.NavItem[] = [
   {
     text: '转换工具',
     items: [
-      { text: '进制转换器', link: '/radix/' },
+      { text: '温度转换', link: '/Temperature/' },
       {
-        text: '时间转换器',
-        link: '/time/'
+        text: '时间转换',
+        link: '/Time/'
       }, {
-        text: '面积转换器',
-        link: '/area/'
+        text: '长度转换',
+        link: '/Length/'
       }, {
-        text: '温度转换器',
-        link: '/temperature/'
+        text: '面积转换',
+        link: '/Area/'
       }, {
-        text: '重量转换器',
-        link: '/weight/'
-      }, {
-        text: '长度转换器',
-        link: '/distance/'
+        text: '重量转换',
+        link: '/Mass/'
       }]
   },
-  { text: '博客', link: '/blog/' },
+  // { text: '博客', link: '/blog/' },
   { text: '关于', link: '/about/' },
 ]
