@@ -75,8 +75,7 @@ const convertHandler = (e) => {
     <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择转换单位" />
   </n-form-item>
   <n-form-item>
-    <n-button type="primary" style="width:100%" @click="convertHandler">转换
-</button>
+    <n-button type="primary" style="width:100%" @click="convertHandler">转换</n-button>
   </n-form-item>
 </n-form>
 <n-card  embedded :bordered="false" hoverable>
