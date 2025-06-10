@@ -1752,24 +1752,24 @@ export const ReactiveEnergy = [
 ];
 export const Angle = [
   { name: '度 (deg) 到 弧度 (rad)', path: './deg-to-rad' },
-  { name: '度 (deg) 到 百分度 (grad)', path: './deg-to-grad' },
+  { name: '度 (deg) 到 梯度 (grad)', path: './deg-to-grad' },
   { name: '度 (deg) 到 角分 (arcmin)', path: './deg-to-arcmin' },
   { name: '度 (deg) 到 角秒 (arcsec)', path: './deg-to-arcsec' },
   { name: '弧度 (rad) 到 度 (deg)', path: './rad-to-deg' },
-  { name: '弧度 (rad) 到 百分度 (grad)', path: './rad-to-grad' },
+  { name: '弧度 (rad) 到 梯度 (grad)', path: './rad-to-grad' },
   { name: '弧度 (rad) 到 角分 (arcmin)', path: './rad-to-arcmin' },
   { name: '弧度 (rad) 到 角秒 (arcsec)', path: './rad-to-arcsec' },
-  { name: '百分度 (grad) 到 度 (deg)', path: './grad-to-deg' },
-  { name: '百分度 (grad) 到 弧度 (rad)', path: './grad-to-rad' },
-  { name: '百分度 (grad) 到 角分 (arcmin)', path: './grad-to-arcmin' },
-  { name: '百分度 (grad) 到 角秒 (arcsec)', path: './grad-to-arcsec' },
+  { name: '梯度 (grad) 到 度 (deg)', path: './grad-to-deg' },
+  { name: '梯度 (grad) 到 弧度 (rad)', path: './grad-to-rad' },
+  { name: '梯度 (grad) 到 角分 (arcmin)', path: './grad-to-arcmin' },
+  { name: '梯度 (grad) 到 角秒 (arcsec)', path: './grad-to-arcsec' },
   { name: '角分 (arcmin) 到 度 (deg)', path: './arcmin-to-deg' },
   { name: '角分 (arcmin) 到 弧度 (rad)', path: './arcmin-to-rad' },
-  { name: '角分 (arcmin) 到 百分度 (grad)', path: './arcmin-to-grad' },
+  { name: '角分 (arcmin) 到 梯度 (grad)', path: './arcmin-to-grad' },
   { name: '角分 (arcmin) 到 角秒 (arcsec)', path: './arcmin-to-arcsec' },
   { name: '角秒 (arcsec) 到 度 (deg)', path: './arcsec-to-deg' },
   { name: '角秒 (arcsec) 到 弧度 (rad)', path: './arcsec-to-rad' },
-  { name: '角秒 (arcsec) 到 百分度 (grad)', path: './arcsec-to-grad' },
+  { name: '角秒 (arcsec) 到 梯度 (grad)', path: './arcsec-to-grad' },
   { name: '角秒 (arcsec) 到 角分 (arcmin)', path: './arcsec-to-arcmin' }
 ];
 
