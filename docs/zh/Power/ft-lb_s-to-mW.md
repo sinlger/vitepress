@@ -83,6 +83,7 @@ const convertHandler = (e) => {
     <h1>{{form.result}}</h1>
   </div>
 </n-card>
+
 ## 换算公式
 
 1 兆瓦 (MW) ≈ 737,562.34 英尺・磅每秒 (ft-lb/s)

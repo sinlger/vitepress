@@ -83,6 +83,7 @@ const convertHandler = (e) => {
     <h1>{{form.result}}</h1>
   </div>
 </n-card>
+
 ## 换算公式
 
 1 兆瓦 (MW) ≈ 947.82 英热单位每秒 (Btu/s)

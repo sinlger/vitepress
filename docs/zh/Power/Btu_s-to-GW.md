@@ -83,6 +83,7 @@ const convertHandler = (e) => {
     <h1>{{form.result}}</h1>
   </div>
 </n-card>
+
 ## 换算公式
 
 1 吉瓦 (GW) ≈ 947,817.12 英热单位每秒 (Btu/s)
