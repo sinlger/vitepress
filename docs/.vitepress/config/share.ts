@@ -64,7 +64,7 @@ export const sharedConfig = defineConfig({
   },
   // 站点地图
   sitemap: {
-    hostname: 'https://vitepress-5tk.pages.dev',
+    hostname: 'https://unitconver.com/',
   },
   markdown: { // markdown 配置
     math: true,
