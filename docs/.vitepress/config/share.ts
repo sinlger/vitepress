@@ -15,9 +15,9 @@ export const sharedConfig = defineConfig({
   titleTemplate: "Unit Converter - 支持多种单位的在线转换工具", // 网页标题
   description: "Unit Converter 是一个多功能单位转换工具，支持长度、重量、体积、温度等多种单位转换，帮助用户快速解决日常或专业场景中的换算问题。", // 站点描述
   head: [ // favicon.ico 图标等
-    ['link', { rel: "shortcut icon", href: `${VITE_BASE_URL}logo.svg` }],
+    ['link', { rel: "shortcut icon", href: `/logo.svg` }],
     // 网站 favicon.ico 图标
-    ['link', { rel: "icon", href: `${VITE_BASE_URL}logo.svg`, type: "image/svg+xml" }],
+    ['link', { rel: "icon", href: `/logo.svg`, type: "image/svg+xml" }],
     // 引入 Google Fonts
     ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
     ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }],
