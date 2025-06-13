@@ -1811,14 +1811,7 @@ export const Force = [
   { name: '千克力 (kgf) 到 磅力 (lbf)', path: './kgf-to-lbf' }
 ];
 
-export const Acceleration = [
-  { name: '重力加速度 (g) 到 米每二次方秒 (m/s²)', path: './g-to-m_s2' },
-  { name: '重力加速度 (g) 到 标准重力 (g0)', path: './g-to-g0' },
-  { name: '米每二次方秒 (m/s²) 到 重力加速度 (g)', path: './m_s2-to-g' },
-  { name: '米每二次方秒 (m/s²) 到 标准重力 (g0)', path: './m_s2-to-g0' },
-  { name: '标准重力 (g0) 到 重力加速度 (g)', path: './g0-to-g' },
-  { name: '标准重力 (g0) 到 米每二次方秒 (m/s²)', path: './g0-to-m_s2' }
-];
+export const Acceleration = [];
 
 export const Pieces = [
   { name: '件 (pcs) 到 书打 (bk-doz)', path: './pcs-to-bk-doz' },
