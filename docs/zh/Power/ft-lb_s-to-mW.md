@@ -5,9 +5,9 @@ lastUpdated: false
 breadcrumb:
   - - link: /
       linkText: 首页
-  - - link: /zh/Power/
+  - - link: /Power/
       linkText: 功率转换
-  - - link: /zh/Power/ft-lb_s-to-MW
+  - - link: /Power/ft-lb_s-to-MW
       linkText: 英尺磅每秒转兆瓦
 head:
   - - meta

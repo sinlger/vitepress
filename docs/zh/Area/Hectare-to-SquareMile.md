@@ -5,9 +5,9 @@ lastUpdated: false
 breadcrumb:
   - - link: /
       linkText: 首页
-  - - link: /zh/Area/
+  - - link: /Area/
       linkText: 面积转换
-  - - link: /zh/Area/Hectare-to-SquareMile
+  - - link: /Area/Hectare-to-SquareMile
       linkText: 公顷到平方英里
 head:
   - - meta

@@ -5,9 +5,9 @@ lastUpdated: false
 breadcrumb:
   - - link: /
       linkText: 首页
-  - - link: /zh/Mass/
+  - - link: /Mass/
       linkText: 质量转换
-  - - link: /zh/Mass/oz-to-t
+  - - link: /Mass/oz-to-t
       linkText: 盎司到吨
 head:
   - - meta

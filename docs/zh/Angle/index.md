@@ -5,9 +5,9 @@ lastUpdated: false
 breadcrumb:
   - - link: /
       linkText: 首页
-  - - link: /zh/Angle/
+  - - link: /Angle/
       linkText: 角度转换
-  - - link: /zh/Angle/index
+  - - link: /Angle/index
       linkText: 角度单位换算
 head:
   - - meta

@@ -5,9 +5,9 @@ lastUpdated: false
 breadcrumb:
   - - link: /
       linkText: 首页
-  - - link: /zh/Mass/
+  - - link: /Mass/
       linkText: 质量转换
-  - - link: /zh/Mass/st-to-oz
+  - - link: /Mass/st-to-oz
       linkText: 英石到盎司
 head:
   - - meta

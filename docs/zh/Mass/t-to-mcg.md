@@ -5,9 +5,9 @@ lastUpdated: false
 breadcrumb:
   - - link: /
       linkText: 首页
-  - - link: /zh/Mass/
+  - - link: /Mass/
       linkText: 质量转换
-  - - link: /zh/Mass/t-to-mcg
+  - - link: /Mass/t-to-mcg
       linkText: 吨到微克
 head:
   - - meta

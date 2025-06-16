@@ -5,9 +5,9 @@ lastUpdated: false
 breadcrumb:
   - - link: /
       linkText: 首页
-  - - link: /zh/Mass/
+  - - link: /Mass/
       linkText: 质量转换
-  - - link: /zh/Mass/oz-to-mcg
+  - - link: /Mass/oz-to-mcg
       linkText: 盎司到微克
 head:
   - - meta

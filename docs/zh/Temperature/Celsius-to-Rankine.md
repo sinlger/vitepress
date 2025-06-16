@@ -6,9 +6,9 @@ lastUpdated: false
 breadcrumb:
   - - link: /
       linkText: 首页
-  - - link: /zh/Temperature/
+  - - link: /Temperature/
       linkText: 温度转换
-  - - link: /zh/Temperature/Celsius-to-Rankine
+  - - link: /Temperature/Celsius-to-Rankine
       linkText: 摄氏度转兰金度
 
 head:

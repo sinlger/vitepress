@@ -5,9 +5,9 @@ lastUpdated: false
 breadcrumb:
   - - link: /
       linkText: 首页
-  - - link: /zh/Power/
+  - - link: /Power/
       linkText: 功率转换
-  - - link: /zh/Power/GW-to-W
+  - - link: /Power/GW-to-W
       linkText: 吉瓦转瓦特
 head:
   - - meta

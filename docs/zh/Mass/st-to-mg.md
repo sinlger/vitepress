@@ -5,9 +5,9 @@ lastUpdated: false
 breadcrumb:
   - - link: /
       linkText: 首页
-  - - link: /zh/Mass/
+  - - link: /Mass/
       linkText: 质量转换
-  - - link: /zh/Mass/st-to-mg
+  - - link: /Mass/st-to-mg
       linkText: 英石到毫克
 head:
   - - meta

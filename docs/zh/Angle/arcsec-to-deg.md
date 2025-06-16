@@ -5,9 +5,9 @@ lastUpdated: false
 breadcrumb:
   - - link: /
       linkText: 首页
-  - - link: /zh/Angle/
+  - - link: /Angle/
       linkText: 角度转换
-  - - link: /zh/Angle/arcsec-to-deg
+  - - link: /Angle/arcsec-to-deg
       linkText: 角秒 (arcsec) 到 度数 (°) 换算
 head:
   - - meta

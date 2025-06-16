@@ -5,9 +5,9 @@ lastUpdated: false
 breadcrumb:
   - - link: /
       linkText: 首页
-  - - link: /zh/Power/
+  - - link: /Power/
       linkText: 功率转换
-  - - link: /zh/Power/MW-to-hp
+  - - link: /Power/MW-to-hp
       linkText: 兆瓦转英制马力
 head:
   - - meta

@@ -5,9 +5,9 @@ lastUpdated: false
 breadcrumb:
   - - link: /
       linkText: 首页
-  - - link: /zh/Length/
+  - - link: /Length/
       linkText: 长度转换
-  - - link: /zh/Length/Yard-to-Fathom
+  - - link: /Length/Yard-to-Fathom
       linkText: 码到英寻
 head:
   - - meta

@@ -5,9 +5,9 @@ lastUpdated: false
 breadcrumb:
   - - link: /
       linkText: 首页
-  - - link: /zh/Area/
+  - - link: /Area/
       linkText: 面积转换
-  - - link: /zh/Area/SquareCentimeter-to-SquareKilometer
+  - - link: /Area/SquareCentimeter-to-SquareKilometer
       linkText: 平方厘米到平方千米
 head:
   - - meta

@@ -5,9 +5,9 @@ lastUpdated: false
 breadcrumb:
   - - link: /
       linkText: 首页
-  - - link: /zh/Energy/
+  - - link: /Energy/
       linkText: 能量和功率单位转换
-  - - link: /zh/Energy/index
+  - - link: /Energy/index
       linkText: 能量和功率单位单位换算
 head:
   - - meta

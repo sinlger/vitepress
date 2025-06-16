@@ -5,9 +5,9 @@ lastUpdated: false
 breadcrumb:
   - - link: /
       linkText: 首页
-  - - link: /zh/Speed/
+  - - link: /Speed/
       linkText: 速度单位转换
-  - - link: /zh/Speed/index
+  - - link: /Speed/index
       linkText: 速度单位单位换算
 head:
   - - meta

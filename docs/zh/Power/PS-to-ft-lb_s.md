@@ -5,9 +5,9 @@ lastUpdated: false
 breadcrumb:
   - - link: /
       linkText: 首页
-  - - link: /zh/Power/
+  - - link: /Power/
       linkText: 功率转换
-  - - link: /zh/Power/PS-to-ft-lb_s
+  - - link: /Power/PS-to-ft-lb_s
       linkText: 公制马力转英尺磅每秒
 head:
   - - meta

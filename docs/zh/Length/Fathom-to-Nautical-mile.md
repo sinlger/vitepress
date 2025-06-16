@@ -5,9 +5,9 @@ lastUpdated: false
 breadcrumb:
   - - link: /
       linkText: 首页
-  - - link: /zh/Length/
+  - - link: /Length/
       linkText: 长度转换
-  - - link: /zh/Length/Fathom-to-Nautical-mile
+  - - link: /Length/Fathom-to-Nautical-mile
       linkText: 英寻到海里
 head:
   - - meta

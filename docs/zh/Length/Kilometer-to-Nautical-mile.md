@@ -5,9 +5,9 @@ lastUpdated: false
 breadcrumb:
   - - link: /
       linkText: 首页
-  - - link: /zh/Length/
+  - - link: /Length/
       linkText: 长度转换
-  - - link: /zh/Length/Kilometer-to-Nautical-mile
+  - - link: /Length/Kilometer-to-Nautical-mile
       linkText: 千米到海里
 head:
   - - meta

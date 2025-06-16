@@ -5,9 +5,9 @@ lastUpdated: false
 breadcrumb:
   - - link: /
       linkText: 首页
-  - - link: /zh/Length/
+  - - link: /Length/
       linkText: 长度转换
-  - - link: /zh/Length/Inch-to-Mile
+  - - link: /Length/Inch-to-Mile
       linkText: 英寸到英里
 head:
   - - meta

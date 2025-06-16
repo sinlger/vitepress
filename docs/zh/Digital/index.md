@@ -5,9 +5,9 @@ lastUpdated: false
 breadcrumb:
   - - link: /
       linkText: 首页
-  - - link: /zh/Digital/
+  - - link: /Digital/
       linkText: 数据单位转换
-  - - link: /zh/Digital/index
+  - - link: /Digital/index
       linkText: 数据单位单位换算
 head:
   - - meta

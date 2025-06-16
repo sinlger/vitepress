@@ -5,9 +5,9 @@ lastUpdated: false
 breadcrumb:
   - - link: /
       linkText: 首页
-  - - link: /zh/Angle/
+  - - link: /Angle/
       linkText: 角度转换
-  - - link: /zh/Angle/arcmin-to-grad
+  - - link: /Angle/arcmin-to-grad
       linkText: 角分 (arcmin) 到 梯度 (grad) 换算
 head:
   - - meta

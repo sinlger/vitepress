@@ -5,9 +5,9 @@ lastUpdated: false
 breadcrumb:
   - - link: /
       linkText: 首页
-  - - link: /zh/Power/
+  - - link: /Power/
       linkText: 功率转换
-  - - link: /zh/Power/W-to-PS
+  - - link: /Power/W-to-PS
       linkText: 瓦特转公制马力
 head:
   - - meta

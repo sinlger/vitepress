@@ -5,9 +5,9 @@ lastUpdated: false
 breadcrumb:
   - - link: /
       linkText: 首页
-  - - link: /zh/Time/
+  - - link: /Time/
       linkText: 时间转换
-  - - link: /zh/Time/Minute-to-Hour
+  - - link: /Time/Minute-to-Hour
       linkText: 分钟到小时
 head:
   - - meta

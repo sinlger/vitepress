@@ -5,9 +5,9 @@ lastUpdated: false
 breadcrumb:
   - - link: /
       linkText: 首页
-  - - link: /zh/Angle/
+  - - link: /Angle/
       linkText: 角度转换
-  - - link: /zh/Angle/rad-to-deg
+  - - link: /Angle/rad-to-deg
       linkText: 弧度 (rad) 到 度数 (°) 换算
 head:
   - - meta

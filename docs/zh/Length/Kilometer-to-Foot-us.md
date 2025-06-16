@@ -5,9 +5,9 @@ lastUpdated: false
 breadcrumb:
   - - link: /
       linkText: 首页
-  - - link: /zh/Length/
+  - - link: /Length/
       linkText: 长度转换
-  - - link: /zh/Length/Kilometer-to-Foot-us
+  - - link: /Length/Kilometer-to-Foot-us
       linkText: 千米到英尺-us
 head:
   - - meta

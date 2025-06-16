@@ -5,9 +5,9 @@ lastUpdated: false
 breadcrumb:
   - - link: /
       linkText: 首页
-  - - link: /zh/Reactive Energy/
+  - - link: /Reactive Energy/
       linkText: 电力单位转换
-  - - link: /zh/Reactive Energy/index
+  - - link: /Reactive Energy/index
       linkText: 电力单位单位换算
 head:
   - - meta

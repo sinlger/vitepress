@@ -5,9 +5,9 @@ lastUpdated: false
 breadcrumb:
   - - link: /
       linkText: 首页
-  - - link: /zh/Power/
+  - - link: /Power/
       linkText: 功率转换
-  - - link: /zh/Power/Btu_s-to-hp
+  - - link: /Power/Btu_s-to-hp
       linkText: 英热单位每秒转英制马力
 head:
   - - meta

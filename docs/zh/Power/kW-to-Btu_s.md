@@ -5,9 +5,9 @@ lastUpdated: false
 breadcrumb:
   - - link: /
       linkText: 首页
-  - - link: /zh/Power/
+  - - link: /Power/
       linkText: 功率转换
-  - - link: /zh/Power/kW-to-Btu_s
+  - - link: /Power/kW-to-Btu_s
       linkText: 千瓦转英热单位每秒
 head:
   - - meta

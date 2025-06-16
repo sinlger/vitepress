@@ -5,9 +5,9 @@ lastUpdated: false
 breadcrumb:
   - - link: /
       linkText: 首页
-  - - link: /zh/Time/
+  - - link: /Time/
       linkText: 时间转换
-  - - link: /zh/Time/Millisecond-to-Nanosecond
+  - - link: /Time/Millisecond-to-Nanosecond
       linkText: 毫秒到纳秒
 head:
   - - meta

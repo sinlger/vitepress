@@ -5,9 +5,9 @@ lastUpdated: false
 breadcrumb:
   - - link: /
       linkText: 首页
-  - - link: /zh/Mass/
+  - - link: /Mass/
       linkText: 质量转换
-  - - link: /zh/Mass/st-to-mt
+  - - link: /Mass/st-to-mt
       linkText: 英石到公吨
 head:
   - - meta

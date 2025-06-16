@@ -5,9 +5,9 @@ lastUpdated: false
 breadcrumb:
   - - link: /
       linkText: 首页
-  - - link: /zh/Temperature/
+  - - link: /Temperature/
       linkText: 温度转换
-  - - link: /zh/Temperature/Celsius-to-Kelvin
+  - - link: /Temperature/Celsius-to-Kelvin
       linkText: 摄氏度转开尔文
 head:
   - - meta

@@ -5,9 +5,9 @@ lastUpdated: false
 breadcrumb:
   - - link: /
       linkText: 首页
-  - - link: /zh/Length/
+  - - link: /Length/
       linkText: 长度转换
-  - - link: /zh/Length/Nanometer-to-Kilometer
+  - - link: /Length/Nanometer-to-Kilometer
       linkText: 纳米到千米
 head:
   - - meta

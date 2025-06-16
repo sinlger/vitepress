@@ -5,9 +5,9 @@ lastUpdated: false
 breadcrumb:
   - - link: /
       linkText: 首页
-  - - link: /zh/Length/
+  - - link: /Length/
       linkText: 长度转换
-  - - link: /zh/Length/Millimeter-to-Fathom
+  - - link: /Length/Millimeter-to-Fathom
       linkText: 毫米到英寻
 head:
   - - meta

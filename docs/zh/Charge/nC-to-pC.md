@@ -5,9 +5,9 @@ lastUpdated: false
 breadcrumb:
   - - link: /
       linkText: 首页
-  - - link: /zh/Charge/
+  - - link: /Charge/
       linkText: 电荷单位转换
-  - - link: /zh/Charge/nC-to-pC
+  - - link: /Charge/nC-to-pC
       linkText: 纳库仑到皮库仑换算
 head:
   - - meta

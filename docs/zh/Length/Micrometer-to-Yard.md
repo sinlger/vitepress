@@ -5,9 +5,9 @@ lastUpdated: false
 breadcrumb:
   - - link: /
       linkText: 首页
-  - - link: /zh/Length/
+  - - link: /Length/
       linkText: 长度转换
-  - - link: /zh/Length/Micrometer-to-Yard
+  - - link: /Length/Micrometer-to-Yard
       linkText: 微米到码
 head:
   - - meta
