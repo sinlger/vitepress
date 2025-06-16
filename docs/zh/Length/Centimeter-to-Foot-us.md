@@ -88,7 +88,7 @@ $$ ft-us = cm \times 0.032808 $$
 - 10cm = 0.32808ft-us
 
 ## 相关连接
-<n-grid x-gap="12" :cols="4">
+<n-grid x-gap="12" :cols="3">
   <n-gi v-for="(file, index) in Length" :key="index">
     <n-button
       text
