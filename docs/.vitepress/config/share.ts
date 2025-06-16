@@ -66,6 +66,10 @@ export const sharedConfig = defineConfig({
   // 站点地图
   sitemap: {
     hostname: 'https://unitconver.com/',
+    transformItems: (items) => {
+      const ss = items.map(v=>v.url.replace('.html',''))
+      return ss
+    }
   },
   markdown: { // markdown 配置
     math: true,
