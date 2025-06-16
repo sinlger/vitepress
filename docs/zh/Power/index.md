@@ -15,26 +15,26 @@ head:
       content: 提供详细的功率单位换算表及生活应用场景，涵盖瓦特 (W)、毫瓦 (mW)、千瓦 (kW)、兆瓦 (MW)、吉瓦 (GW)、公制马力 (PS)、英热单位/秒 (Btu/s)、英尺・磅/秒 (ft-lb/s) 和英制马力 (hp) 的换算公式与实际应用。
   - - meta
     - name: keywords
-      content: 功率单位换算, 瓦特, 毫瓦, 千瓦, 兆瓦, 吉瓦, 公制马力, 英热单位每秒, 英尺磅每秒, 英制马力
+      content: 功率单位换算,瓦特,毫瓦,千瓦,兆瓦,吉瓦,公制马力,英热单位每秒,英尺磅每秒,英制马力
 ---
 # 功率单位换算
 ---
 <script setup>
-import { onMounted, reactive, inject ,ref  } from 'vue'
+import { onMounted,reactive,inject ,ref  } from 'vue'
 import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage ,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
 import { Power } from '../../files';
 const convert = inject('convert')
 const options =  [
-  { "label": "瓦特 (W)", "value": "W" },
-  { "label": "毫瓦 (mW)", "value": "mW" },
-  { "label": "千瓦 (kW)", "value": "kW" },
-  { "label": "兆瓦 (MW)", "value": "MW" },
-  { "label": "吉瓦 (GW)", "value": "GW" },
-  { "label": "公制马力 (PS)", "value": "PS" },
-  { "label": "英热单位/秒 (Btu/s)", "value": "Btu/s" },
-  { "label": "英尺・磅/秒 (ft-lb/s)", "value": "ft-lb/s" },
-  { "label": "英制马力 (hp)", "value": "hp" }
+  { "label": "瓦特 (W)","value": "W" },
+  { "label": "毫瓦 (mW)","value": "mW" },
+  { "label": "千瓦 (kW)","value": "kW" },
+  { "label": "兆瓦 (MW)","value": "MW" },
+  { "label": "吉瓦 (GW)","value": "GW" },
+  { "label": "公制马力 (PS)","value": "PS" },
+  { "label": "英热单位/秒 (Btu/s)","value": "Btu/s" },
+  { "label": "英尺・磅/秒 (ft-lb/s)","value": "ft-lb/s" },
+  { "label": "英制马力 (hp)","value": "hp" }
 ];
 const formRef = ref(null);
 const rules = {
@@ -158,7 +158,7 @@ hp | 英制马力 | 1 英制马力 = 745.7 瓦特 | 1 hp = 745.7 W
   * **通信领域** ：无线信号功率常用 dBm（如 Wi-Fi 发射功率 ≈ 15–20dBm ≈ 32–100mW）。
 ## 相关连接
 <n-grid x-gap="12" :cols="3">
-  <n-gi v-for="(file, index) in Power" :key="index">
+  <n-gi v-for="(file,index) in Power" :key="index">
     <n-button
       text
       tag="a"

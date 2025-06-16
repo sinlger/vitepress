@@ -15,21 +15,21 @@ head:
       content: "提供千瓦 (kW) 到兆瓦 (MW) 的单位换算公式及实际应用场景。"
   - - meta
     - name: keywords
-      content: "千瓦转兆瓦, kW到MW换算, 功率单位转换公式, 功率单位换算工具, 能源行业功率单位"
+      content: "千瓦转兆瓦,kW到MW换算,功率单位转换公式,功率单位换算工具,能源行业功率单位"
 ---
 # 千瓦 (kW) 到兆瓦 (MW) 换算
 
 这是关于 **千瓦转兆瓦** 的详细介绍，并提供一个实用的 **功率单位换算工具**。
 
 <script setup>
-import { onMounted, reactive, inject ,ref  } from 'vue'
+import { onMounted,reactive,inject ,ref  } from 'vue'
 import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage ,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
 import { Power } from '../../files';
 const convert = inject('convert')
 const options =  [
-  { "label": "千瓦 (kW)", "value": "kW" },
-  { "label": "兆瓦 (MW)", "value": "MW" }
+  { "label": "千瓦 (kW)","value": "kW" },
+  { "label": "兆瓦 (MW)","value": "MW" }
 ];
 const formRef = ref(null);
 const rules = {
@@ -101,7 +101,7 @@ const convertHandler = (e) => {
 
 ## 相关连接
 <n-grid x-gap="12" :cols="3">
-  <n-gi v-for="(file, index) in Power" :key="index">
+  <n-gi v-for="(file,index) in Power" :key="index">
     <n-button
       text
       tag="a"

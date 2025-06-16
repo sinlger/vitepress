@@ -5,9 +5,9 @@ lastUpdated: false
 breadcrumb:
   - - link: /
       linkText: 首页
-  - - link: /zh/VolumeFlowRate/
+  - - link: /VolumeFlowRate/
       linkText: 体积流量单位转换
-  - - link: /zh/VolumeFlowRate/index
+  - - link: /VolumeFlowRate/index
       linkText: 体积流量单位单位换算
 head:
   - - meta

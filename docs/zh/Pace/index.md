@@ -5,9 +5,9 @@ lastUpdated: false
 breadcrumb:
   - - link: /
       linkText: 首页
-  - - link: /zh/Pace/
+  - - link: /Pace/
       linkText: 配速单位转换
-  - - link: /zh/Pace/index
+  - - link: /Pace/index
       linkText: 配速单位单位换算
 head:
   - - meta

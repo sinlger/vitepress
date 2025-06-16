@@ -12,10 +12,10 @@ breadcrumb:
 head:
   - - meta
     - name: description
-      content: "数据单位转换指南，涵盖比特 (bit)、字节 (byte)、千字节 (kB)、兆字节 (MB)、吉字节 (GB)、太字节 (TB)、千兆比特 (Gb)、兆比特 (Mb)、吉比特 (Gb)、太比特 (Tb)、千字节 (KiB)、兆字节 (MiB)、吉字节 (GiB)、太字节 (TiB) 的详细换算公式与说明。"
+      content: 数据单位转换指南，涵盖比特 (bit)、字节 (byte)、千字节 (kB)、兆字节 (MB)、吉字节 (GB)、太字节 (TB)、千兆比特 (Gb)、兆比特 (Mb)、吉比特 (Gb)、太比特 (Tb)、千字节 (KiB)、兆字节 (MiB)、吉字节 (GiB)、太字节 (TiB) 的详细换算公式与说明。
   - - meta
     - name: keywords
-      content: "数据, 单位转换, 比特, 字节, 千字节, 兆字节, 吉字节, 太字节, 千兆比特, 兆比特, 吉比特, 太比特, KiB, MiB, GiB, TiB, 换算公式, 数据单位换算指南"
+      content: 数据, 单位转换, 比特, 字节, 千字节, 兆字节, 吉字节, 太字节, 千兆比特, 兆比特, 吉比特, 太比特, KiB, MiB, GiB, TiB, 换算公式, 数据单位换算指南
 ---
 # 数据单位换算
 ---

@@ -5,9 +5,9 @@ lastUpdated: false
 breadcrumb:
   - - link: /
       linkText: 首页
-  - - link: /zh/Torque/
+  - - link: /Torque/
       linkText: 扭矩单位转换
-  - - link: /zh/Torque/index
+  - - link: /Torque/index
       linkText: 扭矩单位单位换算
 head:
   - - meta

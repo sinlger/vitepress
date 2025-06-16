@@ -12,24 +12,25 @@ breadcrumb:
 head:
   - - meta
     - name: description
-      content: "提供瓦特 (W) 到千瓦 (kW) 的单位换算公式及实际应用场景。"
+      content: 提供瓦特 (W) 到千瓦 (kW) 的单位换算公式及实际应用场景。
   - - meta
     - name: keywords
-      content: "瓦特转千瓦, W到kW换算, 功率单位转换公式, 功率单位换算工具, 家用电器功率单位"
+      content: 瓦特转千瓦,W到kW换算,功率单位转换公式,功率单位换算工具,家用电器功率单位
 ---
+
 # 瓦特 (W) 到千瓦 (kW) 换算
 
 这是关于 **瓦特转千瓦** 的详细介绍，并提供一个实用的 **功率单位换算工具**。
 
 <script setup>
-import { onMounted, reactive, inject ,ref  } from 'vue'
+import { onMounted,reactive,inject ,ref  } from 'vue'
 import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage ,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
 import { Power } from '../../files';
 const convert = inject('convert')
 const options =  [
-  { "label": "瓦特 (W)", "value": "W" },
-  { "label": "千瓦 (kW)", "value": "kW" }
+  { "label": "瓦特 (W)","value": "W" },
+  { "label": "千瓦 (kW)","value": "kW" }
 ];
 const formRef = ref(null);
 const rules = {
@@ -101,7 +102,7 @@ const convertHandler = (e) => {
 
 ## 相关连接
 <n-grid x-gap="12" :cols="3">
-  <n-gi v-for="(file, index) in Power" :key="index">
+  <n-gi v-for="(file,index) in Power" :key="index">
     <n-button
       text
       tag="a"

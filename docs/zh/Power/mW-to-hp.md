@@ -15,21 +15,21 @@ head:
       content: "提供兆瓦 (MW) 到英制马力 (hp) 的单位换算公式及实际应用场景。"
   - - meta
     - name: keywords
-      content: "兆瓦转英制马力, MW到hp换算, 功率单位转换公式, 功率单位换算工具, 美系重型设备功率单位"
+      content: "兆瓦转英制马力,MW到hp换算,功率单位转换公式,功率单位换算工具,美系重型设备功率单位"
 ---
 # 兆瓦 (MW) 到英制马力 (hp) 换算
 
 这是关于 **兆瓦转英制马力** 的详细介绍，并提供一个实用的 **功率单位换算工具**。
 
 <script setup>
-import { onMounted, reactive, inject ,ref  } from 'vue'
+import { onMounted,reactive,inject ,ref  } from 'vue'
 import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage ,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
 import { Power } from '../../files';
 const convert = inject('convert')
 const options =  [
-  { "label": "兆瓦 (MW)", "value": "MW" },
-  { "label": "英制马力 (hp)", "value": "hp" }
+  { "label": "兆瓦 (MW)","value": "MW" },
+  { "label": "英制马力 (hp)","value": "hp" }
 ];
 const formRef = ref(null);
 const rules = {
@@ -101,7 +101,7 @@ const convertHandler = (e) => {
 
 ## 相关连接
 <n-grid x-gap="12" :cols="3">
-  <n-gi v-for="(file, index) in Power" :key="index">
+  <n-gi v-for="(file,index) in Power" :key="index">
     <n-button
       text
       tag="a"

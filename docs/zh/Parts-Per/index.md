@@ -5,19 +5,19 @@ lastUpdated: false
 breadcrumb:
   - - link: /
       linkText: 首页
-  - - link: /zh/Parts-Per/
+  - - link: /Parts-Per/
       linkText: 浓度单位转换
-  - - link: /zh/Parts-Per/index
+  - - link: /Parts-Per/index
       linkText: 浓度单位单位换算
 head:
   - - meta
     - name: description
-      content: 
+      content: 浓度单位转换工具，提供 ppm、ppb、ppt、ppq 单位之间的换算。
   - - meta
     - name: keywords
-      content: 
+      content: 浓度单位, ppm, ppb, ppt, ppq, 转换工具, 环境监测, 微量元素
 ---
-
+# 浓度单位转换
 ---
 <script setup>
 import { onMounted, reactive, inject ,ref  } from 'vue'

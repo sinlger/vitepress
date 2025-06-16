@@ -12,10 +12,10 @@ breadcrumb:
 head:
   - - meta
     - name: description
-      content: "天 (d) 到分钟 (min) 的时间单位换算指南。了解如何通过公式 d × 1440 转换为分钟。"
+      content: 天 (d) 到分钟 (min) 的时间单位换算指南。了解如何通过公式 d × 1440 转换为分钟。
   - - meta
     - name: keywords
-      content: "时间, 单位转换, 天, 分钟, d, min, 天到分钟, 时间转换指南"
+      content: 时间, 单位转换, 天, 分钟, d, min, 天到分钟, 时间转换指南
 ---
 
 # 天 (d) 到 分钟 (min) 的换算

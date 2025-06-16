@@ -5,9 +5,9 @@ lastUpdated: false
 breadcrumb:
   - - link: /
       linkText: 首页
-  - - link: /zh/Force/
+  - - link: /Force/
       linkText: 体积单位转换
-  - - link: /zh/Force/index
+  - - link: /Force/index
       linkText: 体积单位单位换算
 head:
   - - meta
