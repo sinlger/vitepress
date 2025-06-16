@@ -5,7 +5,7 @@ lastUpdated: false
 breadcrumb:
   - - link: /
       linkText: 首页
-  - - link: /Mass/
+  - - link: /Mass/index
       linkText: 质量转换
   - - link: /Mass/oz-to-mt
       linkText: 盎司到公吨

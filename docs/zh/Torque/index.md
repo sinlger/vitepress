@@ -5,7 +5,7 @@ lastUpdated: false
 breadcrumb:
   - - link: /
       linkText: 首页
-  - - link: /Torque/
+  - - link: /Torque/index
       linkText: 扭矩单位转换
   - - link: /Torque/index
       linkText: 扭矩单位单位换算

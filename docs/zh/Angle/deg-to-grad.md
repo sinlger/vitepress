@@ -5,7 +5,7 @@ lastUpdated: false
 breadcrumb:
   - - link: /
       linkText: 首页
-  - - link: /Angle/
+  - - link: /Angle/index
       linkText: 角度转换
   - - link: /Angle/deg-to-grad
       linkText: 度数 (°) 到 梯度 (grad) 换算

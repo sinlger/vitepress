@@ -6,19 +6,19 @@ export const zhNav: DefaultTheme.NavItem[] = [
   {
     text: '转换工具',
     items: [
-      { text: '温度转换', link: '/Temperature/' },
+      { text: '温度转换', link: '/Temperature/index' },
       {
         text: '时间转换',
-        link: '/Time/'
+        link: '/Time/index'
       }, {
         text: '长度转换',
-        link: '/Length/'
+        link: '/Length/index'
       }, {
         text: '面积转换',
-        link: '/Area/'
+        link: '/Area/index'
       }, {
         text: '重量转换',
-        link: '/Mass/'
+        link: '/Mass/index'
       }]
   },
   // { text: '博客', link: '/blog/' },

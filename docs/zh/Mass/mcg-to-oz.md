@@ -5,7 +5,7 @@ lastUpdated: false
 breadcrumb:
   - - link: /
       linkText: 首页
-  - - link: /Mass/
+  - - link: /Mass/index
       linkText: 质量转换
   - - link: /Mass/mcg-to-oz
       linkText: 微克到盎司

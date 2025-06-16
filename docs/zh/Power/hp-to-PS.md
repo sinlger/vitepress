@@ -5,7 +5,7 @@ lastUpdated: false
 breadcrumb:
   - - link: /
       linkText: 首页
-  - - link: /Power/
+  - - link: /Power/index
       linkText: 功率转换
   - - link: /Power/hp-to-PS
       linkText: 英制马力转公制马力

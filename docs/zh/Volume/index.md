@@ -5,9 +5,9 @@ lastUpdated: false
 breadcrumb:
   - - link: /
       linkText: 首页
-  - - link: /Force/
+  - - link: /Volume/index
       linkText: 体积单位转换
-  - - link: /Force/index
+  - - link: /Volume/index
       linkText: 体积单位单位换算
 head:
   - - meta
@@ -24,7 +24,7 @@ head:
 import { onMounted, reactive, inject ,ref  } from 'vue'
 import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage ,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
-import { Force } from '../../files';
+import { Volume } from '../../files';
 const convert = inject('convert')
 const options =  [
   { "label": "立方毫米 (mm³)", "value": "mm3" },

@@ -5,7 +5,7 @@ lastUpdated: false
 breadcrumb:
   - - link: /
       linkText: 首页
-  - - link: /Time/
+  - - link: /Time/index
       linkText: 时间转换
   - - link: /Time/Microsecond-to-Month
       linkText: 微秒到月

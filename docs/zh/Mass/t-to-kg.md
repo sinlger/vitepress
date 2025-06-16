@@ -5,7 +5,7 @@ lastUpdated: false
 breadcrumb:
   - - link: /
       linkText: 首页
-  - - link: /Mass/
+  - - link: /Mass/index
       linkText: 质量转换
   - - link: /Mass/t-to-kg
       linkText: 吨到千克

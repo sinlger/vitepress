@@ -5,7 +5,7 @@ lastUpdated: false
 breadcrumb:
   - - link: /
       linkText: 首页
-  - - link: /Power/
+  - - link: /Power/index
       linkText: 功率转换
   - - link: /Power/W-to-Btu_s
       linkText: 瓦特转英热单位每秒

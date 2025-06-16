@@ -5,7 +5,7 @@ lastUpdated: false
 breadcrumb:
   - - link: /
       linkText: 首页
-  - - link: /Area/
+  - - link: /Area/index
       linkText: 面积转换
   - - link: /Area/SquareMillimeter-to-SquareMeter
       linkText: 平方毫米到平方米

@@ -5,7 +5,7 @@ lastUpdated: false
 breadcrumb:
   - - link: /
       linkText: 首页
-  - - link: /Charge/
+  - - link: /Charge/index
       linkText: 电荷单位转换
   - - link: /Charge/nC-to-C
       linkText: 纳库仑到库仑换算

@@ -5,7 +5,7 @@ lastUpdated: false
 breadcrumb:
   - - link: /
       linkText: 首页
-  - - link: /Angle/
+  - - link: /Angle/index
       linkText: 角度转换
   - - link: /Angle/grad-to-arcmin
       linkText: 梯度 (grad) 到 角分 (arcmin) 换算

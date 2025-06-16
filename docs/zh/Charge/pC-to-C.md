@@ -5,7 +5,7 @@ lastUpdated: false
 breadcrumb:
   - - link: /
       linkText: 首页
-  - - link: /Charge/
+  - - link: /Charge/index
       linkText: 电荷单位转换
   - - link: /Charge/pC-to-C
       linkText: 皮库仑到库仑换算

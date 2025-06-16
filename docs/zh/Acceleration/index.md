@@ -5,7 +5,7 @@ lastUpdated: false
 breadcrumb:
   - - link: /
       linkText: 首页
-  - - link: /Acceleration/
+  - - link: /Acceleration/index
       linkText: 加速度转换
   - - link: /Acceleration/index
       linkText: 加速度单位换算

@@ -5,7 +5,7 @@ lastUpdated: false
 breadcrumb:
   - - link: /
       linkText: 首页
-  - - link: /Angle/
+  - - link: /Angle/index
       linkText: 角度转换
   - - link: /Angle/rad-to-arcsec
       linkText: 弧度 (rad) 到 角秒 (arcsec) 换算

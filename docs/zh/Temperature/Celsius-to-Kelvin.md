@@ -5,7 +5,7 @@ lastUpdated: false
 breadcrumb:
   - - link: /
       linkText: 首页
-  - - link: /Temperature/
+  - - link: /Temperature/index
       linkText: 温度转换
   - - link: /Temperature/Celsius-to-Kelvin
       linkText: 摄氏度转开尔文
