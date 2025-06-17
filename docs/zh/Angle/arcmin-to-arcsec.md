@@ -7,7 +7,7 @@ breadcrumb:
       linkText: 首页
 
   - - link: /Angle/index
-      linkText: 角度转换
+      linkText: 角度换算
   - - link: /Angle/arcmin-to-arcsec
       linkText: 角分 (arcmin) 到 角秒 (arcsec) 换算
 head:

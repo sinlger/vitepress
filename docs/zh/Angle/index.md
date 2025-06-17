@@ -7,7 +7,7 @@ breadcrumb:
       linkText: 首页
 
   - - link: /Angle/indexindex
-      linkText: 角度转换
+      linkText: 角度换算
   - - link: /Angle/index
       linkText: 角度单位换算
 head:

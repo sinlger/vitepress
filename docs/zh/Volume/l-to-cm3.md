@@ -6,9 +6,9 @@ breadcrumb:
   - - link: /
       linkText: 首页
   - - link: /Volume/index
-      linkText: 体积单位转换
+      linkText: 体积单位换算
   - - link: /Volume/l-to-cm3
-      linkText: 升到立方厘米转换
+      linkText: 升到立方厘米换算
 head:
   - - meta
     - charset: utf-8
@@ -20,7 +20,7 @@ head:
       content: 升,立方厘米,单位换算,l,cm3
 ---
 
-# 升(l) 到 立方厘米(cm³) 转换
+# 升(l) 到 立方厘米(cm³) 换算
 
 <script setup>
 import { onMounted, reactive, inject ,ref  } from 'vue'
@@ -58,7 +58,7 @@ const convertHandler = (e) => {
     <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="请输入升数值" />
   </n-form-item>
   <n-form-item>
-    <n-button type="primary" style="width:100%" @click="convertHandler">转换</n-button>
+    <n-button type="primary" style="width:100%" @click="convertHandler">换算</n-button>
   </n-form-item>
 </n-form>
 <n-card embedded :bordered="false" hoverable>

@@ -7,7 +7,7 @@ breadcrumb:
       linkText: 首页
 
   - - link: /Area/index
-      linkText: 面积转换
+      linkText: 面积换算
   - - link: /Area/Acre-to-Hectare
       linkText: 英亩到公顷
 head:

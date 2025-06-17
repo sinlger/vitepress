@@ -8,7 +8,7 @@ breadcrumb:
   - - link: /Mass/index
       linkText: 质量换算
   - - link: /Mass/index
-      linkText: 质量转换
+      linkText: 质量换算
   - - link: /Mass/oz-to-mt
       linkText: 盎司到公吨
 head:

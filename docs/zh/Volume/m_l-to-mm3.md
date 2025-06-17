@@ -6,9 +6,9 @@ breadcrumb:
   - - link: /
       linkText: 首页
   - - link: /Volume/index
-      linkText: 体积单位转换
+      linkText: 体积单位换算
   - - link: /Volume/m_l-to-mm3
-      linkText: 兆升到立方毫米转换
+      linkText: 兆升到立方毫米换算
 head:
   - - meta
     - charset: utf-8
@@ -20,7 +20,7 @@ head:
       content: 兆升,立方毫米,单位换算,Ml,mm3
 ---
 
-# 兆升(Ml) 到 立方毫米(mm³) 转换
+# 兆升(Ml) 到 立方毫米(mm³) 换算
 
 <script setup>
 import { onMounted, reactive, inject ,ref  } from 'vue'
@@ -58,7 +58,7 @@ const convertHandler = (e) => {
     <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="请输入兆升数值" />
   </n-form-item>
   <n-form-item>
-    <n-button type="primary" style="width:100%" @click="convertHandler">转换</n-button>
+    <n-button type="primary" style="width:100%" @click="convertHandler">换算</n-button>
   </n-form-item>
 </n-form>
 <n-card embedded :bordered="false" hoverable>
