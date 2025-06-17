@@ -7,6 +7,8 @@ breadcrumb:
       linkText: 首页
   - - link: /Angle/
       linkText: 角度换算
+  - - link: /Angle/index
+      linkText: 角度转换
   - - link: /Angle/rad-to-grad
       linkText: 弧度 (rad) 到 梯度 (grad) 换算
 head:

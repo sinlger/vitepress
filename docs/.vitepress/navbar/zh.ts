@@ -6,19 +6,19 @@ export const zhNav: DefaultTheme.NavItem[] = [
   {
     text: '换算工具',
     items: [
-      { text: '温度换算', link: '/Temperature/' },
+      { text: '温度换算', link: '/Temperature/index' },
       {
         text: '时间换算',
-        link: '/Time/'
+        link: '/Time/index'
       }, {
         text: '长度换算',
-        link: '/Length/'
+        link: '/Length/index'
       }, {
         text: '面积换算',
-        link: '/Area/'
+        link: '/Area/index'
       }, {
         text: '重量换算',
-        link: '/Mass/'
+        link: '/Mass/index'
       }]
   },
   // { text: '博客', link: '/blog/' },

@@ -8,6 +8,8 @@ breadcrumb:
   - - link: /Acceleration/
       linkText: 加速度换算
   - - link: /Acceleration/index
+      linkText: 加速度转换
+  - - link: /Acceleration/index
       linkText: 加速度单位换算
 head:
   - - meta

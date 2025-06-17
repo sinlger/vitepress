@@ -11,6 +11,8 @@ breadcrumb:
       linkText: 体积单位单位换算
 head:
   - - meta
+    - charset: utf-8
+  - - meta
     - name: description
       content: 体积单位换算指南，涵盖公制与英制系统，包含立方毫米、升、加仑等常见单位对照表及科学实践应用解析，帮助您快速掌握单位之间的换算方法。
   - - meta
@@ -24,7 +26,7 @@ head:
 import { onMounted, reactive, inject ,ref  } from 'vue'
 import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage ,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
-import { Force } from '../../files';
+import { Volume } from '../../files';
 const convert = inject('convert')
 const options =  [
   { "label": "立方毫米 (mm³)", "value": "mm3" },

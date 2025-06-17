@@ -7,6 +7,8 @@ breadcrumb:
       linkText: 首页
   - - link: /Mass/
       linkText: 质量换算
+  - - link: /Mass/index
+      linkText: 质量转换
   - - link: /Mass/oz-to-mcg
       linkText: 盎司到微克
 head:
