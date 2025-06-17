@@ -6,16 +6,16 @@ breadcrumb:
   - - link: /
       linkText: 首页
   - - link: /Time/
-      linkText: 时间转换
+      linkText: 时间换算
   - - link: /Time/Second-to-Minute
       linkText: 秒到分钟
 head:
   - - meta
     - name: description
-      content: "秒 (s) 到 分钟 (min) 的时间单位换算指南。了解如何通过公式 s ÷ 60 转换为分钟。"
+      content: "秒 (s) 到 分钟 (min) 的时间单位换算指南。了解如何通过公式 s ÷ 60 换算为分钟。"
   - - meta
     - name: keywords
-      content: "时间, 单位转换, 秒, 分钟, s, min, 秒到分钟, 时间转换指南"
+      content: "时间, 单位换算, 秒, 分钟, s, min, 秒到分钟, 时间换算指南"
 ---
 # 秒 (s) 到 分钟 (min) 的换算
 
@@ -48,7 +48,7 @@ const convertHandler = () => {
     <n-input-number v-model:value="form.number" placeholder="输入秒" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="primary" @click="convertHandler" block>转换</n-button>
+    <n-button type="primary" @click="convertHandler" block>换算</n-button>
   </n-form-item>
 </n-form>
 
@@ -60,7 +60,7 @@ const convertHandler = () => {
 
 ## 公式
 
-从 **秒 (s)** 转换到 **分钟 (min)** 的公式为：
+从 **秒 (s)** 换算到 **分钟 (min)** 的公式为：
 $$ min = \frac{s}{60} $$
 
 ### 示例

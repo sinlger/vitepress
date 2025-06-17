@@ -2,7 +2,7 @@ import { DefaultTheme } from 'vitepress'
 export const zhSidebar: DefaultTheme.Sidebar = {
   '/': [
     // {
-    //   text: '数学转换器',
+    //   text: '数学换算器',
     //   collapsed: false,
     //   items: [{
     //     text: '普通数学',
@@ -13,30 +13,30 @@ export const zhSidebar: DefaultTheme.Sidebar = {
     //   }]
     // },
     {
-      text: '进制转换器',
+      text: '进制换算器',
       collapsed: false,
       items: []
     },
     {
-      text: '时间转换器',
+      text: '时间换算器',
       collapsed: false,
       items: []
     },
     {
-      text: '面积转换器',
+      text: '面积换算器',
       collapsed: false,
       items: []
     },
     {
-      text: '温度转换器',
+      text: '温度换算器',
       collapsed: false,
       items: []
     },{
-      text: '重量转换器',
+      text: '重量换算器',
       collapsed: false,
       items: []
     },{
-      text: '长度转换器',
+      text: '长度换算器',
       collapsed: false,
       items: []
     },

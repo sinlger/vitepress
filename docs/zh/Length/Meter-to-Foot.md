@@ -6,16 +6,16 @@ breadcrumb:
   - - link: /
       linkText: 首页
   - - link: /Length/
-      linkText: 长度转换
+      linkText: 长度换算
   - - link: /Length/Meter-to-Foot
       linkText: 米到英尺
 head:
   - - meta
     - name: description
-      content: "米 (m) 到英尺 (ft) 的长度单位换算指南。了解如何通过公式 ft = m × 3.28084 转换为英尺。"
+      content: "米 (m) 到英尺 (ft) 的长度单位换算指南。了解如何通过公式 ft = m × 3.28084 换算为英尺。"
   - - meta
     - name: keywords
-      content: "长度, 单位转换, 米, 英尺, m, ft, 米到英尺, 长度转换指南"
+      content: "长度, 单位换算, 米, 英尺, m, ft, 米到英尺, 长度换算指南"
 ---
 # 米 (m) 到 英尺 (ft) 的换算
 ---
@@ -47,7 +47,7 @@ const convertHandler = () => {
     <n-input-number v-model:value="form.number" placeholder="输入米" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="primary" @click="convertHandler" block>转换</n-button>
+    <n-button type="primary" @click="convertHandler" block>换算</n-button>
   </n-form-item>
 </n-form>
 
@@ -79,7 +79,7 @@ const convertHandler = () => {
 
 ## 公式
 
-从 **米 (m)** 转换到 **英尺 (ft)** 的公式为：
+从 **米 (m)** 换算到 **英尺 (ft)** 的公式为：
 $$ ft = m \times 3.28084 $$
 
 ### 示例

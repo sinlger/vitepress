@@ -6,7 +6,7 @@ breadcrumb:
   - - link: /
       linkText: 首页
   - - link: /Mass/
-      linkText: 质量转换
+      linkText: 质量换算
   - - link: /Mass/index
       linkText: 质量单位换算
 head:
@@ -15,7 +15,7 @@ head:
       content: "质量单位换算指南，涵盖克 (g)、千克 (kg)、吨 (t)、磅 (lb)、盎司 (oz) 的详细换算公式与说明。"
   - - meta
     - name: keywords
-      content: "质量, 单位转换, 克, 千克, 吨, 磅, 盎司, 换算公式, 单位换算指南"
+      content: "质量, 单位换算, 克, 千克, 吨, 磅, 盎司, 换算公式, 单位换算指南"
 ---
 # 重量单位换算
 ---
@@ -72,16 +72,16 @@ const convertHandler = (e) => {
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
   <n-form-item label="数值"  path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要转换的数值" />
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数值" />
   </n-form-item>
   <n-form-item label="从" path="from">
     <n-select  size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
   </n-form-item>
   <n-form-item label="到" path="to">
-    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择转换单位" />
+    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
   </n-form-item>
   <n-form-item>
-    <n-button type="primary" style="width:100%" @click="convertHandler">转换</n-button>
+    <n-button type="primary" style="width:100%" @click="convertHandler">换算</n-button>
   </n-form-item>
 </n-form>
 <n-card  embedded :bordered="false" hoverable>

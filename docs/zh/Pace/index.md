@@ -6,13 +6,13 @@ breadcrumb:
   - - link: /
       linkText: 首页
   - - link: /Pace/
-      linkText: 配速单位转换
+      linkText: 配速单位换算
   - - link: /Pace/index
       linkText: 配速单位单位换算
 head:
   - - meta
     - name: description
-      content: 配速单位换算工具和教程，支持秒每米(s/m)、分钟每公里(min/km)、秒每英尺(s/ft)、分钟每英里(min/mi)之间的转换，并提供配速科学训练指南。
+      content: 配速单位换算工具和教程，支持秒每米(s/m)、分钟每公里(min/km)、秒每英尺(s/ft)、分钟每英里(min/mi)之间的换算，并提供配速科学训练指南。
   - - meta
     - name: keywords
       content: 配速换算,配速计算器,pace calculator,min/km,min/mi,s/m,s/ft,马拉松配速,跑步训练,配速表
@@ -66,16 +66,16 @@ const convertHandler = (e) => {
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
   <n-form-item label="数值"  path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要转换的数值" />
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数值" />
   </n-form-item>
   <n-form-item label="从" path="from">
     <n-select  size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
   </n-form-item>
   <n-form-item label="到" path="to">
-    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择转换单位" />
+    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
   </n-form-item>
   <n-form-item>
-    <n-button type="primary" style="width:100%" @click="convertHandler">转换</n-button>
+    <n-button type="primary" style="width:100%" @click="convertHandler">换算</n-button>
   </n-form-item>
 </n-form>
 <n-card  embedded :bordered="false" hoverable>
@@ -84,7 +84,7 @@ const convertHandler = (e) => {
   </div>
 </n-card>
 
-# 配速单位转换表
+# 配速单位换算表
 
 | min/km | s/m  | min/mi | s/ft  | 等效速度 (km/h) |
 |--------|------|--------|-------|-----------------|
@@ -115,8 +115,8 @@ const convertHandler = (e) => {
 
 示例：若配速为5 min/km，则速度=12 km/h（因60÷5=12）。
 
-## 二、单位转换的物理原理
-配速转换依赖距离单位的换算关系：
+## 二、单位换算的物理原理
+配速换算依赖距离单位的换算关系：
 - 公里与英里：1 mi ≈ 1.609 km → 配速比 min/km : min/mi ≈ 1 : 1.609
 - 米与英尺：1 ft = 0.3048 m → 配速比 s/m : s/ft ≈ 1 : 3.281
 

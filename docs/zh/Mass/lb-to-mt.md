@@ -6,7 +6,7 @@ breadcrumb:
   - - link: /
       linkText: 首页
   - - link: /Mass/
-      linkText: 质量转换
+      linkText: 质量换算
   - - link: /Mass/lb-to-mt
       linkText: 磅到公吨
 head:
@@ -15,7 +15,7 @@ head:
       content: "质量单位换算指南，涵盖磅 (lb) 到公吨 (mt) 的详细换算公式与说明。"
   - - meta
     - name: keywords
-      content: "质量, 单位转换, 磅, 公吨, lb, mt, 磅到公吨, 质量转换指南"
+      content: "质量, 单位换算, 磅, 公吨, lb, mt, 磅到公吨, 质量换算指南"
 ---
 # 磅 (lb) 到 公吨 (mt) 的换算
 ---
@@ -47,7 +47,7 @@ const convertHandler = () => {
     <n-input-number v-model:value="form.number" placeholder="输入磅" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="primary" @click="convertHandler" block>转换</n-button>
+    <n-button type="primary" @click="convertHandler" block>换算</n-button>
   </n-form-item>
 </n-form>
 
@@ -59,7 +59,7 @@ const convertHandler = () => {
 
 ## 公式
 
-从 **磅 (lb)** 转换到 **公吨 (mt)** 的公式为：
+从 **磅 (lb)** 换算到 **公吨 (mt)** 的公式为：
 $$ mt = lb \times 0.00045359237 $$
 
 ## 磅到公吨换算指南

@@ -6,7 +6,7 @@ breadcrumb:
   - - link: /
       linkText: 首页
   - - link: /Power/
-      linkText: 功率转换
+      linkText: 功率换算
   - - link: /Power/Btu_s-to-GW
       linkText: 英热单位每秒转吉瓦
 head:
@@ -15,7 +15,7 @@ head:
       content: "提供英热单位每秒 (Btu/s) 到吉瓦 (GW) 的单位换算公式及实际应用场景。"
   - - meta
     - name: keywords
-      content: "英热单位每秒转吉瓦,Btu/s到GW换算,功率单位转换公式,功率单位换算工具,大型能源与暖通设施功率单位"
+      content: "英热单位每秒转吉瓦,Btu/s到GW换算,功率单位换算公式,功率单位换算工具,大型能源与暖通设施功率单位"
 ---
 # 英热单位每秒 (Btu/s) 到吉瓦 (GW) 换算
 
@@ -66,16 +66,16 @@ const convertHandler = (e) => {
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
   <n-form-item label="数值"  path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要转换的数值" />
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数值" />
   </n-form-item>
   <n-form-item label="从" path="from">
     <n-select  size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
   </n-form-item>
   <n-form-item label="到" path="to">
-    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择转换单位" />
+    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
   </n-form-item>
   <n-form-item>
-    <n-button type="primary" style="width:100%" @click="convertHandler">转换</n-button>
+    <n-button type="primary" style="width:100%" @click="convertHandler">换算</n-button>
   </n-form-item>
 </n-form>
 <n-card  embedded :bordered="false" hoverable>
@@ -91,12 +91,12 @@ const convertHandler = (e) => {
 ## 生活中的应用示例
 
 - **大型光伏电站发电能力分析**：如 10 GW 电站 ≈ 9,478,171.2 Btu/s。
-- **工业加热设备功率匹配**：用于将美标 Btu/s 设备功率转换为国际标准 GW 进行能耗统计。
+- **工业加热设备功率匹配**：用于将美标 Btu/s 设备功率换算为国际标准 GW 进行能耗统计。
 - **跨国电网调度管理**：工程师在设计国家电网时需进行 Btu/s 与 GW 的互换计算。
 
 ## 使用建议
 
-- **跨标准能源系统设计**：适用于从北美标准（Btu/s）到国际标准（GW）的能量转换计算。
+- **跨标准能源系统设计**：适用于从北美标准（Btu/s）到国际标准（GW）的能量换算计算。
 - **科学计算**：使用国际单位制（瓦特 W 或吉瓦 GW），便于统一标准。
 
 ## 相关连接

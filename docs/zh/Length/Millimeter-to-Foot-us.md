@@ -6,16 +6,16 @@ breadcrumb:
   - - link: /
       linkText: 首页
   - - link: /Length/
-      linkText: 长度转换
+      linkText: 长度换算
   - - link: /Length/Millimeter-to-Foot-us
       linkText: 毫米到英尺-us
 head:
   - - meta
     - name: description
-      content: "毫米 (mm) 到美制英尺 (ft-us) 的长度单位换算指南。了解如何通过公式 ft-us = mm × 0.0032808 转换为美制英尺。"
+      content: "毫米 (mm) 到美制英尺 (ft-us) 的长度单位换算指南。了解如何通过公式 ft-us = mm × 0.0032808 换算为美制英尺。"
   - - meta
     - name: keywords
-      content: "长度, 单位转换, 毫米, 美制英尺, mm, ft-us, 毫米到美制英尺, 长度转换指南"
+      content: "长度, 单位换算, 毫米, 美制英尺, mm, ft-us, 毫米到美制英尺, 长度换算指南"
 ---
 # 毫米 (mm) 到 美制英尺 (ft-us) 的换算
 ---
@@ -47,7 +47,7 @@ const convertHandler = () => {
     <n-input-number v-model:value="form.number" placeholder="输入毫米" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="primary" @click="convertHandler" block>转换</n-button>
+    <n-button type="primary" @click="convertHandler" block>换算</n-button>
   </n-form-item>
 </n-form>
 
@@ -79,7 +79,7 @@ const convertHandler = () => {
 
 ## 公式
 
-从 **毫米 (mm)** 转换到 **美制英尺 (ft-us)** 的公式为：
+从 **毫米 (mm)** 换算到 **美制英尺 (ft-us)** 的公式为：
 $$ ft-us = mm \times 0.0032808 $$
 
 ### 示例

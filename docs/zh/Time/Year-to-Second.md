@@ -6,16 +6,16 @@ breadcrumb:
   - - link: /
       linkText: 首页
   - - link: /Time/
-      linkText: 时间转换
+      linkText: 时间换算
   - - link: /Time/Year-to-Second
       linkText: 年到秒
 head:
   - - meta
     - name: description
-      content: "年 (year) 到 秒 (s) 的时间单位换算指南。了解如何通过公式 year × 31536000 转换为秒。"
+      content: "年 (year) 到 秒 (s) 的时间单位换算指南。了解如何通过公式 year × 31536000 换算为秒。"
   - - meta
     - name: keywords
-      content: "时间, 单位转换, 年, 秒, year, s, 年到秒, 时间转换指南"
+      content: "时间, 单位换算, 年, 秒, year, s, 年到秒, 时间换算指南"
 ---
 # 年 (year) 到 秒 (s) 的换算
 
@@ -48,7 +48,7 @@ const convertHandler = () => {
     <n-input-number v-model:value="form.number" placeholder="输入年数" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="primary" @click="convertHandler" block>转换</n-button>
+    <n-button type="primary" @click="convertHandler" block>换算</n-button>
   </n-form-item>
 </n-form>
 
@@ -60,7 +60,7 @@ const convertHandler = () => {
 
 ## 公式
 
-从 **年** 转换到 **秒** 的公式为：
+从 **年** 换算到 **秒** 的公式为：
 $$ s = year \times 31536000 $$
 
 ### 示例

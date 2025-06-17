@@ -6,16 +6,16 @@ breadcrumb:
   - - link: /
       linkText: 首页
   - - link: /Time/
-      linkText: 时间转换
+      linkText: 时间换算
   - - link: /Time/Week-to-Hour
       linkText: 周到小时
 head:
   - - meta
     - name: description
-      content: "周 (week) 到 小时 (h) 的时间单位换算指南。了解如何通过公式 week × 168 转换为小时。"
+      content: "周 (week) 到 小时 (h) 的时间单位换算指南。了解如何通过公式 week × 168 换算为小时。"
   - - meta
     - name: keywords
-      content: "时间, 单位转换, 周, 小时, week, h, 周到小时, 时间转换指南"
+      content: "时间, 单位换算, 周, 小时, week, h, 周到小时, 时间换算指南"
 ---
 # 周 (week) 到 小时 (h) 的换算
 
@@ -48,7 +48,7 @@ const convertHandler = () => {
     <n-input-number v-model:value="form.number" placeholder="输入周" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="primary" @click="convertHandler" block>转换</n-button>
+    <n-button type="primary" @click="convertHandler" block>换算</n-button>
   </n-form-item>
 </n-form>
 
@@ -60,7 +60,7 @@ const convertHandler = () => {
 
 ## 公式
 
-从 **周 (week)** 转换到 **小时 (h)** 的公式为：
+从 **周 (week)** 换算到 **小时 (h)** 的公式为：
 $$ h = week \times 168 $$
 
 ### 示例

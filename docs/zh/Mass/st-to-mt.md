@@ -6,7 +6,7 @@ breadcrumb:
   - - link: /
       linkText: 首页
   - - link: /Mass/
-      linkText: 质量转换
+      linkText: 质量换算
   - - link: /Mass/st-to-mt
       linkText: 英石到公吨
 head:
@@ -15,7 +15,7 @@ head:
       content: "质量单位换算指南，涵盖英石 (st) 到公吨 (mt) 的详细换算公式与说明。"
   - - meta
     - name: keywords
-      content: "质量, 单位转换, 英石, 公吨, st, mt, 英石到公吨, 质量转换指南"
+      content: "质量, 单位换算, 英石, 公吨, st, mt, 英石到公吨, 质量换算指南"
 ---
 # 英石 (st) 到 公吨 (mt) 的换算
 ---
@@ -47,7 +47,7 @@ const convertHandler = () => {
     <n-input-number v-model:value="form.number" placeholder="输入英石" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="primary" @click="convertHandler" block>转换</n-button>
+    <n-button type="primary" @click="convertHandler" block>换算</n-button>
   </n-form-item>
 </n-form>
 
@@ -59,7 +59,7 @@ const convertHandler = () => {
 
 ## 公式
 
-从 **英石 (st)** 转换到 **公吨 (mt)** 的公式为：
+从 **英石 (st)** 换算到 **公吨 (mt)** 的公式为：
 $$ mt = st \times 0.00635029318 $$
 
 ## 英石到公吨换算指南

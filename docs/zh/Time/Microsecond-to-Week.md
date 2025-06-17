@@ -6,16 +6,16 @@ breadcrumb:
   - - link: /
       linkText: 首页
   - - link: /Time/
-      linkText: 时间转换
+      linkText: 时间换算
   - - link: /Time/Microsecond-to-Week
       linkText: 微秒到周
 head:
   - - meta
     - name: description
-      content: "微秒 (μs) 到 周 (week) 的时间单位换算指南。了解如何通过公式 μs ÷ 604,800,000,000 转换为周。"
+      content: "微秒 (μs) 到 周 (week) 的时间单位换算指南。了解如何通过公式 μs ÷ 604,800,000,000 换算为周。"
   - - meta
     - name: keywords
-      content: "时间, 单位转换, 微秒, 周, μs, week, 微秒到周, 时间转换指南"
+      content: "时间, 单位换算, 微秒, 周, μs, week, 微秒到周, 时间换算指南"
 ---
 # 微秒 (μs) 到 周 (week) 的换算
 
@@ -74,16 +74,16 @@ const clearHistory = () => {
     <n-input-number v-model:value="form.number" placeholder="输入微秒" style="width: 100%" :show-button="true" />
   </n-form-item>
   <n-form-item>
-    <n-button type="primary" @click="convertHandler" block>转换</n-button>
+    <n-button type="primary" @click="convertHandler" block>换算</n-button>
   </n-form-item>
 </n-form>
 
 <n-card title="换算结果" :bordered="false" :hoverable="true">
   <div v-if="form.result" class="result-display">{{ form.result }}</div>
-  <div v-else class="no-result">等待转换结果...</div>
+  <div v-else class="no-result">等待换算结果...</div>
 </n-card>
 
-<n-card title="转换历史" :bordered="false" :hoverable="true" v-if="form.history.length > 0">
+<n-card title="换算历史" :bordered="false" :hoverable="true" v-if="form.history.length > 0">
   <n-list>
     <n-list-item v-for="item in form.history" :key="item.id">
       <div class="history-item">
@@ -98,7 +98,7 @@ const clearHistory = () => {
 
 ## 公式
 
-从 **微秒 (μs)** 转换到 **周 (week)** 的公式为：
+从 **微秒 (μs)** 换算到 **周 (week)** 的公式为：
 $$ week = \frac{\mu s}{6.048 \times 10^{11}} $$
 或
 $$ week = \mu s \times 1.6534391534391535 \times 10^{-12} $$

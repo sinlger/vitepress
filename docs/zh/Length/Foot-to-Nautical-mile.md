@@ -6,16 +6,16 @@ breadcrumb:
   - - link: /
       linkText: 首页
   - - link: /Length/
-      linkText: 长度转换
+      linkText: 长度换算
   - - link: /Length/Foot-to-Nautical-mile
       linkText: 英尺到海里
 head:
   - - meta
     - name: description
-      content: "英尺 (ft) 到海里 (nMi) 的长度单位换算指南。了解如何通过公式 nMi = ft × 0.00016458 转换为海里。"
+      content: "英尺 (ft) 到海里 (nMi) 的长度单位换算指南。了解如何通过公式 nMi = ft × 0.00016458 换算为海里。"
   - - meta
     - name: keywords
-      content: "长度, 单位转换, 英尺, 海里, ft, nMi, 英尺到海里, 长度转换指南"
+      content: "长度, 单位换算, 英尺, 海里, ft, nMi, 英尺到海里, 长度换算指南"
 ---
 # 英尺 (ft) 到 海里 (nMi) 的换算
 ---
@@ -47,7 +47,7 @@ const convertHandler = () => {
     <n-input-number v-model:value="form.number" placeholder="输入英尺" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="primary" @click="convertHandler" block>转换</n-button>
+    <n-button type="primary" @click="convertHandler" block>换算</n-button>
   </n-form-item>
 </n-form>
 
@@ -79,7 +79,7 @@ const convertHandler = () => {
 
 ## 公式
 
-从 **英尺 (ft)** 转换到 **海里 (nMi)** 的公式为：
+从 **英尺 (ft)** 换算到 **海里 (nMi)** 的公式为：
 $$ nMi = ft \times 0.00016458 $$
 
 ### 示例

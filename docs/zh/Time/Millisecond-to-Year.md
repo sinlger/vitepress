@@ -6,16 +6,16 @@ breadcrumb:
   - - link: /
       linkText: 首页
   - - link: /Time/
-      linkText: 时间转换
+      linkText: 时间换算
   - - link: /Time/Millisecond-to-Year
       linkText: 毫秒到年
 head:
   - - meta
     - name: description
-      content: "毫秒 (ms) 到 年 (year) 的时间单位换算指南。了解如何通过公式 ms ÷ 31,536,000,000 转换为年。"
+      content: "毫秒 (ms) 到 年 (year) 的时间单位换算指南。了解如何通过公式 ms ÷ 31,536,000,000 换算为年。"
   - - meta
     - name: keywords
-      content: "时间, 单位转换, 毫秒, 年, ms, year, 毫秒到年, 时间转换指南"
+      content: "时间, 单位换算, 毫秒, 年, ms, year, 毫秒到年, 时间换算指南"
 ---
 # 毫秒 (ms) 到 年 (year) 的换算
 
@@ -48,7 +48,7 @@ const convertHandler = () => {
     <n-input-number v-model:value="form.number" placeholder="输入毫秒" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="primary" @click="convertHandler" block>转换</n-button>
+    <n-button type="primary" @click="convertHandler" block>换算</n-button>
   </n-form-item>
 </n-form>
 
@@ -60,7 +60,7 @@ const convertHandler = () => {
 
 ## 公式
 
-从 **毫秒 (ms)** 转换到 **年 (year)** 的公式为：
+从 **毫秒 (ms)** 换算到 **年 (year)** 的公式为：
 $$ year = \frac{ms}{3.1536 \times 10^{10}} $$
 
 ### 示例

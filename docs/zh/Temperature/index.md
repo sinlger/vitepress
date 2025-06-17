@@ -6,18 +6,18 @@ breadcrumb:
   - - link: /
       linkText: 首页
   - - link: /Temperature/
-      linkText: 温度转换
+      linkText: 温度换算
   - - link: /Temperature/index
       linkText: 温度单位换算
 head:
   - - meta
     - name: description
-      content: "温度单位转换指南。了解如何在摄氏度、华氏度、开尔文和兰金之间进行转换。"
+      content: "温度单位换算指南。了解如何在摄氏度、华氏度、开尔文和兰金之间进行换算。"
   - - meta
     - name: keywords
-      content: "温度, 单位转换, 摄氏度, 华氏度, 开尔文, 兰金, 温度转换指南"
+      content: "温度, 单位换算, 摄氏度, 华氏度, 开尔文, 兰金, 温度换算指南"
 ---
-# 温度单位转换
+# 温度单位换算
 ---
 <script setup>
 import { onMounted, reactive, inject ,ref  } from 'vue'
@@ -67,16 +67,16 @@ const convertHandler = (e) => {
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
   <n-form-item label="数值"  path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要转换的数值" />
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数值" />
   </n-form-item>
   <n-form-item label="从" path="from">
     <n-select  size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
   </n-form-item>
   <n-form-item label="到" path="to">
-    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择转换单位" />
+    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
   </n-form-item>
   <n-form-item>
-    <n-button type="primary" style="width:100%" @click="convertHandler">转换</n-button>
+    <n-button type="primary" style="width:100%" @click="convertHandler">换算</n-button>
   </n-form-item>
 </n-form>
 <n-card  embedded :bordered="false" hoverable>

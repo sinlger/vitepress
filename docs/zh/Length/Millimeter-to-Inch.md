@@ -6,16 +6,16 @@ breadcrumb:
   - - link: /
       linkText: 首页
   - - link: /Length/
-      linkText: 长度转换
+      linkText: 长度换算
   - - link: /Length/Millimeter-to-Inch
       linkText: 毫米到英寸
 head:
   - - meta
     - name: description
-      content: "毫米 (mm) 到英寸 (in) 的长度单位换算指南。了解如何通过公式 in = mm × 0.03937 转换为英寸。"
+      content: "毫米 (mm) 到英寸 (in) 的长度单位换算指南。了解如何通过公式 in = mm × 0.03937 换算为英寸。"
   - - meta
     - name: keywords
-      content: "长度, 单位转换, 毫米, 英寸, mm, in, 毫米到英寸, 长度转换指南"
+      content: "长度, 单位换算, 毫米, 英寸, mm, in, 毫米到英寸, 长度换算指南"
 ---
 # 毫米 (mm) 到 英寸 (in) 的换算
 ---
@@ -47,7 +47,7 @@ const convertHandler = () => {
     <n-input-number v-model:value="form.number" placeholder="输入毫米" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="primary" @click="convertHandler" block>转换</n-button>
+    <n-button type="primary" @click="convertHandler" block>换算</n-button>
   </n-form-item>
 </n-form>
 
@@ -70,7 +70,7 @@ const convertHandler = () => {
   - 示例：某手机屏幕尺寸为 6.5in（即 165.1mm），但其摄像头模组厚度为 8mm。
 
 - **建筑与工程**：
-  - 施工图纸上常用毫米标注详细尺寸，但在国际项目中可能需要转换为英寸。
+  - 施工图纸上常用毫米标注详细尺寸，但在国际项目中可能需要换算为英寸。
   - 示例：某建筑物的墙体厚度为 200mm，等于 7.874in。
 
 - **教育和实验**：
@@ -79,7 +79,7 @@ const convertHandler = () => {
 
 ## 公式
 
-从 **毫米 (mm)** 转换到 **英寸 (in)** 的公式为：
+从 **毫米 (mm)** 换算到 **英寸 (in)** 的公式为：
 $$ in = mm \times 0.03937 $$
 
 ### 示例

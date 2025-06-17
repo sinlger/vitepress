@@ -6,7 +6,7 @@ breadcrumb:
   - - link: /
       linkText: 首页
   - - link: /Mass/
-      linkText: 质量转换
+      linkText: 质量换算
   - - link: /Mass/mcg-to-t
       linkText: 微克到吨
 head:
@@ -15,7 +15,7 @@ head:
       content: "质量单位换算指南，涵盖微克 (mcg) 到吨 (t) 的详细换算公式与说明。"
   - - meta
     - name: keywords
-      content: "质量, 单位转换, 微克, 吨, mcg, t, 微克到吨, 质量转换指南"
+      content: "质量, 单位换算, 微克, 吨, mcg, t, 微克到吨, 质量换算指南"
 ---
 # 微克 (mcg) 到 吨 (t) 的换算
 ---
@@ -47,7 +47,7 @@ const convertHandler = () => {
     <n-input-number v-model:value="form.number" placeholder="输入微克" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="primary" @click="convertHandler" block>转换</n-button>
+    <n-button type="primary" @click="convertHandler" block>换算</n-button>
   </n-form-item>
 </n-form>
 
@@ -59,7 +59,7 @@ const convertHandler = () => {
 
 ## 公式
 
-从 **微克 (mcg)** 转换到 **吨 (t)** 的公式为：
+从 **微克 (mcg)** 换算到 **吨 (t)** 的公式为：
 $$ t = mcg \div 1000000000000 $$
 
 ## 微克到吨换算指南

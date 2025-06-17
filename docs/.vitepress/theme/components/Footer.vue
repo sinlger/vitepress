@@ -1,5 +1,5 @@
 <template>
-  <h1 style="font-size: 24px;font-weight: bold;"> 其他单位转换方法 </h1>
+  <h1 style="font-size: 24px;font-weight: bold;"> 其他单位换算方法 </h1>
   <NConfigProvider  :theme="theme">
     <n-card :bordered="false">
       <n-grid x-gap="12" :cols="4">

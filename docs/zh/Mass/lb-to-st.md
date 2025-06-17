@@ -6,7 +6,7 @@ breadcrumb:
   - - link: /
       linkText: 首页
   - - link: /Mass/
-      linkText: 质量转换
+      linkText: 质量换算
   - - link: /Mass/lb-to-st
       linkText: 磅到英石
 head:
@@ -15,7 +15,7 @@ head:
       content: "质量单位换算指南，涵盖磅 (lb) 到英石 (st) 的详细换算公式与说明。"
   - - meta
     - name: keywords
-      content: "质量, 单位转换, 磅, 英石, lb, st, 磅到英石, 质量转换指南"
+      content: "质量, 单位换算, 磅, 英石, lb, st, 磅到英石, 质量换算指南"
 ---
 # 磅 (lb) 到 英石 (st) 的换算
 ---
@@ -47,7 +47,7 @@ const convertHandler = () => {
     <n-input-number v-model:value="form.number" placeholder="输入磅" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="primary" @click="convertHandler" block>转换</n-button>
+    <n-button type="primary" @click="convertHandler" block>换算</n-button>
   </n-form-item>
 </n-form>
 
@@ -59,7 +59,7 @@ const convertHandler = () => {
 
 ## 公式
 
-从 **磅 (lb)** 转换到 **英石 (st)** 的公式为：
+从 **磅 (lb)** 换算到 **英石 (st)** 的公式为：
 $$ st = lb \times 0.0714286 $$
 
 ## 磅到英石换算指南

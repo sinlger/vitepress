@@ -6,16 +6,16 @@ breadcrumb:
   - - link: /
       linkText: 首页
   - - link: /Time/
-      linkText: 时间转换
+      linkText: 时间换算
   - - link: /Time/Minute-to-Year
       linkText: 分钟到年
 head:
   - - meta
     - name: description
-      content: "分钟 (min) 到 年 (year) 的时间单位换算指南。了解如何通过公式 min ÷ 525,600 转换为年。"
+      content: "分钟 (min) 到 年 (year) 的时间单位换算指南。了解如何通过公式 min ÷ 525,600 换算为年。"
   - - meta
     - name: keywords
-      content: "时间, 单位转换, 分钟, 年, min, year, 分钟到年, 时间转换指南"
+      content: "时间, 单位换算, 分钟, 年, min, year, 分钟到年, 时间换算指南"
 ---
 # 分钟 (min) 到 年 (year) 的换算
 
@@ -48,7 +48,7 @@ const convertHandler = () => {
     <n-input-number v-model:value="form.number" placeholder="输入分钟" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="primary" @click="convertHandler" block>转换</n-button>
+    <n-button type="primary" @click="convertHandler" block>换算</n-button>
   </n-form-item>
 </n-form>
 
@@ -60,7 +60,7 @@ const convertHandler = () => {
 
 ## 公式
 
-从 **分钟 (min)** 转换到 **年 (year)** 的公式为：
+从 **分钟 (min)** 换算到 **年 (year)** 的公式为：
 $$ year = \frac{min}{525600} $$
 
 ### 示例

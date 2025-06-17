@@ -6,7 +6,7 @@ breadcrumb:
   - - link: /
       linkText: 首页
   - - link: /Power/
-      linkText: 功率转换
+      linkText: 功率换算
   - - link: /Power/MW-to-mW
       linkText: 兆瓦转毫瓦
 head:
@@ -15,7 +15,7 @@ head:
       content: "提供兆瓦 (MW) 到毫瓦 (mW) 的单位换算公式及实际应用场景。"
   - - meta
     - name: keywords
-      content: "兆瓦转毫瓦,MW到mW换算,功率单位转换公式,功率单位换算工具,大型能源设施到小功率设备"
+      content: "兆瓦转毫瓦,MW到mW换算,功率单位换算公式,功率单位换算工具,大型能源设施到小功率设备"
 ---
 # 兆瓦 (MW) 到毫瓦 (mW) 换算
 
@@ -66,16 +66,16 @@ const convertHandler = (e) => {
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
   <n-form-item label="数值"  path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要转换的数值" />
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数值" />
   </n-form-item>
   <n-form-item label="从" path="from">
     <n-select  size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
   </n-form-item>
   <n-form-item label="到" path="to">
-    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择转换单位" />
+    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
   </n-form-item>
   <n-form-item>
-    <n-button type="primary" style="width:100%" @click="convertHandler">转换</n-button>
+    <n-button type="primary" style="width:100%" @click="convertHandler">换算</n-button>
   </n-form-item>
 </n-form>
 <n-card  embedded :bordered="false" hoverable>
@@ -96,7 +96,7 @@ const convertHandler = (e) => {
 
 ## 使用建议
 
-- **跨量级能量管理**：适用于从发电站级别（MW）到微型电子器件（mW）的能量转换计算。
+- **跨量级能量管理**：适用于从发电站级别（MW）到微型电子器件（mW）的能量换算计算。
 - **科学计算**：使用国际单位制（瓦特 W），便于统一标准。
 
 ## 相关连接

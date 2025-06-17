@@ -6,16 +6,16 @@ breadcrumb:
   - - link: /
       linkText: 首页
   - - link: /Length/
-      linkText: 长度转换
+      linkText: 长度换算
   - - link: /Length/Meter-to-Fathom
       linkText: 米到英寻
 head:
   - - meta
     - name: description
-      content: "米 (m) 到英寻 (fathom) 的长度单位换算指南。了解如何通过公式 fathom = m × 0.54681 转换为英寻。"
+      content: "米 (m) 到英寻 (fathom) 的长度单位换算指南。了解如何通过公式 fathom = m × 0.54681 换算为英寻。"
   - - meta
     - name: keywords
-      content: "长度, 单位转换, 米, 英寻, m, fathom, 米到英寻, 长度转换指南"
+      content: "长度, 单位换算, 米, 英寻, m, fathom, 米到英寻, 长度换算指南"
 ---
 # 米 (m) 到 英寻 (fathom) 的换算
 ---
@@ -47,7 +47,7 @@ const convertHandler = () => {
     <n-input-number v-model:value="form.number" placeholder="输入米" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="primary" @click="convertHandler" block>转换</n-button>
+    <n-button type="primary" @click="convertHandler" block>换算</n-button>
   </n-form-item>
 </n-form>
 
@@ -79,7 +79,7 @@ const convertHandler = () => {
 
 ## 公式
 
-从 **米 (m)** 转换到 **英寻 (fathom)** 的公式为：
+从 **米 (m)** 换算到 **英寻 (fathom)** 的公式为：
 $$ fathom = m \times 0.54681 $$
 
 ### 示例

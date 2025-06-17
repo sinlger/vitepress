@@ -6,16 +6,16 @@ breadcrumb:
   - - link: /
       linkText: 首页
   - - link: /Length/
-      linkText: 长度转换
+      linkText: 长度换算
   - - link: /Length/Centimeter-to-Yard
       linkText: 厘米到码
 head:
   - - meta
     - name: description
-      content: "厘米 (cm) 到码 (yd) 的长度单位换算指南。了解如何通过公式 yd = cm × 0.010936 转换为码。"
+      content: "厘米 (cm) 到码 (yd) 的长度单位换算指南。了解如何通过公式 yd = cm × 0.010936 换算为码。"
   - - meta
     - name: keywords
-      content: "长度, 单位转换, 厘米, 码, cm, yd, 厘米到码, 长度转换指南"
+      content: "长度, 单位换算, 厘米, 码, cm, yd, 厘米到码, 长度换算指南"
 ---
 # 厘米 (cm) 到 码 (yd) 的换算
 ---
@@ -47,7 +47,7 @@ const convertHandler = () => {
     <n-input-number v-model:value="form.number" placeholder="输入厘米" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="primary" @click="convertHandler" block>转换</n-button>
+    <n-button type="primary" @click="convertHandler" block>换算</n-button>
   </n-form-item>
 </n-form>
 
@@ -74,12 +74,12 @@ const convertHandler = () => {
   - 示例：某机械零件长度为 200cm，等于 2.1872yd。
 
 - **建筑与工程**：
-  - 施工图纸上常用厘米标注详细尺寸，但在国际项目中可能需要将整体尺寸转换为码。
+  - 施工图纸上常用厘米标注详细尺寸，但在国际项目中可能需要将整体尺寸换算为码。
   - 示例：某桥梁护栏高度为 100cm，即 1.0936yd。
 
 ## 公式
 
-从 **厘米 (cm)** 转换到 **码 (yd)** 的公式为：
+从 **厘米 (cm)** 换算到 **码 (yd)** 的公式为：
 $$ yd = cm \times 0.010936 $$
 
 ### 示例

@@ -6,7 +6,7 @@ breadcrumb:
   - - link: /
       linkText: 首页
   - - link: /Mass/
-      linkText: 质量转换
+      linkText: 质量换算
   - - link: /Mass/t-to-oz
       linkText: 吨到盎司
 head:
@@ -15,7 +15,7 @@ head:
       content: "质量单位换算指南，涵盖吨 (t) 到盎司 (oz) 的详细换算公式与说明。"
   - - meta
     - name: keywords
-      content: "质量, 单位转换, 吨, 盎司, t, oz, 吨到盎司, 质量转换指南"
+      content: "质量, 单位换算, 吨, 盎司, t, oz, 吨到盎司, 质量换算指南"
 ---
 # 吨 (t) 到 盎司 (oz) 的换算
 ---
@@ -47,7 +47,7 @@ const convertHandler = () => {
     <n-input-number v-model:value="form.number" placeholder="输入吨" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="primary" @click="convertHandler" block>转换</n-button>
+    <n-button type="primary" @click="convertHandler" block>换算</n-button>
   </n-form-item>
 </n-form>
 
@@ -59,7 +59,7 @@ const convertHandler = () => {
 
 ## 公式
 
-从 **吨 (t)** 转换到 **盎司 (oz)** 的公式为：
+从 **吨 (t)** 换算到 **盎司 (oz)** 的公式为：
 $$ oz = t \times 35274 $$
 
 ## 吨到盎司换算指南

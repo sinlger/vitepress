@@ -6,16 +6,16 @@ breadcrumb:
   - - link: /
       linkText: 首页
   - - link: /Length/
-      linkText: 长度转换
+      linkText: 长度换算
   - - link: /Length/Micrometer-to-Centimeter
       linkText: 微米到厘米
 head:
   - - meta
     - name: description
-      content: "微米 (μm) 到厘米 (cm) 的长度单位换算指南。了解如何通过公式 μm ÷ 10000 转换为厘米。"
+      content: "微米 (μm) 到厘米 (cm) 的长度单位换算指南。了解如何通过公式 μm ÷ 10000 换算为厘米。"
   - - meta
     - name: keywords
-      content: "长度, 单位转换, 微米, 厘米, μm, cm, 微米到厘米, 长度转换指南"
+      content: "长度, 单位换算, 微米, 厘米, μm, cm, 微米到厘米, 长度换算指南"
 ---
 # 微米 (μm) 到 厘米 (cm) 的换算
 ---
@@ -47,7 +47,7 @@ const convertHandler = () => {
     <n-input-number v-model:value="form.number" placeholder="输入微米" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="primary" @click="convertHandler" block>转换</n-button>
+    <n-button type="primary" @click="convertHandler" block>换算</n-button>
   </n-form-item>
 </n-form>
 
@@ -79,7 +79,7 @@ const convertHandler = () => {
 
 ## 公式
 
-从 **微米 (μm)** 转换到 **厘米 (cm)** 的公式为：
+从 **微米 (μm)** 换算到 **厘米 (cm)** 的公式为：
 $$ cm = μm \div 10000 $$
 
 ### 示例

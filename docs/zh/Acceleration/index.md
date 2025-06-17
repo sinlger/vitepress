@@ -6,7 +6,7 @@ breadcrumb:
   - - link: /
       linkText: 首页
   - - link: /Acceleration/
-      linkText: 加速度转换
+      linkText: 加速度换算
   - - link: /Acceleration/index
       linkText: 加速度单位换算
 head:
@@ -15,7 +15,7 @@ head:
       content: "加速度单位换算指南，涵盖标准重力 (g-force)、米每二次方秒 (m/s²) 的详细换算公式与说明。"
   - - meta
     - name: keywords
-      content: "加速度, 单位转换, 标准重力, 米每二次方秒, 换算公式, 单位换算指南"  
+      content: "加速度, 单位换算, 标准重力, 米每二次方秒, 换算公式, 单位换算指南"  
 ---
 
 # 加速度单位换算
@@ -67,16 +67,16 @@ const convertHandler = (e) => {
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
   <n-form-item label="数值"  path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要转换的数值" />
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数值" />
   </n-form-item>
   <n-form-item label="从" path="from">
     <n-select  size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
   </n-form-item>
   <n-form-item label="到" path="to">
-    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择转换单位" />
+    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
   </n-form-item>
   <n-form-item>
-    <n-button type="primary" style="width:100%" @click="convertHandler">转换</n-button>
+    <n-button type="primary" style="width:100%" @click="convertHandler">换算</n-button>
   </n-form-item>
 </n-form>
 <n-card  embedded :bordered="false" hoverable>

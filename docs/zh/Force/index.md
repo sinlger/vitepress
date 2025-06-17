@@ -6,16 +6,16 @@ breadcrumb:
   - - link: /
       linkText: 首页
   - - link: /Force/
-      linkText: 力学单位转换
+      linkText: 力学单位换算
   - - link: /Force/index
       linkText: 力学单位单位换算
 head:
   - - meta
     - name: description
-      content: "力学单位转换指南，涵盖牛顿 (N)、千牛顿 (kN)、磅力 (lbf)、千克力 (kgf) 的详细换算公式与说明。"
+      content: "力学单位换算指南，涵盖牛顿 (N)、千牛顿 (kN)、磅力 (lbf)、千克力 (kgf) 的详细换算公式与说明。"
   - - meta
     - name: keywords
-      content: "力学, 单位转换, 牛顿, 千牛顿, 磅力, 千克力, 换算公式, 力学单位换算指南"
+      content: "力学, 单位换算, 牛顿, 千牛顿, 磅力, 千克力, 换算公式, 力学单位换算指南"
 ---
 
 # 力学单位换算
@@ -67,16 +67,16 @@ const convertHandler = (e) => {
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
   <n-form-item label="数值"  path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要转换的数值" />
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数值" />
   </n-form-item>
   <n-form-item label="从" path="from">
     <n-select  size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
   </n-form-item>
   <n-form-item label="到" path="to">
-    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择转换单位" />
+    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
   </n-form-item>
   <n-form-item>
-    <n-button type="primary" style="width:100%" @click="convertHandler">转换</n-button>
+    <n-button type="primary" style="width:100%" @click="convertHandler">换算</n-button>
   </n-form-item>
 </n-form>
 <n-card  embedded :bordered="false" hoverable>
@@ -86,7 +86,7 @@ const convertHandler = (e) => {
 </n-card>
 
 
-## 力学单位转换表（力值单位）
+## 力学单位换算表（力值单位）
 
 原单位| 目标单位| 换算公式| 示例计算
 ---|---|---|---
@@ -122,9 +122,9 @@ kN| kgf| 1 kN = 101.97 kgf| 2 kN ≈ 203.94 kgf
 - 历史：旧称“公斤力”，1kgf = 1kg物体在地球重力下的受力（≈9.8N）
 - 现状：逐步被牛顿取代，但仍在某些领域使用（如材料硬度测试）
 
-### 二、单位转换的工程意义
+### 二、单位换算的工程意义
 
-- 安全设计：起重机吊重需将kgf转换为kN以确保结构安全
+- 安全设计：起重机吊重需将kgf换算为kN以确保结构安全
 - 设备兼容：进口设备标注lbf时需换算为N校准仪器
 
 ### 三、常见误区澄清

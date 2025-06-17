@@ -6,7 +6,7 @@ breadcrumb:
   - - link: /
       linkText: 首页
   - - link: /Angle/
-      linkText: 角度转换
+      linkText: 角度换算
   - - link: /Angle/index
       linkText: 角度单位换算
 head:
@@ -15,7 +15,7 @@ head:
       content: "角度单位换算指南，涵盖度 (deg)、弧度 (rad)、梯度 (grad)、角分 (arcmin)、角秒 (arcsec) 的详细换算公式与说明。"
   - - meta
     - name: keywords
-      content: "角度, 单位转换, 度, 弧度, 梯度, 角分, 角秒, 换算公式, 单位换算指南"  
+      content: "角度, 单位换算, 度, 弧度, 梯度, 角分, 角秒, 换算公式, 单位换算指南"  
 ---
 # 角度单位换算
 ---
@@ -67,16 +67,16 @@ const convertHandler = (e) => {
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
   <n-form-item label="数值"  path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要转换的数值" />
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数值" />
   </n-form-item>
   <n-form-item label="从" path="from">
     <n-select  size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
   </n-form-item>
   <n-form-item label="到" path="to">
-    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择转换单位" />
+    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
   </n-form-item>
   <n-form-item>
-    <n-button type="primary" style="width:100%" @click="convertHandler">转换</n-button>
+    <n-button type="primary" style="width:100%" @click="convertHandler">换算</n-button>
   </n-form-item>
 </n-form>
 <n-card  embedded :bordered="false" hoverable>

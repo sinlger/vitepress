@@ -6,13 +6,13 @@ breadcrumb:
   - - link: /
       linkText: 首页
   - - link: /Torque/
-      linkText: 扭矩单位转换
+      linkText: 扭矩单位换算
   - - link: /Torque/index
       linkText: 扭矩单位单位换算
 head:
   - - meta
     - name: description
-      content: 扭矩单位换算工具和教程，支持牛顿米(Nm)和磅力英尺(lbf·ft)之间的转换，并提供扭矩科学原理和应用场景。
+      content: 扭矩单位换算工具和教程，支持牛顿米(Nm)和磅力英尺(lbf·ft)之间的换算，并提供扭矩科学原理和应用场景。
   - - meta
     - name: keywords
       content: 扭矩换算,扭矩计算器,torque calculator,Nm,lbf·ft,牛顿米,磅力英尺,扭矩扳手,机械工程
@@ -63,16 +63,16 @@ const convertHandler = (e) => {
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
   <n-form-item label="数值"  path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要转换的数值" />
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数值" />
   </n-form-item>
   <n-form-item label="从" path="from">
     <n-select  size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
   </n-form-item>
   <n-form-item label="到" path="to">
-    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择转换单位" />
+    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
   </n-form-item>
   <n-form-item>
-    <n-button type="primary" style="width:100%" @click="convertHandler">转换</n-button>
+    <n-button type="primary" style="width:100%" @click="convertHandler">换算</n-button>
   </n-form-item>
 </n-form>
 <n-card  embedded :bordered="false" hoverable>
@@ -82,7 +82,7 @@ const convertHandler = (e) => {
 </n-card>
 
 
-## 扭矩单位转换表 (Nm ⇄ lbf·ft)
+## 扭矩单位换算表 (Nm ⇄ lbf·ft)
 
 | 牛顿米 (Nm) | 磅力英尺 (lbf·ft) |
 |-------------|-------------------|
@@ -100,7 +100,7 @@ $$ 1 \, \text{Nm} = 0.737562 \, \text{lbf·ft} \$$
 
 $$ 1 \, \text{lbf·ft} = 1.3558 \, \text{Nm} \$$
 
-数据来源：国际标准扭矩转换工具 
+数据来源：国际标准扭矩换算工具 
 
 ## 科普文章：扭矩单位 Nm 与 lbf·ft 的奥秘
 
@@ -126,7 +126,7 @@ $$ T = F \times r $$
 
 北美汽车维修 (如轮胎螺丝扭矩)、工业设备常用此单位 。
 
-### 三、为什么需要单位转换？
+### 三、为什么需要单位换算？
 
 **全球化协作** ：欧洲汽车手册用 Nm，美国工具可能标 lbf·ft，工程师需快速换算。
 
@@ -138,7 +138,7 @@ $$ T = F \times r $$
 
 **扭力扳手** ：机械师必备工具，高精度型号支持双单位显示 。
 
-**在线转换器** ：如 https://unitconver.com/ 可实时计算复杂换算 。
+**在线换算器** ：如 https://unitconver.com/ 可实时计算复杂换算 。
 
 **记忆技巧** ：
 
@@ -152,4 +152,4 @@ $$ T = F \times r $$
 
 ### 总结
 
-掌握 Nm 与 lbf·ft 的转换不仅是技术需求，更是工程安全的保障。建议收藏转换表或使用动态工具应对复杂场景。下次拧螺丝时，不妨想想背后跨越两个世纪的单位统一之战！
+掌握 Nm 与 lbf·ft 的换算不仅是技术需求，更是工程安全的保障。建议收藏换算表或使用动态工具应对复杂场景。下次拧螺丝时，不妨想想背后跨越两个世纪的单位统一之战！

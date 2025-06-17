@@ -6,16 +6,16 @@ breadcrumb:
   - - link: /
       linkText: 首页
   - - link: /Length/
-      linkText: 长度转换
+      linkText: 长度换算
   - - link: /Length/Nanometer-to-Centimeter
       linkText: 纳米到厘米
 head:
   - - meta
     - name: description
-      content: "纳米 (nm) 到厘米 (cm) 的长度单位换算指南。了解如何通过公式 nm ÷ 10000000 转换为厘米。"
+      content: "纳米 (nm) 到厘米 (cm) 的长度单位换算指南。了解如何通过公式 nm ÷ 10000000 换算为厘米。"
   - - meta
     - name: keywords
-      content: "长度, 单位转换, 纳米, 厘米, nm, cm, 纳米到厘米, 长度转换指南"
+      content: "长度, 单位换算, 纳米, 厘米, nm, cm, 纳米到厘米, 长度换算指南"
 ---
 # 纳米 (nm) 到 厘米 (cm) 的换算
 ---
@@ -47,7 +47,7 @@ const convertHandler = () => {
     <n-input-number v-model:value="form.number" placeholder="输入纳米" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="primary" @click="convertHandler" block>转换</n-button>
+    <n-button type="primary" @click="convertHandler" block>换算</n-button>
   </n-form-item>
 </n-form>
 
@@ -79,7 +79,7 @@ const convertHandler = () => {
 
 ## 公式
 
-从 **纳米 (nm)** 转换到 **厘米 (cm)** 的公式为：
+从 **纳米 (nm)** 换算到 **厘米 (cm)** 的公式为：
 $$ cm = nm \div 10000000 $$
 
 ### 示例

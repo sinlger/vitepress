@@ -6,16 +6,16 @@ breadcrumb:
   - - link: /
       linkText: 首页
   - - link: /Length/
-      linkText: 长度转换
+      linkText: 长度换算
   - - link: /Length/Centimeter-to-Inch
       linkText: 厘米到英寸
 head:
   - - meta
     - name: description
-      content: "厘米 (cm) 到英寸 (in) 的长度单位换算指南。了解如何通过公式 in = cm × 0.3937 转换为英寸。"
+      content: "厘米 (cm) 到英寸 (in) 的长度单位换算指南。了解如何通过公式 in = cm × 0.3937 换算为英寸。"
   - - meta
     - name: keywords
-      content: "长度, 单位转换, 厘米, 英寸, cm, in, 厘米到英寸, 长度转换指南"
+      content: "长度, 单位换算, 厘米, 英寸, cm, in, 厘米到英寸, 长度换算指南"
 ---
 # 厘米 (cm) 到 英寸 (in) 的换算
 ---
@@ -47,7 +47,7 @@ const convertHandler = () => {
     <n-input-number v-model:value="form.number" placeholder="输入厘米" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="primary" @click="convertHandler" block>转换</n-button>
+    <n-button type="primary" @click="convertHandler" block>换算</n-button>
   </n-form-item>
 </n-form>
 
@@ -70,7 +70,7 @@ const convertHandler = () => {
   - 示例：某手机屏幕尺寸为 6.5in（即 16.51cm），但其摄像头模组厚度为 0.8cm。
 
 - **建筑与工程**：
-  - 施工图纸上常用厘米标注详细尺寸，但在国际项目中可能需要转换为英寸。
+  - 施工图纸上常用厘米标注详细尺寸，但在国际项目中可能需要换算为英寸。
   - 示例：某建筑物的墙体厚度为 20cm，等于 7.874in。
 
 - **教育和实验**：
@@ -79,7 +79,7 @@ const convertHandler = () => {
 
 ## 公式
 
-从 **厘米 (cm)** 转换到 **英寸 (in)** 的公式为：
+从 **厘米 (cm)** 换算到 **英寸 (in)** 的公式为：
 $$ in = cm \times 0.3937 $$
 
 ### 示例

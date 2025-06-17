@@ -6,7 +6,7 @@ breadcrumb:
   - - link: /
       linkText: 首页
   - - link: /Power/
-      linkText: 功率转换
+      linkText: 功率换算
   - - link: /Power/Btu_s-to-ft-lb_s
       linkText: 英热单位每秒转英尺磅每秒
 head:
@@ -15,7 +15,7 @@ head:
       content: "提供英热单位每秒 (Btu/s) 到英尺・磅每秒 (ft-lb/s) 的单位换算公式及实际应用场景。"
   - - meta
     - name: keywords
-      content: "英热单位每秒转英尺磅每秒,Btu/s到ft-lb/s换算,功率单位转换公式,功率单位换算工具,暖通与机械工程功率单位"
+      content: "英热单位每秒转英尺磅每秒,Btu/s到ft-lb/s换算,功率单位换算公式,功率单位换算工具,暖通与机械工程功率单位"
 ---
 # 英热单位每秒 (Btu/s) 到英尺・磅每秒 (ft-lb/s) 换算
 
@@ -66,16 +66,16 @@ const convertHandler = (e) => {
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
   <n-form-item label="数值"  path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要转换的数值" />
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数值" />
   </n-form-item>
   <n-form-item label="从" path="from">
     <n-select  size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
   </n-form-item>
   <n-form-item label="到" path="to">
-    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择转换单位" />
+    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
   </n-form-item>
   <n-form-item>
-    <n-button type="primary" style="width:100%" @click="convertHandler">转换</n-button>
+    <n-button type="primary" style="width:100%" @click="convertHandler">换算</n-button>
   </n-form-item>
 </n-form>
 <n-card  embedded :bordered="false" hoverable>
@@ -91,12 +91,12 @@ const convertHandler = (e) => {
 ## 生活中的应用示例
 
 - **小型发动机扭矩输出评估**：如割草机引擎功率约为 5–10 ft-lb/s，对应约 6.78–13.56 W 或 0.0092–0.0184 PS。
-- **美制机械系统功率匹配**：用于将暖通设备以 Btu/s 表示的功率转换为 ft-lb/s 进行北美市场设备选型。
+- **美制机械系统功率匹配**：用于将暖通设备以 Btu/s 表示的功率换算为 ft-lb/s 进行北美市场设备选型。
 - **农业与工程机械动力对比**：在设计液压泵或空气压缩机时，需进行 Btu/s 与 ft-lb/s 的互换计算。
 
 ## 使用建议
 
-- **跨标准机械系统分析**：适用于从北美标准（Btu/s）到美制单位（ft-lb/s）的能量转换计算。
+- **跨标准机械系统分析**：适用于从北美标准（Btu/s）到美制单位（ft-lb/s）的能量换算计算。
 - **科学计算**：使用国际单位制（瓦特 W 或千瓦 kW），便于统一标准。
 
 ## 相关连接

@@ -6,7 +6,7 @@ breadcrumb:
   - - link: /
       linkText: 首页
   - - link: /Area/
-      linkText: 面积转换
+      linkText: 面积换算
   - - link: /Area/index
       linkText: 面积单位换算
 head:
@@ -15,7 +15,7 @@ head:
       content: 面积单位换算指南，涵盖平方毫米 (mm²)、平方厘米 (cm²)、平方米 (m²)、公顷 (ha)、平方千米 (km²)、平方英寸 (in²)、平方英尺 (ft²)、英亩 (ac)、平方英里 (mi²) 的详细换算公式与说明。
   - - meta
     - name: keywords
-      content: 面积, 单位转换, 平方毫米, 平方厘米, 平方米, 公顷, 平方千米, 平方英寸, 平方英尺, 英亩, 平方英里, 换算公式, 单位换算指南
+      content: 面积, 单位换算, 平方毫米, 平方厘米, 平方米, 公顷, 平方千米, 平方英寸, 平方英尺, 英亩, 平方英里, 换算公式, 单位换算指南
 ---
 # 面积单位换算
 ---
@@ -71,16 +71,16 @@ const convertHandler = (e) => {
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
   <n-form-item label="数值"  path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要转换的数值" />
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数值" />
   </n-form-item>
   <n-form-item label="从" path="from">
     <n-select  size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
   </n-form-item>
   <n-form-item label="到" path="to">
-    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择转换单位" />
+    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
   </n-form-item>
   <n-form-item>
-    <n-button type="primary" style="width:100%" @click="convertHandler">转换</n-button>
+    <n-button type="primary" style="width:100%" @click="convertHandler">换算</n-button>
   </n-form-item>
 </n-form>
 <n-card  embedded :bordered="false" hoverable>
@@ -158,7 +158,7 @@ const convertHandler = (e) => {
   </ul>
 
   <h3>如何进行面积单位换算？</h3>
-  <p>面积单位换算的核心在于理解各个单位之间的关系。例如，从平方毫米到平方厘米的换算公式为 <code>cm² = mm² ÷ 100</code>。对于更复杂的换算，可以通过基准单位（如平方米）作为中介来进行转换。</p>
+  <p>面积单位换算的核心在于理解各个单位之间的关系。例如，从平方毫米到平方厘米的换算公式为 <code>cm² = mm² ÷ 100</code>。对于更复杂的换算，可以通过基准单位（如平方米）作为中介来进行换算。</p>
 
   <h3>补充说明</h3>
   <p>为了提高换算的精确性，某些单位（如平方英寸和平方英尺）的换算系数经过精确计算。此外，一些常用单位对（如公顷到平方千米）也有直接的换算公式，方便快速参考。</p>

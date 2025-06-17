@@ -6,7 +6,7 @@ breadcrumb:
   - - link: /
       linkText: 首页
   - - link: /Area/
-      linkText: 面积转换
+      linkText: 面积换算
   - - link: /Area/Hectare-to-SquareCentimeter
       linkText: 公顷到平方厘米
 head:
@@ -15,7 +15,7 @@ head:
       content: "面积单位换算指南，涵盖公顷 (ha) 到平方厘米 (cm²) 的详细换算公式与说明。"
   - - meta
     - name: keywords
-      content: "面积, 单位转换, 公顷, 平方厘米, ha, cm², 公顷到平方厘米, 面积转换指南"
+      content: "面积, 单位换算, 公顷, 平方厘米, ha, cm², 公顷到平方厘米, 面积换算指南"
 ---
 # 公顷 (ha) 到 平方厘米 (cm²) 的换算
 ---
@@ -47,7 +47,7 @@ const convertHandler = () => {
     <n-input-number v-model:value="form.number" placeholder="输入公顷" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="primary" @click="convertHandler" block>转换</n-button>
+    <n-button type="primary" @click="convertHandler" block>换算</n-button>
   </n-form-item>
 </n-form>
 
@@ -59,7 +59,7 @@ const convertHandler = () => {
 
 ## 公式
 
-从 **公顷 (ha)** 转换到 **平方厘米 (cm²)** 的公式为：
+从 **公顷 (ha)** 换算到 **平方厘米 (cm²)** 的公式为：
 $$ cm² = ha \times 100000000 $$
 
 ## 公顷到平方厘米换算指南

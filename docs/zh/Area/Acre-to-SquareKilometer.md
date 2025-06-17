@@ -6,7 +6,7 @@ breadcrumb:
   - - link: /
       linkText: 首页
   - - link: /Area/
-      linkText: 面积转换
+      linkText: 面积换算
   - - link: /Area/Acre-to-SquareKilometer
       linkText: 英亩到平方千米
 head:
@@ -15,7 +15,7 @@ head:
       content: "面积单位换算指南，涵盖英亩 (ac) 到平方千米 (km²) 的详细换算公式与说明。"
   - - meta
     - name: keywords
-      content: "面积, 单位转换, 英亩, 平方千米, ac, km², 英亩到平方千米, 面积转换指南"
+      content: "面积, 单位换算, 英亩, 平方千米, ac, km², 英亩到平方千米, 面积换算指南"
 ---
 # 英亩 (ac) 到 平方千米 (km²) 的换算
 ---
@@ -47,7 +47,7 @@ const convertHandler = () => {
     <n-input-number v-model:value="form.number" placeholder="输入英亩" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="primary" @click="convertHandler" block>转换</n-button>
+    <n-button type="primary" @click="convertHandler" block>换算</n-button>
   </n-form-item>
 </n-form>
 
@@ -59,7 +59,7 @@ const convertHandler = () => {
 
 ## 公式
 
-从 **英亩 (ac)** 转换到 **平方千米 (km²)** 的公式为：
+从 **英亩 (ac)** 换算到 **平方千米 (km²)** 的公式为：
 $$ km² = ac \div 247.105381467169 $$
 
 ## 英亩到平方千米换算指南

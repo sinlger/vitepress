@@ -6,16 +6,16 @@ breadcrumb:
   - - link: /
       linkText: 首页
   - - link: /Time/
-      linkText: 时间转换
+      linkText: 时间换算
   - - link: /Time/Day-to-Nanosecond
       linkText: 天到纳秒
 head:
   - - meta
     - name: description
-      content: "天 (d) 到纳秒 (ns) 的时间单位换算指南。了解如何通过公式 d × 8.64 × 10¹³ 转换为纳秒。"
+      content: "天 (d) 到纳秒 (ns) 的时间单位换算指南。了解如何通过公式 d × 8.64 × 10¹³ 换算为纳秒。"
   - - meta
     - name: keywords
-      content: "时间, 单位转换, 天, 纳秒, d, ns, 天到纳秒, 时间转换指南"
+      content: "时间, 单位换算, 天, 纳秒, d, ns, 天到纳秒, 时间换算指南"
 ---
 # 天 (d) 到 纳秒 (ns) 的换算
 
@@ -48,7 +48,7 @@ const convertHandler = () => {
     <n-input-number v-model:value="form.number" placeholder="输入天" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="primary" @click="convertHandler" block>转换</n-button>
+    <n-button type="primary" @click="convertHandler" block>换算</n-button>
   </n-form-item>
 </n-form>
 
@@ -60,7 +60,7 @@ const convertHandler = () => {
 
 ## 公式
 
-从 **天 (d)** 转换到 **纳秒 (ns)** 的公式为：
+从 **天 (d)** 换算到 **纳秒 (ns)** 的公式为：
 $$ ns = d \times 8.64 \times 10^{13} $$
 
 ### 示例

@@ -6,18 +6,18 @@ breadcrumb:
   - - link: /
       linkText: 首页
   - - link: /Parts-Per/
-      linkText: 浓度单位转换
+      linkText: 浓度单位换算
   - - link: /Parts-Per/index
       linkText: 浓度单位单位换算
 head:
   - - meta
     - name: description
-      content: 浓度单位转换工具，提供 ppm、ppb、ppt、ppq 单位之间的换算。
+      content: 浓度单位换算工具，提供 ppm、ppb、ppt、ppq 单位之间的换算。
   - - meta
     - name: keywords
-      content: 浓度单位, ppm, ppb, ppt, ppq, 转换工具, 环境监测, 微量元素
+      content: 浓度单位, ppm, ppb, ppt, ppq, 换算工具, 环境监测, 微量元素
 ---
-# 浓度单位转换
+# 浓度单位换算
 ---
 <script setup>
 import { onMounted, reactive, inject ,ref  } from 'vue'
@@ -65,16 +65,16 @@ const convertHandler = (e) => {
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
   <n-form-item label="数值"  path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要转换的数值" />
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数值" />
   </n-form-item>
   <n-form-item label="从" path="from">
     <n-select  size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
   </n-form-item>
   <n-form-item label="到" path="to">
-    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择转换单位" />
+    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
   </n-form-item>
   <n-form-item>
-    <n-button type="primary" style="width:100%" @click="convertHandler">转换</n-button>
+    <n-button type="primary" style="width:100%" @click="convertHandler">换算</n-button>
   </n-form-item>
 </n-form>
 <n-card  embedded :bordered="false" hoverable>
@@ -85,8 +85,8 @@ const convertHandler = (e) => {
 
 
 
-## 单位转换表格
-| 单位  | 数值表示       | 单位转换关系               |
+## 单位换算表格
+| 单位  | 数值表示       | 单位换算关系               |
 | --- | ---------- | -------------------- |
 | ppm | $10^{-6}$  | $1\ ppm = 1000\ ppb$ |
 | ppb | $10^{-9}$  | $1\ ppb = 1000\ ppt$ |

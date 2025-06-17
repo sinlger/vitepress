@@ -6,7 +6,7 @@ breadcrumb:
   - - link: /
       linkText: 首页
   - - link: /Power/
-      linkText: 功率转换
+      linkText: 功率换算
   - - link: /Power/hp-to-kW
       linkText: 英制马力转千瓦
 head:
@@ -15,7 +15,7 @@ head:
       content: "提供英制马力 (hp) 到千瓦 (kW) 的单位换算公式及实际应用场景。"
   - - meta
     - name: keywords
-      content: "英制马力转千瓦,hp到kW换算,功率单位转换公式,功率单位换算工具,汽车与工业设备功率单位"
+      content: "英制马力转千瓦,hp到kW换算,功率单位换算公式,功率单位换算工具,汽车与工业设备功率单位"
 ---
 # 英制马力 (hp) 到千瓦 (kW) 换算
 
@@ -66,16 +66,16 @@ const convertHandler = (e) => {
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
   <n-form-item label="数值"  path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要转换的数值" />
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数值" />
   </n-form-item>
   <n-form-item label="从" path="from">
     <n-select  size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
   </n-form-item>
   <n-form-item label="到" path="to">
-    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择转换单位" />
+    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
   </n-form-item>
   <n-form-item>
-    <n-button type="primary" style="width:100%" @click="convertHandler">转换</n-button>
+    <n-button type="primary" style="width:100%" @click="convertHandler">换算</n-button>
   </n-form-item>
 </n-form>
 <n-card  embedded :bordered="false" hoverable>
@@ -92,11 +92,11 @@ const convertHandler = (e) => {
 
 - **美系汽车发动机功率标注**：如 200 hp ≈ 149.14 kW。
 - **工业设备能耗统计**：在分析多个 kW 级电机对整体工厂用电的影响时需进行 hp 与 kW 互换。
-- **农业机械功率匹配**：用于将北美标准 hp 转换为国际通用 kW 进行设备选型。
+- **农业机械功率匹配**：用于将北美标准 hp 换算为国际通用 kW 进行设备选型。
 
 ## 使用建议
 
-- **跨标准机械设备选型**：适用于从北美单位（hp）到国际标准（kW）的能量转换计算。
+- **跨标准机械设备选型**：适用于从北美单位（hp）到国际标准（kW）的能量换算计算。
 - **科学计算**：使用国际单位制（瓦特 W 或千瓦 kW），便于统一标准。
 
 ## 相关连接

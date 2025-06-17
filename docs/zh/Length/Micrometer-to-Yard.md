@@ -6,16 +6,16 @@ breadcrumb:
   - - link: /
       linkText: 首页
   - - link: /Length/
-      linkText: 长度转换
+      linkText: 长度换算
   - - link: /Length/Micrometer-to-Yard
       linkText: 微米到码
 head:
   - - meta
     - name: description
-      content: "微米 (μm) 到码 (yd) 的长度单位换算指南。了解如何通过公式 yd = μm × 0.0000010936 转换为码。"
+      content: "微米 (μm) 到码 (yd) 的长度单位换算指南。了解如何通过公式 yd = μm × 0.0000010936 换算为码。"
   - - meta
     - name: keywords
-      content: "长度, 单位转换, 微米, 码, μm, yd, 微米到码, 长度转换指南"
+      content: "长度, 单位换算, 微米, 码, μm, yd, 微米到码, 长度换算指南"
 ---
 # 微米 (μm) 到 码 (yd) 的换算
 ---
@@ -47,7 +47,7 @@ const convertHandler = () => {
     <n-input-number v-model:value="form.number" placeholder="输入微米" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="primary" @click="convertHandler" block>转换</n-button>
+    <n-button type="primary" @click="convertHandler" block>换算</n-button>
   </n-form-item>
 </n-form>
 
@@ -79,7 +79,7 @@ const convertHandler = () => {
 
 ## 公式
 
-从 **微米 (μm)** 转换到 **码 (yd)** 的公式为：
+从 **微米 (μm)** 换算到 **码 (yd)** 的公式为：
 $$ yd = μm \times 0.0000010936 $$
 
 ### 示例

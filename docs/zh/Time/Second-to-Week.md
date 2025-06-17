@@ -6,16 +6,16 @@ breadcrumb:
   - - link: /
       linkText: 首页
   - - link: /Time/
-      linkText: 时间转换
+      linkText: 时间换算
   - - link: /Time/Second-to-Week
       linkText: 秒到周
 head:
   - - meta
     - name: description
-      content: "秒 (s) 到 周 (week) 的时间单位换算指南。了解如何通过公式 s ÷ 604,800 转换为周。"
+      content: "秒 (s) 到 周 (week) 的时间单位换算指南。了解如何通过公式 s ÷ 604,800 换算为周。"
   - - meta
     - name: keywords
-      content: "时间, 单位转换, 秒, 周, s, week, 秒到周, 时间转换指南"
+      content: "时间, 单位换算, 秒, 周, s, week, 秒到周, 时间换算指南"
 ---
 # 秒 (s) 到 周 (week) 的换算
 
@@ -48,7 +48,7 @@ const convertHandler = () => {
     <n-input-number v-model:value="form.number" placeholder="输入秒" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="primary" @click="convertHandler" block>转换</n-button>
+    <n-button type="primary" @click="convertHandler" block>换算</n-button>
   </n-form-item>
 </n-form>
 
@@ -60,7 +60,7 @@ const convertHandler = () => {
 
 ## 公式
 
-从 **秒 (s)** 转换到 **周 (week)** 的公式为：
+从 **秒 (s)** 换算到 **周 (week)** 的公式为：
 $$ week = \frac{s}{604800} $$
 
 ### 示例

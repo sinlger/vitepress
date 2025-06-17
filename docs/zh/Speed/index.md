@@ -6,16 +6,16 @@ breadcrumb:
   - - link: /
       linkText: 首页
   - - link: /Speed/
-      linkText: 速度单位转换
+      linkText: 速度单位换算
   - - link: /Speed/index
       linkText: 速度单位单位换算
 head:
   - - meta
     - name: description
-      content: 速度单位转换指南，涵盖米每秒 (m/s)、千米每小时 (km/h)、英里每小时 (mph)、节 (knot)、英尺每秒 (ft/s)、英寸每小时 (in/h)、毫米每小时 (mm/h) 的详细换算公式与说明。
+      content: 速度单位换算指南，涵盖米每秒 (m/s)、千米每小时 (km/h)、英里每小时 (mph)、节 (knot)、英尺每秒 (ft/s)、英寸每小时 (in/h)、毫米每小时 (mm/h) 的详细换算公式与说明。
   - - meta
     - name: keywords
-      content: 速度, 单位转换, 米每秒, 千米每小时, 英里每小时, 节, 英尺每秒, 英寸每小时, 毫米每小时, 换算公式, 速度单位换算指南
+      content: 速度, 单位换算, 米每秒, 千米每小时, 英里每小时, 节, 英尺每秒, 英寸每小时, 毫米每小时, 换算公式, 速度单位换算指南
 ---
 # 速度单位换算
 ---
@@ -69,16 +69,16 @@ const convertHandler = (e) => {
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
   <n-form-item label="数值"  path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要转换的数值" />
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数值" />
   </n-form-item>
   <n-form-item label="从" path="from">
     <n-select  size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
   </n-form-item>
   <n-form-item label="到" path="to">
-    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择转换单位" />
+    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
   </n-form-item>
   <n-form-item>
-    <n-button type="primary" style="width:100%" @click="convertHandler">转换</n-button>
+    <n-button type="primary" style="width:100%" @click="convertHandler">换算</n-button>
   </n-form-item>
 </n-form>
 <n-card  embedded :bordered="false" hoverable>
@@ -88,7 +88,7 @@ const convertHandler = (e) => {
 </n-card>
 
 
-## 一、速度单位转换表（以 1 m/s 为基准）
+## 一、速度单位换算表（以 1 m/s 为基准）
 
 | 单位       | 符号   | 换算值      | 典型应用场景             |
 |------------|--------|-------------|-------------------------|
@@ -115,7 +115,7 @@ const convertHandler = (e) => {
 
 案例：若将飞机速度1000 km/h误算为1000 mph（实际≈1609 km/h），会导致航线严重偏差。
 
-科学建议：跨国工程必须统一单位，如航天器轨道计算需用m/s，避免单位转换累积误差。
+科学建议：跨国工程必须统一单位，如航天器轨道计算需用m/s，避免单位换算累积误差。
 
 ### 超慢速世界的单位
 

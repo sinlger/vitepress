@@ -3,23 +3,23 @@ layout: home
 home: true
 
 lang: zh-CN
-title: 单位快速转换
+title: 单位快速换算
 titleTemplate: 首页
 editLink: true
 lastUpdated: true
 head:
   - - meta
     - name: description
-      content: 单位快速转换网站，为您提供便捷的各类单位转换服务，涵盖温度、长度、面积、时间等多种物理量的换算，操作简单，结果精准，满足您在学习、工作和生活中的单位转换需求，随时随地轻松转换。
+      content: 单位快速换算网站，为您提供便捷的各类单位换算服务，涵盖温度、长度、面积、时间等多种物理量的换算，操作简单，结果精准，满足您在学习、工作和生活中的单位换算需求，随时随地轻松换算。
   - - meta
     - name: keywords
-      content: 单位转换, 快速转换工具, 温度转换, 长度转换, 面积转换, 时间转换, 物理量换算, 单位换算在线工具
+      content: 单位换算, 快速换算工具, 温度换算, 长度换算, 面积换算, 时间换算, 物理量换算, 单位换算在线工具
 hero:
   image:
     src: /undraw_designing-components_kb05.svg
     alt: VitePress
   name: "Unit Converter"
-  text: "单位快速转换在线工具"
+  text: "单位快速换算在线工具"
   tagline: "免费的在线单位换算计算器，包含重量、长度、面积、时间、温度和更多其他类别的单位换算器"
   actions:
     # - theme: brand

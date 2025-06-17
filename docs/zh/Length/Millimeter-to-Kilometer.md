@@ -6,16 +6,16 @@ breadcrumb:
   - - link: /
       linkText: 首页
   - - link: /Length/
-      linkText: 长度转换
+      linkText: 长度换算
   - - link: /Length/Millimeter-to-Kilometer
       linkText: 毫米到千米
 head:
   - - meta
     - name: description
-      content: "毫米 (mm) 到千米 (km) 的长度单位换算指南。了解如何通过公式 mm ÷ 1000000 转换为千米。"
+      content: "毫米 (mm) 到千米 (km) 的长度单位换算指南。了解如何通过公式 mm ÷ 1000000 换算为千米。"
   - - meta
     - name: keywords
-      content: "长度, 单位转换, 毫米, 千米, mm, km, 毫米到千米, 长度转换指南"
+      content: "长度, 单位换算, 毫米, 千米, mm, km, 毫米到千米, 长度换算指南"
 ---
 # 毫米 (mm) 到 千米 (km) 的换算
 ---
@@ -47,7 +47,7 @@ const convertHandler = () => {
     <n-input-number v-model:value="form.number" placeholder="输入毫米" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="primary" @click="convertHandler" block>转换</n-button>
+    <n-button type="primary" @click="convertHandler" block>换算</n-button>
   </n-form-item>
 </n-form>
 
@@ -79,7 +79,7 @@ const convertHandler = () => {
 
 ## 公式
 
-从 **毫米 (mm)** 转换到 **千米 (km)** 的公式为：
+从 **毫米 (mm)** 换算到 **千米 (km)** 的公式为：
 $$ km = mm \div 1000000 $$
 
 ### 示例

@@ -6,16 +6,16 @@ breadcrumb:
   - - link: /
       linkText: 首页
   - - link: /Energy/
-      linkText: 能量和功率单位转换
+      linkText: 能量和功率单位换算
   - - link: /Energy/index
       linkText: 能量和功率单位单位换算
 head:
   - - meta
     - name: description
-      content: 能量和功率单位转换指南，涵盖焦耳 (J)、千焦 (kJ)、兆焦 (MJ)、吉焦 (GJ)、瓦秒 (Ws)、瓦米 (Wm)、瓦时 (Wh)、毫瓦时 (mWh)、千瓦时 (kWh)、兆瓦时 (MWh)、吉瓦时 (GWh) 的详细换算公式与说明。
+      content: 能量和功率单位换算指南，涵盖焦耳 (J)、千焦 (kJ)、兆焦 (MJ)、吉焦 (GJ)、瓦秒 (Ws)、瓦米 (Wm)、瓦时 (Wh)、毫瓦时 (mWh)、千瓦时 (kWh)、兆瓦时 (MWh)、吉瓦时 (GWh) 的详细换算公式与说明。
   - - meta
     - name: keywords
-      content: 能量, 功率, 单位转换, 焦耳, 千焦, 兆焦, 吉焦, 瓦秒, 瓦米, 瓦时, 毫瓦时, 千瓦时, 兆瓦时, 吉瓦时, 换算公式, 能量和功率单位换算指南
+      content: 能量, 功率, 单位换算, 焦耳, 千焦, 兆焦, 吉焦, 瓦秒, 瓦米, 瓦时, 毫瓦时, 千瓦时, 兆瓦时, 吉瓦时, 换算公式, 能量和功率单位换算指南
 ---
 
 # 能量和功率单位换算
@@ -74,16 +74,16 @@ const convertHandler = (e) => {
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
   <n-form-item label="数值"  path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要转换的数值" />
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数值" />
   </n-form-item>
   <n-form-item label="从" path="from">
     <n-select  size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
   </n-form-item>
   <n-form-item label="到" path="to">
-    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择转换单位" />
+    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
   </n-form-item>
   <n-form-item>
-    <n-button type="primary" style="width:100%" @click="convertHandler">转换</n-button>
+    <n-button type="primary" style="width:100%" @click="convertHandler">换算</n-button>
   </n-form-item>
 </n-form>
 <n-card  embedded :bordered="false" hoverable>
@@ -109,7 +109,7 @@ const convertHandler = (e) => {
 | MJ         | 10⁶ 焦耳（J）         | 汽车燃油能量值               |
 | GJ         | 10⁹ 焦耳（J）≈278kWh  | 区域供热/工业能源计量     |
 
-**关键转换公式：**
+**关键换算公式：**
 - 1kWh = 3.6×10⁶J
 - 1GJ = 10⁹J ≈ 278kWh
 - **电池能量（Wh）= 容量（Ah）× 电压（V）** 

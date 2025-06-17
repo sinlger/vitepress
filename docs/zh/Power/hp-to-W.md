@@ -6,7 +6,7 @@ breadcrumb:
   - - link: /
       linkText: 首页
   - - link: /Power/
-      linkText: 功率转换
+      linkText: 功率换算
   - - link: /Power/hp-to-W
       linkText: 英制马力转瓦特
 head:
@@ -15,7 +15,7 @@ head:
       content: "提供英制马力 (hp) 到瓦特 (W) 的单位换算公式及实际应用场景。"
   - - meta
     - name: keywords
-      content: "英制马力转瓦特,hp到W换算,功率单位转换公式,功率单位换算工具,汽车与机械设备功率单位"
+      content: "英制马力转瓦特,hp到W换算,功率单位换算公式,功率单位换算工具,汽车与机械设备功率单位"
 ---
 # 英制马力 (hp) 到瓦特 (W) 换算
 
@@ -66,16 +66,16 @@ const convertHandler = (e) => {
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
   <n-form-item label="数值"  path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要转换的数值" />
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数值" />
   </n-form-item>
   <n-form-item label="从" path="from">
     <n-select  size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
   </n-form-item>
   <n-form-item label="到" path="to">
-    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择转换单位" />
+    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
   </n-form-item>
   <n-form-item>
-    <n-button type="primary" style="width:100%" @click="convertHandler">转换</n-button>
+    <n-button type="primary" style="width:100%" @click="convertHandler">换算</n-button>
   </n-form-item>
 </n-form>
 <n-card  embedded :bordered="false" hoverable>
@@ -92,11 +92,11 @@ const convertHandler = (e) => {
 
 - **家用车发动机功率标注**：如 200 hp ≈ 149,140 W。
 - **农业机械功率匹配**：拖拉机常用 hp 表示动力输出，而电机常以 W 标注。
-- **机械设备进出口匹配**：用于将北美标准 hp 转换为国际通用 W 进行功率对比。
+- **机械设备进出口匹配**：用于将北美标准 hp 换算为国际通用 W 进行功率对比。
 
 ## 使用建议
 
-- **跨标准功率设备选型**：适用于从北美市场（hp）到国际标准（W）的能量转换计算。
+- **跨标准功率设备选型**：适用于从北美市场（hp）到国际标准（W）的能量换算计算。
 - **科学计算**：使用国际单位制（瓦特 W），便于统一标准。
 
 ## 相关连接

@@ -6,16 +6,16 @@ breadcrumb:
   - - link: /
       linkText: 首页
   - - link: /Digital/
-      linkText: 数据单位转换
+      linkText: 数据单位换算
   - - link: /Digital/index
       linkText: 数据单位单位换算
 head:
   - - meta
     - name: description
-      content: 数据单位转换指南，涵盖比特 (bit)、字节 (byte)、千字节 (kB)、兆字节 (MB)、吉字节 (GB)、太字节 (TB)、千兆比特 (Gb)、兆比特 (Mb)、吉比特 (Gb)、太比特 (Tb)、千字节 (KiB)、兆字节 (MiB)、吉字节 (GiB)、太字节 (TiB) 的详细换算公式与说明。
+      content: 数据单位换算指南，涵盖比特 (bit)、字节 (byte)、千字节 (kB)、兆字节 (MB)、吉字节 (GB)、太字节 (TB)、千兆比特 (Gb)、兆比特 (Mb)、吉比特 (Gb)、太比特 (Tb)、千字节 (KiB)、兆字节 (MiB)、吉字节 (GiB)、太字节 (TiB) 的详细换算公式与说明。
   - - meta
     - name: keywords
-      content: 数据, 单位转换, 比特, 字节, 千字节, 兆字节, 吉字节, 太字节, 千兆比特, 兆比特, 吉比特, 太比特, KiB, MiB, GiB, TiB, 换算公式, 数据单位换算指南
+      content: 数据, 单位换算, 比特, 字节, 千字节, 兆字节, 吉字节, 太字节, 千兆比特, 兆比特, 吉比特, 太比特, KiB, MiB, GiB, TiB, 换算公式, 数据单位换算指南
 ---
 # 数据单位换算
 ---
@@ -76,16 +76,16 @@ const convertHandler = (e) => {
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
   <n-form-item label="数值"  path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要转换的数值" />
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数值" />
   </n-form-item>
   <n-form-item label="从" path="from">
     <n-select  size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
   </n-form-item>
   <n-form-item label="到" path="to">
-    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择转换单位" />
+    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
   </n-form-item>
   <n-form-item>
-    <n-button type="primary" style="width:100%" @click="convertHandler">转换</n-button>
+    <n-button type="primary" style="width:100%" @click="convertHandler">换算</n-button>
   </n-form-item>
 </n-form>
 <n-card  embedded :bordered="false" hoverable>
@@ -94,7 +94,7 @@ const convertHandler = (e) => {
   </div>
 </n-card>
 
-# 数据存储单位转换表格及科普文章问答
+# 数据存储单位换算表格及科普文章问答
 
 ## 一、数据存储单位换算表
 

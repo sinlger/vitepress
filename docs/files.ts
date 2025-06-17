@@ -241,7 +241,7 @@ export const Area = [
   { name: '平方英里 (mi²) 到 平方英尺 (ft²)', path: './SquareMile-to-SquareFoot' },
   { name: '平方英里 (mi²) 到 英亩 (ac)', path: './SquareMile-to-Acre' }
 ];
-// 新增温度转换文件列表
+// 新增温度换算文件列表
 export const temperatureFiles = [
   { name: '摄氏度 (°C) 到 开尔文 (K)', path: './Celsius-to-Kelvin' },
   { name: '摄氏度 (°C) 到 华氏度 (°F)', path: './Celsius-to-Fahrenheit' },
@@ -256,7 +256,7 @@ export const temperatureFiles = [
   { name: '兰金度 (R) 到 开尔文 (K)', path: './Rankine-to-Kelvin' },
   { name: '兰金度 (R) 到 华氏度 (°F)', path: './Rankine-to-Fahrenheit' }
 ];
-// 单位体积转换文件列表
+// 单位体积换算文件列表
 export const VolumeFlowRate = [
   { name: '立方毫米/秒 (mm³/s) 到 立方厘米/秒 (cm³/s)', path: './mm3_s-to-cm3_s' },
   { name: '立方毫米/秒 (mm³/s) 到 毫升/秒 (ml/s)', path: './mm3_s-to-ml_s' },
@@ -799,7 +799,7 @@ export const VolumeFlowRate = [
   { name: '立方码/小时 (yd3/h) 到 立方米/小时 (m3/h)', path: './yd3_h-to-m3_h' },
   { name: '立方码/小时 (yd3/h) 到 立方公里/秒 (km3/s)', path: './yd3_h-to-km3_s' }
 ];
-// 体积单位转换
+// 体积单位换算
 export const Volume = [
   { name: '立方毫米 (mm³) 到 立方厘米 (cm³)', path: './mm3-to-cm3' },
   { name: '立方毫米 (mm³) 到 毫升 (ml)', path: './mm3-to-ml' },

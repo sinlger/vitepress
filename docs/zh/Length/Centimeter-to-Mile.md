@@ -6,16 +6,16 @@ breadcrumb:
   - - link: /
       linkText: 首页
   - - link: /Length/
-      linkText: 长度转换
+      linkText: 长度换算
   - - link: /Length/Centimeter-to-Mile
       linkText: 厘米到英里
 head:
   - - meta
     - name: description
-      content: "厘米 (cm) 到英里 (mi) 的长度单位换算指南。了解如何通过公式 mi = cm × 0.0000062137 转换为英里。"
+      content: "厘米 (cm) 到英里 (mi) 的长度单位换算指南。了解如何通过公式 mi = cm × 0.0000062137 换算为英里。"
   - - meta
     - name: keywords
-      content: "长度, 单位转换, 厘米, 英里, cm, mi, 厘米到英里, 长度转换指南"
+      content: "长度, 单位换算, 厘米, 英里, cm, mi, 厘米到英里, 长度换算指南"
 ---
 # 厘米 (cm) 到 英里 (mi) 的换算
 ---
@@ -47,7 +47,7 @@ const convertHandler = () => {
     <n-input-number v-model:value="form.number" placeholder="输入厘米" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="primary" @click="convertHandler" block>转换</n-button>
+    <n-button type="primary" @click="convertHandler" block>换算</n-button>
   </n-form-item>
 </n-form>
 
@@ -79,7 +79,7 @@ const convertHandler = () => {
 
 ## 公式
 
-从 **厘米 (cm)** 转换到 **英里 (mi)** 的公式为：
+从 **厘米 (cm)** 换算到 **英里 (mi)** 的公式为：
 $$ mi = cm \times 0.0000062137 $$
 
 ### 示例

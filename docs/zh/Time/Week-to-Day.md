@@ -6,16 +6,16 @@ breadcrumb:
   - - link: /
       linkText: 首页
   - - link: /Time/
-      linkText: 时间转换
+      linkText: 时间换算
   - - link: /Time/Week-to-Day
       linkText: 周到天
 head:
   - - meta
     - name: description
-      content: "周 (week) 到 天 (d) 的时间单位换算指南。了解如何通过公式 week × 7 转换为天。"
+      content: "周 (week) 到 天 (d) 的时间单位换算指南。了解如何通过公式 week × 7 换算为天。"
   - - meta
     - name: keywords
-      content: "时间, 单位转换, 周, 天, week, d, 周到天, 时间转换指南"
+      content: "时间, 单位换算, 周, 天, week, d, 周到天, 时间换算指南"
 ---
 # 周 (week) 到 天 (d) 的换算
 
@@ -48,7 +48,7 @@ const convertHandler = () => {
     <n-input-number v-model:value="form.number" placeholder="输入周" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="primary" @click="convertHandler" block>转换</n-button>
+    <n-button type="primary" @click="convertHandler" block>换算</n-button>
   </n-form-item>
 </n-form>
 
@@ -60,7 +60,7 @@ const convertHandler = () => {
 
 ## 公式
 
-从 **周 (week)** 转换到 **天 (d)** 的公式为：
+从 **周 (week)** 换算到 **天 (d)** 的公式为：
 $$ d = week \times 7 $$
 
 ### 示例

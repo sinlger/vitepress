@@ -6,16 +6,16 @@ breadcrumb:
   - - link: /
       linkText: 首页
   - - link: /Reactive Energy/
-      linkText: 电力单位转换
+      linkText: 电力单位换算
   - - link: /Reactive Energy/index
       linkText: 电力单位单位换算
 head:
   - - meta
     - name: description
-      content: "电力单位转换指南，涵盖伏安无功小时 (VARh)、毫伏安无功小时 (mVARh)、千伏安无功小时 (kVARh)、兆伏安无功小时 (MVARh)、千兆伏安无功小时 (GVARh) 的详细换算公式与说明。"
+      content: "电力单位换算指南，涵盖伏安无功小时 (VARh)、毫伏安无功小时 (mVARh)、千伏安无功小时 (kVARh)、兆伏安无功小时 (MVARh)、千兆伏安无功小时 (GVARh) 的详细换算公式与说明。"
   - - meta
     - name: keywords
-      content: "电力, 单位转换, 伏安无功小时, 毫伏安无功小时, 千伏安无功小时, 兆伏安无功小时, 千兆伏安无功小时, 换算公式, 电力单位换算指南"
+      content: "电力, 单位换算, 伏安无功小时, 毫伏安无功小时, 千伏安无功小时, 兆伏安无功小时, 千兆伏安无功小时, 换算公式, 电力单位换算指南"
 ---
 # 电力单位换算
 ---
@@ -67,16 +67,16 @@ const convertHandler = (e) => {
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
   <n-form-item label="数值"  path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要转换的数值" />
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数值" />
   </n-form-item>
   <n-form-item label="从" path="from">
     <n-select  size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
   </n-form-item>
   <n-form-item label="到" path="to">
-    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择转换单位" />
+    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
   </n-form-item>
   <n-form-item>
-    <n-button type="primary" style="width:100%" @click="convertHandler">转换</n-button>
+    <n-button type="primary" style="width:100%" @click="convertHandler">换算</n-button>
   </n-form-item>
 </n-form>
 <n-card  embedded :bordered="false" hoverable>
@@ -86,7 +86,7 @@ const convertHandler = (e) => {
 </n-card>
 
 
-## 一、单位转换对照表
+## 一、单位换算对照表
 
 | 原单位 | 换算为 VARh（伏安无功小时） | 换算为 mVARh（毫伏安无功小时） | 换算为 kVARh（千伏安无功小时） | 换算为 MVARh（兆伏安无功小时） | 换算为 GVARh（千兆伏安无功小时） |
 | --- | --- | --- | --- | --- | --- |
@@ -96,7 +96,7 @@ const convertHandler = (e) => {
 | 1 MVARh | 1×10⁶ | 1×10⁹ | 1,000 | 1 | 0.001 |
 | 1 GVARh | 1×10⁹ | 1×10¹² | 1×10⁶ | 1,000 | 1 |
 
-**注：** 根据国际单位制进阶关系整理，数据源自无功能量转换标准 。
+**注：** 根据国际单位制进阶关系整理，数据源自无功能量换算标准 。
 
 ## 二、科普解析：无功电能与单位应用
 

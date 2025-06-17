@@ -6,7 +6,7 @@ breadcrumb:
   - - link: /
       linkText: 首页
   - - link: /Mass/
-      linkText: 质量转换
+      linkText: 质量换算
   - - link: /Mass/oz-to-st
       linkText: 盎司到英石
 head:
@@ -15,7 +15,7 @@ head:
       content: "质量单位换算指南，涵盖盎司 (oz) 到英石 (st) 的详细换算公式与说明。"
   - - meta
     - name: keywords
-      content: "质量, 单位转换, 盎司, 英石, oz, st, 盎司到英石, 质量转换指南"
+      content: "质量, 单位换算, 盎司, 英石, oz, st, 盎司到英石, 质量换算指南"
 ---
 # 盎司 (oz) 到 英石 (st) 的换算
 ---
@@ -47,7 +47,7 @@ const convertHandler = () => {
     <n-input-number v-model:value="form.number" placeholder="输入盎司" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="primary" @click="convertHandler" block>转换</n-button>
+    <n-button type="primary" @click="convertHandler" block>换算</n-button>
   </n-form-item>
 </n-form>
 
@@ -59,7 +59,7 @@ const convertHandler = () => {
 
 ## 公式
 
-从 **盎司 (oz)** 转换到 **英石 (st)** 的公式为：
+从 **盎司 (oz)** 换算到 **英石 (st)** 的公式为：
 $$ st = oz \times 0.004464285714285714 $$
 
 ## 盎司到英石换算指南

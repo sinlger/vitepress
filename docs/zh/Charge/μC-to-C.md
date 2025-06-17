@@ -6,7 +6,7 @@ breadcrumb:
   - - link: /
       linkText: 首页
   - - link: /Charge/
-      linkText: 电荷单位转换
+      linkText: 电荷单位换算
   - - link: /Charge/μC-to-C
       linkText: 微库仑到库仑换算
 head:
@@ -15,7 +15,7 @@ head:
       content: "电荷单位换算指南，涵盖微库仑 (μC) 到 库仑 (C) 的详细换算公式与说明。"
   - - meta
     - name: keywords
-      content: "电荷, 单位转换, 微库仑, 库仑, 换算公式, 单位换算指南"
+      content: "电荷, 单位换算, 微库仑, 库仑, 换算公式, 单位换算指南"
 ---
 # 微库仑 (μC) 到 库仑 (C) 换算
 
@@ -64,16 +64,16 @@ const convertHandler = (e) => {
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
   <n-form-item label="数值"  path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要转换的数值" />
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数值" />
   </n-form-item>
   <n-form-item label="从" path="from">
     <n-select  size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
   </n-form-item>
   <n-form-item label="到" path="to">
-    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择转换单位" />
+    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
   </n-form-item>
   <n-form-item>
-    <n-button type="primary" style="width:100%" @click="convertHandler">转换</n-button>
+    <n-button type="primary" style="width:100%" @click="convertHandler">换算</n-button>
   </n-form-item>
 </n-form>
 <n-card  embedded :bordered="false" hoverable>
@@ -91,7 +91,7 @@ const convertHandler = (e) => {
 
 注：换算关系基于国际单位制（SI）的十进制阶梯，1 库仑 = 1 安培・秒。
 
-## 转换公式
+## 换算公式
 $$ 1 \text{ μC} = 0.000001 \text{ C} $$
 $$ 1 \text{ C} = 1,000,000 \text{ μC} $$
 

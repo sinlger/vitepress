@@ -6,13 +6,13 @@ breadcrumb:
   - - link: /
       linkText: 首页
   - - link: /VolumeFlowRate/
-      linkText: 体积流量单位转换
+      linkText: 体积流量单位换算
   - - link: /VolumeFlowRate/index
       linkText: 体积流量单位单位换算
 head:
   - - meta
     - name: description
-      content: 体积流量单位换算工具和教程，支持立方米每秒(m³/s)、升每秒(l/s)、加仑每分钟(gal/min)等35种单位间的转换，并提供流量单位的科学原理和应用场景。
+      content: 体积流量单位换算工具和教程，支持立方米每秒(m³/s)、升每秒(l/s)、加仑每分钟(gal/min)等35种单位间的换算，并提供流量单位的科学原理和应用场景。
   - - meta
     - name: keywords
       content: 体积流量换算,流量计算器,flow rate calculator,m³/s,l/s,gal/min,立方英尺每分钟,CFM,流体力学,管道流量
@@ -98,16 +98,16 @@ const convertHandler = (e) => {
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
   <n-form-item label="数值"  path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要转换的数值" />
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数值" />
   </n-form-item>
   <n-form-item label="从" path="from">
     <n-select  size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
   </n-form-item>
   <n-form-item label="到" path="to">
-    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择转换单位" />
+    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
   </n-form-item>
   <n-form-item>
-    <n-button type="primary" style="width:100%" @click="convertHandler">转换</n-button>
+    <n-button type="primary" style="width:100%" @click="convertHandler">换算</n-button>
   </n-form-item>
 </n-form>
 <n-card  embedded :bordered="false" hoverable>
@@ -151,9 +151,9 @@ const convertHandler = (e) => {
   * **汽车工业** ：美国引擎功率以 gal/min 衡量冷却液流量。
   * **建筑业** ：通风管道设计沿用 ft³/min（CFM），因北美建筑模数基于英尺。
 
-### 三、单位转换的实战技巧
+### 三、单位换算的实战技巧
 
-避免单位混淆需掌握三个关键转换链：
+避免单位混淆需掌握三个关键换算链：
 
   * **体积基础** ：1 m³ = 1000 L = 1,000,000 cm³（即 ml）。
   * **时间扩展** ：1 m³/s = 60 m³/min = 3600 m³/h。

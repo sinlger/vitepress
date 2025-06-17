@@ -6,16 +6,16 @@ breadcrumb:
   - - link: /
       linkText: 首页
   - - link: /Length/
-      linkText: 长度转换
+      linkText: 长度换算
   - - link: /Length/Inch-to-Yard
       linkText: 英寸到码
 head:
   - - meta
     - name: description
-      content: "英寸 (in) 到码 (yd) 的长度单位换算指南。了解如何通过公式 yd = in × 0.027778 转换为码。"
+      content: "英寸 (in) 到码 (yd) 的长度单位换算指南。了解如何通过公式 yd = in × 0.027778 换算为码。"
   - - meta
     - name: keywords
-      content: "长度, 单位转换, 英寸, 码, in, yd, 英寸到码, 长度转换指南"
+      content: "长度, 单位换算, 英寸, 码, in, yd, 英寸到码, 长度换算指南"
 ---
 # 英寸 (in) 到 码 (yd) 的换算
 ---
@@ -47,7 +47,7 @@ const convertHandler = () => {
     <n-input-number v-model:value="form.number" placeholder="输入英寸" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="primary" @click="convertHandler" block>转换</n-button>
+    <n-button type="primary" @click="convertHandler" block>换算</n-button>
   </n-form-item>
 </n-form>
 
@@ -74,12 +74,12 @@ const convertHandler = () => {
   - 示例：某机械零件长度为 200in，等于 5.5556yd。
 
 - **建筑与工程**：
-  - 施工图纸上常用英寸标注详细尺寸，但在国际项目中可能需要将整体尺寸转换为码。
+  - 施工图纸上常用英寸标注详细尺寸，但在国际项目中可能需要将整体尺寸换算为码。
   - 示例：某桥梁护栏高度为 100in，即 2.7778yd。
 
 ## 公式
 
-从 **英寸 (in)** 转换到 **码 (yd)** 的公式为：
+从 **英寸 (in)** 换算到 **码 (yd)** 的公式为：
 $$ yd = in \times 0.027778 $$
 
 ### 示例

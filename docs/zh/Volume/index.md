@@ -6,7 +6,7 @@ breadcrumb:
   - - link: /
       linkText: 首页
   - - link: /Force/
-      linkText: 体积单位转换
+      linkText: 体积单位换算
   - - link: /Force/index
       linkText: 体积单位单位换算
 head:
@@ -15,7 +15,7 @@ head:
       content: 体积单位换算指南，涵盖公制与英制系统，包含立方毫米、升、加仑等常见单位对照表及科学实践应用解析，帮助您快速掌握单位之间的换算方法。
   - - meta
     - name: keywords
-      content: 体积单位换算, 立方毫米, 升, 加仑, 公制系统, 英制系统, 单位转换表, 科学应用
+      content: 体积单位换算, 立方毫米, 升, 加仑, 公制系统, 英制系统, 单位换算表, 科学应用
 ---
 
 # 体积单位换算
@@ -82,16 +82,16 @@ const convertHandler = (e) => {
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
   <n-form-item label="数值"  path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要转换的数值" />
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数值" />
   </n-form-item>
   <n-form-item label="从" path="from">
     <n-select  size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
   </n-form-item>
   <n-form-item label="到" path="to">
-    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择转换单位" />
+    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
   </n-form-item>
   <n-form-item>
-    <n-button type="primary" style="width:100%" @click="convertHandler">转换</n-button>
+    <n-button type="primary" style="width:100%" @click="convertHandler">换算</n-button>
   </n-form-item>
 </n-form>
 <n-card  embedded :bordered="false" hoverable>
@@ -146,7 +146,7 @@ const convertHandler = (e) => {
 - 茶匙（tsp）和汤匙（Tbsp）源自餐具尺寸，至今仍是西式食谱的核心 。
 - 加仑（gal）的争议：美制（3.785 L）用于石油贸易，英制（4.546 L）影响欧盟饮料标准，反映地缘文化差异 。
 
-#### 三、单位转换的科学意义
+#### 三、单位换算的科学意义
 
 - **医药领域**：注射液以 mL 精确计量，1 mL 误差可能导致剂量超标（如儿童用药需 0.1 mL 精度）。
 - **环境科学**：降雨量 1 mm = 1 L/m²，将二维数据转化为体积资源评估 。
@@ -157,10 +157,10 @@ const convertHandler = (e) => {
 随着全球化推进：
 
 - 科学领域已普及 m³ 和 L，但美制单位仍在美国制造业、农业中主导 。
-- 人工智能正开发实时单位转换工具，解决跨国协作障碍（如 3D 打印文件需同步 in³ 与 mm³）。
+- 人工智能正开发实时单位换算工具，解决跨国协作障碍（如 3D 打印文件需同步 in³ 与 mm³）。
 
 ### 实用建议
 
 - **日常场景**：烹饪优先使用 mL/cup，避免茶匙与汤匙混淆。
 - **专业领域**：科学实验坚持公制，国际贸易需确认美制 / 英制版本 。
-- **扩展工具**：推荐使用 NIST 单位转换器（美国国家标准技术研究院）动态计算。
+- **扩展工具**：推荐使用 NIST 单位换算器（美国国家标准技术研究院）动态计算。

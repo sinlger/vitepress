@@ -6,16 +6,16 @@ breadcrumb:
   - - link: /
       linkText: 首页
   - - link: /Time/
-      linkText: 时间转换
+      linkText: 时间换算
   - - link: /Time/Microsecond-to-Nanosecond
       linkText: 微秒到纳秒
 head:
   - - meta
     - name: description
-      content: "微秒 (μs) 到 纳秒 (ns) 的时间单位换算指南。了解如何通过公式 μs × 1,000 转换为纳秒。"
+      content: "微秒 (μs) 到 纳秒 (ns) 的时间单位换算指南。了解如何通过公式 μs × 1,000 换算为纳秒。"
   - - meta
     - name: keywords
-      content: "时间, 单位转换, 微秒, 纳秒, μs, ns, 微秒到纳秒, 时间转换指南"
+      content: "时间, 单位换算, 微秒, 纳秒, μs, ns, 微秒到纳秒, 时间换算指南"
 ---
 # 微秒 (μs) 到 纳秒 (ns) 的换算
 
@@ -48,7 +48,7 @@ const convertHandler = () => {
     <n-input-number v-model:value="form.number" placeholder="输入微秒" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="primary" @click="convertHandler" block>转换</n-button>
+    <n-button type="primary" @click="convertHandler" block>换算</n-button>
   </n-form-item>
 </n-form>
 
@@ -60,7 +60,7 @@ const convertHandler = () => {
 
 ## 公式
 
-从 **微秒 (μs)** 转换到 **纳秒 (ns)** 的公式为：
+从 **微秒 (μs)** 换算到 **纳秒 (ns)** 的公式为：
 $$ ns = \mu s \times 1000 $$
 
 ### 示例

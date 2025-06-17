@@ -6,16 +6,16 @@ breadcrumb:
   - - link: /
       linkText: 首页
   - - link: /Time/
-      linkText: 时间转换
+      linkText: 时间换算
   - - link: /Time/Nanosecond-to-Hour
       linkText: 纳秒到小时
 head:
   - - meta
     - name: description
-      content: "纳秒 (ns) 到 小时 (hour) 的时间单位换算指南。了解如何通过公式 ns ÷ 3.6 × 10¹² 转换为小时。"
+      content: "纳秒 (ns) 到 小时 (hour) 的时间单位换算指南。了解如何通过公式 ns ÷ 3.6 × 10¹² 换算为小时。"
   - - meta
     - name: keywords
-      content: "时间, 单位转换, 纳秒, 小时, ns, hour, 纳秒到小时, 时间转换指南"
+      content: "时间, 单位换算, 纳秒, 小时, ns, hour, 纳秒到小时, 时间换算指南"
 ---
 # 纳秒 (ns) 到 小时 (h) 的换算
 
@@ -48,7 +48,7 @@ const convertHandler = () => {
     <n-input-number v-model:value="form.number" placeholder="输入纳秒" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="primary" @click="convertHandler" block>转换</n-button>
+    <n-button type="primary" @click="convertHandler" block>换算</n-button>
   </n-form-item>
 </n-form>
 
@@ -60,7 +60,7 @@ const convertHandler = () => {
 
 ## 公式
 
-从 **纳秒 (ns)** 转换到 **小时 (h)** 的公式为：
+从 **纳秒 (ns)** 换算到 **小时 (h)** 的公式为：
 $$ h = \frac{ns}{3.6 \times 10^{12}} $$
 
 ### 示例

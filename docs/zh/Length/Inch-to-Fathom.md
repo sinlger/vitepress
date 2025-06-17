@@ -6,16 +6,16 @@ breadcrumb:
   - - link: /
       linkText: 首页
   - - link: /Length/
-      linkText: 长度转换
+      linkText: 长度换算
   - - link: /Length/Inch-to-Fathom
       linkText: 英寸到英寻
 head:
   - - meta
     - name: description
-      content: "英寸 (in) 到英寻 (fathom) 的长度单位换算指南。了解如何通过公式 fathom = in × 0.013889 转换为英寻。"
+      content: "英寸 (in) 到英寻 (fathom) 的长度单位换算指南。了解如何通过公式 fathom = in × 0.013889 换算为英寻。"
   - - meta
     - name: keywords
-      content: "长度, 单位转换, 英寸, 英寻, in, fathom, 英寸到英寻, 长度转换指南"
+      content: "长度, 单位换算, 英寸, 英寻, in, fathom, 英寸到英寻, 长度换算指南"
 ---
 # 英寸 (in) 到 英寻 (fathom) 的换算
 ---
@@ -47,7 +47,7 @@ const convertHandler = () => {
     <n-input-number v-model:value="form.number" placeholder="输入英寸" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="primary" @click="convertHandler" block>转换</n-button>
+    <n-button type="primary" @click="convertHandler" block>换算</n-button>
   </n-form-item>
 </n-form>
 
@@ -79,7 +79,7 @@ const convertHandler = () => {
 
 ## 公式
 
-从 **英寸 (in)** 转换到 **英寻 (fathom)** 的公式为：
+从 **英寸 (in)** 换算到 **英寻 (fathom)** 的公式为：
 $$ fathom = in \times 0.013889 $$
 
 ### 示例

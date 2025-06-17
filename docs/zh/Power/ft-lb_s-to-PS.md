@@ -6,7 +6,7 @@ breadcrumb:
   - - link: /
       linkText: 首页
   - - link: /Power/
-      linkText: 功率转换
+      linkText: 功率换算
   - - link: /Power/ft-lb_s-to-PS
       linkText: 英尺磅每秒转公制马力
 head:
@@ -15,7 +15,7 @@ head:
       content: 提供英尺・磅每秒(ft-lb/s)到公制马力(PS)的单位换算公式及实际应用场景。
   - - meta
     - name: keywords
-      content: 英尺磅每秒转公制马力,ft-lb/s到PS换算,功率单位转换公式,功率单位换算工具,机械设备与跨国项目功率单位
+      content: 英尺磅每秒转公制马力,ft-lb/s到PS换算,功率单位换算公式,功率单位换算工具,机械设备与跨国项目功率单位
 ---
 # 英尺・磅每秒 (ft-lb/s) 到公制马力 (PS) 换算
 
@@ -66,16 +66,16 @@ const convertHandler = (e) => {
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
   <n-form-item label="数值"  path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要转换的数值" />
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数值" />
   </n-form-item>
   <n-form-item label="从" path="from">
     <n-select  size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
   </n-form-item>
   <n-form-item label="到" path="to">
-    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择转换单位" />
+    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
   </n-form-item>
   <n-form-item>
-    <n-button type="primary" style="width:100%" @click="convertHandler">转换</n-button>
+    <n-button type="primary" style="width:100%" @click="convertHandler">换算</n-button>
   </n-form-item>
 </n-form>
 <n-card  embedded :bordered="false" hoverable>
@@ -92,11 +92,11 @@ const convertHandler = (e) => {
 
 - **美系汽车发动机功率标注**：如 150 PS，即约 110.325 kW，对应约 81,429 ft-lb/s。
 - **工业设备能耗统计**：在分析多个 PS 级电机对整体工厂用电的影响时需进行 ft-lb/s 与 PS 互换。
-- **农业机械功率匹配**：用于将北美标准 ft-lb/s 转换为欧洲常用 PS 进行设备选型。
+- **农业机械功率匹配**：用于将北美标准 ft-lb/s 换算为欧洲常用 PS 进行设备选型。
 
 ## 使用建议
 
-- **跨标准机械设备选型**：适用于从美制单位（ft-lb/s）到欧洲单位（PS）的能量转换计算。
+- **跨标准机械设备选型**：适用于从美制单位（ft-lb/s）到欧洲单位（PS）的能量换算计算。
 - **科学计算**：使用国际单位制（瓦特 W 或千瓦 kW），便于统一标准。
 
 ## 相关连接

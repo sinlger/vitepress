@@ -6,7 +6,7 @@ breadcrumb:
   - - link: /
       linkText: 首页
   - - link: /Area/
-      linkText: 面积转换
+      linkText: 面积换算
   - - link: /Area/SquareCentimeter-to-SquareMillimeter
       linkText: 平方厘米到平方毫米
 head:
@@ -15,7 +15,7 @@ head:
       content: "面积单位换算指南，涵盖平方厘米 (cm²) 到平方毫米 (mm²) 的详细换算公式与说明。"
   - - meta
     - name: keywords
-      content: "面积, 单位转换, 平方厘米, 平方毫米, cm², mm², 平方厘米到平方毫米, 面积转换指南"
+      content: "面积, 单位换算, 平方厘米, 平方毫米, cm², mm², 平方厘米到平方毫米, 面积换算指南"
 ---
 # 平方厘米 (cm²) 到 平方毫米 (mm²) 的换算
 ---
@@ -47,7 +47,7 @@ const convertHandler = () => {
     <n-input-number v-model:value="form.number" placeholder="输入平方厘米" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="primary" @click="convertHandler" block>转换</n-button>
+    <n-button type="primary" @click="convertHandler" block>换算</n-button>
   </n-form-item>
 </n-form>
 
@@ -59,7 +59,7 @@ const convertHandler = () => {
 
 ## 公式
 
-从 **平方厘米 (cm²)** 转换到 **平方毫米 (mm²)** 的公式为：
+从 **平方厘米 (cm²)** 换算到 **平方毫米 (mm²)** 的公式为：
 $$ mm² = cm² \times 100 $$
 
 ## 平方厘米到平方毫米换算指南

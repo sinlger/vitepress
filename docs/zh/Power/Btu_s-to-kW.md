@@ -6,7 +6,7 @@ breadcrumb:
   - - link: /
       linkText: 首页
   - - link: /Power/
-      linkText: 功率转换
+      linkText: 功率换算
   - - link: /Power/Btu_s-to-kW
       linkText: 英热单位每秒转千瓦
 head:
@@ -15,7 +15,7 @@ head:
       content: "提供英热单位每秒 (Btu/s) 到千瓦 (kW) 的单位换算公式及实际应用场景。"
   - - meta
     - name: keywords
-      content: "英热单位每秒转千瓦,Btu/s到kW换算,功率单位转换公式,功率单位换算工具,暖通与制冷行业功率单位"
+      content: "英热单位每秒转千瓦,Btu/s到kW换算,功率单位换算公式,功率单位换算工具,暖通与制冷行业功率单位"
 ---
 # 英热单位每秒 (Btu/s) 到千瓦 (kW) 换算
 
@@ -66,16 +66,16 @@ const convertHandler = (e) => {
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
   <n-form-item label="数值"  path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要转换的数值" />
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数值" />
   </n-form-item>
   <n-form-item label="从" path="from">
     <n-select  size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
   </n-form-item>
   <n-form-item label="到" path="to">
-    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择转换单位" />
+    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
   </n-form-item>
   <n-form-item>
-    <n-button type="primary" style="width:100%" @click="convertHandler">转换</n-button>
+    <n-button type="primary" style="width:100%" @click="convertHandler">换算</n-button>
   </n-form-item>
 </n-form>
 <n-card  embedded :bordered="false" hoverable>
@@ -91,12 +91,12 @@ const convertHandler = (e) => {
 ## 生活中的应用示例
 
 - **中央空调系统功率标注**：商用空调常用 Btu/s 表示制冷能力，如 12,000 Btu/h ≈ 3.517 kW。
-- **工业加热设备功率匹配**：用于将美标 Btu/s 设备功率转换为国际标准 kW 进行选型。
+- **工业加热设备功率匹配**：用于将美标 Btu/s 设备功率换算为国际标准 kW 进行选型。
 - **暖通项目设计**：工程师在跨国项目中需进行 Btu/s 与 kW 的互换计算。
 
 ## 使用建议
 
-- **跨标准工程设计**：适用于从北美标准（Btu/s）到国际标准（kW）的能量转换计算。
+- **跨标准工程设计**：适用于从北美标准（Btu/s）到国际标准（kW）的能量换算计算。
 - **科学计算**：使用国际单位制（瓦特 W 或千瓦 kW），便于统一标准。
 
 ## 相关连接

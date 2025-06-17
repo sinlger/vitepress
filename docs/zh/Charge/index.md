@@ -6,7 +6,7 @@ breadcrumb:
   - - link: /
       linkText: 首页
   - - link: /Charge/
-      linkText: 电荷单位转换
+      linkText: 电荷单位换算
   - - link: /Charge/index
       linkText: 电荷单位单位换算
 head:
@@ -15,7 +15,7 @@ head:
       content: "电荷单位换算指南，涵盖库仑 (C)、毫库仑 (mC)、微库仑 (μC)、纳库仑 (nC)、皮库仑 (pC) 的详细换算公式与说明。"
   - - meta
     - name: keywords
-      content: "电荷, 单位转换, 库仑, 毫库仑, 微库仑, 纳库仑, 皮库仑, 换算公式, 单位换算指南"  
+      content: "电荷, 单位换算, 库仑, 毫库仑, 微库仑, 纳库仑, 皮库仑, 换算公式, 单位换算指南"  
 ---
 # 电荷单位单位换算
 ---
@@ -67,16 +67,16 @@ const convertHandler = (e) => {
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
   <n-form-item label="数值"  path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要转换的数值" />
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数值" />
   </n-form-item>
   <n-form-item label="从" path="from">
     <n-select  size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
   </n-form-item>
   <n-form-item label="到" path="to">
-    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择转换单位" />
+    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
   </n-form-item>
   <n-form-item>
-    <n-button type="primary" style="width:100%" @click="convertHandler">转换</n-button>
+    <n-button type="primary" style="width:100%" @click="convertHandler">换算</n-button>
   </n-form-item>
 </n-form>
 <n-card  embedded :bordered="false" hoverable>
@@ -86,7 +86,7 @@ const convertHandler = (e) => {
 </n-card>
 
 
-## 电荷单位转换表
+## 电荷单位换算表
 
 | 单位名称   | 符号 | 换算关系                             | 科学计数法  | 典型应用场景                     |
 |------------|------|--------------------------------------|-------------|----------------------------------|
@@ -116,9 +116,9 @@ const convertHandler = (e) => {
   * **纳库仑（nC）** ：纳米科技领域，如单层石墨烯存储电荷约 0.1 nC/cm²。
   * **皮库仑（pC）** ：量子尺度研究，如单个电子电荷仅 1.6×10⁻¹⁹ C（即 0.00016 pC）。
 
-### 三、单位转换的数学原理
+### 三、单位换算的数学原理
 
-电荷单位采用千进制缩放，转换遵循幂运算规律：
+电荷单位采用千进制缩放，换算遵循幂运算规律：
 
 1 C = 10³ mC = 10⁶ μC = 10⁹ nC = 10¹² pC
 

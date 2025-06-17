@@ -6,7 +6,7 @@ breadcrumb:
   - - link: /
       linkText: 首页
   - - link: /Mass/
-      linkText: 质量转换
+      linkText: 质量换算
   - - link: /Mass/mt-to-g
       linkText: 公吨到克
 head:
@@ -15,7 +15,7 @@ head:
       content: "质量单位换算指南，涵盖公吨 (mt) 到克 (g) 的详细换算公式与说明。"
   - - meta
     - name: keywords
-      content: "质量, 单位转换, 公吨, 克, mt, g, 公吨到克, 质量转换指南"
+      content: "质量, 单位换算, 公吨, 克, mt, g, 公吨到克, 质量换算指南"
 ---
 # 公吨 (mt) 到 克 (g) 的换算
 ---
@@ -47,7 +47,7 @@ const convertHandler = () => {
     <n-input-number v-model:value="form.number" placeholder="输入公吨" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="primary" @click="convertHandler" block>转换</n-button>
+    <n-button type="primary" @click="convertHandler" block>换算</n-button>
   </n-form-item>
 </n-form>
 
@@ -59,7 +59,7 @@ const convertHandler = () => {
 
 ## 公式
 
-从 **公吨 (mt)** 转换到 **克 (g)** 的公式为：
+从 **公吨 (mt)** 换算到 **克 (g)** 的公式为：
 $$ g = mt \times 1000000 $$
 
 ## 公吨到克换算指南

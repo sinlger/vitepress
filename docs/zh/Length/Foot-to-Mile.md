@@ -6,16 +6,16 @@ breadcrumb:
   - - link: /
       linkText: 首页
   - - link: /Length/
-      linkText: 长度转换
+      linkText: 长度换算
   - - link: /Length/Foot-to-Mile
       linkText: 英尺到英里
 head:
   - - meta
     - name: description
-      content: "英尺 (ft) 到英里 (mi) 的长度单位换算指南。了解如何通过公式 mi = ft × 0.00018939 转换为英里。"
+      content: "英尺 (ft) 到英里 (mi) 的长度单位换算指南。了解如何通过公式 mi = ft × 0.00018939 换算为英里。"
   - - meta
     - name: keywords
-      content: "长度, 单位转换, 英尺, 英里, ft, mi, 英尺到英里, 长度转换指南"
+      content: "长度, 单位换算, 英尺, 英里, ft, mi, 英尺到英里, 长度换算指南"
 ---
 # 英尺 (ft) 到 英里 (mi) 的换算
 ---
@@ -47,7 +47,7 @@ const convertHandler = () => {
     <n-input-number v-model:value="form.number" placeholder="输入英尺" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="primary" @click="convertHandler" block>转换</n-button>
+    <n-button type="primary" @click="convertHandler" block>换算</n-button>
   </n-form-item>
 </n-form>
 
@@ -79,7 +79,7 @@ const convertHandler = () => {
 
 ## 公式
 
-从 **英尺 (ft)** 转换到 **英里 (mi)** 的公式为：
+从 **英尺 (ft)** 换算到 **英里 (mi)** 的公式为：
 $$ mi = ft \times 0.00018939 $$
 
 ### 示例

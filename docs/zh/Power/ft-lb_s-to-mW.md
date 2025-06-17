@@ -6,7 +6,7 @@ breadcrumb:
   - - link: /
       linkText: 首页
   - - link: /Power/
-      linkText: 功率转换
+      linkText: 功率换算
   - - link: /Power/ft-lb_s-to-MW
       linkText: 英尺磅每秒转兆瓦
 head:
@@ -15,7 +15,7 @@ head:
       content: "提供英尺・磅每秒 (ft-lb/s) 到兆瓦 (MW) 的单位换算公式及实际应用场景。"
   - - meta
     - name: keywords
-      content: "英尺磅每秒转兆瓦,ft-lb/s到MW换算,功率单位转换公式,功率单位换算工具,大型机械设备与能源设施功率单位"
+      content: "英尺磅每秒转兆瓦,ft-lb/s到MW换算,功率单位换算公式,功率单位换算工具,大型机械设备与能源设施功率单位"
 ---
 # 英尺・磅每秒 (ft-lb/s) 到兆瓦 (MW) 换算
 
@@ -66,16 +66,16 @@ const convertHandler = (e) => {
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
   <n-form-item label="数值"  path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要转换的数值" />
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数值" />
   </n-form-item>
   <n-form-item label="从" path="from">
     <n-select  size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
   </n-form-item>
   <n-form-item label="到" path="to">
-    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择转换单位" />
+    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
   </n-form-item>
   <n-form-item>
-    <n-button type="primary" style="width:100%" @click="convertHandler">转换</n-button>
+    <n-button type="primary" style="width:100%" @click="convertHandler">换算</n-button>
   </n-form-item>
 </n-form>
 <n-card  embedded :bordered="false" hoverable>
@@ -91,12 +91,12 @@ const convertHandler = (e) => {
 ## 生活中的应用示例
 
 - **大型工业设备扭矩输出评估**：如万吨级压机或重型运输带的动力系统以 MW 表示输出功率。
-- **美制机械系统功率匹配**：用于将北美标准 ft-lb/s 转换为国际通用 MW 进行设备选型。
+- **美制机械系统功率匹配**：用于将北美标准 ft-lb/s 换算为国际通用 MW 进行设备选型。
 - **农业与工程机械动力对比**：在进口美系设备时，需进行 ft-lb/s 与 MW 的互换计算。
 
 ## 使用建议
 
-- **跨标准重型机械分析**：适用于从美制单位（ft-lb/s）到国际标准（MW）的能量转换计算。
+- **跨标准重型机械分析**：适用于从美制单位（ft-lb/s）到国际标准（MW）的能量换算计算。
 - **科学计算**：使用国际单位制（瓦特 W 或兆瓦 MW），便于统一标准。
 
 ## 相关连接

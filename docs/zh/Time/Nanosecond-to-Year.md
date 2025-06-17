@@ -6,16 +6,16 @@ breadcrumb:
   - - link: /
       linkText: 首页
   - - link: /Time/
-      linkText: 时间转换
+      linkText: 时间换算
   - - link: /Time/Nanosecond-to-Year
       linkText: 纳秒到年
 head:
   - - meta
     - name: description
-      content: "纳秒 (ns) 到 年 (year) 的时间单位换算指南。了解如何通过公式 ns ÷ 3.154 × 10¹⁶ 转换为年。"
+      content: "纳秒 (ns) 到 年 (year) 的时间单位换算指南。了解如何通过公式 ns ÷ 3.154 × 10¹⁶ 换算为年。"
   - - meta
     - name: keywords
-      content: "时间, 单位转换, 纳秒, 年, ns, year, 纳秒到年, 时间转换指南"
+      content: "时间, 单位换算, 纳秒, 年, ns, year, 纳秒到年, 时间换算指南"
 ---
 # 纳秒 (ns) 到 年 (year) 的换算
 
@@ -48,7 +48,7 @@ const convertHandler = () => {
     <n-input-number v-model:value="form.number" placeholder="输入纳秒" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="primary" @click="convertHandler" block>转换</n-button>
+    <n-button type="primary" @click="convertHandler" block>换算</n-button>
   </n-form-item>
 </n-form>
 
@@ -60,7 +60,7 @@ const convertHandler = () => {
 
 ## 公式
 
-从 **纳秒 (ns)** 转换到 **年 (year)** 的公式为：
+从 **纳秒 (ns)** 换算到 **年 (year)** 的公式为：
 $$ year = \frac{ns}{3.1536 \times 10^{16}} $$
 
 ### 示例

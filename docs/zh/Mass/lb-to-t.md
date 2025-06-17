@@ -6,7 +6,7 @@ breadcrumb:
   - - link: /
       linkText: 首页
   - - link: /Mass/
-      linkText: 质量转换
+      linkText: 质量换算
   - - link: /Mass/lb-to-t
       linkText: 磅到吨
 head:
@@ -15,7 +15,7 @@ head:
       content: "质量单位换算指南，涵盖磅 (lb) 到吨 (t) 的详细换算公式与说明。"
   - - meta
     - name: keywords
-      content: "质量, 单位转换, 磅, 吨, lb, t, 磅到吨, 质量转换指南"
+      content: "质量, 单位换算, 磅, 吨, lb, t, 磅到吨, 质量换算指南"
 ---
 # 磅 (lb) 到 吨 (t) 的换算
 ---
@@ -47,7 +47,7 @@ const convertHandler = () => {
     <n-input-number v-model:value="form.number" placeholder="输入磅" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="primary" @click="convertHandler" block>转换</n-button>
+    <n-button type="primary" @click="convertHandler" block>换算</n-button>
   </n-form-item>
 </n-form>
 
@@ -59,7 +59,7 @@ const convertHandler = () => {
 
 ## 公式
 
-从 **磅 (lb)** 转换到 **吨 (t)** 的公式为：
+从 **磅 (lb)** 换算到 **吨 (t)** 的公式为：
 $$ t = lb \times 0.00045359237 $$
 
 ## 磅到吨换算指南

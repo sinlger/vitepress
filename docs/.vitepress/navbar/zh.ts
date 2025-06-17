@@ -4,20 +4,20 @@ import { DefaultTheme } from 'vitepress'
 export const zhNav: DefaultTheme.NavItem[] = [
   { text: '首页', link: '/' },
   {
-    text: '转换工具',
+    text: '换算工具',
     items: [
-      { text: '温度转换', link: '/Temperature/' },
+      { text: '温度换算', link: '/Temperature/' },
       {
-        text: '时间转换',
+        text: '时间换算',
         link: '/Time/'
       }, {
-        text: '长度转换',
+        text: '长度换算',
         link: '/Length/'
       }, {
-        text: '面积转换',
+        text: '面积换算',
         link: '/Area/'
       }, {
-        text: '重量转换',
+        text: '重量换算',
         link: '/Mass/'
       }]
   },

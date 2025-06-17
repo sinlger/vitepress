@@ -6,16 +6,16 @@ breadcrumb:
   - - link: /
       linkText: 首页
   - - link: /Angle/
-      linkText: 角度转换
+      linkText: 角度换算
   - - link: /Angle/deg-to-grad
       linkText: 度数 (°) 到 梯度 (grad) 换算
 head:
   - - meta
     - name: description
-      content: "将度数(°)转换为梯度(grad)的在线工具和换算公式。提供简单易用的角度单位转换计算器。"
+      content: "将度数(°)换算为梯度(grad)的在线工具和换算公式。提供简单易用的角度单位换算计算器。"
   - - meta
     - name: keywords
-      content: "角度转换, 度数转梯度, °到grad换算, 在线计算器, 数学工具, 单位转换"
+      content: "角度换算, 度数转梯度, °到grad换算, 在线计算器, 数学工具, 单位换算"
 ---
 # 度数 (°) 到 梯度 (grad) 的换算
 ---
@@ -46,7 +46,7 @@ const convertHandler = () => {
     <n-input-number v-model:value="form.number" placeholder="输入度数" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="primary" @click="convertHandler" block>转换</n-button>
+    <n-button type="primary" @click="convertHandler" block>换算</n-button>
   </n-form-item>
 </n-form>
 
@@ -58,12 +58,12 @@ const convertHandler = () => {
 
 ## 公式
 
-从 **度数 (°)** 转换到 **梯度 (grad)** 的公式为：
+从 **度数 (°)** 换算到 **梯度 (grad)** 的公式为：
 $$ grad = ° \times \frac{200}{180} $$
 
 ## 度数到梯度换算指南
 
-角度测量是数学和工程领域中的基础概念之一，尤其在几何学、物理学以及计算机图形学中应用广泛。本文将介绍如何将度数 (°) 转换为梯度 (grad)，并提供一些实用示例。
+角度测量是数学和工程领域中的基础概念之一，尤其在几何学、物理学以及计算机图形学中应用广泛。本文将介绍如何将度数 (°) 换算为梯度 (grad)，并提供一些实用示例。
 
 ### 为什么需要 ° 到 grad 的换算？
 

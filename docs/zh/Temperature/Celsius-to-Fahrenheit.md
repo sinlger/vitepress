@@ -6,16 +6,16 @@ breadcrumb:
   - - link: /
       linkText: 首页
   - - link: /Temperature
-      linkText: 温度转换
+      linkText: 温度换算
   - - link: Celsius-to-Fahrenheit
       linkText: 摄氏度转华氏度
 head:
   - - meta
     - name: description
-      content: "摄氏度 (°C) 转 华氏度 (°F) 的在线转换工具。了解如何进行温度单位换算并获取精确结果。"
+      content: "摄氏度 (°C) 转 华氏度 (°F) 的在线换算工具。了解如何进行温度单位换算并获取精确结果。"
   - - meta
     - name: keywords
-      content: "摄氏度, 华氏度, 温度转换, °C 到 °F, 在线转换工具, 摄氏度转华氏度"
+      content: "摄氏度, 华氏度, 温度换算, °C 到 °F, 在线换算工具, 摄氏度转华氏度"
 
 ---
 # 摄氏度 (°C) 到 华氏度 (°F) 的换算
@@ -48,7 +48,7 @@ const convertHandler = () => {
     <n-input-number v-model:value="form.number" placeholder="输入摄氏度" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="primary" @click="convertHandler" block>转换</n-button>
+    <n-button type="primary" @click="convertHandler" block>换算</n-button>
   </n-form-item>
 </n-form>
 
@@ -60,7 +60,7 @@ const convertHandler = () => {
 
 ## 公式
 
-从 **摄氏度 (°C)** 转换到 **华氏度 (°F)** 的公式为：
+从 **摄氏度 (°C)** 换算到 **华氏度 (°F)** 的公式为：
 $$ °F = °C \times 1.8 + 32 $$
 
 ### 示例

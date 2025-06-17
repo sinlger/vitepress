@@ -6,16 +6,16 @@ breadcrumb:
   - - link: /
       linkText: 首页
   - - link: /Time/
-      linkText: 时间转换
+      linkText: 时间换算
   - - link: /Time/Hour-to-Year
       linkText: 小时到年
 head:
   - - meta
     - name: description
-      content: "小时 (h) 到 年 (year) 的时间单位换算指南。了解如何通过公式 h ÷ 8760 转换为年。"
+      content: "小时 (h) 到 年 (year) 的时间单位换算指南。了解如何通过公式 h ÷ 8760 换算为年。"
   - - meta
     - name: keywords
-      content: "时间, 单位转换, 小时, 年, h, year, 小时到年, 时间转换指南"
+      content: "时间, 单位换算, 小时, 年, h, year, 小时到年, 时间换算指南"
 ---
 # 小时 (h) 到 年 (year) 的换算
 ---
@@ -47,7 +47,7 @@ const convertHandler = () => {
     <n-input-number v-model:value="form.number" placeholder="输入小时" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="primary" @click="convertHandler" block>转换</n-button>
+    <n-button type="primary" @click="convertHandler" block>换算</n-button>
   </n-form-item>
 </n-form>
 
@@ -59,7 +59,7 @@ const convertHandler = () => {
 
 ## 公式
 
-从 **小时 (h)** 转换到 **年 (year)** 的公式为：
+从 **小时 (h)** 换算到 **年 (year)** 的公式为：
 $$ year = \frac{h}{8760} $$
 
 ### 示例
