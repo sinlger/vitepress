@@ -5,7 +5,7 @@ lastUpdated: false
 breadcrumb:
   - - link: /
       linkText: 首页
-  - - link: /Force/
+  - - link: /Force/index
       linkText: 力学单位换算
   - - link: /Force/index
       linkText: 力学单位单位换算

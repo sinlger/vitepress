@@ -6,7 +6,7 @@ lastUpdated: false
 breadcrumb:
   - - link: /
       linkText: 首页
-  - - link: /Temperature/
+  - - link: /Temperature/index
       linkText: 温度换算
   - - link: /Temperature/Kelvin-to-Rankine
       linkText: 开尔文转兰金度

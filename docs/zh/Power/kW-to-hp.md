@@ -5,7 +5,7 @@ lastUpdated: false
 breadcrumb:
   - - link: /
       linkText: 首页
-  - - link: /Power/
+  - - link: /Power/index
       linkText: 功率换算
   - - link: /Power/kW-to-hp
       linkText: 千瓦转英制马力

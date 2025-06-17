@@ -5,7 +5,7 @@ lastUpdated: false
 breadcrumb:
   - - link: /
       linkText: 首页
-  - - link: /Parts-Per/
+  - - link: /Parts-Per/index
       linkText: 浓度单位换算
   - - link: /Parts-Per/index
       linkText: 浓度单位单位换算

@@ -5,8 +5,7 @@ lastUpdated: false
 breadcrumb:
   - - link: /
       linkText: 首页
-  - - link: /Angle/
-      linkText: 角度换算
+
   - - link: /Angle/index
       linkText: 角度转换
   - - link: /Angle/arcsec-to-grad

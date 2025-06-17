@@ -5,7 +5,7 @@ lastUpdated: false
 breadcrumb:
   - - link: /
       linkText: 首页
-  - - link: /Reactive Energy/
+  - - link: /Reactive Energy/index
       linkText: 电力单位换算
   - - link: /Reactive Energy/index
       linkText: 电力单位单位换算

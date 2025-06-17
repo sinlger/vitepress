@@ -5,7 +5,7 @@ lastUpdated: false
 breadcrumb:
   - - link: /
       linkText: 首页
-  - - link: /Energy/
+  - - link: /Energy/index
       linkText: 能量和功率单位换算
   - - link: /Energy/index
       linkText: 能量和功率单位单位换算

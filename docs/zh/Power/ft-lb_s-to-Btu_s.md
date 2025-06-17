@@ -5,7 +5,7 @@ lastUpdated: false
 breadcrumb:
   - - link: /
       linkText: 首页
-  - - link: /Power/
+  - - link: /Power/index
       linkText: 功率换算
   - - link: /Power/ft-lb_s-to-Btu_s
       linkText: 英尺磅每秒转英热单位每秒

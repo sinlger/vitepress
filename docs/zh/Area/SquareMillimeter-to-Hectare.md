@@ -5,8 +5,7 @@ lastUpdated: false
 breadcrumb:
   - - link: /
       linkText: 首页
-  - - link: /Area/
-      linkText: 面积换算
+
   - - link: /Area/SquareMillimeter-to-Hectare
       linkText: 平方毫米到公顷
 head:

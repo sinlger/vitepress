@@ -5,7 +5,7 @@ lastUpdated: false
 breadcrumb:
   - - link: /
       linkText: 首页
-  - - link: /Power/
+  - - link: /Power/index
       linkText: 功率换算
   - - link: /Power/MW-to-Btu_s
       linkText: 兆瓦转英热单位每秒

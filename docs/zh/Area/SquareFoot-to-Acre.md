@@ -5,8 +5,7 @@ lastUpdated: false
 breadcrumb:
   - - link: /
       linkText: 首页
-  - - link: /Area/
-      linkText: 面积换算
+
   - - link: /Area/SquareFoot-to-Acre
       linkText: 平方英尺到英亩
 head:

@@ -6,7 +6,7 @@ lastUpdated: false
 breadcrumb:
   - - link: /
       linkText: 首页
-  - - link: /Temperature/
+  - - link: /Temperature/index
       linkText: 温度换算
   - - link: /Temperature/Fahrenheit-to-Celsius
       linkText: 华氏度转摄氏度

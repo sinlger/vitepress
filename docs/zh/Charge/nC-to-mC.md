@@ -5,7 +5,7 @@ lastUpdated: false
 breadcrumb:
   - - link: /
       linkText: 首页
-  - - link: /Charge/
+  - - link: /Charge/index
       linkText: 电荷单位换算
   - - link: /Charge/nC-to-mC
       linkText: 纳库仑到毫库仑换算

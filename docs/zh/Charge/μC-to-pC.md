@@ -5,7 +5,7 @@ lastUpdated: false
 breadcrumb:
   - - link: /
       linkText: 首页
-  - - link: /Charge/
+  - - link: /Charge/index
       linkText: 电荷单位换算
   - - link: /Charge/μC-to-pC
       linkText: 微库仑到皮库仑换算

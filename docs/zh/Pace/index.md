@@ -5,7 +5,7 @@ lastUpdated: false
 breadcrumb:
   - - link: /
       linkText: 首页
-  - - link: /Pace/
+  - - link: /Pace/index
       linkText: 配速单位换算
   - - link: /Pace/index
       linkText: 配速单位单位换算

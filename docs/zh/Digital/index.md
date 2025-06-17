@@ -5,7 +5,7 @@ lastUpdated: false
 breadcrumb:
   - - link: /
       linkText: 首页
-  - - link: /Digital/
+  - - link: /Digital/index
       linkText: 数据单位换算
   - - link: /Digital/index
       linkText: 数据单位单位换算
