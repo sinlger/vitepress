@@ -65,24 +65,10 @@ features:
     linkText: 开始使用
     link: /Mass/index
   - icon: 
-      dark: speed-svgrepo-com.svg
-      light: speed-svgrepo-com.svg
-    title: 加速度单位换算
-    details: 厘米每二次方秒（cm/s²）、重力加速度（g，约为9.80665 m/s²）
-    linkText: 开始使用
-    link: /Acceleration/index
-  - icon: 
-      dark: charge-svgrepo-com.svg
-      light: charge-svgrepo-com.svg
-    title: 电荷单位单位换算
-    details: 涵盖库仑 (C)、毫库仑 (mC)、微库仑 (μC)、纳库仑 (nC)、皮库仑 (pC) 的详细换算公式与说明
-    linkText: 开始使用
-    link: /Charge/index
-  - icon: 
       dark: more-circle-horizontal-svgrepo-com.svg
       light: more-circle-horizontal-svgrepo-com.svg
     title: 更多单位换算
     details: Volume（体积）、Frequency（频率）、Speed（速度）、Pressure（压力）、Digital（数字）
-    linkText: 查看更多
+    linkText: 尽请期待
     link: /
 ---
