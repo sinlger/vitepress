@@ -45,15 +45,18 @@ const rules = {
   number:{
     required: true,
     type: 'number',
-    trigger: "blur"
+    trigger: "blur",
+    message: '请输入数字'
   },
   to:{
     required: true,
-    trigger: "select"
+    trigger: "select",
+    message: '请选择转换单位'
   },
   from:{
     required: true,
-    trigger: "select"
+    trigger: "select",
+    message: '请选择原始单位'
   }
 }
 const form = reactive({
@@ -84,7 +87,7 @@ const convertHandler = (e) => {
     <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
   </n-form-item>
   <n-form-item>
-    <n-button type="primary" style="width:100%" @click="convertHandler">换算</n-button>
+    <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
   </n-form-item>
 </n-form>
 <n-card  embedded :bordered="false" hoverable>
@@ -141,13 +144,13 @@ nMi| Nautical mile| 海里| 1 nMi = 1,852 m| 1 m ≈ 0.00053996 nMi
 
 此表综合了国际标准（SI）、英制及特殊用途单位，数据源自权威计量资料。若有特定场景需求（如科学计算或工程精度），可进一步提供细分换算系数。
 ## 相关连接
-<n-grid x-gap="12" :cols="4">
+<n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Length" :key="index">
     <n-button
       text
       tag="a"
       :href="file.path"
-      type="primary"
+      type="info"
     >
       {{file.name}}
     </n-button>

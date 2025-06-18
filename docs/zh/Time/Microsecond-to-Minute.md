@@ -48,7 +48,7 @@ const convertHandler = () => {
     <n-input-number v-model:value="form.number" placeholder="输入微秒" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="primary" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>换算</n-button>
   </n-form-item>
 </n-form>
 
@@ -68,13 +68,13 @@ $$ min = \frac{\mu s}{6 \times 10^{7}} $$
 - 300,000,000μs = 5min
 - 6,000,000μs = 0.1min
 ## 相关连接
-<n-grid x-gap="12" :cols="4">
+<n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Time" :key="index">
     <n-button
       text
       tag="a"
       :href="file.path"
-      type="primary"
+      type="info"
     >
       {{file.name}}
     </n-button>

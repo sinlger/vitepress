@@ -48,7 +48,7 @@ const convertHandler = () => {
     <n-input-number v-model:value="form.number" placeholder="输入分钟" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="primary" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>换算</n-button>
   </n-form-item>
 </n-form>
 
@@ -68,13 +68,13 @@ $$ year = \frac{min}{525600} $$
 - 52560min = 0.1year
 - 262800min = 0.5year
 ## 相关连接
-<n-grid x-gap="12" :cols="4">
+<n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Time" :key="index">
     <n-button
       text
       tag="a"
       :href="file.path"
-      type="primary"
+      type="info"
     >
       {{file.name}}
     </n-button>

@@ -58,7 +58,7 @@ const convertHandler = (e) => {
     <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="请输入兆升数值" />
   </n-form-item>
   <n-form-item>
-    <n-button type="primary" style="width:100%" @click="convertHandler">换算</n-button>
+    <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
   </n-form-item>
 </n-form>
 <n-card embedded :bordered="false" hoverable>
@@ -116,13 +116,13 @@ const convertHandler = (e) => {
 - 容器材质可能影响实际容量
 
 ## 相关连接
-<n-grid x-gap="12" :cols="4">
+<n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Volume" :key="index">
     <n-button
       text
       tag="a"
       :href="file.path"
-      type="primary"
+      type="info"
     >
       {{file.name}}
     </n-button>

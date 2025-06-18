@@ -47,7 +47,7 @@ const convertHandler = () => {
     <n-input-number v-model:value="form.number" placeholder="输入纳米" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="primary" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>换算</n-button>
   </n-form-item>
 </n-form>
 
@@ -101,13 +101,13 @@ $$ ft = nm \times 0.00000000328084 $$
 - 1000nm = 0.000003280840ft
 
 ## 相关连接
-<n-grid x-gap="12" :cols="4">
+<n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Length" :key="index">
     <n-button
       text
       tag="a"
       :href="file.path"
-      type="primary"
+      type="info"
     >
       {{file.name}}
     </n-button>

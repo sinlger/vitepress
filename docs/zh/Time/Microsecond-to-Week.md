@@ -74,7 +74,7 @@ const clearHistory = () => {
     <n-input-number v-model:value="form.number" placeholder="输入微秒" style="width: 100%" :show-button="true" />
   </n-form-item>
   <n-form-item>
-    <n-button type="primary" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>换算</n-button>
   </n-form-item>
 </n-form>
 
@@ -113,13 +113,13 @@ $$ week = \mu s \times 1.6534391534391535 \times 10^{-12} $$
 ### 换算说明
 1周 = 7天 = 168小时 = 10,080分钟 = 604,800秒 = 604,800,000,000 微秒 (6.048 × 10¹¹ μs)
 ## 相关连接
-<n-grid x-gap="12" :cols="4">
+<n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Time" :key="index">
     <n-button
       text
       tag="a"
       :href="file.path"
-      type="primary"
+      type="info"
     >
       {{file.name}}
     </n-button>

@@ -49,7 +49,7 @@ const convertHandler = () => {
     <n-input-number v-model:value="form.number" placeholder="输入华氏度" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="primary" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>换算</n-button>
   </n-form-item>
 </n-form>
 
@@ -70,13 +70,13 @@ $$ K = \frac{°F - 32}{1.8} + 273.15 $$
 - 212°F = 373.15K
 
 ## 相关链接
-<n-grid x-gap="12" :cols="4">
+<n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Temperature" :key="index">
     <n-button
       text
       tag="a"
       :href="file.path"
-      type="primary"
+      type="info"
     >
       {{file.name}}
     </n-button>

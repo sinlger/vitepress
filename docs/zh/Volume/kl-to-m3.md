@@ -58,7 +58,7 @@ const convertHandler = (e) => {
     <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="请输入千升数值" />
   </n-form-item>
   <n-form-item>
-    <n-button type="primary" style="width:100%" @click="convertHandler">换算</n-button>
+    <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
   </n-form-item>
 </n-form>
 <n-card embedded :bordered="false" hoverable>
@@ -112,13 +112,13 @@ const convertHandler = (e) => {
 - 精确计算需考虑容器壁厚度
 
 ## 相关连接
-<n-grid x-gap="12" :cols="4">
+<n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Volume" :key="index">
     <n-button
       text
       tag="a"
       :href="file.path"
-      type="primary"
+      type="info"
     >
       {{file.name}}
     </n-button>

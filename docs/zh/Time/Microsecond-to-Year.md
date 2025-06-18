@@ -58,7 +58,7 @@ const convertHandler = () => {
     <n-input-number v-model:value="form.number" placeholder="输入微秒" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="primary" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>换算</n-button>
   </n-form-item>
 </n-form>
 
@@ -79,13 +79,13 @@ $$ 3.1536 \times 10^{13} \, \mu s = 1 \, \text{year} $$
 $$ 3.1536 \times 10^{12} \, \mu s = 0.1 \, \text{year} $$
 $$ 1.5768 \times 10^{13} \, \mu s = 0.5 \, \text{year} $$
 ## 相关连接
-<n-grid x-gap="12" :cols="4">
+<n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Time" :key="index">
     <n-button
       text
       tag="a"
       :href="file.path"
-      type="primary"
+      type="info"
     >
       {{file.name}}
     </n-button>

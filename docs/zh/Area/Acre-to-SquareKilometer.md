@@ -46,7 +46,7 @@ const convertHandler = () => {
     <n-input-number v-model:value="form.number" placeholder="输入英亩" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="primary" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>换算</n-button>
   </n-form-item>
 </n-form>
 
@@ -89,13 +89,13 @@ ddd
 掌握英亩到平方千米的换算可以帮助您更好地理解和使用这些面积单位。希望本指南能为您提供有价值的参考。
 
 ## 相关连接
-<n-grid x-gap="12" :cols="3">
+<n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Area" :key="index">
     <n-button
       text
       tag="a"
       :href="file.path"
-      type="primary"
+      type="info"
     >
       {{file.name}}
     </n-button>

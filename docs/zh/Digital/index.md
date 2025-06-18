@@ -46,15 +46,18 @@ const rules = {
   number:{
     required: true,
     type: 'number',
-    trigger: "blur"
+    trigger: "blur",
+    message: '请输入数字'
   },
   to:{
     required: true,
-    trigger: "select"
+    trigger: "select",
+    message: '请选择转换单位'
   },
   from:{
     required: true,
-    trigger: "select"
+    trigger: "select",
+    message: '请选择原始单位'
   }
 }
 const form = reactive({
@@ -85,7 +88,7 @@ const convertHandler = (e) => {
     <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
   </n-form-item>
   <n-form-item>
-    <n-button type="primary" style="width:100%" @click="convertHandler">换算</n-button>
+    <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
   </n-form-item>
 </n-form>
 <n-card  embedded :bordered="false" hoverable>

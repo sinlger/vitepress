@@ -1,82 +1,81 @@
-export const breadcrumb = {}
 export const footer = {
   'zh-CN': [{
-    "label": "长度",
-    "value": "../Length"
+    "label": "长度单位换算",
+    "value": "../Length/index"
   }, {
-    "label": "面积",
-    "value": "../Area"
+    "label": "面积换算",
+    "value": "../Area/index"
   }, {
-    "label": "质量",
-    "value": "../Mass"
+    "label": "质量换算",
+    "value": "../Mass/index"
   }, {
-    "label": "体积",
-    "value": "../Volume"
+    "label": "体积换算",
+    "value": "../Volume/index"
   }, {
-    "label": "体积流量",
-    "value": "../VolumeFlowRate"
+    "label": "体积流量换算",
+    "value": "../VolumeFlowRate/index"
   }, {
-    "label": "温度",
-    "value": "../Temperature"
+    "label": "温度换算",
+    "value": "../Temperature/index"
   }, {
-    "label": "时间",
-    "value": "../Time"
+    "label": "时间换算",
+    "value": "../Time/index"
   }, {
-    "label": "频率",
-    "value": "../Frequency"
+    "label": "频率换算",
+    "value": "../Frequency/index"
   }, {
-    "label": "速度",
-    "value": "../Speed"
+    "label": "速度换算",
+    "value": "../Speed/index"
   }, {
-    "label": "力矩",
-    "value": "../Torque"
+    "label": "力矩换算",
+    "value": "../Torque/index"
   }, {
-    "label": "配速",
-    "value": "../Pace"
+    "label": "配速换算",
+    "value": "../Pace/index"
   }, {
-    "label": "压力",
-    "value": "../Pressure"
+    "label": "压力换算",
+    "value": "../Pressure/index"
   }, {
-    "label": "数字",
-    "value": "../Digital"
+    "label": "数字换算",
+    "value": "../Digital/index"
   }, {
-    "label": "照度",
-    "value": "../Illuminance"
+    "label": "照度换算",
+    "value": "../Illuminance/index"
   }, {
-    "label": "百分比",
-    "value": "../PartsPer"
+    "label": "百分比换算",
+    "value": "../PartsPer/index"
   }, {
-    "label": "电压",
-    "value": "../Voltage"
+    "label": "电压换算",
+    "value": "../Voltage/index"
   }, {
-    "label": "电流",
-    "value": "../Current"
+    "label": "电流换算",
+    "value": "../Current/index"
   }, {
-    "label": "功率",
-    "value": "../Power"
+    "label": "功率换算",
+    "value": "../Power/index"
   }, {
-    "label": "视在功率",
-    "value": "../ApparentPower"
+    "label": "视在功率换算",
+    "value": "../ApparentPower/index"
   }, {
-    "label": "无功功率",
-    "value": "../ReactivePower"
+    "label": "无功功率换算",
+    "value": "../ReactivePower/index"
   }, {
-    "label": "能量",
-    "value": "../Energy"
+    "label": "能量换算",
+    "value": "../Energy/index"
   }, {
-    "label": "无功电能",
-    "value": "../ReactiveEnergy"
+    "label": "无功电能换算",
+    "value": "../ReactiveEnergy/index"
   }, {
-    "label": "角度",
-    "value": "../Angle"
+    "label": "角度换算",
+    "value": "../Angle/index"
   }, {
-    "label": "电荷",
-    "value": "../Charge"
+    "label": "电荷换算",
+    "value": "../Charge/index"
   }, {
-    "label": "力学",
-    "value": "../Force"
+    "label": "力学换算",
+    "value": "../Force/index"
   }, {
-    "label": "加速度",
-    "value": "../Acceleration"
+    "label": "加速度换算",
+    "value": "../Acceleration/index"
   }]
 }
