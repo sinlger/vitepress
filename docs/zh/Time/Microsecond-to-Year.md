@@ -63,8 +63,8 @@ const convertHandler = () => {
 </n-form>
 
 <n-card  embedded :bordered="false" hoverable>
-  <div  style="text-align:center">
-    <h1>{{form.result}}</h1>
+  <div  style="text-align:center;font-size:20px;">
+    <strong>{{form.result}}</strong>
   </div>
 </n-card>
 

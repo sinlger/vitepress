@@ -8,16 +8,16 @@ breadcrumb:
       linkText: 首页
   - - link: /Temperature/index
       linkText: 温度换算
-  - - link: /Temperature/Fahrenheit-to-Celsius
-      linkText: 华氏度转摄氏度
+  - - link: /Temperature/Fahrenheit-to-Kelvin
+      linkText: 华氏度转开尔文
 
 head:
   - - meta
     - name: description
-      content: "华氏度 (°F) 换算到 摄氏度 (°C) 的在线工具。提供公式说明及示例，便于温度单位换算。"
+      content: "华氏度 (°F) 换算到 开尔文 (K) 的在线工具。提供公式说明及示例，便于温度单位换算。"
   - - meta
     - name: keywords
-      content: "华氏度, 摄氏度, 温度换算, °F 到 °C, 在线换算工具, 单位换算"
+      content: "华氏度, 开尔文, 温度换算, °F 到 K, 在线换算工具, 单位换算"
 ---
 # 华氏度 (°F) 到 开尔文 (K) 的换算
 ---
@@ -26,7 +26,21 @@ import { onMounted, reactive, inject, ref } from 'vue'
 import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage,NGrid ,NGi  } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
 import { Temperature } from '../../files';
-
+const seoKey = [
+  '摄氏度与开尔文换算',
+  '摄氏度的符号',
+  '温度转换',
+  'k和摄氏度换算',
+  '温度换算',
+  '摄氏度和开尔文的换算',
+  '开尔文和摄氏度的换算',
+  '摄氏度和华氏度的换算',
+  '华氏度转摄氏度',
+  '华氏度转开尔文',
+  '单位转换',
+  '摄氏度',
+  '摄氏度符号 °c  '
+]
 const convert = inject('convert')
 
 const form = reactive({
@@ -53,10 +67,21 @@ const convertHandler = () => {
   </n-form-item>
 </n-form>
 
-<n-card  embedded :bordered="false" hoverable>
-  <div  style="text-align:center">
-    <h1>{{form.result}}</h1>
+<n-card
+  title="华氏度 (°F) 到 开尔文 (K) 的算结果"
+  :segmented="{
+    content: true,
+    footer: 'soft',
+  }"
+>
+  <div  style="text-align:center;font-size:20px;">
+    <strong>{{form.result}}</strong>
   </div>
+  <template #footer>
+    <div>
+      <span v-for="item of seoKey">{{item}}，</span>
+    </div>
+  </template>
 </n-card>
 
 ## 公式

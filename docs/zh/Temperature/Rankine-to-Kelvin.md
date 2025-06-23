@@ -26,6 +26,7 @@ import { onMounted, reactive, inject, ref } from 'vue'
 import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage,NGrid ,NGi  } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
 import { Temperature } from '../../files';
+const seoKey = ['摄氏度到兰金度（°R）的转换', '兰金度（°R）到华氏度 (°F)', '兰金度（°R）到开尔文 (K)','开氏温度', '温度转换', '温度换算','单位转换']
 
 const convert = inject('convert')
 
@@ -53,11 +54,23 @@ const convertHandler = () => {
   </n-form-item>
 </n-form>
 
-<n-card  embedded :bordered="false" hoverable>
-  <div  style="text-align:center">
-    <h1>{{form.result}}</h1>
+<n-card
+  title="兰金度 (R)转开尔文 (K)的换算结果"
+  :segmented="{
+    content: true,
+    footer: 'soft',
+  }"
+>
+  <div  style="text-align:center;font-size:20px;">
+    <strong>{{form.result}}</strong>
   </div>
+  <template #footer>
+    <div>
+      <span v-for="item of seoKey">{{item}}，</span>
+    </div>
+  </template>
 </n-card>
+
 
 ## 公式
 

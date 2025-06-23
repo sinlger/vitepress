@@ -24,7 +24,20 @@ import { onMounted, reactive, inject ,ref  } from 'vue'
 import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage,NGrid ,NGi  } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
 import { Temperature } from '../../files';
-
+const seoKey = [
+  '摄氏度与开尔文换算',
+  '摄氏度的符号',
+  '温度转换',
+  'k和摄氏度换算',
+  '温度换算',
+  '摄氏度和开尔文的换算',
+  '开尔文和摄氏度的换算',
+  '摄氏度和华氏度的换算',
+  '华氏度转摄氏度',
+  '单位转换',
+  '摄氏度',
+  '摄氏度符号 °c  '
+]
 const convert = inject('convert')
 const options =  [
   { label: '摄氏度', value: 'C' },
@@ -82,12 +95,22 @@ const convertHandler = (e) => {
     <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
   </n-form-item>
 </n-form>
-<n-card  embedded :bordered="false" hoverable>
+<n-card
+  title="温度换算结果"
+  :segmented="{
+    content: true,
+    footer: 'soft',
+  }"
+>
   <div  style="text-align:center;font-size:20px;">
-    <stronge>{{form.result}}</stronge>
+    <strong>{{form.result}}</strong>
   </div>
+  <template #footer>
+    <div>
+      <span v-for="item of seoKey">{{item}}，</span>
+    </div>
+  </template>
 </n-card>
-
 
 ## 定义及换算公式
 
