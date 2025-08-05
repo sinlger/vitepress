@@ -24,12 +24,13 @@ import { onMounted, reactive, inject, ref } from 'vue'
 import { NButton, NForm, NFormItem, NInput, NInputNumber, NSelect, NCard, useMessage,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
 import { Length } from '../../files';
-
+const seoKey = ['单位转换器','单位换算','长度单位转换器','长度单位转换','尺寸换算','长度单位换算','长度单位换算表','厘米转换','厘米和米换算','米厘米分米毫米的换算','cm和m换算','cm是什么','厘米单位','cm换算','厘米和米的换算公式','厘米 英寸','一厘米等于多少米','公分是什么单位','cm是什么意思','厘米和米','尺寸转换器','量尺','米尺','长度换算器','厘米换算','一厘米','cm是什么单位','长度转换','直尺在线测量','英尺换算厘米','英寸 厘米','尺寸换算器','长度','分米','尺寸转换','刻度尺','厘米换算米','一厘米等于多少毫米','长度单位','毫米和厘米','寸','英尺和厘米的换算','尺','一米等于多少厘米','长度换算','公分','尺寸','一公分等于多少厘米','英尺换算','cm','长度单位换算','尺寸换算','英寸换算','mm','厘米换算英寸']
 const convert = inject('convert')
 
 const form = reactive({
   number: null,
   result: '',
+  title: '厘米到码的换算',
 })
 
 const convertHandler = () => {
@@ -51,10 +52,21 @@ const convertHandler = () => {
   </n-form-item>
 </n-form>
 
-<n-card  embedded :bordered="false" hoverable>
+<n-card 
+  :title="form.title"
+  :segmented="{
+    content: true,
+    footer: 'soft',
+  }"
+>
   <div  style="text-align:center;font-size:20px;">
     <strong>{{form.result}}</strong>
   </div>
+  <template #footer>
+    <div>
+      <span v-for="item of seoKey">{{item}}，</span>
+    </div>
+  </template>
 </n-card>
 
 ## 实际应用
