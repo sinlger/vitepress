@@ -65,8 +65,6 @@ const convertHandler = () => {
   <template #footer>
     <div>
       <span v-for="item of seoKey">{{item}}，</span>
-      <a href="">温度单位转换</a>，
-      <a href="">摄氏度转华氏度</a>
     </div>
   </template>
 </n-card>

@@ -24,12 +24,13 @@ import { onMounted, reactive, inject, ref } from 'vue'
 import { NButton, NForm, NFormItem, NInput, NInputNumber, NSelect, NCard, useMessage,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
 import { Length } from '../../files';
-
+const seoKey = ['单位转换器','单位换算','长度单位转换器','长度单位转换','尺寸换算','长度单位换算','长度单位换算表','incho','英寸和英尺的符号','一英寸等于多少cm','一英寸传感器','英寸转化','三英寸','寸和英寸的换算','英寸的单位','in单位','英寸和寸的换算','英寸缩写','一英寸等于多少寸','英寸的英文','英寸英文','inches是什么单位','一英寸多少厘米','一尺等于多少寸','英寸单位符号','一inch等于多少厘米','一寸是多长','英寸和英尺','寸的符号','一寸多长','英寸换厘米','英尺和英寸','寸和英寸','英寸单位','一英寸是多少厘米','英寸和寸','英寸的符号','一英尺','in是什么单位','英寸转换','一英尺等于多少厘米','inch是什么单位','inch to cm','inch换算cm','英寸厘米换算','英寸符号','英寸换算厘米','inch','一英寸等于多少厘米','英寸换算','英寸和厘米的换算']
 const convert = inject('convert')
 
 const form = reactive({
   number: null,
   result: '',
+  title:'英寸 (in) 到 英里 (mi) 的换算'
 })
 
 const convertHandler = () => {
@@ -51,10 +52,21 @@ const convertHandler = () => {
   </n-form-item>
 </n-form>
 
-<n-card  embedded :bordered="false" hoverable>
+<n-card 
+  :title="form.title"
+  :segmented="{
+    content: true,
+    footer: 'soft',
+  }"
+>
   <div  style="text-align:center;font-size:20px;">
     <strong>{{form.result}}</strong>
   </div>
+  <template #footer>
+    <div>
+      <span v-for="item of seoKey">{{item}}，</span>
+    </div>
+  </template>
 </n-card>
 
 ## 实际应用

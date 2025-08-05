@@ -24,12 +24,13 @@ import { onMounted, reactive, inject, ref } from 'vue'
 import { NButton, NForm, NFormItem, NInput, NInputNumber, NSelect, NCard, useMessage,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
 import { Length } from '../../files';
-
+const seoKey = ['单位转换器','单位换算','长度单位转换器','长度单位转换','尺寸换算','长度单位换算','长度单位换算表','incho','foot long','imperial unit','one foot','feet foot','一英尺是多少厘米','英尺的英文','英寸英尺','一尺等于多少平方米','英尺 英寸','一平方英尺等于多少平方米','五英尺','英尺英寸','英尺单位','ft单位','一尺等于多少寸','一米等于多少英尺','一寸是多长','英寸和英尺','六英尺','一英尺等于多少英寸','一寸多长','feet是什么单位','英尺换算厘米','英制单位','英尺和英寸','一英尺等于多少米','英尺和厘米的换算','ft是什么单位','一英尺等于多少厘米','一英寸','英尺和米的换算','英尺换算']
 const convert = inject('convert')
 
 const form = reactive({
   number: null,
   result: '',
+  title: '美制英尺 (ft-us) 到 海里 (nMi) 的换算',
 })
 
 const convertHandler = () => {
@@ -51,10 +52,21 @@ const convertHandler = () => {
   </n-form-item>
 </n-form>
 
-<n-card  embedded :bordered="false" hoverable>
+<n-card 
+  :title="form.title"
+  :segmented="{
+    content: true,
+    footer: 'soft',
+  }"
+>
   <div  style="text-align:center;font-size:20px;">
     <strong>{{form.result}}</strong>
   </div>
+  <template #footer>
+    <div>
+      <span v-for="item of seoKey">{{item}}，</span>
+    </div>
+  </template>
 </n-card>
 
 ## 实际应用
