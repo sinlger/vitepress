@@ -43,7 +43,7 @@ const form = reactive({
   title:'茶匙(tsp)到立方米(m³)换算'
 })
 
-const convertHandler = (极值e) => {
+const convertHandler = (e) => {
   e.preventDefault();
   formRef.value?.validate((errors)=>{
     if (!errors) {
@@ -53,7 +53,7 @@ const convertHandler = (极值e) => {
 }
 </script>
 
-<n-form size="large" :model="form" ref='form极值Ref' :rules="rules">
+<n-form size="large" :model="form" ref='formRef' :rules="rules">
   <n-form-item label="数值" path="number">
     <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="请输入茶匙数值" />
   </n-form-item>

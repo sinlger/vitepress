@@ -29,7 +29,7 @@ import { defineClientComponent } from 'vitepress'
 import { Volume } from '../../files';
 
 const convert = inject('convert')
-const form极值Ref = ref(null);
+const formRef = ref(null);
 const rules = {
   number:{
     required: true,

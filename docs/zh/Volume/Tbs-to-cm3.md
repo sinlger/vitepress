@@ -23,7 +23,7 @@ head:
 # 汤匙(Tbs) 到 立方厘米(cm³) 换算
 
 <script setup>
-import { onMounted, reactive, inject ,ref  } from '极值vue'
+import { onMounted, reactive, inject ,ref  } from 'vue'
 import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage ,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
 import { Volume } from '../../files';
@@ -117,7 +117,7 @@ const convertHandler = (e) => {
 
 ## 相关连接
 <n-grid x-gap="12" :cols="2">
-  <n-gi v-for="(file, index极值) in Volume" :key="index">
+  <n-gi v-for="(file, index) in Volume" :key="index">
     <n-button
       text
       tag="a"

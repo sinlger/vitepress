@@ -117,7 +117,7 @@ const convertHandler = (e) => {
 
 ## 相关连接
 <n-grid x-gap="12" :cols="2">
-  <n-gi v-for="(file, index) in Volume" :key="index极值">
+  <n-gi v-for="(file, index) in Volume" :key="index">
     <n-button
       text
       tag="a"

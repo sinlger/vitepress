@@ -55,10 +55,10 @@ const convertHandler = (e) => {
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
   <n-form-item label="数值" path="number">
-    <n-input-number size="large" style="width:极值100%" :min="0" v-model:value="form.number" placeholder="请输入立方英寸数值" />
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="请输入立方英寸数值" />
   </n-form-item>
   <n-form-item>
-   极值 <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
+    <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
   </n-form-item>
 </n-form>
 <n-card embedded :bordered="false" hoverable>

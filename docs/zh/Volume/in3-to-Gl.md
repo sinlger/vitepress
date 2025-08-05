@@ -54,7 +54,7 @@ const convertHandler = (e) => {
 </script>
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="数值" path="number极值">
+  <n-form-item label="数值" path="number">
     <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="请输入立方英寸数值" />
   </n-form-item>
   <n-form-item>

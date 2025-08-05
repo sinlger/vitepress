@@ -43,7 +43,7 @@ const form = reactive({
   title:'汤匙(Tbs)到立方米(m³)换算'
 })
 
-const convertHandler = (极值e) => {
+const convertHandler = (e) => {
   e.preventDefault();
   formRef.value?.validate((errors)=>{
     if (!errors) {

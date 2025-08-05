@@ -24,7 +24,7 @@ head:
 
 <script setup>
 import { onMounted, reactive, inject ,ref  } from 'vue'
-import { NButton,NForm ,N极值FormItem,NInput,NInputNumber,NSelect,NCard,useMessage ,NGrid ,NGi } from 'naive-ui'
+import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage ,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
 import { Volume } from '../../files';
 

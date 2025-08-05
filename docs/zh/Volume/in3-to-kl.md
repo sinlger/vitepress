@@ -24,9 +24,9 @@ head:
 
 <script setup>
 import { onMounted, reactive, inject ,ref  } from 'vue'
-import { NButton,NForm ,N极值FormItem,NInput,NInputNumber,NSelect,NCard,useMessage ,NGrid ,NGi } from 'naive-ui'
+import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage ,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
-import极值 { Volume } from '../../files';
+import { Volume } from '../../files';
 
 const convert = inject('convert')
 const formRef = ref(null);

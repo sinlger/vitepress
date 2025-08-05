@@ -53,7 +53,7 @@ const convertHandler = (e) => {
 }
 </script>
 
-<n-form size="large" :model="form" ref='form极值Ref' :rules="rules">
+<n-form size="large" :model="form" ref='formRef' :rules="rules">
   <n-form-item label="数值" path="number">
     <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="请输入汤匙数值" />
   </n-form-item>

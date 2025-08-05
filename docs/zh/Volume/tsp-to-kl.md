@@ -62,7 +62,7 @@ const convertHandler = (e) => {
   </n-form-item>
 </n-form>
 <n-card embedded :bordered="false" hoverable>
- 极值  <div style="text-align:center">
+   <div style="text-align:center">
     <h1>{{form.result}}</h1>
   </div>
 </n-card>
