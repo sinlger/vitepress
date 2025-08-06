@@ -24,12 +24,13 @@ import { onMounted, reactive, inject, ref } from 'vue'
 import { NButton, NForm, NFormItem, NInput, NInputNumber, NSelect, NCard, useMessage,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
 import { Length } from '../../files';
-
+const seoKey = ['单位转换器','单位换算','长度单位转换器','长度单位转换','尺寸换算','长度单位换算','长度单位换算表','一海里等于多少公里','一英里等于多少米','miles','海里和公里怎么换算','mile','一英里等于多少公里','英里和公里换算','米换算英尺','英尺单位','英制','英尺和英寸的换算','英尺英寸','英尺和米换算','ft单位','英尺 米','一米等于多少英尺','英尺厘米换算','英寸和英尺','ft to m','呎','英尺换算米','英尺转换','ft和m换算','六英尺','英尺和米','一英尺等于多少英寸','feet 多少米','米和英尺换算','feet是什么单位','英尺换算厘米','英制单位','英尺和英寸','英寸 厘米','一英尺','一英尺等于多少米','公尺','来源','ft是什么单位','一英尺等于多少厘米','英尺和厘米的换算','英里','foot','厘米和英寸换算','英尺和米的换算','英尺换算','ft','一英寸等于多少厘米','英寸换算','英寸和厘米的换算']
 const convert = inject('convert')
 
 const form = reactive({
   number: null,
   result: '',
+  title:'千米到英尺换算',
 })
 
 const convertHandler = () => {
@@ -51,10 +52,21 @@ const convertHandler = () => {
   </n-form-item>
 </n-form>
 
-<n-card  embedded :bordered="false" hoverable>
+<n-card  
+  :title="form.title"
+  :segmented="{
+    content: true,
+    footer: 'soft',
+  }"
+>
   <div  style="text-align:center;font-size:20px;">
     <strong>{{form.result}}</strong>
   </div>
+    <template #footer>
+    <div>
+      <span v-for="item of seoKey">{{item}}，</span>
+    </div>
+  </template>
 </n-card>
 
 ## 实际应用
