@@ -24,12 +24,13 @@ import { onMounted, reactive, inject, ref } from 'vue'
 import { NButton, NForm, NFormItem, NInput, NInputNumber, NSelect, NCard, useMessage,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
 import { Length } from '../../files';
-
+const seoKey = ['单位转换器','单位换算','长度单位转换器','长度单位转换','尺寸换算','长度单位换算','长度单位换算表','纳米海里','纳米和海里','纳米单位','一纳米等于多少海里','纳米到海里换算','nm nMi','纳米和海里的换算单位','纳米海里转换','nMi是什么单位','纳米和海里','纳米换算','nm','海里单位','长度换算公式','纳米转海里','海里换算','纳米计算器','海里计算器','长度单位','纳米到海里公式','海里转换器','纳米海里对照表','长度转换','单位换算表','纳米海里换算器','海里长度','纳米长度','长度计算','单位转换公式','纳米海里计算','长度换算器','海里单位换算','纳米单位换算','长度单位转换表','纳米海里转换表']
 const convert = inject('convert')
 
 const form = reactive({
   number: null,
   result: '',
+  title: '纳米 (nm) 到 海里 (nMi) 的换算'
 })
 
 const convertHandler = () => {
@@ -51,10 +52,21 @@ const convertHandler = () => {
   </n-form-item>
 </n-form>
 
-<n-card  embedded :bordered="false" hoverable>
+<n-card  
+  :title="form.title"
+  :segmented="{
+    content: true,
+    footer: 'soft',
+  }"
+>
   <div  style="text-align:center;font-size:20px;">
     <strong>{{form.result}}</strong>
   </div>
+    <template #footer>
+    <div>
+      <span v-for="item of seoKey">{{item}}，</span>
+    </div>
+  </template>
 </n-card>
 
 ## 实际应用

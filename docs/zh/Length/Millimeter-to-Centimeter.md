@@ -24,12 +24,14 @@ import { onMounted, reactive, inject, ref } from 'vue'
 import { NButton, NForm, NFormItem, NInput, NInputNumber, NSelect, NCard, useMessage,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
 import { Length } from '../../files';
-
+const seoKey = ['单位转换器','单位换算','长度单位转换器','长度单位转换','尺寸换算','长度单位换算','长度单位换算表','厘米和毫米换算','mm是毫米吗','毫米和厘米换算','m cm','毫米换算','厘米毫米换算','一毫米等于多少厘米','cm和mm换算','毫米单位','一毫米等于多少米','mm换算cm','mm和cm换算','ｍｍ','毫米换算厘米','毫米英文','mm单位','mm换算m','英寸转毫米','分米单位','.mm','mm和m换算','cm mm','厘米换算毫米','mm cm','毫米和米换算','一厘米等于多少毫米','平方毫米','一米等于多少毫米','毫米和厘米','毫米换算米','mm是什么单位','mm to m','mm to cm','um','nm','cm','mm','mi','m']
 const convert = inject('convert')
 
 const form = reactive({
   number: null,
   result: '',
+  title: '毫米 (mm) 到厘米 (cm) 的长度单位换算'
+
 })
 
 const convertHandler = () => {
@@ -51,10 +53,21 @@ const convertHandler = () => {
   </n-form-item>
 </n-form>
 
-<n-card  embedded :bordered="false" hoverable>
+<n-card  
+  :title="form.title"
+  :segmented="{
+    content: true,
+    footer: 'soft',
+  }"
+>
   <div  style="text-align:center;font-size:20px;">
     <strong>{{form.result}}</strong>
   </div>
+    <template #footer>
+    <div>
+      <span v-for="item of seoKey">{{item}}，</span>
+    </div>
+  </template>
 </n-card>
 
 ## 实际应用

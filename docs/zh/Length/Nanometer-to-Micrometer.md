@@ -24,12 +24,13 @@ import { onMounted, reactive, inject, ref } from 'vue'
 import { NButton, NForm, NFormItem, NInput, NInputNumber, NSelect, NCard, useMessage,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
 import { Length } from '../../files';
-
+const seoKey = ['单位转换器','单位换算','长度单位转换器','长度单位转换','尺寸换算','长度单位换算','长度单位换算表','纳米微米','纳米和微米','纳米单位','一纳米等于多少微米','纳米到微米换算','nm μm','纳米和微米的换算单位','纳米微米转换','μm是什么单位','纳米和微米','纳米换算','nm','微米单位','长度换算公式','纳米转微米','微米换算','纳米计算器','微米计算器','长度单位','纳米到微米公式','微米转换器','纳米微米对照表','长度转换','单位换算表','纳米微米换算器','微米长度','纳米长度','长度计算','单位转换公式','纳米微米计算','长度换算器','微米单位换算','纳米单位换算','长度单位转换表','纳米微米转换表']
 const convert = inject('convert')
 
 const form = reactive({
   number: null,
   result: '',
+  title: '纳米 (nm) 到 微米 (μm) 的换算'
 })
 
 const convertHandler = () => {
@@ -51,10 +52,21 @@ const convertHandler = () => {
   </n-form-item>
 </n-form>
 
-<n-card  embedded :bordered="false" hoverable>
+<n-card  
+  :title="form.title"
+  :segmented="{
+    content: true,
+    footer: 'soft',
+  }"
+>
   <div  style="text-align:center;font-size:20px;">
     <strong>{{form.result}}</strong>
   </div>
+    <template #footer>
+    <div>
+      <span v-for="item of seoKey">{{item}}，</span>
+    </div>
+  </template>
 </n-card>
 
 ## 实际应用

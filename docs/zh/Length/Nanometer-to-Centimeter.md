@@ -24,12 +24,14 @@ import { onMounted, reactive, inject, ref } from 'vue'
 import { NButton, NForm, NFormItem, NInput, NInputNumber, NSelect, NCard, useMessage,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
 import { Length } from '../../files';
-
+const seoKey = ['单位转换器','单位换算','长度单位转换器','长度单位转换','尺寸换算','长度单位换算','长度单位换算表','微米纳米','纳米和米','纳米单位','一微米等于多少纳米','一纳米等于多少米啊','nm nm','微米和纳米的换算单位','n.m','nm是什么单位','微米和纳米','微米和毫米','nm']
 const convert = inject('convert')
 
 const form = reactive({
   number: null,
   result: '',
+  title: '纳米 (nm) 到 厘米 (cm) 的换算'
+
 })
 
 const convertHandler = () => {
@@ -51,10 +53,21 @@ const convertHandler = () => {
   </n-form-item>
 </n-form>
 
-<n-card  embedded :bordered="false" hoverable>
+<n-card  
+  :title="form.title"
+  :segmented="{
+    content: true,
+    footer: 'soft',
+  }"
+>
   <div  style="text-align:center;font-size:20px;">
     <strong>{{form.result}}</strong>
   </div>
+    <template #footer>
+    <div>
+      <span v-for="item of seoKey">{{item}}，</span>
+    </div>
+  </template>
 </n-card>
 
 ## 实际应用

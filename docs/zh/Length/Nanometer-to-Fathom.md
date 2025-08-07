@@ -24,12 +24,13 @@ import { onMounted, reactive, inject, ref } from 'vue'
 import { NButton, NForm, NFormItem, NInput, NInputNumber, NSelect, NCard, useMessage,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
 import { Length } from '../../files';
-
+const seoKey = ['单位转换器','单位换算','长度单位转换器','长度单位转换','尺寸换算','长度单位换算','长度单位换算表','纳米英寻','纳米和英寻','纳米单位','一纳米等于多少英寻','纳米到英寻换算','nm fathom','纳米和英寻的换算单位','纳米英寻转换','fathom是什么单位','纳米和英寻','纳米换算','nm','英寻单位','长度换算公式','纳米转英寻','英寻换算','纳米计算器','英寻计算器','长度单位','纳米到英寻公式','英寻转换器','纳米英寻对照表','长度转换','单位换算表','纳米英寻换算器','英寻长度','纳米长度','长度计算','单位转换公式','纳米英寻计算','长度换算器','英寻单位换算','纳米单位换算','长度单位转换表','纳米英寻转换表']
 const convert = inject('convert')
 
 const form = reactive({
   number: null,
   result: '',
+  title: '纳米 (nm) 到 英寻 (fathom) 的换算'
 })
 
 const convertHandler = () => {
@@ -51,10 +52,21 @@ const convertHandler = () => {
   </n-form-item>
 </n-form>
 
-<n-card  embedded :bordered="false" hoverable>
+<n-card  
+  :title="form.title"
+  :segmented="{
+    content: true,
+    footer: 'soft',
+  }"
+>
   <div  style="text-align:center;font-size:20px;">
     <strong>{{form.result}}</strong>
   </div>
+    <template #footer>
+    <div>
+      <span v-for="item of seoKey">{{item}}，</span>
+    </div>
+  </template>
 </n-card>
 
 
