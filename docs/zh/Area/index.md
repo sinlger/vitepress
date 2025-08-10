@@ -23,6 +23,7 @@ import { onMounted, reactive, inject ,ref  } from 'vue'
 import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage ,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
 import { Area } from '../../files';
+const seoKey = ['平方换算亩','面积换算亩','平方单位','平方米换算亩 计算器','单位换算工具','亩 公顷','公顷亩转换','一亩地多少平方','面积转换器','面积换算公式','亩换算','亩数换算平方米','平方米和亩的换算','亩和平方米','公顷换算','平方米换算','平方千米和平方公里','公顷换算平方米','平方毫米和平方米的换算','一平方米等于多少亩','公顷单位','平方米转亩','亩换算平方米','平方米怎么算','单位换算计算器','面积转换','平方厘米换算平方米','一亩地多少平方米','平方公里','面积单位换算','平方米和平方千米','面積換算','公顷和亩的换算','平方米和亩换算','换算单位','单位换算器在线','一亩等于多少平方米','平方毫米换算平方米','公顷和亩','平方米换算亩','单位转换','一公顷等于多少亩','一公顷等于多少平方米','平方米','一亩地等于多少平方米','单位换算']
 const convert = inject('convert')
 const options =  [
   { "label": "平方毫米", "value": "mm2" },
@@ -85,10 +86,21 @@ const convertHandler = (e) => {
     <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
   </n-form-item>
 </n-form>
-<n-card  embedded :bordered="false" hoverable>
+<n-card  
+  :title="form.title"
+  :segmented="{
+    content: true,
+    footer: 'soft',
+  }"
+>
   <div  style="text-align:center;font-size:20px;">
     <strong>{{form.result}}</strong>
   </div>
+    <template #footer>
+    <div>
+      <span v-for="item of seoKey">{{item}}，</span>
+    </div>
+  </template>
 </n-card>
 
 

@@ -25,12 +25,13 @@ import { onMounted, reactive, inject, ref } from 'vue'
 import { NButton, NForm, NFormItem, NInput, NInputNumber, NSelect, NCard, useMessage,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
 import { Area } from '../../files';
-
+const seoKey = ['英亩 平方米','英亩和平方米的换算','一英亩等于多少平方米','一英亩等于多少亩','英亩和亩的换算','acres','亩和平方米的换算','面积换算','一公顷等于多少平方米','acre','单位换算']
 const convert = inject('convert')
 
 const form = reactive({
   number: null,
   result: '',
+  title:'英亩 (ac) 到公顷 (ha) 的换算',
 })
 
 const convertHandler = () => {
@@ -52,10 +53,21 @@ const convertHandler = () => {
   </n-form-item>
 </n-form>
 
-<n-card  embedded :bordered="false" hoverable>
+<n-card  
+  :title="form.title"
+  :segmented="{
+    content: true,
+    footer: 'soft',
+  }"
+>
   <div  style="text-align:center;font-size:20px;">
     <strong>{{form.result}}</strong>
   </div>
+    <template #footer>
+    <div>
+      <span v-for="item of seoKey">{{item}}，</span>
+    </div>
+  </template>
 </n-card>
 
 ## 公式

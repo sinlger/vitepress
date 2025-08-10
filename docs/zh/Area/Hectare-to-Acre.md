@@ -23,12 +23,14 @@ import { onMounted, reactive, inject, ref } from 'vue'
 import { NButton, NForm, NFormItem, NInput, NInputNumber, NSelect, NCard, useMessage,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
 import { Area } from '../../files';
-
+const seoKey = ['亩','公顷','公顷与亩','一平方千米等于多少公顷','亩转公顷','一平方米等于多少公顷','公顷与平方米','一平方千米等于几公顷','一公顷等于多少平方米多少亩','公顷 平方米','亩换算','平方米转公顷','公顷换算','公顷转亩','公顷 亩','亩和公顷换算','一平方公里等于多少公顷','公顷的单位','一公顷是多少亩','公顷换算平方米','亩换算公顷','一公顷多少亩','平方米和公顷换算','公顷单位','一公顷是多少平方米','平方米换算公顷','公顷换算亩','公顷和平方米','hm是什么单位','平方公里和公顷','一亩等于多少公顷','平方千米和公顷','一公顷等于多少平方千米','ha是什么单位','亩和公顷的换算公式','面积单位换算','亩和公顷','一公顷','公顷和亩的换算','公顷和平方米的换算','平方米和公顷','公顷等于多少平方米','公顷和平方千米','hectares','hectare','公顷和亩','一公顷等于多少亩','一公顷等于多少平方米']
 const convert = inject('convert')
 
 const form = reactive({
   number: null,
   result: '',
+  title: '公顷 (ha) 到英亩 (ac) 的详细换算公式',
+
 })
 
 const convertHandler = () => {
@@ -50,11 +52,23 @@ const convertHandler = () => {
   </n-form-item>
 </n-form>
 
-<n-card  embedded :bordered="false" hoverable>
+<n-card  
+  :title="form.title"
+  :segmented="{
+    content: true,
+    footer: 'soft',
+  }"
+>
   <div  style="text-align:center;font-size:20px;">
     <strong>{{form.result}}</strong>
   </div>
+    <template #footer>
+    <div>
+      <span v-for="item of seoKey">{{item}}，</span>
+    </div>
+  </template>
 </n-card>
+
 
 ## 公式
 

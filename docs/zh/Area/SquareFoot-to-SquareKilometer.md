@@ -23,12 +23,42 @@ import { onMounted, reactive, inject, ref } from 'vue'
 import { NButton, NForm, NFormItem, NInput, NInputNumber, NSelect, NCard, useMessage,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
 import { Area } from '../../files';
-
+const seoKey = [
+  '平方英尺到平方千米换算',
+  'ft²到km²换算',
+  '平方英尺转平方千米',
+  '英尺平方到平方千米',
+  '平方英尺平方千米换算器',
+  'ft²转km²',
+  '平方英尺换算平方千米',
+  '英尺平方转平方千米',
+  '平方英尺到平方千米转换',
+  'ft²平方千米换算',
+  '平方英尺平方千米计算',
+  '英尺平方平方千米换算',
+  '平方英尺转换平方千米',
+  'ft²到平方千米',
+  '平方英尺平方千米转换器',
+  '英尺平方到平方千米换算',
+  '平方英尺平方千米换算公式',
+  'ft²转换平方千米',
+  '平方英尺到平方千米计算',
+  '英尺平方转换平方千米',
+  '平方英尺平方千米换算表',
+  'ft²平方千米转换',
+  '平方英尺转平方千米计算',
+  '英尺平方平方千米转换',
+  '平方英尺到平方千米换算工具',
+  'ft²到平方千米换算',
+  '平方英尺平方千米单位换算',
+  '面积换算'
+]
 const convert = inject('convert')
 
 const form = reactive({
   number: null,
   result: '',
+  title: '平方英尺 (ft²) 到 平方千米 (km²) 的换算',
 })
 
 const convertHandler = () => {
@@ -50,10 +80,21 @@ const convertHandler = () => {
   </n-form-item>
 </n-form>
 
-<n-card  embedded :bordered="false" hoverable>
+<n-card  
+  :title="form.title"
+  :segmented="{
+    content: true,
+    footer: 'soft',
+  }"
+>
   <div  style="text-align:center;font-size:20px;">
     <strong>{{form.result}}</strong>
   </div>
+    <template #footer>
+    <div>
+      <span v-for="item of seoKey">{{item}}，</span>
+    </div>
+  </template>
 </n-card>
 
 ## 公式

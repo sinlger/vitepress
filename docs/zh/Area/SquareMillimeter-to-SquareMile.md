@@ -23,12 +23,42 @@ import { onMounted, reactive, inject, ref } from 'vue'
 import { NButton, NForm, NFormItem, NInput, NInputNumber, NSelect, NCard, useMessage,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
 import { Area } from '../../files';
-
+const seoKey = [
+  '平方毫米换算平方英里',
+  '平方毫米到平方英里',
+  '平方英里换算',
+  '面积单位换算',
+  '平方毫米转平方英里',
+  '平方英里计算',
+  '大面积换算',
+  '地理面积测量',
+  '平方毫米符号',
+  '平方英里符号',
+  '面积单位对照',
+  '平方毫米换算表',
+  '平方英里换算公式',
+  '面积转换工具',
+  '平方毫米计算',
+  '平方英里计算器',
+  '面积换算公式',
+  '地理测量单位',
+  '国际面积标准',
+  '科学计算面积',
+  '平方毫米到平方英里公式',
+  '平方英里面积计算',
+  '面积单位转换',
+  '地图测量单位',
+  '土地规划面积',
+  '平方毫米平方英里对照表',
+  '面积计算工具',
+  '国际地理单位'
+]
 const convert = inject('convert')
 
 const form = reactive({
   number: null,
   result: '',
+  title: '平方毫米 (mm²) 到平方英里 (mi²) 的换算',
 })
 
 const convertHandler = () => {
@@ -50,10 +80,21 @@ const convertHandler = () => {
   </n-form-item>
 </n-form>
 
-<n-card  embedded :bordered="false" hoverable>
+<n-card  
+  :title="form.title"
+  :segmented="{
+    content: true,
+    footer: 'soft',
+  }"
+>
   <div  style="text-align:center;font-size:20px;">
     <strong>{{form.result}}</strong>
   </div>
+    <template #footer>
+    <div>
+      <span v-for="item of seoKey">{{item}}，</span>
+    </div>
+  </template>
 </n-card>
 
 ## 公式
