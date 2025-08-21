@@ -26,7 +26,18 @@ import { onMounted, reactive, inject, ref } from 'vue'
 import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage,NGrid ,NGi  } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
 import { Temperature } from '../../files';
-const seoKey = ['华氏度转摄氏度公式', '摄氏度华氏度转换', '华氏摄氏度与摄氏度转换', '摄氏度转华氏度', '华氏温度', '温度转换', '华氏温度和摄氏温度换算', '温度换算', '华氏度和摄氏度的换算', '摄氏度和华氏度的换算', '华氏度转摄氏度', '摄氏度']
+const seoKey = [
+  '华氏度转兰金度',
+  '华氏度换算兰金度',
+  '°F转R',
+  '华氏度与兰金度换算',
+  '温度换算',
+  '单位换算',
+  '在线温度转换',
+  '华氏度',
+  '兰金度',
+  '华氏度转兰金度公式'
+]
 const convert = inject('convert')
 
 const form = reactive({
@@ -69,6 +80,10 @@ const convertHandler = () => {
     </div>
   </template>
 </n-card>
+
+## 如何将华氏度转换为兰金度
+
+从华氏度 (°F) 转换为兰金度 (R) 的换算在工程和科学领域中非常有用。本页面的在线换算工具可以帮助您轻松完成这一操作。输入华氏度温度，即可立即获得对应的兰金度值。此外，还提供了转换公式和实际示例，让您完全掌握华氏度到兰金度的换算方法。
 
 ## 公式
 
