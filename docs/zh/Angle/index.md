@@ -34,6 +34,7 @@ const options =  [
   { "label": "角秒", "value": "arcsec" }
 ];
 const formRef = ref(null);
+const seoKey = ['角度','单位换算','度','弧度','梯度','角分','角秒','换算公式','单位换算指南']
 const rules = {
   number:{
     required: true,
@@ -83,10 +84,23 @@ const convertHandler = (e) => {
     <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
   </n-form-item>
 </n-form>
-<n-card  embedded :bordered="false" hoverable>
-  <div  style="text-align:center;font-size:20px;">
+
+<n-card embedded :bordered="false" hoverable>
+  <template #header>
+    <div style="text-align:center;font-size:16px;color:#666;">
+      {{form.title}}
+    </div>
+  </template>
+  <div style="text-align:center;font-size:20px;">
     <strong>{{form.result}}</strong>
   </div>
+  <template #footer>
+    <div style="text-align:center;font-size:12px;color:#999;">
+      <span v-for="(keyword, index) in seoKey" :key="index">
+        {{keyword}}<span v-if="index < seoKey.length - 1"> | </span>
+      </span>
+    </div>
+  </template>
 </n-card>
 
 ## 角度单位换算公式表

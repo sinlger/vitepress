@@ -108,7 +108,7 @@ const convertHandler = (e) => {
   </div>
   <template #footer>
     <div>
-      <span>在这里进行快速的温度单位转换！</span>
+      <span v-for="item of seoKey">{{item}}，</span>
     </div>
   </template>
 </n-card>
