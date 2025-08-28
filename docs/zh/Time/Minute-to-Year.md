@@ -38,7 +38,6 @@ const seoKey = [
   '分钟缩写', '小时', '分钟英文', '时间换算', 'mins', '秒', 'minute', 'minutes', 'min',
   '年', 'year', '分钟到年', '长期规划', '历史时间', '项目规划', '时间统计'
 ]
-const convert = inject('convert')
 
 const form = reactive({
   number: null,
