@@ -148,21 +148,6 @@ fathom = μm × 0.00000054681
 ### 6. 除了英寻，微米还可以换算成哪些海洋相关的长度单位？
 微米可以换算成海里（nautical mile）、英尺（foot）、码（yard）等多种长度单位，这些单位在海洋导航和工程中都有广泛应用。
 
-## 相关连接
-
-- [长度单位换算](../)
-- [微米 (μm) 到 米 (m) 的换算](./Micrometer-to-Meter.md)
-- [微米 (μm) 到 厘米 (cm) 的换算](./Micrometer-to-Centimeter.md)
-- [微米 (μm) 到 毫米 (mm) 的换算](./Micrometer-to-Millimeter.md)
-- [微米 (μm) 到 千米 (km) 的换算](./Micrometer-to-Kilometer.md)
-- [微米 (μm) 到 英尺 (ft) 的换算](./Micrometer-to-Foot.md)
-- [微米 (μm) 到 码 (yd) 的换算](./Micrometer-to-Yard.md)
-- [微米 (μm) 到 英里 (mi) 的换算](./Micrometer-to-Mile.md)
-- [微米 (μm) 到 海里 (nmi) 的换算](./Micrometer-to-Nautical-mile.md)
-- [英寻 (fathom) 到 微米 (μm) 的换算](/zh/Length/Fathom-to-Micrometer)
-- [英寻 (fathom) 到 米 (m) 的换算](/zh/Length/Fathom-to-Meter)
-- [英寻 (fathom) 到 英尺 (ft) 的换算](/zh/Length/Fathom-to-Foot)
-
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Length" :key="index">
     <n-button

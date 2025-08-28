@@ -169,12 +169,3 @@ const convertHandler = () => {
 
 ### 6. 在国际单位制中，微米和毫米的地位如何？
 毫米是国际单位制(SI)中长度的标准分单位，而微米是毫米的千分之一。两者都是合法的SI单位，广泛应用于科学技术和工程领域。
-
-## 相关连接
-
-- [毫米 (mm) 到 微米 (μm) 换算](/zh/Length/Millimeter-to-Micrometer)
-- [微米 (μm) 到 米 (m) 换算](/zh/Length/Micrometer-to-Meter)
-- [微米 (μm) 到 厘米 (cm) 换算](/zh/Length/Micrometer-to-Centimeter)
-- [微米 (μm) 到 千米 (km) 换算](/zh/Length/Micrometer-to-Kilometer)
-- [微米 (μm) 到 英尺 (ft) 换算](/zh/Length/Micrometer-to-Foot)
-- [微米 (μm) 到 英里 (mi) 换算](/zh/Length/Micrometer-to-Mile)

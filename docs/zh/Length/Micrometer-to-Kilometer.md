@@ -150,11 +150,3 @@ const convertHandler = () => {
 ### 6. 除了微米和千米，还有哪些相关的长度单位？
 常用的长度单位还包括纳米(nm)、毫米(mm)、厘米(cm)、米(m)、英尺(ft)、英寸(in)等，它们之间都可以进行相互转换。
 
-## 相关连接
-
-- [千米 (km) 到 微米 (μm) 换算](/zh/Length/Kilometer-to-Micrometer)
-- [微米 (μm) 到 米 (m) 换算](/zh/Length/Micrometer-to-Meter)
-- [微米 (μm) 到 毫米 (mm) 换算](/zh/Length/Micrometer-to-Millimeter)
-- [微米 (μm) 到 厘米 (cm) 换算](/zh/Length/Micrometer-to-Centimeter)
-- [微米 (μm) 到 英尺 (ft) 换算](/zh/Length/Micrometer-to-Foot)
-- [微米 (μm) 到 码 (yd) 换算](/zh/Length/Micrometer-to-Yard)

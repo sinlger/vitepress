@@ -169,11 +169,3 @@ const convertHandler = () => {
 ### 6. 微米到海里换算在实际工作中的精度要求如何？
 由于数值跨度极大，通常使用科学计数法表示。对于大多数海洋科学应用，保留3-6位有效数字即可满足精度要求，具体精度需求取决于研究目的和测量仪器精度。
 
-## 相关连接
-
-- [海里 (nMi) 到 微米 (μm) 换算](/zh/Length/Nautical-mile-to-Micrometer)
-- [微米 (μm) 到 千米 (km) 换算](/zh/Length/Micrometer-to-Kilometer)
-- [微米 (μm) 到 米 (m) 换算](/zh/Length/Micrometer-to-Meter)
-- [微米 (μm) 到 英里 (mi) 换算](/zh/Length/Micrometer-to-Mile)
-- [微米 (μm) 到 毫米 (mm) 换算](/zh/Length/Micrometer-to-Millimeter)
-- [微米 (μm) 到 码 (yd) 换算](/zh/Length/Micrometer-to-Yard)

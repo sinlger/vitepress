@@ -159,11 +159,3 @@ const convertHandler = () => {
 ### 6. 英里和其他英制长度单位的关系是什么？
 1英里 = 5,280英尺 = 1,760码 = 1.609千米。在进行单位转换时，了解这些基本关系有助于快速估算和验证结果。
 
-## 相关连接
-
-- [英里 (mi) 到 微米 (μm) 换算](/zh/Length/Mile-to-Micrometer)
-- [微米 (μm) 到 千米 (km) 换算](/zh/Length/Micrometer-to-Kilometer)
-- [微米 (μm) 到 米 (m) 换算](/zh/Length/Micrometer-to-Meter)
-- [微米 (μm) 到 英尺 (ft) 换算](/zh/Length/Micrometer-to-Foot)
-- [微米 (μm) 到 码 (yd) 换算](/zh/Length/Micrometer-to-Yard)
-- [微米 (μm) 到 毫米 (mm) 换算](/zh/Length/Micrometer-to-Millimeter)
