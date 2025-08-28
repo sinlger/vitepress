@@ -159,9 +159,9 @@ fathom = μm × 0.00000054681
 - [微米 (μm) 到 码 (yd) 的换算](./Micrometer-to-Yard.md)
 - [微米 (μm) 到 英里 (mi) 的换算](./Micrometer-to-Mile.md)
 - [微米 (μm) 到 海里 (nmi) 的换算](./Micrometer-to-Nautical-mile.md)
-- [英寻 (fathom) 到 微米 (μm) 的换算](./Fathom-to-Micrometer.md)
-- [英寻 (fathom) 到 米 (m) 的换算](./Fathom-to-Meter.md)
-- [英寻 (fathom) 到 英尺 (ft) 的换算](./Fathom-to-Foot.md)
+- [英寻 (fathom) 到 微米 (μm) 的换算](/zh/Length/Fathom-to-Micrometer)
+- [英寻 (fathom) 到 米 (m) 的换算](/zh/Length/Fathom-to-Meter)
+- [英寻 (fathom) 到 英尺 (ft) 的换算](/zh/Length/Fathom-to-Foot)
 
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Length" :key="index">

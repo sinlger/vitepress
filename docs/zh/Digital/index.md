@@ -23,7 +23,6 @@ head:
 import { onMounted, reactive, inject ,ref  } from 'vue'
 import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage ,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
-import { Charge } from '../../files';
 const convert = inject('convert')
 const options =  [
   { "label": "比特 (bit)", "value": "bit" },
