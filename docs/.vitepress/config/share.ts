@@ -26,6 +26,7 @@ export const sharedConfig = defineConfig({
     ['meta', { name: "viewport", content: "width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,shrink-to-fit=no" }],
     // 关键词和描述
     ['meta', { name: "keywords", content: "单位换算, 长度换算, 重量换算, 体积换算, 温度换算, 在线工具" }],
+    ['meta', { name: "google-adsense-account", content: "ca-pub-2931858389753921" }],
     ['meta', { name: "msvalidate.01", content: "56AD298949299D74F475ED323489552A" }]
   ],
   appearance: true, // 主题模式，默认浅色且开启切换
