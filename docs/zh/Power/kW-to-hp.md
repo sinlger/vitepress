@@ -12,20 +12,34 @@ breadcrumb:
 head:
   - - meta
     - name: description
-      content: "提供千瓦 (kW) 到英制马力 (hp) 的单位换算公式及实际应用场景。"
+      content: "专业的千瓦(kW)到英制马力(hp)功率单位换算工具，提供精确的kW转hp计算公式和实时换算功能。涵盖汽车发动机、船舶动力、工业机械等应用场景，支持美系设备功率计算、国际贸易技术对接、机械设备选型等专业需求。"
   - - meta
     - name: keywords
-      content: "千瓦转英制马力,kW到hp换算,功率单位换算公式,功率单位换算工具,美系车辆功率单位"
+      content: "千瓦转英制马力,kW到hp换算,功率单位换算,hp是什么单位,千瓦单位,功率计算公式,英制马力,汽车发动机功率,船舶动力,工业机械功率,美系设备功率,机械设备选型,国际贸易技术"
 ---
 # 千瓦 (kW) 到英制马力 (hp) 换算
 
-这是关于 **千瓦转英制马力** 的详细介绍，并提供一个实用的 **功率单位换算工具**。
+千瓦(kW)到英制马力(hp)的功率单位换算是国际贸易和跨标准工程应用中的重要计算。本工具提供精确的kW转hp换算功能，支持汽车发动机功率对比、船舶动力系统设计、美系工业设备选型等专业应用。广泛用于汽车工程、船舶制造、工业机械、石油化工等领域的功率计算和技术对接。
 
 <script setup>
 import { onMounted,reactive,inject ,ref  } from 'vue'
 import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage ,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
 import { Power } from '../../files';
+const seoKey = [
+  '千瓦转英制马力',
+  'kW到hp换算',
+  'hp是什么单位',
+  '千瓦单位',
+  '功率计算公式',
+  '英制马力',
+  '汽车发动机功率',
+  '船舶动力',
+  '工业机械功率',
+  '美系设备功率',
+  '机械设备选型',
+  '国际贸易技术'
+]
 const convert = inject('convert')
 const options =  [
   { "label": "千瓦 (kW)","value": "kW" },
@@ -67,40 +81,113 @@ const convertHandler = (e) => {
 }
 </script>
 
-<n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="数值"  path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数值" />
-  </n-form-item>
-  <n-form-item label="从" path="from">
-    <n-select  size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
-  </n-form-item>
-  <n-form-item label="到" path="to">
-    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
-  </n-form-item>
-  <n-form-item>
-    <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
-  </n-form-item>
-</n-form>
-<n-card  embedded :bordered="false" hoverable>
-  <div  style="text-align:center;font-size:20px;">
-    <strong>{{form.result}}</strong>
-  </div>
+<n-card
+  title="千瓦(kW)到英制马力(hp)换算器"
+  :segmented="{
+    content: true,
+    footer: 'soft',
+  }"
+>
+  <n-form size="large" :model="form" ref='formRef' :rules="rules">
+    <n-form-item label="数值"  path="number">
+      <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数值" />
+    </n-form-item>
+    <n-form-item label="从" path="from">
+      <n-select  size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
+    </n-form-item>
+    <n-form-item label="到" path="to">
+      <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
+    </n-form-item>
+    <n-form-item>
+      <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
+    </n-form-item>
+  </n-form>
+  <n-card  embedded :bordered="false" hoverable>
+    <div  style="text-align:center;font-size:20px;">
+      <strong>{{form.result}}</strong>
+    </div>
+  </n-card>
+  <template #footer>
+    <div>
+      <span v-for="item of seoKey">{{item}}，</span>
+    </div>
+  </template>
 </n-card>
 
 ## 换算公式
 
-1 英制马力 (hp) ≈ 0.7457 千瓦 (kW)
+**基本换算关系：**
+- 1 英制马力 (hp) = 0.7457 千瓦 (kW)
+- 1 千瓦 (kW) = 1.341 英制马力 (hp)
+- 1 英制马力 (hp) = 745.7 瓦特 (W)
 
-## 生活中的应用示例
+**计算公式：**
+- hp = kW × 1.341
+- kW = hp × 0.7457
 
-- **美系汽车发动机功率**：如 200 hp ≈ 149.14 kW，常用于美国市场车型标注。
-- **船舶引擎功率匹配**：用于将国际标准 kW 换算为北美常用 hp 进行设备选型。
-- **工业机械功率对比**：在进口美系压缩机或泵时，需进行 kW 与 hp 的互换计算。
+**常用数值对照表：**
+| 千瓦 (kW) | 英制马力 (hp) | 应用场景 |
+|-----------|---------------|----------|
+| 1 kW | 1.34 hp | 小型电机 |
+| 10 kW | 13.4 hp | 家用发电机 |
+| 50 kW | 67.1 hp | 小型船舶发动机 |
+| 100 kW | 134.1 hp | 中型工业设备 |
+| 200 kW | 268.2 hp | 汽车发动机 |
+| 500 kW | 670.5 hp | 大型船舶发动机 |
+
+## 工程应用示例
+
+### 汽车工程设计
+- **发动机功率标注**：美系汽车发动机300 hp (224 kW)，用于北美市场技术规格
+- **电动汽车功率对比**：特斯拉Model S 670 hp (500 kW)，用于国际市场功率对比
+- **混合动力系统**：丰田普锐斯电机80 hp (60 kW)，用于混动系统功率计算
+
+### 船舶动力工程
+- **游艇发动机选型**：40英尺游艇主机400 hp (298 kW)，用于船舶动力匹配
+- **商用船舶设计**：集装箱船主机20000 hp (14914 kW)，用于大型船舶设计
+- **渔船动力配置**：近海渔船柴油机150 hp (112 kW)，用于渔业装备选型
+
+### 工业机械工程
+- **压缩机功率计算**：螺杆式空压机200 hp (149 kW)，用于工厂设备选型
+- **泵站设备设计**：离心泵电机100 hp (75 kW)，用于水处理系统设计
+- **发电机组配置**：柴油发电机500 hp (373 kW)，用于备用电源系统设计
 
 ## 使用建议
 
-- **跨标准机械设备选型**：适用于从国际单位制（kW）到美制单位（hp）的能量换算计算。
-- **科学计算**：使用国际单位制（瓦特 W 或千瓦 kW），便于统一标准。
+### 工程设计规范
+- **美系设备选型**：进口美国设备时使用hp单位，便于技术对接和规格匹配
+- **汽车工程项目**：北美市场车型开发使用hp标注，欧洲市场使用kW标注
+- **船舶设计标准**：美国船级社(ABS)认证使用hp，国际海事组织(IMO)使用kW
+
+### 技术文档标准
+- **国际贸易合同**：设备采购合同中功率规格需要双单位标注(kW/hp)
+- **技术规格书**：跨国项目技术文档建议同时提供kW和hp数值
+- **认证测试报告**：美国EPA认证使用hp，欧盟CE认证使用kW
+
+### 计算精度要求
+- **精确计算**：保留小数点后2位，如134.10 hp
+- **工程估算**：可保留整数，如134 hp
+- **安全系数**：设备选型时建议预留10-20%功率余量
+
+## 常见问题 (FAQ)
+
+**Q: hp是什么单位？**
+A: hp是英制马力(Horsepower)的缩写，是功率单位，1 hp = 745.7瓦特，主要用于美国、英国等国家的汽车、船舶、工业设备功率标注。
+
+**Q: 1千瓦等于多少英制马力？**
+A: 1千瓦(kW) = 1.341英制马力(hp)，这是国际单位制与英制单位间的标准换算关系。
+
+**Q: 汽车发动机功率为什么用hp？**
+A: 北美汽车市场传统使用英制单位，发动机功率习惯用hp标注，便于消费者理解和市场推广。
+
+**Q: hp和PS有什么区别？**
+A: hp是英制马力(1 hp = 745.7W)，PS是公制马力(1 PS = 735.5W)，hp比PS略大约1.4%。
+
+**Q: 船舶发动机功率用什么单位？**
+A: 美国船舶使用hp，欧洲船舶使用kW，国际海事组织(IMO)标准使用kW，具体看船舶注册地和认证标准。
+
+**Q: 工业设备选型时如何换算？**
+A: 美系设备规格书用hp，选型时需换算为kW对比，建议预留10-20%功率余量确保设备可靠运行。
 
 ## 相关连接
 <n-grid x-gap="12" :cols="2">
