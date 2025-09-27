@@ -362,24 +362,6 @@ const convertHandler = (e) => {
 - **国际合作：** 将美国标准数据转换为国际标准
 
 ## 七、相关连接
-
-### 英寸每小时换算工具
-- [英寸每小时换算米每秒](./in_h-to-m_s.md) - in/h to m/s 基础换算
-- [英寸每小时换算千米每小时](./in_h-to-km_h.md) - in/h to km/h 国际换算
-- [英寸每小时换算英里每小时](./in_h-to-mph.md) - in/h to mph 英美换算
-- [英寸每小时换算节](./in_h-to-knot.md) - in/h to knot 航海换算
-- [英寸每小时换算英尺每秒](./in_h-to-ft_s.md) - in/h to ft/s 工程换算
-
-### 其他速度单位换算
-- [毫米每小时换算千米每小时](./mm_h-to-km_h.md) - mm/h to km/h 公制换算
-- [毫米每小时换算米每秒](./mm_h-to-m_s.md) - mm/h to m/s 标准换算
-- [厘米每小时换算毫米每小时](./cm_h-to-mm_h.md) - cm/h to mm/h 公制换算
-
-### 速度单位科普
-- [速度单位大全](./speed-units.md) - 全球速度单位对照表
-- [精密测量速度单位](./precision-speed-units.md) - 精密测量领域常用速度单位
-- [地质监测速度单位](./geological-speed.md) - 地质领域常用速度单位
-
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Speed" :key="index">
     <n-button
