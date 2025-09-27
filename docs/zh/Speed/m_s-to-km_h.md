@@ -12,12 +12,12 @@ breadcrumb:
 head:
   - - meta
     - name: description
-      content: 速度单位换算指南，涵盖米每秒 (m/s)、千米每小时 (km/h)、英里每小时 (mph)、节 (knot)、英尺每秒 (ft/s)、英寸每小时 (in/h)、毫米每小时 (mm/h) 的详细换算公式与说明。
+      content: 专业的m/s到km/h速度单位换算工具。一米每秒等于多少千米每小时？提供米每秒转换千米每小时的精确公式、换算表和实用技巧。支持m/s、km/h、mph、knot等多种速度单位互转。
   - - meta
     - name: keywords
-      content: 速度, 单位换算, 米每秒, 千米每小时, 英里每小时, 节, 英尺每秒, 英寸每小时, 毫米每小时, 换算公式, 速度单位换算指南
+      content: 速度单位换算, 米每秒转换, m/s to km/h, 一米每秒等于多少千米每小时, km/h和m/s换算, 米每秒换算千米每小时, 速度转换, 速度单位, 米每秒和千米每小时的换算, km/h换算m/s, 千米每小时换算米每秒, m/s km/h, 米每秒, 速度的单位
 ---
-# 速度单位换算
+# 米每秒转换千米每小时 | m/s到km/h速度单位换算工具
 ---
 <script setup>
 import { onMounted, reactive, inject ,ref  } from 'vue'
@@ -34,7 +34,7 @@ const options =  [
   { "label": "英寸每小时 (in/h)", "value": "in/h" },
   { "label": "毫米每小时 (mm/h)", "value": "mm/h" }
 ];
-const seoKey = ['速度单位换算','米每秒转换','千米每小时换算','英里每小时转换','节速度换算','在线速度计算器','速度换算工具','km s','速度的单位','米每秒','千米每小时和米每秒怎么换算','米每秒换算千米每小时','一米每秒等于多少千米每小时','km/h','kmh.sex','速度单位','m/s','速度换算','米每秒和千米每小时的换算','km/h换算m/s','千米每小时换算米每秒']
+const seoKey = ['速度单位换算','米每秒转换','km/h m/s 変換','m/s to mm/s','m/s to kmh','ft/min to m/s','ft/s to m/s','m/s to km/h','速度的单位','m/s km/h','米每秒','一千米每小时等于多少米每秒','m/s和km/h','km/h和m/s换算','米每秒换算千米每小时','一米每秒等于多少千米每小时','速度转换','速度单位','米每秒和千米每小时的换算','m s','km/h换算m/s','千米每小时换算米每秒']
 const formRef = ref(null);
 const rules = {
   number:{
@@ -45,19 +45,19 @@ const rules = {
   },
   to:{
     required: true,
-    trigger: "select",
+    trigger: "change",
     message: '请选择转换单位'
   },
   from:{
     required: true,
-    trigger: "select",
+    trigger: "change",
     message: '请选择原始单位'
   }
 }
 const form = reactive({
   number:null,
-  to:'',
-  from:'',
+  to:'km/h',
+  from:'m/s',
   result:'',
   title:'速度单位单位换算',
 })
@@ -76,10 +76,10 @@ const convertHandler = (e) => {
     <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数值" />
   </n-form-item>
   <n-form-item label="从" path="from">
-    <n-select  size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
+    <n-select size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
   </n-form-item>
   <n-form-item label="到" path="to">
-    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
+    <n-select size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
   </n-form-item>
   <n-form-item>
     <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
@@ -104,7 +104,36 @@ const convertHandler = (e) => {
 </n-card>
 
 
-## 一、速度单位换算表（以 1 m/s 为基准）
+## 一、m/s到km/h换算公式详解
+
+### 一米每秒等于多少千米每小时？
+
+**核心公式：1 m/s = 3.6 km/h**
+
+**推导过程：**
+- 1米 = 0.001千米
+- 1秒 = 1/3600小时
+- 因此：1 m/s = (1米/1秒) × (0.001千米/1米) × (3600秒/1小时) = 3.6 km/h
+
+### 快速换算技巧
+
+**m/s转km/h：** 数值 × 3.6
+- 例：20 m/s = 20 × 3.6 = 72 km/h
+
+**km/h转m/s：** 数值 ÷ 3.6
+- 例：108 km/h = 108 ÷ 3.6 = 30 m/s
+
+### 常用速度对照表
+
+| m/s | km/h | 实际应用场景 |
+|-----|------|-------------|
+| 1   | 3.6  | 慢走速度 |
+| 5   | 18   | 自行车速度 |
+| 10  | 36   | 电动车速度 |
+| 20  | 72   | 城市道路限速 |
+| 30  | 108  | 高速公路限速 |
+
+## 二、速度单位换算表（以 1 m/s 为基准）
 
 | 单位       | 符号   | 换算值      | 典型应用场景             |
 |------------|--------|-------------|-------------------------|
@@ -118,7 +147,7 @@ const convertHandler = (e) => {
 
 注：换算公式示例 → km/h 转 mph: ( km/h = mph × 1.60934 ) ；m/s 转 knot: ( m/s = knot × 0.51444 ) 。
 
-## 二、速度单位科普：从日常到专业
+## 三、速度单位科普：从日常到专业
 
 ### 为什么我们需要多种速度单位？
 
@@ -143,7 +172,29 @@ const convertHandler = (e) => {
 - 蜗牛爬行≈0.05 mm/h→跑完1米需2.3年！
 - 民航巡航速度≈900 km/h（≈487 knot），跨太平洋仅需半日。
 
-## 常见问题 FAQ
+### 实际应用场景中的m/s和km/h换算
+
+在日常生活和专业领域中，**米每秒和千米每小时的换算**应用广泛：
+
+**交通运输领域：**
+- 汽车仪表盘显示km/h，但工程计算常用m/s
+- 高铁设计速度350 km/h ≈ 97.2 m/s
+- 飞机起飞速度约80 m/s ≈ 288 km/h
+
+**体育运动：**
+- 百米冲刺世界纪录约10 m/s ≈ 36 km/h
+- 马拉松配速4分钟/公里 ≈ 4.17 m/s ≈ 15 km/h
+
+**气象预报：**
+- 风速常用m/s表示，但新闻播报用km/h
+- 台风风速50 m/s = 180 km/h（17级超强台风）
+
+**工程计算：**
+- 流体力学中流速用m/s
+- 材料测试中冲击速度换算
+- 机械设计中线速度计算
+
+## 四、速度单位换算常见问题 FAQ
 
 ### Q1: 米每秒和千米每小时怎么换算？
 **A1**: 米每秒转千米每小时的公式是：km/h = m/s × 3.6。例如：10 m/s = 10 × 3.6 = 36 km/h。
@@ -184,7 +235,7 @@ const convertHandler = (e) => {
 - 区分速度和速率的概念
 - 考虑应用场景的精度要求
 
-## 相关连接
+## 五、更多速度单位换算工具
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Speed" :key="index">
     <n-button

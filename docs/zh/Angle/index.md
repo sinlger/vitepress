@@ -72,7 +72,6 @@ const convertHandler = (e) => {
 }
 </script>
 
-<n-card title="角度单位换算器" embedded :bordered="false" hoverable>
   <n-form size="large" :model="form" ref='formRef' :rules="rules">
     <n-form-item label="数值"  path="number">
       <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数值" />
@@ -88,23 +87,22 @@ const convertHandler = (e) => {
     </n-form-item>
   </n-form>
 
-  <n-card embedded :bordered="false" hoverable style="margin-top: 16px;">
-    <template #header>
-      <div style="text-align:center;font-size:16px;color:#666;">
-        {{form.title}}
-      </div>
-    </template>
-    <div style="text-align:center;font-size:20px;">
-      <strong>{{form.result}}</strong>
+<n-card embedded title="角度单位换算器" :bordered="false" hoverable style="margin-top: 16px;">
+  <template #header>
+    <div style="text-align:center;font-size:16px;color:#666;">
+      {{form.title}}
     </div>
-    <template #footer>
-      <div style="text-align:center;font-size:12px;color:#999;">
-        <span v-for="(keyword, index) in seoKey" :key="index">
-          {{keyword}}<span v-if="index < seoKey.length - 1"> | </span>
-        </span>
-      </div>
-    </template>
-  </n-card>
+  </template>
+  <div style="text-align:center;font-size:20px;">
+    <strong>{{form.result}}</strong>
+  </div>
+  <template #footer>
+    <div style="text-align:center;font-size:12px;color:#999;">
+      <span v-for="(keyword, index) in seoKey" :key="index">
+        {{keyword}}<span v-if="index < seoKey.length - 1"> | </span>
+      </span>
+    </div>
+  </template>
 </n-card>
 
 ## 角度单位换算公式表
