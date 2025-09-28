@@ -26,6 +26,7 @@ import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage ,
 import { defineClientComponent } from 'vitepress'
 import { Force } from '../../files';
 const convert = inject('convert')
+const seoKey = []
 const options =  [
   { "label": "牛顿 (N)", "value": "N" },
   { "label": "千牛顿 (kN)", "value": "kN" },
