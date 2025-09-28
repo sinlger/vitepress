@@ -21,7 +21,8 @@ head:
 
 周到微秒的换算在科学研究、精密测量和电子工程领域具有重要意义。微秒作为极其精细的时间单位，常用于高精度计时、信号处理和科学实验中。一周等于604,800,000,000微秒，这种超高精度的时间换算对于需要精确时间控制的应用场景至关重要。
 
-<script setup>import { onMounted, reactive, inject, ref } from 'vue'
+<script setup>
+import { onMounted, reactive, inject, ref } from 'vue'
 import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage,NGrid ,NGi  } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
 import { Time } from '../../files';

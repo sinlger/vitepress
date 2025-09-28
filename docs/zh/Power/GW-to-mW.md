@@ -27,9 +27,6 @@ const seoKey = [
   '发电厂功率', '电力系统设计', '大型工业项目', '核电站功率',
   '风电场功率', '电网规划', '功率换算工具', 'ギガワット', 'メガワット', '電力変換'
 ]
-</script>
-
-<script setup>
 import { onMounted,reactive,inject ,ref  } from 'vue'
 import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage ,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'

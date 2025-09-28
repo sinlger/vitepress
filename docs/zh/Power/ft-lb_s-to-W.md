@@ -28,9 +28,6 @@ const seoKey = [
   '电气系统功率', '工业设备功率', '美制功率单位', '国际功率标准',
   'パワー変換', 'ワット変換', '動力変換'
 ]
-</script>
-
-<script setup>
 import { onMounted,reactive,inject ,ref  } from 'vue'
 import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage ,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
