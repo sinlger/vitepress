@@ -19,6 +19,9 @@ export const zhNav: DefaultTheme.NavItem[] = [
       }, {
         text: '重量换算',
         link: '/Mass/index'
+      }, {
+        text: '速度换算',
+        link: '/Speed/index'
       }]
   },
   // { text: '博客', link: '/blog/' },
