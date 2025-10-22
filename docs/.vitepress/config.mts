@@ -14,11 +14,11 @@ export default defineConfig({
       lang: 'zh-CN',
       ...zhConfig
     },
-    // en: {
-    //   label: 'English',
-    //   lang: 'en',
-    //   link: '/en/',
-    //   ...enConfig
-    // }
+    en: {
+      label: 'English',
+      lang: 'en',
+      link: '/en/',
+      ...enConfig
+    }
   },
 })

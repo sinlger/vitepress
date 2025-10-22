@@ -4,10 +4,26 @@ import { DefaultTheme } from 'vitepress'
 export const enNav: DefaultTheme.NavItem[] = [
   { text: 'Home', link: '/en/', activeMatch: '/en/' },
   {
-    text: 'Start using', activeMatch: '/en/quick-started/', items: [{
-      text: '',
-      link: ''
-    }]
+    text: 'Conversion Tools',
+    items: [
+      { text: 'Temperature Conversion', link: '/en/Temperature/index' },
+      {
+        text: 'Time Conversion',
+        link: '/en/Time/index'
+      }, {
+        text: 'Length Conversion',
+        link: '/en/Length/index'
+      }, {
+        text: 'Area Conversion',
+        link: '/en/Area/index'
+      }, {
+        text: 'Mass Conversion',
+        link: '/en/Mass/index'
+      }, {
+        text: 'Speed Conversion',
+        link: '/en/Speed/index'
+      }]
   },
-  { text: 'reference', link: '/en/reference/', activeMatch: '/en/reference/' },
+  // { text: 'Blog', link: '/en/blog/' },
+  // { text: 'About', link: '/en/about/' },
 ]

@@ -16,7 +16,7 @@ head:
       content: 单位换算, 快速换算工具, 温度换算, 长度换算, 面积换算, 时间换算, 物理量换算, 单位换算在线工具
 hero:
   image:
-    src: /undraw_designing-components_kb05.svg
+    src: undraw_designing-components_kb05.svg
     alt: VitePress
   name: "Unit Converter"
   text: "单位快速换算在线工具"
