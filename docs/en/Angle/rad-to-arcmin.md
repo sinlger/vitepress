@@ -4,21 +4,21 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
 
   - - link: /Angle/index
-      linkText: 角度换算
+      linkText: Angle Conversion
   - - link: /Angle/rad-to-arcmin
-      linkText: 弧度 (rad) �?角分 (arcmin) 换算
+      linkText: Radians (rad) to Arcminutes (arcmin) Conversion
 head:
   - - meta
     - name: description
-      content: "将弧�?rad)换算为角�?arcmin)的在线工具和换算公式。提供简单易用的角度单位换算计算器�?
+      content: "Online tool and conversion formula for converting radians (rad) to arcminutes (arcmin). Provides an easy-to-use angle unit conversion calculator."
   - - meta
     - name: keywords
-      content: "角度换算, 弧度转角�? rad到arcmin换算, 在线计算�? 数学工具, 单位换算"
+      content: "angle conversion, radians to arcminutes, rad to arcmin conversion, online calculator, math tools, unit conversion"
 ---
-# 弧度 (rad) �?角分 (arcmin) 的换�?
+# Radians (rad) to Arcminutes (arcmin) Conversion
 ---
 <script setup>
 import { onMounted, reactive, inject, ref } from 'vue'
@@ -37,17 +37,17 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) * 180 * 60 / Math.PI
     form.result = `${form.number}rad = ${convertedValue.toFixed(4)}arcmin`
   } else {
-    form.result = '请输入有效的数值�?
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="弧度 (rad)">
-    <n-input-number v-model:value="form.number" placeholder="输入弧度" style="width: 100%" />
+  <n-form-item label="Radians (rad)">
+    <n-input-number v-model:value="form.number" placeholder="Enter radians" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
@@ -57,40 +57,40 @@ const convertHandler = () => {
   </div>
 </n-card>
 
-## 公式
+## Formula
 
-�?**弧度 (rad)** 换算�?**角分 (arcmin)** 的公式为�?
+The formula for converting from **radians (rad)** to **arcminutes (arcmin)** is:
 $$ arcmin = rad \times \frac{180 \times 60}{\pi} $$
 
-## 弧度到角分换算指�?
+## Radians to Arcminutes Conversion Guide
 
-角度测量是数学和工程领域中的基础概念之一，尤其在几何学、物理学以及计算机图形学中应用广泛。本文将介绍如何将弧�?(rad) 换算为角�?(arcmin)，并提供一些实用示例�?
+Angle measurement is one of the fundamental concepts in mathematics and engineering, especially widely used in geometry, physics, and computer graphics. This article will introduce how to convert radians (rad) to arcminutes (arcmin) and provide some practical examples.
 
-### 为什么需�?rad �?arcmin 的换算？
+### Why is rad to arcmin conversion needed?
 
-弧度和角分是两种常用的角度单位。其中，角分在导航和天文学计算中更为常用，因为其提供了更精细的角度划分。通过精确的换算，可以确保计算的一致性和准确性�?
+Radians and arcminutes are two commonly used angle units. Among them, arcminutes are more commonly used in navigation and astronomical calculations because they provide finer angle divisions. Through precise conversion, calculation consistency and accuracy can be ensured.
 
-### rad �?arcmin 的换算方�?
+### rad to arcmin Conversion Method
 
-从弧度到角分的换算公式为�?
+The conversion formula from radians to arcminutes is:
 
-- **公式�?* `arcmin = rad × (180 × 60) ÷ π`
+- **Formula:** `arcmin = rad × (180 × 60) ÷ π`
 
-### 实际应用示例
+### Practical Application Examples
 
-以下是一些常见的换算实例�?
+Here are some common conversion examples:
 
 - 0 rad = 0 arcmin
-- 0.0087265 rad �?30 arcmin
-- 0.0174533 rad �?60 arcmin
-- 0.0872665 rad �?300 arcmin
-- 1.5708 rad �?9000 arcmin
+- 0.0087265 rad ≈ 30 arcmin
+- 0.0174533 rad ≈ 60 arcmin
+- 0.0872665 rad ≈ 300 arcmin
+- 1.5708 rad ≈ 9000 arcmin
 
-### 总结
+### Summary
 
-掌握弧度到角分的换算可以帮助您更好地理解和使用这些角度单位。希望本指南能为您提供有价值的参考�?
+Mastering the conversion from radians to arcminutes can help you better understand and use these angle units. We hope this guide provides valuable reference for you.
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Angle" :key="index">
     <n-button

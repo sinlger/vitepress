@@ -8,19 +8,19 @@ breadcrumb:
   - - link: /Power/index
       linkText: 功率换算
   - - link: /Power/W-to-kW
-      linkText: 瓦特转千�?
+      linkText: 瓦特转千瓦
 head:
   - - meta
     - name: description
-      content: 提供瓦特 (W) 到千�?(kW) 的单位换算公式及实际应用场景�?
+      content: 提供瓦特 (W) 到千瓦 (kW) 的单位换算公式及实际应用场景。
   - - meta
     - name: keywords
-      content: 瓦特转千�?W到kW换算,功率单位换算公式,功率单位换算工具,家用电器功率单位
+      content: 瓦特转千瓦,W到kW换算,功率单位换算公式,功率单位换算工具,家用电器功率单位
 ---
 
-# 瓦特 (W) 到千�?(kW) 换算
+# 瓦特 (W) 到千瓦 (kW) 换算
 
-这是关于 **瓦特转千�?* 的详细介绍，并提供一个实用的 **功率单位换算工具**�?
+这是关于 **瓦特转千瓦** 的详细介绍，并提供一个实用的 **功率单位换算工具**。
 
 <script setup>
 import { onMounted,reactive,inject ,ref  } from 'vue'
@@ -38,7 +38,7 @@ const rules = {
     required: true,
     type: 'number',
     trigger: "blur",
-    message: '请输入数�?
+    message: '请输入数字'
   },
   to:{
     required: true,
@@ -56,7 +56,7 @@ const form = reactive({
   to:'',
   from:'',
   result:'',
-  title:'瓦特转千�?,
+  title:'瓦特转千瓦',
 })
 const convertHandler = (e) => {
    e.preventDefault();
@@ -69,13 +69,13 @@ const convertHandler = (e) => {
 </script>
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="数�?  path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数�? />
+  <n-form-item label="数值"  path="number">
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数值" />
   </n-form-item>
-  <n-form-item label="�? path="from">
+  <n-form-item label="从" path="from">
     <n-select  size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
   </n-form-item>
-  <n-form-item label="�? path="to">
+  <n-form-item label="到" path="to">
     <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
   </n-form-item>
   <n-form-item>
@@ -94,14 +94,14 @@ const convertHandler = (e) => {
 
 ## 生活中的应用示例
 
-- **家用空调功率**：约 1 匹空调制冷功�?�?0.735kW，即 735W�?
-- **电热水壶功率**：约 1.5�?kW，即 1500�?000W�?
-- **电动汽车充电桩功�?*：家用充电桩功率约为 7�?2kW�?
+- **家用空调功率**：约 1 匹空调制冷功率 ≈ 0.735kW，即 735W。
+- **电热水壶功率**：约 1.5–2kW，即 1500–2000W。
+- **电动汽车充电桩功率**：家用充电桩功率约为 7–22kW。
 
 ## 使用建议
 
-- **大功率设�?*：优先使用千�?(kW) 来表示，例如家电、电动车充电等�?
-- **科学计算**：使用国际单位制（瓦�?W），便于统一标准�?
+- **大功率设备**：优先使用千瓦 (kW) 来表示，例如家电、电动车充电等。
+- **科学计算**：使用国际单位制（瓦特 W），便于统一标准。
 
 ## 相关连接
 <n-grid x-gap="12" :cols="2">

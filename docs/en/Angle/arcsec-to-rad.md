@@ -4,23 +4,23 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
 
   - - link: /Angle/index
-      linkText: 角度换算
+      linkText: Angle Conversion
   - - link: /Angle/arcsec-to-rad
-      linkText: 角秒 (arcsec) �?弧度 (rad) 换算
+      linkText: Arcsecond (arcsec) to Radian (rad) Conversion
 head:
   - - meta
     - name: description
-      content: "专业角秒(arcsec)到弧�?rad)换算工具，支持弧秒计算、角度单位转换。适用于数学计算、物理研究、工程应用等场景，提供精确的角度换算公式和实用指南�?
+      content: "Professional arcsecond (arcsec) to radian (rad) conversion tool, supporting arcsecond calculations and angle unit conversions. Suitable for mathematical calculations, physics research, engineering applications, and other scenarios, providing precise angle conversion formulas and practical guides."
   - - meta
     - name: keywords
-      content: "角秒换算,arcsec转弧�?弧秒计算公式,角度单位换算,角秒等于多少弧度,数学计算,物理研究,工程应用,角度计算�?弧度"
+      content: "arcsecond conversion,arcsec to radian,arcsecond calculation formula,angle unit conversion,arcsecond equals how many radians,mathematical calculation,physics research,engineering application,angle calculator,radian"
 ---
-# 角秒 (arcsec) �?弧度 (rad) 的换�?
+# Arcsecond (arcsec) to Radian (rad) Conversion
 
-角秒到弧度换算是角度测量中的核心转换，广泛应用于数学计算、物理研究、工程应用和科学计算等领域。本工具提供精确的arcsec到弧度换算，支持弧秒计算和各种角度单位转换需求�?
+Arcsecond to radian conversion is a core transformation in angle measurement, widely used in mathematical calculations, physics research, engineering applications, and scientific calculations. This tool provides precise arcsec to radian conversion, supporting arcsecond calculations and various angle unit conversion needs.
 ---
 <script setup>
 import { onMounted, reactive, inject, ref } from 'vue'
@@ -32,12 +32,12 @@ const convert = inject('convert')
 const form = reactive({
   number: null,
   result: '',
-  title: '角秒到弧度换算器'
+  title: 'Arcsecond to Radian Converter'
 })
 
 const seoKey = [
-  '角秒换算', 'arcsec转弧�?, '弧秒计算公式', '角度单位换算', '角秒等于多少弧度',
-  '数学计算', '物理研究', '工程应用', '角度计算�?, '弧度',
+  'arcsecond conversion', 'arcsec to radian', 'arcsecond calculation formula', 'angle unit conversion', 'arcsecond equals how many radians',
+  'mathematical calculation', 'physics research', 'engineering application', 'angle calculator', 'radian',
   'arcsec to radian', 'arcsecond conversion', 'angle unit converter', 'radian calculation',
   'mathematical calculation', 'physics research', 'engineering application', 'radian converter'
 ]
@@ -47,116 +47,120 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) * Math.PI / (180 * 3600)
     form.result = `${form.number}arcsec = ${convertedValue.toFixed(4)}rad`
   } else {
-    form.result = '请输入有效的数值�?
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-card :title="form.title" class="converter-card">
   <n-form size="large" :model="form">
-    <n-form-item label="角秒 (arcsec)">
-      <n-input-number v-model:value="form.number" placeholder="输入角秒" style="width: 100%" />
+    <n-form-item label="Arcsecond (arcsec)">
+      <n-input-number v-model:value="form.number" placeholder="Enter arcseconds" style="width: 100%" />
     </n-form-item>
     <n-form-item>
-      <n-button type="info" @click="convertHandler" block>换算</n-button>
+      <n-button type="info" @click="convertHandler" block>Convert</n-button>
     </n-form-item>
   </n-form>
 
-  <n-card  embedded :bordered="false" hoverable>
-    <div  style="text-align:center;font-size:20px;">
+  <n-card embedded :bordered="false" hoverable style="margin-top: 16px;">
+    <template #header>
+      <div style="text-align:center;font-size:16px;color:#666;">
+        {{form.title}}
+      </div>
+    </template>
+    <div style="text-align:center;font-size:20px;">
       <strong>{{form.result}}</strong>
     </div>
+    <template #footer>
+      <div style="text-align:center;font-size:12px;color:#999;">
+        <span v-for="(keyword, index) in seoKey" :key="index">
+          {{keyword}}<span v-if="index < seoKey.length - 1"> | </span>
+        </span>
+      </div>
+    </template>
   </n-card>
-  
-  <template #footer>
-    <div class="seo-keywords">
-      <span v-for="(keyword, index) in seoKey" :key="index" class="keyword-tag">
-        {{ keyword }}
-      </span>
-    </div>
-  </template>
 </n-card>
 
-## 公式
+## Conversion Formula
 
-�?**角秒 (arcsec)** 换算�?**弧度 (rad)** 的公式为�?
+The formula for converting from **arcseconds (arcsec)** to **radians (rad)** is:
 $$ rad = arcsec \times \frac{\pi}{180 \times 3600} $$
 
-## 角秒到弧度换算指�?
+## Arcsecond to Radian Conversion Guide
 
-角度测量是数学和工程领域中的基础概念之一，尤其在几何学、物理学以及计算机图形学中应用广泛。本文将介绍如何将角�?(arcsec) 换算为弧�?(rad)，并提供一些实用示例�?
+Angle measurement is one of the fundamental concepts in mathematics and engineering, especially widely used in geometry, physics, and computer graphics. This article will introduce how to convert arcseconds (arcsec) to radians (rad) and provide some practical examples.
 
-### 为什么需�?arcsec �?rad 的换算？
+### Why is arcsec to rad conversion needed?
 
-角秒和弧度是两种常用的角度单位。其中，弧度在数学计算中更为常用，因为三角函数的导数和积分在使用弧度时具有更简洁的形式。通过精确的换算，可以确保计算的一致性和准确性�?
+Arcseconds and radians are two commonly used angle units. Among them, radians are more commonly used in mathematical calculations because the derivatives and integrals of trigonometric functions have more concise forms when using radians. Through precise conversion, the consistency and accuracy of calculations can be ensured.
 
-### arcsec �?rad 的换算方�?
+### arcsec to rad conversion method
 
-从角秒到弧度的换算公式为�?
+The conversion formula from arcseconds to radians is:
 
-- **公式�?* `rad = arcsec × π ÷ (180 × 3600)`
+- **Formula:** `rad = arcsec × π ÷ (180 × 3600)`
 
-### 实际应用示例
+### Practical Application Examples
 
-以下是一些常见的换算实例�?
+Here are some common conversion examples:
 
 - 0 arcsec = 0 rad
-- 1800 arcsec �?0.0087265 rad
-- 3600 arcsec �?0.0174533 rad
-- 9000 arcsec �?0.0436332 rad
-- 18000 arcsec �?0.0872665 rad
+- 1800 arcsec ≈ 0.0087265 rad
+- 3600 arcsec ≈ 0.0174533 rad
+- 9000 arcsec ≈ 0.0436332 rad
+- 18000 arcsec ≈ 0.0872665 rad
 
-### 详细应用场景
+### Detailed Application Scenarios
 
-#### 数学计算
-- **微积�?*：三角函数的导数和积分计算，弧度是自然单�?
-- **复数分析**：欧拉公�?e^(iθ) = cos(θ) + i·sin(θ) 中θ以弧度为单�?
-- **傅里叶分�?*：频域分析中的角频率表示
-- **数值计�?*：计算机程序中三角函数默认使用弧�?
+#### Mathematical Calculations
+- **Calculus**: Derivative and integral calculations of trigonometric functions, radians are the natural unit
+- **Complex Analysis**: In Euler's formula e^(iθ) = cos(θ) + i·sin(θ), θ is in radians
+- **Fourier Analysis**: Angular frequency representation in frequency domain analysis
+- **Numerical Computation**: Trigonometric functions in computer programs default to using radians
 
-#### 物理研究
-- **力学**：角速度、角加速度的计算，ω = θ/t (弧度/�?
-- **波动�?*：波的相位、频率分析，k = 2π/λ
-- **量子力学**：波函数的相位因子，薛定谔方�?
-- **电磁�?*：交流电的相位关系，电磁波传�?
+#### Physics Research
+- **Mechanics**: Calculation of angular velocity and angular acceleration, ω = θ/t (radians/second)
+- **Wave Theory**: Phase and frequency analysis of waves, k = 2π/λ
+- **Quantum Mechanics**: Phase factors of wave functions, Schrödinger equation
+- **Electromagnetism**: Phase relationships in AC electricity, electromagnetic wave propagation
 
-#### 工程应用
-- **控制系统**：PID控制器中的相位裕度计�?
-- **信号处理**：数字滤波器设计，频率响应分�?
-- **机械工程**：转动惯量、角动量计算
-- **电子工程**：振荡器设计，相位锁定环�?
+#### Engineering Applications
+- **Control Systems**: Phase margin calculations in PID controllers
+- **Signal Processing**: Digital filter design, frequency response analysis
+- **Mechanical Engineering**: Moment of inertia, angular momentum calculations
+- **Electronic Engineering**: Oscillator design, phase-locked loops
 
-#### 科学计算
-- **天体力学**：行星轨道计算，开普勒定律应用
-- **地球物理**：地球自转、章动计�?
-- **原子物理**：电子轨道角动量量子�?
-- **统计物理**：分子运动的角度分布
+#### Scientific Computing
+- **Celestial Mechanics**: Planetary orbit calculations, Kepler's law applications
+- **Geophysics**: Earth rotation and nutation calculations
+- **Atomic Physics**: Quantization of electron orbital angular momentum
+- **Statistical Physics**: Angular distribution of molecular motion
 
-### 常见问题解答 (FAQ)
+### Frequently Asked Questions (FAQ)
 
-#### Q1: 为什么要使用弧度而不是角秒？
-A: 弧度是数学中的自然角度单位，在微积分、三角函数计算中具有更简洁的形式。例如，sin(x)的导数是cos(x)（当x以弧度为单位时）�?
+#### Q1: Why use radians instead of arcseconds?
+A: Radians are the natural angle unit in mathematics, having more concise forms in calculus and trigonometric function calculations. For example, the derivative of sin(x) is cos(x) (when x is in radians).
 
-#### Q2: 角秒到弧度的换算精度如何保证�?
-A: 使用精确的数学常数π进行计算，换算公式为：弧�?= 角秒 × π ÷ (180 × 3600)。建议保留足够的小数位数以确保精度�?
+#### Q2: How to ensure the precision of arcsecond to radian conversion?
+A: Use the precise mathematical constant π for calculation, with the conversion formula: radians = arcseconds × π ÷ (180 × 3600). It is recommended to retain sufficient decimal places to ensure precision.
 
-#### Q3: 在编程中如何实现角秒到弧度的换算�?
-A: 大多数编程语言都提供数学库，可以使用：`radians = arcseconds * Math.PI / (180 * 3600)`
+#### Q3: How to implement arcsecond to radian conversion in programming?
+A: Most programming languages provide math libraries, you can use: `radians = arcseconds * Math.PI / (180 * 3600)`
 
-#### Q4: 角秒主要用在哪些领域�?
-A: 角秒主要用于天文学、测量学、光学等需要高精度角度测量的领域，特别是测量极小角度时�?
+#### Q4: In which fields are arcseconds mainly used?
+A: Arcseconds are mainly used in astronomy, surveying, optics, and other fields requiring high-precision angle measurements, especially when measuring extremely small angles.
 
-#### Q5: 如何验证换算结果的正确性？
-A: 可以使用已知的换算关系验证：1弧度 �?206264.806角秒，或者使用在线计算器进行交叉验证�?
+#### Q5: How to verify the correctness of conversion results?
+A: You can verify using known conversion relationships: 1 radian ≈ 206264.806 arcseconds, or use online calculators for cross-verification.
 
-#### Q6: 角秒换算中常见的错误有哪些？
-A: 常见错误包括：忘记角秒到度的换算系数3600、π值精度不够、单位混淆等。建议使用标准的换算公式并仔细检查单位�?
+#### Q6: What are common errors in arcsecond conversion?
+A: Common errors include: forgetting the conversion factor 3600 from arcseconds to degrees, insufficient π value precision, unit confusion, etc. It is recommended to use standard conversion formulas and carefully check units.
 
-### 总结
+### Summary
 
-掌握角秒到弧度的换算可以帮助您更好地理解和使用这些角度单位。无论是在数学计算、物理研究还是工程应用中，准确的角度换算都是确保计算精度的重要基础。希望本指南能为您提供有价值的参考�?
+Mastering arcsecond to radian conversion can help you better understand and use these angle units. Whether in mathematical calculations, physics research, or engineering applications, accurate angle conversion is an important foundation for ensuring calculation precision. We hope this guide provides valuable reference for you.
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Angle" :key="index">
     <n-button

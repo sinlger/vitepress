@@ -4,23 +4,23 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
 
   - - link: /Angle/indexindex
-      linkText: 角度换算
+      linkText: Angle Conversion
   - - link: /Angle/index
-      linkText: 角度单位换算
+      linkText: Angle Unit Conversion
 head:
   - - meta
     - name: description
-      content: "专业角度单位换算工具，支持度(°)、弧�?rad)、梯�?grad)、角分、角秒精确转换。适用于工程测量、数学计算、GPS定位、天文观测等场景，提供详细换算公式和实用指南�?
+      content: "Professional angle unit conversion tool supporting precise conversion between degrees (°), radians (rad), gradians (grad), arcminutes, and arcseconds. Suitable for engineering surveying, mathematical calculations, GPS positioning, astronomical observations, and other scenarios, providing detailed conversion formulas and practical guides."
   - - meta
     - name: keywords
-      content: "角度换算,弧度转角�?度分秒计算器,角度计算�?rad deg 変換,弧度计算公式,角度単位,梯度换算,GPS坐标转换,工程测量,天文观测,数学计算"  
+      content: "angle conversion, radians to degrees, degree minute second calculator, angle calculator, rad deg conversion, radian calculation formula, angle units, gradian conversion, GPS coordinate conversion, engineering surveying, astronomical observation, mathematical calculation"  
 ---
-# 角度单位换算
+# Angle Unit Conversion
 
-角度单位换算是工程测量、数学计算、GPS定位和天文观测中的基础工具。本换算器支持度(°)、弧�?rad)、梯�?grad)、角�?arcmin)、角�?arcsec)之间的精确转换，广泛应用于机械设计、地理测绘、物理计算和日常测量等领域�?
+Angle unit conversion is a fundamental tool in engineering surveying, mathematical calculations, GPS positioning, and astronomical observations. This converter supports precise conversion between degrees (°), radians (rad), gradians (grad), arcminutes (arcmin), and arcseconds (arcsec), widely used in mechanical design, geographic surveying, physics calculations, and daily measurements.
 ---
 <script setup>
 import { onMounted, reactive, inject ,ref  } from 'vue'
@@ -29,30 +29,30 @@ import { defineClientComponent } from 'vitepress'
 import { Angle } from '../files';
 const convert = inject('convert')
 const options =  [
-  { "label": "�?, "value": "deg" },
-  { "label": "弧度", "value": "rad" },
-  { "label": "梯度", "value": "grad" },
-  { "label": "角分", "value": "arcmin" },
-  { "label": "角秒", "value": "arcsec" }
+  { "label": "Degrees", "value": "deg" },
+  { "label": "Radians", "value": "rad" },
+  { "label": "Gradians", "value": "grad" },
+  { "label": "Arcminutes", "value": "arcmin" },
+  { "label": "Arcseconds", "value": "arcsec" }
 ];
 const formRef = ref(null);
-const seoKey = ['角度','单位换算','�?,'弧度','梯度','角分','角秒','换算公式','单位换算指南','勾配 角度','弧度计算','度的单位','弧度和角�?,'角度変換','角度 度分�?変換','角度的单�?,'角度 �?,'角度 単位','角度的符�?,'rad deg 変換','rad是什么单�?,'角度计算','度分�?変換','角度换算','角度单位','度分秒计算器','角度 変換','度数','度分�?,'弧度和角度的换算','角度计算�?,'弧度转角�?,'角度符号','deg','angle','rad','弧度计算公式','弧度公式','弧度的单�?,'rad和°怎么换算','弧度单位','一弧度等于多少�?,'弧度角度转换','弧度制与角度制的换算','弧度�?,'radians','radians to degrees','radian']
+const seoKey = ['angle','unit conversion','degrees','radians','gradians','arcminutes','arcseconds','conversion formula','unit conversion guide','slope angle','radian calculation','degree unit','radians and degrees','angle conversion','degree minute second conversion','angle units','angle minutes','angle units','angle symbols','rad deg conversion','what is rad unit','angle calculation','degree minute second conversion','angle conversion','angle units','degree minute second calculator','angle conversion','degrees','degree minute second','radian and degree conversion','angle calculator','radians to degrees','angle symbols','deg','angle','rad','radian calculation formula','radian formula','radian unit','rad and ° conversion','radian unit','how many degrees in one radian','radian angle conversion','radian and degree system conversion','radian system','radians','radians to degrees','radian']
 const rules = {
   number:{
     required: true,
     type: 'number',
     trigger: "blur",
-    message: '请输入数�?
+    message: 'Please enter a number'
   },
   to:{
     required: true,
     trigger: "select",
-    message: '请选择转换单位'
+    message: 'Please select conversion unit'
   },
   from:{
     required: true,
     trigger: "select",
-    message: '请选择原始单位'
+    message: 'Please select original unit'
   }
 }
 const form = reactive({
@@ -60,7 +60,7 @@ const form = reactive({
   to:'',
   from:'',
   result:'',
-  title:'角度单位换算�?,
+  title:'Angle Unit Converter',
 })
 const convertHandler = (e) => {
    e.preventDefault();
@@ -73,21 +73,21 @@ const convertHandler = (e) => {
 </script>
 
   <n-form size="large" :model="form" ref='formRef' :rules="rules">
-    <n-form-item label="数�?  path="number">
-      <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数�? />
+    <n-form-item label="Input Value"  path="number">
+      <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="Please enter the value to convert" />
     </n-form-item>
-    <n-form-item label="�? path="from">
-      <n-select  size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
+    <n-form-item label="From" path="from">
+      <n-select  size="large" :options="options" v-model:value="form.from" placeholder="Please select original unit" />
     </n-form-item>
-    <n-form-item label="�? path="to">
-      <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
+    <n-form-item label="To" path="to">
+      <n-select  size="large" :options="options" v-model:value="form.to" placeholder="Please select conversion unit" />
     </n-form-item>
     <n-form-item>
-      <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
+      <n-button type="info" style="width:100%" @click="convertHandler">Convert</n-button>
     </n-form-item>
   </n-form>
 
-<n-card embedded title="角度单位换算�? :bordered="false" hoverable style="margin-top: 16px;">
+<n-card embedded title="Angle Unit Converter" :bordered="false" hoverable style="margin-top: 16px;">
   <template #header>
     <div style="text-align:center;font-size:16px;color:#666;">
       {{form.title}}
@@ -105,100 +105,100 @@ const convertHandler = (e) => {
   </template>
 </n-card>
 
-## 角度单位换算公式�?
+## Angle Unit Conversion Formula Table
 
-单位 | 名称 | 定义 | 换算公式（以 1 rad 为基准）
+Unit | Name | Definition | Conversion Formula (Based on 1 rad)
 ---|---|---|---
-rad | 弧度 | 圆周长与半径的比值（1 �?= 2π rad�?| 1 rad = 1 rad（基准单位）
-deg | �?| 1 �?= 360° | 1 rad �?57.2958°
-grad | 梯度 | 1 �?= 400 grad | 1 rad �?63.6620 grad
-arcmin | 角分 | 1° = 60 arcmin | 1 rad �?3437.747 arcmin
-arcsec | 角秒 | 1 arcmin = 60 arcsec | 1 rad �?206,264.8 arcsec
+rad | Radian | Ratio of arc length to radius (1 circle = 2π rad) | 1 rad = 1 rad (base unit)
+deg | Degree | 1 circle = 360° | 1 rad ≈ 57.2958°
+grad | Gradian | 1 circle = 400 grad | 1 rad ≈ 63.6620 grad
+arcmin | Arcminute | 1° = 60 arcmin | 1 rad ≈ 3437.747 arcmin
+arcsec | Arcsecond | 1 arcmin = 60 arcsec | 1 rad ≈ 206,264.8 arcsec
 
-**换算关系链（基于圆周定义�?*�?
-1 �?= 360° = 400 grad = 2π rad �?6.2832 rad 
+**Conversion Relationship Chain (Based on Circle Definition)**:
+1 circle = 360° = 400 grad = 2π rad ≈ 6.2832 rad 
 1° = 60 arcmin = 3,600 arcsec 
 
-## 实际应用场景
+## Practical Application Scenarios
 
-### 导航与地理定位（deg, arcmin, arcsec�?
+### Navigation and Geographic Positioning (deg, arcmin, arcsec)
 
-  * **GPS 坐标系统** ：经纬度以度（°）、分（′）、秒（″）表示（如北京�?9°54�?6″N, 116°23�?9″E�?
-  * **地图测绘精度** ：精确到角秒级（1 arcsec �?30 米距离差）确保定位精�?
-  * **航海导航** ：船舶定位使用度分秒格式，确保航行安�?
-  * **飞行导航** ：飞机航线规划和空中交通管制中的角度计�?
+  * **GPS Coordinate System**: Latitude and longitude expressed in degrees (°), minutes (′), seconds (″) (e.g., Beijing: 39°54′26″N, 116°23′29″E)
+  * **Map Surveying Precision**: Accuracy to arcsecond level (1 arcsec ≈ 30 meters distance difference) ensures positioning precision
+  * **Marine Navigation**: Ship positioning uses degree-minute-second format to ensure navigation safety
+  * **Flight Navigation**: Aircraft route planning and air traffic control angle calculations
 
-### 工程与机械设计（grad�?
+### Engineering and Mechanical Design (grad)
 
-  * **测量仪器** ：全站仪、水准仪常用梯度（grad）单位，400 grad 的圆周设计简化角度计�?
-  * **坡度计算** ：道路、铁路坡度设计（如坡�?100 grad = 45°，便于工程计算）
-  * **建筑工程** ：屋顶倾斜角、楼梯坡度的精确测量
-  * **机械加工** ：数控机床角度编程和零件加工精度控制
+  * **Surveying Instruments**: Total stations and levels commonly use gradian (grad) units, 400 grad circle design simplifies angle calculations
+  * **Slope Calculation**: Road and railway slope design (e.g., 100 grad slope = 45°, convenient for engineering calculations)
+  * **Construction Engineering**: Precise measurement of roof inclination angles and stair slopes
+  * **Mechanical Processing**: CNC machine angle programming and part processing precision control
 
-### 数学与物理计算（rad�?
+### Mathematical and Physical Calculations (rad)
 
-  * **三角函数计算** ：微积分和物理公式（如角速度ω = θ/t）默认弧度制
-  * **振动分析** ：简谐运动、波动方程中的相位角计算
-  * **旋转动力�?* ：转动惯量、角动量计算中的角度单位
-  * **信号处理** ：傅里叶变换、频域分析中的相位角表示
+  * **Trigonometric Function Calculations**: Calculus and physics formulas (e.g., angular velocity ω = θ/t) default to radian system
+  * **Vibration Analysis**: Phase angle calculations in simple harmonic motion and wave equations
+  * **Rotational Dynamics**: Angular units in moment of inertia and angular momentum calculations
+  * **Signal Processing**: Phase angle representation in Fourier transforms and frequency domain analysis
 
-### 天文观测（arcsec�?
+### Astronomical Observation (arcsec)
 
-  * **望远镜分辨率** ：天体视直径用角秒衡量（满月 �?1,800 arcsec�?
-  * **恒星位置测量** ：哈勃望远镜分辨率达 0.05 arcsec，用于精确天体定�?
-  * **行星观测** ：测量行星视直径和卫星轨道角�?
-  * **深空探测** ：计算探测器与地球的通信角度偏差
+  * **Telescope Resolution**: Celestial object angular diameter measured in arcseconds (full moon ≈ 1,800 arcsec)
+  * **Stellar Position Measurement**: Hubble telescope resolution reaches 0.05 arcsec for precise celestial positioning
+  * **Planetary Observation**: Measuring planetary angular diameter and satellite orbital angles
+  * **Deep Space Exploration**: Calculating communication angle deviation between probes and Earth
 
-### 日常生活应用（deg�?
+### Daily Life Applications (deg)
 
-  * **电子设备** ：手机屏幕旋转（90°�?80°�?70°）、相机拍摄角度调�?
-  * **家居装修** ：量角器测量角度、家具安装倾斜角度控制
-  * **体育运动** ：高尔夫挥杆角度、篮球投篮弧度分�?
-  * **工业设计** ：产品外观设计中的角度美学和功能性考虑
+  * **Electronic Devices**: Phone screen rotation (90°, 180°, 270°), camera shooting angle adjustment
+  * **Home Decoration**: Protractor angle measurement, furniture installation tilt angle control
+  * **Sports**: Golf swing angles, basketball shooting arc analysis
+  * **Industrial Design**: Angle aesthetics and functionality considerations in product appearance design
 
-### 专业领域应用
+### Professional Field Applications
 
-  * **医学影像** ：CT、MRI扫描中的角度设置和图像重�?
-  * **机器人技�?* ：机械臂关节角度控制和路径规�?
-  * **游戏开�?* �?D建模、角色动画中的旋转角度计�?
-  * **虚拟现实** ：头部追踪、视角转换中的角度换�?
+  * **Medical Imaging**: Angle settings and image reconstruction in CT and MRI scans
+  * **Robotics**: Robotic arm joint angle control and path planning
+  * **Game Development**: Rotation angle calculations in 3D modeling and character animation
+  * **Virtual Reality**: Angle conversion in head tracking and viewpoint transformation
 
-## 单位选择建议
+## Unit Selection Recommendations
 
-场景 | 推荐单位 | 原因
+Scenario | Recommended Unit | Reason
 ---|---|---
-学术计算 / 物理公式 | rad | 与数学常数兼容（�?π�?
-工程测量 / 机械制图 | grad | 十进制简化坡度计�?
-地理坐标 / 天文观测 | deg + 角分 / �?| 直观且精度分级明�?
-日常生活 | deg | 通用性强
+Academic Calculation / Physics Formulas | rad | Compatible with mathematical constants (such as π)
+Engineering Surveying / Mechanical Drawing | grad | Decimal system simplifies slope calculations
+Geographic Coordinates / Astronomical Observation | deg + arcmin / arcsec | Intuitive with clear precision grading
+Daily Life | deg | Strong universality
 
-## 常见问题 (FAQ)
+## Frequently Asked Questions (FAQ)
 
-### Q1: 弧度和角度有什么区别？
-**A:** 弧度(rad)是以圆弧长度与半径的比值定义的角度单位�?弧度�?7.3°。角�?deg)是将圆周等分�?60份的传统单位。弧度在数学计算中更自然，角度在日常应用中更直观�?
+### Q1: What is the difference between radians and degrees?
+**A:** Radian (rad) is an angle unit defined by the ratio of arc length to radius, 1 radian ≈ 57.3°. Degree (deg) is a traditional unit that divides the circle into 360 equal parts. Radians are more natural in mathematical calculations, while degrees are more intuitive in daily applications.
 
-### Q2: 为什么工程测量常用梯�?grad)�?
-**A:** 梯度将圆周分�?00等份，采用十进制系统，便于坡度计算。例如：100 grad = 90°，对�?5°坡度，计算更简便�?
+### Q2: Why are gradians (grad) commonly used in engineering surveying?
+**A:** Gradians divide the circle into 400 equal parts, using a decimal system that facilitates slope calculations. For example: 100 grad = 90°, corresponding to a 45° slope, making calculations simpler.
 
-### Q3: GPS坐标中的度分秒如何换算？
-**A:** 1�?= 60�?= 3600秒。例如：39°54�?6�?= 39 + 54/60 + 26/3600 �?39.907°。精确到秒级可实现约30米的定位精度�?
+### Q3: How to convert degrees, minutes, and seconds in GPS coordinates?
+**A:** 1 degree = 60 minutes = 3600 seconds. For example: 39°54′26″ = 39 + 54/60 + 26/3600 ≈ 39.907°. Accuracy to the second level can achieve positioning precision of about 30 meters.
 
-### Q4: 什么时候使用弧度制�?
-**A:** 在数学计算（微积分、三角函数）、物理公式（角速度、简谐运动）、编程计算中优先使用弧度制，因为它与数学常数π直接相关�?
+### Q4: When should radians be used?
+**A:** Radians should be prioritized in mathematical calculations (calculus, trigonometric functions), physics formulas (angular velocity, simple harmonic motion), and programming calculations because they are directly related to the mathematical constant π.
 
-### Q5: 角秒在天文观测中的意义？
-**A:** 角秒用于测量极小的角度，1角秒 = 1/3600度。哈勃望远镜的分辨率�?.05角秒，相当于在月球上看到一枚硬币的精度�?
+### Q5: What is the significance of arcseconds in astronomical observation?
+**A:** Arcseconds are used to measure extremely small angles, 1 arcsecond = 1/3600 degree. The Hubble telescope's resolution reaches 0.05 arcseconds, equivalent to the precision of seeing a coin on the moon.
 
-### Q6: 如何快速记忆角度换算公式？
-**A:** 记住关键比例：π弧度 = 180°�?弧度 �?57.3°�?° = 60�?= 3600″。利用这些基础关系可以推导出所有换算公式�?
+### Q6: How to quickly memorize angle conversion formulas?
+**A:** Remember key ratios: π radians = 180°, 1 radian ≈ 57.3°, 1° = 60′ = 3600″. Using these basic relationships, all conversion formulas can be derived.
 
-### Q7: 不同角度单位的精度要求？
-**A:** 日常应用用度(°)，工程测量用梯度(grad)，科学计算用弧度(rad)，高精度定位用角分角秒，天文观测用角秒。根据应用场景选择合适精度�?
+### Q7: What are the precision requirements for different angle units?
+**A:** Use degrees (°) for daily applications, gradians (grad) for engineering surveying, radians (rad) for scientific calculations, arcminutes and arcseconds for high-precision positioning, and arcseconds for astronomical observation. Choose appropriate precision based on application scenarios.
 
-### Q8: 角度换算中的常见错误�?
-**A:** 常见错误包括：混淆弧度与角度、忘记π的系数、度分秒进制错误。建议使用专业换算工具验证结果，避免手工计算错误�?
+### Q8: What are common errors in angle conversion?
+**A:** Common errors include: confusing radians with degrees, forgetting π coefficients, and degree-minute-second base conversion errors. It is recommended to use professional conversion tools to verify results and avoid manual calculation errors.
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Angle" :key="index">
     <n-button

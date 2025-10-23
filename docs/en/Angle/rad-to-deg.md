@@ -4,21 +4,21 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
 
   - - link: /Angle/index
-      linkText: 角度换算
+      linkText: Angle Conversion
   - - link: /Angle/rad-to-deg
-      linkText: 弧度 (rad) �?度数 (°) 换算
+      linkText: Radians (rad) to Degrees (°) Conversion
 head:
   - - meta
     - name: description
-      content: "将弧�?rad)换算为度�?°)的在线工具和换算公式。提供简单易用的角度单位换算计算器�?
+      content: "Online tool and conversion formula for converting radians (rad) to degrees (°). Provides an easy-to-use angle unit conversion calculator."
   - - meta
     - name: keywords
-      content: "角度换算, 弧度转度�? rad到°换�? 在线计算�? 数学工具, 单位换算"
+      content: "angle conversion, radians to degrees, rad to ° conversion, online calculator, math tools, unit conversion"
 ---
-# 弧度 (rad) �?度数 (°) 的换�?
+# Radians (rad) to Degrees (°) Conversion
 ---
 <script setup>
 import { onMounted, reactive, inject, ref } from 'vue'
@@ -37,17 +37,17 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) * 180 / Math.PI
     form.result = `${form.number}rad = ${convertedValue.toFixed(4)}°`
   } else {
-    form.result = '请输入有效的数值�?
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="弧度 (rad)">
-    <n-input-number v-model:value="form.number" placeholder="输入弧度" style="width: 100%" />
+  <n-form-item label="Radians (rad)">
+    <n-input-number v-model:value="form.number" placeholder="Enter radians" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
@@ -57,40 +57,42 @@ const convertHandler = () => {
   </div>
 </n-card>
 
-## 公式
+## Formula
 
-�?**弧度 (rad)** 换算�?**度数 (°)** 的公式为�?
+The formula for converting from **radians (rad)** to **degrees (°)** is:
 $$ ° = rad \times \frac{180}{\pi} $$
 
-## 弧度到度数换算指�?
+## Radians to Degrees Conversion Guide
 
-角度测量是数学和工程领域中的基础概念之一，尤其在几何学、物理学以及计算机图形学中应用广泛。本文将介绍如何将弧�?(rad) 换算为度�?(°)，并提供一些实用示例�?
+Angle measurement is one of the fundamental concepts in mathematics and engineering, especially widely used in geometry, physics, and computer graphics. This article will introduce how to convert radians (rad) to degrees (°) and provide some practical examples.
 
-### 为什么需�?rad �?° 的换算？
+### Why is rad to ° conversion needed?
 
-弧度和度数是两种常用的角度单位。其中，度数在日常生活和基础教育中更为常用，因为其直观性更强。通过精确的换算，可以确保计算的一致性和准确性�?
+Radians and degrees are two commonly used angle units. Among them, degrees are more commonly used in daily life and basic education because they are more intuitive. Through precise conversion, calculation consistency and accuracy can be ensured.
 
-### rad �?° 的换算方�?
+### rad to ° conversion method
 
-从弧度到度数的换算公式为�?
+The conversion formula from radians to degrees is:
 
-- **公式�?* `° = rad × 180 ÷ π`
+- **Formula:** `° = rad × 180 ÷ π`
 
-### 实际应用示例
+### Practical Application Examples
 
-以下是一些常见的换算实例�?
+Here are some common conversion examples:
 
 - 0 rad = 0°
-- 0.5236 rad �?30°
-- 0.7854 rad �?45°
-- 1.5708 rad �?90°
-- 3.1416 rad �?180°
+- π/6 rad ≈ 30°
+- π/4 rad ≈ 45°
+- π/3 rad ≈ 60°
+- π/2 rad ≈ 90°
+- π rad ≈ 180°
+- 2π rad ≈ 360°
 
-### 总结
+### Summary
 
-掌握弧度到度数的换算可以帮助您更好地理解和使用这些角度单位。希望本指南能为您提供有价值的参考�?
+Mastering radians to degrees conversion can help you better understand and use these angle units. We hope this guide provides valuable reference for you.
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Angle" :key="index">
     <n-button

@@ -8,18 +8,18 @@ breadcrumb:
   - - link: /Power/index
       linkText: 功率换算
   - - link: /Power/W-to-GW
-      linkText: 瓦特转吉�?
+      linkText: 瓦特转吉瓦
 head:
   - - meta
     - name: description
-      content: "提供瓦特 (W) 到吉�?(GW) 的单位换算公式及实际应用场景�?
+      content: "提供瓦特 (W) 到吉瓦 (GW) 的单位换算公式及实际应用场景。"
   - - meta
     - name: keywords
-      content: "瓦特转吉�?W到GW换算,功率单位换算公式,功率单位换算工具,大型能源设施功率单位"
+      content: "瓦特转吉瓦,W到GW换算,功率单位换算公式,功率单位换算工具,大型能源设施功率单位"
 ---
-# 瓦特 (W) 到吉�?(GW) 换算
+# 瓦特 (W) 到吉瓦 (GW) 换算
 
-这是关于 **瓦特转吉�?* 的详细介绍，并提供一个实用的 **功率单位换算工具**�?
+这是关于 **瓦特转吉瓦** 的详细介绍，并提供一个实用的 **功率单位换算工具**。
 
 <script setup>
 import { onMounted,reactive,inject ,ref  } from 'vue'
@@ -37,7 +37,7 @@ const rules = {
     required: true,
     type: 'number',
     trigger: "blur",
-    message: '请输入数�?
+    message: '请输入数字'
   },
   to:{
     required: true,
@@ -55,7 +55,7 @@ const form = reactive({
   to:'',
   from:'',
   result:'',
-  title:'瓦特转吉�?,
+  title:'瓦特转吉瓦',
 })
 const convertHandler = (e) => {
    e.preventDefault();
@@ -68,13 +68,13 @@ const convertHandler = (e) => {
 </script>
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="数�?  path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数�? />
+  <n-form-item label="数值"  path="number">
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数值" />
   </n-form-item>
-  <n-form-item label="�? path="from">
+  <n-form-item label="从" path="from">
     <n-select  size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
   </n-form-item>
-  <n-form-item label="�? path="to">
+  <n-form-item label="到" path="to">
     <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
   </n-form-item>
   <n-form-item>
@@ -93,14 +93,14 @@ const convertHandler = (e) => {
 
 ## 生活中的应用示例
 
-- **核电站输出功�?*：例如，单机组容量可�?1 GW，即 10 亿瓦特�?
-- **大型光伏电站**：如 10 GW 电站年发电量可满�?400 万户家庭用电�?
-- **超大型工业基地能�?*：如钢铁厂或化工厂的总用电负荷可能达到数 GW�?
+- **核电站输出功率**：例如，单机组容量可达 1 GW，即 10 亿瓦特。
+- **大型光伏电站**：如 10 GW 电站年发电量可满足 400 万户家庭用电。
+- **超大型工业基地能耗**：如钢铁厂或化工厂的总用电负荷可能达到数 GW。
 
 ## 使用建议
 
-- **大型能源设施**：优先使用吉�?(GW)，例如核电站、大型太阳能电站等�?
-- **科学计算**：使用国际单位制（瓦�?W），便于统一标准�?
+- **大型能源设施**：优先使用吉瓦 (GW)，例如核电站、大型太阳能电站等。
+- **科学计算**：使用国际单位制（瓦特 W），便于统一标准。
 
 ## 相关连接
 <n-grid x-gap="12" :cols="2">

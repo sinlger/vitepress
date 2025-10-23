@@ -4,21 +4,21 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
 
   - - link: /Angle/index
-      linkText: 角度换算
+      linkText: Angle Conversion
   - - link: /Angle/rad-to-grad
-      linkText: 弧度 (rad) �?梯度 (grad) 换算
+      linkText: Radians (rad) to Gradians (grad) Conversion
 head:
   - - meta
     - name: description
-      content: "将弧�?rad)换算为梯�?grad)的在线工具和换算公式。提供简单易用的角度单位换算计算器�?
+      content: "Online tool and conversion formula for converting radians (rad) to gradians (grad). Provides an easy-to-use angle unit conversion calculator."
   - - meta
     - name: keywords
-      content: "角度换算, 弧度转梯�? rad到grad换算, 在线计算�? 数学工具, 单位换算"
+      content: "angle conversion, radians to gradians, rad to grad conversion, online calculator, math tools, unit conversion"
 ---
-# 弧度 (rad) �?梯度 (grad) 的换�?
+# Radians (rad) to Gradians (grad) Conversion
 ---
 <script setup>
 import { onMounted, reactive, inject, ref } from 'vue'
@@ -37,17 +37,17 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) * 200 / Math.PI
     form.result = `${form.number}rad = ${convertedValue.toFixed(4)}grad`
   } else {
-    form.result = '请输入有效的数值�?
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="弧度 (rad)">
-    <n-input-number v-model:value="form.number" placeholder="输入弧度" style="width: 100%" />
+  <n-form-item label="Radians (rad)">
+    <n-input-number v-model:value="form.number" placeholder="Enter radians" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
@@ -57,40 +57,40 @@ const convertHandler = () => {
   </div>
 </n-card>
 
-## 公式
+## Formula
 
-�?**弧度 (rad)** 换算�?**梯度 (grad)** 的公式为�?
+The formula for converting from **radians (rad)** to **gradians (grad)** is:
 $$ grad = rad \times \frac{200}{\pi} $$
 
-## 弧度到梯度换算指�?
+## Radians to Gradians Conversion Guide
 
-角度测量是数学和工程领域中的基础概念之一，尤其在几何学、物理学以及计算机图形学中应用广泛。本文将介绍如何将弧�?(rad) 换算为梯�?(grad)，并提供一些实用示例�?
+Angle measurement is one of the fundamental concepts in mathematics and engineering, especially widely used in geometry, physics, and computer graphics. This article will introduce how to convert radians (rad) to gradians (grad) and provide some practical examples.
 
-### 为什么需�?rad �?grad 的换算？
+### Why is rad to grad conversion needed?
 
-弧度和梯度是两种常用的角度单位。其中，梯度在工程计算中更为常用，因为其十进制系统简化了坡度计算。通过精确的换算，可以确保计算的一致性和准确性�?
+Radians and gradians are two commonly used angle units. Among them, gradians are more commonly used in engineering calculations because their decimal system simplifies slope calculations. Through precise conversion, the consistency and accuracy of calculations can be ensured.
 
-### rad �?grad 的换算方�?
+### rad to grad conversion method
 
-从弧度到梯度的换算公式为�?
+The conversion formula from radians to gradians is:
 
-- **公式�?* `grad = rad × 200 ÷ π`
+- **Formula:** `grad = rad × 200 ÷ π`
 
-### 实际应用示例
+### Practical Application Examples
 
-以下是一些常见的换算实例�?
+Here are some common conversion examples:
 
 - 0 rad = 0 grad
-- 0.5236 rad �?33.3333 grad
-- 0.7854 rad �?50 grad
-- 1.5708 rad �?100 grad
-- 3.1416 rad �?200 grad
+- 0.5236 rad ≈ 33.3333 grad
+- 0.7854 rad ≈ 50 grad
+- 1.5708 rad ≈ 100 grad
+- 3.1416 rad ≈ 200 grad
 
-### 总结
+### Summary
 
-掌握弧度到梯度的换算可以帮助您更好地理解和使用这些角度单位。希望本指南能为您提供有价值的参考�?
+Mastering the conversion from radians to gradians can help you better understand and use these angle units. We hope this guide provides valuable reference for you.
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Angle" :key="index">
     <n-button

@@ -12,12 +12,12 @@ breadcrumb:
 head:
   - - meta
     - name: description
-      content: "�?(month) �?微秒 (μs) 的时间单位换算指南。了解如何通过公式 month × 2.628 × 10¹�?换算为微秒�?
+      content: "月 (month) 到 微秒 (μs) 的时间单位换算指南。了解如何通过公式 month × 2.628 × 10¹⁵ 换算为微秒。"
   - - meta
     - name: keywords
-      content: "时间, 单位换算, �? 微秒, month, μs, 月到微秒, 时间换算指南"
+      content: "时间, 单位换算, 月, 微秒, month, μs, 月到微秒, 时间换算指南"
 ---
-# �?(month) �?微秒 (μs) 的换�?
+# 月 (month) 到 微秒 (μs) 的换算
 
 ---
 <script setup>
@@ -38,14 +38,14 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) * 2592000000000
     form.result = `${form.number}month = ${convertedValue.toFixed(0)}μs`
   } else {
-    form.result = '请输入有效的数值�?
+    form.result = '请输入有效的数值。'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="�?(month)">
-    <n-input-number v-model:value="form.number" placeholder="输入�? style="width: 100%" />
+  <n-form-item label="月 (month)">
+    <n-input-number v-model:value="form.number" placeholder="输入月" style="width: 100%" />
   </n-form-item>
   <n-form-item>
     <n-button type="info" @click="convertHandler" block>换算</n-button>
@@ -60,7 +60,7 @@ const convertHandler = () => {
 
 ## 公式
 
-�?**�?(month)** 换算�?**微秒 (μs)** 的公式为�?
+从 **月 (month)** 换算到 **微秒 (μs)** 的公式为：
 $$ \mu s = month \times 2.592 \times 10^{12} $$
 
 ### 示例

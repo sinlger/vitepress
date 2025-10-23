@@ -4,23 +4,23 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
 
   - - link: /Angle/index
-      linkText: 角度换算
+      linkText: Angle Conversion
   - - link: /Angle/arcsec-to-arcmin
-      linkText: 角秒 (arcsec) �?角分 (arcmin) 换算
+      linkText: Arcsecond (arcsec) to Arcminute (arcmin) Conversion
 head:
   - - meta
     - name: description
-      content: "专业角秒(arcsec)到角�?arcmin)换算工具，支持弧秒计算、角度单位转换。适用于天文观测、GPS定位、工程测量等场景，提供精确的角度换算公式和实用指南�?
+      content: "Professional arcsecond (arcsec) to arcminute (arcmin) conversion tool, supporting arcsecond calculations and angle unit conversions. Suitable for astronomical observations, GPS positioning, engineering surveying, and other scenarios, providing precise angle conversion formulas and practical guides."
   - - meta
     - name: keywords
-      content: "角秒换算,arcsec转角�?弧秒计算公式,角度单位换算,角秒等于多少角分,天文观测,GPS定位,工程测量,角度计算�?度分�?
+      content: "arcsecond conversion,arcsec to arcmin,arcsecond calculation formula,angle unit conversion,arcsecond equals how many arcminutes,astronomical observation,GPS positioning,engineering surveying,angle calculator,degrees minutes seconds"
 ---
-# 角秒 (arcsec) �?角分 (arcmin) 的换�?
+# Arcsecond (arcsec) to Arcminute (arcmin) Conversion
 
-角秒到角分换算是角度测量中的基础转换，广泛应用于天文观测、GPS定位、工程测量和科学计算等领域。本工具提供精确的arcsec到arcmin换算，支持弧秒计算和各种角度单位转换需求�?
+Converting arcseconds to arcminutes is a fundamental transformation in angle measurement, widely used in astronomical observation, GPS positioning, engineering surveying, and scientific calculations. This tool provides precise arcsec to arcmin conversion, supporting arcsecond calculations and various angle unit conversion needs.
 ---
 <script setup>
 import { onMounted, reactive, inject, ref } from 'vue'
@@ -29,14 +29,14 @@ import { defineClientComponent } from 'vitepress'
 import { Angle } from '../files';
 const convert = inject('convert')
 const seoKey = [
-  'arc sec', '角秒和度', 'arcsecond', '角度換算', '角度単位',
-  '弧秒', 'arcsec是什么单�?, 'arcsec', 'sec是什么单�?, '度分�?,
-  '角秒', 'angle conversion', '角度单位', 'angle unit', '角秒换算',
-  'arcsec conversion', '角度转换', 'angle converter', '弧秒计算',
-  'arcsecond calculation', '天文观测', 'astronomical observation'
+  'arc sec', 'arcsecond and degree', 'arcsecond', 'angle conversion', 'angle units',
+  'arcsecond', 'what unit is arcsec', 'arcsec', 'what unit is sec', 'degrees minutes seconds',
+  'arcsecond', 'angle conversion', 'angle units', 'angle unit', 'arcsecond conversion',
+  'arcsec conversion', 'angle conversion', 'angle converter', 'arcsecond calculation',
+  'arcsecond calculation', 'astronomical observation', 'astronomical observation'
 ]
 const form = reactive({
-  title: '角秒到角分换算器',
+  title: 'Arcsecond to Arcminute Converter',
   number: null,
   result: '',
 })
@@ -46,135 +46,141 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) / 60
     form.result = `${form.number}arcsec = ${convertedValue.toFixed(4)}arcmin`
   } else {
-    form.result = '请输入有效的数值�?
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-card :title="form.title" style="margin-bottom: 20px;">
   <n-form size="large" :model="form">
-    <n-form-item label="角秒 (arcsec)">
-      <n-input-number v-model:value="form.number" placeholder="输入角秒" style="width: 100%" />
+    <n-form-item label="Arcsecond (arcsec)">
+      <n-input-number v-model:value="form.number" placeholder="Enter arcseconds" style="width: 100%" />
     </n-form-item>
     <n-form-item>
-      <n-button type="info" @click="convertHandler" block>换算</n-button>
+      <n-button type="info" @click="convertHandler" block>Convert</n-button>
     </n-form-item>
   </n-form>
 
-  <n-card  embedded :bordered="false" hoverable>
-    <div  style="text-align:center;font-size:20px;">
+  <n-card embedded :bordered="false" hoverable style="margin-top: 16px;">
+    <template #header>
+      <div style="text-align:center;font-size:16px;color:#666;">
+        {{form.title}}
+      </div>
+    </template>
+    <div style="text-align:center;font-size:20px;">
       <strong>{{form.result}}</strong>
     </div>
+    <template #footer>
+      <div style="text-align:center;font-size:12px;color:#999;">
+        <span v-for="(keyword, index) in seoKey" :key="index">
+          {{keyword}}<span v-if="index < seoKey.length - 1"> | </span>
+        </span>
+      </div>
+    </template>
   </n-card>
-  
-  <template #footer>
-    <div style="font-size: 12px; color: #666; text-align: center;">
-      关键�? {{ seoKey.join(', ') }}
-    </div>
-  </template>
 </n-card>
 
-## 公式
+## Conversion Formula
 
-�?**角秒 (arcsec)** 换算�?**角分 (arcmin)** 的公式为�?
+The formula for converting from **arcseconds (arcsec)** to **arcminutes (arcmin)** is:
 $$ arcmin = \frac{arcsec}{60} $$
 
-## 角秒到角分换算指�?
+## Arcsecond to Arcminute Conversion Guide
 
-角度测量是数学和工程领域中的基础概念之一，尤其在几何学、物理学以及计算机图形学中应用广泛。本文将介绍如何将角�?(arcsec) 换算为角�?(arcmin)，并提供一些实用示例�?
+Angle measurement is one of the fundamental concepts in mathematics and engineering, especially widely used in geometry, physics, and computer graphics. This article will introduce how to convert arcseconds (arcsec) to arcminutes (arcmin) and provide some practical examples.
 
-### 为什么需�?arcsec �?arcmin 的换算？
+### Why is arcsec to arcmin conversion needed?
 
-角秒和角分是两种常用的角度单位。其中，角分在导航和天文学计算中更为常用，因为其提供了更精细的角度划分。通过精确的换算，可以确保计算的一致性和准确性�?
+Arcseconds and arcminutes are two commonly used angle units. Among them, arcminutes are more commonly used in navigation and astronomical calculations because they provide finer angle divisions. Through precise conversion, the consistency and accuracy of calculations can be ensured.
 
-### arcsec �?arcmin 的换算方�?
+### arcsec to arcmin conversion method
 
-从角秒到角分的换算公式为�?
+The conversion formula from arcseconds to arcminutes is:
 
-- **公式�?* `arcmin = arcsec ÷ 60`
+- **Formula:** `arcmin = arcsec ÷ 60`
 
-### 精确换算系数
-- 1 角秒 = 1/60 角分
-- 1 角秒 �?0.016666667 角分
-- 1 角分 = 60 角秒
+### Precise Conversion Factors
+- 1 arcsecond = 1/60 arcminute
+- 1 arcsecond ≈ 0.016666667 arcminute
+- 1 arcminute = 60 arcseconds
 
-### 实际应用示例
+### Practical Application Examples
 
-#### 常用角秒值换�?
-- 0 角秒 = 0 角分
-- 30 角秒 = 0.5 角分
-- 60 角秒 = 1 角分
-- 120 角秒 = 2 角分
-- 180 角秒 = 3 角分
-- 300 角秒 = 5 角分
-- 600 角秒 = 10 角分
-- 900 角秒 = 15 角分
-- 1800 角秒 = 30 角分
-- 3600 角秒 = 60 角分 (1�?
+#### Common Arcsecond Value Conversions
+- 0 arcseconds = 0 arcminutes
+- 30 arcseconds = 0.5 arcminutes
+- 60 arcseconds = 1 arcminute
+- 120 arcseconds = 2 arcminutes
+- 180 arcseconds = 3 arcminutes
+- 300 arcseconds = 5 arcminutes
+- 600 arcseconds = 10 arcminutes
+- 900 arcseconds = 15 arcminutes
+- 1800 arcseconds = 30 arcminutes
+- 3600 arcseconds = 60 arcminutes (1 degree)
 
-#### 天文观测常用�?
-- 1 角秒 = 0.0167 角分
-- 10 角秒 = 0.167 角分
-- 100 角秒 = 1.667 角分
-- 1000 角秒 = 16.667 角分
+#### Common Values in Astronomical Observations
+- 1 arcsecond = 0.0167 arcminutes
+- 10 arcseconds = 0.167 arcminutes
+- 100 arcseconds = 1.667 arcminutes
+- 1000 arcseconds = 16.667 arcminutes
 
-## 实际应用场景
+## Practical Application Scenarios
 
-### 天文观测
-- **星体位置测量**：测量恒星、行星的精确角位置，角秒级精�?
-- **望远镜分辨率**：计算望远镜的角分辨率和视场范围
-- **天体运动追踪**：追踪天体的微小位置变化和运动轨�?
-- **星图制作**：制作高精度星图，标注天体的准确坐标
+### Astronomical Observations
+- **Stellar Position Measurement**: Measuring precise angular positions of stars and planets with arcsecond-level precision
+- **Telescope Resolution**: Calculating telescope angular resolution and field of view range
+- **Celestial Object Motion Tracking**: Tracking minute position changes and motion trajectories of celestial objects
+- **Star Chart Creation**: Creating high-precision star charts with accurate celestial object coordinates
 
-### GPS和导航系�?
-- **卫星定位精度**：GPS系统中卫星位置的高精度计�?
-- **导航误差分析**：分析导航系统的角度误差和精�?
-- **测量基准校正**：大地测量中基准点的角度校正
-- **地理信息处理**：GIS系统中的精确坐标转换
+### GPS and Navigation Systems
+- **Satellite Positioning Accuracy**: High-precision calculations of satellite positions in GPS systems
+- **Navigation Error Analysis**: Analyzing angular errors and precision of navigation systems
+- **Survey Datum Correction**: Angular correction of reference points in geodetic surveying
+- **Geographic Information Processing**: Precise coordinate conversion in GIS systems
 
-### 工程测量
-- **建筑工程**：建筑物的精密角度测量和施工定位
-- **桥梁建设**：桥梁结构的角度设计和变形监�?
-- **道路工程**：道路曲线设计和坡度角度计算
-- **机械制�?*：精密机械零件的角度加工和质量检�?
+### Engineering Surveying
+- **Building Construction**: Precise angle measurement and construction positioning for buildings
+- **Bridge Construction**: Angular design and deformation monitoring of bridge structures
+- **Road Engineering**: Road curve design and slope angle calculations
+- **Mechanical Manufacturing**: Angular processing and quality inspection of precision mechanical parts
 
-### 科学研究
-- **光学实验**：激光光学实验中的角度测量和校准
-- **材料科学**：晶体结构分析中的衍射角度计�?
-- **地质勘探**：地质构造的倾斜角度和断层分�?
-- **海洋学研�?*：海流方向和波浪传播的角度研�?
+### Scientific Research
+- **Optical Experiments**: Angle measurement and calibration in laser optical experiments
+- **Materials Science**: Diffraction angle calculations in crystal structure analysis
+- **Geological Exploration**: Tilt angle and fault analysis of geological structures
+- **Oceanographic Research**: Angular studies of ocean current directions and wave propagation
 
-### 军事应用
-- **火炮射击**：火炮射击的精确角度计算和弹道修�?
-- **雷达系统**：雷达扫描的角度精度和目标定�?
-- **导弹制导**：导弹飞行轨迹的精确角度控制
-- **侦察定位**：目标方位角的高精度测定和跟�?
+### Military Applications
+- **Artillery Firing**: Precise angle calculations and ballistic corrections for artillery firing
+- **Radar Systems**: Angular precision and target positioning in radar scanning
+- **Missile Guidance**: Precise angular control of missile flight trajectories
+- **Reconnaissance Positioning**: High-precision determination and tracking of target bearings
 
-## 常见问题解答 (FAQ)
+## Frequently Asked Questions (FAQ)
 
-### Q1: 角秒和角分的关系是什么？
-A: 1角分 = 60角秒，这是固定的换算关系。角秒是比角分更小的角度单位，用于需要极高精度的测量场合�?
+### Q1: What is the relationship between arcseconds and arcminutes?
+A: 1 arcminute = 60 arcseconds, which is a fixed conversion relationship. Arcseconds are smaller angular units than arcminutes, used in situations requiring extremely high precision measurements.
 
-### Q2: 在天文观测中，角秒的精度有多重要�?
-A: 在天文观测中，角秒级精度至关重要。例如，哈勃太空望远镜的角分辨率约为0.1角秒，这种精度使得我们能够观测到遥远星系的细节�?
+### Q2: How important is arcsecond precision in astronomical observations?
+A: Arcsecond-level precision is crucial in astronomical observations. For example, the Hubble Space Telescope has an angular resolution of about 0.1 arcseconds, which allows us to observe details of distant galaxies.
 
-### Q3: GPS系统中如何使用角秒单位？
-A: GPS系统使用角秒来表示卫星位置和接收器位置的精度�?角秒的误差在地球表面大约对应30米的距离误差�?
+### Q3: How are arcseconds used in GPS systems?
+A: GPS systems use arcseconds to express the precision of satellite and receiver positions. An error of 1 arcsecond corresponds to approximately 30 meters of distance error on Earth's surface.
 
-### Q4: 如何快速心算角秒到角分的转换？
-A: 记住60角秒=1角分，可以快速除�?0。例如：120角秒÷60=2角分�?00角秒÷60=5角分�?
+### Q4: How can I quickly calculate arcsecond to arcminute conversions mentally?
+A: Remember that 60 arcseconds = 1 arcminute, so you can quickly divide by 60. For example: 120 arcseconds ÷ 60 = 2 arcminutes, 300 arcseconds ÷ 60 = 5 arcminutes.
 
-### Q5: 角秒在工程测量中的应用精度如何？
-A: 在精密工程测量中，角秒级精度可以确保大型建筑物和桥梁的施工精度�?角秒的角度误差在1公里距离上仅产生�?毫米的线性误差�?
+### Q5: What is the application precision of arcseconds in engineering surveying?
+A: In precision engineering surveying, arcsecond-level precision ensures construction accuracy for large buildings and bridges. An angular error of 1 arcsecond produces only about 5 millimeters of linear error at a distance of 1 kilometer.
 
-### Q6: 有哪些软件可以进行角度单位转换？
-A: 常用的软件包括：AutoCAD、ArcGIS、MATLAB、Excel等。大多数科学计算器和在线转换工具也支持角度单位转换�?
+### Q6: What software can perform angle unit conversions?
+A: Common software includes: AutoCAD, ArcGIS, MATLAB, Excel, etc. Most scientific calculators and online conversion tools also support angle unit conversions.
 
-### 总结
+### Summary
 
-掌握角秒到角分的换算可以帮助您更好地理解和使用这些角度单位。无论是在天文观测、GPS定位、工程测量还是科学计算中，精确的角度换算都是确保结果准确性的关键。希望本指南能为您提供有价值的参考�?
+Mastering arcsecond to arcminute conversion helps you better understand and use these angular units. Whether in astronomical observations, GPS positioning, engineering surveying, or scientific calculations, precise angle conversion is key to ensuring result accuracy. We hope this guide provides valuable reference for you.
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Angle" :key="index">
     <n-button

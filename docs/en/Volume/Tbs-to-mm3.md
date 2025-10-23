@@ -8,19 +8,19 @@ breadcrumb:
   - - link: /Volume/index
       linkText: 体积单位换算
   - - link: /Volume/Tbs-to-mm3
-      linkText: 汤匙到立方毫米换�?
+      linkText: 汤匙到立方毫米换算
 head:
   - - meta
     - charset: utf-8
   - - meta
     - name: description
-      content: 汤匙(Tbs)与立方毫�?mm³)单位换算工具�?汤匙等于14,786.76立方毫米�?
+      content: 汤匙(Tbs)与立方毫米(mm³)单位换算工具，1汤匙等于14,786.76立方毫米。
   - - meta
     - name: keywords
       content: 汤匙,立方毫米,单位换算,Tbs,mm3
 ---
 
-# 汤匙(Tbs) �?立方毫米(mm³) 换算
+# 汤匙(Tbs) 到 立方毫米(mm³) 换算
 
 <script setup>
 import { onMounted, reactive, inject ,ref  } from 'vue'
@@ -40,7 +40,7 @@ const rules = {
 const form = reactive({
   number:null,
   result:'',
-  title:'汤匙(Tbs)到立方毫�?mm³)换算'
+  title:'汤匙(Tbs)到立方毫米(mm³)换算'
 })
 
 const convertHandler = (e) => {
@@ -54,8 +54,8 @@ const convertHandler = (e) => {
 </script>
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="数�? path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="请输入汤匙数�? />
+  <n-form-item label="数值" path="number">
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="请输入汤匙数值" />
   </n-form-item>
   <n-form-item>
     <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
@@ -71,16 +71,16 @@ const convertHandler = (e) => {
 1 汤匙(Tbs) = 14,786.76 立方毫米(mm³)
 
 ### 换算原理
-汤匙(Tbs)和立方毫�?mm³)都是体积单位�?汤匙等于�?4,787立方毫米�?
+汤匙(Tbs)和立方毫米(mm³)都是体积单位，1汤匙等于约14,787立方毫米。
 
-## 常见换算�?
-| 汤匙(Tbs) | 立方毫米(mm³) | 实物参�?                |
+## 常见换算值
+| 汤匙(Tbs) | 立方毫米(mm³) | 实物参考                 |
 |-----------|-------------|--------------------------|
 | 1         | 14,786.76   | 标准汤匙容量              |
-| 0.5       | 7,393.38    | 半汤匙容�?               |
+| 0.5       | 7,393.38    | 半汤匙容量                |
 | 0.25      | 3,696.69    | 四分之一汤匙容量          |
-| 2         | 29,573.52   | 两汤匙容�?               |
-| 3         | 44,360.28   | 三汤匙容�?               |
+| 2         | 29,573.52   | 两汤匙容量                |
+| 3         | 44,360.28   | 三汤匙容量                |
 
 ## 应用场景
 ### 烹饪
@@ -90,7 +90,7 @@ const convertHandler = (e) => {
 
 ### 医药
 - 药品剂量测量
-- 实验室液体测�?
+- 实验室液体测量
 - 医疗器具校准
 
 ### 日常生活
@@ -98,16 +98,16 @@ const convertHandler = (e) => {
 - 手工制作
 - 小型容器容量测量
 
-## 单位换算技�?
-1. **快速心算法**�?
-   - 汤匙转立方毫�?�?数值乘�?4,787
-   - 立方毫米转汤�?�?数值除�?4,787
+## 单位换算技巧
+1. **快速心算法**：
+   - 汤匙转立方毫米 → 数值乘以14,787
+   - 立方毫米转汤匙 → 数值除以14,787
 
-2. **近似记忆**�?
-   - 1汤匙 �?15,000立方毫米
-   - 1立方毫米 �?0.000067汤匙
+2. **近似记忆**：
+   - 1汤匙 ≈ 15,000立方毫米
+   - 1立方毫米 ≈ 0.000067汤匙
 
-3. **记忆口诀**�?
+3. **记忆口诀**：
    "汤匙转立方毫米，一万五千倍要记清"
 
 ## 注意事项

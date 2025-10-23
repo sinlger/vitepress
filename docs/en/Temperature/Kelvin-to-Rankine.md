@@ -14,21 +14,21 @@ breadcrumb:
 head:
   - - meta
     - name: description
-      content: "专业的开尔文转兰金度在线工具，支持摄氏度与开尔文换算、K和摄氏度换算等。提供详细的开尔文温度换算公式、开氏温度说明，是您进行K to C转换的最佳选择�?
+      content: "专业的开尔文转兰金度在线工具，支持摄氏度与开尔文换算、K和摄氏度换算等。提供详细的开尔文温度换算公式、开氏温度说明，是您进行K to C转换的最佳选择。"
   - - meta
     - name: keywords
-      content: "摄氏度与开尔文换算, 开氏温�? k是什么单�? k和摄氏度换算, 开尔文温度, k to c, 摄氏度和开尔文的换�? 开尔文和摄氏度的换�? kelvin, 摄氏�?
+      content: "摄氏度与开尔文换算, 开氏温度, k是什么单位, k和摄氏度换算, 开尔文温度, k to c, 摄氏度和开尔文的换算, 开尔文和摄氏度的换算, kelvin, 摄氏度"
 ---
-# 开尔文 (K) �?兰金�?(R) 的换�?
+# 开尔文 (K) 到 兰金度 (R) 的换算
 
-需要进�?*开尔文和摄氏度的换�?*吗？这个页面提供了专业的**开尔文温度**转换工具，支�?*摄氏度与开尔文换算**�?*K和摄氏度换算**等多种温度转换。我们提供详细的**开氏温�?*换算公式和示例，让您轻松掌握**K to C**的转换方法�?
+需要进行**开尔文和摄氏度的换算**吗？这个页面提供了专业的**开尔文温度**转换工具，支持**摄氏度与开尔文换算**、**K和摄氏度换算**等多种温度转换。我们提供详细的**开氏温度**换算公式和示例，让您轻松掌握**K to C**的转换方法。
 ---
 <script setup>
 import { onMounted, reactive, inject, ref } from 'vue'
 import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage,NGrid ,NGi  } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
 import { Temperature } from '../files';
-const seoKey = ['摄氏度与开尔文换算', '开氏温�?, 'k是什么单�?, 'k和摄氏度换算', '开尔文温度', 'k to c', '摄氏度和开尔文的换�?, '开尔文和摄氏度的换�?, 'kelvin', '摄氏�?]
+const seoKey = ['摄氏度与开尔文换算', '开氏温度', 'k是什么单位', 'k和摄氏度换算', '开尔文温度', 'k to c', '摄氏度和开尔文的换算', '开尔文和摄氏度的换算', 'kelvin', '摄氏度']
 const convert = inject('convert')
 
 const form = reactive({
@@ -41,7 +41,7 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) * 1.8
     form.result = `${form.number}K = ${convertedValue.toFixed(2)}R`
   } else {
-    form.result = '请输入有效的数值�?
+    form.result = '请输入有效的数值。'
   }
 }
 </script>
@@ -56,7 +56,7 @@ const convertHandler = () => {
 </n-form>
 
 <n-card
-  title="开尔文 (K)转兰金度 (R)的换算结�?
+  title="开尔文 (K)转兰金度 (R)的换算结果"
   :segmented="{
     content: true,
     footer: 'soft',
@@ -67,7 +67,7 @@ const convertHandler = () => {
   </div>
   <template #footer>
     <div>
-      <span v-for="item of seoKey">{{item}}�?/span>
+      <span v-for="item of seoKey">{{item}}，</span>
     </div>
   </template>
 </n-card>
@@ -75,18 +75,18 @@ const convertHandler = () => {
 ## 换算公式
 
 ### 开尔文转兰金度公式
-�?**开尔文 (K)** 换算�?**兰金�?(R)** 的公式为�?
+从 **开尔文 (K)** 换算到 **兰金度 (R)** 的公式为：
 $$ R = K \times 1.8 $$
 
 ### 相关换算公式
-**开尔文和摄氏度的换�?*公式�?
+**开尔文和摄氏度的换算**公式：
 $$ °C = K - 273.15 $$
 
-**摄氏度和开尔文的换�?*公式�?
+**摄氏度和开尔文的换算**公式：
 $$ K = °C + 273.15 $$
 
 ### 换算示例
-以下是一些常见的**开尔文温度**换算示例�?
+以下是一些常见的**开尔文温度**换算示例：
 - **273.15K (水的冰点)** = 491.67R
 - **298.15K (室温)** = 536.67R
 - **373.15K (水的沸点)** = 671.67R
@@ -94,21 +94,21 @@ $$ K = °C + 273.15 $$
 ## 常见问题
 
 ### K是什么单位？
-**K是什么单�?*？K代表**开尔文温度**，是国际单位制中的基本温度单位�?*开尔文**�?*Kelvin**）是绝对温度标度，以绝对零度为起点�?
+**K是什么单位**？K代表**开尔文温度**，是国际单位制中的基本温度单位。**开尔文**（**Kelvin**）是绝对温度标度，以绝对零度为起点。
 
 ### 什么是开氏温度？
-**开氏温�?*就是**开尔文温度**的另一种称呼，它是热力学温度的标准单位�?*开氏温�?*在科学研究和工程计算中广泛应用�?
+**开氏温度**就是**开尔文温度**的另一种称呼，它是热力学温度的标准单位。**开氏温度**在科学研究和工程计算中广泛应用。
 
 ### K to C的转换方法是什么？
-**K to C**的转换非常简单：°C = K - 273.15。这个公式是所�?*开尔文和摄氏度的换�?*的基础�?
+**K to C**的转换非常简单：°C = K - 273.15。这个公式是所有**开尔文和摄氏度的换算**的基础。
 
 ### 摄氏度和开尔文的换算有什么应用？
-**摄氏度和开尔文的换�?*广泛应用于：
-- 物理学研�?
+**摄氏度和开尔文的换算**广泛应用于：
+- 物理学研究
 - 化学实验
 - 工程计算
-- 气象�?
-- 天文�?
+- 气象学
+- 天文学
 
 ## 相关链接
 <n-grid x-gap="12" :cols="2">

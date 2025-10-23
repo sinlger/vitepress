@@ -14,13 +14,13 @@ head:
     - charset: utf-8
   - - meta
     - name: description
-      content: �?l)与立方厘�?cm³)单位换算工具�?升等�?,000立方厘米�?
+      content: 升(l)与立方厘米(cm³)单位换算工具，1升等于1,000立方厘米。
   - - meta
     - name: keywords
-      content: �?立方厘米,单位换算,l,cm3
+      content: 升,立方厘米,单位换算,l,cm3
 ---
 
-# �?l) �?立方厘米(cm³) 换算
+# 升(l) 到 立方厘米(cm³) 换算
 
 <script setup>
 import { onMounted, reactive, inject ,ref  } from 'vue'
@@ -40,7 +40,7 @@ const rules = {
 const form = reactive({
   number:null,
   result:'',
-  title:'�?l)到立方厘�?cm³)换算'
+  title:'升(l)到立方厘米(cm³)换算'
 })
 
 const convertHandler = (e) => {
@@ -54,8 +54,8 @@ const convertHandler = (e) => {
 </script>
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="数�? path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="请输入升数�? />
+  <n-form-item label="数值" path="number">
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="请输入升数值" />
   </n-form-item>
   <n-form-item>
     <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
@@ -68,46 +68,46 @@ const convertHandler = (e) => {
 </n-card>
 
 ## 换算公式
-1 �?l) = 1,000 立方厘米(cm³)
+1 升(l) = 1,000 立方厘米(cm³)
 
 ### 换算原理
-�?l)和立方厘�?cm³)都是体积单位�?立方厘米等于0.001升�?
+升(l)和立方厘米(cm³)都是体积单位，1立方厘米等于0.001升。
 
-## 常见换算�?
-| �?l) | 立方厘米(cm³) | 实物参�?                |
+## 常见换算值
+| 升(l) | 立方厘米(cm³) | 实物参考                 |
 |-------|--------------|--------------------------|
 | 1     | 1,000        | 标准矿泉水瓶容量          |
-| 0.5   | 500          | 小瓶装饮料容�?           |
+| 0.5   | 500          | 小瓶装饮料容量            |
 | 0.1   | 100          | 口服液瓶容量              |
 | 0.01  | 10           | 眼药水瓶容量              |
-| 0.001 | 1            | 注射器容�?               |
+| 0.001 | 1            | 注射器容量                |
 
 ## 应用场景
 ### 日常生活
 - 饮料容量计算
 - 厨房用量测量
-- 化妆品容量比�?
+- 化妆品容量比较
 
 ### 医疗领域
 - 药品剂量测量
 - 医疗器械容量校准
-- 实验室液体分�?
+- 实验室液体分配
 
 ### 工业生产
 - 液体包装容量设计
 - 容器体积计算
 - 产品规格标注
 
-## 单位换算技�?
-1. **快速心算法**�?
-   - 升转立方厘米 �?数值乘�?,000
-   - 立方厘米转升 �?数值除�?,000
+## 单位换算技巧
+1. **快速心算法**：
+   - 升转立方厘米 → 数值乘以1,000
+   - 立方厘米转升 → 数值除以1,000
 
-2. **科学记数�?*�?
+2. **科学记数法**：
    - 1 l = 1×10³ cm³
-   - 1 cm³ = 1×10⁻�?l
+   - 1 cm³ = 1×10⁻³ l
 
-3. **记忆口诀**�?
+3. **记忆口诀**：
    "升转立方厘米，千倍关系记心里"
 
 ## 注意事项

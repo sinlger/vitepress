@@ -4,21 +4,21 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
 
   - - link: /Angle/index
-      linkText: 角度换算
+      linkText: Angle Conversion
   - - link: /Angle/grad-to-deg
-      linkText: 梯度 (grad) �?度数 (°) 换算
+      linkText: Gradians (grad) to Degrees (°) Conversion
 head:
   - - meta
     - name: description
-      content: "将梯�?grad)换算为度�?°)的在线工具和换算公式。提供简单易用的角度单位换算计算器�?
+      content: "Online tool and conversion formula for converting gradians (grad) to degrees (°). Provides an easy-to-use angle unit conversion calculator."
   - - meta
     - name: keywords
-      content: "角度换算, 梯度转度�? grad到°换�? 在线计算�? 数学工具, 单位换算"
+      content: "angle conversion, gradians to degrees, grad to ° conversion, online calculator, math tools, unit conversion"
 ---
-# 梯度 (grad) �?度数 (°) 的换�?
+# Gradians (grad) to Degrees (°) Conversion
 ---
 <script setup>
 import { onMounted, reactive, inject, ref } from 'vue'
@@ -37,17 +37,17 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) * 180 / 200
     form.result = `${form.number}grad = ${convertedValue.toFixed(4)}°`
   } else {
-    form.result = '请输入有效的数值�?
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="梯度 (grad)">
-    <n-input-number v-model:value="form.number" placeholder="输入梯度" style="width: 100%" />
+  <n-form-item label="Gradians (grad)">
+    <n-input-number v-model:value="form.number" placeholder="Enter gradians" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
@@ -57,40 +57,40 @@ const convertHandler = () => {
   </div>
 </n-card>
 
-## 公式
+## Formula
 
-�?**梯度 (grad)** 换算�?**度数 (°)** 的公式为�?
+The conversion formula from **gradians (grad)** to **degrees (°)** is:
 $$ ° = grad \times \frac{180}{200} $$
 
-## 梯度到度数换算指�?
+## Gradians to Degrees Conversion Guide
 
-角度测量是数学和工程领域中的基础概念之一，尤其在几何学、物理学以及计算机图形学中应用广泛。本文将介绍如何将梯�?(grad) 换算为度�?(°)，并提供一些实用示例�?
+Angle measurement is one of the fundamental concepts in mathematics and engineering, especially widely used in geometry, physics, and computer graphics. This article will introduce how to convert gradians (grad) to degrees (°) and provide some practical examples.
 
-### 为什么需�?grad �?° 的换算？
+### Why do we need grad to ° conversion?
 
-梯度和度数是两种常用的角度单位。其中，度数在日常生活和基础教育中更为常用，因为其直观性更强。通过精确的换算，可以确保计算的一致性和准确性�?
+Gradians and degrees are two commonly used angle units. Among them, degrees are more commonly used in daily life and basic education because they are more intuitive. Through precise conversion, the consistency and accuracy of calculations can be ensured.
 
-### grad �?° 的换算方�?
+### grad to ° conversion method
 
-从梯度到度数的换算公式为�?
+The conversion formula from gradians to degrees is:
 
-- **公式�?* `° = grad × 180 ÷ 200`
+- **Formula:** `° = grad × 180 ÷ 200`
 
-### 实际应用示例
+### Practical Application Examples
 
-以下是一些常见的换算实例�?
+Here are some common conversion examples:
 
 - 0 grad = 0°
-- 33.3333 grad �?30°
-- 50 grad �?45°
-- 100 grad �?90°
-- 200 grad �?180°
+- 33.3333 grad ≈ 30°
+- 50 grad ≈ 45°
+- 100 grad ≈ 90°
+- 200 grad ≈ 180°
 
-### 总结
+### Summary
 
-掌握梯度到度数的换算可以帮助您更好地理解和使用这些角度单位。希望本指南能为您提供有价值的参考�?
+Mastering gradians to degrees conversion can help you better understand and use these angle units. We hope this guide provides valuable reference for you.
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Angle" :key="index">
     <n-button

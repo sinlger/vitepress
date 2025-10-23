@@ -8,19 +8,19 @@ breadcrumb:
   - - link: /Volume/index
       linkText: 体积单位换算
   - - link: /Volume/Tbs-to-m_l
-      linkText: 汤匙到兆升换�?
+      linkText: 汤匙到兆升换算
 head:
   - - meta
     - charset: utf-8
   - - meta
     - name: description
-      content: 汤匙(Tbs)与兆�?Ml)单位换算工具�?汤匙等于0.00000001478676兆升�?
+      content: 汤匙(Tbs)与兆升(Ml)单位换算工具，1汤匙等于0.00000001478676兆升。
   - - meta
     - name: keywords
       content: 汤匙,兆升,单位换算,Tbs,Ml
 ---
 
-# 汤匙(Tbs) �?兆升(Ml) 换算
+# 汤匙(Tbs) 到 兆升(Ml) 换算
 
 <script setup>
 import { onMounted, reactive, inject ,ref  } from 'vue'
@@ -40,7 +40,7 @@ const rules = {
 const form = reactive({
   number:null,
   result:'',
-  title:'汤匙(Tbs)到兆�?Ml)换算'
+  title:'汤匙(Tbs)到兆升(Ml)换算'
 })
 
 const convertHandler = (e) => {
@@ -54,8 +54,8 @@ const convertHandler = (e) => {
 </script>
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="数�? path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="请输入汤匙数�? />
+  <n-form-item label="数值" path="number">
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="请输入汤匙数值" />
   </n-form-item>
   <n-form-item>
     <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
@@ -71,16 +71,16 @@ const convertHandler = (e) => {
 1 汤匙(Tbs) = 0.00000001478676 兆升(Ml)
 
 ### 换算原理
-汤匙(Tbs)和兆�?Ml)都是体积单位�?汤匙等于�?.0000000148兆升�?
+汤匙(Tbs)和兆升(Ml)都是体积单位，1汤匙等于约0.0000000148兆升。
 
-## 常见换算�?
-| 汤匙(Tbs) | 兆升(Ml)      | 实物参�?                |
+## 常见换算值
+| 汤匙(Tbs) | 兆升(Ml)      | 实物参考                 |
 |-----------|--------------|--------------------------|
 | 1         | 0.000000014786| 标准汤匙容量              |
-| 0.5       | 0.000000007393| 半汤匙容�?               |
+| 0.5       | 0.000000007393| 半汤匙容量                |
 | 0.25      | 0.000000003696| 四分之一汤匙容量          |
-| 2         | 0.000000029573| 两汤匙容�?               |
-| 3         | 0.000000044360| 三汤匙容�?               |
+| 2         | 0.000000029573| 两汤匙容量                |
+| 3         | 0.000000044360| 三汤匙容量                |
 
 ## 应用场景
 ### 烹饪
@@ -90,7 +90,7 @@ const convertHandler = (e) => {
 
 ### 医药
 - 药品剂量测量
-- 实验室液体测�?
+- 实验室液体测量
 - 医疗器具校准
 
 ### 日常生活
@@ -98,16 +98,16 @@ const convertHandler = (e) => {
 - 手工制作
 - 小型容器容量测量
 
-## 单位换算技�?
-1. **快速心算法**�?
-   - 汤匙转兆�?�?数值乘�?.0000000148
-   - 兆升转汤�?�?数值除�?.0000000148
+## 单位换算技巧
+1. **快速心算法**：
+   - 汤匙转兆升 → 数值乘以0.0000000148
+   - 兆升转汤匙 → 数值除以0.0000000148
 
-2. **近似记忆**�?
-   - 1汤匙 �?0.000000015兆升
-   - 1兆升 �?67,628,045汤匙
+2. **近似记忆**：
+   - 1汤匙 ≈ 0.000000015兆升
+   - 1兆升 ≈ 67,628,045汤匙
 
-3. **记忆口诀**�?
+3. **记忆口诀**：
    "汤匙转兆升，十亿分之一五要记清"
 
 ## 注意事项

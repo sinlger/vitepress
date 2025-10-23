@@ -8,16 +8,16 @@ breadcrumb:
   - - link: /Mass/index
       linkText: 质量换算
   - - link: /Mass/kg-to-mcg
-      linkText: 千克到微�?
+      linkText: 千克到微克
 head:
   - - meta
     - name: description
-      content: "质量单位换算指南，涵盖千�?(kg) 到微�?(mcg) 的详细换算公式与说明�?
+      content: "质量单位换算指南，涵盖千克 (kg) 到微克 (mcg) 的详细换算公式与说明。"
   - - meta
     - name: keywords
-      content: "质量, 单位换算, 千克, 微克, kg, mcg, 千克到微�? 质量换算指南"
+      content: "质量, 单位换算, 千克, 微克, kg, mcg, 千克到微克, 质量换算指南"
 ---
-# 千克 (kg) �?微克 (mcg) 的换�?
+# 千克 (kg) 到 微克 (mcg) 的换算
 ---
 <script setup>
 import { onMounted, reactive, inject, ref } from 'vue'
@@ -37,7 +37,7 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) * 1000000000
     form.result = `${form.number}kg = ${convertedValue.toFixed(0)}mcg`
   } else {
-    form.result = '请输入有效的数值�?
+    form.result = '请输入有效的数值。'
   }
 }
 </script>
@@ -59,26 +59,26 @@ const convertHandler = () => {
 
 ## 公式
 
-�?**千克 (kg)** 换算�?**微克 (mcg)** 的公式为�?
+从 **千克 (kg)** 换算到 **微克 (mcg)** 的公式为：
 $$ mcg = kg \times 1000000000 $$
 
-## 千克到微克换算指�?
+## 千克到微克换算指南
 
-在药物剂量计算和精细化学测量中，质量单位的换算是一个常见需求。本文专注于千克 (kg) 到微�?(mcg) 的换算，提供了详细的公式与实用示例�?
+在药物剂量计算和精细化学测量中，质量单位的换算是一个常见需求。本文专注于千克 (kg) 到微克 (mcg) 的换算，提供了详细的公式与实用示例。
 
-### 为什么需�?kg �?mcg 的换算？
+### 为什么需要 kg 到 mcg 的换算？
 
-千克和微克是常见的质量单位，尤其在医学、药理学以及精细化学品行业中尤为重要。通过精确的换算，可以确保测量的一致性和准确性�?
+千克和微克是常见的质量单位，尤其在医学、药理学以及精细化学品行业中尤为重要。通过精确的换算，可以确保测量的一致性和准确性。
 
-### kg �?mcg 的换算方�?
+### kg 到 mcg 的换算方法
 
-从千克到微克的换算公式为�?
+从千克到微克的换算公式为：
 
-- **公式�?* `mcg = kg × 1000000000`
+- **公式：** `mcg = kg × 1000000000`
 
 ### 实际应用示例
 
-以下是一些常见的换算实例�?
+以下是一些常见的换算实例：
 
 - 1 kg = 1000000000 mcg
 - 0.5 kg = 500000000 mcg
@@ -86,7 +86,7 @@ $$ mcg = kg \times 1000000000 $$
 
 ### 总结
 
-掌握千克到微克的换算可以帮助您更好地理解和使用这些质量单位。希望本指南能为您提供有价值的参考�?
+掌握千克到微克的换算可以帮助您更好地理解和使用这些质量单位。希望本指南能为您提供有价值的参考。
 
 ## 相关连接
 <n-grid x-gap="12" :cols="2">

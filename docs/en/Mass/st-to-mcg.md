@@ -8,16 +8,16 @@ breadcrumb:
   - - link: /Mass/index
       linkText: 质量换算
   - - link: /Mass/st-to-mcg
-      linkText: 英石到微�?
+      linkText: 英石到微克
 head:
   - - meta
     - name: description
-      content: "质量单位换算指南，涵盖英�?(st) 到微�?(mcg) 的详细换算公式与说明�?
+      content: "质量单位换算指南，涵盖英石 (st) 到微克 (mcg) 的详细换算公式与说明。"
   - - meta
     - name: keywords
-      content: "质量, 单位换算, 英石, 微克, st, mcg, 英石到微�? 质量换算指南"
+      content: "质量, 单位换算, 英石, 微克, st, mcg, 英石到微克, 质量换算指南"
 ---
-# 英石 (st) �?微克 (mcg) 的换�?
+# 英石 (st) 到 微克 (mcg) 的换算
 ---
 <script setup>
 import { onMounted, reactive, inject, ref } from 'vue'
@@ -37,7 +37,7 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) * 6350293180
     form.result = `${form.number}st = ${convertedValue.toFixed(0)}mcg`
   } else {
-    form.result = '请输入有效的数值�?
+    form.result = '请输入有效的数值。'
   }
 }
 </script>
@@ -59,26 +59,26 @@ const convertHandler = () => {
 
 ## 公式
 
-�?**英石 (st)** 换算�?**微克 (mcg)** 的公式为�?
+从 **英石 (st)** 换算到 **微克 (mcg)** 的公式为：
 $$ mcg = st \times 6350293180 $$
 
-## 英石到微克换算指�?
+## 英石到微克换算指南
 
-在药物剂量计算和精细化学测量中，质量单位的换算是一个常见需求。本文专注于英石 (st) 到微�?(mcg) 的换算，提供了详细的公式与实用示例�?
+在药物剂量计算和精细化学测量中，质量单位的换算是一个常见需求。本文专注于英石 (st) 到微克 (mcg) 的换算，提供了详细的公式与实用示例。
 
-### 为什么需�?st �?mcg 的换算？
+### 为什么需要 st 到 mcg 的换算？
 
-英石和微克是常见的质量单位，尤其在医学、药理学以及精细化学品行业中尤为重要。通过精确的换算，可以确保测量的一致性和准确性�?
+英石和微克是常见的质量单位，尤其在医学、药理学以及精细化学品行业中尤为重要。通过精确的换算，可以确保测量的一致性和准确性。
 
-### st �?mcg 的换算方�?
+### st 到 mcg 的换算方法
 
-从英石到微克的换算公式为�?
+从英石到微克的换算公式为：
 
-- **公式�?* `mcg = st × 6350293180`
+- **公式：** `mcg = st × 6350293180`
 
 ### 实际应用示例
 
-以下是一些常见的换算实例�?
+以下是一些常见的换算实例：
 
 - 1 st = 6350293180 mcg
 - 2 st = 12700586360 mcg
@@ -86,7 +86,7 @@ $$ mcg = st \times 6350293180 $$
 
 ### 总结
 
-掌握英石到微克的换算可以帮助您更好地理解和使用这些质量单位。希望本指南能为您提供有价值的参考�?
+掌握英石到微克的换算可以帮助您更好地理解和使用这些质量单位。希望本指南能为您提供有价值的参考。
 
 ## 相关连接
 <n-grid x-gap="12" :cols="2">

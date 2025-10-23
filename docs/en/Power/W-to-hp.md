@@ -8,18 +8,18 @@ breadcrumb:
   - - link: /Power/index
       linkText: 功率换算
   - - link: /Power/W-to-hp
-      linkText: 瓦特转英制马�?
+      linkText: 瓦特转英制马力
 head:
   - - meta
     - name: description
-      content: "提供瓦特 (W) 到英制马�?(hp) 的单位换算公式及实际应用场景�?
+      content: "提供瓦特 (W) 到英制马力 (hp) 的单位换算公式及实际应用场景。"
   - - meta
     - name: keywords
-      content: "瓦特转英制马�?W到hp换算,功率单位换算公式,功率单位换算工具,美系汽车功率单位"
+      content: "瓦特转英制马力,W到hp换算,功率单位换算公式,功率单位换算工具,美系汽车功率单位"
 ---
-# 瓦特 (W) 到英制马�?(hp) 换算
+# 瓦特 (W) 到英制马力 (hp) 换算
 
-这是关于 **瓦特转英制马�?* 的详细介绍，并提供一个实用的 **功率单位换算工具**�?
+这是关于 **瓦特转英制马力** 的详细介绍，并提供一个实用的 **功率单位换算工具**。
 
 <script setup>
 import { onMounted,reactive,inject ,ref  } from 'vue'
@@ -37,7 +37,7 @@ const rules = {
     required: true,
     type: 'number',
     trigger: "blur",
-    message: '请输入数�?
+    message: '请输入数字'
   },
   to:{
     required: true,
@@ -55,7 +55,7 @@ const form = reactive({
   to:'',
   from:'',
   result:'',
-  title:'瓦特转英制马�?,
+  title:'瓦特转英制马力',
 })
 const convertHandler = (e) => {
    e.preventDefault();
@@ -68,13 +68,13 @@ const convertHandler = (e) => {
 </script>
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="数�?  path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数�? />
+  <n-form-item label="数值"  path="number">
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数值" />
   </n-form-item>
-  <n-form-item label="�? path="from">
+  <n-form-item label="从" path="from">
     <n-select  size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
   </n-form-item>
-  <n-form-item label="�? path="to">
+  <n-form-item label="到" path="to">
     <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
   </n-form-item>
   <n-form-item>
@@ -93,14 +93,14 @@ const convertHandler = (e) => {
 
 ## 生活中的应用示例
 
-- **美系汽车发动机功�?*：如 200 hp �?149,140 W，常用于美国市场车型标注�?
-- **船舶引擎功率**：游艇或小型船只常用 hp 表示动力输出�?
-- **工业机械功率**：如液压泵、空气压缩机等设备常�?hp 单位�?
+- **美系汽车发动机功率**：如 200 hp ≈ 149,140 W，常用于美国市场车型标注。
+- **船舶引擎功率**：游艇或小型船只常用 hp 表示动力输出。
+- **工业机械功率**：如液压泵、空气压缩机等设备常用 hp 单位。
 
 ## 使用建议
 
-- **美系车辆与机械设�?*：优先使用英制马�?(hp)，便于匹配北美市场标准�?
-- **科学计算**：使用国际单位制（瓦�?W），便于统一标准�?
+- **美系车辆与机械设备**：优先使用英制马力 (hp)，便于匹配北美市场标准。
+- **科学计算**：使用国际单位制（瓦特 W），便于统一标准。
 
 ## 相关连接
 <n-grid x-gap="12" :cols="2">

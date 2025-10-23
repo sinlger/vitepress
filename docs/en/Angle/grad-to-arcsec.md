@@ -4,21 +4,21 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
 
   - - link: /Angle/index
-      linkText: 角度换算
+      linkText: Angle Conversion
   - - link: /Angle/grad-to-arcsec
-      linkText: 梯度 (grad) �?角秒 (arcsec) 换算
+      linkText: Gradians (grad) to Arcseconds (arcsec) Conversion
 head:
   - - meta
     - name: description
-      content: "将梯�?grad)换算为角�?arcsec)的在线工具和换算公式。提供简单易用的角度单位换算计算器�?
+      content: "Online tool and conversion formula for converting gradians (grad) to arcseconds (arcsec). Provides an easy-to-use angle unit conversion calculator."
   - - meta
     - name: keywords
-      content: "角度换算, 梯度转角�? grad到arcsec换算, 在线计算�? 数学工具, 单位换算"
+      content: "angle conversion, gradians to arcseconds, grad to arcsec conversion, online calculator, math tools, unit conversion"
 ---
-# 梯度 (grad) �?角秒 (arcsec) 的换�?
+# Gradians (grad) to Arcseconds (arcsec) Conversion
 ---
 <script setup>
 import { onMounted, reactive, inject, ref } from 'vue'
@@ -37,17 +37,17 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) * 180 * 3600 / 200
     form.result = `${form.number}grad = ${convertedValue.toFixed(4)}arcsec`
   } else {
-    form.result = '请输入有效的数值�?
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="梯度 (grad)">
-    <n-input-number v-model:value="form.number" placeholder="输入梯度" style="width: 100%" />
+  <n-form-item label="Gradians (grad)">
+    <n-input-number v-model:value="form.number" placeholder="Enter gradians" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
@@ -57,40 +57,40 @@ const convertHandler = () => {
   </div>
 </n-card>
 
-## 公式
+## Formula
 
-�?**梯度 (grad)** 换算�?**角秒 (arcsec)** 的公式为�?
+The formula for converting from **gradians (grad)** to **arcseconds (arcsec)** is:
 $$ arcsec = grad \times \frac{180 \times 3600}{200} $$
 
-## 梯度到角秒换算指�?
+## Gradians to Arcseconds Conversion Guide
 
-角度测量是数学和工程领域中的基础概念之一，尤其在几何学、物理学以及计算机图形学中应用广泛。本文将介绍如何将梯�?(grad) 换算为角�?(arcsec)，并提供一些实用示例�?
+Angle measurement is one of the fundamental concepts in mathematics and engineering, especially widely used in geometry, physics, and computer graphics. This article will introduce how to convert gradians (grad) to arcseconds (arcsec) and provide some practical examples.
 
-### 为什么需�?grad �?arcsec 的换算？
+### Why is grad to arcsec conversion needed?
 
-梯度和角秒是两种常用的角度单位。其中，角秒在导航和天文学计算中更为常用，因为其提供了非常精细的角度划分。通过精确的换算，可以确保计算的一致性和准确性�?
+Gradians and arcseconds are two commonly used angle units. Among them, arcseconds are more commonly used in navigation and astronomical calculations because they provide very fine angle divisions. Through precise conversion, calculation consistency and accuracy can be ensured.
 
-### grad �?arcsec 的换算方�?
+### grad to arcsec Conversion Method
 
-从梯度到角秒的换算公式为�?
+The conversion formula from gradians to arcseconds is:
 
-- **公式�?* `arcsec = grad × (180 × 3600) ÷ 200`
+- **Formula:** `arcsec = grad × (180 × 3600) ÷ 200`
 
-### 实际应用示例
+### Practical Application Examples
 
-以下是一些常见的换算实例�?
+Here are some common conversion examples:
 
 - 0 grad = 0 arcsec
-- 0.5556 grad �?1800 arcsec
-- 1.1111 grad �?3600 arcsec
-- 5.5556 grad �?18000 arcsec
-- 100 grad �?3240000 arcsec
+- 0.5556 grad ≈ 1800 arcsec
+- 1.1111 grad ≈ 3600 arcsec
+- 5.5556 grad ≈ 18000 arcsec
+- 100 grad ≈ 3240000 arcsec
 
-### 总结
+### Summary
 
-掌握梯度到角秒的换算可以帮助您更好地理解和使用这些角度单位。希望本指南能为您提供有价值的参考�?
+Mastering the conversion from gradians to arcseconds can help you better understand and use these angle units. We hope this guide provides valuable reference for you.
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Angle" :key="index">
     <n-button

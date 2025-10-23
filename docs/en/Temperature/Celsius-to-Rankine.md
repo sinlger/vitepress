@@ -9,23 +9,23 @@ breadcrumb:
   - - link: /Temperature/index
       linkText: 温度换算
   - - link: /Temperature/Celsius-to-Rankine
-      linkText: 摄氏度转兰金�?
+      linkText: 摄氏度转兰金度
 
 head:
   - - meta
     - name: description
-      content: "在线摄氏�?°C)到兰金度(R)转换工具。轻松进行温度单位换算，提供详细的换算公式、示例和常见问题解答，帮助您快速完成摄氏度与兰金度的转换�?
+      content: "在线摄氏度(°C)到兰金度(R)转换工具。轻松进行温度单位换算，提供详细的换算公式、示例和常见问题解答，帮助您快速完成摄氏度与兰金度的转换。"
   - - meta
     - name: keywords
-      content: "摄氏度转兰金�? 摄氏度与兰金度的换算, 温度转换, 温度换算, 摄氏度与兰金度换�? 摄氏度的符号, 兰金度和摄氏度的换算"
+      content: "摄氏度转兰金度, 摄氏度与兰金度的换算, 温度转换, 温度换算, 摄氏度与兰金度换算, 摄氏度的符号, 兰金度和摄氏度的换算"
 ---
-# 摄氏�?(°C) �?兰金�?(R) 的换�?
+# 摄氏度 (°C) 到 兰金度 (R) 的换算
 
-需要快速将**摄氏�?(°C)** 转换�?*兰金�?(R)** 吗？这个页面提供了简单易用的在线**温度转换**工具，以及详细的**摄氏度与兰金度的换算**公式和示例，让您轻松掌握**摄氏度与兰金度换�?*�?
+需要快速将**摄氏度 (°C)** 转换为**兰金度 (R)** 吗？这个页面提供了简单易用的在线**温度转换**工具，以及详细的**摄氏度与兰金度的换算**公式和示例，让您轻松掌握**摄氏度与兰金度换算**。
 
 ---
 <script setup>
-    const seoKey =["温度的单�?,"开尔文温度与摄氏温度的换算","开氏温度和摄氏温度换算公式","华氏摄氏度与摄氏度转�?,"摄氏度与开尔文换算","摄氏度的符号","摄氏度转华氏�?,"温度转换","k和摄氏度换算","华氏温度和摄氏温度换�?,"摄氏度英�?,"温度换算","温度单位","摄氏度符�?°C怎么�?,"摄氏度和开尔文的换�?,"摄氏度符�?,"华氏度和摄氏度的换算","温度符号","开尔文和摄氏度的换�?,"摄氏度和华氏度的换算","华氏度转摄氏�?,"摄氏度符�?°C"]
+    const seoKey =["温度的单位","开尔文温度与摄氏温度的换算","开氏温度和摄氏温度换算公式","华氏摄氏度与摄氏度转换","摄氏度与开尔文换算","摄氏度的符号","摄氏度转华氏度","温度转换","k和摄氏度换算","华氏温度和摄氏温度换算","摄氏度英文","温度换算","温度单位","摄氏度符号 °C怎么打","摄氏度和开尔文的换算","摄氏度符号","华氏度和摄氏度的换算","温度符号","开尔文和摄氏度的换算","摄氏度和华氏度的换算","华氏度转摄氏度","摄氏度符号 °C"]
 import { onMounted, reactive, inject, ref } from 'vue'
 import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage,NGrid ,NGi  } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
@@ -43,14 +43,14 @@ const convertHandler = () => {
     const convertedValue = (parseFloat(form.number) + 273.15) * 1.8
     form.result = `${form.number}°C = ${convertedValue.toFixed(2)}R`
   } else {
-    form.result = '请输入有效的数值�?
+    form.result = '请输入有效的数值。'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="摄氏�?(°C)">
-    <n-input-number v-model:value="form.number" placeholder="输入摄氏�? style="width: 100%" />
+  <n-form-item label="摄氏度 (°C)">
+    <n-input-number v-model:value="form.number" placeholder="输入摄氏度" style="width: 100%" />
   </n-form-item>
   <n-form-item>
     <n-button type="info" @click="convertHandler" block>换算</n-button>
@@ -58,7 +58,7 @@ const convertHandler = () => {
 </n-form>
 
 <n-card
-  title="摄氏�?(°C) �?兰金�?(R) 的换算结�?
+  title="摄氏度 (°C) 到 兰金度 (R) 的换算结果"
   :segmented="{
     content: true,
     footer: 'soft',
@@ -76,9 +76,9 @@ const convertHandler = () => {
 
 ## 换算公式
 
-�?*摄氏�?(°C)** 换算�?*兰金�?(R)** 的公式为�?
+从**摄氏度 (°C)** 换算到**兰金度 (R)** 的公式为：
 $$ R = (°C + 273.15) \times 1.8 $$
-这个公式是所�?*兰金度和摄氏度的换算**的基础�?
+这个公式是所有**兰金度和摄氏度的换算**的基础。
 
 ### 换算示例
 - **0°C 等于多少兰金度？**
@@ -91,10 +91,10 @@ $$ R = (°C + 273.15) \times 1.8 $$
 ## 常见问题
 
 ### 摄氏度的符号是什么？
-**摄氏度的符号**�?**°C**。在书写时，请确保使用正确的符号�?
+**摄氏度的符号**是 **°C**。在书写时，请确保使用正确的符号。
 
 ### 兰金度和摄氏度的换算关系是什么？
-**兰金度和摄氏度的换算**关系是：`R = (°C + 273.15) × 1.8`。兰金度是一种绝对温标，常用于工程领域�?
+**兰金度和摄氏度的换算**关系是：`R = (°C + 273.15) × 1.8`。兰金度是一种绝对温标，常用于工程领域。
 
 ## 相关链接
 <n-grid x-gap="12" :cols="2">

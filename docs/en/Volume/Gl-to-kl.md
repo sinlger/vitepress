@@ -8,19 +8,19 @@ breadcrumb:
   - - link: /Volume/index
       linkText: 体积单位换算
   - - link: /Volume/Gl-to-kl
-      linkText: 吉升到千升换�?
+      linkText: 吉升到千升换算
 head:
   - - meta
     - charset: utf-8
   - - meta
     - name: description
-      content: 吉升(Gl)与千�?kl)单位换算工具�?吉升等于1,000,000千升�?
+      content: 吉升(Gl)与千升(kl)单位换算工具，1吉升等于1,000,000千升。
   - - meta
     - name: keywords
       content: 吉升,千升,单位换算,Gl,kl
 ---
 
-# 吉升(Gl) �?千升(kl) 换算
+# 吉升(Gl) 到 千升(kl) 换算
 
 <script setup>
 import { onMounted, reactive, inject ,ref  } from 'vue'
@@ -40,7 +40,7 @@ const rules = {
 const form = reactive({
   number:null,
   result:'',
-  title:'吉升(Gl)到千�?kl)换算'
+  title:'吉升(Gl)到千升(kl)换算'
 })
 
 const convertHandler = (e) => {
@@ -54,8 +54,8 @@ const convertHandler = (e) => {
 </script>
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="数�? path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="请输入吉升数�? />
+  <n-form-item label="数值" path="number">
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="请输入吉升数值" />
   </n-form-item>
   <n-form-item>
     <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
@@ -71,10 +71,10 @@ const convertHandler = (e) => {
 1 吉升(Gl) = 1,000,000 千升(kl)
 
 ### 换算原理
-吉升(Gl)和千�?kl)都是体积单位�?吉升等于100万千升�?
+吉升(Gl)和千升(kl)都是体积单位，1吉升等于100万千升。
 
-## 常见换算�?
-| 吉升(Gl) | 千升(kl) | 实物参�?                |
+## 常见换算值
+| 吉升(Gl) | 千升(kl) | 实物参考                 |
 |---------|---------|--------------------------|
 | 1       | 1,000,000 | 大型海洋水体体积          |
 | 0.5     | 500,000 | 中型海洋水体体积          |
@@ -94,25 +94,25 @@ const convertHandler = (e) => {
 - 星际云团物质总量
 
 ### 超大规模工程
-- 全球水资源统�?
-- 跨大陆调水工�?
-- 超大型水库设�?
+- 全球水资源统计
+- 跨大陆调水工程
+- 超大型水库设计
 
-## 单位换算技�?
-1. **快速心算法**�?
-   - 吉升转千�?�?数值乘�?,000,000
-   - 千升转吉�?�?数值除�?,000,000
+## 单位换算技巧
+1. **快速心算法**：
+   - 吉升转千升 → 数值乘以1,000,000
+   - 千升转吉升 → 数值除以1,000,000
 
-2. **科学记数�?*�?
-   - 1 Gl = 1×10�?kl
+2. **科学记数法**：
+   - 1 Gl = 1×10⁶ kl
    - 1 kl = 1×10⁻⁶ Gl
 
-3. **记忆口诀**�?
+3. **记忆口诀**：
    "吉升转千升，百万倍要记清"
 
 ## 注意事项
-- 超大规模测量需使用卫星遥感技�?
-- 地球曲率影响大范围体积计�?
+- 超大规模测量需使用卫星遥感技术
+- 地球曲率影响大范围体积计算
 - 精确测量需考虑地形变化
 
 ## 相关连接

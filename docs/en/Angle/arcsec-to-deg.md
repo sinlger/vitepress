@@ -4,23 +4,23 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
 
   - - link: /Angle/index
-      linkText: 角度换算
+      linkText: Angle Conversion
   - - link: /Angle/arcsec-to-deg
-      linkText: 角秒 (arcsec) �?度数 (°) 换算
+      linkText: Arcsecond (arcsec) to Degree (°) Conversion
 head:
   - - meta
     - name: description
-      content: "专业角秒(arcsec)到度�?°)换算工具，支持弧秒计算、角度单位转换。适用于天文观测、GPS定位、工程测量等场景，提供精确的角度换算公式和实用指南�?
+      content: "Professional arcsecond (arcsec) to degree (°) conversion tool, supporting arcsecond calculations and angle unit conversions. Suitable for astronomical observations, GPS positioning, engineering surveying, and other scenarios, providing precise angle conversion formulas and practical guides."
   - - meta
     - name: keywords
-      content: "角秒换算,arcsec转度�?弧秒计算公式,角度单位换算,角秒等于多少�?天文观测,GPS定位,工程测量,角度计算�?度分�?
+      content: "arcsecond conversion,arcsec to degree,arcsecond calculation formula,angle unit conversion,arcsecond equals how many degrees,astronomical observation,GPS positioning,engineering surveying,angle calculator,degrees minutes seconds"
 ---
-# 角秒 (arcsec) �?度数 (°) 的换�?
+# Arcsecond (arcsec) to Degree (°) Conversion
 
-角秒到度数换算是角度测量中的基础转换，广泛应用于天文观测、GPS定位、工程测量和科学计算等领域。本工具提供精确的arcsec到度数换算，支持弧秒计算和各种角度单位转换需求�?
+Arcsecond to degree conversion is a fundamental transformation in angle measurement, widely used in astronomical observations, GPS positioning, engineering surveying, and scientific calculations. This tool provides precise arcsec to degree conversion, supporting arcsecond calculations and various angle unit conversion needs.
 ---
 <script setup>
 import { onMounted, reactive, inject, ref } from 'vue'
@@ -32,12 +32,12 @@ const convert = inject('convert')
 const form = reactive({
   number: null,
   result: '',
-  title: '角秒到度数换算器'
+  title: 'Arcsecond to Degree Converter'
 })
 
 const seoKey = [
-  '角秒换算', 'arcsec转度�?, '弧秒计算公式', '角度单位换算', '角秒等于多少�?,
-  '天文观测', 'GPS定位', '工程测量', '角度计算�?, '度分�?,
+  'arcsecond conversion', 'arcsec to degree', 'arcsecond calculation formula', 'angle unit conversion', 'arcsecond equals how many degrees',
+  'astronomical observation', 'GPS positioning', 'engineering surveying', 'angle calculator', 'degrees minutes seconds',
   'arcsec to degree', 'arcsecond conversion', 'angle unit converter', 'degree calculation',
   'astronomical measurement', 'GPS positioning', 'engineering survey', 'angle calculator'
 ]
@@ -47,132 +47,136 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) / 3600
     form.result = `${form.number}arcsec = ${convertedValue.toFixed(4)}°`
   } else {
-    form.result = '请输入有效的数值�?
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-card :title="form.title" class="converter-card">
   <n-form size="large" :model="form">
-    <n-form-item label="角秒 (arcsec)">
-      <n-input-number v-model:value="form.number" placeholder="输入角秒" style="width: 100%" />
+    <n-form-item label="Arcseconds (arcsec)">
+      <n-input-number v-model:value="form.number" placeholder="Enter arcseconds" style="width: 100%" />
     </n-form-item>
     <n-form-item>
-      <n-button type="info" @click="convertHandler" block>换算</n-button>
+      <n-button type="info" @click="convertHandler" block>Convert</n-button>
     </n-form-item>
   </n-form>
 
-  <n-card  embedded :bordered="false" hoverable>
-    <div  style="text-align:center;font-size:20px;">
+  <n-card embedded :bordered="false" hoverable style="margin-top: 16px;">
+    <template #header>
+      <div style="text-align:center;font-size:16px;color:#666;">
+        {{form.title}}
+      </div>
+    </template>
+    <div style="text-align:center;font-size:20px;">
       <strong>{{form.result}}</strong>
     </div>
+    <template #footer>
+      <div style="text-align:center;font-size:12px;color:#999;">
+        <span v-for="(keyword, index) in seoKey" :key="index">
+          {{keyword}}<span v-if="index < seoKey.length - 1"> | </span>
+        </span>
+      </div>
+    </template>
   </n-card>
-  
-  <template #footer>
-    <div class="seo-keywords">
-      <span v-for="(keyword, index) in seoKey" :key="index" class="keyword-tag">
-        {{ keyword }}
-      </span>
-    </div>
-  </template>
 </n-card>
 
-## 公式
+## Formula
 
-�?**角秒 (arcsec)** 换算�?**度数 (°)** 的公式为�?
+The formula for converting from **arcseconds (arcsec)** to **degrees (°)** is:
 $$ ° = \frac{arcsec}{3600} $$
 
-## 角秒到度数换算指�?
+## Arcsecond to Degree Conversion Guide
 
-角度测量是数学和工程领域中的基础概念之一，尤其在几何学、物理学以及计算机图形学中应用广泛。本文将介绍如何将角�?(arcsec) 换算为度�?(°)，并提供一些实用示例�?
+Angle measurement is one of the fundamental concepts in mathematics and engineering, especially widely used in geometry, physics, and computer graphics. This article will introduce how to convert arcseconds (arcsec) to degrees (°) and provide some practical examples.
 
-### 为什么需�?arcsec �?° 的换算？
+### Why is arcsec to ° conversion needed?
 
-角秒和度数是两种常用的角度单位。其中，度数在日常生活和基础教育中更为常用，因为其直观性更强。通过精确的换算，可以确保计算的一致性和准确性�?
+Arcseconds and degrees are two commonly used angle units. Among them, degrees are more commonly used in daily life and basic education because of their stronger intuitiveness. Through precise conversion, the consistency and accuracy of calculations can be ensured.
 
-### arcsec �?° 的换算方�?
+### arcsec to ° Conversion Method
 
-从角秒到度数的换算公式为�?
+The conversion formula from arcseconds to degrees is:
 
-- **公式�?* `° = arcsec ÷ 3600`
+- **Formula:** `° = arcsec ÷ 3600`
 
-### 实际应用示例
+### Practical Application Examples
 
-#### 常见角秒值换�?
+#### Common Arcsecond Value Conversions
 - 0 arcsec = 0°
 - 1 arcsec = 0.000277778°
 - 10 arcsec = 0.00277778°
-- 60 arcsec = 0.0166667° (1角分)
-- 300 arcsec = 0.0833333° (5角分)
+- 60 arcsec = 0.0166667° (1 arcminute)
+- 300 arcsec = 0.0833333° (5 arcminutes)
 - 1800 arcsec = 0.5°
 - 3600 arcsec = 1°
 - 9000 arcsec = 2.5°
 - 18000 arcsec = 5°
 
-#### 天文观测中的典型�?
-- 月球视直径：�?800角秒 (0.5°)
-- 木星视直径：�?0角秒 (0.011°)
-- 土星视直径：�?8角秒 (0.005°)
-- 哈勃太空望远镜分辨率：约0.1角秒 (0.000028°)
+#### Typical Values in Astronomical Observations
+- Moon's apparent diameter: approximately 1800 arcseconds (0.5°)
+- Jupiter's apparent diameter: approximately 40 arcseconds (0.011°)
+- Saturn's apparent diameter: approximately 18 arcseconds (0.005°)
+- Hubble Space Telescope resolution: approximately 0.1 arcseconds (0.000028°)
 
-## 实际应用场景
+## Practical Application Scenarios
 
-### 天文观测
-- **恒星位置测量**：精确记录天体坐标，角秒级精度对于星表编制至关重�?
-- **行星观测**：测量行星视直径和表面特征，评估观测条件
-- **双星系统研究**：测量双星间距，研究轨道运动
-- **天体测量�?*：进行高精度位置测量，建立天球坐标系
+### Astronomical Observations
+- **Stellar Position Measurement**: Precisely recording celestial coordinates, arcsecond-level precision is crucial for star catalog compilation
+- **Planetary Observation**: Measuring planetary apparent diameters and surface features, evaluating observation conditions
+- **Binary Star System Research**: Measuring binary star separations, studying orbital motion
+- **Astrometry**: Conducting high-precision position measurements, establishing celestial coordinate systems
 
-### GPS和导航系�?
-- **卫星定位精度**：GPS系统中角秒级误差直接影响定位精度
-- **测量基准**：大地测量中的角度基准转�?
-- **导航计算**：航海和航空导航中的角度计算
+### GPS and Navigation Systems
+- **Satellite Positioning Accuracy**: Arcsecond-level errors in GPS systems directly affect positioning accuracy
+- **Survey Datums**: Angular datum conversions in geodetic surveying
+- **Navigation Calculations**: Angular calculations in maritime and aviation navigation
 
-### 工程测量
-- **建筑工程**：高层建筑的垂直度测量，角秒级精度确保结构安�?
-- **桥梁建设**：大跨度桥梁的角度控制和变形监测
-- **精密机械**：高精度机械设备的角度校�?
-- **光学仪器**：望远镜、经纬仪等精密光学设备的角度标定
+### Engineering Surveying
+- **Building Engineering**: Verticality measurement of high-rise buildings, arcsecond-level precision ensures structural safety
+- **Bridge Construction**: Angular control and deformation monitoring of long-span bridges
+- **Precision Machinery**: Angular calibration of high-precision mechanical equipment
+- **Optical Instruments**: Angular calibration of precision optical equipment such as telescopes and theodolites
 
-### 科学研究
-- **物理实验**：激光干涉实验中的角度测�?
-- **地球物理**：地壳变形监测，地震预测研究
-- **空间科学**：卫星轨道计算，空间任务规划
+### Scientific Research
+- **Physics Experiments**: Angular measurements in laser interferometry experiments
+- **Geophysics**: Crustal deformation monitoring, earthquake prediction research
+- **Space Science**: Satellite orbit calculations, space mission planning
 
-## 常见问题解答 (FAQ)
+## Frequently Asked Questions (FAQ)
 
-### Q1: 角秒和度数哪个更精确�?
-A: 角秒是更小的角度单位，因此在需要高精度测量时使用角秒更合适�?角秒约等�?.000278度，在天文观测和精密测量中经常使用�?
+### Q1: Which is more precise, arcseconds or degrees?
+A: Arcseconds are smaller angular units, so they are more suitable when high-precision measurements are needed. 1 arcsecond equals approximately 0.000278 degrees, and is frequently used in astronomical observations and precision measurements.
 
-### Q2: 为什�?度等�?600角秒�?
-A: 这是因为角度的六十进制系统：1�?= 60角分�?角分 = 60角秒，所�?�?= 60 × 60 = 3600角秒�?
+### Q2: Why does 1 degree equal 3600 arcseconds?
+A: This is due to the sexagesimal system of angles: 1 degree = 60 arcminutes, 1 arcminute = 60 arcseconds, so 1 degree = 60 × 60 = 3600 arcseconds.
 
-### Q3: 在什么情况下需要使用角秒？
-A: 主要在以下场景：
-- 天文观测：测量恒星位置、行星视直径
-- 精密测量：GPS定位、大地测�?
-- 工程应用：高精度机械校准、光学仪器标�?
-- 科学研究：物理实验、地球物理监�?
+### Q3: In what situations do we need to use arcseconds?
+A: Mainly in the following scenarios:
+- Astronomical observations: measuring stellar positions, planetary apparent diameters
+- Precision measurements: GPS positioning, geodetic surveying
+- Engineering applications: high-precision mechanical calibration, optical instrument calibration
+- Scientific research: physics experiments, geophysical monitoring
 
-### Q4: 如何快速估算角秒到度数的换算？
-A: 记住关键换算�?
-- 1角秒 �?0.0003�?
-- 100角秒 �?0.03�?
-- 1000角秒 �?0.3�?
-- 3600角秒 = 1�?
+### Q4: How to quickly estimate arcsecond to degree conversion?
+A: Remember key conversions:
+- 1 arcsecond ≈ 0.0003 degrees
+- 100 arcseconds ≈ 0.03 degrees
+- 1000 arcseconds ≈ 0.3 degrees
+- 3600 arcseconds = 1 degree
 
-### Q5: 角秒换算中常见的错误有哪些？
-A: 常见错误包括�?
-- 混淆角分和角秒的换算系数
-- 忘记角度系统是六十进制而非十进�?
-- 在计算中丢失精度，建议保留足够的小数位数
-- 单位标注错误，要明确区分arcsec和degree
+### Q5: What are common errors in arcsecond conversion?
+A: Common errors include:
+- Confusing conversion factors between arcminutes and arcseconds
+- Forgetting that the angle system is sexagesimal rather than decimal
+- Losing precision in calculations; it's recommended to keep sufficient decimal places
+- Unit notation errors; clearly distinguish between arcsec and degree
 
-### 总结
+### Summary
 
-掌握角秒到度数的换算不仅是基础的数学技能，更是在天文观测、工程测量、GPS定位等专业领域中不可或缺的工具。通过理解换算原理和实际应用场景，可以更好地运用这些角度单位进行精确计算和测量。希望本指南能为您提供有价值的参考�?
+Mastering arcsecond to degree conversion is not only a basic mathematical skill, but also an indispensable tool in professional fields such as astronomical observation, engineering surveying, and GPS positioning. By understanding conversion principles and practical application scenarios, you can better use these angular units for precise calculations and measurements. We hope this guide provides valuable reference for you.
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Angle" :key="index">
     <n-button

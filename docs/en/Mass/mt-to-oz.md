@@ -8,16 +8,16 @@ breadcrumb:
   - - link: /Mass/index
       linkText: 质量换算
   - - link: /Mass/mt-to-oz
-      linkText: 公吨到盎�?
+      linkText: 公吨到盎司
 head:
   - - meta
     - name: description
-      content: "质量单位换算指南，涵盖公�?(mt) 到盎�?(oz) 的详细换算公式与说明�?
+      content: "质量单位换算指南，涵盖公吨 (mt) 到盎司 (oz) 的详细换算公式与说明。"
   - - meta
     - name: keywords
-      content: "质量, 单位换算, 公吨, 盎司, mt, oz, 公吨到盎�? 质量换算指南"
+      content: "质量, 单位换算, 公吨, 盎司, mt, oz, 公吨到盎司, 质量换算指南"
 ---
-# 公吨 (mt) �?盎司 (oz) 的换�?
+# 公吨 (mt) 到 盎司 (oz) 的换算
 ---
 <script setup>
 import { onMounted, reactive, inject, ref } from 'vue'
@@ -37,7 +37,7 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) * 35274
     form.result = `${form.number}mt = ${convertedValue.toFixed(2)}oz`
   } else {
-    form.result = '请输入有效的数值�?
+    form.result = '请输入有效的数值。'
   }
 }
 </script>
@@ -59,26 +59,26 @@ const convertHandler = () => {
 
 ## 公式
 
-�?**公吨 (mt)** 换算�?**盎司 (oz)** 的公式为�?
+从 **公吨 (mt)** 换算到 **盎司 (oz)** 的公式为：
 $$ oz = mt \times 35274 $$
 
-## 公吨到盎司换算指�?
+## 公吨到盎司换算指南
 
-在药物剂量计算和精细化学测量中，质量单位的换算是一个常见需求。本文专注于公吨 (mt) 到盎�?(oz) 的换算，提供了详细的公式与实用示例�?
+在药物剂量计算和精细化学测量中，质量单位的换算是一个常见需求。本文专注于公吨 (mt) 到盎司 (oz) 的换算，提供了详细的公式与实用示例。
 
-### 为什么需�?mt �?oz 的换算？
+### 为什么需要 mt 到 oz 的换算？
 
-公吨和盎司是常见的质量单位，尤其在医学、药理学以及精细化学品行业中尤为重要。通过精确的换算，可以确保测量的一致性和准确性�?
+公吨和盎司是常见的质量单位，尤其在医学、药理学以及精细化学品行业中尤为重要。通过精确的换算，可以确保测量的一致性和准确性。
 
-### mt �?oz 的换算方�?
+### mt 到 oz 的换算方法
 
-从公吨到盎司的换算公式为�?
+从公吨到盎司的换算公式为：
 
-- **公式�?* `oz = mt × 35274`
+- **公式：** `oz = mt × 35274`
 
 ### 实际应用示例
 
-以下是一些常见的换算实例�?
+以下是一些常见的换算实例：
 
 - 1 mt = 35274 oz
 - 2 mt = 70548 oz
@@ -86,7 +86,7 @@ $$ oz = mt \times 35274 $$
 
 ### 总结
 
-掌握公吨到盎司的换算可以帮助您更好地理解和使用这些质量单位。希望本指南能为您提供有价值的参考�?
+掌握公吨到盎司的换算可以帮助您更好地理解和使用这些质量单位。希望本指南能为您提供有价值的参考。
 
 ## 相关连接
 <n-grid x-gap="12" :cols="2">

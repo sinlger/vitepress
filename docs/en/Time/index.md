@@ -26,7 +26,7 @@ head:
 import { onMounted, reactive, inject ,ref  } from 'vue'
 import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
-import { Time } from '../../files';
+import { Time } from '../files';
 const convert = inject('convert')
 const options =  [
 { label: '纳秒', value: 'ns' },

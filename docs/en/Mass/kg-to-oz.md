@@ -8,16 +8,16 @@ breadcrumb:
   - - link: /Mass/index
       linkText: 质量换算
   - - link: /Mass/kg-to-oz
-      linkText: 千克到盎�?
+      linkText: 千克到盎司
 head:
   - - meta
     - name: description
-      content: "质量单位换算指南，涵盖千�?(kg) 到盎�?(oz) 的详细换算公式与说明�?
+      content: "质量单位换算指南，涵盖千克 (kg) 到盎司 (oz) 的详细换算公式与说明。"
   - - meta
     - name: keywords
-      content: "质量, 单位换算, 千克, 盎司, kg, oz, 千克到盎�? 质量换算指南"
+      content: "质量, 单位换算, 千克, 盎司, kg, oz, 千克到盎司, 质量换算指南"
 ---
-# 千克 (kg) �?盎司 (oz) 的换�?
+# 千克 (kg) 到 盎司 (oz) 的换算
 ---
 <script setup>
 import { onMounted, reactive, inject, ref } from 'vue'
@@ -37,7 +37,7 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) * 35.274
     form.result = `${form.number}kg = ${convertedValue.toFixed(3)}oz`
   } else {
-    form.result = '请输入有效的数值�?
+    form.result = '请输入有效的数值。'
   }
 }
 </script>
@@ -59,26 +59,26 @@ const convertHandler = () => {
 
 ## 公式
 
-�?**千克 (kg)** 换算�?**盎司 (oz)** 的公式为�?
+从 **千克 (kg)** 换算到 **盎司 (oz)** 的公式为：
 $$ oz = kg \times 35.274 $$
 
-## 千克到盎司换算指�?
+## 千克到盎司换算指南
 
-在药物剂量计算和精细化学测量中，质量单位的换算是一个常见需求。本文专注于千克 (kg) 到盎�?(oz) 的换算，提供了详细的公式与实用示例�?
+在药物剂量计算和精细化学测量中，质量单位的换算是一个常见需求。本文专注于千克 (kg) 到盎司 (oz) 的换算，提供了详细的公式与实用示例。
 
-### 为什么需�?kg �?oz 的换算？
+### 为什么需要 kg 到 oz 的换算？
 
-千克和盎司是常见的质量单位，尤其在医学、药理学以及精细化学品行业中尤为重要。通过精确的换算，可以确保测量的一致性和准确性�?
+千克和盎司是常见的质量单位，尤其在医学、药理学以及精细化学品行业中尤为重要。通过精确的换算，可以确保测量的一致性和准确性。
 
-### kg �?oz 的换算方�?
+### kg 到 oz 的换算方法
 
-从千克到盎司的换算公式为�?
+从千克到盎司的换算公式为：
 
-- **公式�?* `oz = kg × 35.274`
+- **公式：** `oz = kg × 35.274`
 
 ### 实际应用示例
 
-以下是一些常见的换算实例�?
+以下是一些常见的换算实例：
 
 - 1 kg = 35.274 oz
 - 2 kg = 70.548 oz
@@ -86,7 +86,7 @@ $$ oz = kg \times 35.274 $$
 
 ### 总结
 
-掌握千克到盎司的换算可以帮助您更好地理解和使用这些质量单位。希望本指南能为您提供有价值的参考�?
+掌握千克到盎司的换算可以帮助您更好地理解和使用这些质量单位。希望本指南能为您提供有价值的参考。
 
 ## 相关连接
 <n-grid x-gap="12" :cols="2">

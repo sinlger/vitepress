@@ -4,23 +4,23 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
 
   - - link: /Angle/index
-      linkText: 角度换算
+      linkText: Angle Conversion
   - - link: /Angle/deg-to-rad
-      linkText: 度数 (°) �?弧度 (rad) 换算
+      linkText: Degrees (°) to Radians (rad) Conversion
 head:
   - - meta
     - name: description
-      content: "专业度数(°)到弧�?rad)换算工具，支持角度单位转换、三角函数计算。适用于数学计算、物理实验、工程设计等场景，提供精确的角度换算公式和实用指南�?
+      content: "Professional degrees (°) to radians (rad) conversion tool, supporting angle unit conversion and trigonometric calculations. Suitable for mathematical calculations, physics experiments, engineering design and other scenarios, providing precise angle conversion formulas and practical guides."
   - - meta
     - name: keywords
-      content: "角度换算,度数转弧�?角度单位换算,弧度�?弧度计算�?三角函数,角度変換,角度単位,rad単位,角度符号,角度计算,角度英文"
+      content: "angle conversion,degrees to radians,angle unit conversion,radian system,radian calculator,trigonometric functions,angle conversion,angle units,rad unit,angle symbols,angle calculation,angle english"
 ---
-# 度数 (°) �?弧度 (rad) 的换�?
+# Degrees (°) to Radians (rad) Conversion
 
-度数到弧度换算是角度测量中的核心转换，广泛应用于数学计算、物理实验、工程设计和科学计算等领域。本工具提供精确的度数到弧度换算，支持角度单位转换和三角函数计算需求�?
+Degrees to radians conversion is a core transformation in angle measurement, widely used in mathematical calculations, physics experiments, engineering design, and scientific computing. This tool provides precise degrees to radians conversion, supporting angle unit conversion and trigonometric calculation needs.
 ---
 <script setup>
 import { onMounted, reactive, inject, ref } from 'vue'
@@ -29,19 +29,19 @@ import { defineClientComponent } from 'vitepress'
 import { Angle } from '../files';
 const convert = inject('convert')
 const seoKey = [
-  '角度変換', '度分�?, '角度单位换算', '角度换算度分�?, '弧度和度',
-  '角度換算', '角度単位', '勾配角度', '弧度计算', '弧度和角�?,
-  '度的单位', '角度度分秒変�?, 'rad和°怎么换算', '角度的单�?, '角度�?,
-  '角度英文', '角度转换', 'rad単位', '角度単位', '角度的符�?,
-  '角度计算', '角度换算', '角度单位', '弧度计算�?, '角度変換',
-  '度数', '角度英文', '度分�?, '角度计算�?, '弧度转角�?,
-  '角度符号', 'deg', '�?, 'rad', '弧度', '弧度�?
+  'angle conversion', 'degrees minutes seconds', 'angle unit conversion', 'degrees to radians conversion', 'radians and degrees',
+  'angle conversion', 'angle units', 'gradient angle', 'radian calculation', 'radians and angles',
+  'degree units', 'degrees minutes seconds conversion', 'rad and ° conversion', 'angle units', 'angle minutes',
+  'angle english', 'angle conversion', 'rad unit', 'angle units', 'angle symbols',
+  'angle calculation', 'angle conversion', 'angle units', 'radian calculator', 'angle conversion',
+  'degrees', 'angle english', 'degrees minutes seconds', 'angle calculator', 'radians to angles',
+  'angle symbols', 'deg', 'degrees', 'rad', 'radians', 'radian system'
 ]
 
 const form = reactive({
   number: null,
   result: '',
-  title: '度数到弧度换算器'
+  title: 'Degrees to Radians Converter'
 })
 
 const convertHandler = () => {
@@ -49,166 +49,169 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) * Math.PI / 180
     form.result = `${form.number}° = ${convertedValue.toFixed(4)}rad`
   } else {
-    form.result = '请输入有效的数值�?
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-card :title="form.title" class="converter-card">
   <n-form size="large" :model="form">
-    <n-form-item label="度数 (°)">
-      <n-input-number v-model:value="form.number" placeholder="输入度数" style="width: 100%" />
+    <n-form-item label="Degrees (°)">
+      <n-input-number v-model:value="form.number" placeholder="Enter degrees" style="width: 100%" />
     </n-form-item>
     <n-form-item>
-      <n-button type="info" @click="convertHandler" block>换算</n-button>
+      <n-button type="info" @click="convertHandler" block>Convert</n-button>
     </n-form-item>
   </n-form>
-
-  <n-card  embedded :bordered="false" hoverable>
-    <div  style="text-align:center;font-size:20px;">
+  <n-card embedded :bordered="false" hoverable style="margin-top: 16px;">
+    <template #header>
+      <div style="text-align:center;font-size:16px;color:#666;">
+        {{form.title}}
+      </div>
+    </template>
+    <div style="text-align:center;font-size:20px;">
       <strong>{{form.result}}</strong>
     </div>
+    <template #footer>
+      <div style="text-align:center;font-size:12px;color:#999;">
+        <span v-for="(keyword, index) in seoKey" :key="index">
+          {{keyword}}<span v-if="index < seoKey.length - 1"> | </span>
+        </span>
+      </div>
+    </template>
   </n-card>
-  
-  <template #footer>
-    <div class="seo-keywords">
-      <span v-for="(keyword, index) in seoKey" :key="index" class="keyword-tag">
-        {{ keyword }}
-      </span>
-    </div>
-  </template>
 </n-card>
 
-## 换算公式
+## Formula
 
-度数到弧度的换算公式为：
+The conversion formula from degrees to radians is:
 
-**弧度 = 度数 × (π/180)**
+**Radians = Degrees × (π/180)**
 
-精确换算系数�?
-- 1�?= π/180 弧度 �?0.017453弧度
-- 1弧度 = 180/π �?�?57.2958�?
+Precise conversion factors:
+- 1 degree = π/180 radians ≈ 0.017453 radians
+- 1 radian = 180/π degrees ≈ 57.2958 degrees
 
-因为�?
-- 一个完整圆�?= 360�?= 2π弧度
-- 半圆 = 180�?= π弧度
-- 直角 = 90�?= π/2弧度
+Because:
+- A complete circle = 360 degrees = 2π radians
+- A semicircle = 180 degrees = π radians
+- A right angle = 90 degrees = π/2 radians
 
-数学表达式：
+Mathematical expression:
 $$ rad = ° \times \frac{\pi}{180} $$
 
-其中 π �?3.14159265359
+Where π ≈ 3.14159265359
 
-## 度数到弧度换算指�?
+## Degrees to Radians Conversion Guide
 
-角度测量是数学和工程领域中的基础概念之一，尤其在几何学、物理学以及计算机图形学中应用广泛。本文将介绍如何将度�?(°) 换算为弧�?(rad)，并提供一些实用示例�?
+Angle measurement is one of the fundamental concepts in mathematics and engineering, especially widely used in geometry, physics, and computer graphics. This article will introduce how to convert degrees (°) to radians (rad) and provide some practical examples.
 
-### 为什么需�?° �?rad 的换算？
+### Why do we need ° to rad conversion?
 
-度数和弧度是两种常用的角度单位。其中，弧度在数学计算中更为常用，因为三角函数的导数和积分在使用弧度时具有更简洁的形式。通过精确的换算，可以确保计算的一致性和准确性�?
+Degrees and radians are two commonly used angle units. Among them, radians are more commonly used in mathematical calculations because the derivatives and integrals of trigonometric functions have more concise forms when using radians. Through precise conversion, the consistency and accuracy of calculations can be ensured.
 
-### ° �?rad 的换算方�?
+### ° to rad conversion method
 
-从度数到弧度的换算公式为�?
+The conversion formula from degrees to radians is:
 
-- **公式�?* `rad = ° × π ÷ 180`
+- **Formula:** `rad = ° × π ÷ 180`
 
-## 实际应用示例
+## Practical Application Examples
 
-### 常见度数值换�?
-- 0�?= 0弧度
-- 30�?= π/6弧度 �?0.5236弧度
-- 45�?= π/4弧度 �?0.7854弧度
-- 60�?= π/3弧度 �?1.0472弧度
-- 90�?= π/2弧度 �?1.5708弧度
-- 120�?= 2π/3弧度 �?2.0944弧度
-- 135�?= 3π/4弧度 �?2.3562弧度
-- 180�?= π弧度 �?3.1416弧度
-- 270�?= 3π/2弧度 �?4.7124弧度
-- 360�?= 2π弧度 �?6.2832弧度
+### Common Degree Value Conversions
+- 0 degrees = 0 radians
+- 30 degrees = π/6 radians ≈ 0.5236 radians
+- 45 degrees = π/4 radians ≈ 0.7854 radians
+- 60 degrees = π/3 radians ≈ 1.0472 radians
+- 90 degrees = π/2 radians ≈ 1.5708 radians
+- 120 degrees = 2π/3 radians ≈ 2.0944 radians
+- 135 degrees = 3π/4 radians ≈ 2.3562 radians
+- 180 degrees = π radians ≈ 3.1416 radians
+- 270 degrees = 3π/2 radians ≈ 4.7124 radians
+- 360 degrees = 2π radians ≈ 6.2832 radians
 
-### 数学和物理中的典型�?
-- 单位圆上的弧长：弧度值直接等于弧�?
-- 简谐运动周期：2π弧度对应一个完整周�?
-- 三角函数周期：sin、cos函数�?π弧度为周�?
-- 角速度计算：�?= θ/t（弧�?秒）
-- 扇形面积：S = (1/2)r²θ（θ为弧度�?
+### Typical Values in Mathematics and Physics
+- Arc length on unit circle: radian value directly equals arc length
+- Simple harmonic motion period: 2π radians corresponds to one complete cycle
+- Trigonometric function period: sin and cos functions have a period of 2π radians
+- Angular velocity calculation: ω = θ/t (radians/second)
+- Sector area: S = (1/2)r²θ (θ in radians)
 
-## 实际应用场景
+## Practical Application Scenarios
 
-### 数学计算
-- **微积�?*：三角函数的导数和积分运�?
-- **复数运算**：欧拉公�?e^(iθ) = cos(θ) + i·sin(θ)
-- **傅里叶分�?*：频域分析中的角频率表示
-- **几何�?*：圆弧长度和扇形面积计算
+### Mathematical Calculations
+- **Calculus**: Derivatives and integrals of trigonometric functions
+- **Complex number operations**: Euler's formula e^(iθ) = cos(θ) + i·sin(θ)
+- **Fourier analysis**: Angular frequency representation in frequency domain analysis
+- **Geometry**: Arc length and sector area calculations
 
-### 物理实验
-- **振动分析**：简谐振动的相位和频�?
-- **波动理论**：波的相位差和干涉计�?
-- **转动力学**：角速度和角加速度测量
-- **光学实验**：光波的相位和偏振分�?
+### Physics Experiments
+- **Vibration analysis**: Phase and frequency of simple harmonic motion
+- **Wave theory**: Phase difference and interference calculations
+- **Rotational dynamics**: Angular velocity and angular acceleration measurements
+- **Optical experiments**: Phase and polarization analysis of light waves
 
-### 工程设计
-- **机械工程**：齿轮传动和转动机构设计
-- **电气工程**：交流电的相位和功率计算
-- **控制系统**：PID控制器的相位裕度分析
-- **信号处理**：数字滤波器的频率响�?
+### Engineering Design
+- **Mechanical engineering**: Gear transmission and rotating mechanism design
+- **Electrical engineering**: AC phase and power calculations
+- **Control systems**: Phase margin analysis of PID controllers
+- **Signal processing**: Frequency response of digital filters
 
-### 科学计算
-- **计算机图形学**�?D旋转变换和动�?
-- **数值分�?*：数值积分和微分方程求解
-- **统计�?*：圆形统计和方向数据分析
-- **天体力学**：行星轨道和卫星运动计算
+### Scientific Computing
+- **Computer graphics**: 3D rotation transformations and animations
+- **Numerical analysis**: Numerical integration and differential equation solving
+- **Statistics**: Circular statistics and directional data analysis
+- **Celestial mechanics**: Planetary orbit and satellite motion calculations
 
-## 常见问题解答 (FAQ)
+## Frequently Asked Questions (FAQ)
 
-### Q1: 为什么数学中更常用弧度而不是度数？
-A: 弧度是更自然的角度单位，因为�?
-- 弧度值直接等于单位圆上的弧长
-- 三角函数的导数和积分在弧度制下形式最简�?
-- 物理公式（如角速度、角动量）在弧度制下更直�?
-- 避免了度数制中的180/π转换因子
+### Q1: Why are radians more commonly used in mathematics than degrees?
+A: Radians are a more natural angle unit because:
+- Radian values directly equal arc length on a unit circle
+- Derivatives and integrals of trigonometric functions have the most concise forms in radians
+- Physical formulas (such as angular velocity, angular momentum) are more intuitive in radians
+- Avoids the 180/π conversion factor found in degree systems
 
-### Q2: 如何记忆常用角度的弧度值？
-A: 记住这些关键对应关系�?
+### Q2: How to memorize radian values of common angles?
+A: Remember these key correspondences:
 - 30° = π/6, 45° = π/4, 60° = π/3
 - 90° = π/2, 180° = π, 360° = 2π
-- 利用对称性：270° = 3π/2 = 2π - π/2
-- 记住π �?3.14159，便于估�?
+- Use symmetry: 270° = 3π/2 = 2π - π/2
+- Remember π ≈ 3.14159 for easy estimation
 
-### Q3: 弧度在编程中有什么优势？
-A: 编程中使用弧度的优势�?
-- **数学库函�?*：大多数编程语言的三角函数默认使用弧�?
-- **计算效率**：避免度数到弧度的重复转�?
-- **精度保持**：减少浮点运算中的累积误�?
-- **算法简�?*：旋转矩阵和复数运算更直�?
+### Q3: What advantages do radians have in programming?
+A: Advantages of using radians in programming:
+- **Math library functions**: Most programming languages' trigonometric functions default to radians
+- **Computational efficiency**: Avoids repeated degree-to-radian conversions
+- **Precision maintenance**: Reduces cumulative errors in floating-point operations
+- **Algorithm simplicity**: Rotation matrices and complex number operations are more intuitive
 
-### Q4: 如何快速估算度数到弧度的换算？
-A: 快速估算方法：
-- 记住 1弧度 �?57.3�?
-- 对于小角度：度数/57.3 �?弧度�?
-- 对于常用角度：记住π/6, π/4, π/3, π/2�?
-- 使用比例：度�?180 × π
+### Q4: How to quickly estimate degree-to-radian conversions?
+A: Quick estimation methods:
+- Remember 1 radian ≈ 57.3 degrees
+- For small angles: degrees/57.3 ≈ radian value
+- For common angles: remember π/6, π/4, π/3, π/2, etc.
+- Use proportion: degrees/180 × π
 
-### Q5: 弧度制在不同学科中的应用有何特点�?
-A: 不同学科的应用特点：
-- **纯数�?*：微积分、复分析中的标准单位
-- **物理�?*：角速度、简谐运动、波动方�?
-- **工程�?*：控制系统、信号处理、机械设�?
-- **计算机科�?*：图形学、游戏开发、机器学�?
+### Q5: What are the characteristics of radian applications in different disciplines?
+A: Application characteristics in different disciplines:
+- **Pure mathematics**: Standard unit in calculus and complex analysis
+- **Physics**: Angular velocity, simple harmonic motion, wave equations
+- **Engineering**: Control systems, signal processing, mechanical design
+- **Computer science**: Graphics, game development, machine learning
 
-### Q6: 弧度制与度数制的精度比较�?
-A: 精度比较�?
-- **理论精度**：弧度制避免了π的近似，理论上更精确
-- **计算精度**：减少转换步骤，降低累积误差
-- **表示精度**：π的有理数倍可以精确表示特殊角�?
-- **实际应用**：对于大多数应用，两者精度差异可忽略
+### Q6: Precision comparison between radian and degree systems?
+A: Precision comparison:
+- **Theoretical precision**: Radian system avoids π approximation, theoretically more precise
+- **Computational precision**: Reduces conversion steps, lowering cumulative errors
+- **Representation precision**: Rational multiples of π can precisely represent special angles
+- **Practical applications**: For most applications, precision differences are negligible
 
-### 总结
+### Summary
 
-掌握度数到弧度的换算是数学和科学计算中的基础技能。弧度作为更自然的角度单位，在微积分、物理学、工程学等领域具有独特优势。通过理解换算原理和实际应用场景，可以更好地运用弧度制进行精确计算和分析。希望本指南能为您提供有价值的参考�?
+Mastering degree-to-radian conversion is a fundamental skill in mathematics and scientific computing. Radians, as a more natural angle unit, have unique advantages in calculus, physics, engineering, and other fields. By understanding conversion principles and practical application scenarios, you can better use the radian system for precise calculations and analysis. We hope this guide provides valuable reference for you.
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Angle" :key="index">
     <n-button

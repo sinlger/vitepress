@@ -14,13 +14,13 @@ head:
     - charset: utf-8
   - - meta
     - name: description
-      content: 立方�?m³)与立方厘�?cm³)单位换算工具�?立方米等�?,000,000立方厘米�?
+      content: 立方米(m³)与立方厘米(cm³)单位换算工具，1立方米等于1,000,000立方厘米。
   - - meta
     - name: keywords
-      content: 立方�?立方厘米,单位换算,m3,cm3
+      content: 立方米,立方厘米,单位换算,m3,cm3
 ---
 
-# 立方�?m³) �?立方厘米(cm³) 换算
+# 立方米(m³) 到 立方厘米(cm³) 换算
 
 <script setup>
 import { onMounted, reactive, inject ,ref  } from 'vue'
@@ -40,7 +40,7 @@ const rules = {
 const form = reactive({
   number:null,
   result:'',
-  title:'立方�?m³)到立方厘�?cm³)换算'
+  title:'立方米(m³)到立方厘米(cm³)换算'
 })
 
 const convertHandler = (e) => {
@@ -54,8 +54,8 @@ const convertHandler = (e) => {
 </script>
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="数�? path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="请输入立方米数�? />
+  <n-form-item label="数值" path="number">
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="请输入立方米数值" />
   </n-form-item>
   <n-form-item>
     <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
@@ -68,15 +68,15 @@ const convertHandler = (e) => {
 </n-card>
 
 ## 换算公式
-1 立方�?m³) = 1,000,000 立方厘米(cm³)
+1 立方米(m³) = 1,000,000 立方厘米(cm³)
 
 ### 换算原理
-立方�?m³)和立方厘�?cm³)都是体积单位�?立方米等�?00万立方厘米�?
+立方米(m³)和立方厘米(cm³)都是体积单位，1立方米等于100万立方厘米。
 
-## 常见换算�?
-| 立方�?m³) | 立方厘米(cm³) | 实物参�?                |
+## 常见换算值
+| 立方米(m³) | 立方厘米(cm³) | 实物参考                 |
 |-----------|-------------|--------------------------|
-| 1         | 1,000,000 | 标准游泳池体�?           |
+| 1         | 1,000,000 | 标准游泳池体积            |
 | 0.5       | 500,000 | 中型水箱体积              |
 | 0.1       | 100,000 | 小型水箱体积              |
 | 0.01      | 10,000 | 大型鱼缸体积              |
@@ -84,30 +84,30 @@ const convertHandler = (e) => {
 
 ## 应用场景
 ### 建筑工程
-- 混凝土用量计�?
+- 混凝土用量计算
 - 建筑材料体积测量
 - 空间容积规划
 
-### 工业制�?
+### 工业制造
 - 容器容量设计
 - 液体存储计算
 - 产品包装规划
 
 ### 科学研究
-- 实验室容器容�?
+- 实验室容器容量
 - 微小体积测量
 - 精密仪器校准
 
-## 单位换算技�?
-1. **快速心算法**�?
-   - 立方米转立方厘米 �?数值乘�?,000,000
-   - 立方厘米转立方米 �?数值除�?,000,000
+## 单位换算技巧
+1. **快速心算法**：
+   - 立方米转立方厘米 → 数值乘以1,000,000
+   - 立方厘米转立方米 → 数值除以1,000,000
 
-2. **科学记数�?*�?
-   - 1 m³ = 1×10�?cm³
+2. **科学记数法**：
+   - 1 m³ = 1×10⁶ cm³
    - 1 cm³ = 1×10⁻⁶ m³
 
-3. **记忆口诀**�?
+3. **记忆口诀**：
    "立方米转立方厘米，百万倍要记清"
 
 ## 注意事项

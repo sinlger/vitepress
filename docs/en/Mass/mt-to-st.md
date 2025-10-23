@@ -8,16 +8,16 @@ breadcrumb:
   - - link: /Mass/index
       linkText: 质量换算
   - - link: /Mass/mt-to-st
-      linkText: 公吨到英�?
+      linkText: 公吨到英石
 head:
   - - meta
     - name: description
-      content: "质量单位换算指南，涵盖公�?(mt) 到英�?(st) 的详细换算公式与说明�?
+      content: "质量单位换算指南，涵盖公吨 (mt) 到英石 (st) 的详细换算公式与说明。"
   - - meta
     - name: keywords
-      content: "质量, 单位换算, 公吨, 英石, mt, st, 公吨到英�? 质量换算指南"
+      content: "质量, 单位换算, 公吨, 英石, mt, st, 公吨到英石, 质量换算指南"
 ---
-# 公吨 (mt) �?英石 (st) 的换�?
+# 公吨 (mt) 到 英石 (st) 的换算
 ---
 <script setup>
 import { onMounted, reactive, inject, ref } from 'vue'
@@ -37,7 +37,7 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) * 157.473
     form.result = `${form.number}mt = ${convertedValue.toFixed(3)}st`
   } else {
-    form.result = '请输入有效的数值�?
+    form.result = '请输入有效的数值。'
   }
 }
 </script>
@@ -59,26 +59,26 @@ const convertHandler = () => {
 
 ## 公式
 
-�?**公吨 (mt)** 换算�?**英石 (st)** 的公式为�?
+从 **公吨 (mt)** 换算到 **英石 (st)** 的公式为：
 $$ st = mt \times 157.473 $$
 
-## 公吨到英石换算指�?
+## 公吨到英石换算指南
 
-在药物剂量计算和精细化学测量中，质量单位的换算是一个常见需求。本文专注于公吨 (mt) 到英�?(st) 的换算，提供了详细的公式与实用示例�?
+在药物剂量计算和精细化学测量中，质量单位的换算是一个常见需求。本文专注于公吨 (mt) 到英石 (st) 的换算，提供了详细的公式与实用示例。
 
-### 为什么需�?mt �?st 的换算？
+### 为什么需要 mt 到 st 的换算？
 
-公吨和英石是常见的质量单位，尤其在医学、药理学以及精细化学品行业中尤为重要。通过精确的换算，可以确保测量的一致性和准确性�?
+公吨和英石是常见的质量单位，尤其在医学、药理学以及精细化学品行业中尤为重要。通过精确的换算，可以确保测量的一致性和准确性。
 
-### mt �?st 的换算方�?
+### mt 到 st 的换算方法
 
-从公吨到英石的换算公式为�?
+从公吨到英石的换算公式为：
 
-- **公式�?* `st = mt × 157.473`
+- **公式：** `st = mt × 157.473`
 
 ### 实际应用示例
 
-以下是一些常见的换算实例�?
+以下是一些常见的换算实例：
 
 - 1 mt = 157.473 st
 - 2 mt = 314.946 st
@@ -86,7 +86,7 @@ $$ st = mt \times 157.473 $$
 
 ### 总结
 
-掌握公吨到英石的换算可以帮助您更好地理解和使用这些质量单位。希望本指南能为您提供有价值的参考�?
+掌握公吨到英石的换算可以帮助您更好地理解和使用这些质量单位。希望本指南能为您提供有价值的参考。
 
 ## 相关连接
 <n-grid x-gap="12" :cols="2">
