@@ -8,25 +8,25 @@ breadcrumb:
   - - link: /Volume/index
       linkText: 体积单位换算
   - - link: /Volume/ml-to-kl
-      linkText: 毫升到千升换算
+      linkText: 毫升到千升换�?
 head:
   - - meta
     - charset: utf-8
   - - meta
     - name: description
-      content: 毫升(ml)与千升(kl)单位换算工具，1毫升等于0.000001千升。
+      content: 毫升(ml)与千�?kl)单位换算工具�?毫升等于0.000001千升�?
   - - meta
     - name: keywords
       content: 毫升,千升,单位换算,ml,kl
 ---
 
-# 毫升(ml) 到 千升(kl) 换算
+# 毫升(ml) �?千升(kl) 换算
 
 <script setup>
 import { onMounted, reactive, inject ,ref  } from 'vue'
 import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage ,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
-import { Volume } from '../../files';
+import { Volume } from '../files';
 
 const convert = inject('convert')
 const formRef = ref(null);
@@ -40,7 +40,7 @@ const rules = {
 const form = reactive({
   number:null,
   result:'',
-  title:'毫升(ml)到千升(kl)换算'
+  title:'毫升(ml)到千�?kl)换算'
 })
 
 const convertHandler = (e) => {
@@ -54,8 +54,8 @@ const convertHandler = (e) => {
 </script>
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="数值" path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="请输入毫升数值" />
+  <n-form-item label="数�? path="number">
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="请输入毫升数�? />
   </n-form-item>
   <n-form-item>
     <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
@@ -71,16 +71,16 @@ const convertHandler = (e) => {
 1 毫升(ml) = 0.000001 千升(kl)
 
 ### 换算原理
-毫升(ml)和千升(kl)都是体积单位，1千升等于1,000,000毫升。
+毫升(ml)和千�?kl)都是体积单位�?千升等于1,000,000毫升�?
 
-## 常见换算值
-| 毫升(ml) | 千升(kl) | 实物参考                 |
+## 常见换算�?
+| 毫升(ml) | 千升(kl) | 实物参�?                |
 |---------|----------|--------------------------|
-| 1,000,000 | 1        | 1立方米水的体积           |
-| 500,000  | 0.5      | 中型水箱的体积            |
-| 100,000  | 0.1      | 浴缸的水量               |
-| 10,000   | 0.01     | 小型水桶的体积           |
-| 1,000    | 0.001    | 1升瓶装水的体积          |
+| 1,000,000 | 1        | 1立方米水的体�?          |
+| 500,000  | 0.5      | 中型水箱的体�?           |
+| 100,000  | 0.1      | 浴缸的水�?              |
+| 10,000   | 0.01     | 小型水桶的体�?          |
+| 1,000    | 0.001    | 1升瓶装水的体�?         |
 
 ## 应用场景
 ### 工业应用
@@ -90,34 +90,34 @@ const convertHandler = (e) => {
 
 ### 农业领域
 - 灌溉水量计算
-- 储水池容量测量
+- 储水池容量测�?
 - 液体肥料用量
 
 ### 商业领域
 - 液体商品批量交易
-- 储油罐容量计算
+- 储油罐容量计�?
 - 饮料生产批量控制
 
 ### 科研领域
-- 大规模实验液体测量
+- 大规模实验液体测�?
 - 环境样本体积计算
-- 水资源管理
+- 水资源管�?
 
-## 单位换算技巧
-1. **快速心算法**：
-   - 毫升转千升 → 数值除以1,000,000
-   - 千升转毫升 → 数值乘以1,000,000
+## 单位换算技�?
+1. **快速心算法**�?
+   - 毫升转千�?�?数值除�?,000,000
+   - 千升转毫�?�?数值乘�?,000,000
 
-2. **科学记数法**：
+2. **科学记数�?*�?
    - 1 ml = 1×10⁻⁶ kl
-   - 1 kl = 1×10⁶ ml
+   - 1 kl = 1×10�?ml
 
-3. **记忆口诀**：
-   "毫升转千升，百万分一记分明"
+3. **记忆口诀**�?
+   "毫升转千升，百万分一记分�?
 
 ## 注意事项
 - 大规模测量需使用专业设备
-- 温度变化对液体体积影响较大
+- 温度变化对液体体积影响较�?
 - 容器形状影响实际容量计算
 
 ## 相关连接

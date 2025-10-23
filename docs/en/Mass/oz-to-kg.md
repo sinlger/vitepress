@@ -10,22 +10,22 @@ breadcrumb:
   - - link: /Mass/index
       linkText: 质量换算
   - - link: /Mass/oz-to-kg
-      linkText: 盎司到千克
+      linkText: 盎司到千�?
 head:
   - - meta
     - name: description
-      content: "质量单位换算指南，涵盖盎司 (oz) 到千克 (kg) 的详细换算公式与说明。"
+      content: "质量单位换算指南，涵盖盎�?(oz) 到千�?(kg) 的详细换算公式与说明�?
   - - meta
     - name: keywords
-      content: "质量, 单位换算, 盎司, 千克, oz, kg, 盎司到千克, 质量换算指南"
+      content: "质量, 单位换算, 盎司, 千克, oz, kg, 盎司到千�? 质量换算指南"
 ---
-# 盎司 (oz) 到 千克 (kg) 的换算
+# 盎司 (oz) �?千克 (kg) 的换�?
 ---
 <script setup>
 import { onMounted, reactive, inject, ref } from 'vue'
 import { NButton, NForm, NFormItem, NInput, NInputNumber, NSelect, NCard, useMessage,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
-import { Mass } from '../../files';
+import { Mass } from '../files';
 
 const convert = inject('convert')
 
@@ -39,7 +39,7 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) * 0.028349523125
     form.result = `${form.number}oz = ${convertedValue.toFixed(4)}kg`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = '请输入有效的数值�?
   }
 }
 </script>
@@ -61,26 +61,26 @@ const convertHandler = () => {
 
 ## 公式
 
-从 **盎司 (oz)** 换算到 **千克 (kg)** 的公式为：
+�?**盎司 (oz)** 换算�?**千克 (kg)** 的公式为�?
 $$ kg = oz \times 0.028349523125 $$
 
-## 盎司到千克换算指南
+## 盎司到千克换算指�?
 
-在药物剂量计算和精细化学测量中，质量单位的换算是一个常见需求。本文专注于盎司 (oz) 到千克 (kg) 的换算，提供了详细的公式与实用示例。
+在药物剂量计算和精细化学测量中，质量单位的换算是一个常见需求。本文专注于盎司 (oz) 到千�?(kg) 的换算，提供了详细的公式与实用示例�?
 
-### 为什么需要 oz 到 kg 的换算？
+### 为什么需�?oz �?kg 的换算？
 
-盎司和千克是常见的质量单位，尤其在医学、药理学以及精细化学品行业中尤为重要。通过精确的换算，可以确保测量的一致性和准确性。
+盎司和千克是常见的质量单位，尤其在医学、药理学以及精细化学品行业中尤为重要。通过精确的换算，可以确保测量的一致性和准确性�?
 
-### oz 到 kg 的换算方法
+### oz �?kg 的换算方�?
 
-从盎司到千克的换算公式为：
+从盎司到千克的换算公式为�?
 
-- **公式：** `kg = oz × 0.028349523125`
+- **公式�?* `kg = oz × 0.028349523125`
 
 ### 实际应用示例
 
-以下是一些常见的换算实例：
+以下是一些常见的换算实例�?
 
 - 1 oz = 0.0283 kg
 - 2 oz = 0.0567 kg
@@ -88,7 +88,7 @@ $$ kg = oz \times 0.028349523125 $$
 
 ### 总结
 
-掌握盎司到千克的换算可以帮助您更好地理解和使用这些质量单位。希望本指南能为您提供有价值的参考。
+掌握盎司到千克的换算可以帮助您更好地理解和使用这些质量单位。希望本指南能为您提供有价值的参考�?
 
 ## 相关连接
 <n-grid x-gap="12" :cols="2">

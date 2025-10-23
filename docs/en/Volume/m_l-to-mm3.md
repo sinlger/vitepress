@@ -8,25 +8,25 @@ breadcrumb:
   - - link: /Volume/index
       linkText: 体积单位换算
   - - link: /Volume/m_l-to-mm3
-      linkText: 兆升到立方毫米换算
+      linkText: 兆升到立方毫米换�?
 head:
   - - meta
     - charset: utf-8
   - - meta
     - name: description
-      content: 兆升(Ml)与立方毫米(mm³)单位换算工具，1兆升等于1,000,000,000,000立方毫米。
+      content: 兆升(Ml)与立方毫�?mm³)单位换算工具�?兆升等于1,000,000,000,000立方毫米�?
   - - meta
     - name: keywords
       content: 兆升,立方毫米,单位换算,Ml,mm3
 ---
 
-# 兆升(Ml) 到 立方毫米(mm³) 换算
+# 兆升(Ml) �?立方毫米(mm³) 换算
 
 <script setup>
 import { onMounted, reactive, inject ,ref  } from 'vue'
 import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage ,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
-import { Volume } from '../../files';
+import { Volume } from '../files';
 
 const convert = inject('convert')
 const formRef = ref(null);
@@ -40,7 +40,7 @@ const rules = {
 const form = reactive({
   number:null,
   result:'',
-  title:'兆升(Ml)到立方毫米(mm³)换算'
+  title:'兆升(Ml)到立方毫�?mm³)换算'
 })
 
 const convertHandler = (e) => {
@@ -54,8 +54,8 @@ const convertHandler = (e) => {
 </script>
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="数值" path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="请输入兆升数值" />
+  <n-form-item label="数�? path="number">
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="请输入兆升数�? />
   </n-form-item>
   <n-form-item>
     <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
@@ -71,48 +71,48 @@ const convertHandler = (e) => {
 1 兆升(Ml) = 1,000,000,000,000 立方毫米(mm³)
 
 ### 换算原理
-兆升(Ml)和立方毫米(mm³)都是体积单位，1兆升等于1万亿立方毫米。
+兆升(Ml)和立方毫�?mm³)都是体积单位�?兆升等于1万亿立方毫米�?
 
-## 常见换算值
-| 兆升(Ml) | 立方毫米(mm³) | 实物参考                 |
+## 常见换算�?
+| 兆升(Ml) | 立方毫米(mm³) | 实物参�?                |
 |---------|-------------|--------------------------|
-| 1       | 1,000,000,000,000 | 大型水库的水量            |
-| 0.5     | 500,000,000,000 | 中型湖泊的水量            |
-| 0.1     | 100,000,000,000 | 小型湖泊的水量            |
+| 1       | 1,000,000,000,000 | 大型水库的水�?           |
+| 0.5     | 500,000,000,000 | 中型湖泊的水�?           |
+| 0.1     | 100,000,000,000 | 小型湖泊的水�?           |
 | 0.01    | 10,000,000,000 | 大型人工湖的水量          |
 | 0.001   | 1,000,000,000 | 小型人工湖的水量          |
 
 ## 应用场景
-### 精密制造
+### 精密制�?
 - 微型零件体积计算
 - 精密仪器液体容量
-- 微流控芯片设计
+- 微流控芯片设�?
 
 ### 医药领域
 - 微量药剂配制
 - 纳米药物研发
-- 细胞培养液计量
+- 细胞培养液计�?
 
 ### 科研实验
 - 微量化学反应
 - 纳米材料研究
 - 精密测量实验
 
-## 单位换算技巧
-1. **快速心算法**：
-   - 兆升转立方毫米 → 数值乘以1,000,000,000,000
-   - 立方毫米转兆升 → 数值除以1,000,000,000,000
+## 单位换算技�?
+1. **快速心算法**�?
+   - 兆升转立方毫�?�?数值乘�?,000,000,000,000
+   - 立方毫米转兆�?�?数值除�?,000,000,000,000
 
-2. **科学记数法**：
+2. **科学记数�?*�?
    - 1 Ml = 1×10¹² mm³
-   - 1 mm³ = 1×10⁻¹² Ml
+   - 1 mm³ = 1×10⁻¹�?Ml
 
-3. **记忆口诀**：
+3. **记忆口诀**�?
    "兆升转立方毫米，万亿倍要记清"
 
 ## 注意事项
 - 超精密测量需使用专业仪器
-- 温度变化对微小体积影响显著
+- 温度变化对微小体积影响显�?
 - 表面张力影响微小容器容量
 
 ## 相关连接

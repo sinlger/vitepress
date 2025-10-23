@@ -14,19 +14,19 @@ head:
     - charset: utf-8
   - - meta
     - name: description
-      content: 茶匙(tsp)与立方米(m³)单位换算工具，1茶匙等于0.00000492892立方米。
+      content: 茶匙(tsp)与立方米(m³)单位换算工具�?茶匙等于0.00000492892立方米�?
   - - meta
     - name: keywords
-      content: 茶匙,立方米,单位换算,tsp,m3
+      content: 茶匙,立方�?单位换算,tsp,m3
 ---
 
-# 茶匙(tsp) 到 立方米(m³) 换算
+# 茶匙(tsp) �?立方�?m³) 换算
 
 <script setup>
 import { onMounted, reactive, inject ,ref  } from 'vue'
 import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage ,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
-import { Volume } from '../../files';
+import { Volume } from '../files';
 
 const convert = inject('convert')
 const formRef = ref(null);
@@ -54,8 +54,8 @@ const convertHandler = (e) => {
 </script>
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="数值" path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="请输入茶匙数值" />
+  <n-form-item label="数�? path="number">
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="请输入茶匙数�? />
   </n-form-item>
   <n-form-item>
     <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
@@ -68,23 +68,23 @@ const convertHandler = (e) => {
 </n-card>
 
 ## 换算公式
-1 茶匙(tsp) = 0.00000492892 立方米(m³)
+1 茶匙(tsp) = 0.00000492892 立方�?m³)
 
 ### 换算原理
-茶匙(tsp)和立方米(m³)都是体积单位，1茶匙等于约0.00000493立方米。
+茶匙(tsp)和立方米(m³)都是体积单位�?茶匙等于�?.00000493立方米�?
 
-## 常见换算值
-| 茶匙(tsp) | 立方米(m³) | 实物参考                 |
+## 常见换算�?
+| 茶匙(tsp) | 立方�?m³) | 实物参�?                |
 |-----------|-----------|--------------------------|
 | 1         | 0.00000492892 | 标准茶匙容量              |
-| 0.5       | 0.00000246446 | 半茶匙容量                |
+| 0.5       | 0.00000246446 | 半茶匙容�?               |
 | 0.25      | 0.00000123223 | 四分之一茶匙容量          |
-| 2         | 0.00000985784 | 两茶匙容量                |
-| 3         | 0.00001478676 | 三茶匙容量                |
+| 2         | 0.00000985784 | 两茶匙容�?               |
+| 3         | 0.00001478676 | 三茶匙容�?               |
 
 ## 应用场景
 ### 烹饪
-- 精确测量小份量液体
+- 精确测量小份量液�?
 - 食谱配方换算
 - 厨房计量工具校准
 
@@ -98,17 +98,17 @@ const convertHandler = (e) => {
 - 手工制作
 - 小型容器容量测量
 
-## 单位换算技巧
-1. **快速心算法**：
-   - 茶匙转立方米 → 数值乘以0.00000493
-   - 立方米转茶匙 → 数值除以0.00000493
+## 单位换算技�?
+1. **快速心算法**�?
+   - 茶匙转立方米 �?数值乘�?.00000493
+   - 立方米转茶匙 �?数值除�?.00000493
 
-2. **科学记数法**：
+2. **科学记数�?*�?
    - 1 tsp = 4.92892×10⁻⁶ m³
    - 1 m³ = 202,884.136 tsp
 
-3. **记忆口诀**：
-   "茶匙转立方米，百万分之五要记清"
+3. **记忆口诀**�?
+   "茶匙转立方米，百万分之五要记�?
 
 ## 注意事项
 - 不同国家茶匙标准略有差异

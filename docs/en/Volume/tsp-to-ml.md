@@ -8,25 +8,25 @@ breadcrumb:
   - - link: /Volume/index
       linkText: 体积单位换算
   - - link: /Volume/tsp-to-ml
-      linkText: 茶匙到毫升换算
+      linkText: 茶匙到毫升换�?
 head:
   - - meta
     - charset: utf-8
   - - meta
     - name: description
-      content: 茶匙(tsp)与毫升(ml)单位换算工具，1茶匙等于4.92892毫升。
+      content: 茶匙(tsp)与毫�?ml)单位换算工具�?茶匙等于4.92892毫升�?
   - - meta
     - name: keywords
       content: 茶匙,毫升,单位换算,tsp,ml
 ---
 
-# 茶匙(tsp) 到 毫升(ml) 换算
+# 茶匙(tsp) �?毫升(ml) 换算
 
 <script setup>
 import { onMounted, reactive, inject ,ref  } from 'vue'
 import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage ,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
-import { Volume } from '../../files';
+import { Volume } from '../files';
 
 const convert = inject('convert')
 const formRef = ref(null);
@@ -40,7 +40,7 @@ const rules = {
 const form = reactive({
   number:null,
   result:'',
-  title:'茶匙(tsp)到毫升(ml)换算'
+  title:'茶匙(tsp)到毫�?ml)换算'
 })
 
 const convertHandler = (e) => {
@@ -54,8 +54,8 @@ const convertHandler = (e) => {
 </script>
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="数值" path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="请输入茶匙数值" />
+  <n-form-item label="数�? path="number">
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="请输入茶匙数�? />
   </n-form-item>
   <n-form-item>
     <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
@@ -71,20 +71,20 @@ const convertHandler = (e) => {
 1 茶匙(tsp) = 4.92892 毫升(ml)
 
 ### 换算原理
-茶匙(tsp)和毫升(ml)都是体积单位，1茶匙等于约4.93毫升。
+茶匙(tsp)和毫�?ml)都是体积单位�?茶匙等于�?.93毫升�?
 
-## 常见换算值
-| 茶匙(tsp) | 毫升(ml) | 实物参考                 |
+## 常见换算�?
+| 茶匙(tsp) | 毫升(ml) | 实物参�?                |
 |-----------|---------|--------------------------|
 | 1         | 4.92892 | 标准茶匙容量              |
-| 0.5       | 2.46446 | 半茶匙容量                |
+| 0.5       | 2.46446 | 半茶匙容�?               |
 | 0.25      | 1.23223 | 四分之一茶匙容量          |
-| 2         | 9.85784 | 两茶匙容量                |
-| 3         | 14.78676| 三茶匙容量                |
+| 2         | 9.85784 | 两茶匙容�?               |
+| 3         | 14.78676| 三茶匙容�?               |
 
 ## 应用场景
 ### 烹饪
-- 精确测量小份量液体
+- 精确测量小份量液�?
 - 食谱配方换算
 - 厨房计量工具校准
 
@@ -98,16 +98,16 @@ const convertHandler = (e) => {
 - 手工制作
 - 小型容器容量测量
 
-## 单位换算技巧
-1. **快速心算法**：
-   - 茶匙转毫升 → 数值乘以4.93
-   - 毫升转茶匙 → 数值除以4.93
+## 单位换算技�?
+1. **快速心算法**�?
+   - 茶匙转毫�?�?数值乘�?.93
+   - 毫升转茶�?�?数值除�?.93
 
-2. **近似记忆**：
-   - 1茶匙 ≈ 5毫升
-   - 1毫升 ≈ 0.2茶匙
+2. **近似记忆**�?
+   - 1茶匙 �?5毫升
+   - 1毫升 �?0.2茶匙
 
-3. **记忆口诀**：
+3. **记忆口诀**�?
    "茶匙转毫升，五倍关系要记清"
 
 ## 注意事项

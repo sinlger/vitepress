@@ -8,25 +8,25 @@ breadcrumb:
   - - link: /Volume/index
       linkText: 体积单位换算
   - - link: /Volume/ml-to-mm3
-      linkText: 毫升到立方毫米换算
+      linkText: 毫升到立方毫米换�?
 head:
   - - meta
     - charset: utf-8
   - - meta
     - name: description
-      content: 毫升(ml)与立方毫米(mm³)单位换算工具，1毫升等于1000立方毫米。
+      content: 毫升(ml)与立方毫�?mm³)单位换算工具�?毫升等于1000立方毫米�?
   - - meta
     - name: keywords
       content: 毫升,立方毫米,单位换算,ml,mm³
 ---
 
-# 毫升(ml) 到 立方毫米(mm³) 换算
+# 毫升(ml) �?立方毫米(mm³) 换算
 
 <script setup>
 import { onMounted, reactive, inject ,ref  } from 'vue'
 import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage ,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
-import { Volume } from '../../files';
+import { Volume } from '../files';
 
 const convert = inject('convert')
 const formRef = ref(null);
@@ -40,7 +40,7 @@ const rules = {
 const form = reactive({
   number:null,
   result:'',
-  title:'毫升(ml)到立方毫米(mm³)换算'
+  title:'毫升(ml)到立方毫�?mm³)换算'
 })
 
 const convertHandler = (e) => {
@@ -54,8 +54,8 @@ const convertHandler = (e) => {
 </script>
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="数值" path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="请输入毫升数值" />
+  <n-form-item label="数�? path="number">
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="请输入毫升数�? />
   </n-form-item>
   <n-form-item>
     <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
@@ -71,48 +71,48 @@ const convertHandler = (e) => {
 1 毫升(ml) = 1000 立方毫米(mm³)
 
 ### 换算原理
-毫升(ml)和立方毫米(mm³)都是体积单位，1毫升等于1000立方毫米。
+毫升(ml)和立方毫�?mm³)都是体积单位�?毫升等于1000立方毫米�?
 
-## 常见换算值
-| 毫升(ml) | 立方毫米(mm³) | 实物参考                 |
+## 常见换算�?
+| 毫升(ml) | 立方毫米(mm³) | 实物参�?                |
 |---------|--------------|--------------------------|
-| 1       | 1000         | 标准滴管的1滴体积         |
+| 1       | 1000         | 标准滴管�?滴体�?        |
 | 0.5     | 500          | 小药丸的体积              |
-| 2       | 2000         | 两滴标准滴管的体积        |
-| 5       | 5000         | 一茶匙液体的体积          |
-| 10      | 10000        | 一汤匙液体的体积          |
+| 2       | 2000         | 两滴标准滴管的体�?       |
+| 5       | 5000         | 一茶匙液体的体�?         |
+| 10      | 10000        | 一汤匙液体的体�?         |
 
 ## 应用场景
 ### 医疗领域
 - 药物剂量精确计量
-- 注射器容量测量
+- 注射器容量测�?
 - 微型医疗设备容积计算
 
-### 实验室应用
+### 实验室应�?
 - 微量液体测量
 - 化学试剂配比
 - 标准溶液配制
 
-### 工业制造
+### 工业制�?
 - 精密零件尺寸测量
 - 3D打印材料用量计算
 - 微型容器容积测量
 
 ### 日常生活
 - 烹饪调料计量
-- 化妆品用量计算
+- 化妆品用量计�?
 - 手工DIY材料测量
 
-## 单位换算技巧
-1. **快速心算法**：
-   - 毫升转立方毫米 → 数值乘以1000
-   - 立方毫米转毫升 → 数值除以1000
+## 单位换算技�?
+1. **快速心算法**�?
+   - 毫升转立方毫�?�?数值乘�?000
+   - 立方毫米转毫�?�?数值除�?000
 
-2. **科学记数法**：
+2. **科学记数�?*�?
    - 1 ml = 1×10³ mm³
-   - 1 mm³ = 1×10⁻³ ml
+   - 1 mm³ = 1×10⁻�?ml
 
-3. **记忆口诀**：
+3. **记忆口诀**�?
    "毫升转立方毫米，乘以一千很容易"
 
 ## 注意事项

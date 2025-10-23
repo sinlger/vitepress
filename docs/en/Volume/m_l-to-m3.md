@@ -14,19 +14,19 @@ head:
     - charset: utf-8
   - - meta
     - name: description
-      content: 兆升(Ml)与立方米(m³)单位换算工具，1兆升等于1,000立方米。
+      content: 兆升(Ml)与立方米(m³)单位换算工具�?兆升等于1,000立方米�?
   - - meta
     - name: keywords
-      content: 兆升,立方米,单位换算,Ml,m3
+      content: 兆升,立方�?单位换算,Ml,m3
 ---
 
-# 兆升(Ml) 到 立方米(m³) 换算
+# 兆升(Ml) �?立方�?m³) 换算
 
 <script setup>
 import { onMounted, reactive, inject ,ref  } from 'vue'
 import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage ,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
-import { Volume } from '../../files';
+import { Volume } from '../files';
 
 const convert = inject('convert')
 const formRef = ref(null);
@@ -54,8 +54,8 @@ const convertHandler = (e) => {
 </script>
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="数值" path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="请输入兆升数值" />
+  <n-form-item label="数�? path="number">
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="请输入兆升数�? />
   </n-form-item>
   <n-form-item>
     <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
@@ -68,52 +68,52 @@ const convertHandler = (e) => {
 </n-card>
 
 ## 换算公式
-1 兆升(Ml) = 1,000 立方米(m³)
+1 兆升(Ml) = 1,000 立方�?m³)
 
 ### 换算原理
-兆升(Ml)和立方米(m³)都是体积单位，1兆升等于1,000立方米。
+兆升(Ml)和立方米(m³)都是体积单位�?兆升等于1,000立方米�?
 
-## 常见换算值
-| 兆升(Ml) | 立方米(m³) | 实物参考                 |
+## 常见换算�?
+| 兆升(Ml) | 立方�?m³) | 实物参�?                |
 |---------|-----------|--------------------------|
 | 1       | 1,000     | 大型储水罐的容量          |
 | 0.5     | 500       | 中型储水罐的容量          |
 | 0.1     | 100       | 小型储水罐的容量          |
-| 0.01    | 10        | 大型水箱的容量            |
-| 0.001   | 1         | 中型水箱的容量            |
+| 0.01    | 10        | 大型水箱的容�?           |
+| 0.001   | 1         | 中型水箱的容�?           |
 
 ## 应用场景
 ### 建筑工程
-- 混凝土用量计算
+- 混凝土用量计�?
 - 土方工程体积测量
 - 建筑材料体积估算
 
-### 工业制造
+### 工业制�?
 - 液体原料储存规划
 - 容器容量设计
 - 生产流程体积控制
 
-### 水资源管理
-- 水库储水量计算
+### 水资源管�?
+- 水库储水量计�?
 - 城市供水系统
 - 工业用水规划
 
-## 单位换算技巧
-1. **快速心算法**：
-   - 兆升转立方米 → 数值乘以1,000
-   - 立方米转兆升 → 数值除以1,000
+## 单位换算技�?
+1. **快速心算法**�?
+   - 兆升转立方米 �?数值乘�?,000
+   - 立方米转兆升 �?数值除�?,000
 
-2. **科学记数法**：
+2. **科学记数�?*�?
    - 1 Ml = 1×10³ m³
-   - 1 m³ = 1×10⁻³ Ml
+   - 1 m³ = 1×10⁻�?Ml
 
-3. **记忆口诀**：
+3. **记忆口诀**�?
    "兆升转立方米，千倍要记清"
 
 ## 注意事项
 - 测量时注意温度对水密度的影响
 - 不规则容器需使用专业测量方法
-- 精确计算需考虑容器壁厚度
+- 精确计算需考虑容器壁厚�?
 
 ## 相关连接
 <n-grid x-gap="12" :cols="2">

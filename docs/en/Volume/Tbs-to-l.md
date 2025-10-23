@@ -14,19 +14,19 @@ head:
     - charset: utf-8
   - - meta
     - name: description
-      content: 汤匙(Tbs)与升(l)单位换算工具，1汤匙等于0.01478676升。
+      content: 汤匙(Tbs)与升(l)单位换算工具�?汤匙等于0.01478676升�?
   - - meta
     - name: keywords
-      content: 汤匙,升,单位换算,Tbs,l
+      content: 汤匙,�?单位换算,Tbs,l
 ---
 
-# 汤匙(Tbs) 到 升(l) 换算
+# 汤匙(Tbs) �?�?l) 换算
 
 <script setup>
 import { onMounted, reactive, inject ,ref  } from 'vue'
 import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage ,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
-import { Volume } from '../../files';
+import { Volume } from '../files';
 
 const convert = inject('convert')
 const formRef = ref(null);
@@ -54,8 +54,8 @@ const convertHandler = (e) => {
 </script>
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="数值" path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="请输入汤匙数值" />
+  <n-form-item label="数�? path="number">
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="请输入汤匙数�? />
   </n-form-item>
   <n-form-item>
     <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
@@ -68,19 +68,19 @@ const convertHandler = (e) => {
 </n-card>
 
 ## 换算公式
-1 汤匙(Tbs) = 0.01478676 升(l)
+1 汤匙(Tbs) = 0.01478676 �?l)
 
 ### 换算原理
-汤匙(Tbs)和升(l)都是体积单位，1汤匙等于约0.0148升。
+汤匙(Tbs)和升(l)都是体积单位�?汤匙等于�?.0148升�?
 
-## 常见换算值
-| 汤匙(Tbs) | 升(l)    | 实物参考                 |
+## 常见换算�?
+| 汤匙(Tbs) | �?l)    | 实物参�?                |
 |-----------|---------|--------------------------|
 | 1         | 0.014786| 标准汤匙容量              |
-| 0.5       | 0.007393| 半汤匙容量                |
+| 0.5       | 0.007393| 半汤匙容�?               |
 | 0.25      | 0.003696| 四分之一汤匙容量          |
-| 2         | 0.029573| 两汤匙容量                |
-| 3         | 0.044360| 三汤匙容量                |
+| 2         | 0.029573| 两汤匙容�?               |
+| 3         | 0.044360| 三汤匙容�?               |
 
 ## 应用场景
 ### 烹饪
@@ -90,7 +90,7 @@ const convertHandler = (e) => {
 
 ### 医药
 - 药品剂量测量
-- 实验室液体测量
+- 实验室液体测�?
 - 医疗器具校准
 
 ### 日常生活
@@ -98,16 +98,16 @@ const convertHandler = (e) => {
 - 手工制作
 - 小型容器容量测量
 
-## 单位换算技巧
-1. **快速心算法**：
-   - 汤匙转升 → 数值乘以0.0148
-   - 升转汤匙 → 数值除以0.0148
+## 单位换算技�?
+1. **快速心算法**�?
+   - 汤匙转升 �?数值乘�?.0148
+   - 升转汤匙 �?数值除�?.0148
 
-2. **近似记忆**：
-   - 1汤匙 ≈ 0.015升
-   - 1升 ≈ 67.63汤匙
+2. **近似记忆**�?
+   - 1汤匙 �?0.015�?
+   - 1�?�?67.63汤匙
 
-3. **记忆口诀**：
+3. **记忆口诀**�?
    "汤匙转升，百分之一五要记清"
 
 ## 注意事项

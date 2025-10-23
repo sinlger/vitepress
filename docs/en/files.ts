@@ -1,5 +1,5 @@
 export const Time = [
-  { name: 'Day to Hour', path: './Day-to-Hour' }
+  { name: 'Day to Hour', path: './Day-to-Hour' },
   { name: 'Day to Microsecond', path: './Day-to-Microsecond' },
   { name: 'Day to Millisecond', path: './Day-to-Millisecond' },
   { name: 'Day to Minute', path: './Day-to-Minute' },

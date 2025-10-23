@@ -8,22 +8,22 @@ breadcrumb:
   - - link: /Mass/index
       linkText: 质量换算
   - - link: /Mass/t-to-g
-      linkText: 吨到克
+      linkText: 吨到�?
 head:
   - - meta
     - name: description
-      content: "质量单位换算指南，涵盖吨 (t) 到克 (g) 的详细换算公式与说明。"
+      content: "质量单位换算指南，涵盖吨 (t) 到克 (g) 的详细换算公式与说明�?
   - - meta
     - name: keywords
-      content: "质量, 单位换算, 吨, 克, t, g, 吨到克, 质量换算指南"
+      content: "质量, 单位换算, �? �? t, g, 吨到�? 质量换算指南"
 ---
-# 吨 (t) 到 克 (g) 的换算
+# �?(t) �?�?(g) 的换�?
 ---
 <script setup>
 import { onMounted, reactive, inject, ref } from 'vue'
 import { NButton, NForm, NFormItem, NInput, NInputNumber, NSelect, NCard, useMessage,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
-import { Mass } from '../../files';
+import { Mass } from '../files';
 
 const convert = inject('convert')
 
@@ -37,14 +37,14 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) * 1000000
     form.result = `${form.number}t = ${convertedValue.toFixed(0)}g`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = '请输入有效的数值�?
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="吨 (t)">
-    <n-input-number v-model:value="form.number" placeholder="输入吨" style="width: 100%" />
+  <n-form-item label="�?(t)">
+    <n-input-number v-model:value="form.number" placeholder="输入�? style="width: 100%" />
   </n-form-item>
   <n-form-item>
     <n-button type="info" @click="convertHandler" block>换算</n-button>
@@ -59,26 +59,26 @@ const convertHandler = () => {
 
 ## 公式
 
-从 **吨 (t)** 换算到 **克 (g)** 的公式为：
+�?**�?(t)** 换算�?**�?(g)** 的公式为�?
 $$ g = t \times 1000000 $$
 
-## 吨到克换算指南
+## 吨到克换算指�?
 
-在药物剂量计算和精细化学测量中，质量单位的换算是一个常见需求。本文专注于吨 (t) 到克 (g) 的换算，提供了详细的公式与实用示例。
+在药物剂量计算和精细化学测量中，质量单位的换算是一个常见需求。本文专注于�?(t) 到克 (g) 的换算，提供了详细的公式与实用示例�?
 
-### 为什么需要 t 到 g 的换算？
+### 为什么需�?t �?g 的换算？
 
-吨和克是常见的质量单位，尤其在医学、药理学以及精细化学品行业中尤为重要。通过精确的换算，可以确保测量的一致性和准确性。
+吨和克是常见的质量单位，尤其在医学、药理学以及精细化学品行业中尤为重要。通过精确的换算，可以确保测量的一致性和准确性�?
 
-### t 到 g 的换算方法
+### t �?g 的换算方�?
 
-从吨到克的换算公式为：
+从吨到克的换算公式为�?
 
-- **公式：** `g = t × 1000000`
+- **公式�?* `g = t × 1000000`
 
 ### 实际应用示例
 
-以下是一些常见的换算实例：
+以下是一些常见的换算实例�?
 
 - 1 t = 1000000 g
 - 2 t = 2000000 g
@@ -86,7 +86,7 @@ $$ g = t \times 1000000 $$
 
 ### 总结
 
-掌握吨到克的换算可以帮助您更好地理解和使用这些质量单位。希望本指南能为您提供有价值的参考。
+掌握吨到克的换算可以帮助您更好地理解和使用这些质量单位。希望本指南能为您提供有价值的参考�?
 
 ## 相关连接
 <n-grid x-gap="12" :cols="2">

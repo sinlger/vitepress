@@ -33,7 +33,7 @@ features:
       dark: /public/temperature-svgrepo-com.svg
       light: /public/temperature-svgrepo-com.svg
     title: Temperature Conversion
-    details: Celsius (℃), Fahrenheit (°F), Kelvin (K), Rankine (°R)
+    details: Celsius (�?, Fahrenheit (°F), Kelvin (K), Rankine (°R)
     linkText: Get Started
     link: /en/Temperature/index
   - icon: 

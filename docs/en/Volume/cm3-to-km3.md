@@ -8,25 +8,25 @@ breadcrumb:
   - - link: /Volume/index
       linkText: 体积单位换算
   - - link: /Volume/cm3-to-km3
-      linkText: 立方厘米到立方公里换算
+      linkText: 立方厘米到立方公里换�?
 head:
   - - meta
     - charset: utf-8
   - - meta
     - name: description
-      content: 立方厘米(cm³)与立方公里(km³)单位换算工具，1立方厘米等于0.000000000000001立方公里。
+      content: 立方厘米(cm³)与立方公�?km³)单位换算工具�?立方厘米等于0.000000000000001立方公里�?
   - - meta
     - name: keywords
       content: 立方厘米,立方公里,单位换算,cm³,km³
 ---
 
-# 立方厘米(cm³) 到 立方公里(km³) 换算
+# 立方厘米(cm³) �?立方公里(km³) 换算
 
 <script setup>
 import { onMounted, reactive, inject ,ref  } from 'vue'
 import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage ,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
-import { Volume } from '../../files';
+import { Volume } from '../files';
 
 const convert = inject('convert')
 const formRef = ref(null);
@@ -40,7 +40,7 @@ const rules = {
 const form = reactive({
   number:null,
   result:'',
-  title:'立方厘米(cm³)到立方公里(km³)换算'
+  title:'立方厘米(cm³)到立方公�?km³)换算'
 })
 
 const convertHandler = (e) => {
@@ -54,8 +54,8 @@ const convertHandler = (e) => {
 </script>
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="数值" path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="请输入立方厘米数值" />
+  <n-form-item label="数�? path="number">
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="请输入立方厘米数�? />
   </n-form-item>
   <n-form-item>
     <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
@@ -71,48 +71,48 @@ const convertHandler = (e) => {
 1 立方厘米(cm³) = 0.000000000000001 立方公里(km³)
 
 ### 换算原理
-立方厘米(cm³)和立方公里(km³)都是体积单位，1立方公里等于1,000,000,000,000,000立方厘米。
+立方厘米(cm³)和立方公�?km³)都是体积单位�?立方公里等于1,000,000,000,000,000立方厘米�?
 
-## 常见换算值
-| 立方厘米(cm³) | 立方公里(km³) | 实物参考                 |
+## 常见换算�?
+| 立方厘米(cm³) | 立方公里(km³) | 实物参�?                |
 |--------------|--------------|--------------------------|
-| 1,000,000,000,000,000 | 1            | 大型湖泊的体积            |
-| 500,000,000,000,000  | 0.5          | 中型湖泊的体积            |
-| 100,000,000,000,000  | 0.1          | 小型湖泊的体积            |
-| 10,000,000,000,000   | 0.01         | 大型水库的体积            |
-| 1,000,000,000,000    | 0.001        | 中型水库的体积            |
+| 1,000,000,000,000,000 | 1            | 大型湖泊的体�?           |
+| 500,000,000,000,000  | 0.5          | 中型湖泊的体�?           |
+| 100,000,000,000,000  | 0.1          | 小型湖泊的体�?           |
+| 10,000,000,000,000   | 0.01         | 大型水库的体�?           |
+| 1,000,000,000,000    | 0.001        | 中型水库的体�?           |
 
 ## 应用场景
-### 地理学
-- 湖泊储水量计算
+### 地理�?
+- 湖泊储水量计�?
 - 冰川体积测量
-- 地质构造体积评估
+- 地质构造体积评�?
 
-### 气象学
+### 气象�?
 - 云团体积计算
 - 降水总量评估
 - 大气水汽含量测量
 
-### 海洋学
+### 海洋�?
 - 海洋水体体积测量
 - 洋流体积计算
 - 海洋资源评估
 
 ### 环境科学
-- 污染物扩散体积评估
+- 污染物扩散体积评�?
 - 生态保护区体积规划
 - 水资源总量计算
 
-## 单位换算技巧
-1. **快速心算法**：
-   - 立方厘米转立方公里 → 数值除以1,000,000,000,000,000
-   - 立方公里转立方厘米 → 数值乘以1,000,000,000,000,000
+## 单位换算技�?
+1. **快速心算法**�?
+   - 立方厘米转立方公�?�?数值除�?,000,000,000,000,000
+   - 立方公里转立方厘�?�?数值乘�?,000,000,000,000,000
 
-2. **科学记数法**：
+2. **科学记数�?*�?
    - 1 cm³ = 1×10⁻¹⁵ km³
-   - 1 km³ = 1×10¹⁵ cm³
+   - 1 km³ = 1×10¹�?cm³
 
-3. **记忆口诀**：
+3. **记忆口诀**�?
    "立方厘米转公里，千万亿分一记清"
 
 ## 注意事项

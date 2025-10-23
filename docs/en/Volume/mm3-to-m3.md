@@ -14,19 +14,19 @@ head:
     - charset: utf-8
   - - meta
     - name: description
-      content: 立方毫米(mm³)与立方米(m³)单位换算工具，1立方毫米等于0.000000001立方米。
+      content: 立方毫米(mm³)与立方米(m³)单位换算工具�?立方毫米等于0.000000001立方米�?
   - - meta
     - name: keywords
-      content: 立方毫米,立方米,单位换算,mm³,m³
+      content: 立方毫米,立方�?单位换算,mm³,m³
 ---
 
-# 立方毫米(mm³) 到 立方米(m³) 换算
+# 立方毫米(mm³) �?立方�?m³) 换算
 
 <script setup>
 import { onMounted, reactive, inject ,ref  } from 'vue'
 import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage ,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
-import { Volume } from '../../files';
+import { Volume } from '../files';
 
 const convert = inject('convert')
 const formRef = ref(null);
@@ -54,8 +54,8 @@ const convertHandler = (e) => {
 </script>
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="数值" path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="请输入立方毫米数值" />
+  <n-form-item label="数�? path="number">
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="请输入立方毫米数�? />
   </n-form-item>
   <n-form-item>
     <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
@@ -68,36 +68,36 @@ const convertHandler = (e) => {
 </n-card>
 
 ## 换算公式
-1 立方毫米(mm³) = 0.000000001 立方米(m³)
+1 立方毫米(mm³) = 0.000000001 立方�?m³)
 
 ### 换算原理
 立方毫米(mm³)和立方米(m³)都是体积单位，换算基于长度单位关系：
-- 1 米(m) = 1000 毫米(mm)
-- 因此 1 立方米 = 1,000,000,000 立方毫米
+- 1 �?m) = 1000 毫米(mm)
+- 因此 1 立方�?= 1,000,000,000 立方毫米
 
-## 常见换算值
-| 立方毫米(mm³) | 立方米(m³) | 实物参考                 |
+## 常见换算�?
+| 立方毫米(mm³) | 立方�?m³) | 实物参�?                |
 |--------------|-----------|--------------------------|
 | 1000000000   | 1         | 标准集装箱的体积          |
-| 500000000    | 0.5       | 中型衣柜的体积            |
-| 100000000    | 0.1       | 小型冰箱的体积            |
+| 500000000    | 0.5       | 中型衣柜的体�?           |
+| 100000000    | 0.1       | 小型冰箱的体�?           |
 | 10000000     | 0.01      | 微波炉的体积             |
 | 1000000      | 0.001     | 1升容器的体积             |
 
 ## 应用场景
-### 工业制造
+### 工业制�?
 - 大型设备容积计算
-- 原材料体积测量
+- 原材料体积测�?
 - 仓储空间规划
 
 ### 建筑工程  
-- 混凝土用量计算
+- 混凝土用量计�?
 - 房间容积测量
 - 建筑材料体积估算
 
 ### 物流运输
 - 货物装载体积计算
-- 集装箱容量规划
+- 集装箱容量规�?
 - 运输空间优化
 
 ### 日常生活
@@ -105,17 +105,17 @@ const convertHandler = (e) => {
 - 家电体积计算
 - 储物空间规划
 
-## 单位换算技巧
-1. **快速心算法**：
-   - 立方毫米转立方米 → 数值除以1,000,000,000
-   - 立方米转立方毫米 → 数值乘以1,000,000,000
+## 单位换算技�?
+1. **快速心算法**�?
+   - 立方毫米转立方米 �?数值除�?,000,000,000
+   - 立方米转立方毫米 �?数值乘�?,000,000,000
 
-2. **科学记数法**：
+2. **科学记数�?*�?
    - 1 mm³ = 1×10⁻⁹ m³
-   - 1 m³ = 1×10⁹ mm³
+   - 1 m³ = 1×10�?mm³
 
-3. **记忆口诀**：
-   "立方毫米转立方，十亿分之一要记清"
+3. **记忆口诀**�?
+   "立方毫米转立方，十亿分之一要记�?
 
 ## 注意事项
 - 测量大体积时需考虑温度影响

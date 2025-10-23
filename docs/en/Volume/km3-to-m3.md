@@ -14,19 +14,19 @@ head:
     - charset: utf-8
   - - meta
     - name: description
-      content: 立方公里(km³)与立方米(m³)单位换算工具，1立方公里等于1,000,000,000立方米。
+      content: 立方公里(km³)与立方米(m³)单位换算工具�?立方公里等于1,000,000,000立方米�?
   - - meta
     - name: keywords
-      content: 立方公里,立方米,单位换算,km3,m3
+      content: 立方公里,立方�?单位换算,km3,m3
 ---
 
-# 立方公里(km³) 到 立方米(m³) 换算
+# 立方公里(km³) �?立方�?m³) 换算
 
 <script setup>
 import { onMounted, reactive, inject ,ref  } from 'vue'
 import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage ,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
-import { Volume } from '../../files';
+import { Volume } from '../files';
 
 const convert = inject('convert')
 const formRef = ref(null);
@@ -54,8 +54,8 @@ const convertHandler = (e) => {
 </script>
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="数值" path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="请输入立方公里数值" />
+  <n-form-item label="数�? path="number">
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="请输入立方公里数�? />
   </n-form-item>
   <n-form-item>
     <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
@@ -68,13 +68,13 @@ const convertHandler = (e) => {
 </n-card>
 
 ## 换算公式
-1 立方公里(km³) = 1,000,000,000 立方米(m³)
+1 立方公里(km³) = 1,000,000,000 立方�?m³)
 
 ### 换算原理
-立方公里(km³)和立方米(m³)都是体积单位，1立方公里等于10亿立方米。
+立方公里(km³)和立方米(m³)都是体积单位�?立方公里等于10亿立方米�?
 
-## 常见换算值
-| 立方公里(km³) | 立方米(m³) | 实物参考                 |
+## 常见换算�?
+| 立方公里(km³) | 立方�?m³) | 实物参�?                |
 |-------------|-----------|--------------------------|
 | 1           | 1,000,000,000 | 大型海洋水体体积          |
 | 0.5         | 500,000,000 | 中型海洋水体体积          |
@@ -94,25 +94,25 @@ const convertHandler = (e) => {
 - 星际云团物质总量
 
 ### 超大规模工程
-- 全球水资源统计
-- 跨大陆调水工程
-- 超大型水库设计
+- 全球水资源统�?
+- 跨大陆调水工�?
+- 超大型水库设�?
 
-## 单位换算技巧
-1. **快速心算法**：
-   - 立方公里转立方米 → 数值乘以1,000,000,000
-   - 立方米转立方公里 → 数值除以1,000,000,000
+## 单位换算技�?
+1. **快速心算法**�?
+   - 立方公里转立方米 �?数值乘�?,000,000,000
+   - 立方米转立方公里 �?数值除�?,000,000,000
 
-2. **科学记数法**：
-   - 1 km³ = 1×10⁹ m³
+2. **科学记数�?*�?
+   - 1 km³ = 1×10�?m³
    - 1 m³ = 1×10⁻⁹ km³
 
-3. **记忆口诀**：
+3. **记忆口诀**�?
    "立方公里转立方米，十亿倍要记清"
 
 ## 注意事项
-- 超大规模测量需使用卫星遥感技术
-- 地球曲率影响大范围体积计算
+- 超大规模测量需使用卫星遥感技�?
+- 地球曲率影响大范围体积计�?
 - 精确测量需考虑地形变化
 
 ## 相关连接

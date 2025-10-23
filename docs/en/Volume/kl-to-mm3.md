@@ -8,25 +8,25 @@ breadcrumb:
   - - link: /Volume/index
       linkText: 体积单位换算
   - - link: /Volume/kl-to-mm3
-      linkText: 千升到立方毫米换算
+      linkText: 千升到立方毫米换�?
 head:
   - - meta
     - charset: utf-8
   - - meta
     - name: description
-      content: 千升(kl)与立方毫米(mm³)单位换算工具，1千升等于1,000,000,000立方毫米。
+      content: 千升(kl)与立方毫�?mm³)单位换算工具�?千升等于1,000,000,000立方毫米�?
   - - meta
     - name: keywords
       content: 千升,立方毫米,单位换算,kl,mm3
 ---
 
-# 千升(kl) 到 立方毫米(mm³) 换算
+# 千升(kl) �?立方毫米(mm³) 换算
 
 <script setup>
 import { onMounted, reactive, inject ,ref  } from 'vue'
 import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage ,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
-import { Volume } from '../../files';
+import { Volume } from '../files';
 
 const convert = inject('convert')
 const formRef = ref(null);
@@ -40,7 +40,7 @@ const rules = {
 const form = reactive({
   number:null,
   result:'',
-  title:'千升(kl)到立方毫米(mm³)换算'
+  title:'千升(kl)到立方毫�?mm³)换算'
 })
 
 const convertHandler = (e) => {
@@ -54,8 +54,8 @@ const convertHandler = (e) => {
 </script>
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="数值" path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="请输入千升数值" />
+  <n-form-item label="数�? path="number">
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="请输入千升数�? />
   </n-form-item>
   <n-form-item>
     <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
@@ -71,19 +71,19 @@ const convertHandler = (e) => {
 1 千升(kl) = 1,000,000,000 立方毫米(mm³)
 
 ### 换算原理
-千升(kl)和立方毫米(mm³)都是体积单位，1立方毫米等于0.000000001千升。
+千升(kl)和立方毫�?mm³)都是体积单位�?立方毫米等于0.000000001千升�?
 
-## 常见换算值
-| 千升(kl) | 立方毫米(mm³) | 实物参考                 |
+## 常见换算�?
+| 千升(kl) | 立方毫米(mm³) | 实物参�?                |
 |---------|--------------|--------------------------|
-| 1       | 1,000,000,000 | 标准油罐车容量            |
-| 0.5     | 500,000,000  | 中型储油罐容量            |
-| 0.1     | 100,000,000  | 小型储油罐容量            |
+| 1       | 1,000,000,000 | 标准油罐车容�?           |
+| 0.5     | 500,000,000  | 中型储油罐容�?           |
+| 0.1     | 100,000,000  | 小型储油罐容�?           |
 | 0.01    | 10,000,000   | 大型水桶容量              |
 | 0.001   | 1,000,000    | 标准水桶容量              |
 
 ## 应用场景
-### 工业制造
+### 工业制�?
 - 精密零件体积计算
 - 微型容器容量设计
 - 3D打印材料用量
@@ -96,23 +96,23 @@ const convertHandler = (e) => {
 ### 医疗领域
 - 药品剂量精确测量
 - 医疗器械容量校准
-- 实验室微量液体分配
+- 实验室微量液体分�?
 
-## 单位换算技巧
-1. **快速心算法**：
-   - 千升转立方毫米 → 数值乘以1,000,000,000
-   - 立方毫米转千升 → 数值除以1,000,000,000
+## 单位换算技�?
+1. **快速心算法**�?
+   - 千升转立方毫�?�?数值乘�?,000,000,000
+   - 立方毫米转千�?�?数值除�?,000,000,000
 
-2. **科学记数法**：
-   - 1 kl = 1×10⁹ mm³
+2. **科学记数�?*�?
+   - 1 kl = 1×10�?mm³
    - 1 mm³ = 1×10⁻⁹ kl
 
-3. **记忆口诀**：
-   "千升转立方毫米，十亿倍来记心里"
+3. **记忆口诀**�?
+   "千升转立方毫米，十亿倍来记心�?
 
 ## 注意事项
 - 微量测量需使用精密仪器
-- 温度变化对液体体积影响较大
+- 温度变化对液体体积影响较�?
 - 容器形状影响实际容量计算
 
 ## 相关连接

@@ -14,19 +14,19 @@ head:
     - charset: utf-8
   - - meta
     - name: description
-      content: 立方厘米(cm³)与升(l)单位换算工具，1立方厘米等于0.001升。
+      content: 立方厘米(cm³)与升(l)单位换算工具�?立方厘米等于0.001升�?
   - - meta
     - name: keywords
-      content: 立方厘米,升,单位换算,cm³,l
+      content: 立方厘米,�?单位换算,cm³,l
 ---
 
-# 立方厘米(cm³) 到 升(l) 换算
+# 立方厘米(cm³) �?�?l) 换算
 
 <script setup>
 import { onMounted, reactive, inject ,ref  } from 'vue'
 import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage ,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
-import { Volume } from '../../files';
+import { Volume } from '../files';
 
 const convert = inject('convert')
 const formRef = ref(null);
@@ -54,8 +54,8 @@ const convertHandler = (e) => {
 </script>
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="数值" path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="请输入立方厘米数值" />
+  <n-form-item label="数�? path="number">
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="请输入立方厘米数�? />
   </n-form-item>
   <n-form-item>
     <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
@@ -68,52 +68,52 @@ const convertHandler = (e) => {
 </n-card>
 
 ## 换算公式
-1 立方厘米(cm³) = 0.001 升(l)
+1 立方厘米(cm³) = 0.001 �?l)
 
 ### 换算原理
-立方厘米(cm³)和升(l)都是体积单位，1升等于1000立方厘米。
+立方厘米(cm³)和升(l)都是体积单位�?升等�?000立方厘米�?
 
-## 常见换算值
-| 立方厘米(cm³) | 升(l) | 实物参考                 |
+## 常见换算�?
+| 立方厘米(cm³) | �?l) | 实物参�?                |
 |--------------|-------|--------------------------|
-| 1000         | 1     | 1升瓶装水的体积           |
+| 1000         | 1     | 1升瓶装水的体�?          |
 | 500          | 0.5   | 标准矿泉水瓶体积          |
-| 250          | 0.25  | 小杯饮料的体积            |
+| 250          | 0.25  | 小杯饮料的体�?           |
 | 100          | 0.1   | 小药瓶的体积              |
 | 50           | 0.05  | 小酒杯的体积              |
 
 ## 应用场景
-### 实验室应用
+### 实验室应�?
 - 化学试剂配比
 - 标准溶液配制
 - 实验液体体积测量
 
 ### 医疗领域
 - 药物剂量测量
-- 输液量计算
+- 输液量计�?
 - 医疗液体体积测量
 
 ### 日常生活
 - 饮料容量测量
 - 烹饪调料计量
-- 化妆品用量计算
+- 化妆品用量计�?
 
-### 工业制造
+### 工业制�?
 - 小型容器容积测量
 - 液体产品容量计算
 - 包装容量规划
 
-## 单位换算技巧
-1. **快速心算法**：
-   - 立方厘米转升 → 数值除以1000
-   - 升转立方厘米 → 数值乘以1000
+## 单位换算技�?
+1. **快速心算法**�?
+   - 立方厘米转升 �?数值除�?000
+   - 升转立方厘米 �?数值乘�?000
 
-2. **科学记数法**：
-   - 1 cm³ = 1×10⁻³ l
+2. **科学记数�?*�?
+   - 1 cm³ = 1×10⁻�?l
    - 1 l = 1×10³ cm³
 
-3. **记忆口诀**：
-   "立方厘米转升算，除以一千很简单"
+3. **记忆口诀**�?
+   "立方厘米转升算，除以一千很简�?
 
 ## 注意事项
 - 测量时需使用标准量具

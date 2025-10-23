@@ -14,19 +14,19 @@ head:
     - charset: utf-8
   - - meta
     - name: description
-      content: 千升(kl)与立方米(m³)单位换算工具，1千升等于1立方米。
+      content: 千升(kl)与立方米(m³)单位换算工具�?千升等于1立方米�?
   - - meta
     - name: keywords
-      content: 千升,立方米,单位换算,kl,m3
+      content: 千升,立方�?单位换算,kl,m3
 ---
 
-# 千升(kl) 到 立方米(m³) 换算
+# 千升(kl) �?立方�?m³) 换算
 
 <script setup>
 import { onMounted, reactive, inject ,ref  } from 'vue'
 import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage ,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
-import { Volume } from '../../files';
+import { Volume } from '../files';
 
 const convert = inject('convert')
 const formRef = ref(null);
@@ -54,8 +54,8 @@ const convertHandler = (e) => {
 </script>
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="数值" path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="请输入千升数值" />
+  <n-form-item label="数�? path="number">
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="请输入千升数�? />
   </n-form-item>
   <n-form-item>
     <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
@@ -68,27 +68,27 @@ const convertHandler = (e) => {
 </n-card>
 
 ## 换算公式
-1 千升(kl) = 1 立方米(m³)
+1 千升(kl) = 1 立方�?m³)
 
 ### 换算原理
-千升(kl)和立方米(m³)是等价的体积单位，1千升等于1立方米。
+千升(kl)和立方米(m³)是等价的体积单位�?千升等于1立方米�?
 
-## 常见换算值
-| 千升(kl) | 立方米(m³) | 实物参考                 |
+## 常见换算�?
+| 千升(kl) | 立方�?m³) | 实物参�?                |
 |---------|-----------|--------------------------|
-| 1       | 1         | 标准浴缸的水量            |
+| 1       | 1         | 标准浴缸的水�?           |
 | 10      | 10        | 小型游泳池的水量          |
-| 100     | 100       | 中型鱼缸的水量            |
+| 100     | 100       | 中型鱼缸的水�?           |
 | 1,000   | 1,000     | 大型储水罐的容量          |
 | 10,000  | 10,000    | 小型游泳池的水量          |
 
 ## 应用场景
 ### 建筑工程
-- 混凝土用量计算
+- 混凝土用量计�?
 - 土方工程体积测量
 - 建筑材料体积估算
 
-### 工业制造
+### 工业制�?
 - 液体原料储存规划
 - 容器容量设计
 - 生产流程体积控制
@@ -96,20 +96,20 @@ const convertHandler = (e) => {
 ### 日常生活
 - 家居储水设备容量
 - 鱼缸水体计算
-- 游泳池水量估算
+- 游泳池水量估�?
 
-## 单位换算技巧
-1. **直接等价法**：
-   - 千升转立方米 → 数值不变
-   - 立方米转千升 → 数值不变
+## 单位换算技�?
+1. **直接等价�?*�?
+   - 千升转立方米 �?数值不�?
+   - 立方米转千升 �?数值不�?
 
-2. **记忆口诀**：
-   "千升立方等量换，数值不变最简便"
+2. **记忆口诀**�?
+   "千升立方等量换，数值不变最简�?
 
 ## 注意事项
 - 测量时注意温度对水密度的影响
 - 不规则容器需使用专业测量方法
-- 精确计算需考虑容器壁厚度
+- 精确计算需考虑容器壁厚�?
 
 ## 相关连接
 <n-grid x-gap="12" :cols="2">

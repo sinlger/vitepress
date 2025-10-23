@@ -14,19 +14,19 @@ head:
     - charset: utf-8
   - - meta
     - name: description
-      content: 立方毫米(mm³)与升(l)单位换算工具，1立方毫米等于0.000001升。
+      content: 立方毫米(mm³)与升(l)单位换算工具�?立方毫米等于0.000001升�?
   - - meta
     - name: keywords
-      content: 立方毫米,升,单位换算,mm³,l
+      content: 立方毫米,�?单位换算,mm³,l
 ---
 
-# 立方毫米(mm³) 到 升(l) 换算
+# 立方毫米(mm³) �?�?l) 换算
 
 <script setup>
 import { onMounted, reactive, inject ,ref  } from 'vue'
 import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage ,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
-import { Volume } from '../../files';
+import { Volume } from '../files';
 
 const convert = inject('convert')
 const formRef = ref(null);
@@ -54,8 +54,8 @@ const convertHandler = (e) => {
 </script>
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="数值" path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="请输入立方毫米数值" />
+  <n-form-item label="数�? path="number">
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="请输入立方毫米数�? />
   </n-form-item>
   <n-form-item>
     <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
@@ -68,24 +68,24 @@ const convertHandler = (e) => {
 </n-card>
 
 ## 换算公式
-1 立方毫米(mm³) = 0.000001 升(l)
+1 立方毫米(mm³) = 0.000001 �?l)
 
 ### 换算原理
-立方毫米(mm³)和升(l)都是体积单位，1升等于1000立方厘米(cm³)。换算基于长度单位关系：
+立方毫米(mm³)和升(l)都是体积单位�?升等�?000立方厘米(cm³)。换算基于长度单位关系：
 - 1 厘米(cm) = 10 毫米(mm)
-- 因此 1 升 = 1,000,000 立方毫米
+- 因此 1 �?= 1,000,000 立方毫米
 
-## 常见换算值
-| 立方毫米(mm³) | 升(l) | 实物参考                 |
+## 常见换算�?
+| 立方毫米(mm³) | �?l) | 实物参�?                |
 |--------------|-------|--------------------------|
-| 1000000      | 1     | 1升瓶装水的体积          |
+| 1000000      | 1     | 1升瓶装水的体�?         |
 | 500000       | 0.5   | 标准矿泉水瓶体积          |
-| 100000       | 0.1   | 小杯饮料的体积            |
-| 10000        | 0.01  | 汤匙液体的体积            |
-| 1000         | 0.001 | 1毫升液体的体积           |
+| 100000       | 0.1   | 小杯饮料的体�?           |
+| 10000        | 0.01  | 汤匙液体的体�?           |
+| 1000         | 0.001 | 1毫升液体的体�?          |
 
 ## 应用场景
-### 工业制造
+### 工业制�?
 - 大型容器容积计算
 - 液体原料用量测量
 - 储罐容量规划
@@ -93,29 +93,29 @@ const convertHandler = (e) => {
 ### 科学研究  
 - 实验室大容量液体测量
 - 化学反应容器容积计算
-- 工业级样品体积测定
+- 工业级样品体积测�?
 
 ### 医疗领域
-- 大容量输液计量
-- 医用储液罐容积测量
-- 消毒液用量计算
+- 大容量输液计�?
+- 医用储液罐容积测�?
+- 消毒液用量计�?
 
 ### 日常生活
-- 饮料瓶容量计算
-- 食用油用量测量
+- 饮料瓶容量计�?
+- 食用油用量测�?
 - 家用容器容积估算
 
-## 单位换算技巧
-1. **快速心算法**：
-   - 立方毫米转升 → 数值除以1,000,000
-   - 升转立方毫米 → 数值乘以1,000,000
+## 单位换算技�?
+1. **快速心算法**�?
+   - 立方毫米转升 �?数值除�?,000,000
+   - 升转立方毫米 �?数值乘�?,000,000
 
-2. **科学记数法**：
+2. **科学记数�?*�?
    - 1 mm³ = 1×10⁻⁶ l
-   - 1 l = 1×10⁶ mm³
+   - 1 l = 1×10�?mm³
 
-3. **记忆口诀**：
-   "立方毫米转升算，百万分之一要记牢"
+3. **记忆口诀**�?
+   "立方毫米转升算，百万分之一要记�?
 
 ## 注意事项
 - 测量大体积时需考虑液体膨胀系数

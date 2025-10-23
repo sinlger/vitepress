@@ -3,44 +3,44 @@ sidebar: false
 aside: false
 lastUpdated: false
 breadcrumb:
-  - - link: /en/
-      linkText: Home
+  - - link: /
+      linkText: 首页
 
-  - - link: /en/Angle/index
-      linkText: Angle Conversion
-  - - link: /en/Angle/deg-to-arcmin
-      linkText: Degrees (°) to Arcminutes (arcmin) Conversion
+  - - link: /Angle/index
+      linkText: 角度换算
+  - - link: /Angle/deg-to-arcmin
+      linkText: 度数 (°) �?角分 (arcmin) 换算
 head:
   - - meta
     - name: description
-      content: "Professional degrees (°) to arcminutes (arcmin) conversion tool, supporting angle unit conversion and degree-minute-second calculations. Suitable for astronomical observation, engineering surveying, GPS positioning and other scenarios, providing precise angle conversion formulas and practical guides."
+      content: "专业度数(°)到角�?arcmin)换算工具，支持角度单位转换、度分秒计算。适用于天文观测、工程测量、GPS定位等场景，提供精确的角度换算公式和实用指南�?
   - - meta
     - name: keywords
-      content: "angle conversion, degrees to arcminutes, angle unit conversion, degree minute second, angle calculator, radians to degrees, angle conversion, angle units, deg unit, angle symbols, angle calculation, angle English"
+      content: "角度换算,度数转角�?角度单位换算,度分�?角度计算�?弧度转角�?角度変換,角度単位,deg単位,角度符号,角度计算,角度英文"
 ---
-# Degrees (°) to Arcminutes (arcmin) Conversion
+# 度数 (°) �?角分 (arcmin) 的换�?
 
-Degrees to arcminutes conversion is a fundamental transformation in angle measurement, widely used in astronomical observation, engineering surveying, GPS positioning, and scientific computing. This tool provides precise degrees to arcminutes conversion, supporting angle unit conversion and degree-minute-second calculation needs.
+度数到角分换算是角度测量中的基础转换，广泛应用于天文观测、工程测量、GPS定位和科学计算等领域。本工具提供精确的度数到角分换算，支持角度单位转换和度分秒计算需求�?
 ---
 <script setup>
 import { onMounted, reactive, inject, ref } from 'vue'
 import { NButton, NForm, NFormItem, NInput, NInputNumber, NSelect, NCard, useMessage,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
-import { Angle } from '../../files';
+import { Angle } from '../files';
 const convert = inject('convert')
 const seoKey = [
-  'angle conversion', 'degree minute second', 'angle unit conversion', 'angle conversion DMS', 'arcsec and degrees',
-  'angle conversion', 'angle units', 'gradient angle', 'radian calculation', 'radians and degrees',
-  'degree units', 'angle DMS conversion', 'rad and ° conversion', 'angle units', 'arcminutes',
-  'angle English', 'angle conversion', 'deg unit', 'angle units', 'angle symbols',
-  'angle calculation', 'angle conversion', 'angle units', 'DMS calculator', 'angle conversion',
-  'degrees', 'angle English', 'degree minute second', 'angle calculator', 'radians to degrees',
-  'angle symbols', 'deg', 'degrees', 'rad'
+  '角度変換', '度分�?, '角度单位换算', '角度换算度分�?, '角秒和度',
+  '角度換算', '角度単位', '勾配角度', '弧度计算', '弧度和角�?,
+  '度的单位', '角度度分秒変�?, 'rad和°怎么换算', '角度的单�?, '角度�?,
+  '角度英文', '角度转换', 'deg単位', '角度単位', '角度的符�?,
+  '角度计算', '角度换算', '角度单位', '度分秒计算器', '角度変換',
+  '度数', '角度英文', '度分�?, '角度计算�?, '弧度转角�?,
+  '角度符号', 'deg', '�?, 'rad'
 ]
 const form = reactive({
   number: null,
   result: '',
-  title: 'Degrees to Arcminutes Converter'
+  title: '度数到角分换算器'
 })
 
 const convertHandler = () => {
@@ -48,18 +48,18 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) * 60
     form.result = `${form.number}° = ${convertedValue.toFixed(4)}arcmin`
   } else {
-    form.result = 'Please enter a valid number.'
+    form.result = '请输入有效的数值�?
   }
 }
 </script>
 
 <n-card :title="form.title" class="converter-card">
   <n-form size="large" :model="form">
-    <n-form-item label="Degrees (°)">
-      <n-input-number v-model:value="form.number" placeholder="Enter degrees" style="width: 100%" />
+    <n-form-item label="度数 (°)">
+      <n-input-number v-model:value="form.number" placeholder="输入度数" style="width: 100%" />
     </n-form-item>
     <n-form-item>
-      <n-button type="info" @click="convertHandler" block>Convert</n-button>
+      <n-button type="info" @click="convertHandler" block>换算</n-button>
     </n-form-item>
   </n-form>
 
@@ -78,116 +78,116 @@ const convertHandler = () => {
   </template>
 </n-card>
 
-## Conversion Formula
+## 换算公式
 
-The conversion formula from degrees to arcminutes is:
+度数到角分的换算公式为：
 
-**Arcminutes = Degrees × 60**
+**角分 = 度数 × 60**
 
-Precise conversion coefficients:
-- 1 degree = 60 arcminutes (arcmin)
-- 1 arcminute = 1/60 degree = 0.0166666667 degrees
+精确换算系数�?
+- 1�?= 60角分 (arcmin)
+- 1角分 = 1/60 �?= 0.0166666667�?
 
-Because:
-- 1 degree = 60 arcminutes (arcmin)
-- 1 arcminute = 60 arcseconds (arcsec)
-- Therefore 1 degree = 3600 arcseconds
+因为�?
+- 1�?= 60角分 (arcmin)
+- 1角分 = 60角秒 (arcsec)
+- 所�?1�?= 3600角秒
 
-## Practical Application Examples
+## 实际应用示例
 
-### Common Degree Value Conversions
-- 0.1 degrees = 6 arcminutes
-- 0.5 degrees = 30 arcminutes
-- 1 degree = 60 arcminutes
-- 1.5 degrees = 90 arcminutes
-- 2 degrees = 120 arcminutes
-- 5 degrees = 300 arcminutes
-- 10 degrees = 600 arcminutes
-- 30 degrees = 1800 arcminutes
-- 45 degrees = 2700 arcminutes
-- 90 degrees = 5400 arcminutes
+### 常见度数值换�?
+- 0.1�?= 6角分
+- 0.5�?= 30角分
+- 1�?= 60角分
+- 1.5�?= 90角分
+- 2�?= 120角分
+- 5�?= 300角分
+- 10�?= 600角分
+- 30�?= 1800角分
+- 45�?= 2700角分
+- 90�?= 5400角分
 
-### Typical Values in Astronomical Observation
-- Moon's apparent diameter: approximately 30 arcminutes (0.5 degrees)
-- Sun's apparent diameter: approximately 32 arcminutes (0.53 degrees)
-- Venus maximum apparent diameter: approximately 1 arcminute (0.017 degrees)
-- Jupiter's apparent diameter: approximately 0.7 arcminutes (0.011 degrees)
-- Hubble Space Telescope field of view: approximately 2.5 arcminutes (0.042 degrees)
+### 天文观测中的典型�?
+- 月球视直径：�?0角分 (0.5�?
+- 太阳视直径：�?2角分 (0.53�?
+- 金星最大视直径：约1角分 (0.017�?
+- 木星视直径：�?.7角分 (0.011�?
+- 哈勃太空望远镜视场：�?.5角分 (0.042�?
 
-## Practical Application Scenarios
+## 实际应用场景
 
-### Astronomical Observation
-- **Telescope Field of View**: Calculate the size of sky area that a telescope can observe
-- **Astrometry**: Precisely record the position coordinates of stars and planets
-- **Star Chart Creation**: Annotation of celestial body positions in astronomical charts
-- **Observation Planning**: Determine the position range of observation targets in the sky
+### 天文观测
+- **望远镜视�?*：计算望远镜能观测的天空区域大小
+- **天体测量**：精确记录恒星、行星的位置坐标
+- **星图制作**：天文图表中天体位置的标�?
+- **观测规划**：确定观测目标在天空中的位置范围
 
-### Engineering Surveying
-- **Building Surveying**: Angle measurement and construction layout of buildings
-- **Topographic Surveying**: Angle annotation in topographic map creation
-- **Road Design**: Calculation of road turning angles and gradients
-- **Bridge Engineering**: Bridge angle design and construction control
+### 工程测量
+- **建筑测量**：建筑物角度测量和施工放�?
+- **地形测量**：地形图制作中的角度标注
+- **道路设计**：道路转弯角度和坡度计算
+- **桥梁工程**：桥梁角度设计和施工控制
 
-### GPS Positioning
-- **Coordinate Conversion**: Angle conversion in geographic coordinate systems
-- **Navigation Accuracy**: Angle representation of GPS device display accuracy
-- **Survey Datum**: Angle datum conversion in geodetic surveying
-- **Position Calculation**: Precision representation of latitude and longitude coordinates
+### GPS定位
+- **坐标转换**：地理坐标系统中的角度换�?
+- **导航精度**：GPS设备显示精度的角度表�?
+- **测量基准**：大地测量中的角度基准转�?
+- **位置计算**：经纬度坐标的精度表�?
 
-### Scientific Computing
-- **Physics Experiments**: Unit conversion in angle measurement experiments
-- **Mathematical Modeling**: Angle calculation in geometric models
-- **Engineering Simulation**: Angle settings in CAD software
-- **Mechanical Design**: Representation of mechanical component angle specifications
+### 科学计算
+- **物理实验**：角度测量实验中的单位转�?
+- **数学建模**：几何模型中的角度计�?
+- **工程仿真**：CAD软件中的角度设置
+- **机械设计**：机械零件角度规格的表示
 
-## Degrees to Arcminutes Conversion Guide
+## 度数到角分换算指�?
 
-Angle measurement is one of the fundamental concepts in mathematics and engineering, especially widely used in geometry, physics, and computer graphics. This article will introduce how to convert degrees (°) to arcminutes (arcmin) and provide some practical examples.
+角度测量是数学和工程领域中的基础概念之一，尤其在几何学、物理学以及计算机图形学中应用广泛。本文将介绍如何将度�?(°) 换算为角�?(arcmin)，并提供一些实用示例�?
 
-### Why Do We Need ° to arcmin Conversion?
+### 为什么需�?° �?arcmin 的换算？
 
-Degrees and arcminutes are two commonly used angle units. Among them, arcminutes are more commonly used in navigation and astronomical calculations because they provide finer angle divisions. Through precise conversion, we can ensure the consistency and accuracy of calculations.
+度数和角分是两种常用的角度单位。其中，角分在导航和天文学计算中更为常用，因为其提供了更精细的角度划分。通过精确的换算，可以确保计算的一致性和准确性�?
 
-## Frequently Asked Questions (FAQ)
+## 常见问题解答 (FAQ)
 
-### Q1: Which is more precise, degrees or arcminutes?
-A: Arcminutes are smaller angle units that provide finer angle divisions than degrees. 1 degree equals 60 arcminutes, so arcminutes are more suitable when high-precision measurements are needed, especially in astronomical observation and precision measurement.
+### Q1: 度数和角分哪个更精确�?
+A: 角分是更小的角度单位，提供了比度数更精细的角度划分�?度等�?0角分，因此角分在需要高精度测量时更合适，特别是在天文观测和精密测量中�?
 
-### Q2: Why does 1 degree equal 60 arcminutes?
-A: This is due to the sexagesimal system of angles, originating from ancient Babylonian mathematical traditions. 1 degree is divided into 60 arcminutes, and 1 arcminute is further divided into 60 arcseconds. This system continues to be used in astronomy and navigation today.
+### Q2: 为什�?度等�?0角分�?
+A: 这是因为角度的六十进制系统，源于古巴比伦的数学传统�?度被分为60角分�?角分又被分为60角秒，这种系统在天文学和导航中沿用至今�?
 
-### Q3: In what situations do we need to use arcminutes?
-A: Mainly in the following scenarios:
-- Astronomical observation: Measuring celestial body positions and sizes
-- Navigation systems: Precise representation of GPS coordinates
-- Engineering surveying: Building and topographic surveying
-- Optical instruments: Precision calibration of telescopes and measuring equipment
+### Q3: 在什么情况下需要使用角分？
+A: 主要在以下场景：
+- 天文观测：测量天体位置和大小
+- 导航系统：GPS坐标的精确表�?
+- 工程测量：建筑和地形测量
+- 光学仪器：望远镜和测量设备的精度标定
 
-### Q4: How to quickly estimate degrees to arcminutes conversion?
-A: Remember the basic conversions:
-- 1 degree = 60 arcminutes
-- 0.5 degrees = 30 arcminutes
-- 0.1 degrees = 6 arcminutes
-- For any degree value, simply multiply by 60
+### Q4: 如何快速估算度数到角分的换算？
+A: 记住基本换算�?
+- 1�?= 60角分
+- 0.5�?= 30角分
+- 0.1�?= 6角分
+- 对于任意度数，直接乘�?0即可
 
-### Q5: What are the differences in arcminute applications across different fields?
-A: Application characteristics in different fields:
-- **Astronomy**: Used to measure celestial body apparent diameter and position accuracy
-- **Navigation**: GPS coordinate accuracy typically reaches arcminute level
-- **Engineering**: Angle tolerances in building surveying and mechanical processing
-- **Optics**: Representation of telescope resolution and field of view size
+### Q5: 角分在不同领域的应用有何区别�?
+A: 不同领域的应用特点：
+- **天文�?*：用于测量天体视直径和位置精�?
+- **导航**：GPS坐标精度通常达到角分级别
+- **工程**：建筑测量和机械加工中的角度公差
+- **光学**：望远镜分辨率和视场大小的表�?
 
-### Q6: What's the difference between degree-minute-second system and decimal degrees?
-A: Main differences:
-- **Degree-minute-second system**: Uses base-60, more suitable for precision measurement
-- **Decimal degrees**: Uses base-10, more convenient for calculations
-- **Application scenarios**: DMS is mostly used in professional measurement, decimal is mostly used in engineering calculations
+### Q6: 度分秒系统与十进制度数有什么区别？
+A: 主要区别�?
+- **度分秒系�?*：采�?0进制，更适合精密测量
+- **十进制度�?*：采�?0进制，计算更简�?
+- **应用场合**：度分秒多用于专业测量，十进制多用于工程计算
 
-### Summary
+### 总结
 
-Mastering the conversion from degrees to arcminutes is not only a basic mathematical skill, but also an indispensable tool in professional fields such as astronomical observation, engineering surveying, and GPS positioning. By understanding the conversion principles and practical application scenarios, you can better use these angle units for precise calculations and measurements. We hope this guide provides valuable reference for you.
+掌握度数到角分的换算不仅是基础的数学技能，更是在天文观测、工程测量、GPS定位等专业领域中不可或缺的工具。通过理解换算原理和实际应用场景，可以更好地运用这些角度单位进行精确计算和测量。希望本指南能为您提供有价值的参考�?
 
-## Related Links
+## 相关连接
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Angle" :key="index">
     <n-button
