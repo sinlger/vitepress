@@ -1,168 +1,153 @@
 ---
-sidebar: false
-aside: false
-lastUpdated: false
+outline: deep
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Length/index
-      linkText: 长度换算
+      linkText: Length Conversion
   - - link: /Length/Nanometer-to-Yard
-      linkText: 纳米到码
+      linkText: Nanometer to Yard
 head:
   - - meta
     - name: description
-      content: "专业的纳米(nm)到码(yd)长度单位换算工具和指南。提供精确的换算公式、实际应用场景和常见问题解答。适用于航天工程、精密制造、体育运动、建筑工程等领域的精密测量和单位转换需求。"
+      content: "Professional nanometer (nm) to yard (yd) length unit conversion tool and guide. Provides precise conversion formulas, practical application scenarios, and frequently asked questions, suitable for nanotechnology research, semiconductor manufacturing, precision engineering, scientific measurement, and other fields requiring ultra-precise length measurement."
   - - meta
     - name: keywords
-      content: "纳米到码换算,nm到yd转换,长度单位换算,纳米码计算器,航天工程,精密制造,体育运动,建筑工程,精密测量,单位转换器,纳米码对照表,长度换算公式,微观尺度,宏观距离,码单位,长度计算,单位换算表,纳米码转换表,英制单位,国际单位"
+      content: "nanometer to yard conversion,nm to yd conversion,length unit conversion,yard converter,nanotechnology research,semiconductor manufacturing,precision engineering,scientific measurement,ultra-precise length measurement,metric to imperial conversion,length converter,unit conversion table,nanoscale measurement,microscopic measurement,precision measurement,scientific conversion,engineering measurement,nanotechnology measurement,semiconductor measurement,precision tools"
 ---
-# 纳米 (nm) 到 码 (yd) 的换算
+# Nanometer (nm) to Yard (yd) Conversion
 
-纳米到码的换算是现代航天工程、精密制造、体育运动和建筑工程领域中的重要技术技能。纳米(nm)作为微观世界的精密计量单位，广泛应用于纳米技术、精密工程和材料科学；而码(yd)则是英制计量体系中的重要长度单位，在体育运动、建筑工程和国际贸易中发挥重要作用。掌握纳米到码的精确换算方法，对于从事航天工程设计、精密制造、体育科学研究和建筑工程的专业人员具有重要的实践价值和国际交流意义。
+The conversion from nanometers to yards bridges the gap between nanoscale precision and macroscopic measurement. The nanometer, as the fundamental unit in nanotechnology and precision engineering, is widely used in semiconductor manufacturing, materials science, precision optics, and scientific research; while the yard is an important unit in the imperial length system, playing a key role in construction engineering, textile industry, and sports measurement. Mastering precise nanometer to yard conversion methods is of great practical value for scientists, engineers, and measurement professionals working across different scales.
 
----
 <script setup>
-import { onMounted, reactive, inject, ref } from 'vue'
-import { NButton, NForm, NFormItem, NInput, NInputNumber, NSelect, NCard, useMessage,NGrid ,NGi } from 'naive-ui'
-import { defineClientComponent } from 'vitepress'
-import { Length } from '../files';
-const seoKey = ['单位转换器','单位换算','长度单位转换器','长度单位转换','尺寸换算','长度单位换算','长度单位换算表','纳米码','纳米和码','纳米单位','一纳米等于多少码','纳米到码换算','nm yd','纳米和码的换算单位','纳米码转换','yd是什么单位','纳米和码','纳米换算','nm','码单位','长度换算公式','纳米转码','码换算','纳米计算器','码计算器','长度单位','纳米到码公式','码转换器','纳米码对照表','长度转换','单位换算表','纳米码换算器','码长度','纳米长度','长度计算','单位转换公式','纳米码计算','长度换算器','码单位换算','纳米单位换算','长度单位转换表','纳米码转换表']
+import { ref, reactive, inject } from 'vue'
+import { NForm, NFormItem, NInputNumber, NButton, NCard, NGrid, NGi } from 'naive-ui'
+
+const Length = inject('Length')
 const convert = inject('convert')
+
+const seoKey = ['unit converter','unit conversion','length unit converter','length unit conversion','size conversion','length unit conversion','length unit conversion table','nanometer to yard','yard conversion','yard','nanometer conversion','nm conversion','yd conversion','yard unit','nanotechnology research','semiconductor manufacturing','precision engineering','scientific measurement','ultra-precise length measurement','metric to imperial conversion','length converter','nanometer yard conversion','yard nanometer conversion','nanoscale measurement','microscopic measurement','precision measurement','scientific conversion','engineering measurement','nanotechnology measurement','semiconductor measurement','precision tools','scientific tools','measurement conversion','metric imperial conversion']
 
 const form = reactive({
   number: null,
   result: '',
-  title: '纳米 (nm) 到 码 (yd) 的换算'
+  title: 'Nanometer (nm) to Yard (yd) Length Unit Converter'
 })
 
 const convertHandler = () => {
-  if (form.number !== null && !isNaN(form.number)) {
-    const convertedValue = parseFloat(form.number) * 0.0000000010936
-    form.result = `${form.number}nm = ${convertedValue.toFixed(12)}yd`
+  if (form.number !== null && form.number !== '') {
+    const convertedValue = convert(form.number, 'nm', 'yd')
+    form.result = `${form.number}nm = ${convertedValue.toFixed(15)}yd`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
+<n-card :title="form.title" size="large">
 <n-form size="large" :model="form">
-  <n-form-item label="纳米 (nm)">
-    <n-input-number v-model:value="form.number" placeholder="输入纳米" style="width: 100%" />
+  <n-form-item label="Nanometer (nm)">
+    <n-input-number v-model:value="form.number" placeholder="Enter nanometers" style="width: 100%" />
   </n-form-item>
-  <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
-  </n-form-item>
+  
+  <n-button type="info" @click="convertHandler" block>Convert</n-button>
 </n-form>
 
-<n-card  
-  :title="form.title"
-  :segmented="{
-    content: true,
-    footer: 'soft',
-  }"
->
-  <div  style="text-align:center;font-size:20px;">
-    <strong>{{form.result}}</strong>
+<n-card style="margin-top: 20px;">
+  <div style="font-size: 18px; font-weight: bold; color: #2080f0;">
+    {{ form.result }}
   </div>
-    <template #footer>
-    <div>
-      <span v-for="item of seoKey">{{item}}，</span>
-    </div>
-  </template>
+</n-card>
 </n-card>
 
-## 实际应用场景
+## Practical Application Scenarios
 
-纳米到码的换算在多个重要领域具有广泛的应用价值，连接了微观精密技术与宏观工程应用：
+Nanometer (nm) and yard (yd) represent vastly different scales in length measurement, playing crucial roles in the following professional scenarios:
 
-### 航天工程与空间技术
-在现代航天工程中，航天器表面的纳米涂层技术用于防护和性能优化，而航天器的轨道参数、发射距离等则以码为单位进行国际交流。这种跨尺度的测量对于航天工程的精密设计和国际合作至关重要。
+### Nanotechnology Research and Development
+- **Nanomaterial Characterization**: Nanoparticle sizes are measured in nanometers, while laboratory equipment dimensions are expressed in yards
+- **Precision Manufacturing**: Semiconductor feature sizes are specified in nanometers, while cleanroom facilities are measured in yards
+- **Scientific Instrumentation**: Measurement precision is defined in nanometers, while instrument housing dimensions are calculated in yards
 
-### 精密制造与工业工程
-在高精度制造业中，零件的表面粗糙度、涂层厚度等关键参数以纳米为单位控制，而生产线布局、厂房规划等则使用码进行设计。准确的单位换算确保了从微观精度到宏观布局的统一管理。
+### Semiconductor Manufacturing and Electronics
+- **Chip Design**: Transistor gate lengths are measured in nanometers, while wafer fabrication equipment is sized in yards
+- **Quality Control**: Defect detection operates at nanometer scale, while production line layout is planned in yards
+- **Process Engineering**: Critical dimensions are controlled in nanometers, while facility planning uses yard measurements
 
-### 体育运动与竞技科学
-在现代体育科学中，运动装备的纳米材料技术用于提升性能，而比赛场地、训练距离等则以码为标准。这种换算帮助建立材料科技与运动表现的关联。
+### Precision Engineering and Metrology
+- **Surface Analysis**: Surface roughness is measured in nanometers, while measurement equipment dimensions are expressed in yards
+- **Optical Systems**: Wavelength precision is specified in nanometers, while optical bench setups are measured in yards
+- **Calibration Standards**: Reference standards operate at nanometer precision, while calibration facilities are sized in yards
 
-### 建筑工程与土木建设
-在建筑工程中，建筑材料的纳米改性技术用于提升性能，而建筑尺寸、施工距离等在国际项目中常以码为单位。准确换算确保了材料技术与工程设计的有效结合。
+### Scientific Research and Laboratory Applications
+- **Materials Science**: Atomic-scale measurements use nanometers, while laboratory space is measured in yards
+- **Biotechnology**: Molecular dimensions are expressed in nanometers, while laboratory equipment is sized in yards
+- **Physics Research**: Quantum phenomena occur at nanometer scales, while experimental setups span yards
 
-### 国际贸易与标准制定
-在国际贸易中，产品的纳米技术参数需要与英制单位体系进行换算，确保技术规格的准确理解和国际标准的统一执行。
+### Nanometer to Yard Conversion Reference Table
 
-### 科学研究与教育培训
-在科学教育中，通过纳米到码的换算帮助学生理解从微观世界到宏观尺度的巨大差异，增强科学认知和国际单位体系的理解。
+| Nanometer (nm) | Yard (yd) | Application Scenario |
+|----------------|-----------|---------------------|
+| 1 nm | 1.094×10⁻⁹ yd | Atomic scale measurement |
+| 10 nm | 1.094×10⁻⁸ yd | Molecular scale measurement |
+| 100 nm | 1.094×10⁻⁷ yd | Nanoparticle measurement |
+| 1,000 nm | 1.094×10⁻⁶ yd | Submicron measurement |
+| 10,000 nm | 1.094×10⁻⁵ yd | Microscale measurement |
+| 100,000 nm | 1.094×10⁻⁴ yd | Precision engineering |
+| 1,000,000 nm | 1.094×10⁻³ yd | Millimeter scale conversion |
+| 10,000,000 nm | 1.094×10⁻² yd | Centimeter scale conversion |
 
-### 纳米码换算对照表
+## Formula
 
-| 纳米 (nm) | 码 (yd) | 典型应用 |
-|-----------|---------|----------|
-| 1 nm | 1.09×10⁻⁹ yd | 原子间距、分子尺寸 |
-| 100 nm | 1.09×10⁻⁷ yd | 纳米材料、病毒尺寸 |
-| 1,000 nm | 1.09×10⁻⁶ yd | 细菌尺寸、微米技术 |
-| 10,000 nm | 1.09×10⁻⁵ yd | 细胞尺寸、精密加工 |
-| 100,000 nm | 1.09×10⁻⁴ yd | 毛发直径、精密制造 |
-| 1,000,000 nm | 1.09×10⁻³ yd | 毫米级制造 |
-| 1,000,000,000 nm | 1.09 yd | 米级工程、体育场地 |
+### Nanometer to Yard Conversion Formula
+The precise formula for converting from **Nanometer (nm)** to **Yard (yd)** is:
+$$ yd = nm \times 1.0936132983377 \times 10^{-9} $$
 
-## 公式
-
-### 纳米到码转换公式
-从 **纳米 (nm)** 换算到 **码 (yd)** 的精确公式为：
-$$ yd = nm \times 1.0936 \times 10^{-9} $$
-
-简化公式：
-$$ yd = nm \times 0.0000000010936 $$
-
-### 码到纳米转换公式
-从 **码 (yd)** 换算到 **纳米 (nm)** 的精确公式为：
+### Yard to Nanometer Conversion Formula
+The precise formula for converting from **Yard (yd)** to **Nanometer (nm)** is:
 $$ nm = yd \times 9.144 \times 10^{8} $$
 
-简化公式：
-$$ nm = yd \times 914400000 $$
+### Length Unit Conversion Reference Table
 
-### 长度单位换算对照表
+| Nanometer (nm) | Yard (yd) | Meter (m) | Millimeter (mm) | Application Scenario |
+|----------------|-----------|-----------|-----------------|---------------------|
+| 1 nm | 1.094×10⁻⁹ yd | 1×10⁻⁹ m | 1×10⁻⁶ mm | Atomic scale measurement |
+| 10 nm | 1.094×10⁻⁸ yd | 1×10⁻⁸ m | 1×10⁻⁵ mm | Molecular scale measurement |
+| 100 nm | 1.094×10⁻⁷ yd | 1×10⁻⁷ m | 1×10⁻⁴ mm | Nanoparticle measurement |
+| 1,000 nm | 1.094×10⁻⁶ yd | 1×10⁻⁶ m | 1×10⁻³ mm | Submicron measurement |
+| 10,000 nm | 1.094×10⁻⁵ yd | 1×10⁻⁵ m | 1×10⁻² mm | Microscale measurement |
+| 100,000 nm | 1.094×10⁻⁴ yd | 1×10⁻⁴ m | 1×10⁻¹ mm | Precision engineering |
+| 1,000,000 nm | 1.094×10⁻³ yd | 1×10⁻³ m | 1 mm | Millimeter scale conversion |
+| 10,000,000 nm | 1.094×10⁻² yd | 1×10⁻² m | 10 mm | Centimeter scale conversion |
 
-| 纳米 (nm) | 码 (yd) | 应用场景 |
-|-----------|---------|----------|
-| 1 nm | 1.09×10⁻⁹ yd | 原子级精密测量 |
-| 100 nm | 1.09×10⁻⁷ yd | 纳米材料制备 |
-| 1,000 nm | 1.09×10⁻⁶ yd | 微米级加工 |
-| 10,000 nm | 1.09×10⁻⁵ yd | 细胞尺寸测量 |
-| 100,000 nm | 1.09×10⁻⁴ yd | 精密制造 |
-| 1,000,000 nm | 1.09×10⁻³ yd | 毫米级工程 |
-| 1,000,000,000 nm | 1.09 yd | 米级体育场地 |
-| 10,000,000,000 nm | 10.9 yd | 建筑工程 |
+### Conversion Examples
+- **Nanotechnology Research Application**: 1nm = 1.094×10⁻⁹yd
+- **Semiconductor Manufacturing Application**: 100nm = 1.094×10⁻⁷yd
+- **Precision Engineering Application**: 1,000nm = 1.094×10⁻⁶yd
+- **Scientific Measurement Application**: 10,000nm = 1.094×10⁻⁵yd
+- **Materials Science Application**: 100,000nm = 1.094×10⁻⁴yd
 
-### 转换示例
-- **航天工程应用**：1,000,000,000nm = 1.093600000000yd
-- **精密制造应用**：500,000,000nm = 0.546800000000yd
-- **纳米技术应用**：1,000nm = 1.09×10⁻⁶yd
-- **材料科学应用**：100nm = 1.09×10⁻⁷yd
-- **体育科学应用**：10nm = 1.09×10⁻⁸yd
+## Frequently Asked Questions (FAQ)
 
-## 常见问题 (FAQ)
+### 1. What is the practical significance of nanometer to yard conversion?
+The nanometer to yard conversion bridges the gap between nanoscale precision and macroscopic measurement. It has important practical value in nanotechnology research, semiconductor manufacturing, and precision engineering, especially in professional settings that require measurements across vastly different scales.
 
-### 1. 纳米和码换算的实际意义是什么？
-纳米到码的换算跨越了约9个数量级，连接了微观纳米技术与宏观英制测量体系。在国际工程项目、体育科学和精密制造中具有重要的实践价值，特别是在需要与英制单位体系进行技术交流的场合。
+### 2. How is this conversion applied in semiconductor manufacturing?
+In semiconductor manufacturing, chip feature sizes and critical dimensions are measured in nanometers, while fabrication equipment, cleanroom facilities, and production line layouts are measured in yards. Through accurate conversion, engineers can relate nanoscale precision to macroscopic facility planning and equipment design.
 
-### 2. 在航天工程中如何应用这种换算？
-在航天工程中，航天器的纳米涂层技术与轨道参数、发射距离等宏观参数需要统一的计量体系。通过准确换算，工程师能够在国际合作中实现技术参数的精确传达和理解。
+### 3. How to ensure the precision of nanometer to yard conversion?
+Use the standard conversion ratio (1 nanometer = 1.0936×10⁻⁹ yards), employ high-precision calculation tools with sufficient decimal places, and select appropriate precision levels according to specific scientific or engineering requirements to ensure conversion results meet research and manufacturing standards.
 
-### 3. 如何确保纳米到码换算的精度？
-使用科学计数法表示（1 yd = 9.144×10⁸ nm），采用高精度计算工具，并根据应用场景选择合适的有效数字位数，确保换算结果的准确性和实用性。
+### 4. What value does this conversion have in nanotechnology research?
+In nanotechnology research, material properties and phenomena are studied at the nanometer scale, while laboratory equipment, experimental setups, and facility planning operate at the yard scale. This conversion helps researchers relate nanoscale discoveries to practical implementation and equipment design.
 
-### 4. 在体育科学中这种换算有什么价值？
-在现代体育科学中，运动装备的纳米材料技术与比赛场地的码制标准需要精确对应。这种换算帮助建立材料科技进步与运动表现提升的量化关系。
+### 5. How is nanometer to yard conversion applied in precision engineering?
+In precision engineering, surface finish, tolerance specifications, and measurement precision are often expressed in nanometers, while machine dimensions, workspace layout, and facility planning use yard measurements. This conversion ensures accurate specification and quality control across different measurement scales.
 
-### 5. 国际贸易中如何应用纳米到码换算？
-在国际贸易中，产品的纳米技术规格需要与英制单位体系进行准确换算，确保技术标准的国际理解一致性，促进高技术产品的全球化贸易。
+### 6. How to apply this conversion in practical work?
+In nanotechnology and precision engineering work, use standard conversion formulas and high-precision calculation tools, establish complete measurement standards across scales, and ensure accurate conversion and quality control from nanoscale research to macroscopic implementation.
 
-### 6. 如何在实际工作中应用这种换算？
-在工程设计、科研合作和国际项目中，使用标准换算公式和专业计算工具，建立完整的跨单位体系测量标准，确保从纳米级精密技术到码制工程应用的准确转换。
-
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Length" :key="index">
     <n-button

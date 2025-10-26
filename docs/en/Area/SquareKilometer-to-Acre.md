@@ -4,19 +4,19 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
 
   - - link: /Area/SquareKilometer-to-Acre
-      linkText: 平方千米到英亩
+      linkText: Square Kilometer to Acre
 head:
   - - meta
     - name: description
-      content: "面积单位换算指南，涵盖平方千米 (km²) 到英亩 (ac) 的详细换算公式与说明。"
+      content: "Area unit conversion guide covering detailed conversion formulas and explanations from square kilometers (km²) to acres."
   - - meta
     - name: keywords
-      content: "面积, 单位换算, 平方千米, 英亩, km², ac, 平方千米到英亩, 面积换算指南, 平方米转平方千米, 公顷 平方千米, 平方千米和平方米的换算, 一平方公里, 平方米和平方公里换算, 平方米单位, 平方米和平方公里, 平方公里符号, 平方米和平方千米换算, 平方千米符号, 平方米换算平方公里, 平方公里和平方米, 平方千米和平方公里, 公顷换算平方米, 一平方千米等于多少平方米, 平方千米和平方米, 一公顷是多少平方米, 一平方公里等于多少平方米, 平方公里和平方千米, 平方公里, 平方米和平方千米"
+      content: "area, unit conversion, square kilometers, acres, km², square kilometers to acres, area conversion guide, square kilometers to acre conversion, km² to acre conversion, square kilometers to acres, kilometer square to acres, square kilometers acres converter, km² to acres, square kilometers convert acres, kilometer square to acres, square kilometers to acres conversion, km² acres conversion, square kilometers acres calculation, kilometer square acres conversion, square kilometers convert acres, km² to acres, square kilometers acres converter, kilometer square to acres conversion, square kilometers acres conversion formula, km² convert acres, square kilometers to acres calculation, kilometer square convert acres, square kilometers acres conversion table, km² acres conversion, square kilometers to acres calculation, kilometer square acres conversion, square kilometers to acres conversion tool, km² to acres conversion, square kilometers acres unit conversion, area conversion"
 ---
-# 平方千米 (km²) 到 英亩 (ac) 的换算
+# Square Kilometers (km²) to Acres Conversion
 ---
 <script setup>
 import { onMounted, reactive, inject, ref } from 'vue'
@@ -24,53 +24,60 @@ import { NButton, NForm, NFormItem, NInput, NInputNumber, NSelect, NCard, useMes
 import { defineClientComponent } from 'vitepress'
 import { Area } from '../files';
 const seoKey = [
-  '平方米转平方千米',
-  '公顷 平方千米',
-  '平方千米和平方米的换算',
-  '一平方公里',
-  '平方米和平方公里换算',
-  '平方米单位',
-  '平方米和平方公里',
-  '平方公里符号',
-  '平方米和平方千米换算',
-  '平方千米符号',
-  '平方米换算平方公里',
-  '平方公里和平方米',
-  '平方千米和平方公里',
-  '公顷换算平方米',
-  '一平方千米等于多少平方米',
-  '平方千米和平方米',
-  '一公顷是多少平方米',
-  '一平方公里等于多少平方米',
-  '平方公里和平方千米',
-  '平方公里',
-  '平方米和平方千米'
+  'square kilometers to acres conversion',
+  'km² to acre conversion',
+  'square kilometers to acres',
+  'kilometer square to acres',
+  'square kilometers acres converter',
+  'km² to acres',
+  'square kilometers convert acres',
+  'kilometer square to acres',
+  'square kilometers to acres conversion',
+  'km² acres conversion',
+  'square kilometers acres calculation',
+  'kilometer square acres conversion',
+  'square kilometers convert acres',
+  'km² to acres',
+  'square kilometers acres converter',
+  'kilometer square to acres conversion',
+  'square kilometers acres conversion formula',
+  'km² convert acres',
+  'square kilometers to acres calculation',
+  'kilometer square convert acres',
+  'square kilometers acres conversion table',
+  'km² acres conversion',
+  'square kilometers to acres calculation',
+  'kilometer square acres conversion',
+  'square kilometers to acres conversion tool',
+  'km² to acres conversion',
+  'square kilometers acres unit conversion',
+  'area conversion'
 ]
 const convert = inject('convert')
 
 const form = reactive({
   number: null,
   result: '',
-  title: '平方千米 (km²) 到 英亩 (ac) 的换算',
+  title: 'Square Kilometers (km²) to Acres Conversion',
 
 })
 
 const convertHandler = () => {
   if (form.number !== null && !isNaN(form.number)) {
-    const convertedValue = parseFloat(form.number) * 247.105381467169
-    form.result = `${form.number}km² = ${convertedValue.toFixed(4)}ac`
+    const convertedValue = parseFloat(form.number) * 247.105
+    form.result = `${form.number}km² = ${convertedValue.toFixed(2)} acres`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="平方千米 (km²)">
-    <n-input-number v-model:value="form.number" placeholder="输入平方千米" style="width: 100%" />
+  <n-form-item label="Square Kilometers (km²)">
+    <n-input-number v-model:value="form.number" placeholder="Enter square kilometers" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
@@ -86,43 +93,43 @@ const convertHandler = () => {
   </div>
     <template #footer>
     <div>
-      <span v-for="item of seoKey">{{item}}，</span>
+      <span v-for="item of seoKey">{{item}}, </span>
     </div>
   </template>
 </n-card>
 
-## 公式
+## Formula
 
-从 **平方千米 (km²)** 换算到 **英亩 (ac)** 的公式为：
-$$ ac = km² \times 247.105381467169 $$
+The formula for converting from **Square Kilometers (km²)** to **Acres** is:
+$$ \text{Acres} = km² \times 247.105 $$
 
-## 平方千米到英亩换算指南
+## Square Kilometers to Acres Conversion Guide
 
-在土地测量和农业规划中，面积单位的换算是一个常见需求。本文专注于平方千米 (km²) 到英亩 (ac) 的换算，提供了详细的公式与实用示例。
+In land measurement and agricultural planning, area unit conversion is a common requirement. This article focuses on the conversion from square kilometers (km²) to acres, providing detailed formulas and practical examples.
 
-### 为什么需要 km² 到 ac 的换算？
+### Why Do We Need km² to Acres Conversion?
 
-平方千米和英亩是常见的面积单位，尤其在农业、房地产以及大规模土地测量中尤为重要。通过精确的换算，可以确保测量的一致性和准确性。
+Square kilometers and acres are common area units, especially important in land measurement, agricultural planning, and real estate development. Through precise conversion, we can ensure measurement consistency and accuracy.
 
-### km² 到 ac 的换算方法
+### km² to Acres Conversion Method
 
-从平方千米到英亩的换算公式为：
+The conversion formula from square kilometers to acres is:
 
-- **公式：** `ac = km² × 247.105381467169`
+- **Formula:** `Acres = km² × 247.105`
 
-### 实际应用示例
+### Practical Application Examples
 
-以下是一些常见的换算实例：
+Here are some common conversion examples:
 
-- 1 km² = 247.1054 ac
-- 5 km² = 1235.5269 ac
-- 10 km² = 2471.0538 ac
+- 1 km² = 247.105 acres
+- 5 km² = 1235.525 acres
+- 10 km² = 2471.05 acres
 
-### 总结
+### Summary
 
-掌握平方千米到英亩的换算可以帮助您更好地理解和使用这些面积单位。希望本指南能为您提供有价值的参考。
+Mastering the conversion from square kilometers to acres can help you better understand and use these area units. We hope this guide provides valuable reference for you.
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Area" :key="index">
     <n-button

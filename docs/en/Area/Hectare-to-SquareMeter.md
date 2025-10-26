@@ -1,114 +1,100 @@
 ---
-sidebar: false
-aside: false
-lastUpdated: false
-breadcrumb:
-  - - link: /
-      linkText: 首页
-
-  - - link: /Area/Hectare-to-SquareMeter
-      linkText: 公顷到平方米
-head:
-  - - meta
-    - name: description
-      content: "面积单位换算指南，涵盖公顷 (ha) 到平方米 (m²) 的详细换算公式与说明。"
-  - - meta
-    - name: keywords
-      content: "面积, 单位换算, 公顷, 平方米, ha, m², 公顷到平方米, 面积换算指南, 公顷平方米, 公顷和平方米的换算, 一公顷等于多少平方米, 公顷转平方米, hectares m², 公顷换算, 平方米换算, 面积换算, 单位换算, 公顷到平方米, ha m², 公顷平方米转换, 面积单位换算, 公顷平方米计算器, 公顷平方米对照表, 长度换算, 单位转换, 公顷平方米换算器, 平方米长度, 公顷长度, 面积计算, 单位换算公式, 公顷平方米计算, 面积换算器, 平方米单位换算, 公顷单位换算, 面积单位转换表, 公顷平方米转换表"
+title: "Hectare to Square Meter Converter - Accurate Area Unit Conversion Tool"
+description: "Professional hectare to square meter converter. Quickly convert hectares to square meters with precise calculations. Includes conversion formula, practical examples, and usage guide."
+keywords: ["hectare to square meter", "hectare converter", "square meter converter", "area conversion", "land area calculator", "hectare calculation", "square meter calculation", "area unit conversion"]
 ---
-# 公顷 (ha) 到 平方米 (m²) 的换算
----
-<script setup>
-import { onMounted, reactive, inject, ref } from 'vue'
-import { NButton, NForm, NFormItem, NInput, NInputNumber, NSelect, NCard, useMessage,NGrid ,NGi } from 'naive-ui'
-import { defineClientComponent } from 'vitepress'
-import { Area } from '../files';
-const seoKey = ['公顷平方米','公顷和平方米的换算','一公顷等于多少平方米','公顷转平方米','hectares m²','公顷换算','平方米换算','面积换算','单位换算','公顷到平方米','ha m²','公顷平方米转换','面积单位换算','公顷平方米计算器','公顷平方米对照表','长度换算','单位转换','公顷平方米换算器','平方米长度','公顷长度','面积计算','单位换算公式','公顷平方米计算','面积换算器','平方米单位换算','公顷单位换算','面积单位转换表','公顷平方米转换表']
-const convert = inject('convert')
 
-const form = reactive({
-  number: null,
-  result: '',
-  title: '公顷 (ha) 到 平方米 (m²) 的换算'
-})
+# Hectare to Square Meter Converter
 
-const convertHandler = () => {
-  if (form.number !== null && !isNaN(form.number)) {
-    const convertedValue = parseFloat(form.number) * 10000
-    form.result = `${form.number}ha = ${convertedValue.toFixed(2)}m²`
-  } else {
-    form.result = '请输入有效的数值。'
-  }
-}
-</script>
+<Breadcrumb>
+  <BreadcrumbItem linkText="Home" link="/" />
+  <BreadcrumbItem linkText="Area Conversion" link="/en/Area/" />
+  <BreadcrumbItem content="Hectare to Square Meter" />
+</Breadcrumb>
 
-<n-form size="large" :model="form">
-  <n-form-item label="公顷 (ha)">
-    <n-input-number v-model:value="form.number" placeholder="输入公顷" style="width: 100%" />
-  </n-form-item>
-  <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
-  </n-form-item>
-</n-form>
+## Hectare to Square Meter Conversion Tool
 
-<n-card  
-  :title="form.title"
-  :segmented="{
-    content: true,
-    footer: 'soft',
+<UnitConverter
+  :seoKey="['hectare to square meter', 'hectare converter', 'square meter converter', 'area conversion', 'land area calculator', 'hectare calculation', 'square meter calculation', 'area unit conversion', 'hectare to sq m', 'ha to square meter']"
+  title="Hectare to Square Meter Converter"
+  :formItems="[
+    {
+      label: 'Hectares',
+      placeholder: 'Enter hectare value',
+      key: 'hectare',
+      unitOptions: [
+        { label: 'Hectare (ha)', value: 'hectare' }
+      ]
+    },
+    {
+      label: 'Square Meters',
+      placeholder: 'Conversion result',
+      key: 'squaremeter',
+      unitOptions: [
+        { label: 'Square Meter (sq m)', value: 'squaremeter' }
+      ]
+    }
+  ]"
+  :resultText="{
+    hectare: 'hectares equals',
+    squaremeter: 'square meters'
   }"
->
-  <div  style="text-align:center;font-size:20px;">
-    <strong>{{form.result}}</strong>
-  </div>
-    <template #footer>
-    <div>
-      <span v-for="item of seoKey">{{item}}，</span>
-    </div>
-  </template>
-</n-card>
+  buttonText="Convert"
+/>
 
-## 公式
+## Conversion Formula
 
-从 **公顷 (ha)** 换算到 **平方米 (m²)** 的公式为：
-$$ m² = ha \times 10000 $$
+**1 hectare = 10,000 square meters**
 
-## 公顷到平方米换算指南
+The conversion formula is:
+- Square meters = Hectares × 10,000
+- Hectares = Square meters ÷ 10,000
 
-在土地测量和农业规划中，面积单位的换算是一个常见需求。本文专注于公顷 (ha) 到平方米 (m²) 的换算，提供了详细的公式与实用示例。
+## Conversion Guide
 
-### 为什么需要 ha 到 m² 的换算？
+### What is a Hectare?
+A hectare is a metric unit of area measurement, primarily used for measuring land areas. One hectare equals 10,000 square meters or 2.471 acres. It's commonly used in agriculture, forestry, and land planning worldwide.
 
-公顷和平方米是常见的面积单位，尤其在农业、土地规划以及房地产中尤为重要。通过精确的换算，可以确保测量的一致性和准确性。
+### What is a Square Meter?
+A square meter is the fundamental metric unit of area measurement, equal to a square with sides of one meter each. It's widely used for measuring floor areas, property sizes, and various construction and engineering applications.
 
-### ha 到 m² 的换算方法
+### Conversion Steps
+1. Identify the hectare value you want to convert
+2. Multiply the hectare value by 10,000
+3. The result is the equivalent area in square meters
 
-从公顷到平方米的换算公式为：
+## Practical Application Examples
 
-- **公式：** `m² = ha × 10000`
+### Example 1: Agricultural Land
+A farm plot of 2.5 hectares:
+- 2.5 hectares × 10,000 = 25,000 square meters
+- This helps farmers understand exact land area for crop planning
 
-### 实际应用示例
+### Example 2: Real Estate Development
+A residential development covering 1.8 hectares:
+- 1.8 hectares × 10,000 = 18,000 square meters
+- Useful for architects and developers in project planning
 
-以下是一些常见的换算实例：
+### Example 3: Park Planning
+A public park of 0.75 hectares:
+- 0.75 hectares × 10,000 = 7,500 square meters
+- Important for landscape architects and urban planners
 
-- 1 ha = 10,000 m²
-- 5 ha = 50,000 m²
-- 10 ha = 100,000 m²
+## Summary
 
-### 总结
+The hectare to square meter converter is essential for:
+- **Agriculture**: Farm planning and crop area calculations
+- **Real Estate**: Property development and land transactions
+- **Construction**: Building site planning and area calculations
+- **Urban Planning**: Park and public space design
+- **Education**: Understanding metric area relationships
 
-掌握公顷到平方米的换算可以帮助您更好地理解和使用这些面积单位。希望本指南能为您提供有价值的参考。
+This tool provides accurate conversions between hectares and square meters, making it invaluable for professionals in agriculture, real estate, construction, and urban planning.
 
-## 相关连接
-<n-grid x-gap="12" :cols="2">
-  <n-gi v-for="(file, index) in Area" :key="index">
-    <n-button
-      text
-      tag="a"
-      :href="file.path"
-      type="info"
-    >
-      {{file.name}}
-    </n-button>
-  </n-gi>
-</n-grid>
+## Related Conversions
+
+- [Hectare to Acre](/en/Area/Hectare-to-Acre)
+- [Hectare to Square Foot](/en/Area/Hectare-to-SquareFoot)
+- [Hectare to Square Kilometer](/en/Area/Hectare-to-SquareKilometer)
+- [Hectare to Square Mile](/en/Area/Hectare-to-SquareMile)
+- [Square Meter to Hectare](/en/Area/SquareMeter-to-Hectare)

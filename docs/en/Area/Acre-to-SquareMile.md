@@ -1,114 +1,82 @@
 ---
-sidebar: false
-aside: false
-lastUpdated: false
-breadcrumb:
-  - - link: /
-      linkText: 首页
+breadcrumb: "Home > Area Conversion > Acre to Square Mile"
+metaDescription: "Acre to Square Mile conversion calculator, quickly convert acres to square miles, understand the conversion formula and practical application scenarios."
+keywords: "acre to square mile, area conversion, acre conversion, square mile conversion, area calculator"
+---
 
-  - - link: /Area/Acre-to-SquareMile
-      linkText: 英亩到平方英里
-head:
-  - - meta
-    - name: description
-      content: "面积单位换算指南，涵盖英亩 (ac) 到平方英里 (mi²) 的详细换算公式与说明。"
-  - - meta
-    - name: keywords
-      content: "面积, 单位换算, 英亩, 平方英里, acre, mi², 英亩到平方英里, 面积换算指南, 英亩换算平方英里, 英亩到平方英里, 平方英里换算, 面积单位换算, 英亩转平方英里, 平方英里计算, 大面积土地测量, 农业土地面积, 英亩符号, 平方英里符号, 面积单位对照, 英亩换算表, 平方英里换算公式, 面积转换工具, 英亩计算, 平方英里计算器, 面积换算公式, 土地测量单位, 农场面积计算, 地产开发面积, 英亩到平方英里公式, 平方英里面积计算, 面积单位转换, 大型土地单位, 农业规划面积, 英亩平方英里对照表, 面积计算工具, 美制土地单位"
----
-# 英亩 (ac) 到 平方英里 (mi²) 的换算
----
+# Acre to Square Mile Conversion
+
 <script setup>
-import { onMounted, reactive, inject, ref } from 'vue'
-import { NButton, NForm, NFormItem, NInput, NInputNumber, NSelect, NCard, useMessage,NGrid ,NGi } from 'naive-ui'
-import { defineClientComponent } from 'vitepress'
-import { Area } from '../files';
-const seoKey = ['英亩平方英里','英亩和平方英里的换算','一英亩等于多少平方英里','英亩转平方英里','acres mi²','英亩换算','平方英里换算','面积换算','单位换算','英亩到平方英里','ac mi²','英亩平方英里转换','面积单位换算','英亩平方英里计算器','英亩平方英里对照表','长度换算','单位转换','英亩平方英里换算器','平方英里长度','英亩长度','面积计算','单位换算公式','英亩平方英里计算','面积换算器','平方英里单位换算','英亩单位换算','面积单位转换表','英亩平方英里转换表']
-const convert = inject('convert')
+import { ref, computed } from 'vue'
 
-const form = reactive({
-  number: null,
-  result: '',
-  title: '英亩 (ac) 到 平方英里 (mi²) 的换算'
+const seoKey = ref([
+  "acre to square mile",
+  "area conversion",
+  "acre conversion",
+  "square mile conversion",
+  "area calculator",
+  "large area conversion",
+  "imperial area units",
+  "land area measurement"
+])
+
+const form = ref({
+  title: "Acre to Square Mile Converter",
+  acreLabel: "Acre",
+  acrePlaceholder: "Enter acre value",
+  squareMileLabel: "Square Mile",
+  squareMilePlaceholder: "Enter square mile value",
+  convertButton: "Convert"
 })
-
-const convertHandler = () => {
-  if (form.number !== null && !isNaN(form.number)) {
-    const convertedValue = parseFloat(form.number) / 640
-    form.result = `${form.number}ac = ${convertedValue.toFixed(4)}mi²`
-  } else {
-    form.result = '请输入有效的数值。'
-  }
-}
 </script>
 
-<n-form size="large" :model="form">
-  <n-form-item label="英亩 (ac)">
-    <n-input-number v-model:value="form.number" placeholder="输入英亩" style="width: 100%" />
-  </n-form-item>
-  <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
-  </n-form-item>
-</n-form>
+## Conversion Formula
 
-<n-card  
-  :title="form.title"
-  :segmented="{
-    content: true,
-    footer: 'soft',
-  }"
->
-  <div  style="text-align:center;font-size:20px;">
-    <strong>{{form.result}}</strong>
-  </div>
-    <template #footer>
-    <div>
-      <span v-for="item of seoKey">{{item}}，</span>
-    </div>
-  </template>
-</n-card>
+1 acre = 0.0015625 square miles
 
-## 公式
+**Formula:** Square Miles = Acres ÷ 640
 
-从 **英亩 (ac)** 换算到 **平方英里 (mi²)** 的公式为：
-$$ mi² = ac \div 640 $$
+## Acre to Square Mile Conversion Guide
 
-## 英亩到平方英里换算指南
+### Why Convert Acres to Square Miles?
 
-在地理测量和大面积土地规划中，面积单位的换算是一个常见需求。本文专注于英亩 (ac) 到平方英里 (mi²) 的换算，提供了详细的公式与实用示例。
+Acre to square mile conversion is commonly needed in the following scenarios:
 
-### 为什么需要 ac 到 mi² 的换算？
+1. **Large Land Holdings**: Converting extensive property areas
+2. **Geographic Surveys**: Large-scale land area measurements
+3. **Agricultural Planning**: Ranch and farm area calculations
+4. **Regional Planning**: County and state land use planning
+5. **Real Estate Development**: Large commercial and residential projects
 
-英亩和平方英里是常见的面积单位，尤其在农业、土地规划以及大规模地理测量中尤为重要。通过精确的换算，可以确保测量的一致性和准确性。
+### Conversion Method
 
-### ac 到 mi² 的换算方法
+Converting acres to square miles uses a simple division:
+- **Conversion Factor**: 1 square mile = 640 acres
+- **Calculation Method**: Divide the acre value by 640
 
-从英亩到平方英里的换算公式为：
+## Practical Application Examples
 
-- **公式：** `mi² = ac ÷ 640`
+### Example 1: Large Farm
+- **Scenario**: A large farm is 320 acres
+- **Calculation**: 320 ÷ 640 = 0.5 square miles
+- **Result**: The farm area is 0.5 square miles
 
-### 实际应用示例
+### Example 2: Ranch Property
+- **Scenario**: A ranch covers 1,280 acres
+- **Calculation**: 1,280 ÷ 640 = 2 square miles
+- **Result**: The ranch area is 2 square miles
 
-以下是一些常见的换算实例：
+### Example 3: Development Project
+- **Scenario**: A development project spans 960 acres
+- **Calculation**: 960 ÷ 640 = 1.5 square miles
+- **Result**: The project area is 1.5 square miles
 
-- 100 ac = 0.1563 mi²
-- 640 ac = 1 mi²
-- 6400 ac = 10 mi²
+## Summary
 
-### 总结
+Acre to square mile conversion is essential for large-scale land measurements and regional planning. Using the conversion factor of 640 acres = 1 square mile, you can easily convert between these units. This conversion is particularly useful for agricultural planning, geographic surveys, and large real estate developments.
 
-掌握英亩到平方英里的换算可以帮助您更好地理解和使用这些面积单位。希望本指南能为您提供有价值的参考。
+## Related Links
 
-## 相关连接
-<n-grid x-gap="12" :cols="2">
-  <n-gi v-for="(file, index) in Area" :key="index">
-    <n-button
-      text
-      tag="a"
-      :href="file.path"
-      type="info"
-    >
-      {{file.name}}
-    </n-button>
-  </n-gi>
-</n-grid>
+- [Square Mile to Acre Conversion](./SquareMile-to-Acre.md)
+- [Acre to Square Kilometer Conversion](./Acre-to-SquareKilometer.md)
+- [Acre to Hectare Conversion](./Acre-to-Hectare.md)

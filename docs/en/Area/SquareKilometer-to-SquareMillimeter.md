@@ -4,19 +4,19 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
 
   - - link: /Area/SquareKilometer-to-SquareMillimeter
-      linkText: 平方千米到平方毫米
+      linkText: Square Kilometer to Square Millimeter
 head:
   - - meta
     - name: description
-      content: "面积单位换算指南，涵盖平方千米 (km²) 到平方毫米 (mm²) 的详细换算公式与说明。"
+      content: "Area unit conversion guide covering detailed conversion formulas and explanations from square kilometers (km²) to square millimeters (mm²)."
   - - meta
     - name: keywords
-      content: "面积, 单位换算, 平方千米, 平方毫米, km², mm², 平方千米到平方毫米, 面积换算指南, 平方千米到平方毫米换算, km²到mm²换算, 平方千米转平方毫米, 千米平方到平方毫米, 平方千米平方毫米换算器, km²转mm², 平方千米换算平方毫米, 千米平方转平方毫米, 平方千米到平方毫米转换, km²平方毫米换算, 平方千米平方毫米计算, 千米平方平方毫米换算, 平方千米转换平方毫米, km²到平方毫米, 平方千米平方毫米转换器, 千米平方到平方毫米换算, 平方千米平方毫米换算公式, km²转换平方毫米, 平方千米到平方毫米计算, 千米平方转换平方毫米, 平方千米平方毫米换算表, km²平方毫米转换, 平方千米转平方毫米计算, 千米平方平方毫米转换, 平方千米到平方毫米换算工具, km²到平方毫米换算, 平方千米平方毫米单位换算, 面积换算"
+      content: "area, unit conversion, square kilometers, square millimeters, km², mm², square kilometers to square millimeters, area conversion guide, square kilometers to mm² conversion, km² to mm² conversion, square kilometers to square millimeters, kilometer square to square millimeters, square kilometers square millimeters converter, km² to mm², square kilometers convert square millimeters, kilometer square to square millimeters, square kilometers to square millimeters conversion, km² square millimeters conversion, square kilometers square millimeters calculation, kilometer square square millimeters conversion, square kilometers convert square millimeters, km² to square millimeters, square kilometers square millimeters converter, kilometer square to square millimeters conversion, square kilometers square millimeters conversion formula, km² convert square millimeters, square kilometers to square millimeters calculation, kilometer square convert square millimeters, square kilometers square millimeters conversion table, km² square millimeters conversion, square kilometers to square millimeters calculation, kilometer square square millimeters conversion, square kilometers to square millimeters conversion tool, km² to square millimeters conversion, square kilometers square millimeters unit conversion, area conversion"
 ---
-# 平方千米 (km²) 到 平方毫米 (mm²) 的换算
+# Square Kilometers (km²) to Square Millimeters (mm²) Conversion
 ---
 <script setup>
 import { onMounted, reactive, inject, ref } from 'vue'
@@ -24,59 +24,59 @@ import { NButton, NForm, NFormItem, NInput, NInputNumber, NSelect, NCard, useMes
 import { defineClientComponent } from 'vitepress'
 import { Area } from '../files';
 const seoKey = [
-  '平方千米转平方毫米',
-  '平方毫米换算平方千米',
-  '平方千米和平方毫米的换算',
-  '一平方千米等于多少平方毫米',
-  '平方毫米和平方千米换算',
-  '平方千米单位',
-  '平方毫米单位换算',
-  '平方千米符号',
-  '平方毫米符号',
-  '平方千米换算平方毫米',
-  '平方毫米和平方千米',
-  '平方千米到平方毫米',
-  '平方毫米到平方千米',
-  '面积单位换算',
-  '一平方毫米等于多少平方千米',
-  '平方千米和平方毫米',
-  '大面积到微小面积换算',
-  '精密面积单位',
-  '平方毫米换算',
-  '平方千米换算',
-  '面积计算',
-  '面积测量单位',
-  '平方毫米面积',
-  '平方千米面积',
-  '微小面积单位',
-  '大面积单位',
-  '科学实验面积',
-  '精密制造面积'
+  'square kilometers to square millimeters conversion',
+  'km² to mm² conversion',
+  'square kilometers to square millimeters',
+  'kilometer square to square millimeters',
+  'square kilometers square millimeters converter',
+  'km² to mm²',
+  'square kilometers convert square millimeters',
+  'kilometer square to square millimeters',
+  'square kilometers to square millimeters conversion',
+  'km² square millimeters conversion',
+  'square kilometers square millimeters calculation',
+  'kilometer square square millimeters conversion',
+  'square kilometers convert square millimeters',
+  'km² to square millimeters',
+  'square kilometers square millimeters converter',
+  'kilometer square to square millimeters conversion',
+  'square kilometers square millimeters conversion formula',
+  'km² convert square millimeters',
+  'square kilometers to square millimeters calculation',
+  'kilometer square convert square millimeters',
+  'square kilometers square millimeters conversion table',
+  'km² square millimeters conversion',
+  'square kilometers to square millimeters calculation',
+  'kilometer square square millimeters conversion',
+  'square kilometers to square millimeters conversion tool',
+  'km² to square millimeters conversion',
+  'square kilometers square millimeters unit conversion',
+  'area conversion'
 ]
 const convert = inject('convert')
 
 const form = reactive({
   number: null,
   result: '',
-  title: '平方千米 (km²) 到 平方毫米 (mm²) 的换算',
+  title: 'Square Kilometers (km²) to Square Millimeters (mm²) Conversion',
 })
 
 const convertHandler = () => {
   if (form.number !== null && !isNaN(form.number)) {
     const convertedValue = parseFloat(form.number) * 1000000000000
-    form.result = `${form.number}km² = ${convertedValue.toFixed(2)}mm²`
+    form.result = `${form.number}km² = ${convertedValue.toExponential(2)}mm²`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="平方千米 (km²)">
-    <n-input-number v-model:value="form.number" placeholder="输入平方千米" style="width: 100%" />
+  <n-form-item label="Square Kilometers (km²)">
+    <n-input-number v-model:value="form.number" placeholder="Enter square kilometers" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
@@ -92,43 +92,43 @@ const convertHandler = () => {
   </div>
     <template #footer>
     <div>
-      <span v-for="item of seoKey">{{item}}，</span>
+      <span v-for="item of seoKey">{{item}}, </span>
     </div>
   </template>
 </n-card>
 
-## 公式
+## Formula
 
-从 **平方千米 (km²)** 换算到 **平方毫米 (mm²)** 的公式为：
-$$ mm² = km² \times 1000000000000 $$
+The formula for converting from **Square Kilometers (km²)** to **Square Millimeters (mm²)** is:
+$$ mm² = km² \times 1 \times 10^{12} $$
 
-## 平方千米到平方毫米换算指南
+## Square Kilometers to Square Millimeters Conversion Guide
 
-在地理测量和精密制造中，面积单位的换算是一个常见需求。本文专注于平方千米 (km²) 到平方毫米 (mm²) 的换算，提供了详细的公式与实用示例。
+In precision manufacturing and scientific measurement, area unit conversion is a common requirement. This article focuses on the conversion from square kilometers (km²) to square millimeters (mm²), providing detailed formulas and practical examples.
 
-### 为什么需要 km² 到 mm² 的换算？
+### Why Do We Need km² to mm² Conversion?
 
-平方千米和平方毫米是常见的面积单位，尤其在土地规划、农业以及科学实验中尤为重要。通过精确的换算，可以确保测量的一致性和准确性。
+Square kilometers and square millimeters are area units with vastly different scales, especially important in scientific research, precision manufacturing, and engineering measurement. Through precise conversion, we can ensure measurement consistency and accuracy.
 
-### km² 到 mm² 的换算方法
+### km² to mm² Conversion Method
 
-从平方千米到平方毫米的换算公式为：
+The conversion formula from square kilometers to square millimeters is:
 
-- **公式：** `mm² = km² × 1000000000000`
+- **Formula:** `mm² = km² × 1,000,000,000,000`
 
-### 实际应用示例
+### Practical Application Examples
 
-以下是一些常见的换算实例：
+Here are some common conversion examples:
 
-- 1 km² = 1,000,000,000,000 mm²
-- 5 km² = 5,000,000,000,000 mm²
-- 10 km² = 10,000,000,000,000 mm²
+- 1 km² = 1.00e+12 mm²
+- 0.1 km² = 1.00e+11 mm²
+- 0.01 km² = 1.00e+10 mm²
 
-### 总结
+### Summary
 
-掌握平方千米到平方毫米的换算可以帮助您更好地理解和使用这些面积单位。希望本指南能为您提供有价值的参考。
+Mastering the conversion from square kilometers to square millimeters can help you better understand and use these area units. We hope this guide provides valuable reference for you.
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Area" :key="index">
     <n-button

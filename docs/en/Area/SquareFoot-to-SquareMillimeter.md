@@ -4,19 +4,19 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
 
   - - link: /Area/SquareFoot-to-SquareMillimeter
-      linkText: 平方英尺到平方毫米
+      linkText: Square Foot to Square Millimeter
 head:
   - - meta
     - name: description
-      content: "面积单位换算指南，涵盖平方英尺 (ft²) 到平方毫米 (mm²) 的详细换算公式与说明。"
+      content: "Area unit conversion guide covering detailed conversion formulas and explanations from square feet (ft²) to square millimeters (mm²)."
   - - meta
     - name: keywords
-      content: "面积, 单位换算, 平方英尺, 平方毫米, ft², mm², 平方英尺到平方毫米, 面积换算指南, 平方英尺到平方毫米换算, ft²到mm²换算, 平方英尺转平方毫米, 英尺平方到平方毫米, 平方英尺平方毫米换算器, ft²转mm², 平方英尺换算平方毫米, 英尺平方转平方毫米, 平方英尺到平方毫米转换, ft²平方毫米换算, 平方英尺平方毫米计算, 英尺平方平方毫米换算, 平方英尺转换平方毫米, ft²到平方毫米, 平方英尺平方毫米转换器, 英尺平方到平方毫米换算, 平方英尺平方毫米换算公式, ft²转换平方毫米, 平方英尺到平方毫米计算, 英尺平方转换平方毫米, 平方英尺平方毫米换算表, ft²平方毫米转换, 平方英尺转平方毫米计算, 英尺平方平方毫米转换, 平方英尺到平方毫米换算工具, ft²到平方毫米换算, 平方英尺平方毫米单位换算, 面积换算"
+      content: "area, unit conversion, square feet, square millimeter, ft², mm², square feet to square millimeter, area conversion guide, square feet to mm² conversion, ft² to mm² conversion, square feet to square millimeter, feet square to square millimeter, square feet square millimeter converter, ft² to mm², square feet convert square millimeter, feet square to square millimeter, square feet to square millimeter conversion, ft² square millimeter conversion, square feet square millimeter calculation, feet square square millimeter conversion, square feet convert square millimeter, ft² to square millimeter, square feet square millimeter converter, feet square to square millimeter conversion, square feet square millimeter conversion formula, ft² convert square millimeter, square feet to square millimeter calculation, feet square convert square millimeter, square feet square millimeter conversion table, ft² square millimeter conversion, square feet to square millimeter calculation, feet square square millimeter conversion, square feet to square millimeter conversion tool, ft² to square millimeter conversion, square feet square millimeter unit conversion, area conversion"
 ---
-# 平方英尺 (ft²) 到 平方毫米 (mm²) 的换算
+# Square Feet (ft²) to Square Millimeter (mm²) Conversion
 ---
 <script setup>
 import { onMounted, reactive, inject, ref } from 'vue'
@@ -24,41 +24,41 @@ import { NButton, NForm, NFormItem, NInput, NInputNumber, NSelect, NCard, useMes
 import { defineClientComponent } from 'vitepress'
 import { Area } from '../files';
 const seoKey = [
-  '平方英尺到平方毫米换算',
-  'ft²到mm²换算',
-  '平方英尺转平方毫米',
-  '英尺平方到平方毫米',
-  '平方英尺平方毫米换算器',
-  'ft²转mm²',
-  '平方英尺换算平方毫米',
-  '英尺平方转平方毫米',
-  '平方英尺到平方毫米转换',
-  'ft²平方毫米换算',
-  '平方英尺平方毫米计算',
-  '英尺平方平方毫米换算',
-  '平方英尺转换平方毫米',
-  'ft²到平方毫米',
-  '平方英尺平方毫米转换器',
-  '英尺平方到平方毫米换算',
-  '平方英尺平方毫米换算公式',
-  'ft²转换平方毫米',
-  '平方英尺到平方毫米计算',
-  '英尺平方转换平方毫米',
-  '平方英尺平方毫米换算表',
-  'ft²平方毫米转换',
-  '平方英尺转平方毫米计算',
-  '英尺平方平方毫米转换',
-  '平方英尺到平方毫米换算工具',
-  'ft²到平方毫米换算',
-  '平方英尺平方毫米单位换算',
-  '面积换算'
+  'square feet to square millimeter conversion',
+  'ft² to mm² conversion',
+  'square feet to square millimeter',
+  'feet square to square millimeter',
+  'square feet square millimeter converter',
+  'ft² to mm²',
+  'square feet convert square millimeter',
+  'feet square to square millimeter',
+  'square feet to square millimeter conversion',
+  'ft² square millimeter conversion',
+  'square feet square millimeter calculation',
+  'feet square square millimeter conversion',
+  'square feet convert square millimeter',
+  'ft² to square millimeter',
+  'square feet square millimeter converter',
+  'feet square to square millimeter conversion',
+  'square feet square millimeter conversion formula',
+  'ft² convert square millimeter',
+  'square feet to square millimeter calculation',
+  'feet square convert square millimeter',
+  'square feet square millimeter conversion table',
+  'ft² square millimeter conversion',
+  'square feet to square millimeter calculation',
+  'feet square square millimeter conversion',
+  'square feet to square millimeter conversion tool',
+  'ft² to square millimeter conversion',
+  'square feet square millimeter unit conversion',
+  'area conversion'
 ]
 const convert = inject('convert')
 
 const form = reactive({
   number: null,
   result: '',
-  title: '平方英尺 (ft²) 到 平方毫米 (mm²) 的换算',
+  title: 'Square Feet (ft²) to Square Millimeter (mm²) Conversion',
 })
 
 const convertHandler = () => {
@@ -66,17 +66,17 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) * 92903.04
     form.result = `${form.number}ft² = ${convertedValue.toFixed(2)}mm²`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="平方英尺 (ft²)">
-    <n-input-number v-model:value="form.number" placeholder="输入平方英尺" style="width: 100%" />
+  <n-form-item label="Square Feet (ft²)">
+    <n-input-number v-model:value="form.number" placeholder="Enter square feet" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
@@ -92,43 +92,43 @@ const convertHandler = () => {
   </div>
     <template #footer>
     <div>
-      <span v-for="item of seoKey">{{item}}，</span>
+      <span v-for="item of seoKey">{{item}}, </span>
     </div>
   </template>
 </n-card>
 
-## 公式
+## Formula
 
-从 **平方英尺 (ft²)** 换算到 **平方毫米 (mm²)** 的公式为：
+The formula for converting from **Square Feet (ft²)** to **Square Millimeters (mm²)** is:
 $$ mm² = ft² \times 92903.04 $$
 
-## 平方英尺到平方毫米换算指南
+## Square Feet to Square Millimeter Conversion Guide
 
-在建筑施工和室内设计中，面积单位的换算是一个常见需求。本文专注于平方英尺 (ft²) 到平方毫米 (mm²) 的换算，提供了详细的公式与实用示例。
+In precision manufacturing and engineering design, area unit conversion is a common requirement. This article focuses on the conversion from square feet (ft²) to square millimeters (mm²), providing detailed formulas and practical examples.
 
-### 为什么需要 ft² 到 mm² 的换算？
+### Why Do We Need ft² to mm² Conversion?
 
-平方英尺和平方毫米是常见的面积单位，尤其在建筑工程、精密制造以及国际贸易中尤为重要。通过精确的换算，可以确保测量的一致性和准确性。
+Square feet and square millimeters are common area units, especially important in engineering, manufacturing, and precision measurement. Through precise conversion, we can ensure measurement consistency and accuracy.
 
-### ft² 到 mm² 的换算方法
+### ft² to mm² Conversion Method
 
-从平方英尺到平方毫米的换算公式为：
+The conversion formula from square feet to square millimeters is:
 
-- **公式：** `mm² = ft² × 92903.04`
+- **Formula:** `mm² = ft² × 92903.04`
 
-### 实际应用示例
+### Practical Application Examples
 
-以下是一些常见的换算实例：
+Here are some common conversion examples:
 
 - 1 ft² = 92903.04 mm²
-- 5 ft² = 464515.2 mm²
+- 0.1 ft² = 9290.304 mm²
 - 10 ft² = 929030.4 mm²
 
-### 总结
+### Summary
 
-掌握平方英尺到平方毫米的换算可以帮助您更好地理解和使用这些面积单位。希望本指南能为您提供有价值的参考。
+Mastering the conversion from square feet to square millimeters can help you better understand and use these area units. We hope this guide provides valuable reference for you.
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Area" :key="index">
     <n-button

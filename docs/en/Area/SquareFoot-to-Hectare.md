@@ -4,19 +4,19 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
 
   - - link: /Area/SquareFoot-to-Hectare
-      linkText: 平方英尺到公顷
+      linkText: Square Foot to Hectare
 head:
   - - meta
     - name: description
-      content: "面积单位换算指南，涵盖平方英尺 (ft²) 到公顷 (ha) 的详细换算公式与说明。"
+      content: "Area unit conversion guide covering detailed conversion formulas and explanations from square feet (ft²) to hectares (ha)."
   - - meta
     - name: keywords
-      content: "面积, 单位换算, 平方英尺, 公顷, ft², ha, 平方英尺到公顷, 面积换算指南, 平方英尺到公顷换算, ft²到ha换算, 平方英尺转公顷, 英尺平方到公顷, 平方英尺公顷换算器, ft²转ha, 平方英尺换算公顷, 英尺平方转公顷, 平方英尺到公顷转换, ft²公顷换算, 平方英尺公顷计算, 英尺平方公顷换算, 平方英尺转换公顷, ft²到公顷, 平方英尺公顷转换器, 英尺平方到公顷换算, 平方英尺公顷换算公式, ft²转换公顷, 平方英尺到公顷计算, 英尺平方转换公顷, 平方英尺公顷换算表, ft²公顷转换, 平方英尺转公顷计算, 英尺平方公顷转换, 平方英尺到公顷换算工具, ft²到公顷换算, 平方英尺公顷单位换算, 面积换算"
+      content: "area, unit conversion, square feet, hectare, ft², ha, square feet to hectare, area conversion guide, square feet to hectare conversion, ft² to ha conversion, square feet to hectare, feet square to hectare, square feet hectare converter, ft² to ha, square feet convert hectare, feet square to hectare, square feet to hectare conversion, ft² hectare conversion, square feet hectare calculation, feet square hectare conversion, square feet convert hectare, ft² to hectare, square feet hectare converter, feet square to hectare conversion, square feet hectare conversion formula, ft² convert hectare, square feet to hectare calculation, feet square convert hectare, square feet hectare conversion table, ft² hectare conversion, square feet to hectare calculation, feet square hectare conversion, square feet to hectare conversion tool, ft² to hectare conversion, square feet hectare unit conversion, area conversion"
 ---
-# 平方英尺 (ft²) 到 公顷 (ha) 的换算
+# Square Feet (ft²) to Hectare (ha) Conversion
 ---
 <script setup>
 import { onMounted, reactive, inject, ref } from 'vue'
@@ -24,59 +24,59 @@ import { NButton, NForm, NFormItem, NInput, NInputNumber, NSelect, NCard, useMes
 import { defineClientComponent } from 'vitepress'
 import { Area } from '../files';
 const seoKey = [
-  '平方英尺到公顷换算',
-  'ft²到ha换算',
-  '平方英尺转公顷',
-  '英尺平方到公顷',
-  '平方英尺公顷换算器',
-  'ft²转ha',
-  '平方英尺换算公顷',
-  '英尺平方转公顷',
-  '平方英尺到公顷转换',
-  'ft²公顷换算',
-  '平方英尺公顷计算',
-  '英尺平方公顷换算',
-  '平方英尺转换公顷',
-  'ft²到公顷',
-  '平方英尺公顷转换器',
-  '英尺平方到公顷换算',
-  '平方英尺公顷换算公式',
-  'ft²转换公顷',
-  '平方英尺到公顷计算',
-  '英尺平方转换公顷',
-  '平方英尺公顷换算表',
-  'ft²公顷转换',
-  '平方英尺转公顷计算',
-  '英尺平方公顷转换',
-  '平方英尺到公顷换算工具',
-  'ft²到公顷换算',
-  '平方英尺公顷单位换算',
-  '面积换算'
+  'square feet to hectare conversion',
+  'ft² to ha conversion',
+  'square feet to hectare',
+  'feet square to hectare',
+  'square feet hectare converter',
+  'ft² to ha',
+  'square feet convert hectare',
+  'feet square to hectare',
+  'square feet to hectare conversion',
+  'ft² hectare conversion',
+  'square feet hectare calculation',
+  'feet square hectare conversion',
+  'square feet convert hectare',
+  'ft² to hectare',
+  'square feet hectare converter',
+  'feet square to hectare conversion',
+  'square feet hectare conversion formula',
+  'ft² convert hectare',
+  'square feet to hectare calculation',
+  'feet square convert hectare',
+  'square feet hectare conversion table',
+  'ft² hectare conversion',
+  'square feet to hectare calculation',
+  'feet square hectare conversion',
+  'square feet to hectare conversion tool',
+  'ft² to hectare conversion',
+  'square feet hectare unit conversion',
+  'area conversion'
 ]
 const convert = inject('convert')
 
 const form = reactive({
   number: null,
   result: '',
-  title: '平方英尺 (ft²) 到 公顷 (ha) 的换算',
+  title: 'Square Feet (ft²) to Hectare (ha) Conversion',
 })
 
 const convertHandler = () => {
   if (form.number !== null && !isNaN(form.number)) {
-    const convertedValue = parseFloat(form.number) / 107639.1041671
+    const convertedValue = parseFloat(form.number) / 107639.1
     form.result = `${form.number}ft² = ${convertedValue.toFixed(6)}ha`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="平方英尺 (ft²)">
-    <n-input-number v-model:value="form.number" placeholder="输入平方英尺" style="width: 100%" />
+  <n-form-item label="Square Feet (ft²)">
+    <n-input-number v-model:value="form.number" placeholder="Enter square feet" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
@@ -92,43 +92,43 @@ const convertHandler = () => {
   </div>
     <template #footer>
     <div>
-      <span v-for="item of seoKey">{{item}}，</span>
+      <span v-for="item of seoKey">{{item}}, </span>
     </div>
   </template>
 </n-card>
 
-## 公式
+## Formula
 
-从 **平方英尺 (ft²)** 换算到 **公顷 (ha)** 的公式为：
-$$ ha = ft² \div 107639.1041671 $$
+The formula for converting from **Square Feet (ft²)** to **Hectares (ha)** is:
+$$ ha = ft² \div 107639.1 $$
 
-## 平方英尺到公顷换算指南
+## Square Feet to Hectare Conversion Guide
 
-在土地测量和农业规划中，面积单位的换算是一个常见需求。本文专注于平方英尺 (ft²) 到公顷 (ha) 的换算，提供了详细的公式与实用示例。
+In land surveying and agricultural planning, area unit conversion is a common requirement. This article focuses on the conversion from square feet (ft²) to hectares (ha), providing detailed formulas and practical examples.
 
-### 为什么需要 ft² 到 ha 的换算？
+### Why Do We Need ft² to ha Conversion?
 
-平方英尺和公顷是常见的面积单位，尤其在农业、林业以及大规模土地测量中尤为重要。通过精确的换算，可以确保测量的一致性和准确性。
+Square feet and hectares are common area units, especially important in agriculture, real estate, and large-scale land surveying. Through precise conversion, we can ensure measurement consistency and accuracy.
 
-### ft² 到 ha 的换算方法
+### ft² to ha Conversion Method
 
-从平方英尺到公顷的换算公式为：
+The conversion formula from square feet to hectares is:
 
-- **公式：** `ha = ft² ÷ 107639.1041671`
+- **Formula:** `ha = ft² ÷ 107639.1`
 
-### 实际应用示例
+### Practical Application Examples
 
-以下是一些常见的换算实例：
+Here are some common conversion examples:
 
-- 10000 ft² = 0.092904 ha
-- 107639.1041671 ft² = 1 ha
-- 1076391.041671 ft² = 10 ha
+- 10000 ft² = 0.092903 ha
+- 107639 ft² = 1 ha
+- 1076391 ft² = 10 ha
 
-### 总结
+### Summary
 
-掌握平方英尺到公顷的换算可以帮助您更好地理解和使用这些面积单位。希望本指南能为您提供有价值的参考。
+Mastering the conversion from square feet to hectares can help you better understand and use these area units. We hope this guide provides valuable reference for you.
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Area" :key="index">
     <n-button

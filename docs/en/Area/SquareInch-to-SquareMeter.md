@@ -4,26 +4,55 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
 
   - - link: /Area/SquareInch-to-SquareMeter
-      linkText: 平方英寸到平方米
+      linkText: Square Inch to Square Meter
 head:
   - - meta
     - name: description
-      content: "面积单位换算指南，涵盖平方英寸 (in²) 到平方米 (m²) 的详细换算公式与说明。"
+      content: "Area unit conversion guide covering detailed conversion formulas and explanations from square inches (in²) to square meters (m²)."
   - - meta
     - name: keywords
-      content: "面积, 单位换算, 平方英寸, 平方米, in², m², 平方英寸到平方米, 面积换算指南, 平方英寸到平方米换算, in²到m²换算, 平方英寸转平方米, 英寸平方到平方米, 平方英寸平方米换算器, in²转m², 平方英寸换算平方米, 英寸平方转平方米, 平方英寸到平方米转换, in²平方米换算, 平方英寸平方米计算, 英寸平方平方米换算, 平方英寸转换平方米, in²到平方米, 平方英寸平方米转换器, 英寸平方到平方米换算, 平方英寸平方米换算公式, in²转换平方米, 平方英寸到平方米计算, 英寸平方转换平方米, 平方英寸平方米换算表, in²平方米转换, 平方英寸转平方米计算, 英寸平方平方米转换, 平方英寸到平方米换算工具, in²到平方米换算, 平方英寸平方米单位换算, 面积换算"
+      content: "area, unit conversion, square inches, square meter, in², m², square inches to square meter, area conversion guide, square inches to m² conversion, in² to m² conversion, square inches to square meter, inch square to square meter, square inches square meter converter, in² to m², square inches convert square meter, inch square to square meter, square inches to square meter conversion, in² square meter conversion, square inches square meter calculation, inch square square meter conversion, square inches convert square meter, in² to square meter, square inches square meter converter, inch square to square meter conversion, square inches square meter conversion formula, in² convert square meter, square inches to square meter calculation, inch square convert square meter, square inches square meter conversion table, in² square meter conversion, square inches to square meter calculation, inch square square meter conversion, square inches to square meter conversion tool, in² to square meter conversion, square inches square meter unit conversion, area conversion"
 ---
-# 平方英寸 (in²) 到 平方米 (m²) 的换算
+# Square Inches (in²) to Square Meter (m²) Conversion
 ---
 <script setup>
 import { onMounted, reactive, inject, ref } from 'vue'
 import { NButton, NForm, NFormItem, NInput, NInputNumber, NSelect, NCard, useMessage,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
 import { Area } from '../files';
-
+const seoKey = [
+  'square inches to square meter conversion',
+  'in² to m² conversion',
+  'square inches to square meter',
+  'inch square to square meter',
+  'square inches square meter converter',
+  'in² to m²',
+  'square inches convert square meter',
+  'inch square to square meter',
+  'square inches to square meter conversion',
+  'in² square meter conversion',
+  'square inches square meter calculation',
+  'inch square square meter conversion',
+  'square inches convert square meter',
+  'in² to square meter',
+  'square inches square meter converter',
+  'inch square to square meter conversion',
+  'square inches square meter conversion formula',
+  'in² convert square meter',
+  'square inches to square meter calculation',
+  'inch square convert square meter',
+  'square inches square meter conversion table',
+  'in² square meter conversion',
+  'square inches to square meter calculation',
+  'inch square square meter conversion',
+  'square inches to square meter conversion tool',
+  'in² to square meter conversion',
+  'square inches square meter unit conversion',
+  'area conversion'
+]
 const convert = inject('convert')
 
 const form = reactive({
@@ -34,62 +63,71 @@ const form = reactive({
 const convertHandler = () => {
   if (form.number !== null && !isNaN(form.number)) {
     const convertedValue = parseFloat(form.number) / 1550.0031
-    form.result = `${form.number}in² = ${convertedValue.toFixed(4)}m²`
+    form.result = `${form.number}in² = ${convertedValue.toFixed(6)}m²`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="平方英寸 (in²)">
-    <n-input-number v-model:value="form.number" placeholder="输入平方英寸" style="width: 100%" />
+  <n-form-item label="Square Inches (in²)">
+    <n-input-number v-model:value="form.number" placeholder="Enter square inches" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
-<n-card  embedded :bordered="false" hoverable>
+<n-card  
+  :title="form.title"
+  :segmented="{
+    content: true,
+    footer: 'soft',
+  }"
+>
   <div  style="text-align:center;font-size:20px;">
     <strong>{{form.result}}</strong>
   </div>
+    <template #footer>
+    <div>
+      <span v-for="item of seoKey">{{item}}, </span>
+    </div>
+  </template>
 </n-card>
 
-## 公式
+## Formula
 
-从 **平方英寸 (in²)** 换算到 **平方米 (m²)** 的公式为：
+The formula for converting from **Square Inches (in²)** to **Square Meters (m²)** is:
 $$ m² = in² \div 1550.0031 $$
 
-## 平方英寸到平方米换算指南
+## Square Inches to Square Meter Conversion Guide
 
-在建筑施工和室内设计中，面积单位的换算是一个常见需求。本文专注于平方英寸 (in²) 到平方米 (m²) 的换算，提供了详细的公式与实用示例。
+In international trade and engineering measurement, area unit conversion is a common requirement. This article focuses on the conversion from square inches (in²) to square meters (m²), providing detailed formulas and practical examples.
 
-### 为什么需要 in² 到 m² 的换算？
+### Why Do We Need in² to m² Conversion?
 
-平方英寸和平方米是常见的面积单位，尤其在建筑工程、室内装饰以及国际贸易中尤为重要。通过精确的换算，可以确保测量的一致性和准确性。
+Square inches and square meters are common area units, especially important in international trade, engineering measurement, and scientific research. Through precise conversion, we can ensure measurement consistency and accuracy.
 
-### in² 到 m² 的换算方法
+### in² to m² Conversion Method
 
-从平方英寸到平方米的换算公式为：
+The conversion formula from square inches to square meters is:
 
-- **公式：** `m² = in² ÷ 1550.0031`
+- **Formula:** `m² = in² ÷ 1550.0031`
 
-### 实际应用示例
+### Practical Application Examples
 
-以下是一些常见的换算实例：
+Here are some common conversion examples:
 
-- 100 in² = 0.0645 m²
-ddd
 - 1550.0031 in² = 1 m²
-- 15500.031 in² = 10 m²
-ddd
+- 3100.0062 in² = 2 m²
+- 7750.0155 in² = 5 m²
 
-### 总结
+### Summary
 
-掌握平方英寸到平方米的换算可以帮助您更好地理解和使用这些面积单位。希望本指南能为您提供有价值的参考。
+Mastering the conversion from square inches to square meters can help you better understand and use these area units. We hope this guide provides valuable reference for you.
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Area" :key="index">
     <n-button

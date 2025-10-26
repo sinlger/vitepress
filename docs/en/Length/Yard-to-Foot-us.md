@@ -4,22 +4,21 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Length/index
-      linkText: 长度换算
+      linkText: Length Conversion
   - - link: /Length/Yard-to-Foot-us
-      linkText: 码到英尺-us
+      linkText: Yard to US Foot
 head:
   - - meta
     - name: description
-      content: "专业的码(yd)到美制英尺(ft-us)长度单位换算工具和指南。提供精确的换算公式、实际应用场景和常见问题解答，适用于美国建筑工程、制造业、房地产测量、体育场地建设等领域的精密测量需求。"
-  - - meta
-    - name: keywords
-      content: "码到美制英尺换算,yd到ft-us转换,长度单位换算,美制英尺换算器,美国建筑工程,制造业测量,房地产测量,体育场地建设,美制单位,英制转换,建筑测量,工程测量,美国标准,长度转换器,单位换算表,美制长度单位,建筑设计,工程制图,测量工具,精密测量"
+        content: "Professional yard (yd) to US foot (ft-us) length unit conversion tool and guide. Provides precise conversion formulas, practical application scenarios, and frequently asked questions, suitable for precision measurement needs in US construction engineering, manufacturing, real estate surveying, sports facility construction, and other fields."
+      - name: keywords
+        content: "yard to US foot conversion,yd to ft-us conversion,length unit conversion,US foot converter,US construction engineering,manufacturing measurement,real estate surveying,sports facility construction,US units,imperial conversion,construction measurement,engineering measurement,US standards,length converter,unit conversion table,US length units,construction design,engineering drawing,measurement tools,precision measurement"
 ---
-# 码 (yd) 到 美制英尺 (ft-us) 的换算
+# Yard (yd) to US Foot (ft-us) Conversion
 
-码到美制英尺的换算是美国建筑工程、制造业、房地产测量和体育场地建设中的重要计量转换。美制英尺作为美国标准长度单位，在建筑设计、工程制图、精密制造和房地产开发中广泛应用。掌握准确的码到美制英尺换算方法，对于确保工程测量精度、建筑施工质量和制造业标准化具有重要意义。
+The conversion from yards to US feet is an important measurement conversion in US construction engineering, manufacturing, real estate surveying, and sports facility construction. The US foot, as a standard length unit in the United States, is widely used in architectural design, engineering drawing, precision manufacturing, and real estate development. Mastering accurate yard to US foot conversion methods is of great significance for ensuring engineering measurement accuracy, construction quality, and manufacturing standardization.
 
 <script setup>
 import { onMounted, reactive, inject, ref } from 'vue'
@@ -30,16 +29,16 @@ import { Length } from '../files';
 const convert = inject('convert')
 
 const seoKey = [
-  '码到美制英尺换算', 'yd到ft-us转换', '美制英尺换算器', '美国建筑工程',
-  '制造业测量', '房地产测量', '体育场地建设', '美制单位换算',
-  '建筑测量工具', '工程制图标准', '美国标准单位', '长度转换器',
-  '建筑设计测量', '精密测量工具', '美制长度单位', '工程测量标准'
+'yard to US foot conversion', 'yd to ft-us conversion', 'US foot converter', 'US construction engineering',
+'manufacturing measurement', 'real estate surveying', 'sports facility construction', 'US unit conversion',
+'construction measurement tools', 'engineering drawing standards', 'US standard units', 'length converter',
+'construction design measurement', 'precision measurement tools', 'US length units', 'engineering measurement standards'
 ]
 
 const form = reactive({
   number: null,
   result: '',
-  title: '码到美制英尺换算器 - 专业建筑工程测量工具'
+  title: 'Yard to US Foot Converter - Professional Construction Engineering Measurement Tool'
 })
 
 const convertHandler = () => {
@@ -47,17 +46,17 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) * 3.0
     form.result = `${form.number}yd = ${convertedValue.toFixed(2)}ft-us`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="码 (yd)">
-    <n-input-number v-model:value="form.number" placeholder="输入码" style="width: 100%" />
+  <n-form-item label="Yard (yd)">
+    <n-input-number v-model:value="form.number" placeholder="Enter yards" style="width: 100%" />
   </n-form-item>
-  <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+  
+  <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
@@ -79,92 +78,92 @@ const convertHandler = () => {
   </template>
 </n-card>
 
-## 实际应用场景
+## Practical Application Scenarios
 
-码到美制英尺的换算在美国各行业中具有重要的实际应用价值，特别是在需要精确测量和标准化的专业领域：
+The conversion from yards to US feet has important practical application value in various industries in the United States, especially in professional fields that require precise measurement and standardization:
 
-### 美国建筑工程
-在美国建筑行业中，建筑图纸和施工规范经常混合使用码和美制英尺单位。建筑师在设计阶段使用码标注大型结构尺寸，而施工人员在具体操作中更习惯使用美制英尺进行精确测量。准确的单位换算确保了建筑项目的设计精度和施工质量。
+### US Construction Engineering
+In the US construction industry, architectural drawings and construction specifications often use a mix of yard and US foot units. Architects use yards to mark large structural dimensions during the design phase, while construction workers are more accustomed to using US feet for precise measurements during specific operations. Accurate unit conversion ensures the design precision and construction quality of building projects.
 
-### 制造业精密测量
-美国制造业在生产过程中需要严格的尺寸控制。机械零件的设计图纸可能使用码标注，而生产设备的操作界面显示美制英尺。这种换算保证了制造过程的标准化和产品质量的一致性。
+### Manufacturing Precision Measurement
+The US manufacturing industry requires strict dimensional control during production processes. Mechanical parts design drawings may use yard markings, while production equipment operation interfaces display US feet. This conversion ensures standardization of manufacturing processes and consistency of product quality.
 
-### 房地产测量评估
-房地产行业在土地测量、建筑面积计算和物业评估中广泛应用这种换算。土地测量师使用码进行大面积测量，而房屋检查员使用美制英尺进行室内空间测量，准确换算确保了房地产交易的公正性。
+### Real Estate Surveying and Assessment
+The real estate industry widely applies this conversion in land surveying, building area calculation, and property assessment. Land surveyors use yards for large-area measurements, while home inspectors use US feet for indoor space measurements. Accurate conversion ensures fairness in real estate transactions.
 
-### 体育场地建设
-美国体育场馆和运动场地的建设严格遵循标准尺寸要求。设计规范使用码标注，而施工测量使用美制英尺，精确的换算保证了体育设施符合竞赛标准。
+### Sports Facility Construction
+The construction of US sports venues and athletic fields strictly follows standard size requirements. Design specifications use yard markings, while construction measurements use US feet. Precise conversion ensures that sports facilities meet competition standards.
 
-### 工程制图标准
-在工程制图和技术文档中，不同的图纸可能使用不同的长度单位。工程师需要在码和美制英尺之间进行准确换算，确保技术文档的准确性和工程项目的成功实施。
+### Engineering Drawing Standards
+In engineering drawings and technical documentation, different drawings may use different length units. Engineers need to perform accurate conversions between yards and US feet to ensure the accuracy of technical documents and successful implementation of engineering projects.
 
-### 国际贸易合作
-美国企业在国际贸易中经常需要将产品规格在不同单位制之间转换。码到美制英尺的换算是美制单位体系内部转换的基础，为国际商务合作提供了标准化的测量基准。
+### International Trade Cooperation
+US companies often need to convert product specifications between different unit systems in international trade. The yard to US foot conversion is the foundation for internal conversions within the US unit system, providing standardized measurement benchmarks for international business cooperation.
 
-### 码美制英尺换算对照表
+### Yard to US Foot Conversion Reference Table
 
-| 码 (yd) | 美制英尺 (ft-us) | 米 (m) | 厘米 (cm) | 应用场景 |
-|---------|------------------|--------|-----------|----------|
-| 1 yd | 3 ft-us | 0.914 m | 91.4 cm | 小型物品测量 |
-| 5 yd | 15 ft-us | 4.572 m | 457.2 cm | 房间尺寸 |
-| 10 yd | 30 ft-us | 9.144 m | 914.4 cm | 建筑构件 |
-| 20 yd | 60 ft-us | 18.288 m | 1828.8 cm | 建筑跨度 |
-| 50 yd | 150 ft-us | 45.72 m | 4572 cm | 大型建筑 |
-| 100 yd | 300 ft-us | 91.44 m | 9144 cm | 工程项目 |
-| 200 yd | 600 ft-us | 182.88 m | 18288 cm | 基础设施 |
-| 500 yd | 1500 ft-us | 457.2 m | 45720 cm | 大型工程 |
+| Yard (yd) | US Foot (ft-us) | Meter (m) | Centimeter (cm) | Application Scenario |
+|-----------|-----------------|-----------|-----------------|---------------------|
+| 1 yd | 3 ft-us | 0.914 m | 91.4 cm | Small item measurement |
+| 5 yd | 15 ft-us | 4.572 m | 457.2 cm | Room dimensions |
+| 10 yd | 30 ft-us | 9.144 m | 914.4 cm | Building components |
+| 20 yd | 60 ft-us | 18.288 m | 1828.8 cm | Building spans |
+| 50 yd | 150 ft-us | 45.72 m | 4572 cm | Large buildings |
+| 100 yd | 300 ft-us | 91.44 m | 9144 cm | Engineering projects |
+| 200 yd | 600 ft-us | 182.88 m | 18288 cm | Infrastructure |
+| 500 yd | 1500 ft-us | 457.2 m | 45720 cm | Large-scale engineering |
 
-## 公式
+## Formula
 
-### 码到美制英尺转换公式
-从 **码 (yd)** 换算到 **美制英尺 (ft-us)** 的精确公式为：
+### Yard to US Foot Conversion Formula
+The precise formula for converting from **Yard (yd)** to **US Foot (ft-us)** is:
 $$ ft-us = yd \times 3.0 $$
 
-### 美制英尺到码转换公式
-从 **美制英尺 (ft-us)** 换算到 **码 (yd)** 的精确公式为：
+### US Foot to Yard Conversion Formula
+The precise formula for converting from **US Foot (ft-us)** to **Yard (yd)** is:
 $$ yd = ft-us \div 3.0 $$
 
-### 长度单位换算对照表
+### Length Unit Conversion Reference Table
 
-| 码 (yd) | 美制英尺 (ft-us) | 英寸 (in) | 米 (m) | 应用场景 |
-|---------|------------------|-----------|--------|----------|
-| 1 yd | 3 ft-us | 36 in | 0.914 m | 标准换算单位 |
-| 2 yd | 6 ft-us | 72 in | 1.829 m | 小型建筑构件 |
-| 5 yd | 15 ft-us | 180 in | 4.572 m | 房间尺寸测量 |
-| 10 yd | 30 ft-us | 360 in | 9.144 m | 建筑设计标准 |
-| 25 yd | 75 ft-us | 900 in | 22.86 m | 体育场地规格 |
-| 50 yd | 150 ft-us | 1800 in | 45.72 m | 大型建筑跨度 |
-| 100 yd | 300 ft-us | 3600 in | 91.44 m | 工程项目测量 |
-| 500 yd | 1500 ft-us | 18000 in | 457.2 m | 基础设施建设 |
+| Yard (yd) | US Foot (ft-us) | Inch (in) | Meter (m) | Application Scenario |
+|-----------|-----------------|-----------|-----------|---------------------|
+| 1 yd | 3 ft-us | 36 in | 0.914 m | Standard conversion unit |
+| 2 yd | 6 ft-us | 72 in | 1.829 m | Small building components |
+| 5 yd | 15 ft-us | 180 in | 4.572 m | Room dimension measurement |
+| 10 yd | 30 ft-us | 360 in | 9.144 m | Building design standards |
+| 25 yd | 75 ft-us | 900 in | 22.86 m | Sports facility specifications |
+| 50 yd | 150 ft-us | 1800 in | 45.72 m | Large building spans |
+| 100 yd | 300 ft-us | 3600 in | 91.44 m | Engineering project measurement |
+| 500 yd | 1500 ft-us | 18000 in | 457.2 m | Infrastructure construction |
 
-### 转换示例
-- **建筑设计应用**：1yd = 3ft-us
-- **制造业应用**：2yd = 6ft-us
-- **房地产应用**：10yd = 30ft-us
-- **体育场地应用**：50yd = 150ft-us
-- **工程项目应用**：100yd = 300ft-us
+### Conversion Examples
+- **Construction Design Application**: 1yd = 3ft-us
+- **Manufacturing Application**: 2yd = 6ft-us
+- **Real Estate Application**: 10yd = 30ft-us
+- **Sports Facility Application**: 50yd = 150ft-us
+- **Engineering Project Application**: 100yd = 300ft-us
 
-## 常见问题 (FAQ)
+## Frequently Asked Questions (FAQ)
 
-### 1. 码和美制英尺换算的实际意义是什么？
-码到美制英尺的换算连接了英制长度单位体系中的两个重要单位。在美国建筑工程、制造业和房地产行业中具有重要的实践价值，特别是在需要精确测量和标准化的专业场合。
+### 1. What is the practical significance of yard to US foot conversion?
+The yard to US foot conversion connects two important units in the imperial length unit system. It has important practical value in US construction engineering, manufacturing, and real estate industries, especially in professional settings that require precise measurement and standardization.
 
-### 2. 在美国建筑工程中如何应用这种换算？
-在美国建筑行业中，建筑图纸设计阶段常用码标注大型结构尺寸，而施工现场测量更习惯使用美制英尺。通过准确换算，建筑师和施工人员能够在设计和建造过程中实现尺寸参数的精确控制。
+### 2. How is this conversion applied in US construction engineering?
+In the US construction industry, architectural drawings often use yards to mark large structural dimensions during the design phase, while construction site measurements are more accustomed to using US feet. Through accurate conversion, architects and construction workers can achieve precise control of dimensional parameters during design and construction processes.
 
-### 3. 如何确保码到美制英尺换算的精度？
-使用标准换算比例（1 yd = 3 ft-us），采用高精度计算工具，并根据具体应用场景的要求选择合适的精度等级，确保换算结果满足工程质量和制造标准要求。
+### 3. How to ensure the precision of yard to US foot conversion?
+Use the standard conversion ratio (1 yd = 3 ft-us), employ high-precision calculation tools, and select appropriate precision levels according to specific application scenario requirements to ensure conversion results meet engineering quality and manufacturing standard requirements.
 
-### 4. 在制造业中这种换算有什么价值？
-在美国制造业中，产品设计图纸与生产设备操作界面可能使用不同的长度单位。这种换算帮助工程师和操作人员准确理解技术规格，确保产品质量和生产效率。
+### 4. What value does this conversion have in manufacturing?
+In US manufacturing, product design drawings and production equipment operation interfaces may use different length units. This conversion helps engineers and operators accurately understand technical specifications, ensuring product quality and production efficiency.
 
-### 5. 房地产行业中如何应用码到美制英尺换算？
-在房地产测量和评估中，土地测量与室内空间测量可能使用不同单位。这种换算确保测量数据的准确性，促进房地产交易的公正性和透明度。
+### 5. How is yard to US foot conversion applied in the real estate industry?
+In real estate surveying and assessment, land surveying and indoor space measurement may use different units. This conversion ensures the accuracy of measurement data and promotes fairness and transparency in real estate transactions.
 
-### 6. 如何在实际工作中应用这种换算？
-在美制单位相关工作中，使用标准换算公式和专业计算工具，建立完整的测量标准体系，确保从设计到施工的准确转换和质量控制。
+### 6. How to apply this conversion in practical work?
+In work related to US units, use standard conversion formulas and professional calculation tools, establish a complete measurement standard system, and ensure accurate conversion and quality control from design to construction.
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Length" :key="index">
     <n-button

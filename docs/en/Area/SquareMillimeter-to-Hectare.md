@@ -4,131 +4,90 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
 
   - - link: /Area/SquareMillimeter-to-Hectare
-      linkText: 平方毫米到公顷
+      linkText: Square Millimeter to Hectare
 head:
   - - meta
     - name: description
-      content: "面积单位换算指南，涵盖平方毫米 (mm²) 到公顷 (ha) 的详细换算公式与说明。"
+      content: "Area unit conversion guide covering detailed conversion formulas and explanations from square millimeters (mm²) to hectares (ha)."
   - - meta
     - name: keywords
-      content: "面积, 单位换算, 平方毫米, 公顷, mm², ha, 平方毫米到公顷, 面积换算指南, 平方毫米换算公顷, 平方毫米到公顷, 公顷换算, 平方毫米转公顷, 公顷计算, 微小面积换算, 精密面积计算, 平方毫米符号, 公顷符号, 面积单位对照, 平方毫米换算表, 公顷换算公式, 面积转换工具, 平方毫米计算, 公顷计算器, 面积换算公式, 土地测量单位, 农业面积单位, 大面积换算, 平方毫米到公顷公式, 公顷面积计算, 面积单位转换, 土地规划单位, 农田面积换算, 平方毫米公顷对照表, 面积计算工具, 农业用地计算"
+      content: "area, unit conversion, square millimeter, hectare, mm², ha, square millimeter to hectare, area conversion guide, square millimeter convert hectare, square millimeter to hectare, hectare conversion, square millimeter to hectare, hectare calculation, small area conversion, land survey area, square millimeter symbol, hectare symbol, area unit comparison, square millimeter conversion table, hectare conversion formula, area conversion tool, square millimeter calculation, hectare calculator, area conversion formula, real estate measurement unit, land planning area, small scale area conversion, square millimeter to hectare formula, hectare area calculation, area unit conversion, construction measurement unit, property area unit, square millimeter hectare comparison table, area calculation tool, metric area unit"
 ---
-# 平方毫米 (mm²) 到 公顷 (ha) 的换算
+# Square Millimeter (mm²) to Hectare (ha) Conversion
 ---
 <script setup>
 import { onMounted, reactive, inject, ref } from 'vue'
 import { NButton, NForm, NFormItem, NInput, NInputNumber, NSelect, NCard, useMessage,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
 import { Area } from '../files';
-const seoKey = [
-  '平方毫米换算公顷',
-  '平方毫米到公顷',
-  '公顷换算',
-  '面积单位换算',
-  '平方毫米转公顷',
-  '公顷计算',
-  '微小面积换算',
-  '精密面积计算',
-  '平方毫米符号',
-  '公顷符号',
-  '面积单位对照',
-  '平方毫米换算表',
-  '公顷换算公式',
-  '面积转换工具',
-  '平方毫米计算',
-  '公顷计算器',
-  '面积换算公式',
-  '土地测量单位',
-  '农业面积单位',
-  '大面积换算',
-  '平方毫米到公顷公式',
-  '公顷面积计算',
-  '面积单位转换',
-  '土地规划单位',
-  '农田面积换算',
-  '平方毫米公顷对照表',
-  '面积计算工具',
-  '农业用地计算'
-]
+
 const convert = inject('convert')
 
 const form = reactive({
   number: null,
   result: '',
-  title: '平方毫米 (mm²) 到公顷 (ha) 的换算',
 })
 
 const convertHandler = () => {
   if (form.number !== null && !isNaN(form.number)) {
     const convertedValue = parseFloat(form.number) / 10000000000
-    form.result = `${form.number}mm² = ${convertedValue.toFixed(10)}ha`
+    form.result = `${form.number}mm² = ${convertedValue.toFixed(12)}ha`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="平方毫米 (mm²)">
-    <n-input-number v-model:value="form.number" placeholder="输入平方毫米" style="width: 100%" />
+  <n-form-item label="Square Millimeter (mm²)">
+    <n-input-number v-model:value="form.number" placeholder="Enter square millimeters" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
-<n-card  
-  :title="form.title"
-  :segmented="{
-    content: true,
-    footer: 'soft',
-  }"
->
+<n-card  embedded :bordered="false" hoverable>
   <div  style="text-align:center;font-size:20px;">
     <strong>{{form.result}}</strong>
   </div>
-    <template #footer>
-    <div>
-      <span v-for="item of seoKey">{{item}}，</span>
-    </div>
-  </template>
 </n-card>
 
-## 公式
+## Formula
 
-从 **平方毫米 (mm²)** 换算到 **公顷 (ha)** 的公式为：
+The formula for converting from **square millimeters (mm²)** to **hectares (ha)** is:
 $$ ha = mm² \div 10000000000 $$
 
-## 平方毫米到公顷换算指南
+## Square Millimeter to Hectare Conversion Guide
 
-在日常生活和土地测量中，面积单位的换算是一个常见需求。本文专注于平方毫米 (mm²) 到公顷 (ha) 的换算，提供了详细的公式与实用示例。
+In land surveying and real estate, area unit conversion is a common requirement. This article focuses on the conversion from square millimeters (mm²) to hectares (ha), providing detailed formulas and practical examples.
 
-### 为什么需要 mm² 到 ha 的换算？
+### Why Do We Need mm² to ha Conversion?
 
-平方毫米和公顷是常见的面积单位，尤其在农业、林业和土地规划中尤为重要。通过精确的换算，可以确保测量的一致性和准确性。
+Square millimeters and hectares are common area units, especially important in real estate, construction, and land surveying. Through precise conversion, we can ensure measurement consistency and accuracy.
 
-### mm² 到 ha 的换算方法
+### mm² to ha Conversion Method
 
-从平方毫米到公顷的换算公式为：
+The conversion formula from square millimeters to hectares is:
 
-- **公式：** `ha = mm² ÷ 10000000000`
+- **Formula:** `ha = mm² ÷ 10000000000`
 
-### 实际应用示例
+### Practical Application Examples
 
-以下是一些常见的换算实例：
+Here are some common conversion examples:
 
-- 1 mm² = 0.0000000001 ha
-- 10000000000 mm² = 1 ha
-- 50000000000 mm² = 5 ha
+- 10000000000 mm² = 1.0 ha
+- 100000000000 mm² = 10.0 ha
+- 1000000000000 mm² = 100.0 ha
 
-### 总结
+### Summary
 
-掌握平方毫米到公顷的换算可以帮助您更好地理解和使用这些面积单位。希望本指南能为您提供有价值的参考。
+Mastering the conversion from square millimeters to hectares can help you better understand and use these area units. We hope this guide provides valuable reference for you.
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Area" :key="index">
     <n-button

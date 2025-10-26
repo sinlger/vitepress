@@ -4,26 +4,55 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
 
   - - link: /Area/SquareInch-to-Acre
-      linkText: 平方英寸到英亩
+      linkText: Square Inch to Acre
 head:
   - - meta
     - name: description
-      content: "面积单位换算指南，涵盖平方英寸 (in²) 到英亩 (ac) 的详细换算公式与说明。"
+      content: "Area unit conversion guide covering detailed conversion formulas and explanations from square inches (in²) to acres."
   - - meta
     - name: keywords
-      content: "面积, 单位换算, 平方英寸, 英亩, in², acre, 平方英寸到英亩, 面积换算指南, 平方英寸到英亩换算, in²到acre换算, 平方英寸转英亩, 英寸平方到英亩, 平方英寸英亩换算器, in²转acre, 平方英寸换算英亩, 英寸平方转英亩, 平方英寸到英亩转换, in²英亩换算, 平方英寸英亩计算, 英寸平方英亩换算, 平方英寸转换英亩, in²到英亩, 平方英寸英亩转换器, 英寸平方到英亩换算, 平方英寸英亩换算公式, in²转换英亩, 平方英寸到英亩计算, 英寸平方转换英亩, 平方英寸英亩换算表, in²英亩转换, 平方英寸转英亩计算, 英寸平方英亩转换, 平方英寸到英亩换算工具, in²到英亩换算, 平方英寸英亩单位换算, 面积换算"
+      content: "area, unit conversion, square inches, acre, in², square inches to acre, area conversion guide, square inches to acre conversion, in² to acre conversion, square inches to acre, inch square to acre, square inches acre converter, in² to acre, square inches convert acre, inch square to acre, square inches to acre conversion, in² acre conversion, square inches acre calculation, inch square acre conversion, square inches convert acre, in² to acre, square inches acre converter, inch square to acre conversion, square inches acre conversion formula, in² convert acre, square inches to acre calculation, inch square convert acre, square inches acre conversion table, in² acre conversion, square inches to acre calculation, inch square acre conversion, square inches to acre conversion tool, in² to acre conversion, square inches acre unit conversion, area conversion"
 ---
-# 平方英寸 (in²) 到 英亩 (ac) 的换算
+# Square Inches (in²) to Acre Conversion
 ---
 <script setup>
 import { onMounted, reactive, inject, ref } from 'vue'
 import { NButton, NForm, NFormItem, NInput, NInputNumber, NSelect, NCard, useMessage,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
 import { Area } from '../files';
-
+const seoKey = [
+  'square inches to acre conversion',
+  'in² to acre conversion',
+  'square inches to acre',
+  'inch square to acre',
+  'square inches acre converter',
+  'in² to acre',
+  'square inches convert acre',
+  'inch square to acre',
+  'square inches to acre conversion',
+  'in² acre conversion',
+  'square inches acre calculation',
+  'inch square acre conversion',
+  'square inches convert acre',
+  'in² to acre',
+  'square inches acre converter',
+  'inch square to acre conversion',
+  'square inches acre conversion formula',
+  'in² convert acre',
+  'square inches to acre calculation',
+  'inch square convert acre',
+  'square inches acre conversion table',
+  'in² acre conversion',
+  'square inches to acre calculation',
+  'inch square acre conversion',
+  'square inches to acre conversion tool',
+  'in² to acre conversion',
+  'square inches acre unit conversion',
+  'area conversion'
+]
 const convert = inject('convert')
 
 const form = reactive({
@@ -34,60 +63,71 @@ const form = reactive({
 const convertHandler = () => {
   if (form.number !== null && !isNaN(form.number)) {
     const convertedValue = parseFloat(form.number) / 6272640
-    form.result = `${form.number}in² = ${convertedValue.toFixed(6)}ac`
+    form.result = `${form.number}in² = ${convertedValue.toFixed(10)}acre`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="平方英寸 (in²)">
-    <n-input-number v-model:value="form.number" placeholder="输入平方英寸" style="width: 100%" />
+  <n-form-item label="Square Inches (in²)">
+    <n-input-number v-model:value="form.number" placeholder="Enter square inches" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
-<n-card  embedded :bordered="false" hoverable>
+<n-card  
+  :title="form.title"
+  :segmented="{
+    content: true,
+    footer: 'soft',
+  }"
+>
   <div  style="text-align:center;font-size:20px;">
     <strong>{{form.result}}</strong>
   </div>
+    <template #footer>
+    <div>
+      <span v-for="item of seoKey">{{item}}, </span>
+    </div>
+  </template>
 </n-card>
 
-## 公式
+## Formula
 
-从 **平方英寸 (in²)** 换算到 **英亩 (ac)** 的公式为：
-$$ ac = in² \div 6272640 $$
+The formula for converting from **Square Inches (in²)** to **Acres** is:
+$$ acre = in² \div 6272640 $$
 
-## 平方英寸到英亩换算指南
+## Square Inches to Acre Conversion Guide
 
-在土地测量和农业规划中，面积单位的换算是一个常见需求。本文专注于平方英寸 (in²) 到英亩 (ac) 的换算，提供了详细的公式与实用示例。
+In agricultural land measurement and large-scale land surveying, area unit conversion is a common requirement. This article focuses on the conversion from square inches (in²) to acres, providing detailed formulas and practical examples.
 
-### 为什么需要 in² 到 ac 的换算？
+### Why Do We Need in² to Acre Conversion?
 
-平方英寸和英亩是常见的面积单位，尤其在农业、房地产以及大规模土地测量中尤为重要。通过精确的换算，可以确保测量的一致性和准确性。
+Square inches and acres are common area units, especially important in agriculture, land surveying, and real estate. Through precise conversion, we can ensure measurement consistency and accuracy.
 
-### in² 到 ac 的换算方法
+### in² to Acre Conversion Method
 
-从平方英寸到英亩的换算公式为：
+The conversion formula from square inches to acres is:
 
-- **公式：** `ac = in² ÷ 6272640`
+- **Formula:** `acre = in² ÷ 6272640`
 
-### 实际应用示例
+### Practical Application Examples
 
-以下是一些常见的换算实例：
+Here are some common conversion examples:
 
-- 100000 in² = 0.015942 ac
-- 6272640 in² = 1 ac
-- 62726400 in² = 10 ac
+- 6272640 in² = 1 acre
+- 12545280 in² = 2 acres
+- 31363200 in² = 5 acres
 
-### 总结
+### Summary
 
-掌握平方英寸到英亩的换算可以帮助您更好地理解和使用这些面积单位。希望本指南能为您提供有价值的参考。
+Mastering the conversion from square inches to acres can help you better understand and use these area units. We hope this guide provides valuable reference for you.
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Area" :key="index">
     <n-button

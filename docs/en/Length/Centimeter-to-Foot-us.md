@@ -4,22 +4,22 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Length/index
-      linkText: 长度换算
+      linkText: Length Conversion
   - - link: /Length/Centimeter-to-Foot-us
-      linkText: 厘米到英尺-us
+      linkText: Centimeter to Foot-us
 head:
   - - meta
     - name: description
-      content: "厘米到美制英尺转换器 - 专业的长度单位换算工具。支持厘米、美制英尺、米、英寸等多种单位转换，提供精确的换算公式和实用转换表。"
+      content: "Centimeter to US foot converter - Professional length unit conversion tool. Supports conversion between centimeters, US feet, meters, inches and other units, providing accurate conversion formulas and practical conversion tables."
   - - meta
     - name: keywords
-      content: "厘米到美制英尺转换器, 长度单位转换器, 单位换算, 厘米转换, 美制英尺换算, cm转换, ft-us换算, 尺寸换算器, 长度换算, 厘米和米换算, 英尺换算厘米, 英寸厘米, 长度单位换算表, 米尺, 量尺, 直尺在线测量"
+      content: "centimeter to US foot converter, length unit converter, unit conversion, centimeter conversion, US foot conversion, cm conversion, ft-us conversion, dimension converter, length conversion, centimeter and meter conversion, feet to centimeter conversion, inch centimeter, length unit conversion table, meter ruler, measuring ruler, online ruler measurement"
 ---
-# 厘米 (cm) 到 美制英尺 (ft-us) 的换算
+# Centimeter (cm) to US Foot (ft-us) Conversion
 
-厘米到美制英尺转换器是一个专业的长度单位换算工具，帮助您快速准确地在厘米(cm)和美制英尺(ft-us)之间进行转换。本工具广泛应用于建筑工程、制造业、国际贸易等领域，支持高精度计算和实时转换。
+The centimeter to US foot converter is a professional length unit conversion tool that helps you quickly and accurately convert between centimeters (cm) and US feet (ft-us). This tool is widely used in construction engineering, manufacturing, international trade and other fields, supporting high-precision calculations and real-time conversion.
 
 ---
 <script setup>
@@ -27,13 +27,13 @@ import { onMounted, reactive, inject, ref } from 'vue'
 import { NButton, NForm, NFormItem, NInput, NInputNumber, NSelect, NCard, useMessage,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
 import { Length } from '../files';
-const seoKey = ['单位转换器','单位换算','长度单位转换器','长度单位转换','尺寸换算','长度单位换算','长度单位换算表','厘米转换','厘米和米换算','米厘米分米毫米的换算','cm和m换算','cm是什么','厘米单位','cm换算','厘米和米的换算公式','厘米 英寸','一厘米等于多少米','公分是什么单位','cm是什么意思','厘米和米','尺寸转换器','量尺','米尺','长度换算器','厘米换算','一厘米','cm是什么单位','长度转换','直尺在线测量','英尺换算厘米','英寸 厘米','尺寸换算器','长度','分米','尺寸转换','刻度尺','厘米换算米','一厘米等于多少毫米','长度单位','毫米和厘米','寸','英尺和厘米的换算','尺','一米等于多少厘米','长度换算','公分','尺寸','一公分等于多少厘米','英尺换算','cm','长度单位换算','尺寸换算','英寸换算','mm','厘米换算英寸']
+const seoKey = ['unit converter','unit conversion','length unit converter','length unit conversion','dimension conversion','length unit conversion','length unit conversion table','centimeter conversion','centimeter and meter conversion','meter centimeter decimeter millimeter conversion','cm and m conversion','what is cm','centimeter unit','cm conversion','centimeter and meter conversion formula','centimeter inch','how many meters in one centimeter','what unit is cm','what does cm mean','centimeter and meter','dimension converter','measuring ruler','meter ruler','length converter','centimeter conversion','one centimeter','what unit is cm','length conversion','online ruler measurement','feet to centimeter conversion','inch centimeter','dimension converter','length','decimeter','dimension conversion','scale ruler','centimeter to meter conversion','how many millimeters in one centimeter','length unit','millimeter and centimeter','inch','feet and centimeter conversion','foot','how many centimeters in one meter','length conversion','cm','dimension','how many centimeters in one cm','feet conversion','cm','length unit conversion','dimension conversion','inch conversion','mm','centimeter to inch conversion']
 const convert = inject('convert')
 
 const form = reactive({
   number: null,
   result: '',
-  title: '厘米到美制英尺-us的换算',
+  title: 'Centimeter to US Foot Conversion',
 })
 
 const convertHandler = () => {
@@ -41,17 +41,17 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) * 0.032808
     form.result = `${form.number}cm = ${convertedValue.toFixed(5)}ft-us`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="厘米 (cm)">
-    <n-input-number v-model:value="form.number" placeholder="输入厘米" style="width: 100%" />
+  <n-form-item label="Centimeter (cm)">
+    <n-input-number v-model:value="form.number" placeholder="Enter centimeters" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
@@ -72,81 +72,81 @@ const convertHandler = () => {
   </template>
 </n-card>
 
-## 常用转换公式
+## Common Conversion Formulas
 
-### 厘米到美制英尺转换
-- **1厘米 = 0.032808美制英尺**
-- **1美制英尺 = 30.48厘米**
+### Centimeter to US Foot Conversion
+- **1 centimeter = 0.032808 US foot**
+- **1 US foot = 30.48 centimeters**
 
-### 其他常用长度单位转换
-- **厘米到米**: 1cm = 0.01m
-- **厘米到英寸**: 1cm = 0.393701in
-- **厘米到毫米**: 1cm = 10mm
-- **美制英尺到米**: 1ft-us = 0.3048m
-- **美制英尺到英寸**: 1ft-us = 12in
+### Other Common Length Unit Conversions
+- **Centimeter to meter**: 1cm = 0.01m
+- **Centimeter to inch**: 1cm = 0.393701in
+- **Centimeter to millimeter**: 1cm = 10mm
+- **US foot to meter**: 1ft-us = 0.3048m
+- **US foot to inch**: 1ft-us = 12in
 
-## 长度单位换算表
+## Length Unit Conversion Table
 
-| 厘米(cm) | 美制英尺(ft-us) | 米(m) | 英寸(in) | 毫米(mm) |
-|----------|-----------------|-------|----------|----------|
+| Centimeter(cm) | US Foot(ft-us) | Meter(m) | Inch(in) | Millimeter(mm) |
+|----------------|----------------|----------|----------|----------------|
 | 10 | 0.32808 | 0.1 | 3.93701 | 100 |
 | 30.48 | 1.00000 | 0.3048 | 12.0000 | 304.8 |
 | 50 | 1.64042 | 0.5 | 19.6850 | 500 |
 | 100 | 3.28084 | 1.0 | 39.3701 | 1000 |
 | 500 | 16.4042 | 5.0 | 196.850 | 5000 |
 
-## 实际应用
+## Practical Applications
 
-厘米 (cm) 和美制英尺 (ft-us) 是测量日常物体尺寸和中等距离时常用的单位，在以下真实场景中非常重要：
+Centimeter (cm) and US foot (ft-us) are commonly used units for measuring everyday object dimensions and medium distances, which are very important in the following real-world scenarios:
 
-- **建筑与工程**：
-  - 在施工过程中，建筑材料的尺寸通常以厘米标注，但整体结构尺寸可能使用美制英尺衡量。
-  - 示例：某建筑物墙体厚度为 20cm，等于 0.65616ft-us。
+- **Construction and Engineering**:
+  - During construction, building material dimensions are usually marked in centimeters, but overall structural dimensions may be measured in US feet.
+  - Example: A building wall thickness of 20cm equals 0.65616ft-us.
 
-- **制造业**：
-  - 精密机械零件的尺寸以厘米标注，但设备安装空间可能使用美制英尺衡量。
-  - 示例：某机械零件长度为 30cm，等于 0.98424ft-us。
+- **Manufacturing**:
+  - Precision mechanical parts dimensions are marked in centimeters, but equipment installation space may be measured in US feet.
+  - Example: A mechanical part length of 30cm equals 0.98424ft-us.
 
-- **家具制造**：
-  - 家具设计图纸上常用厘米标注详细尺寸，但在出口市场中可能需要以美制英尺表示。
-  - 示例：一张桌子的长度为 120cm，即 3.9370ft-us。
+- **Furniture Manufacturing**:
+  - Furniture design drawings commonly use centimeters for detailed dimensions, but may need to be expressed in US feet for export markets.
+  - Example: A table length of 120cm is 3.9370ft-us.
 
-- **教育和实验**：
-  - 学生在实验室中使用厘米刻度尺进行测量，但报告中可能需要以美制英尺表示。
-  - 示例：学生测量一本书的厚度为 3cm，等于 0.098424ft-us。
+- **Education and Experiments**:
+  - Students use centimeter rulers for measurements in laboratories, but reports may need to be expressed in US feet.
+  - Example: A student measures a book thickness of 3cm, which equals 0.098424ft-us.
 
-## 公式
+## Formula
 
-从 **厘米 (cm)** 换算到 **美制英尺 (ft-us)** 的公式为：
+The formula for converting from **centimeter (cm)** to **US foot (ft-us)** is:
 $$ ft-us = cm \times 0.032808 $$
 
-### 示例
+### Examples
 - 100cm = 3.28080ft-us
 - 50cm = 1.64040ft-us
 - 10cm = 0.32808ft-us
 
-## 常见问题 (FAQ)
+## Frequently Asked Questions (FAQ)
 
-### 1. 美制英尺和国际英尺有什么区别？
-美制英尺(ft-us)和国际英尺(ft)略有不同。1美制英尺 = 30.48006096厘米，而1国际英尺 = 30.48厘米。在大多数日常应用中，这个差异可以忽略。
+### 1. What is the difference between US foot and international foot?
+US foot (ft-us) and international foot (ft) are slightly different. 1 US foot = 30.48006096 centimeters, while 1 international foot = 30.48 centimeters. In most daily applications, this difference can be ignored.
 
-### 2. 厘米和美制英尺的换算公式是什么？
-厘米到美制英尺的换算公式为：美制英尺 = 厘米 × 0.032808
-美制英尺到厘米的换算公式为：厘米 = 美制英尺 × 30.48
+### 2. What is the conversion formula between centimeter and US foot?
+The conversion formula from centimeter to US foot is: US foot = centimeter × 0.032808
+The conversion formula from US foot to centimeter is: centimeter = US foot × 30.48
 
-### 3. 什么时候使用美制英尺？
-美制英尺主要在美国的建筑、工程、房地产等行业中使用，也常用于测量人的身高和房间尺寸。
+### 3. When is US foot used?
+US foot is mainly used in the construction, engineering, and real estate industries in the United States, and is also commonly used for measuring human height and room dimensions.
 
-### 4. 如何快速估算厘米到美制英尺的转换？
-可以记住：大约30.48厘米等于1美制英尺。因此，厘米数除以30可以得到大致的英尺数。
+### 4. How to quickly estimate centimeter to US foot conversion?
+You can remember: approximately 30.48 centimeters equals 1 US foot. Therefore, dividing centimeters by 30 gives you the approximate number of feet.
 
-### 5. 厘米、米、英尺、英寸之间如何换算？
-- 1米 = 100厘米
-- 1美制英尺 = 30.48厘米 = 12英寸
-- 1英寸 = 2.54厘米
-- 1毫米 = 0.1厘米
+### 5. How to convert between centimeter, meter, foot, and inch?
+- 1 meter = 100 centimeters
+- 1 US foot = 30.48 centimeters = 12 inches
+- 1 inch = 2.54 centimeters
+- 1 millimeter = 0.1 centimeters
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Length" :key="index">
     <n-button

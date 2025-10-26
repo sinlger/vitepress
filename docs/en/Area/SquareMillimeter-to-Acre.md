@@ -4,110 +4,90 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
 
   - - link: /Area/SquareMillimeter-to-Acre
-      linkText: 平方毫米到英亩
+      linkText: Square Millimeter to Acre
 head:
   - - meta
     - name: description
-      content: "面积单位换算指南，涵盖平方毫米 (mm²) 到英亩 (ac) 的详细换算公式与说明。"
+      content: "Area unit conversion guide covering detailed conversion formulas and explanations from square millimeters (mm²) to acres."
   - - meta
     - name: keywords
-      content: "面积, 单位换算, 平方毫米, 英亩, mm², ac, 平方毫米到英亩, 面积换算指南, 平方毫米换算英亩, 平方毫米到英亩, 英亩换算, 平方毫米转英亩, 英亩计算, 农业面积换算, 土地测量面积, 平方毫米符号, 英亩符号, 面积单位对照, 平方毫米换算表, 英亩换算公式, 面积转换工具, 平方毫米计算, 英亩计算器, 面积换算公式, 农业测量单位, 土地规划面积, 大面积换算, 平方毫米到英亩公式, 英亩面积计算, 面积单位转换, 农田测量单位, 土地开发面积, 平方毫米英亩对照表, 面积计算工具, 农业用地单位"
+      content: "area, unit conversion, square millimeter, acre, mm², square millimeter to acre, area conversion guide, square millimeter convert acre, square millimeter to acre, acre conversion, square millimeter to acre, acre calculation, small area conversion, land survey area, square millimeter symbol, acre symbol, area unit comparison, square millimeter conversion table, acre conversion formula, area conversion tool, square millimeter calculation, acre calculator, area conversion formula, real estate measurement unit, land planning area, small scale area conversion, square millimeter to acre formula, acre area calculation, area unit conversion, construction measurement unit, property area unit, square millimeter acre comparison table, area calculation tool, metric imperial area unit"
 ---
-# 平方毫米 (mm²) 到 英亩 (ac) 的换算
+# Square Millimeter (mm²) to Acre Conversion
 ---
 <script setup>
 import { onMounted, reactive, inject, ref } from 'vue'
 import { NButton, NForm, NFormItem, NInput, NInputNumber, NSelect, NCard, useMessage,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
 import { Area } from '../files';
-const seoKey = [
-  '平方米换算平方毫米',
-  '平方毫米符号',
-  '平方米和平方毫米换算',
-  '平方毫米和平方米的换算',
-  '平方厘米换算平方米',
-  '平方毫米换算平方米'
-]
+
 const convert = inject('convert')
 
 const form = reactive({
   number: null,
   result: '',
-  title: '平方毫米 (mm²) 到 英亩 (ac) 的换算',
-
 })
 
 const convertHandler = () => {
   if (form.number !== null && !isNaN(form.number)) {
     const convertedValue = parseFloat(form.number) / 4046856422.4
-    form.result = `${form.number}mm² = ${convertedValue.toFixed(10)}ac`
+    form.result = `${form.number}mm² = ${convertedValue.toFixed(10)}acre`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="平方毫米 (mm²)">
-    <n-input-number v-model:value="form.number" placeholder="输入平方毫米" style="width: 100%" />
+  <n-form-item label="Square Millimeter (mm²)">
+    <n-input-number v-model:value="form.number" placeholder="Enter square millimeters" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
-<n-card  
-  :title="form.title"
-  :segmented="{
-    content: true,
-    footer: 'soft',
-  }"
->
+<n-card  embedded :bordered="false" hoverable>
   <div  style="text-align:center;font-size:20px;">
     <strong>{{form.result}}</strong>
   </div>
-    <template #footer>
-    <div>
-      <span v-for="item of seoKey">{{item}}，</span>
-    </div>
-  </template>
 </n-card>
 
-## 公式
+## Formula
 
-从 **平方毫米 (mm²)** 换算到 **英亩 (ac)** 的公式为：
-$$ ac = mm² \div 4046856422.4 $$
+The formula for converting from **square millimeters (mm²)** to **acres** is:
+$$ acre = mm² \div 4046856422.4 $$
 
-## 平方毫米到英亩换算指南
+## Square Millimeter to Acre Conversion Guide
 
-在土地测量和农业规划中，面积单位的换算是一个常见需求。本文专注于平方毫米 (mm²) 到英亩 (ac) 的换算，提供了详细的公式与实用示例。
+In land surveying and real estate, area unit conversion is a common requirement. This article focuses on the conversion from square millimeters (mm²) to acres, providing detailed formulas and practical examples.
 
-### 为什么需要 mm² 到 ac 的换算？
+### Why Do We Need mm² to Acre Conversion?
 
-平方毫米和英亩是常见的面积单位，尤其在农业、房地产和土地规划中尤为重要。通过精确的换算，可以确保测量的一致性和准确性。
+Square millimeters and acres are common area units, especially important in real estate, construction, and land surveying. Through precise conversion, we can ensure measurement consistency and accuracy.
 
-### mm² 到 ac 的换算方法
+### mm² to Acre Conversion Method
 
-从平方毫米到英亩的换算公式为：
+The conversion formula from square millimeters to acres is:
 
-- **公式：** `ac = mm² ÷ 4046856422.4`
+- **Formula:** `acre = mm² ÷ 4046856422.4`
 
-### 实际应用示例
+### Practical Application Examples
 
-以下是一些常见的换算实例：
+Here are some common conversion examples:
 
-- 1 mm² = 0.0000000002 ac
-- 4046856422.4 mm² = 1 ac
-- 40468564224 mm² = 10 ac
+- 4046856422 mm² = 1.0 acre
+- 40468564224 mm² = 10.0 acres
+- 404685642240 mm² = 100.0 acres
 
-### 总结
+### Summary
 
-掌握平方毫米到英亩的换算可以帮助您更好地理解和使用这些面积单位。希望本指南能为您提供有价值的参考。
+Mastering the conversion from square millimeters to acres can help you better understand and use these area units. We hope this guide provides valuable reference for you.
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Area" :key="index">
     <n-button

@@ -1,35 +1,32 @@
 ---
-sidebar: false
-aside: false
-lastUpdated: false
-breadcrumb:
-  - - link: /
-      linkText: 首页
+breadcrumb: "Home > Area Conversion > Acre to Square Kilometer"
+metaDescription: "Acre to Square Kilometer conversion calculator, quickly convert acres to square kilometers, understand the conversion formula and practical application scenarios."
+keywords: "acre to square kilometer, area conversion, acre conversion, square kilometer conversion, area calculator"
+---
 
-  - - link: /Area/Acre-to-SquareKilometer
-      linkText: 英亩到平方千米
-head:
-  - - meta
-    - name: description
-      content: "面积单位换算指南，涵盖英亩 (ac) 到平方千米 (km²) 的详细换算公式与说明。"
-  - - meta
-    - name: keywords
-      content: "面积, 单位换算, 英亩, 平方千米, acre, km², 英亩到平方千米, 面积换算指南, 英亩换算平方千米, 英亩到平方千米, 平方千米换算, 面积单位换算, 英亩转平方千米, 平方千米计算, 国际土地测量, 农业土地面积, 英亩符号, 平方千米符号, 面积单位对照, 英亩换算表, 平方千米换算公式, 面积转换工具, 英亩计算, 平方千米计算器, 面积换算公式, 国际测量单位, 农场面积计算, 地理面积测量, 英亩到平方千米公式, 平方千米面积计算, 面积单位转换, 国际土地单位, 农业规划面积, 英亩平方千米对照表, 面积计算工具, 国际农业单位"
----
-# 英亩 (ac) 到 平方千米 (km²) 的换算
----
+# Acre to Square Kilometer Conversion
+
 <script setup>
-import { onMounted, reactive, inject, ref } from 'vue'
-import { NButton, NForm, NFormItem, NInput, NInputNumber, NSelect, NCard, useMessage,NGrid ,NGi } from 'naive-ui'
-import { defineClientComponent } from 'vitepress'
-import { Area } from '../files';
-const seoKey = ['英亩平方千米','英亩和平方千米的换算','一英亩等于多少平方千米','英亩转平方千米','acres km²','英亩换算','平方千米换算','面积换算','单位换算','英亩到平方千米','ac km²','英亩平方千米转换','面积单位换算','英亩平方千米计算器','英亩平方千米对照表','长度换算','单位转换','英亩平方千米换算器','平方千米长度','英亩长度','面积计算','单位换算公式','英亩平方千米计算','面积换算器','平方千米单位换算','英亩单位换算','面积单位转换表','英亩平方千米转换表']
-const convert = inject('convert')
+import { ref, computed } from 'vue'
 
-const form = reactive({
-  number: null,
-  result: '',
-  title: '英亩 (ac) 到 平方千米 (km²) 的换算'
+const seoKey = ref([
+  "acre to square kilometer",
+  "area conversion",
+  "acre conversion",
+  "square kilometer conversion",
+  "area calculator",
+  "land area conversion",
+  "large area measurement",
+  "international area units"
+])
+
+const form = ref({
+  title: "Acre to Square Kilometer Converter",
+  acreLabel: "Acre",
+  acrePlaceholder: "Enter acre value",
+  squareKilometerLabel: "Square Kilometer",
+  squareKilometerPlaceholder: "Enter square kilometer value",
+  convertButton: "Convert"
 })
 
 const convertHandler = () => {
@@ -37,17 +34,17 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) / 247.105381467169
     form.result = `${form.number}ac = ${convertedValue.toFixed(4)}km²`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="英亩 (ac)">
-    <n-input-number v-model:value="form.number" placeholder="输入英亩" style="width: 100%" />
+  <n-form-item label="Acre (ac)">
+    <n-input-number v-model:value="form.number" placeholder="Enter acres" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
@@ -68,48 +65,53 @@ const convertHandler = () => {
   </template>
 </n-card>
 
-## 公式
+## Conversion Formula
 
-从 **英亩 (ac)** 换算到 **平方千米 (km²)** 的公式为：
-$$ km² = ac \div 247.105381467169 $$
+1 acre = 0.00404686 square kilometers
 
-## 英亩到平方千米换算指南
+**Formula:** Square Kilometers = Acres × 0.00404686
 
-在地理测量和大面积土地规划中，面积单位的换算是一个常见需求。本文专注于英亩 (ac) 到平方千米 (km²) 的换算，提供了详细的公式与实用示例。
+## Acre to Square Kilometer Conversion Guide
 
-### 为什么需要 ac 到 km² 的换算？
+### Why Convert Acres to Square Kilometers?
 
-英亩和平方千米是常见的面积单位，尤其在农业、土地规划以及大规模地理测量中尤为重要。通过精确的换算，可以确保测量的一致性和准确性。
+Acre to square kilometer conversion is commonly needed in the following scenarios:
 
-### ac 到 km² 的换算方法
+1. **International Land Transactions**: Converting between imperial and metric systems
+2. **Geographic Mapping**: Large-scale land area calculations
+3. **Agricultural Planning**: International farming and land management
+4. **Environmental Studies**: Ecosystem and conservation area measurements
+5. **Urban Planning**: City and regional development projects
 
-从英亩到平方千米的换算公式为：
+### Conversion Method
 
-- **公式：** `km² = ac ÷ 247.105381467169`
+Converting acres to square kilometers uses a decimal conversion factor:
+- **Conversion Factor**: 1 acre = 0.00404686 square kilometers
+- **Calculation Method**: Multiply the acre value by 0.00404686
 
-### 实际应用示例
+## Practical Application Examples
 
-以下是一些常见的换算实例：
+### Example 1: Farm Property
+- **Scenario**: A farm property is 100 acres
+- **Calculation**: 100 × 0.00404686 = 0.404686 square kilometers
+- **Result**: The farm area is approximately 0.40 square kilometers
 
-- 100 ac = 0.4047 km²
-- 247.105381467169 ac = 1 km²
-- 2471.05381467169 ac = 10 km²
-ddd
+### Example 2: National Park
+- **Scenario**: A national park section is 5,000 acres
+- **Calculation**: 5,000 × 0.00404686 = 20.2343 square kilometers
+- **Result**: The park section area is approximately 20.23 square kilometers
 
-### 总结
+### Example 3: Urban Development
+- **Scenario**: An urban development project covers 250 acres
+- **Calculation**: 250 × 0.00404686 = 1.011715 square kilometers
+- **Result**: The development area is approximately 1.01 square kilometers
 
-掌握英亩到平方千米的换算可以帮助您更好地理解和使用这些面积单位。希望本指南能为您提供有价值的参考。
+## Summary
 
-## 相关连接
-<n-grid x-gap="12" :cols="2">
-  <n-gi v-for="(file, index) in Area" :key="index">
-    <n-button
-      text
-      tag="a"
-      :href="file.path"
-      type="info"
-    >
-      {{file.name}}
-    </n-button>
-  </n-gi>
-</n-grid>
+Acre to square kilometer conversion is essential for international land transactions and large-scale area measurements. Using the conversion factor of 1 acre = 0.00404686 square kilometers, you can easily convert between these units. This conversion is particularly useful for geographic mapping, environmental studies, and international agricultural planning.
+
+## Related Links
+
+- [Square Kilometer to Acre Conversion](./SquareKilometer-to-Acre.md)
+- [Acre to Hectare Conversion](./Acre-to-Hectare.md)
+- [Acre to Square Meter Conversion](./Acre-to-SquareMeter.md)

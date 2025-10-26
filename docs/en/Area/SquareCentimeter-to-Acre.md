@@ -4,19 +4,19 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
 
   - - link: /Area/SquareCentimeter-to-Acre
-      linkText: 平方厘米到英亩
+      linkText: Square Centimeter to Acre
 head:
   - - meta
     - name: description
-      content: "面积单位换算指南，涵盖平方厘米 (cm²) 到英亩 (ac) 的详细换算公式与说明。"
+      content: "Area unit conversion guide covering detailed conversion formulas and explanations from square centimeters (cm²) to acres (ac)."
   - - meta
     - name: keywords
-      content: "面积, 单位换算, 平方厘米, 英亩, cm², ac, 平方厘米到英亩, 面积换算指南, 平方厘米到英亩换算, 平方厘米转英亩, cm²到ac换算, 平方厘米英亩转换, 面积单位换算, 平方厘米换算英亩, 英亩平方厘米换算, cm²转ac, 平方厘米到英亩转换器, 面积换算工具, 平方厘米英亩计算, 英亩换算平方厘米, ac到cm²换算, 面积单位转换, 平方厘米英亩对照, 英亩平方厘米计算器, 面积换算公式, 平方厘米转换英亩, 英亩换算器, 平方厘米计算英亩, cm²英亩换算, 面积单位对照表, 平方厘米到英亩公式, 英亩面积换算, 平方厘米英亩转换工具, 面积换算计算器, cm²转换ac, 平方厘米英亩换算表"
+      content: "area, unit conversion, square centimeter, acre, cm², ac, square centimeter to acre, area conversion guide, square centimeter to acre conversion, square centimeter convert acre, cm² to ac conversion, square centimeter acre conversion, area unit conversion, square centimeter convert acre, acre square centimeter conversion, cm² convert ac, square centimeter to acre converter, area conversion tool, square centimeter acre calculation, acre convert square centimeter, ac to cm² conversion, area unit conversion, square centimeter acre comparison, acre square centimeter calculator, area conversion formula, square centimeter convert acre, acre converter, square centimeter calculate acre, cm² acre conversion, area unit comparison table, square centimeter to acre formula, acre area conversion, square centimeter acre conversion tool, area conversion calculator, cm² convert ac, square centimeter acre conversion table"
 ---
-# 平方厘米 (cm²) 到 英亩 (ac) 的换算
+# Square Centimeter (cm²) to Acre (ac) Conversion
 ---
 <script setup>
 import { onMounted, reactive, inject, ref } from 'vue'
@@ -24,34 +24,34 @@ import { NButton, NForm, NFormItem, NInput, NInputNumber, NSelect, NCard, useMes
 import { defineClientComponent } from 'vitepress'
 import { Area } from '../files';
 const seoKey = [
-  '平方厘米到英亩换算',
-  '平方厘米转英亩',
-  'cm²到ac换算',
-  '平方厘米英亩转换',
-  '面积单位换算',
-  '平方厘米换算英亩',
-  '英亩平方厘米换算',
-  'cm²转ac',
-  '平方厘米到英亩转换器',
-  '面积换算工具',
-  '平方厘米英亩计算',
-  '英亩换算平方厘米',
-  'ac到cm²换算',
-  '面积单位转换',
-  '平方厘米英亩对照',
-  '英亩平方厘米计算器',
-  '面积换算公式',
-  '平方厘米转换英亩',
-  '英亩换算器',
-  '平方厘米计算英亩',
-  'cm²英亩换算',
-  '面积单位对照表',
-  '平方厘米到英亩公式',
-  '英亩面积换算',
-  '平方厘米英亩转换工具',
-  '面积换算计算器',
-  'cm²转换ac',
-  '平方厘米英亩换算表'
+  'square centimeter to acre conversion',
+  'square centimeter convert acre',
+  'cm² to ac conversion',
+  'square centimeter acre conversion',
+  'area unit conversion',
+  'square centimeter convert acre',
+  'acre square centimeter conversion',
+  'cm² convert ac',
+  'square centimeter to acre converter',
+  'area conversion tool',
+  'square centimeter acre calculation',
+  'acre convert square centimeter',
+  'ac to cm² conversion',
+  'area unit conversion',
+  'square centimeter acre comparison',
+  'acre square centimeter calculator',
+  'area conversion formula',
+  'square centimeter convert acre',
+  'acre converter',
+  'square centimeter calculate acre',
+  'cm² acre conversion',
+  'area unit comparison table',
+  'square centimeter to acre formula',
+  'acre area conversion',
+  'square centimeter acre conversion tool',
+  'area conversion calculator',
+  'cm² convert ac',
+  'square centimeter acre conversion table'
 ]
 
 const convert = inject('convert')
@@ -59,7 +59,7 @@ const convert = inject('convert')
 const form = reactive({
   number: null,
   result: '',
-  title: '平方厘米 (cm²) 到 英亩 (ac) 的换算',
+  title: 'Square Centimeter (cm²) to Acre (ac) Conversion',
 })
 
 const convertHandler = () => {
@@ -67,17 +67,17 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) / 40468564.224
     form.result = `${form.number}cm² = ${convertedValue.toFixed(8)}ac`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="平方厘米 (cm²)">
-    <n-input-number v-model:value="form.number" placeholder="输入平方厘米" style="width: 100%" />
+  <n-form-item label="Square Centimeter (cm²)">
+    <n-input-number v-model:value="form.number" placeholder="Enter square centimeters" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
@@ -93,44 +93,43 @@ const convertHandler = () => {
   </div>
     <template #footer>
     <div>
-      <span v-for="item of seoKey">{{item}}，</span>
+      <span v-for="item of seoKey">{{item}}, </span>
     </div>
   </template>
 </n-card>
 
-## 公式
+## Formula
 
-从 **平方厘米 (cm²)** 换算到 **英亩 (ac)** 的公式为：
+The formula for converting from **square centimeters (cm²)** to **acres (ac)** is:
 $$ ac = cm² \div 40468564.224 $$
 
-## 平方厘米到英亩换算指南
+## Square Centimeter to Acre Conversion Guide
 
-在土地测量和农业规划中，面积单位的换算是一个常见需求。本文专注于平方厘米 (cm²) 到英亩 (ac) 的换算，提供了详细的公式与实用示例。
+In land surveying and agricultural planning, area unit conversion is a common requirement. This article focuses on the conversion from square centimeters (cm²) to acres (ac), providing detailed formulas and practical examples.
 
-### 为什么需要 cm² 到 ac 的换算？
+### Why Do We Need cm² to ac Conversion?
 
-平方厘米和英亩是常见的面积单位，尤其在农业、房地产和土地规划中尤为重要。通过精确的换算，可以确保测量的一致性和准确性。
+Square centimeters and acres are common area units, especially important in agriculture, real estate, and land planning. Through precise conversion, we can ensure measurement consistency and accuracy.
 
-### cm² 到 ac 的换算方法
+### cm² to ac Conversion Method
 
-从平方厘米到英亩的换算公式为：
+The conversion formula from square centimeters to acres is:
 
-- **公式：** `ac = cm² ÷ 40468564.224`
+- **Formula:** `ac = cm² ÷ 40468564.224`
 
-### 实际应用示例
+### Practical Application Examples
 
-以下是一些常见的换算实例：
+Here are some common conversion examples:
 
 - 1 cm² = 0.00000002 ac
-ddd
 - 40468564.224 cm² = 1 ac
 - 404685642.24 cm² = 10 ac
 
-### 总结
+### Summary
 
-掌握平方厘米到英亩的换算可以帮助您更好地理解和使用这些面积单位。希望本指南能为您提供有价值的参考。
+Mastering the conversion from square centimeters to acres can help you better understand and use these area units. We hope this guide provides valuable reference for you.
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Area" :key="index">
     <n-button

@@ -4,19 +4,19 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
 
   - - link: /Area/SquareMeter-to-SquareCentimeter
-      linkText: 平方米到平方厘米
+      linkText: Square Meter to Square Centimeter
 head:
   - - meta
     - name: description
-      content: "面积单位换算指南，涵盖平方米 (m²) 到平方厘米 (cm²) 的详细换算公式与说明。"
+      content: "Area unit conversion guide covering detailed conversion formulas and explanations from square meters (m²) to square centimeters (cm²)."
   - - meta
     - name: keywords
-      content: "面积, 单位换算, 平方米, 平方厘米, m², cm², 平方米到平方厘米, 面积换算指南, 平方米到平方厘米换算, m²到cm²换算, 平方米转平方厘米, 米平方到平方厘米, 平方米平方厘米换算器, m²转cm², 平方米换算平方厘米, 米平方转平方厘米, 平方米到平方厘米转换, m²平方厘米换算, 平方米平方厘米计算, 米平方平方厘米换算, 平方米转换平方厘米, m²到平方厘米, 平方米平方厘米转换器, 米平方到平方厘米换算, 平方米平方厘米换算公式, m²转换平方厘米, 平方米到平方厘米计算, 米平方转换平方厘米, 平方米平方厘米换算表, m²平方厘米转换, 平方米转平方厘米计算, 米平方平方厘米转换, 平方米到平方厘米换算工具, m²到平方厘米换算, 平方米平方厘米单位换算, 面积换算"
+      content: "area, unit conversion, square meter, square centimeter, m², cm², square meter to square centimeter, area conversion guide, square meter to square centimeter conversion, m² to cm² conversion, square meter convert square centimeter, meter square to square centimeter, square meter square centimeter converter, m² convert cm², square meter conversion square centimeter, meter square convert square centimeter, square meter to square centimeter conversion, m² square centimeter conversion, square meter square centimeter calculation, meter square square centimeter conversion, square meter convert square centimeter, m² to square centimeter, square meter square centimeter converter, meter square to square centimeter conversion, square meter square centimeter conversion formula, m² convert square centimeter, square meter to square centimeter calculation, meter square convert square centimeter, square meter square centimeter conversion table, m² square centimeter conversion, square meter convert square centimeter calculation, meter square square centimeter conversion, square meter to square centimeter conversion tool, m² to square centimeter conversion, square meter square centimeter unit conversion, area conversion"
 ---
-# 平方米 (m²) 到 平方厘米 (cm²) 的换算
+# Square Meter (m²) to Square Centimeter (cm²) Conversion
 ---
 <script setup>
 import { onMounted, reactive, inject, ref } from 'vue'
@@ -24,41 +24,41 @@ import { NButton, NForm, NFormItem, NInput, NInputNumber, NSelect, NCard, useMes
 import { defineClientComponent } from 'vitepress'
 import { Area } from '../files';
 const seoKey = [
-  '平方米换算平方厘米',
-  '平方米到平方厘米',
-  '平方厘米换算',
-  '面积单位换算',
-  '平方米转平方厘米',
-  '平方厘米计算',
-  '面积换算器',
-  '平方米符号',
-  '平方厘米符号',
-  '面积单位对照',
-  '平方米换算表',
-  '平方厘米换算公式',
-  '面积转换工具',
-  '平方米计算',
-  '平方厘米计算器',
-  '面积换算公式',
-  '长度单位换算',
-  '建筑面积计算',
-  '室内面积测量',
-  '平方米到平方厘米公式',
-  '平方厘米面积计算',
-  '面积单位转换',
-  '建筑测量单位',
-  '装修面积计算',
-  '平方米平方厘米对照表',
-  '面积计算工具',
-  '建筑设计单位',
-  '室内设计面积'
+  'square meter conversion square centimeter',
+  'square meter to square centimeter',
+  'square centimeter conversion',
+  'area unit conversion',
+  'square meter convert square centimeter',
+  'square centimeter calculation',
+  'area converter',
+  'square meter symbol',
+  'square centimeter symbol',
+  'area unit comparison',
+  'square meter conversion table',
+  'square centimeter conversion formula',
+  'area conversion tool',
+  'square meter calculation',
+  'square centimeter calculator',
+  'area conversion formula',
+  'length unit conversion',
+  'building area calculation',
+  'indoor area measurement',
+  'square meter to square centimeter formula',
+  'square centimeter area calculation',
+  'area unit conversion',
+  'building measurement unit',
+  'decoration area calculation',
+  'square meter square centimeter comparison table',
+  'area calculation tool',
+  'building design unit',
+  'interior design area'
 ]
 const convert = inject('convert')
 
 const form = reactive({
   number: null,
   result: '',
-  title: '平方米 (m²) 到平方厘米 (cm²) 的换算',
+  title: 'Square Meter (m²) to Square Centimeter (cm²) Conversion',
 })
 
 const convertHandler = () => {
@@ -66,17 +66,17 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) * 10000
     form.result = `${form.number}m² = ${convertedValue.toFixed(2)}cm²`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="平方米 (m²)">
-    <n-input-number v-model:value="form.number" placeholder="输入平方米" style="width: 100%" />
+  <n-form-item label="Square Meter (m²)">
+    <n-input-number v-model:value="form.number" placeholder="Enter square meters" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
@@ -92,43 +92,43 @@ const convertHandler = () => {
   </div>
     <template #footer>
     <div>
-      <span v-for="item of seoKey">{{item}}，</span>
+      <span v-for="item of seoKey">{{item}}, </span>
     </div>
   </template>
 </n-card>
 
-## 公式
+## Formula
 
-从 **平方米 (m²)** 换算到 **平方厘米 (cm²)** 的公式为：
+The formula for converting from **Square Meter (m²)** to **Square Centimeter (cm²)** is:
 $$ cm² = m² \times 10000 $$
 
-## 平方米到平方厘米换算指南
+## Square Meter to Square Centimeter Conversion Guide
 
-在日常生活和建筑测量中，面积单位的换算是一个常见需求。本文专注于平方米 (m²) 到平方厘米 (cm²) 的换算，提供了详细的公式与实用示例。
+In daily life and building measurements, area unit conversion is a common requirement. This article focuses on the conversion from square meters (m²) to square centimeters (cm²), providing detailed formulas and practical examples.
 
-### 为什么需要 m² 到 cm² 的换算？
+### Why Do We Need m² to cm² Conversion?
 
-平方米和平方厘米是常见的面积单位，尤其在建筑设计、室内装饰以及土地测量中尤为重要。通过精确的换算，可以确保测量的一致性和准确性。
+Square meters and square centimeters are common area units, especially important in architectural design, interior decoration, and land surveying. Through accurate conversion, measurement consistency and precision can be ensured.
 
-### m² 到 cm² 的换算方法
+### m² to cm² Conversion Method
 
-从平方米到平方厘米的换算公式为：
+The conversion formula from square meters to square centimeters is:
 
-- **公式：** `cm² = m² × 10000`
+- **Formula:** `cm² = m² × 10000`
 
-### 实际应用示例
+### Practical Application Examples
 
-以下是一些常见的换算实例：
+Here are some common conversion examples:
 
 - 1 m² = 10000 cm²
 - 5 m² = 50000 cm²
 - 10 m² = 100000 cm²
 
-### 总结
+### Summary
 
-掌握平方米到平方厘米的换算可以帮助您更好地理解和使用这些面积单位。希望本指南能为您提供有价值的参考。
+Mastering the conversion from square meters to square centimeters can help you better understand and use these area units. We hope this guide provides valuable reference for you.
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Area" :key="index">
     <n-button

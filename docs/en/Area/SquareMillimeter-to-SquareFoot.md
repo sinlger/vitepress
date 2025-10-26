@@ -4,131 +4,90 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
 
   - - link: /Area/SquareMillimeter-to-SquareFoot
-      linkText: 平方毫米到平方英尺
+      linkText: Square Millimeter to Square Foot
 head:
   - - meta
     - name: description
-      content: "面积单位换算指南，涵盖平方毫米 (mm²) 到平方英尺 (ft²) 的详细换算公式与说明。"
+      content: "Area unit conversion guide covering detailed conversion formulas and explanations from square millimeters (mm²) to square feet (ft²)."
   - - meta
     - name: keywords
-      content: "面积, 单位换算, 平方毫米, 平方英尺, mm², ft², 平方毫米到平方英尺, 面积换算指南, 平方毫米换算平方英尺, 平方毫米到平方英尺, 平方英尺换算, 平方毫米转平方英尺, 平方英尺计算, 建筑面积换算, 室内设计面积, 平方毫米符号, 平方英尺符号, 面积单位对照, 平方毫米换算表, 平方英尺换算公式, 面积转换工具, 平方毫米计算, 平方英尺计算器, 面积换算公式, 建筑工程单位, 国际贸易面积, 精密面积测量, 平方毫米到平方英尺公式, 平方英尺面积计算, 面积单位转换, 建筑测量单位, 工程设计面积, 平方毫米平方英尺对照表, 面积计算工具, 国际单位换算"
+      content: "area, unit conversion, square millimeter, square foot, mm², ft², square millimeter to square foot, area conversion guide, square millimeter convert square foot, square millimeter to square foot, square foot conversion, square millimeter to square foot, square foot calculation, small area conversion, precision measurement, square millimeter symbol, square foot symbol, area unit comparison, square millimeter conversion table, square foot conversion formula, area conversion tool, square millimeter calculation, square foot calculator, area conversion formula, measurement unit, precision area, small scale area conversion, square millimeter to square foot formula, square foot area calculation, area unit conversion, construction measurement unit, property area unit, square millimeter square foot comparison table, area calculation tool, metric imperial conversion"
 ---
-# 平方毫米 (mm²) 到 平方英尺 (ft²) 的换算
+# Square Millimeter (mm²) to Square Foot (ft²) Conversion
 ---
 <script setup>
 import { onMounted, reactive, inject, ref } from 'vue'
 import { NButton, NForm, NFormItem, NInput, NInputNumber, NSelect, NCard, useMessage,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
 import { Area } from '../files';
-const seoKey = [
-  '平方毫米换算平方英尺',
-  '平方毫米到平方英尺',
-  '平方英尺换算',
-  '面积单位换算',
-  '平方毫米转平方英尺',
-  '平方英尺计算',
-  '建筑面积换算',
-  '室内设计面积',
-  '平方毫米符号',
-  '平方英尺符号',
-  '面积单位对照',
-  '平方毫米换算表',
-  '平方英尺换算公式',
-  '面积转换工具',
-  '平方毫米计算',
-  '平方英尺计算器',
-  '面积换算公式',
-  '建筑工程单位',
-  '国际贸易面积',
-  '精密面积测量',
-  '平方毫米到平方英尺公式',
-  '平方英尺面积计算',
-  '面积单位转换',
-  '建筑测量单位',
-  '工程设计面积',
-  '平方毫米平方英尺对照表',
-  '面积计算工具',
-  '国际单位换算'
-]
+
 const convert = inject('convert')
 
 const form = reactive({
   number: null,
   result: '',
-  title: '平方毫米 (mm²) 到平方英尺 (ft²) 的换算',
 })
 
 const convertHandler = () => {
   if (form.number !== null && !isNaN(form.number)) {
     const convertedValue = parseFloat(form.number) / 92903.04
-    form.result = `${form.number}mm² = ${convertedValue.toFixed(6)}ft²`
+    form.result = `${form.number}mm² = ${convertedValue.toFixed(8)}ft²`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="平方毫米 (mm²)">
-    <n-input-number v-model:value="form.number" placeholder="输入平方毫米" style="width: 100%" />
+  <n-form-item label="Square Millimeter (mm²)">
+    <n-input-number v-model:value="form.number" placeholder="Enter square millimeters" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
-<n-card  
-  :title="form.title"
-  :segmented="{
-    content: true,
-    footer: 'soft',
-  }"
->
+<n-card  embedded :bordered="false" hoverable>
   <div  style="text-align:center;font-size:20px;">
     <strong>{{form.result}}</strong>
   </div>
-    <template #footer>
-    <div>
-      <span v-for="item of seoKey">{{item}}，</span>
-    </div>
-  </template>
 </n-card>
 
-## 公式
+## Formula
 
-从 **平方毫米 (mm²)** 换算到 **平方英尺 (ft²)** 的公式为：
+The formula for converting from **square millimeters (mm²)** to **square feet (ft²)** is:
 $$ ft² = mm² \div 92903.04 $$
 
-## 平方毫米到平方英尺换算指南
+## Square Millimeter to Square Foot Conversion Guide
 
-在日常生活和建筑工程中，面积单位的换算是一个常见需求。本文专注于平方毫米 (mm²) 到平方英尺 (ft²) 的换算，提供了详细的公式与实用示例。
+In international trade and engineering projects, area unit conversion is a common requirement. This article focuses on the conversion from square millimeters (mm²) to square feet (ft²), providing detailed formulas and practical examples.
 
-### 为什么需要 mm² 到 ft² 的换算？
+### Why Do We Need mm² to ft² Conversion?
 
-平方毫米和平方英尺是常见的面积单位，尤其在建筑、室内设计以及国际贸易中尤为重要。通过精确的换算，可以确保测量的一致性和准确性。
+Square millimeters and square feet are area units from different measurement systems, especially important in international trade, engineering design, and construction projects. Through precise conversion, we can ensure measurement consistency and accuracy.
 
-### mm² 到 ft² 的换算方法
+### mm² to ft² Conversion Method
 
-从平方毫米到平方英尺的换算公式为：
+The conversion formula from square millimeters to square feet is:
 
-- **公式：** `ft² = mm² ÷ 92903.04`
+- **Formula:** `ft² = mm² ÷ 92903.04`
 
-### 实际应用示例
+### Practical Application Examples
 
-以下是一些常见的换算实例：
+Here are some common conversion examples:
 
-- 1 mm² = 0.000011 ft²
-- 92903.04 mm² = 1 ft²
-- 929030.4 mm² = 10 ft²
+- 92,903 mm² = 1.0 ft²
+- 185,806 mm² = 2.0 ft²
+- 929,030 mm² = 10.0 ft²
 
-### 总结
+### Summary
 
-掌握平方毫米到平方英尺的换算可以帮助您更好地理解和使用这些面积单位。希望本指南能为您提供有价值的参考。
+Mastering the conversion from square millimeters to square feet can help you better understand and use these area units. We hope this guide provides valuable reference for you.
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Area" :key="index">
     <n-button

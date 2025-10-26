@@ -4,32 +4,32 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
 
   - - link: /Area/Hectare-to-Acre
-      linkText: 公顷到英亩
+      linkText: Hectare to Acre
 head:
   - - meta
     - name: description
-      content: "面积单位换算指南，涵盖公顷 (ha) 到英亩 (ac) 的详细换算公式与说明。"
+      content: "Area unit conversion guide covering detailed conversion formulas and explanations from hectares (ha) to acres (ac)."
   - - meta
     - name: keywords
-      content: "面积, 单位换算, 公顷, 英亩, ha, ac, 公顷到英亩, 面积换算指南, 亩, 公顷, 公顷与亩, 一平方千米等于多少公顷, 亩转公顷, 一平方米等于多少公顷, 公顷与平方米, 一平方千米等于几公顷, 一公顷等于多少平方米多少亩, 公顷 平方米, 亩换算, 平方米转公顷, 公顷换算, 公顷转亩, 公顷 亩, 亩和公顷换算, 一平方公里等于多少公顷, 公顷的单位, 一公顷是多少亩, 公顷换算平方米, 亩换算公顷, 一公顷多少亩, 平方米和公顷换算, 公顷单位, 一公顷是多少平方米, 平方米换算公顷, 公顷换算亩, 公顷和平方米, hm是什么单位, 平方公里和公顷, 一亩等于多少公顷, 平方千米和公顷, 一公顷等于多少平方千米, ha是什么单位, 亩和公顷的换算公式, 面积单位换算, 亩和公顷, 一公顷, 公顷和亩的换算, 公顷和平方米的换算, 平方米和公顷, 公顷等于多少平方米, 公顷和平方千米, hectares, hectare, 公顷和亩, 一公顷等于多少亩, 一公顷等于多少平方米"
+      content: "area, unit conversion, hectare, acre, ha, ac, hectare to acre, area conversion guide, mu, hectare, hectare and mu, how many hectares in a square kilometer, mu to hectare, how many hectares in a square meter, hectare and square meter, how many hectares in a square kilometer, how many square meters and mu in a hectare, hectare square meter, mu conversion, square meter to hectare, hectare conversion, hectare to mu, hectare mu, mu and hectare conversion, how many hectares in a square kilometer, hectare unit, how many mu in a hectare, hectare to square meter conversion, mu to hectare conversion, how many mu in a hectare, square meter and hectare conversion, hectare unit, how many square meters in a hectare, square meter to hectare conversion, hectare to mu conversion, hectare and square meter, what is hm unit, square kilometer and hectare, how many hectares in an mu, square kilometer and hectare, how many square kilometers in a hectare, what is ha unit, mu and hectare conversion formula, area unit conversion, mu and hectare, one hectare, hectare and mu conversion, hectare and square meter conversion, square meter and hectare, how many square meters in a hectare, hectare and square kilometer, hectares, hectare, hectare and mu, how many mu in a hectare, how many square meters in a hectare"
 ---
-# 公顷 (ha) 到 英亩 (ac) 的换算
+# Hectare (ha) to Acre (ac) Conversion
 ---
 <script setup>
 import { onMounted, reactive, inject, ref } from 'vue'
 import { NButton, NForm, NFormItem, NInput, NInputNumber, NSelect, NCard, useMessage,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
 import { Area } from '../files';
-const seoKey = ['亩','公顷','公顷与亩','一平方千米等于多少公顷','亩转公顷','一平方米等于多少公顷','公顷与平方米','一平方千米等于几公顷','一公顷等于多少平方米多少亩','公顷 平方米','亩换算','平方米转公顷','公顷换算','公顷转亩','公顷 亩','亩和公顷换算','一平方公里等于多少公顷','公顷的单位','一公顷是多少亩','公顷换算平方米','亩换算公顷','一公顷多少亩','平方米和公顷换算','公顷单位','一公顷是多少平方米','平方米换算公顷','公顷换算亩','公顷和平方米','hm是什么单位','平方公里和公顷','一亩等于多少公顷','平方千米和公顷','一公顷等于多少平方千米','ha是什么单位','亩和公顷的换算公式','面积单位换算','亩和公顷','一公顷','公顷和亩的换算','公顷和平方米的换算','平方米和公顷','公顷等于多少平方米','公顷和平方千米','hectares','hectare','公顷和亩','一公顷等于多少亩','一公顷等于多少平方米']
+const seoKey = ['mu','hectare','hectare and mu','how many hectares in a square kilometer','mu to hectare','how many hectares in a square meter','hectare and square meter','how many hectares in a square kilometer','how many square meters and mu in a hectare','hectare square meter','mu conversion','square meter to hectare','hectare conversion','hectare to mu','hectare mu','mu and hectare conversion','how many hectares in a square kilometer','hectare unit','how many mu in a hectare','hectare to square meter conversion','mu to hectare conversion','how many mu in a hectare','square meter and hectare conversion','hectare unit','how many square meters in a hectare','square meter to hectare conversion','hectare to mu conversion','hectare and square meter','what is hm unit','square kilometer and hectare','how many hectares in an mu','square kilometer and hectare','how many square kilometers in a hectare','what is ha unit','mu and hectare conversion formula','area unit conversion','mu and hectare','one hectare','hectare and mu conversion','hectare and square meter conversion','square meter and hectare','how many square meters in a hectare','hectare and square kilometer','hectares','hectare','hectare and mu','how many mu in a hectare','how many square meters in a hectare']
 const convert = inject('convert')
 
 const form = reactive({
   number: null,
   result: '',
-  title: '公顷 (ha) 到英亩 (ac) 的详细换算公式',
+  title: 'Detailed Conversion Formula from Hectare (ha) to Acre (ac)',
 
 })
 
@@ -38,17 +38,17 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) * 2.47105381467169
     form.result = `${form.number}ha = ${convertedValue.toFixed(4)}ac`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="公顷 (ha)">
-    <n-input-number v-model:value="form.number" placeholder="输入公顷" style="width: 100%" />
+  <n-form-item label="Hectare (ha)">
+    <n-input-number v-model:value="form.number" placeholder="Enter hectares" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
@@ -64,44 +64,44 @@ const convertHandler = () => {
   </div>
     <template #footer>
     <div>
-      <span v-for="item of seoKey">{{item}}，</span>
+      <span v-for="item of seoKey">{{item}}, </span>
     </div>
   </template>
 </n-card>
 
 
-## 公式
+## Formula
 
-从 **公顷 (ha)** 换算到 **英亩 (ac)** 的公式为：
+The formula for converting from **hectares (ha)** to **acres (ac)** is:
 $$ ac = ha \times 2.47105381467169 $$
 
-## 公顷到英亩换算指南
+## Hectare to Acre Conversion Guide
 
-在土地测量和农业规划中，面积单位的换算是一个常见需求。本文专注于公顷 (ha) 到英亩 (ac) 的换算，提供了详细的公式与实用示例。
+In land surveying and agricultural planning, area unit conversion is a common requirement. This article focuses on the conversion from hectares (ha) to acres (ac), providing detailed formulas and practical examples.
 
-### 为什么需要 ha 到 ac 的换算？
+### Why Do We Need ha to ac Conversion?
 
-公顷和英亩是常见的面积单位，尤其在农业、房地产以及大规模土地测量中尤为重要。通过精确的换算，可以确保测量的一致性和准确性。
+Hectares and acres are common area units, especially important in agriculture, real estate, and large-scale land surveying. Through precise conversion, we can ensure consistency and accuracy in measurements.
 
-### ha 到 ac 的换算方法
+### ha to ac Conversion Method
 
-从公顷到英亩的换算公式为：
+The conversion formula from hectares to acres is:
 
-- **公式：** `ac = ha × 2.47105381467169`
+- **Formula:** `ac = ha × 2.47105381467169`
 
-### 实际应用示例
+### Practical Application Examples
 
-以下是一些常见的换算实例：
+Here are some common conversion examples:
 
 - 1 ha = 2.4711 ac
 - 5 ha = 12.3553 ac
 - 10 ha = 24.7105 ac
 
-### 总结
+### Summary
 
-掌握公顷到英亩的换算可以帮助您更好地理解和使用这些面积单位。希望本指南能为您提供有价值的参考。
+Mastering the conversion from hectares to acres can help you better understand and use these area units. We hope this guide provides valuable reference for you.
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Area" :key="index">
     <n-button

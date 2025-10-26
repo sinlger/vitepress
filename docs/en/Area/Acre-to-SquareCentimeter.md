@@ -4,34 +4,34 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
 
   - - link: /Area/index
-      linkText: 面积换算
+      linkText: Area Conversion
   - - link: /Area/Acre-to-SquareCentimeter
-      linkText: 英亩到平方厘米
+      linkText: Acre to Square Centimeter
 head:
   - - meta
     - name: description
-      content: "面积单位换算指南，涵盖英亩 (ac) 到平方厘米 (cm²) 的详细换算公式与说明。"
+      content: "Area unit conversion guide covering detailed conversion formulas and explanations from acres (ac) to square centimeters (cm²)."
   - - meta
     - name: keywords
-      content: "面积, 单位换算, 英亩, 平方厘米, acre, cm², 英亩到平方厘米, 面积换算指南, 英亩换算平方厘米, 英亩到平方厘米, 平方厘米换算, 面积单位换算, 英亩转平方厘米, 平方厘米计算, 精密土地测量, 科学面积计算, 英亩符号, 平方厘米符号, 面积单位对照, 英亩换算表, 平方厘米换算公式, 面积转换工具, 英亩计算, 平方厘米计算器, 面积换算公式, 精密测量单位, 农业科学面积, 实验用地面积, 英亩到平方厘米公式, 平方厘米面积计算, 面积单位转换, 科学研究单位, 精密农业面积, 英亩平方厘米对照表, 面积计算工具, 科学计量单位"
+      content: "area, unit conversion, acre, square centimeter, acre, cm², acre to square centimeter, area conversion guide, acre to square centimeter conversion, acre to square centimeter, square centimeter conversion, area unit conversion, acre to square centimeter, square centimeter calculation, precision land surveying, scientific area calculation, acre symbol, square centimeter symbol, area unit comparison, acre conversion table, square centimeter conversion formula, area conversion tool, acre calculation, square centimeter calculator, area conversion formula, precision measurement units, agricultural science area, experimental land area, acre to square centimeter formula, square centimeter area calculation, area unit conversion, scientific research units, precision agriculture area, acre square centimeter comparison table, area calculation tool, scientific measurement units"
 ---
-# 英亩 (ac) 到 平方厘米 (cm²) 的换算
+# Acre (ac) to Square Centimeter (cm²) Conversion
 ---
 <script setup>
 import { onMounted, reactive, inject, ref } from 'vue'
 import { NButton, NForm, NFormItem, NInput, NInputNumber, NSelect, NCard, useMessage,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
 import { Area } from '../files';
-const seoKey = ['英亩平方厘米','英亩和平方厘米的换算','一英亩等于多少平方厘米','英亩转平方厘米','acres cm²','英亩换算','平方厘米换算','面积换算','单位换算','英亩到平方厘米','ac cm²','英亩平方厘米转换','面积单位换算','英亩平方厘米计算器','英亩平方厘米对照表','长度换算','单位转换','英亩平方厘米换算器','平方厘米长度','英亩长度','面积计算','单位换算公式','英亩平方厘米计算','面积换算器','平方厘米单位换算','英亩单位换算','面积单位转换表','英亩平方厘米转换表']
+const seoKey = ['acre square centimeter','acre and square centimeter conversion','how many square centimeters in one acre','acre to square centimeter','acres cm²','acre conversion','square centimeter conversion','area conversion','unit conversion','acre to square centimeter','ac cm²','acre square centimeter conversion','area unit conversion','acre square centimeter calculator','acre square centimeter comparison table','length conversion','unit conversion','acre square centimeter converter','square centimeter length','acre length','area calculation','unit conversion formula','acre square centimeter calculation','area converter','square centimeter unit conversion','acre unit conversion','area unit conversion table','acre square centimeter conversion table']
 const convert = inject('convert')
 
 const form = reactive({
   number: null,
   result: '',
-  title: '英亩 (ac) 到 平方厘米 (cm²) 的换算'
+  title: 'Acre (ac) to Square Centimeter (cm²) Conversion'
 })
 
 const convertHandler = () => {
@@ -39,17 +39,17 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) * 40468564.224
     form.result = `${form.number}ac = ${convertedValue.toFixed(2)}cm²`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="英亩 (ac)">
-    <n-input-number v-model:value="form.number" placeholder="输入英亩" style="width: 100%" />
+  <n-form-item label="Acres (ac)">
+    <n-input-number v-model:value="form.number" placeholder="Enter acres" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
@@ -65,43 +65,43 @@ const convertHandler = () => {
   </div>
     <template #footer>
     <div>
-      <span v-for="item of seoKey">{{item}}，</span>
+      <span v-for="item of seoKey">{{item}}, </span>
     </div>
   </template>
 </n-card>
 
-## 公式
+## Formula
 
-从 **英亩 (ac)** 换算到 **平方厘米 (cm²)** 的公式为：
+The formula for converting from **acres (ac)** to **square centimeters (cm²)** is:
 $$ cm² = ac \times 40468564.224 $$
 
-## 英亩到平方厘米换算指南
+## Acre to Square Centimeter Conversion Guide
 
-在土地测量和建筑设计中，面积单位的换算是一个常见需求。本文专注于英亩 (ac) 到平方厘米 (cm²) 的换算，提供了详细的公式与实用示例。
+In land surveying and architectural design, area unit conversion is a common requirement. This article focuses on the conversion from acres (ac) to square centimeters (cm²), providing detailed formulas and practical examples.
 
-### 为什么需要 ac 到 cm² 的换算？
+### Why is ac to cm² conversion needed?
 
-英亩和平方厘米是常见的面积单位，尤其在农业、土地规划以及精密设计中尤为重要。通过精确的换算，可以确保测量的一致性和准确性。
+Acres and square centimeters are common area units, especially important in agriculture, land planning, and precision design. Through precise conversion, measurement consistency and accuracy can be ensured.
 
-### ac 到 cm² 的换算方法
+### ac to cm² Conversion Method
 
-从英亩到平方厘米的换算公式为：
+The conversion formula from acres to square centimeters is:
 
-- **公式：** `cm² = ac × 40468564.224`
+- **Formula:** `cm² = ac × 40468564.224`
 
-### 实际应用示例
+### Practical Application Examples
 
-以下是一些常见的换算实例：
+Here are some common conversion examples:
 
 - 1 ac = 40,468,564.22 cm²
 - 5 ac = 202,342,821.12 cm²
 - 10 ac = 404,685,642.24 cm²
 
-### 总结
+### Summary
 
-掌握英亩到平方厘米的换算可以帮助您更好地理解和使用这些面积单位。希望本指南能为您提供有价值的参考。
+Mastering the conversion from acres to square centimeters can help you better understand and use these area units. We hope this guide provides valuable reference for you.
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Area" :key="index">
     <n-button

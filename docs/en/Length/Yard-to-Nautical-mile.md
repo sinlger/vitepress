@@ -1,208 +1,153 @@
 ---
-sidebar: false
-aside: false
-lastUpdated: false
+outline: deep
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Length/index
-      linkText: 长度换算
+      linkText: Length Conversion
   - - link: /Length/Yard-to-Nautical-mile
-      linkText: 码到海里
+      linkText: Yard to Nautical Mile
 head:
   - - meta
     - name: description
-      content: "专业的码到海里换算器，精确快速地将码 (yd) 转换为海里 (nmi)。提供详细的换算公式、步骤说明和实际应用示例，广泛应用于海洋工程、航海导航、海事管理、船舶设计、海洋测量、港口建设、海上运输、渔业管理等专业领域。"
+      content: "Professional yard (yd) to nautical mile length unit conversion tool and guide. Provides precise conversion formulas, practical application scenarios, and frequently asked questions, suitable for maritime navigation, marine engineering, aviation navigation, international shipping, and other fields requiring long-distance measurement."
   - - meta
     - name: keywords
-      content: "码, 海里, 换算, 转换, yd, nmi, 海洋工程, 航海导航, 海事管理, 船舶设计, 海洋测量, 港口建设, 海上运输, 渔业管理, 长度单位, 计算器, 海洋距离, 航海计算, 海事工程, 海洋科学"
+      content: "yard to nautical mile conversion,yd to nautical mile conversion,length unit conversion,nautical mile converter,maritime navigation,marine engineering,aviation navigation,international shipping,long distance measurement,marine measurement,navigation units,maritime units,marine science,ship navigation,aircraft navigation,marine exploration,international trade,maritime transport,navigation calculation,distance measurement"
 ---
-# 码 (yd) 到 海里 (nMi) 的换算
+# Yard (yd) to Nautical Mile Conversion
 
-码到海里的换算是海洋工程、航海导航、海事管理和船舶设计等专业领域的重要技能。在海洋测量、港口建设、海上运输和渔业管理中，准确的长度单位转换确保了海洋工程的精度、航海安全和海事操作的标准化。掌握码与海里之间的换算关系，对于海洋科学研究、海事工程设计和国际航运具有重要的实践价值。
+The conversion from yards to nautical miles is an important technical skill in maritime navigation, marine engineering, and aviation navigation. The nautical mile, as an international standard marine distance measurement unit, is widely used in maritime navigation, aviation navigation, international shipping, and marine science research; while the yard is a fundamental unit in the imperial length unit system, playing an important role in ship design, port engineering, and marine equipment manufacturing. Mastering precise yard to nautical mile conversion methods is of great practical value for maritime personnel, marine engineers, and aviation professionals.
 
----
 <script setup>
-import { onMounted, reactive, inject, ref } from 'vue'
-import { NButton, NForm, NFormItem, NInput, NInputNumber, NSelect, NCard, useMessage,NGrid ,NGi } from 'naive-ui'
-import { defineClientComponent } from 'vitepress'
-import { Length } from '../files';
+import { ref, reactive, inject } from 'vue'
+import { NForm, NFormItem, NInputNumber, NButton, NCard, NGrid, NGi } from 'naive-ui'
 
+const Length = inject('Length')
 const convert = inject('convert')
 
-const seoKey = [
-  '海洋工程测量',
-  '航海导航计算',
-  '海事管理系统',
-  '船舶设计规范',
-  '海洋测量技术',
-  '港口建设工程',
-  '海上运输距离',
-  '渔业管理区域',
-  '海洋科学研究',
-  '海事工程设计',
-  '国际航运标准',
-  '海洋距离换算',
-  '航海计算工具',
-  '海事安全规范',
-  '海洋工程精度'
-]
+const seoKey = ['unit converter','unit conversion','length unit converter','length unit conversion','size conversion','length unit conversion','length unit conversion table','yard to nautical mile','nautical mile conversion','nautical mile','yard conversion','yd conversion','nautical mile unit','maritime navigation','marine engineering','aviation navigation','international shipping','long distance measurement','marine measurement','navigation units','maritime units','marine science','ship navigation','aircraft navigation','marine exploration','international trade','maritime transport','navigation calculation','distance measurement','marine distance','navigation distance','maritime distance','aviation distance','shipping distance','marine navigation','flight navigation','sea navigation','ocean navigation','international navigation']
 
 const form = reactive({
-  title: '码到海里换算器 - 海洋工程专业工具',
   number: null,
   result: '',
+  title: 'Yard (yd) to Nautical Mile Length Unit Converter'
 })
 
 const convertHandler = () => {
-  if (form.number !== null && !isNaN(form.number)) {
-    const convertedValue = parseFloat(form.number) * 0.00049374
-    form.result = `${form.number}yd = ${convertedValue.toFixed(6)}nMi`
+  if (form.number !== null && form.number !== '') {
+    const convertedValue = convert(form.number, 'yd', 'nmi')
+    form.result = `${form.number}yd = ${convertedValue.toFixed(8)}nmi`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
-<div class="card">
-  <div class="card-header">
-    <h3>{{ form.title }}</h3>
+<n-card :title="form.title" size="large">
+<n-form size="large" :model="form">
+  <n-form-item label="Yard (yd)">
+    <n-input-number v-model:value="form.number" placeholder="Enter yards" style="width: 100%" />
+  </n-form-item>
+  
+  <n-button type="info" @click="convertHandler" block>Convert</n-button>
+</n-form>
+
+<n-card style="margin-top: 20px;">
+  <div style="font-size: 18px; font-weight: bold; color: #2080f0;">
+    {{ form.result }}
   </div>
-  <div class="card-body">
-    <div class="input-group">
-      <label for="yard-input">码 (yd):</label>
-      <input
-        id="yard-input"
-        v-model="form.number"
-        type="number"
-        placeholder="请输入码数值"
-        @input="convertHandler"
-      />
-    </div>
-    <div class="result-group">
-      <label for="nautical-mile-result">海里 (nMi):</label>
-      <input
-        id="nautical-mile-result"
-        v-model="form.result"
-        type="text"
-        readonly
-        placeholder="换算结果"
-      />
-    </div>
-  </div>
-  <div class="card-footer">
-    <div class="seo-keywords">
-      <span v-for="keyword in seoKey" :key="keyword" class="keyword-tag">
-        {{ keyword }}
-      </span>
-    </div>
-  </div>
-</div>
+</n-card>
+</n-card>
 
-## 实际应用场景
+## Practical Application Scenarios
 
-### 海洋工程测量
-在海洋工程项目中，近海施工区域的精确测量使用码作为基本单位，而整体工程规划和远海作业距离使用海里进行标准化管理。通过准确换算，海洋工程师能够在施工设计和海域规划中实现距离参数的精确控制，确保海洋工程的安全性和经济性。
+Yard (yd) and nautical mile are important length units in maritime and aviation fields, playing key roles in the following professional scenarios:
 
-### 航海导航计算
-在现代航海导航系统中，船舶航行路径规划需要处理多种长度单位。港口内部操作和近岸导航使用码进行精确定位，而远洋航行和航海图标注使用海里作为标准距离单位。准确的单位换算对于航行安全、燃料消耗计算和航行时间估算具有重要意义。
+### Maritime Navigation and Marine Engineering
+- **Ship Navigation**: Ship structural dimensions are often expressed in yards, while navigation distances are measured in nautical miles
+- **Port Engineering**: Port facility construction dimensions are calculated in yards, while shipping routes are measured in nautical miles
+- **Marine Platform Construction**: Offshore platform structural dimensions are marked in yards, while platform positioning distances are measured in nautical miles
 
-### 海事管理系统
-港口管理、海域规划和海事监管工作中，需要处理来自不同来源的长度数据。统一的换算标准有助于提高海事管理效率，确保海上交通安全和海洋资源的合理利用。
+### Aviation Navigation and Flight Planning
+- **Aircraft Design**: Aircraft component dimensions are expressed in yards, while flight distances are calculated in nautical miles
+- **Flight Route Planning**: Airport facility dimensions are marked in yards, while flight routes are measured in nautical miles
+- **Aviation Engineering**: Aviation equipment specifications are expressed in yards, while navigation ranges are calculated in nautical miles
 
-### 船舶设计规范
-在船舶设计和制造过程中，船体结构的详细尺寸使用码进行精确标注，而船舶的航行性能和作业范围使用海里进行评估。这种换算关系确保了船舶设计的精确性和航行性能的标准化。
+### International Shipping and Trade
+- **Cargo Ship Operations**: Ship cargo hold dimensions are expressed in yards, while shipping distances are measured in nautical miles
+- **International Trade**: Port facility scales are calculated in yards, while trade route distances are measured in nautical miles
+- **Maritime Transport**: Ship equipment dimensions are marked in yards, while transport distances are calculated in nautical miles
 
-### 海洋测量技术
-海洋测量和海底地形勘探中，测量设备的精度范围与大范围海域调查需要不同的距离单位。通过准确换算，海洋测量技术人员能够确保测量数据的一致性和海洋科学研究的准确性。
+### Marine Science Research and Exploration
+- **Marine Biology Research**: Research equipment dimensions are expressed in yards, while research area ranges are measured in nautical miles
+- **Marine Geological Survey**: Sampling equipment specifications are marked in yards, while survey area ranges are measured in nautical miles
+- **Marine Environmental Monitoring**: Monitoring equipment dimensions are expressed in yards, while monitoring ranges are calculated in nautical miles
 
-### 渔业管理区域
-在渔业资源管理和海洋保护区划定中，局部渔场的精确边界使用码进行标定，而大范围的渔业管理区域使用海里进行规划。这种换算关系有助于渔业资源的科学管理和海洋生态保护。
+### Yard to Nautical Mile Conversion Reference Table
 
-## 码海里换算对照表
+| Yard (yd) | Nautical Mile (nmi) | Application Scenario |
+|-----------|---------------------|---------------------|
+| 1,852 yd | 1 nmi | Standard conversion unit |
+| 9,260 yd | 5 nmi | Short-distance navigation |
+| 18,520 yd | 10 nmi | Medium-distance navigation |
+| 92,600 yd | 50 nmi | Long-distance navigation |
+| 185,200 yd | 100 nmi | International shipping |
+| 926,000 yd | 500 nmi | Ocean navigation |
+| 1,852,000 yd | 1,000 nmi | Transoceanic routes |
+| 9,260,000 yd | 5,000 nmi | Global navigation |
 
-| 码 (yd) | 海里 (nmi) | 公里 (km) | 英尺 (ft) | 应用场景 |
-|---------|------------|-----------|-----------|----------|
-| 2025 yd | 1.000 nmi | 1.852 km | 6075 ft | 标准换算单位 |
-| 4050 yd | 2.000 nmi | 3.704 km | 12150 ft | 近海作业 |
-| 10125 yd | 5.000 nmi | 9.260 km | 30375 ft | 港口区域 |
-| 20250 yd | 10.000 nmi | 18.520 km | 60750 ft | 海域规划 |
-| 40500 yd | 20.000 nmi | 37.040 km | 121500 ft | 航行路径 |
-| 101250 yd | 50.000 nmi | 92.600 km | 303750 ft | 远海作业 |
-| 202500 yd | 100.000 nmi | 185.200 km | 607500 ft | 海洋工程 |
-| 1012500 yd | 500.000 nmi | 926.000 km | 3037500 ft | 国际航运 |
+## Formula
 
-码 (yd) 和海里 (nMi) 是测量中等距离和水下距离时常用的单位，在以下真实场景中非常重要：
+### Yard to Nautical Mile Conversion Formula
+The precise formula for converting from **Yard (yd)** to **Nautical Mile (nmi)** is:
+$$ nmi = yd \div 2025.372 $$
 
-- **潜艇制造**：
-  - 潜艇表面涂层可能采用纳米材料进行防腐蚀处理，而潜艇的活动范围通常以海里衡量。
-  - 示例：某潜艇表面纳米涂层厚度为 200yd，等于 0.098748nMi，但其巡航半径可达数千海里。
+### Nautical Mile to Yard Conversion Formula
+The precise formula for converting from **Nautical Mile (nmi)** to **Yard (yd)** is:
+$$ yd = nmi \times 2025.372 $$
 
-- **海洋科学研究**：
-  - 科学家在研究深海微生物或纳米级颗粒物时，实验室测量其尺寸（以码表示），而在报告中描述这些生物的分布范围时则使用海里。
-  - 示例：某次海洋调查发现某种码级浮游生物分布在 1000 米深度范围内，相当于约 0.53996nMi 的垂直距离。
+### Length Unit Conversion Reference Table
 
-- **精密水下仪器制造**：
-  - 某些高精度声呐系统需要码级别的制造精度，但它们探测的距离可能跨越数海里。
-  - 示例：某声呐系统的分辨率达到 10yd（即 0.0049374nMi），能够探测 10 海里范围内的物体。
+| Yard (yd) | Nautical Mile (nmi) | Meter (m) | Kilometer (km) | Application Scenario |
+|-----------|---------------------|-----------|----------------|---------------------|
+| 1 yd | 0.000494 nmi | 0.914 m | 0.000914 km | Small equipment dimensions |
+| 1,852 yd | 1 nmi | 1,852 m | 1.852 km | Standard conversion unit |
+| 9,260 yd | 5 nmi | 9,260 m | 9.26 km | Short-distance navigation |
+| 18,520 yd | 10 nmi | 18,520 m | 18.52 km | Medium-distance navigation |
+| 92,600 yd | 50 nmi | 92,600 m | 92.6 km | Long-distance navigation |
+| 185,200 yd | 100 nmi | 185,200 m | 185.2 km | International shipping |
+| 926,000 yd | 500 nmi | 926,000 m | 926 km | Ocean navigation |
+| 1,852,000 yd | 1,000 nmi | 1,852,000 m | 1,852 km | Transoceanic routes |
 
-- **航海与潜水作业**：
-  - 在潜水作业中，设备的耐压外壳厚度常以码标注，而潜水路径长度则使用海里计算。
-  - 示例：某潜水器外壳厚度为 50yd，等于 0.024687nMi，但其航行路径可达 50 海里。
+### Conversion Examples
+- **Ship Design Application**: 1,852yd = 1nmi
+- **Port Engineering Application**: 9,260yd = 5nmi
+- **Aviation Navigation Application**: 18,520yd = 10nmi
+- **International Shipping Application**: 185,200yd = 100nmi
+- **Ocean Navigation Application**: 1,852,000yd = 1,000nmi
 
-## 公式
+## Frequently Asked Questions (FAQ)
 
-### 码到海里转换公式
-从 **码 (yd)** 换算到 **海里 (nmi)** 的精确公式为：
-$$ nmi = yd \div 2025 $$
-或者：
-$$ nmi = yd \times 0.00049383 $$
+### 1. What is the practical significance of yard to nautical mile conversion?
+The yard to nautical mile conversion connects imperial length units with international maritime distance measurement systems. It has important practical value in maritime navigation, aviation navigation, and international shipping, especially in professional settings that require precise measurement of long-distance navigation and international transport.
 
-### 海里到码转换公式
-从 **海里 (nmi)** 换算到 **码 (yd)** 的精确公式为：
-$$ yd = nmi \times 2025 $$
+### 2. How is this conversion applied in maritime navigation?
+In maritime navigation, ship structural dimensions and port facility scales are often expressed in yards, while navigation distances and shipping routes are measured in nautical miles. Through accurate conversion, maritime personnel can achieve precise control of navigation parameters during voyage planning and route calculation.
 
-### 长度单位换算对照表
+### 3. How to ensure the precision of yard to nautical mile conversion?
+Use the standard conversion ratio (1 nautical mile = 2025.372 yards), employ high-precision calculation tools, and select appropriate precision levels according to specific navigation requirements to ensure conversion results meet maritime safety and navigation accuracy requirements.
 
-| 码 (yd) | 海里 (nmi) | 公里 (km) | 英尺 (ft) | 应用场景 |
-|---------|------------|-----------|-----------|----------|
-| 2025 yd | 1 nmi | 1.852 km | 6075 ft | 标准换算单位 |
-| 4050 yd | 2 nmi | 3.704 km | 12150 ft | 近海作业 |
-| 10125 yd | 5 nmi | 9.260 km | 30375 ft | 港口区域 |
-| 20250 yd | 10 nmi | 18.520 km | 60750 ft | 海域规划 |
-| 40500 yd | 20 nmi | 37.040 km | 121500 ft | 航行路径 |
-| 101250 yd | 50 nmi | 92.600 km | 303750 ft | 远海作业 |
-| 202500 yd | 100 nmi | 185.200 km | 607500 ft | 海洋工程 |
-| 1012500 yd | 500 nmi | 926.000 km | 3037500 ft | 国际航运 |
+### 4. What value does this conversion have in aviation navigation?
+In aviation navigation, aircraft component dimensions and airport facility scales are often expressed in yards, while flight distances and navigation ranges are measured in nautical miles. This conversion helps aviation personnel accurately understand navigation information, ensuring flight safety and navigation precision.
 
-### 转换示例
-- **海洋工程应用**：2025yd = 1nmi
-- **航海导航应用**：4050yd = 2nmi
-- **海事管理应用**：10125yd = 5nmi
-- **船舶设计应用**：20250yd = 10nmi
-- **海洋测量应用**：101250yd = 50nmi
+### 5. How is yard to nautical mile conversion applied in international shipping?
+In international shipping, ship equipment dimensions and port facility scales need precise correspondence with shipping distances and trade routes. This conversion ensures the accuracy of shipping planning and promotes the safe conduct of international trade and maritime transport.
 
-## 常见问题 (FAQ)
+### 6. How to apply this conversion in practical work?
+In maritime and aviation-related work, use standard conversion formulas and professional calculation tools, establish complete navigation measurement standards, and ensure accurate conversion and safe implementation from equipment design to navigation operations.
 
-### 1. 码和海里换算的实际意义是什么？
-码到海里的换算连接了英制长度单位体系中的中距离和海洋距离测量单位。在海洋工程、航海导航、海事管理和船舶设计中具有重要的实践价值，特别是在需要精确测量海洋距离和标准化的专业场合。
-
-### 2. 在海洋工程中如何应用这种换算？
-在海洋工程项目中，近海施工区域的精确测量使用码进行详细标注，而整体工程规划和远海作业距离使用海里进行标准化管理。通过准确换算，海洋工程师能够在施工设计和海域规划中实现距离参数的精确控制。
-
-### 3. 如何确保码到海里换算的精度？
-使用标准换算比例（1 nmi = 2025 yd），采用高精度计算工具，并根据具体应用场景的要求选择合适的精度等级，确保换算结果满足航海安全和海洋工程质量要求。
-
-### 4. 在航海导航中这种换算有什么价值？
-在现代航海导航系统中，港口内部操作和近岸导航使用码进行精确定位，而远洋航行和航海图标注使用海里作为标准距离单位。这种换算确保航行路径规划的准确性，促进航海安全和国际航运标准化。
-
-### 5. 海事管理中如何应用码到海里换算？
-在港口管理、海域规划和海事监管工作中，需要处理来自不同来源的长度数据。这种换算帮助海事管理人员统一距离标准，确保海上交通安全和海洋资源的合理利用。
-
-### 6. 如何在实际工作中应用这种换算？
-在海洋相关工作中，使用标准换算公式和专业计算工具，建立完整的海洋测量标准体系，确保从近海精确测量到远海宏观规划的准确转换和质量控制。
-
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Length" :key="index">
     <n-button

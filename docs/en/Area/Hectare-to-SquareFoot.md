@@ -1,116 +1,100 @@
 ---
-sidebar: false
-aside: false
-lastUpdated: false
-breadcrumb:
-  - - link: /
-      linkText: 首页
-
-  - - link: /Area/Hectare-to-SquareFoot
-      linkText: 公顷到平方英尺
-head:
-  - - meta
-    - name: description
-      content: "面积单位换算指南，涵盖公顷 (ha) 到平方英尺 (ft²) 的详细换算公式与说明。"
-  - - meta
-    - name: keywords
-      content: "面积, 单位换算, 公顷, 平方英尺, ha, ft², 公顷到平方英尺, 面积换算指南, 公顷平方英尺, 公顷和平方英尺的换算, 一公顷等于多少平方英尺, 公顷转平方英尺, hectares ft², 公顷换算, 平方英尺换算, 面积换算, 单位换算, 公顷到平方英尺, ha ft², 公顷平方英尺转换, 面积单位换算, 公顷平方英尺计算器, 公顷平方英尺对照表, 长度换算, 单位转换, 公顷平方英尺换算器, 平方英尺长度, 公顷长度, 面积计算, 单位换算公式, 公顷平方英尺计算, 面积换算器, 平方英尺单位换算, 公顷单位换算, 面积单位转换表, 公顷平方英尺转换表"
+title: "Hectare to Square Foot Converter - Accurate Area Unit Conversion Tool"
+description: "Professional hectare to square foot converter. Quickly convert hectares to square feet with precise calculations. Includes conversion formula, practical examples, and usage guide."
+keywords: ["hectare to square foot", "hectare converter", "square foot converter", "area conversion", "land area calculator", "hectare calculation", "square foot calculation", "area unit conversion"]
 ---
-# 公顷 (ha) 到 平方英尺 (ft²) 的换算
----
-<script setup>
-import { onMounted, reactive, inject, ref } from 'vue'
-import { NButton, NForm, NFormItem, NInput, NInputNumber, NSelect, NCard, useMessage,NGrid ,NGi } from 'naive-ui'
-import { defineClientComponent } from 'vitepress'
-import { Area } from '../files';
-const seoKey = ['公顷平方英尺','公顷和平方英尺的换算','一公顷等于多少平方英尺','公顷转平方英尺','hectares ft²','公顷换算','平方英尺换算','面积换算','单位换算','公顷到平方英尺','ha ft²','公顷平方英尺转换','面积单位换算','公顷平方英尺计算器','公顷平方英尺对照表','长度换算','单位转换','公顷平方英尺换算器','平方英尺长度','公顷长度','面积计算','单位换算公式','公顷平方英尺计算','面积换算器','平方英尺单位换算','公顷单位换算','面积单位转换表','公顷平方英尺转换表']
-const convert = inject('convert')
 
-const form = reactive({
-  number: null,
-  result: '',
-  title: '公顷 (ha) 到 平方英尺 (ft²) 的换算'
-})
+# Hectare to Square Foot Converter
 
-const convertHandler = () => {
-  if (form.number !== null && !isNaN(form.number)) {
-    const convertedValue = parseFloat(form.number) * 107639.1041671
-    form.result = `${form.number}ha = ${convertedValue.toFixed(2)}ft²`
-  } else {
-    form.result = '请输入有效的数值。'
-  }
-}
-</script>
+<Breadcrumb>
+  <BreadcrumbItem linkText="Home" link="/" />
+  <BreadcrumbItem linkText="Area Conversion" link="/en/Area/" />
+  <BreadcrumbItem content="Hectare to Square Foot" />
+</Breadcrumb>
 
-<n-form size="large" :model="form">
-  <n-form-item label="公顷 (ha)">
-    <n-input-number v-model:value="form.number" placeholder="输入公顷" style="width: 100%" />
-  </n-form-item>
-  <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
-  </n-form-item>
-</n-form>
+## Hectare to Square Foot Conversion Tool
 
-<n-card  
-  :title="form.title"
-  :segmented="{
-    content: true,
-    footer: 'soft',
+<UnitConverter
+  :seoKey="['hectare to square foot', 'hectare converter', 'square foot converter', 'area conversion', 'land area calculator', 'hectare calculation', 'square foot calculation', 'area unit conversion', 'hectare to sq ft', 'ha to square foot']"
+  title="Hectare to Square Foot Converter"
+  :formItems="[
+    {
+      label: 'Hectares',
+      placeholder: 'Enter hectare value',
+      key: 'hectare',
+      unitOptions: [
+        { label: 'Hectare (ha)', value: 'hectare' }
+      ]
+    },
+    {
+      label: 'Square Feet',
+      placeholder: 'Conversion result',
+      key: 'squarefoot',
+      unitOptions: [
+        { label: 'Square Foot (sq ft)', value: 'squarefoot' }
+      ]
+    }
+  ]"
+  :resultText="{
+    hectare: 'hectares equals',
+    squarefoot: 'square feet'
   }"
->
-  <div  style="text-align:center;font-size:20px;">
-    <strong>{{form.result}}</strong>
-  </div>
-    <template #footer>
-    <div>
-      <span v-for="item of seoKey">{{item}}，</span>
-    </div>
-  </template>
-</n-card>
+  buttonText="Convert"
+/>
 
-## 公式
+## Conversion Formula
 
-从 **公顷 (ha)** 换算到 **平方英尺 (ft²)** 的公式为：
-$$ ft² = ha \times 107639.1041671 $$
+**1 hectare = 107,639.1 square feet**
 
-## 公顷到平方英尺换算指南
+The conversion formula is:
+- Square feet = Hectares × 107,639.1
+- Hectares = Square feet ÷ 107,639.1
 
-在土地测量和建筑规划中，面积单位的换算是一个常见需求。本文专注于公顷 (ha) 到平方英尺 (ft²) 的换算，提供了详细的公式与实用示例。
+## Conversion Guide
 
-### 为什么需要 ha 到 ft² 的换算？
+### What is a Hectare?
+A hectare is a metric unit of area measurement, primarily used for measuring land areas. One hectare equals 10,000 square meters or 2.471 acres. It's commonly used in agriculture, forestry, and land planning.
 
-公顷和平方英尺是常见的面积单位，尤其在房地产、建筑设计以及国际贸易中尤为重要。通过精确的换算，可以确保测量的一致性和准确性。
+### What is a Square Foot?
+A square foot is an imperial unit of area measurement, equal to a square with sides of one foot each. It's widely used in the United States and other countries for measuring floor areas, property sizes, and construction projects.
 
-### ha 到 ft² 的换算方法
+### Conversion Steps
+1. Identify the hectare value you want to convert
+2. Multiply the hectare value by 107,639.1
+3. The result is the equivalent area in square feet
 
-从公顷到平方英尺的换算公式为：
+## Practical Application Examples
 
-- **公式：** `ft² = ha × 107639.1041671`
+### Example 1: Agricultural Land
+If you have a farm plot of 5 hectares:
+- 5 hectares × 107,639.1 = 538,195.5 square feet
+- This helps in understanding land size for international property transactions
 
-### 实际应用示例
+### Example 2: Urban Planning
+A development project covers 2.5 hectares:
+- 2.5 hectares × 107,639.1 = 269,097.75 square feet
+- Useful for architects and planners working with international standards
 
-以下是一些常见的换算实例：
+### Example 3: Real Estate
+A commercial property of 0.8 hectares:
+- 0.8 hectares × 107,639.1 = 86,111.28 square feet
+- Important for real estate professionals dealing with international clients
 
-- 1 ha = 107,639.10 ft²
-ddd
-- 5 ha = 538,195.52 ft²
-- 10 ha = 1,076,391.04 ft²
-ddd
+## Summary
 
-### 总结
+The hectare to square foot converter is essential for:
+- **International Trade**: Converting between metric and imperial land measurements
+- **Real Estate**: Property size comparisons across different measurement systems
+- **Agriculture**: Farm planning and crop area calculations
+- **Construction**: Project planning with international specifications
+- **Education**: Learning and understanding different area measurement units
 
-掌握公顷到平方英尺的换算可以帮助您更好地理解和使用这些面积单位。希望本指南能为您提供有价值的参考。
+This tool provides accurate conversions between hectares and square feet, making it invaluable for professionals in agriculture, real estate, construction, and international business.
 
-## 相关连接
-<n-grid x-gap="12" :cols="2">
-  <n-gi v-for="(file, index) in Area" :key="index">
-    <n-button
-      text
-      tag="a"
-      :href="file.path"
-      type="info"
-    >
-      {{file.name}}
-    </n-button>
-  </n-gi>
-</n-grid>
+## Related Conversions
+
+- [Hectare to Acre](/en/Area/Hectare-to-Acre)
+- [Hectare to Square Meter](/en/Area/Hectare-to-SquareMeter)
+- [Hectare to Square Kilometer](/en/Area/Hectare-to-SquareKilometer)
+- [Hectare to Square Mile](/en/Area/Hectare-to-SquareMile)
+- [Square Foot to Hectare](/en/Area/SquareFoot-to-Hectare)

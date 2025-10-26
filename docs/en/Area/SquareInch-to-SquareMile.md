@@ -4,26 +4,55 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
 
   - - link: /Area/SquareInch-to-SquareMile
-      linkText: 平方英寸到平方英里
+      linkText: Square Inch to Square Mile
 head:
   - - meta
     - name: description
-      content: "面积单位换算指南，涵盖平方英寸 (in²) 到平方英里 (mi²) 的详细换算公式与说明。"
+      content: "Area unit conversion guide covering detailed conversion formulas and explanations from square inches (in²) to square miles (mi²)."
   - - meta
     - name: keywords
-      content: "面积, 单位换算, 平方英寸, 平方英里, in², mi², 平方英寸到平方英里, 面积换算指南, 平方英寸到平方英里换算, in²到mi²换算, 平方英寸转平方英里, 英寸平方到平方英里, 平方英寸平方英里换算器, in²转mi², 平方英寸换算平方英里, 英寸平方转平方英里, 平方英寸到平方英里转换, in²平方英里换算, 平方英寸平方英里计算, 英寸平方平方英里换算, 平方英寸转换平方英里, in²到平方英里, 平方英寸平方英里转换器, 英寸平方到平方英里换算, 平方英寸平方英里换算公式, in²转换平方英里, 平方英寸到平方英里计算, 英寸平方转换平方英里, 平方英寸平方英里换算表, in²平方英里转换, 平方英寸转平方英里计算, 英寸平方平方英里转换, 平方英寸到平方英里换算工具, in²到平方英里换算, 平方英寸平方英里单位换算, 面积换算"
+      content: "area, unit conversion, square inches, square mile, in², mi², square inches to square mile, area conversion guide, square inches to mi² conversion, in² to mi² conversion, square inches to square mile, inch square to square mile, square inches square mile converter, in² to mi², square inches convert square mile, inch square to square mile, square inches to square mile conversion, in² square mile conversion, square inches square mile calculation, inch square square mile conversion, square inches convert square mile, in² to square mile, square inches square mile converter, inch square to square mile conversion, square inches square mile conversion formula, in² convert square mile, square inches to square mile calculation, inch square convert square mile, square inches square mile conversion table, in² square mile conversion, square inches to square mile calculation, inch square square mile conversion, square inches to square mile conversion tool, in² to square mile conversion, square inches square mile unit conversion, area conversion"
 ---
-# 平方英寸 (in²) 到 平方英里 (mi²) 的换算
+# Square Inches (in²) to Square Mile (mi²) Conversion
 ---
 <script setup>
 import { onMounted, reactive, inject, ref } from 'vue'
 import { NButton, NForm, NFormItem, NInput, NInputNumber, NSelect, NCard, useMessage,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
 import { Area } from '../files';
-
+const seoKey = [
+  'square inches to square mile conversion',
+  'in² to mi² conversion',
+  'square inches to square mile',
+  'inch square to square mile',
+  'square inches square mile converter',
+  'in² to mi²',
+  'square inches convert square mile',
+  'inch square to square mile',
+  'square inches to square mile conversion',
+  'in² square mile conversion',
+  'square inches square mile calculation',
+  'inch square square mile conversion',
+  'square inches convert square mile',
+  'in² to square mile',
+  'square inches square mile converter',
+  'inch square to square mile conversion',
+  'square inches square mile conversion formula',
+  'in² convert square mile',
+  'square inches to square mile calculation',
+  'inch square convert square mile',
+  'square inches square mile conversion table',
+  'in² square mile conversion',
+  'square inches to square mile calculation',
+  'inch square square mile conversion',
+  'square inches to square mile conversion tool',
+  'in² to square mile conversion',
+  'square inches square mile unit conversion',
+  'area conversion'
+]
 const convert = inject('convert')
 
 const form = reactive({
@@ -34,62 +63,71 @@ const form = reactive({
 const convertHandler = () => {
   if (form.number !== null && !isNaN(form.number)) {
     const convertedValue = parseFloat(form.number) / 4014489600
-    form.result = `${form.number}in² = ${convertedValue.toFixed(6)}mi²`
+    form.result = `${form.number}in² = ${convertedValue.toFixed(12)}mi²`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="平方英寸 (in²)">
-    <n-input-number v-model:value="form.number" placeholder="输入平方英寸" style="width: 100%" />
+  <n-form-item label="Square Inches (in²)">
+    <n-input-number v-model:value="form.number" placeholder="Enter square inches" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
-<n-card  embedded :bordered="false" hoverable>
+<n-card  
+  :title="form.title"
+  :segmented="{
+    content: true,
+    footer: 'soft',
+  }"
+>
   <div  style="text-align:center;font-size:20px;">
     <strong>{{form.result}}</strong>
   </div>
+    <template #footer>
+    <div>
+      <span v-for="item of seoKey">{{item}}, </span>
+    </div>
+  </template>
 </n-card>
 
-## 公式
+## Formula
 
-从 **平方英寸 (in²)** 换算到 **平方英里 (mi²)** 的公式为：
+The formula for converting from **Square Inches (in²)** to **Square Miles (mi²)** is:
 $$ mi² = in² \div 4014489600 $$
 
-## 平方英寸到平方英里换算指南
+## Square Inches to Square Mile Conversion Guide
 
-在地理测量和大面积土地规划中，面积单位的换算是一个常见需求。本文专注于平方英寸 (in²) 到平方英里 (mi²) 的换算，提供了详细的公式与实用示例。
+In geographic mapping and large-scale land surveying, area unit conversion is a common requirement. This article focuses on the conversion from square inches (in²) to square miles (mi²), providing detailed formulas and practical examples.
 
-### 为什么需要 in² 到 mi² 的换算？
+### Why Do We Need in² to mi² Conversion?
 
-平方英寸和平方英里是常见的面积单位，尤其在农业、土地规划以及大规模地理测量中尤为重要。通过精确的换算，可以确保测量的一致性和准确性。
+Square inches and square miles are common area units, especially important in geographic mapping, land surveying, and large-scale land measurement. Through precise conversion, we can ensure measurement consistency and accuracy.
 
-### in² 到 mi² 的换算方法
+### in² to mi² Conversion Method
 
-从平方英寸到平方英里的换算公式为：
+The conversion formula from square inches to square miles is:
 
-- **公式：** `mi² = in² ÷ 4014489600`
+- **Formula:** `mi² = in² ÷ 4014489600`
 
-### 实际应用示例
+### Practical Application Examples
 
-以下是一些常见的换算实例：
+Here are some common conversion examples:
 
-- 1000000000 in² = 0.2491 mi²
-ddd
 - 4014489600 in² = 1 mi²
-- 40144896000 in² = 10 mi²
-ddd
+- 8028979200 in² = 2 mi²
+- 20072448000 in² = 5 mi²
 
-### 总结
+### Summary
 
-掌握平方英寸到平方英里的换算可以帮助您更好地理解和使用这些面积单位。希望本指南能为您提供有价值的参考。
+Mastering the conversion from square inches to square miles can help you better understand and use these area units. We hope this guide provides valuable reference for you.
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Area" :key="index">
     <n-button

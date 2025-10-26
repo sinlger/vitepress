@@ -5,36 +5,36 @@ lastUpdated: false
 head:
   - - meta
     - name: description
-      content: 米到码转换器，支持m转yd、英尺换算、英制单位转换。提供长度单位换算表、米换算英尺、英寸厘米换算、一米等于多少英尺等多种单位转换功能。
+      content: Meter to yard converter, supports m to yd conversion, feet conversion, imperial unit conversion. Provides length unit conversion table, meter to feet conversion, inch to centimeter conversion, how many feet in one meter and various unit conversion functions.
   - - meta
     - name: keywords
-      content: 单位转换器,单位换算,长度单位转换器,长度单位转换,尺寸换算,长度单位换算,英尺换算,英寸换算,英制单位,ft单位,英尺和米换算,一米等于多少英尺,英尺厘米换算,ft to m,英尺转换,feet是什么单位
+      content: unit converter,unit conversion,length unit converter,length unit conversion,dimension conversion,length unit conversion,feet conversion,inch conversion,imperial units,ft unit,feet and meter conversion,how many feet in one meter,feet centimeter conversion,ft to m,feet conversion,what unit is feet
 ---
-# 长度单位换算
+# Length Unit Conversion
 
-米到码转换器是一个专业的长度单位换算工具，支持公制和英制单位之间的精确转换。无论您需要进行m转yd、英尺换算、还是英寸厘米换算，我们的转换器都能为您提供准确的结果。特别适用于体育场地测量、纺织行业、建筑工程等需要精确长度单位转换的场景。
+The meter to yard converter is a professional length unit conversion tool that supports precise conversion between metric and imperial units. Whether you need to perform m to yd conversion, feet conversion, or inch to centimeter conversion, our converter can provide you with accurate results. It is particularly suitable for sports field measurement, textile industry, construction engineering and other scenarios that require precise length unit conversion.
 
 ---
 <script setup>
 import { onMounted, reactive, inject ,ref  } from 'vue'
 import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage  } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
-const seoKey = ['单位转换器','单位换算','长度单位转换器','长度单位转换','尺寸换算','长度单位换算','长度单位换算表','一海里等于多少公里','一英里等于多少米','miles','海里和公里怎么换算','mile','一英里等于多少公里','英里和公里换算','米换算英尺','英尺单位','英制','英尺和英寸的换算','英尺英寸','英尺和米换算','ft单位','英尺 米','一米等于多少英尺','英尺厘米换算','英寸和英尺','ft to m','呎','英尺换算米','英尺转换','ft和m换算','六英尺','英尺和米','一英尺等于多少英寸','feet 多少米','米和英尺换算','feet是什么单位','英尺换算厘米','英制单位','英尺和英寸','英寸 厘米','一英尺','一英尺等于多少米','公尺','来源','ft是什么单位','一英尺等于多少厘米','英尺和厘米的换算','英里','foot','厘米和英寸换算','英尺和米的换算','英尺换算','ft','一英寸等于多少厘米','英寸换算','英寸和厘米的换算']
+const seoKey = ['unit converter','unit conversion','length unit converter','length unit conversion','dimension conversion','length unit conversion','length unit conversion table','how many kilometers in one nautical mile','how many meters in one mile','miles','nautical mile and kilometer conversion','mile','how many kilometers in one mile','mile and kilometer conversion','meter to feet conversion','feet unit','imperial','feet and inch conversion','feet inch','feet and meter conversion','ft unit','feet meter','how many feet in one meter','feet centimeter conversion','inch and feet','ft to m','feet','feet to meter conversion','feet conversion','ft and m conversion','six feet','feet and meter','how many inches in one foot','feet how many meters','meter and feet conversion','what unit is feet','feet to centimeter conversion','imperial units','feet and inch','inch centimeter','one foot','how many meters in one foot','meter','source','what unit is ft','how many centimeters in one foot','feet and centimeter conversion','mile','foot','centimeter and inch conversion','feet and meter conversion','feet conversion','ft','how many centimeters in one inch','inch conversion','inch and centimeter conversion']
 const convert = inject('convert')
 const options =  [
-  { label: '纳米', value: 'nm' },
-  { label: '微米', value: 'μm' },
-  { label: '毫米', value: 'mm' },
-  { label: '厘米', value: 'cm' },
-  { label: '米', value: 'm' },
-  { label: '千米', value: 'km' },
-  { label: '英寸', value: 'in' },
-  { label: '码', value: 'yd' },
-  { label: '英尺-us', value: 'ft-us' },
-  { label: '英尺', value: 'ft' },
-  { label: '拓', value: 'fathom' },
-  { label: '英里', value: 'mi' },
-  { label: '海里', value: 'nMi' }
+  { label: 'Nanometer', value: 'nm' },
+  { label: 'Micrometer', value: 'μm' },
+  { label: 'Millimeter', value: 'mm' },
+  { label: 'Centimeter', value: 'cm' },
+  { label: 'Meter', value: 'm' },
+  { label: 'Kilometer', value: 'km' },
+  { label: 'Inch', value: 'in' },
+  { label: 'Yard', value: 'yd' },
+  { label: 'Foot-us', value: 'ft-us' },
+  { label: 'Foot', value: 'ft' },
+  { label: 'Fathom', value: 'fathom' },
+  { label: 'Mile', value: 'mi' },
+  { label: 'Nautical Mile', value: 'nMi' }
 ];
 const formRef = ref(null);
 const rules = {
@@ -42,17 +42,17 @@ const rules = {
     required: true,
     type: 'number',
     trigger: "blur",
-    message: '请输入数字'
+    message: 'Please enter a number'
   },
   to:{
     required: true,
     trigger: "select",
-    message: '请选择转换单位'
+    message: 'Please select target unit'
   },
   from:{
     required: true,
     trigger: "select",
-    message: '请选择原始单位'
+    message: 'Please select source unit'
   }
 }
 const form = reactive({
@@ -60,7 +60,7 @@ const form = reactive({
   to:'yd',
   from:'m',
   result:'',
-  title:'长度单位换算',
+  title:'Length Unit Conversion',
 })
 if(form.number){
   form.result = `${form.number}${form.from} = ${convert(form.number).from(form.from).to(form.to)}${form.to}`
@@ -76,17 +76,17 @@ const convertHandler = (e) => {
 </script>
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="数值"  path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数值" />
+  <n-form-item label="Value"  path="number">
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="Please enter the value to convert" />
   </n-form-item>
-  <n-form-item label="从" path="from">
-    <n-select  size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
+  <n-form-item label="From" path="from">
+    <n-select  size="large" :options="options" v-model:value="form.from" placeholder="Please select source unit" />
   </n-form-item>
-  <n-form-item label="到" path="to">
-    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
+  <n-form-item label="To" path="to">
+    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="Please select target unit" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
+    <n-button type="info" style="width:100%" @click="convertHandler">Convert</n-button>
   </n-form-item>
 </n-form>
 <n-card 
@@ -106,32 +106,32 @@ const convertHandler = (e) => {
   </template>
 </n-card>
 
-## 常用长度单位转换公式
+## Common Length Unit Conversion Formulas
 
-### 米到码转换
-- **米转码**：1 m = 1.0936 yd
-- **码转米**：1 yd = 0.9144 m
-- **转换公式**：码数 = 米数 × 1.0936
+### Meter to Yard Conversion
+- **Meter to Yard**: 1 m = 1.0936 yd
+- **Yard to Meter**: 1 yd = 0.9144 m
+- **Conversion Formula**: Yards = Meters × 1.0936
 
-### 英尺和米的换算
-- **英尺转米**：1 ft = 0.3048 m
-- **米转英尺**：1 m = 3.28084 ft
-- **一米等于多少英尺**：1 m ≈ 3.281 ft
+### Feet and Meter Conversion
+- **Feet to Meter**: 1 ft = 0.3048 m
+- **Meter to Feet**: 1 m = 3.28084 ft
+- **How many feet in one meter**: 1 m ≈ 3.281 ft
 
-### 英寸和厘米换算
-- **英寸转厘米**：1 in = 2.54 cm
-- **厘米转英寸**：1 cm = 0.3937 in
-- **一英寸等于多少厘米**：1 in = 2.54 cm
+### Inch and Centimeter Conversion
+- **Inch to Centimeter**: 1 in = 2.54 cm
+- **Centimeter to Inch**: 1 cm = 0.3937 in
+- **How many centimeters in one inch**: 1 in = 2.54 cm
 
-## 长度单位换算表
+## Length Unit Conversion Table
 
-单位符号| 英文全称| 中文名称| 换算公式（以米为基准）| 示例换算
+Unit Symbol| English Name| Chinese Name| Conversion Formula (Based on Meter)| Example Conversion
 ---|---|---|---|---
 nm| Nanometer| 纳米| 1 nm = 10⁻⁹ m| 1 m = 1,000,000,000 nm
 μm| Micrometer| 微米| 1 μm = 10⁻⁶ m| 1 m = 1,000,000 μm
 mm| Millimeter| 毫米| 1 mm = 10⁻³ m| 1 m = 1,000 mm
 cm| Centimeter| 厘米| 1 cm = 10⁻² m| 1 m = 100 cm
-m| Meter| 米| 基准单位| 1m = 1m
+m| Meter| 米| Base Unit| 1m = 1m
 km| Kilometer| 千米| 1 km = 10³ m| 1 m = 0.001 km
 in| Inch| 英寸| 1 in = 0.0254 m | 1 m ≈ 39.37 in
 yd| Yard| 码| 1 yd = 0.9144 m | 1 m ≈ 1.0936 yd
@@ -140,57 +140,58 @@ ft| Foot| 英尺| 1 ft = 0.3048 m | 1 m ≈ 3.28084 ft
 fathom| Fathom| 英寻| 1 fathom = 1.8288 m | 1 m ≈ 0.5468 fathom
 mi| Mile| 英里| 1 mi = 1,609.344 m | 1 m ≈ 0.00062137 mi
 nMi| Nautical mile| 海里| 1 nMi = 1,852 m| 1 m ≈ 0.00053996 nMi
-## 换算方法说明
 
-### 公制单位换算（nm/km）
+## Conversion Method Explanation
 
-进率规则：相邻单位进率为 10（如 `1 cm = 10 mm`）。
+### Metric Unit Conversion (nm/km)
 
-公式：`目标单位值 = 原值 × 10^(原单位指数 - 目标单位指数)`
+Progression Rule: Adjacent units have a progression rate of 10 (e.g., `1 cm = 10 mm`).
 
-例：`5 km → m = 5 × 10³ = 5,000 m`
+Formula: `Target Unit Value = Original Value × 10^(Original Unit Exponent - Target Unit Exponent)`
 
-### 英制 / 特殊单位换算（in/nMi）
+Example: `5 km → m = 5 × 10³ = 5,000 m`
 
-直接乘法：`目标值 = 原值 × 换算系数`（见上表）
+### Imperial / Special Unit Conversion (in/nMi)
 
-例：`10 in → m = 10 × 0.0254 = 0.254 m`
+Direct Multiplication: `Target Value = Original Value × Conversion Factor` (see table above)
 
-反向换算：`原值 = 目标值 ÷ 换算系数`
+Example: `10 in → m = 10 × 0.0254 = 0.254 m`
 
-例：`100 m → mi = 100 ÷ 1609.344 ≈ 0.0621 mi`
+Reverse Conversion: `Original Value = Target Value ÷ Conversion Factor`
 
-## 实用提示
+Example: `100 m → mi = 100 ÷ 1609.344 ≈ 0.0621 mi`
 
-- **单位差异注意**：
-  - 美制英尺（`ft-us`）与标准英尺（`ft`）差异极小（约 0.0000006 m），日常可通用。
-  - 海里（`nMi`）专用于航海 / 航空，与英里（`mi`）不同。
+## Practical Tips
 
-- **更多工具**：
-  - 如需批量计算，推荐使用在线换算器，支持实时互转。
+- **Unit Difference Notes**:
+  - U.S. Survey Foot (`ft-us`) and standard foot (`ft`) have minimal difference (about 0.0000006 m), can be used interchangeably in daily use.
+  - Nautical mile (`nMi`) is specifically used for maritime/aviation, different from mile (`mi`).
 
-## 常见问题解答
+- **More Tools**:
+  - For batch calculations, we recommend using online converters that support real-time conversion.
 
-### ft是什么单位？
-ft是英尺（foot）的缩写，是英制长度单位。1英尺等于12英寸，约等于30.48厘米或0.3048米。
+## Frequently Asked Questions
 
-### feet是什么单位？
-feet是foot的复数形式，即英尺的复数。在测量中，feet通常用来表示多个英尺的长度。
+### What unit is ft?
+ft is the abbreviation for foot, an imperial length unit. 1 foot equals 12 inches, approximately 30.48 centimeters or 0.3048 meters.
 
-### 一米等于多少英尺？
-一米等于3.28084英尺，这是国际标准的换算比例。在实际应用中，通常简化为1米≈3.281英尺。
+### What unit is feet?
+feet is the plural form of foot, i.e., the plural of foot. In measurements, feet is usually used to express lengths of multiple feet.
 
-### 英尺和米换算公式是什么？
-- 英尺转米：米数 = 英尺数 × 0.3048
-- 米转英尺：英尺数 = 米数 × 3.28084
+### How many feet in one meter?
+One meter equals 3.28084 feet, which is the international standard conversion ratio. In practical applications, it is usually simplified to 1 meter ≈ 3.281 feet.
 
-### ft to m怎么换算？
-ft to m的换算很简单：将英尺数乘以0.3048即可得到米数。例如：10 ft = 10 × 0.3048 = 3.048 m
+### What is the feet and meter conversion formula?
+- Feet to meter: Meters = Feet × 0.3048
+- Meter to feet: Feet = Meters × 3.28084
 
-### 英制单位有哪些？
-常见的英制长度单位包括：英寸(in)、英尺(ft)、码(yd)、英里(mi)等。这些单位主要在美国、英国等国家使用。
+### How to convert ft to m?
+ft to m conversion is simple: multiply the number of feet by 0.3048 to get meters. For example: 10 ft = 10 × 0.3048 = 3.048 m
 
-### 六英尺是多少米？
-六英尺等于1.8288米（6 × 0.3048 = 1.8288）。这个高度在人体身高测量中比较常见。
+### What are the imperial units?
+Common imperial length units include: inch (in), foot (ft), yard (yd), mile (mi), etc. These units are mainly used in countries like the United States and the United Kingdom.
 
-此表综合了国际标准（SI）、英制及特殊用途单位，数据源自权威计量资料。若有特定场景需求（如科学计算或工程精度），可进一步提供细分换算系数。
+### How many meters is six feet?
+Six feet equals 1.8288 meters (6 × 0.3048 = 1.8288). This height is quite common in human height measurements.
+
+This table integrates international standards (SI), imperial and special-purpose units, with data sourced from authoritative measurement materials. For specific scenario requirements (such as scientific calculations or engineering precision), more detailed conversion coefficients can be provided.

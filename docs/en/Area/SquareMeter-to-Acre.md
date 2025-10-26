@@ -4,19 +4,19 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
 
   - - link: /Area/SquareMeter-to-Acre
-      linkText: 平方米到英亩
+      linkText: Square Meter to Acre
 head:
   - - meta
     - name: description
-      content: "面积单位换算指南，涵盖平方米 (m²) 到英亩 (ac) 的详细换算公式与说明。"
+      content: "Area unit conversion guide covering detailed conversion formulas and explanations from square meters (m²) to acres."
   - - meta
     - name: keywords
-      content: "面积, 单位换算, 平方米, 英亩, m², ac, 平方米到英亩, 面积换算指南, 平方米換算坪, 一平米, 一平方米, 平方米和平方公里换算, 平方米单位, 平方米和平方厘米换算, 平方米的符号, 平方米和平方公里, 一尺等于多少平方米, 平方米和平方千米换算, 面积换算公式, 亩 平方米, 亩数换算平方米, 平方厘米和平方米换算, 平方米换算平方公里, 一平方米等于多少平方分米, 平方米换算, 一平方千米等于多少平方米, 平方米和亩, 面积单位, 平方公里等于多少平方米, 平方米和平方厘米, 平方千米和平方米, 平方米怎么算, 平米符号, 一平方等于多少米, sqm是什么单位, 面积转换, 平方厘米换算平方米, 平方米符号, 一亩地多少平方米, 面积单位换算, 平方米和平方千米, 平方公尺換算坪, 平方毫米, 平方米和亩换算, 平方米换算亩, 一公顷等于多少亩, 面积换算, 单位换算器, 一亩地等于多少平方米"
+      content: "area, unit conversion, square meters, acres, m², square meters to acres, area conversion guide, square meters to acre conversion, m² to acre conversion, square meters to acres, meter square to acres, square meters acres converter, m² to acres, square meters convert acres, meter square to acres, square meters to acres conversion, m² acres conversion, square meters acres calculation, meter square acres conversion, square meters convert acres, m² to acres, square meters acres converter, meter square to acres conversion, square meters acres conversion formula, m² convert acres, square meters to acres calculation, meter square convert acres, square meters acres conversion table, m² acres conversion, square meters to acres calculation, meter square acres conversion, square meters to acres conversion tool, m² to acres conversion, square meters acres unit conversion, area conversion"
 ---
-# 平方米 (m²) 到 英亩 (ac) 的换算
+# Square Meters (m²) to Acres Conversion
 ---
 <script setup>
 import { onMounted, reactive, inject, ref } from 'vue'
@@ -24,72 +24,59 @@ import { NButton, NForm, NFormItem, NInput, NInputNumber, NSelect, NCard, useMes
 import { defineClientComponent } from 'vitepress'
 import { Area } from '../files';
 const seoKey = [
-  '平方米換算坪',
-  '一平米',
-  '一平方米',
-  '平方米和平方公里换算',
-  '平方米单位',
-  '平方米和平方厘米换算',
-  '平方米的符号',
-  '平方米和平方公里',
-  '一尺等于多少平方米',
-  '平方米和平方千米换算',
-  '面积换算公式',
-  '亩 平方米',
-  '亩数换算平方米',
-  '平方厘米和平方米换算',
-  '平方米换算平方公里',
-  '一平方米等于多少平方分米',
-  '平方米换算',
-  '一平方千米等于多少平方米',
-  '平方米和亩',
-  '面积单位',
-  '平方公里等于多少平方米',
-  '平方米和平方厘米',
-  '平方千米和平方米',
-  '平方米怎么算',
-  '平米符号',
-  '一平方等于多少米',
-  'sqm是什么单位',
-  '面积转换',
-  '平方厘米换算平方米',
-  '平方米符号',
-  '一亩地多少平方米',
-  '面积单位换算',
-  '平方米和平方千米',
-  '平方公尺換算坪',
-  '平方毫米',
-  '平方米和亩换算',
-  '平方米换算亩',
-  '一公顷等于多少亩',
-  '面积换算',
-  '单位换算器',
-  '一亩地等于多少平方米'
+  'square meters to acres conversion',
+  'm² to acre conversion',
+  'square meters to acres',
+  'meter square to acres',
+  'square meters acres converter',
+  'm² to acres',
+  'square meters convert acres',
+  'meter square to acres',
+  'square meters to acres conversion',
+  'm² acres conversion',
+  'square meters acres calculation',
+  'meter square acres conversion',
+  'square meters convert acres',
+  'm² to acres',
+  'square meters acres converter',
+  'meter square to acres conversion',
+  'square meters acres conversion formula',
+  'm² convert acres',
+  'square meters to acres calculation',
+  'meter square convert acres',
+  'square meters acres conversion table',
+  'm² acres conversion',
+  'square meters to acres calculation',
+  'meter square acres conversion',
+  'square meters to acres conversion tool',
+  'm² to acres conversion',
+  'square meters acres unit conversion',
+  'area conversion'
 ]
 const convert = inject('convert')
 
 const form = reactive({
   number: null,
   result: '',
-  title: '平方米 (m²) 到英亩 (ac) 的换算',
+  title: 'Square Meters (m²) to Acres Conversion',
 })
 
 const convertHandler = () => {
   if (form.number !== null && !isNaN(form.number)) {
-    const convertedValue = parseFloat(form.number) / 4046.8564224
-    form.result = `${form.number}m² = ${convertedValue.toFixed(4)}ac`
+    const convertedValue = parseFloat(form.number) * 0.000247105
+    form.result = `${form.number}m² = ${convertedValue.toFixed(6)} acres`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="平方米 (m²)">
-    <n-input-number v-model:value="form.number" placeholder="输入平方米" style="width: 100%" />
+  <n-form-item label="Square Meters (m²)">
+    <n-input-number v-model:value="form.number" placeholder="Enter square meters" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
@@ -105,43 +92,43 @@ const convertHandler = () => {
   </div>
     <template #footer>
     <div>
-      <span v-for="item of seoKey">{{item}}，</span>
+      <span v-for="item of seoKey">{{item}}, </span>
     </div>
   </template>
 </n-card>
 
-## 公式
+## Formula
 
-从 **平方米 (m²)** 换算到 **英亩 (ac)** 的公式为：
-$$ ac = m² \div 4046.8564224 $$
+The formula for converting from **Square Meters (m²)** to **Acres** is:
+$$ acres = m² \times 0.000247105 $$
 
-## 平方米到英亩换算指南
+## Square Meters to Acres Conversion Guide
 
-在土地测量和农业规划中，面积单位的换算是一个常见需求。本文专注于平方米 (m²) 到英亩 (ac) 的换算，提供了详细的公式与实用示例。
+In land measurement and agricultural planning, area unit conversion is a common requirement. This article focuses on the conversion from square meters (m²) to acres, providing detailed formulas and practical examples.
 
-### 为什么需要 m² 到 ac 的换算？
+### Why Do We Need m² to Acres Conversion?
 
-平方米和英亩是常见的面积单位，尤其在农业、房地产和土地规划中尤为重要。通过精确的换算，可以确保测量的一致性和准确性。
+Square meters and acres are commonly used area units, especially important in land planning, agricultural measurement, and real estate. Through precise conversion, we can ensure measurement consistency and accuracy.
 
-### m² 到 ac 的换算方法
+### m² to Acres Conversion Method
 
-从平方米到英亩的换算公式为：
+The conversion formula from square meters to acres is:
 
-- **公式：** `ac = m² ÷ 4046.8564224`
+- **Formula:** `acres = m² × 0.000247105`
 
-### 实际应用示例
+### Practical Application Examples
 
-以下是一些常见的换算实例：
+Here are some common conversion examples:
 
-- 100 m² = 0.0247 ac
-- 4046.8564224 m² = 1 ac
-- 40468.564224 m² = 10 ac
+- 1000 m² = 0.247105 acres
+- 5000 m² = 1.235525 acres
+- 10000 m² = 2.47105 acres
 
-### 总结
+### Summary
 
-掌握平方米到英亩的换算可以帮助您更好地理解和使用这些面积单位。希望本指南能为您提供有价值的参考。
+Mastering the conversion from square meters to acres can help you better understand and use these area units. We hope this guide provides valuable reference for you.
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Area" :key="index">
     <n-button

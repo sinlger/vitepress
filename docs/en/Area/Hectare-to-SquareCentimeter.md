@@ -4,32 +4,32 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
 
   - - link: /Area/Hectare-to-SquareCentimeter
-      linkText: 公顷到平方厘米
+      linkText: Hectare to Square Centimeter
 head:
   - - meta
     - name: description
-      content: "面积单位换算指南，涵盖公顷 (ha) 到平方厘米 (cm²) 的详细换算公式与说明。"
+      content: "Area unit conversion guide covering detailed conversion formulas and explanations from hectares (ha) to square centimeters (cm²)."
   - - meta
     - name: keywords
-      content: "面积, 单位换算, 公顷, 平方厘米, ha, cm², 公顷到平方厘米, 面积换算指南, 公顷平方厘米, 公顷和平方厘米的换算, 一公顷等于多少平方厘米, 公顷转平方厘米, hectares cm², 公顷换算, 平方厘米换算, 面积换算, 单位换算, 公顷到平方厘米, ha cm², 公顷平方厘米转换, 面积单位换算, 公顷平方厘米计算器, 公顷平方厘米对照表, 长度换算, 单位转换, 公顷平方厘米换算器, 平方厘米长度, 公顷长度, 面积计算, 单位换算公式, 公顷平方厘米计算, 面积换算器, 平方厘米单位换算, 公顷单位换算, 面积单位转换表, 公顷平方厘米转换表"
+      content: "area, unit conversion, hectare, square centimeter, ha, cm², hectare to square centimeter, area conversion guide, hectare square centimeter, hectare and square centimeter conversion, how many square centimeters in a hectare, hectare to square centimeter conversion, hectares cm², hectare conversion, square centimeter conversion, area conversion, unit conversion, hectare to square centimeter, ha cm², hectare square centimeter conversion, area unit conversion, hectare square centimeter calculator, hectare square centimeter comparison table, length conversion, unit conversion, hectare square centimeter converter, square centimeter length, hectare length, area calculation, unit conversion formula, hectare square centimeter calculation, area converter, square centimeter unit conversion, hectare unit conversion, area unit conversion table, hectare square centimeter conversion table"
 ---
-# 公顷 (ha) 到 平方厘米 (cm²) 的换算
+# Hectare (ha) to Square Centimeter (cm²) Conversion
 ---
 <script setup>
 import { onMounted, reactive, inject, ref } from 'vue'
 import { NButton, NForm, NFormItem, NInput, NInputNumber, NSelect, NCard, useMessage,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
 import { Area } from '../files';
-const seoKey = ['公顷平方厘米','公顷和平方厘米的换算','一公顷等于多少平方厘米','公顷转平方厘米','hectares cm²','公顷换算','平方厘米换算','面积换算','单位换算','公顷到平方厘米','ha cm²','公顷平方厘米转换','面积单位换算','公顷平方厘米计算器','公顷平方厘米对照表','长度换算','单位转换','公顷平方厘米换算器','平方厘米长度','公顷长度','面积计算','单位换算公式','公顷平方厘米计算','面积换算器','平方厘米单位换算','公顷单位换算','面积单位转换表','公顷平方厘米转换表']
+const seoKey = ['hectare square centimeter','hectare and square centimeter conversion','how many square centimeters in a hectare','hectare to square centimeter conversion','hectares cm²','hectare conversion','square centimeter conversion','area conversion','unit conversion','hectare to square centimeter','ha cm²','hectare square centimeter conversion','area unit conversion','hectare square centimeter calculator','hectare square centimeter comparison table','length conversion','unit conversion','hectare square centimeter converter','square centimeter length','hectare length','area calculation','unit conversion formula','hectare square centimeter calculation','area converter','square centimeter unit conversion','hectare unit conversion','area unit conversion table','hectare square centimeter conversion table']
 const convert = inject('convert')
 
 const form = reactive({
   number: null,
   result: '',
-  title: '公顷 (ha) 到 平方厘米 (cm²) 的换算'
+  title: 'Hectare (ha) to Square Centimeter (cm²) Conversion'
 })
 
 const convertHandler = () => {
@@ -37,17 +37,17 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) * 100000000
     form.result = `${form.number}ha = ${convertedValue.toFixed(2)}cm²`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="公顷 (ha)">
-    <n-input-number v-model:value="form.number" placeholder="输入公顷" style="width: 100%" />
+  <n-form-item label="Hectare (ha)">
+    <n-input-number v-model:value="form.number" placeholder="Enter hectares" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
@@ -63,43 +63,43 @@ const convertHandler = () => {
   </div>
     <template #footer>
     <div>
-      <span v-for="item of seoKey">{{item}}，</span>
+      <span v-for="item of seoKey">{{item}}, </span>
     </div>
   </template>
 </n-card>
 
-## 公式
+## Formula
 
-从 **公顷 (ha)** 换算到 **平方厘米 (cm²)** 的公式为：
+The formula for converting from **hectares (ha)** to **square centimeters (cm²)** is:
 $$ cm² = ha \times 100000000 $$
 
-## 公顷到平方厘米换算指南
+## Hectare to Square Centimeter Conversion Guide
 
-在土地测量和建筑设计中，面积单位的换算是一个常见需求。本文专注于公顷 (ha) 到平方厘米 (cm²) 的换算，提供了详细的公式与实用示例。
+In land surveying and architectural design, area unit conversion is a common requirement. This article focuses on the conversion from hectares (ha) to square centimeters (cm²), providing detailed formulas and practical examples.
 
-### 为什么需要 ha 到 cm² 的换算？
+### Why Do We Need ha to cm² Conversion?
 
-公顷和平方厘米是常见的面积单位，尤其在农业、土地规划以及精密设计中尤为重要。通过精确的换算，可以确保测量的一致性和准确性。
+Hectares and square centimeters are common area units, especially important in agriculture, land planning, and precision design. Through precise conversion, we can ensure consistency and accuracy in measurements.
 
-### ha 到 cm² 的换算方法
+### ha to cm² Conversion Method
 
-从公顷到平方厘米的换算公式为：
+The conversion formula from hectares to square centimeters is:
 
-- **公式：** `cm² = ha × 100000000`
+- **Formula:** `cm² = ha × 100000000`
 
-### 实际应用示例
+### Practical Application Examples
 
-以下是一些常见的换算实例：
+Here are some common conversion examples:
 
 - 1 ha = 100,000,000 cm²
 - 5 ha = 500,000,000 cm²
 - 10 ha = 1,000,000,000 cm²
 
-### 总结
+### Summary
 
-掌握公顷到平方厘米的换算可以帮助您更好地理解和使用这些面积单位。希望本指南能为您提供有价值的参考。
+Mastering the conversion from hectares to square centimeters can help you better understand and use these area units. We hope this guide provides valuable reference for you.
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Area" :key="index">
     <n-button

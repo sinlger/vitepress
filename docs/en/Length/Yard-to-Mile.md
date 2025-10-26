@@ -1,172 +1,153 @@
 ---
-sidebar: false
-aside: false
-lastUpdated: false
+outline: deep
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Length/index
-      linkText: 长度换算
+      linkText: Length Conversion
   - - link: /Length/Yard-to-Mile
-      linkText: 码到英里
+      linkText: Yard to Mile
 head:
   - - meta
     - name: description
-      content: "专业的码(yd)到英里(mile)长度单位换算工具和指南。提供精确的换算公式、实际应用场景和常见问题解答，适用于交通运输、地理测量、体育运动、城市规划等领域的长距离测量需求。"
+      content: "Professional yard (yd) to mile length unit conversion tool and guide. Provides precise conversion formulas, practical application scenarios, and frequently asked questions, suitable for transportation planning, road engineering, sports measurement, land surveying, and other fields requiring distance measurement."
   - - meta
     - name: keywords
-      content: "码到英里换算,yd到mile转换,长度单位换算,英里换算器,交通运输,地理测量,体育运动,城市规划,英制单位,长距离测量,道路测量,地图制图,运输距离,英国标准,长度转换器,单位换算表,英制长度单位,地理信息,测量工具,精密测量"
+      content: "yard to mile conversion,yd to mile conversion,length unit conversion,mile converter,transportation planning,road engineering,sports measurement,land surveying,distance measurement,imperial units,length converter,unit conversion table,road distance,transportation distance,athletic measurement,surveying distance,engineering measurement,construction measurement,infrastructure planning,distance calculation"
 ---
-# 码 (yd) 到 英里 (mi) 的换算
+# Yard (yd) to Mile Conversion
 
-码到英里的换算是英制长度单位体系中重要的长距离测量转换，在交通运输、地理测量、体育运动和城市规划中广泛应用。英里作为英制长度单位中的长距离标准，在道路测量、地图制图、运输距离计算和地理信息系统中发挥着重要作用。掌握准确的码到英里换算方法，对于确保交通规划精度、地理测量标准化和体育赛事组织具有重要意义。
+The conversion from yards to miles is an important technical skill in transportation planning, road engineering, and sports measurement. The mile, as a fundamental unit in the imperial distance measurement system, is widely used in transportation planning, road engineering, land surveying, and sports measurement; while the yard is a basic unit in the imperial length unit system, playing an important role in construction engineering, sports facilities, and precision measurement. Mastering precise yard to mile conversion methods is of great practical value for transportation engineers, surveyors, and sports professionals.
 
 <script setup>
-import { onMounted, reactive, inject, ref } from 'vue'
-import { NButton, NForm, NFormItem, NInput, NInputNumber, NSelect, NCard, useMessage,NGrid ,NGi } from 'naive-ui'
-import { defineClientComponent } from 'vitepress'
-import { Length } from '../files';
+import { ref, reactive, inject } from 'vue'
+import { NForm, NFormItem, NInputNumber, NButton, NCard, NGrid, NGi } from 'naive-ui'
 
+const Length = inject('Length')
 const convert = inject('convert')
 
-const seoKey = [
-  '码到英里换算', 'yd到mile转换', '英里换算器', '交通运输测量',
-  '地理测量', '体育运动', '城市规划', '英制单位换算',
-  '道路测量工具', '地图制图标准', '运输距离计算', '长度转换器',
-  '地理信息系统', '精密测量工具', '英制长度单位', '长距离测量标准'
-]
+const seoKey = ['unit converter','unit conversion','length unit converter','length unit conversion','size conversion','length unit conversion','length unit conversion table','yard to mile','mile conversion','mile','yard conversion','yd conversion','mile unit','transportation planning','road engineering','sports measurement','land surveying','distance measurement','imperial units','length converter','yard mile conversion','mile yard conversion','road distance','transportation distance','athletic measurement','surveying distance','engineering measurement','construction measurement','infrastructure planning','distance calculation','highway engineering','transportation engineering','civil engineering','sports engineering','athletic facilities','track measurement','field measurement','road construction','highway construction']
 
 const form = reactive({
   number: null,
   result: '',
-  title: '码到英里换算器 - 专业交通运输测量工具'
+  title: 'Yard (yd) to Mile Length Unit Converter'
 })
 
 const convertHandler = () => {
-  if (form.number !== null && !isNaN(form.number)) {
-    const convertedValue = parseFloat(form.number) * 0.00056818
-    form.result = `${form.number}yd = ${convertedValue.toFixed(6)}mi`
+  if (form.number !== null && form.number !== '') {
+    const convertedValue = convert(form.number, 'yd', 'mi')
+    form.result = `${form.number}yd = ${convertedValue.toFixed(8)}mi`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
+<n-card :title="form.title" size="large">
 <n-form size="large" :model="form">
-  <n-form-item label="码 (yd)">
-    <n-input-number v-model:value="form.number" placeholder="输入码" style="width: 100%" />
+  <n-form-item label="Yard (yd)">
+    <n-input-number v-model:value="form.number" placeholder="Enter yards" style="width: 100%" />
   </n-form-item>
-  <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
-  </n-form-item>
+  
+  <n-button type="info" @click="convertHandler" block>Convert</n-button>
 </n-form>
 
-<n-card embedded :bordered="false" hoverable>
-  <template #header>
-    <div style="text-align:center;font-size:16px;color:#666;">
-      {{form.title}}
-    </div>
-  </template>
-  <div style="text-align:center;font-size:20px;">
-    <strong>{{form.result}}</strong>
+<n-card style="margin-top: 20px;">
+  <div style="font-size: 18px; font-weight: bold; color: #2080f0;">
+    {{ form.result }}
   </div>
-  <template #footer>
-    <div style="text-align:center;font-size:12px;color:#999;">
-      <span v-for="(keyword, index) in seoKey" :key="index">
-        {{keyword}}<span v-if="index < seoKey.length - 1"> | </span>
-      </span>
-    </div>
-  </template>
+</n-card>
 </n-card>
 
-## 实际应用场景
+## Practical Application Scenarios
 
-码到英里的换算在长距离测量领域具有重要的实际应用价值，特别是在需要精确测量和标准化的专业领域：
+Yard (yd) and mile are important length units in transportation and engineering fields, playing key roles in the following professional scenarios:
 
-### 交通运输系统
-在交通运输规划中，道路建设和交通管理经常需要在码和英里之间进行换算。道路施工的具体工程段落使用码进行精确测量，而交通规划和里程标识使用英里进行标准化管理。准确的单位换算确保了交通基础设施建设的精度和运输系统的标准化。
+### Transportation Planning and Road Engineering
+- **Highway Design**: Road section lengths are often expressed in yards, while total highway distances are measured in miles
+- **Traffic Engineering**: Traffic facility dimensions are calculated in yards, while traffic flow analysis distances are measured in miles
+- **Infrastructure Planning**: Bridge and tunnel structural dimensions are marked in yards, while transportation corridor lengths are measured in miles
 
-### 地理测量制图
-地理测量和地图制图中广泛应用这种换算。地形测量的局部区域使用码进行精确定位，而大范围的地理距离和区域规划使用英里进行标准化表示。这种换算保证了地理信息系统的准确性和地图制图的标准化。
+### Sports Measurement and Athletic Facilities
+- **Track and Field**: Track section lengths are expressed in yards, while marathon and long-distance race routes are measured in miles
+- **Golf Course Design**: Golf hole distances are marked in yards, while total course lengths are measured in miles
+- **Sports Facility Construction**: Stadium facility dimensions are calculated in yards, while sports venue accessibility distances are measured in miles
 
-### 体育运动赛事
-体育运动特别是长跑、马拉松等耐力项目中需要精确的距离测量。训练场地和赛道的具体测量使用码，而正式比赛距离和成绩记录使用英里，精确的换算保证了体育赛事的公正性和国际标准化。
+### Land Surveying and Civil Engineering
+- **Property Surveying**: Property boundary dimensions are expressed in yards, while large area measurements are calculated in miles
+- **Urban Planning**: Building spacing and block dimensions are marked in yards, while city planning distances are measured in miles
+- **Construction Engineering**: Construction site dimensions are calculated in yards, while material transport distances are measured in miles
 
-### 城市规划建设
-城市规划和建设项目中需要在不同尺度的测量单位间转换。建筑工程的具体施工使用码进行精确控制，而城市总体规划和区域发展使用英里进行宏观规划，确保城市建设的科学性和可持续发展。
+### Transportation and Logistics
+- **Freight Transport**: Vehicle loading dimensions are expressed in yards, while transport route distances are measured in miles
+- **Logistics Planning**: Warehouse facility dimensions are marked in yards, while delivery route distances are calculated in miles
+- **Supply Chain Management**: Equipment dimensions are expressed in yards, while supply chain distances are measured in miles
 
-### 航空航海导航
-航空和航海导航系统中广泛应用这种换算。机场跑道、港口设施的具体尺寸使用码测量，而航行距离和导航规划使用英里计算，精确的换算保证了航空航海的安全性和导航精度。
+### Yard to Mile Conversion Reference Table
 
-### 地理信息系统
-现代地理信息系统(GIS)在数据处理和空间分析中需要统一的测量标准。不同来源的地理数据可能使用不同单位，码到英里的换算确保了地理信息的准确性和数据分析的可靠性。
+| Yard (yd) | Mile (mi) | Application Scenario |
+|-----------|-----------|---------------------|
+| 1,760 yd | 1 mi | Standard conversion unit |
+| 8,800 yd | 5 mi | Short-distance transportation |
+| 17,600 yd | 10 mi | Medium-distance transportation |
+| 88,000 yd | 50 mi | Long-distance transportation |
+| 176,000 yd | 100 mi | Interstate transportation |
+| 880,000 yd | 500 mi | Regional transportation |
+| 1,760,000 yd | 1,000 mi | National transportation |
+| 8,800,000 yd | 5,000 mi | Continental transportation |
 
-### 码英里换算对照表
+## Formula
 
-| 码 (yd) | 英里 (mi) | 公里 (km) | 米 (m) | 应用场景 |
-|---------|-----------|-----------|--------|-----------|
-| 1760 yd | 1 mi | 1.609 km | 1609 m | 标准换算单位 |
-| 3520 yd | 2 mi | 3.219 km | 3219 m | 短距离运输 |
-| 8800 yd | 5 mi | 8.047 km | 8047 m | 城市区域规划 |
-| 17600 yd | 10 mi | 16.093 km | 16093 m | 交通路线规划 |
-| 35200 yd | 20 mi | 32.187 km | 32187 m | 地区交通网络 |
-| 88000 yd | 50 mi | 80.467 km | 80467 m | 省际交通规划 |
-| 176000 yd | 100 mi | 160.934 km | 160934 m | 长距离运输 |
-| 880000 yd | 500 mi | 804.672 km | 804672 m | 国家级交通网 |
-
-## 公式
-
-### 码到英里转换公式
-从 **码 (yd)** 换算到 **英里 (mi)** 的精确公式为：
+### Yard to Mile Conversion Formula
+The precise formula for converting from **Yard (yd)** to **Mile (mi)** is:
 $$ mi = yd \div 1760 $$
-或者：
-$$ mi = yd \times 0.00056818 $$
 
-### 英里到码转换公式
-从 **英里 (mi)** 换算到 **码 (yd)** 的精确公式为：
+### Mile to Yard Conversion Formula
+The precise formula for converting from **Mile (mi)** to **Yard (yd)** is:
 $$ yd = mi \times 1760 $$
 
-### 长度单位换算对照表
+### Length Unit Conversion Reference Table
 
-| 码 (yd) | 英里 (mi) | 公里 (km) | 英尺 (ft) | 应用场景 |
-|---------|-----------|-----------|-----------|----------|
-| 1760 yd | 1 mi | 1.609 km | 5280 ft | 标准换算单位 |
-| 3520 yd | 2 mi | 3.219 km | 10560 ft | 短距离交通 |
-| 8800 yd | 5 mi | 8.047 km | 26400 ft | 城市区域 |
-| 17600 yd | 10 mi | 16.093 km | 52800 ft | 交通规划 |
-| 35200 yd | 20 mi | 32.187 km | 105600 ft | 地区网络 |
-| 88000 yd | 50 mi | 80.467 km | 264000 ft | 省际交通 |
-| 176000 yd | 100 mi | 160.934 km | 528000 ft | 长距离运输 |
-| 880000 yd | 500 mi | 804.672 km | 2640000 ft | 国家级网络 |
+| Yard (yd) | Mile (mi) | Meter (m) | Kilometer (km) | Application Scenario |
+|-----------|-----------|-----------|----------------|---------------------|
+| 1 yd | 0.000568 mi | 0.914 m | 0.000914 km | Small facility dimensions |
+| 1,760 yd | 1 mi | 1,609 m | 1.609 km | Standard conversion unit |
+| 8,800 yd | 5 mi | 8,047 m | 8.047 km | Short-distance transportation |
+| 17,600 yd | 10 mi | 16,093 m | 16.093 km | Medium-distance transportation |
+| 88,000 yd | 50 mi | 80,467 m | 80.467 km | Long-distance transportation |
+| 176,000 yd | 100 mi | 160,934 m | 160.934 km | Interstate transportation |
+| 880,000 yd | 500 mi | 804,672 m | 804.672 km | Regional transportation |
+| 1,760,000 yd | 1,000 mi | 1,609,344 m | 1,609.344 km | National transportation |
 
-### 转换示例
-- **交通运输应用**：1760yd = 1mi
-- **地理测量应用**：3520yd = 2mi
-- **体育运动应用**：8800yd = 5mi
-- **城市规划应用**：17600yd = 10mi
-- **航空导航应用**：88000yd = 50mi
+### Conversion Examples
+- **Highway Engineering Application**: 1,760yd = 1mi
+- **Sports Facility Application**: 8,800yd = 5mi
+- **Transportation Planning Application**: 17,600yd = 10mi
+- **Land Surveying Application**: 176,000yd = 100mi
+- **Logistics Planning Application**: 1,760,000yd = 1,000mi
 
-## 常见问题 (FAQ)
+## Frequently Asked Questions (FAQ)
 
-### 1. 码和英里换算的实际意义是什么？
-码到英里的换算连接了英制长度单位体系中的中距离和长距离测量单位。在交通运输、地理测量、体育运动和城市规划中具有重要的实践价值，特别是在需要精确测量长距离和标准化的专业场合。
+### 1. What is the practical significance of yard to mile conversion?
+The yard to mile conversion connects imperial length units with imperial distance measurement systems. It has important practical value in transportation planning, road engineering, and sports measurement, especially in professional settings that require precise measurement of distances and transportation routes.
 
-### 2. 在交通运输中如何应用这种换算？
-在交通运输规划中，道路施工的具体工程段落使用码进行精确测量，而交通规划和里程标识使用英里进行标准化管理。通过准确换算，交通工程师能够在建设和规划过程中实现距离参数的精确控制。
+### 2. How is this conversion applied in transportation planning?
+In transportation planning, road section lengths and facility dimensions are often expressed in yards, while total transportation distances and route planning are measured in miles. Through accurate conversion, transportation engineers can achieve precise control of planning parameters during route design and infrastructure development.
 
-### 3. 如何确保码到英里换算的精度？
-使用标准换算比例（1 mi = 1760 yd），采用高精度计算工具，并根据具体应用场景的要求选择合适的精度等级，确保换算结果满足交通安全和工程质量要求。
+### 3. How to ensure the precision of yard to mile conversion?
+Use the standard conversion ratio (1 mile = 1,760 yards), employ high-precision calculation tools, and select appropriate precision levels according to specific engineering requirements to ensure conversion results meet transportation safety and engineering quality requirements.
 
-### 4. 在地理测量中这种换算有什么价值？
-在地理测量和地图制图中，局部区域测量与大范围距离标注可能使用不同单位。这种换算帮助地理测量师准确理解空间尺度，确保地理信息系统的准确性和地图制图的标准化。
+### 4. What value does this conversion have in sports measurement?
+In sports measurement, track section lengths and facility dimensions are often expressed in yards, while race distances and course lengths are measured in miles. This conversion helps sports professionals accurately understand measurement information, ensuring competition fairness and facility standardization.
 
-### 5. 体育运动中如何应用码到英里换算？
-在体育运动特别是长跑项目中，训练场地测量与正式比赛距离可能使用不同单位。这种换算确保训练数据的准确性，促进体育赛事的公正性和国际标准化。
+### 5. How is yard to mile conversion applied in land surveying?
+In land surveying, property boundary dimensions and construction site measurements need precise correspondence with large area calculations and regional planning. This conversion ensures the accuracy of surveying work and promotes the standardization of land use and urban planning.
 
-### 6. 如何在实际工作中应用这种换算？
-在长距离测量相关工作中，使用标准换算公式和专业计算工具，建立完整的测量标准体系，确保从局部测量到宏观规划的准确转换和质量控制。
+### 6. How to apply this conversion in practical work?
+In transportation and engineering-related work, use standard conversion formulas and professional calculation tools, establish complete measurement standards, and ensure accurate conversion and safe implementation from facility design to transportation operations.
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Length" :key="index">
     <n-button

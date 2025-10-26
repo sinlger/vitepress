@@ -4,26 +4,55 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
 
   - - link: /Area/SquareInch-to-SquareKilometer
-      linkText: 平方英寸到平方千米
+      linkText: Square Inch to Square Kilometer
 head:
   - - meta
     - name: description
-      content: "面积单位换算指南，涵盖平方英寸 (in²) 到平方千米 (km²) 的详细换算公式与说明。"
+      content: "Area unit conversion guide covering detailed conversion formulas and explanations from square inches (in²) to square kilometers (km²)."
   - - meta
     - name: keywords
-      content: "面积, 单位换算, 平方英寸, 平方千米, in², km², 平方英寸到平方千米, 面积换算指南, 平方英寸到平方千米换算, in²到km²换算, 平方英寸转平方千米, 英寸平方到平方千米, 平方英寸平方千米换算器, in²转km², 平方英寸换算平方千米, 英寸平方转平方千米, 平方英寸到平方千米转换, in²平方千米换算, 平方英寸平方千米计算, 英寸平方平方千米换算, 平方英寸转换平方千米, in²到平方千米, 平方英寸平方千米转换器, 英寸平方到平方千米换算, 平方英寸平方千米换算公式, in²转换平方千米, 平方英寸到平方千米计算, 英寸平方转换平方千米, 平方英寸平方千米换算表, in²平方千米转换, 平方英寸转平方千米计算, 英寸平方平方千米转换, 平方英寸到平方千米换算工具, in²到平方千米换算, 平方英寸平方千米单位换算, 面积换算"
+      content: "area, unit conversion, square inches, square kilometer, in², km², square inches to square kilometer, area conversion guide, square inches to km² conversion, in² to km² conversion, square inches to square kilometer, inch square to square kilometer, square inches square kilometer converter, in² to km², square inches convert square kilometer, inch square to square kilometer, square inches to square kilometer conversion, in² square kilometer conversion, square inches square kilometer calculation, inch square square kilometer conversion, square inches convert square kilometer, in² to square kilometer, square inches square kilometer converter, inch square to square kilometer conversion, square inches square kilometer conversion formula, in² convert square kilometer, square inches to square kilometer calculation, inch square convert square kilometer, square inches square kilometer conversion table, in² square kilometer conversion, square inches to square kilometer calculation, inch square square kilometer conversion, square inches to square kilometer conversion tool, in² to square kilometer conversion, square inches square kilometer unit conversion, area conversion"
 ---
-# 平方英寸 (in²) 到 平方千米 (km²) 的换算
+# Square Inches (in²) to Square Kilometer (km²) Conversion
 ---
 <script setup>
 import { onMounted, reactive, inject, ref } from 'vue'
 import { NButton, NForm, NFormItem, NInput, NInputNumber, NSelect, NCard, useMessage,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
 import { Area } from '../files';
-
+const seoKey = [
+  'square inches to square kilometer conversion',
+  'in² to km² conversion',
+  'square inches to square kilometer',
+  'inch square to square kilometer',
+  'square inches square kilometer converter',
+  'in² to km²',
+  'square inches convert square kilometer',
+  'inch square to square kilometer',
+  'square inches to square kilometer conversion',
+  'in² square kilometer conversion',
+  'square inches square kilometer calculation',
+  'inch square square kilometer conversion',
+  'square inches convert square kilometer',
+  'in² to square kilometer',
+  'square inches square kilometer converter',
+  'inch square to square kilometer conversion',
+  'square inches square kilometer conversion formula',
+  'in² convert square kilometer',
+  'square inches to square kilometer calculation',
+  'inch square convert square kilometer',
+  'square inches square kilometer conversion table',
+  'in² square kilometer conversion',
+  'square inches to square kilometer calculation',
+  'inch square square kilometer conversion',
+  'square inches to square kilometer conversion tool',
+  'in² to square kilometer conversion',
+  'square inches square kilometer unit conversion',
+  'area conversion'
+]
 const convert = inject('convert')
 
 const form = reactive({
@@ -33,63 +62,72 @@ const form = reactive({
 
 const convertHandler = () => {
   if (form.number !== null && !isNaN(form.number)) {
-    const convertedValue = parseFloat(form.number) / 1550003100.0062
-    form.result = `${form.number}in² = ${convertedValue.toFixed(6)}km²`
+    const convertedValue = parseFloat(form.number) / 1550003100
+    form.result = `${form.number}in² = ${convertedValue.toFixed(12)}km²`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="平方英寸 (in²)">
-    <n-input-number v-model:value="form.number" placeholder="输入平方英寸" style="width: 100%" />
+  <n-form-item label="Square Inches (in²)">
+    <n-input-number v-model:value="form.number" placeholder="Enter square inches" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
-<n-card  embedded :bordered="false" hoverable>
+<n-card  
+  :title="form.title"
+  :segmented="{
+    content: true,
+    footer: 'soft',
+  }"
+>
   <div  style="text-align:center;font-size:20px;">
     <strong>{{form.result}}</strong>
   </div>
+    <template #footer>
+    <div>
+      <span v-for="item of seoKey">{{item}}, </span>
+    </div>
+  </template>
 </n-card>
 
-## 公式
+## Formula
 
-从 **平方英寸 (in²)** 换算到 **平方千米 (km²)** 的公式为：
-$$ km² = in² \div 1550003100.0062 $$
+The formula for converting from **Square Inches (in²)** to **Square Kilometers (km²)** is:
+$$ km² = in² \div 1550003100 $$
 
-## 平方英寸到平方千米换算指南
+## Square Inches to Square Kilometer Conversion Guide
 
-在地理测量和大面积土地规划中，面积单位的换算是一个常见需求。本文专注于平方英寸 (in²) 到平方千米 (km²) 的换算，提供了详细的公式与实用示例。
+In geographic mapping and large-scale land surveying, area unit conversion is a common requirement. This article focuses on the conversion from square inches (in²) to square kilometers (km²), providing detailed formulas and practical examples.
 
-### 为什么需要 in² 到 km² 的换算？
+### Why Do We Need in² to km² Conversion?
 
-平方英寸和平方千米是常见的面积单位，尤其在农业、土地规划以及大规模地理测量中尤为重要。通过精确的换算，可以确保测量的一致性和准确性。
+Square inches and square kilometers are common area units, especially important in geographic mapping, land surveying, and international land measurement. Through precise conversion, we can ensure measurement consistency and accuracy.
 
-### in² 到 km² 的换算方法
+### in² to km² Conversion Method
 
-从平方英寸到平方千米的换算公式为：
+The conversion formula from square inches to square kilometers is:
 
-- **公式：** `km² = in² ÷ 1550003100.0062`
+- **Formula:** `km² = in² ÷ 1550003100`
 
-### 实际应用示例
+### Practical Application Examples
 
-以下是一些常见的换算实例：
+Here are some common conversion examples:
 
-- 1000000 in² = 0.000645 km²
-ddd
-- 1550003100.0062 in² = 1 km²
-- 15500031000.062 in² = 10 km²
-ddd
+- 1550003100 in² = 1 km²
+- 3100006200 in² = 2 km²
+- 7750015500 in² = 5 km²
 
-### 总结
+### Summary
 
-掌握平方英寸到平方千米的换算可以帮助您更好地理解和使用这些面积单位。希望本指南能为您提供有价值的参考。
+Mastering the conversion from square inches to square kilometers can help you better understand and use these area units. We hope this guide provides valuable reference for you.
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Area" :key="index">
     <n-button

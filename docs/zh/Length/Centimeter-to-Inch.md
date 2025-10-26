@@ -4,22 +4,22 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Length/index
-      linkText: 长度换算
+      linkText: Length Conversion
   - - link: /Length/Centimeter-to-Inch
-      linkText: 厘米到英寸
+      linkText: Centimeter to Inch
 head:
   - - meta
     - name: description
-      content: "厘米到英寸转换器 - 专业的长度单位换算工具。支持厘米、英寸、米、英尺等多种单位转换，提供精确的换算公式和实用转换表。"
+      content: "Centimeter to Inch Converter - Professional length unit conversion tool. Supports conversion between centimeters, inches, meters, feet and other units, providing accurate conversion formulas and practical conversion tables."
   - - meta
     - name: keywords
-      content: "厘米到英寸转换器, 长度单位转换器, 单位换算, 厘米转换, 英寸换算, cm转换, in换算, 尺寸换算器, 长度换算, 厘米和米换算, 英尺换算厘米, 英寸厘米, 长度单位换算表, 米尺, 量尺, 直尺在线测量, 厘米换算英寸"
+      content: "centimeter to inch converter, length unit converter, unit conversion, centimeter conversion, inch conversion, cm conversion, in conversion, dimension converter, length conversion, centimeter and meter conversion, foot to centimeter conversion, inch centimeter, length unit conversion table, meter ruler, measuring ruler, online ruler measurement, centimeter to inch conversion"
 ---
-# 厘米 (cm) 到 英寸 (in) 的换算
+# Centimeter (cm) to Inch (in) Conversion
 
-厘米到英寸转换器是一个专业的长度单位换算工具，帮助您快速准确地在厘米(cm)和英寸(in)之间进行转换。本工具广泛应用于电子产品、制造业、设计行业等领域，支持高精度计算和实时转换。
+The centimeter to inch converter is a professional length unit conversion tool that helps you quickly and accurately convert between centimeters (cm) and inches (in). This tool is widely used in electronics, manufacturing, design industries and other fields, supporting high-precision calculations and real-time conversion.
 
 ---
 <script setup>
@@ -27,13 +27,13 @@ import { onMounted, reactive, inject, ref } from 'vue'
 import { NButton, NForm, NFormItem, NInput, NInputNumber, NSelect, NCard, useMessage,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
 import { Length } from '../../files';
-const seoKey = ['单位转换器','单位换算','长度单位转换器','长度单位转换','尺寸换算','长度单位换算','长度单位换算表','厘米转换','厘米和米换算','米厘米分米毫米的换算','cm和m换算','cm是什么','厘米单位','cm换算','厘米和米的换算公式','厘米 英寸','一厘米等于多少米','公分是什么单位','cm是什么意思','厘米和米','尺寸转换器','量尺','米尺','长度换算器','厘米换算','一厘米','cm是什么单位','长度转换','直尺在线测量','英尺换算厘米','英寸 厘米','尺寸换算器','长度','分米','尺寸转换','刻度尺','厘米换算米','一厘米等于多少毫米','长度单位','毫米和厘米','寸','英尺和厘米的换算','尺','一米等于多少厘米','长度换算','公分','尺寸','一公分等于多少厘米','英尺换算','cm','长度单位换算','尺寸换算','英寸换算','mm','厘米换算英寸']
+const seoKey = ['unit converter','unit conversion','length unit converter','length unit conversion','dimension conversion','length unit conversion','length unit conversion table','centimeter conversion','centimeter and meter conversion','cm and m conversion','cm and m conversion','what is cm','centimeter unit','cm conversion','centimeter and meter conversion formula','centimeter inch','how many meters in one centimeter','what unit is cm','what does cm mean','centimeter and meter','dimension converter','measuring ruler','meter ruler','length converter','centimeter conversion','one centimeter','what unit is cm','length conversion','online ruler measurement','foot to centimeter conversion','inch centimeter','dimension converter','length','decimeter','dimension conversion','scale ruler','centimeter to meter conversion','how many millimeters in one centimeter','length unit','millimeter and centimeter','inch','foot and centimeter conversion','foot','how many centimeters in one meter','length conversion','cm','dimension','how many centimeters in one cm','foot conversion','cm','length unit conversion','dimension conversion','inch conversion','mm','centimeter to inch conversion']
 const convert = inject('convert')
 
 const form = reactive({
   number: null,
   result: '',
-  title: '厘米到英寸的换算',
+  title: 'Centimeter to Inch Conversion',
 })
 
 const convertHandler = () => {
@@ -41,17 +41,17 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) * 0.3937
     form.result = `${form.number}cm = ${convertedValue.toFixed(4)}in`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="厘米 (cm)">
-    <n-input-number v-model:value="form.number" placeholder="输入厘米" style="width: 100%" />
+  <n-form-item label="Centimeter (cm)">
+    <n-input-number v-model:value="form.number" placeholder="Enter centimeters" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
@@ -72,22 +72,22 @@ const convertHandler = () => {
   </template>
 </n-card>
 
-## 常用转换公式
+## Common Conversion Formulas
 
-### 厘米到英寸转换
-- **1厘米 = 0.393701英寸**
-- **1英寸 = 2.54厘米**
+### Centimeter to Inch Conversion
+- **1 centimeter = 0.393701 inches**
+- **1 inch = 2.54 centimeters**
 
-### 其他常用长度单位转换
-- **厘米到米**: 1cm = 0.01m
-- **厘米到毫米**: 1cm = 10mm
-- **厘米到英尺**: 1cm = 0.0328084ft
-- **英寸到英尺**: 1in = 0.0833333ft
-- **英寸到毫米**: 1in = 25.4mm
+### Other Common Length Unit Conversions
+- **Centimeter to Meter**: 1cm = 0.01m
+- **Centimeter to Millimeter**: 1cm = 10mm
+- **Centimeter to Foot**: 1cm = 0.0328084ft
+- **Inch to Foot**: 1in = 0.0833333ft
+- **Inch to Millimeter**: 1in = 25.4mm
 
-## 长度单位换算表
+## Length Unit Conversion Table
 
-| 厘米(cm) | 英寸(in) | 米(m) | 英尺(ft) | 毫米(mm) |
+| Centimeter(cm) | Inch(in) | Meter(m) | Foot(ft) | Millimeter(mm) |
 |----------|----------|-------|----------|----------|
 | 1 | 0.39370 | 0.01 | 0.032808 | 10 |
 | 2.54 | 1.00000 | 0.0254 | 0.083333 | 25.4 |
@@ -95,58 +95,58 @@ const convertHandler = () => {
 | 10 | 3.93701 | 0.1 | 0.328084 | 100 |
 | 30.48 | 12.0000 | 0.3048 | 1.000000 | 304.8 |
 
-## 实际应用
+## Practical Applications
 
-厘米 (cm) 和英寸 (in) 是测量日常物体尺寸时常用的单位，在以下真实场景中非常重要：
+Centimeters (cm) and inches (in) are commonly used units for measuring everyday object dimensions, and are very important in the following real-world scenarios:
 
-- **制造业**：
-  - 在精密零件加工中，图纸上常用厘米标注细节尺寸，而出口产品可能需要以英寸表示。
-  - 示例：某机械零件的厚度为 5cm，等于 1.9685in。
+- **Manufacturing**:
+  - In precision parts processing, drawings often use centimeters for detailed dimensions, while export products may need to be expressed in inches.
+  - Example: A mechanical part thickness of 5cm equals 1.9685in.
 
-- **电子产品**：
-  - 手机、平板电脑等电子设备的屏幕尺寸通常以英寸衡量，但内部元件尺寸则使用厘米标注。
-  - 示例：某手机屏幕尺寸为 6.5in（即 16.51cm），但其摄像头模组厚度为 0.8cm。
+- **Electronics**:
+  - Screen sizes of mobile phones, tablets and other electronic devices are usually measured in inches, but internal component dimensions use centimeters.
+  - Example: A phone screen size of 6.5in (i.e., 16.51cm), but its camera module thickness is 0.8cm.
 
-- **建筑与工程**：
-  - 施工图纸上常用厘米标注详细尺寸，但在国际项目中可能需要换算为英寸。
-  - 示例：某建筑物的墙体厚度为 20cm，等于 7.874in。
+- **Construction and Engineering**:
+  - Construction drawings often use centimeters for detailed dimensions, but may need to be converted to inches for international projects.
+  - Example: A building wall thickness of 20cm equals 7.874in.
 
-- **教育和实验**：
-  - 学生在实验室中使用厘米刻度尺进行测量，但报告中可能需要以英寸表示。
-  - 示例：学生测量一本书的厚度为 3cm，等于 1.1811in。
+- **Education and Experiments**:
+  - Students use centimeter rulers for measurements in laboratories, but reports may need to be expressed in inches.
+  - Example: A student measures a book thickness of 3cm, which equals 1.1811in.
 
-## 公式
+## Formula
 
-从 **厘米 (cm)** 换算到 **英寸 (in)** 的公式为：
+The formula for converting from **centimeters (cm)** to **inches (in)** is:
 $$ in = cm \times 0.3937 $$
 
-### 示例
+### Examples
 - 10cm = 3.9370in
 - 50cm = 19.6850in
 - 100cm = 39.3700in
 
-## 常见问题 (FAQ)
+## Frequently Asked Questions (FAQ)
 
-### 1. 英寸是什么单位？
-英寸(in)是英制长度单位，1英寸等于2.54厘米。它广泛用于电子产品屏幕尺寸、管道直径、螺丝规格等的测量。
+### 1. What is an inch unit?
+An inch (in) is an imperial length unit, where 1 inch equals 2.54 centimeters. It is widely used for measuring electronic device screen sizes, pipe diameters, screw specifications, etc.
 
-### 2. 厘米和英寸的换算公式是什么？
-厘米到英寸的换算公式为：英寸 = 厘米 × 0.393701
-英寸到厘米的换算公式为：厘米 = 英寸 × 2.54
+### 2. What is the conversion formula between centimeters and inches?
+The conversion formula from centimeters to inches is: inches = centimeters × 0.393701
+The conversion formula from inches to centimeters is: centimeters = inches × 2.54
 
-### 3. 什么时候使用英寸单位？
-英寸主要用于电子设备屏幕尺寸（如手机、电视）、工业管道、螺丝螺栓规格、轮胎尺寸等。在美国和英国的日常生活中也常用英寸。
+### 3. When is the inch unit used?
+Inches are mainly used for electronic device screen sizes (such as phones, TVs), industrial pipes, screw and bolt specifications, tire sizes, etc. Inches are also commonly used in daily life in the United States and United Kingdom.
 
-### 4. 如何快速估算厘米到英寸的转换？
-可以记住：大约2.5厘米等于1英寸。因此，厘米数除以2.5可以得到大致的英寸数。
+### 4. How to quickly estimate centimeter to inch conversion?
+You can remember: approximately 2.5 centimeters equals 1 inch. Therefore, dividing centimeters by 2.5 gives you an approximate number of inches.
 
-### 5. 常见的英寸和厘米对应关系？
-- 1英寸 = 2.54厘米
-- 1厘米 ≈ 0.4英寸
-- 12英寸 = 1英尺 = 30.48厘米
-- 1毫米 ≈ 0.04英寸
+### 5. What are common inch and centimeter correspondences?
+- 1 inch = 2.54 centimeters
+- 1 centimeter ≈ 0.4 inches
+- 12 inches = 1 foot = 30.48 centimeters
+- 1 millimeter ≈ 0.04 inches
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Length" :key="index">
     <n-button

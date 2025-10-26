@@ -4,23 +4,23 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Length/index
-      linkText: 长度换算
+      linkText: Length Conversion
   - - link: /Length/Millimeter-to-Nautical-mile
-      linkText: 毫米到海里
+      linkText: Millimeter to Nautical Mile
 head:
   - - meta
     - name: description
-      content: "专业的毫米(mm)到海里(nMi)长度单位换算工具。提供精确的单位转换器、换算公式和实际应用场景。支持海洋工程、船舶制造、海洋科学研究等领域的海洋距离换算需求。"
+      content: "Professional millimeter (mm) to nautical mile (nMi) length unit conversion tool. Provides precise unit converter, conversion formulas, and practical application scenarios. Supports marine engineering, shipbuilding, marine science research, and other maritime distance conversion needs."
   - - meta
     - name: keywords
-      content: "毫米到海里换算, 长度单位转换器, mm到nMi换算, 单位换算工具, 海洋工程测量, 船舶制造换算, 海洋科学研究, 航海距离转换, 长度换算公式, 毫米海里换算表"
+      content: "millimeter to nautical mile conversion, length unit converter, mm to nMi conversion, unit conversion tool, marine engineering measurement, shipbuilding conversion, marine science research, navigation distance conversion, length conversion formula, millimeter nautical mile conversion table"
 ---
-# 毫米 (mm) 到 海里 (nMi) 的换算
+# Millimeter (mm) to Nautical Mile (nMi) Conversion
 ---
 
-毫米到海里的换算是连接精密制造与海洋导航的重要工具。在海洋工程、船舶制造、海洋科学研究和航海技术领域，这种跨尺度的单位转换对于确保设备精度、航行安全和科研准确性至关重要。我们的专业换算工具提供高精度的毫米到海里单位转换，满足海洋相关行业的精密测量和导航计算需求。
+Millimeter to nautical mile conversion is an important tool connecting precision manufacturing with marine navigation. In marine engineering, shipbuilding, marine science research, and navigation technology fields, this cross-scale unit conversion is crucial for ensuring equipment precision, navigation safety, and research accuracy. Our professional conversion tool provides high-precision millimeter to nautical mile unit conversion, meeting the precision measurement and navigation calculation needs of marine-related industries.
 <script setup>
 import { onMounted, reactive, inject, ref } from 'vue'
 import { NButton, NForm, NFormItem, NInput, NInputNumber, NSelect, NCard, useMessage,NGrid ,NGi } from 'naive-ui'
@@ -32,7 +32,7 @@ const convert = inject('convert')
 const form = reactive({
   number: null,
   result: '',
-  title: '毫米 (mm) 到海里 (nMi) 的长度单位换算'
+  title: 'Millimeter (mm) to Nautical Mile (nMi) Length Unit Conversion'
 })
 
 const convertHandler = () => {
@@ -40,17 +40,17 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) * 0.00000053996
     form.result = `${form.number}mm = ${convertedValue.toFixed(9)}nMi`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="毫米 (mm)">
-    <n-input-number v-model:value="form.number" placeholder="输入毫米" style="width: 100%" />
+  <n-form-item label="Millimeter (mm)">
+    <n-input-number v-model:value="form.number" placeholder="Enter millimeters" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
@@ -71,90 +71,90 @@ const convertHandler = () => {
   </template>
 </n-card>
 
-## 实际应用场景
+## Practical Application Scenarios
 
-毫米到海里的单位转换在海洋相关领域具有重要的跨尺度应用价值，是连接精密制造与海洋导航的关键：
+Millimeter to nautical mile unit conversion has important cross-scale application value in marine-related fields, serving as a key link between precision manufacturing and marine navigation:
 
-- **船舶制造与海洋工程**：
-  - 船体钢板厚度、焊缝精度（毫米级）与航行距离、港口间距离（海里级）的综合设计
-  - 海洋平台结构件精密加工与海上作业半径的协调规划
-  - 示例：船体钢板厚度12mm，焊缝精度±2mm，设计航程5000海里
+- **Shipbuilding and Marine Engineering**:
+  - Comprehensive design of hull steel plate thickness, welding precision (millimeter level) with navigation distance and port-to-port distance (nautical mile level)
+  - Coordinated planning of precision machining of marine platform structural components with offshore operation radius
+  - Example: Hull steel plate thickness 12mm, welding precision ±2mm, design voyage 5000 nautical miles
 
-- **海洋科学研究与深海探测**：
-  - 海洋生物样本尺寸测量（毫米）与海洋调查航线规划（海里）的数据整合
-  - 深海探测设备精密制造与海底地形测绘范围的技术协调
-  - 示例：浮游生物样本长度3.5mm，调查区域覆盖半径200海里
+- **Marine Science Research and Deep-Sea Exploration**:
+  - Data integration of marine biological sample size measurement (millimeters) with marine survey route planning (nautical miles)
+  - Technical coordination of precision manufacturing of deep-sea exploration equipment with seafloor topographic mapping range
+  - Example: Plankton sample length 3.5mm, survey area coverage radius 200 nautical miles
 
-- **海洋仪器设备制造**：
-  - 声呐系统、水下摄像设备的精密组装与探测距离性能的匹配设计
-  - 海洋监测传感器的制造精度与数据传输距离的系统优化
-  - 示例：声呐换能器厚度8mm，探测距离50海里，数据传输范围100海里
+- **Marine Instrument and Equipment Manufacturing**:
+  - Matching design of precision assembly of sonar systems and underwater camera equipment with detection distance performance
+  - System optimization of manufacturing precision of marine monitoring sensors with data transmission distance
+  - Example: Sonar transducer thickness 8mm, detection distance 50 nautical miles, data transmission range 100 nautical miles
 
-- **海上石油天然气开发**：
-  - 钻井设备精密部件制造（毫米精度）与海上作业平台间距离（海里）的安全规划
-  - 海底管道连接件精度控制与管道铺设距离的工程协调
-  - 示例：管道连接件公差±1.5mm，海底管道总长度300海里
+- **Offshore Oil and Gas Development**:
+  - Safety planning of precision component manufacturing of drilling equipment (millimeter precision) with distance between offshore operation platforms (nautical miles)
+  - Engineering coordination of precision control of subsea pipeline connectors with pipeline laying distance
+  - Example: Pipeline connector tolerance ±1.5mm, total subsea pipeline length 300 nautical miles
 
-- **海军装备与国防工程**：
-  - 舰艇精密武器系统制造精度与作战半径的性能匹配
-  - 水下防御设施精密安装与海域防护范围的战略布局
-  - 示例：雷达天线精度5mm，探测距离150海里，巡逻范围500海里
+- **Naval Equipment and Defense Engineering**:
+  - Performance matching of precision weapon system manufacturing accuracy of warships with combat radius
+  - Strategic deployment of precision installation of underwater defense facilities with maritime protection range
+  - Example: Radar antenna precision 5mm, detection distance 150 nautical miles, patrol range 500 nautical miles
 
-- **海洋渔业与水产养殖**：
-  - 渔网网眼尺寸精度（毫米）与渔场作业范围（海里）的资源管理
-  - 水产养殖设备制造精度与养殖区域规划的产业协调
-  - 示例：渔网网眼直径25mm，作业半径80海里，养殖区域面积10平方海里
+- **Marine Fisheries and Aquaculture**:
+  - Resource management of fishing net mesh size precision (millimeters) with fishing ground operation range (nautical miles)
+  - Industrial coordination of aquaculture equipment manufacturing precision with aquaculture area planning
+  - Example: Fishing net mesh diameter 25mm, operation radius 80 nautical miles, aquaculture area 10 square nautical miles
 
-## 换算公式与计算方法
+## Conversion Formula and Calculation Method
 
-### 基础换算公式
+### Basic Conversion Formula
 
-**毫米到海里的换算公式：**
+**Millimeter to Nautical Mile Conversion Formula:**
 $$ nMi = mm \times 0.00000053996 $$
 
-**海里到毫米的换算公式：**
+**Nautical Mile to Millimeter Conversion Formula:**
 $$ mm = nMi \times 1852000 $$
 
-### 换算示例
+### Conversion Examples
 - 1000000mm = 0.539960000nMi
 - 500000mm = 0.269980000nMi
 - 100000mm = 0.053996000nMi
 - 10000mm = 0.005399600nMi
 - 1000mm = 0.000539960nMi
 
-### 长度单位换算表
+### Length Unit Conversion Table
 
-| 毫米 (mm) | 海里 (nMi) | 应用场景 |
-|-----------|------------|----------|
-| 1mm | 0.00000053996nMi | 精密零件厚度 |
-| 100mm | 0.00005399600nMi | 设备组件尺寸 |
-| 1000mm | 0.00053996000nMi | 设备整体尺寸 |
-| 10000mm | 0.00539960000nMi | 船体结构件长度 |
-| 100000mm | 0.05399600000nMi | 船舶总长度 |
-| 1000000mm | 0.53996000000nMi | 港口设施跨度 |
-| 1852000mm | 1.00000000000nMi | 标准海里长度 |
+| Millimeter (mm) | Nautical Mile (nMi) | Application Scenario |
+|-----------------|---------------------|---------------------|
+| 1mm | 0.00000053996nMi | Precision component thickness |
+| 100mm | 0.00005399600nMi | Equipment component dimensions |
+| 1000mm | 0.00053996000nMi | Overall equipment dimensions |
+| 10000mm | 0.00539960000nMi | Ship hull structural component length |
+| 100000mm | 0.05399600000nMi | Ship total length |
+| 1000000mm | 0.53996000000nMi | Port facility span |
+| 1852000mm | 1.00000000000nMi | Standard nautical mile length |
 
-## 常见问题 (FAQ)
+## Frequently Asked Questions (FAQ)
 
-**Q1: 为什么毫米到海里的换算系数是0.00000053996？**
-A: 因为1海里 = 1852000毫米，所以毫米数值乘以1/1852000 = 0.00000053996就得到对应的海里数值。这是基于国际海里标准的精确换算关系。
+**Q1: Why is the conversion factor from millimeters to nautical miles 0.00000053996?**
+A: Because 1 nautical mile = 1852000 millimeters, multiplying the millimeter value by 1/1852000 = 0.00000053996 gives the corresponding nautical mile value. This is the precise conversion relationship based on the international nautical mile standard.
 
-**Q2: 海里与陆地英里有什么区别？**
-A: 海里(1852米)比陆地英里(1609.344米)长约15%。海里基于地球子午线，主要用于海洋和航空导航，而英里主要用于陆地测量。
+**Q2: What is the difference between nautical miles and land miles?**
+A: A nautical mile (1852 meters) is about 15% longer than a land mile (1609.344 meters). Nautical miles are based on the Earth's meridian and are mainly used for marine and aviation navigation, while miles are mainly used for land measurement.
 
-**Q3: 在船舶设计中如何应用毫米到海里的换算？**
-A: 船体结构精度以毫米计量，航行性能以海里表示。换算有助于从制造精度评估到航行性能预测的系统集成。
+**Q3: How is millimeter to nautical mile conversion applied in ship design?**
+A: Hull structural precision is measured in millimeters, while navigation performance is expressed in nautical miles. Conversion helps with system integration from manufacturing precision assessment to navigation performance prediction.
 
-**Q4: GPS导航系统中毫米到海里换算的意义？**
-A: 现代GPS精度可达毫米级，而航海距离以海里计算。准确换算确保高精度导航和精确的航线规划。
+**Q4: What is the significance of millimeter to nautical mile conversion in GPS navigation systems?**
+A: Modern GPS accuracy can reach millimeter level, while navigation distances are calculated in nautical miles. Accurate conversion ensures high-precision navigation and precise route planning.
 
-**Q5: 海洋工程中毫米到海里换算的精度要求？**
-A: 海洋工程通常保留小数点后9位以上，如1mm = 0.000000540nMi。具体精度要求依据工程标准和安全要求确定。
+**Q5: What are the precision requirements for millimeter to nautical mile conversion in marine engineering?**
+A: Marine engineering typically retains 9 or more decimal places, such as 1mm = 0.000000540nMi. Specific precision requirements are determined based on engineering standards and safety requirements.
 
-**Q6: 如何快速估算毫米到海里的换算？**
-A: 记住关键换算点：1852000mm=1nMi，约185万毫米等于1海里。对于快速估算，可以用毫米数除以185万来得到大致的海里数。
+**Q6: How to quickly estimate millimeter to nautical mile conversion?**
+A: Remember the key conversion point: 1852000mm=1nMi, approximately 1.85 million millimeters equals 1 nautical mile. For quick estimation, divide the millimeter number by 1.85 million to get the approximate nautical mile number.
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Length" :key="index">
     <n-button

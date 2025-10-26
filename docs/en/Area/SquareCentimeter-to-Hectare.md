@@ -4,19 +4,19 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
 
   - - link: /Area/SquareCentimeter-to-Hectare
-      linkText: 平方厘米到公顷
+      linkText: Square Centimeter to Hectare
 head:
   - - meta
     - name: description
-      content: "面积单位换算指南，涵盖平方厘米 (cm²) 到公顷 (ha) 的详细换算公式与说明。"
+      content: "Area unit conversion guide covering detailed conversion formulas and explanations from square centimeters (cm²) to hectares (ha)."
   - - meta
     - name: keywords
-      content: "面积, 单位换算, 平方厘米, 公顷, cm², ha, 平方厘米到公顷, 面积换算指南, 平方厘米到公顷换算, 平方厘米转公顷, cm²到ha换算, 平方厘米公顷转换, 面积单位换算, 平方厘米换算公顷, 公顷平方厘米换算, cm²转ha, 平方厘米到公顷转换器, 面积换算工具, 平方厘米公顷计算, 公顷换算平方厘米, ha到cm²换算, 面积单位转换, 平方厘米公顷对照, 公顷平方厘米计算器, 面积换算公式, 平方厘米转换公顷, 公顷换算器, 平方厘米计算公顷, cm²公顷换算, 面积单位对照表, 平方厘米到公顷公式, 公顷面积换算, 平方厘米公顷转换工具, 面积换算计算器, cm²转换ha, 平方厘米公顷换算表"
+      content: "area, unit conversion, square centimeter, hectare, cm², ha, square centimeter to hectare, area conversion guide, square centimeter to hectare conversion, square centimeter convert hectare, cm² to ha conversion, square centimeter hectare conversion, area unit conversion, square centimeter convert hectare, hectare square centimeter conversion, cm² convert ha, square centimeter to hectare converter, area conversion tool, square centimeter hectare calculation, hectare convert square centimeter, ha to cm² conversion, area unit conversion, square centimeter hectare comparison, hectare square centimeter calculator, area conversion formula, square centimeter convert hectare, hectare converter, square centimeter calculate hectare, cm² hectare conversion, area unit comparison table, square centimeter to hectare formula, hectare area conversion, square centimeter hectare conversion tool, area conversion calculator, cm² convert ha, square centimeter hectare conversion table"
 ---
-# 平方厘米 (cm²) 到 公顷 (ha) 的换算
+# Square Centimeter (cm²) to Hectare (ha) Conversion
 ---
 <script setup>
 import { onMounted, reactive, inject, ref } from 'vue'
@@ -24,34 +24,34 @@ import { NButton, NForm, NFormItem, NInput, NInputNumber, NSelect, NCard, useMes
 import { defineClientComponent } from 'vitepress'
 import { Area } from '../files';
 const seoKey = [
-  '平方厘米到公顷换算',
-  '平方厘米转公顷',
-  'cm²到ha换算',
-  '平方厘米公顷转换',
-  '面积单位换算',
-  '平方厘米换算公顷',
-  '公顷平方厘米换算',
-  'cm²转ha',
-  '平方厘米到公顷转换器',
-  '面积换算工具',
-  '平方厘米公顷计算',
-  '公顷换算平方厘米',
-  'ha到cm²换算',
-  '面积单位转换',
-  '平方厘米公顷对照',
-  '公顷平方厘米计算器',
-  '面积换算公式',
-  '平方厘米转换公顷',
-  '公顷换算器',
-  '平方厘米计算公顷',
-  'cm²公顷换算',
-  '面积单位对照表',
-  '平方厘米到公顷公式',
-  '公顷面积换算',
-  '平方厘米公顷转换工具',
-  '面积换算计算器',
-  'cm²转换ha',
-  '平方厘米公顷换算表'
+  'square centimeter to hectare conversion',
+  'square centimeter convert hectare',
+  'cm² to ha conversion',
+  'square centimeter hectare conversion',
+  'area unit conversion',
+  'square centimeter convert hectare',
+  'hectare square centimeter conversion',
+  'cm² convert ha',
+  'square centimeter to hectare converter',
+  'area conversion tool',
+  'square centimeter hectare calculation',
+  'hectare convert square centimeter',
+  'ha to cm² conversion',
+  'area unit conversion',
+  'square centimeter hectare comparison',
+  'hectare square centimeter calculator',
+  'area conversion formula',
+  'square centimeter convert hectare',
+  'hectare converter',
+  'square centimeter calculate hectare',
+  'cm² hectare conversion',
+  'area unit comparison table',
+  'square centimeter to hectare formula',
+  'hectare area conversion',
+  'square centimeter hectare conversion tool',
+  'area conversion calculator',
+  'cm² convert ha',
+  'square centimeter hectare conversion table'
 ]
 
 const convert = inject('convert')
@@ -59,7 +59,7 @@ const convert = inject('convert')
 const form = reactive({
   number: null,
   result: '',
-  title: '平方厘米 (cm²) 到 公顷 (ha) 的换算',
+  title: 'Square Centimeter (cm²) to Hectare (ha) Conversion',
 })
 
 const convertHandler = () => {
@@ -67,17 +67,17 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) / 100000000
     form.result = `${form.number}cm² = ${convertedValue.toFixed(8)}ha`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="平方厘米 (cm²)">
-    <n-input-number v-model:value="form.number" placeholder="输入平方厘米" style="width: 100%" />
+  <n-form-item label="Square Centimeter (cm²)">
+    <n-input-number v-model:value="form.number" placeholder="Enter square centimeters" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
@@ -93,43 +93,43 @@ const convertHandler = () => {
   </div>
     <template #footer>
     <div>
-      <span v-for="item of seoKey">{{item}}，</span>
+      <span v-for="item of seoKey">{{item}}, </span>
     </div>
   </template>
 </n-card>
 
-## 公式
+## Formula
 
-从 **平方厘米 (cm²)** 换算到 **公顷 (ha)** 的公式为：
+The formula for converting from **square centimeters (cm²)** to **hectares (ha)** is:
 $$ ha = cm² \div 100000000 $$
 
-## 平方厘米到公顷换算指南
+## Square Centimeter to Hectare Conversion Guide
 
-在土地测量和农业规划中，面积单位的换算是一个常见需求。本文专注于平方厘米 (cm²) 到公顷 (ha) 的换算，提供了详细的公式与实用示例。
+In land surveying and agricultural planning, area unit conversion is a common requirement. This article focuses on the conversion from square centimeters (cm²) to hectares (ha), providing detailed formulas and practical examples.
 
-### 为什么需要 cm² 到 ha 的换算？
+### Why Do We Need cm² to ha Conversion?
 
-平方厘米和公顷是常见的面积单位，尤其在农业、林业和土地规划中尤为重要。通过精确的换算，可以确保测量的一致性和准确性。
+Square centimeters and hectares are common area units, especially important in agriculture, forestry, and land planning. Through precise conversion, we can ensure measurement consistency and accuracy.
 
-### cm² 到 ha 的换算方法
+### cm² to ha Conversion Method
 
-从平方厘米到公顷的换算公式为：
+The conversion formula from square centimeters to hectares is:
 
-- **公式：** `ha = cm² ÷ 100000000`
+- **Formula:** `ha = cm² ÷ 100000000`
 
-### 实际应用示例
+### Practical Application Examples
 
-以下是一些常见的换算实例：
+Here are some common conversion examples:
 
 - 1 cm² = 0.00000001 ha
 - 100000000 cm² = 1 ha
 - 500000000 cm² = 5 ha
 
-### 总结
+### Summary
 
-掌握平方厘米到公顷的换算可以帮助您更好地理解和使用这些面积单位。希望本指南能为您提供有价值的参考。
+Mastering the conversion from square centimeters to hectares can help you better understand and use these area units. We hope this guide provides valuable reference for you.
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Area" :key="index">
     <n-button

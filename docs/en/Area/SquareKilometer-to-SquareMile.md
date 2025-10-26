@@ -4,19 +4,19 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
 
   - - link: /Area/SquareKilometer-to-SquareMile
-      linkText: 平方千米到平方英里
+      linkText: Square Kilometer to Square Mile
 head:
   - - meta
     - name: description
-      content: "面积单位换算指南，涵盖平方千米 (km²) 到平方英里 (mi²) 的详细换算公式与说明。"
+      content: "Area unit conversion guide covering detailed conversion formulas and explanations from square kilometers (km²) to square miles (mi²)."
   - - meta
     - name: keywords
-      content: "面积, 单位换算, 平方千米, 平方英里, km², mi², 平方千米到平方英里, 面积换算指南, 平方千米转平方英里, 平方英里换算平方千米, 平方千米和平方英里的换算, 一平方千米等于多少平方英里, 平方英里和平方千米换算, 平方千米单位, 平方英里单位换算, 平方千米符号, 平方英里符号, 平方千米换算平方英里, 平方英里和平方千米, 平方千米到平方英里, 平方英里到平方千米, 面积单位换算, 一平方英里等于多少平方千米, 平方千米和平方英里, 国际面积单位换算, 英制面积单位, 平方英里换算, 平方千米换算, 面积计算, 面积测量单位, 平方英里面积, 平方千米面积, 大面积单位, 地理面积换算, 土地面积换算, 国土面积单位"
+      content: "area, unit conversion, square kilometers, square miles, km², mi², square kilometers to square miles, area conversion guide, square kilometers to mi² conversion, km² to mi² conversion, square kilometers to square miles, kilometer square to square miles, square kilometers square miles converter, km² to mi², square kilometers convert square miles, kilometer square to square miles, square kilometers to square miles conversion, km² square miles conversion, square kilometers square miles calculation, kilometer square square miles conversion, square kilometers convert square miles, km² to square miles, square kilometers square miles converter, kilometer square to square miles conversion, square kilometers square miles conversion formula, km² convert square miles, square kilometers to square miles calculation, kilometer square convert square miles, square kilometers square miles conversion table, km² square miles conversion, square kilometers to square miles calculation, kilometer square square miles conversion, square kilometers to square miles conversion tool, km² to square miles conversion, square kilometers square miles unit conversion, area conversion"
 ---
-# 平方千米 (km²) 到 平方英里 (mi²) 的换算
+# Square Kilometers (km²) to Square Miles (mi²) Conversion
 ---
 <script setup>
 import { onMounted, reactive, inject, ref } from 'vue'
@@ -24,59 +24,59 @@ import { NButton, NForm, NFormItem, NInput, NInputNumber, NSelect, NCard, useMes
 import { defineClientComponent } from 'vitepress'
 import { Area } from '../files';
 const seoKey = [
-  '平方千米转平方英里',
-  '平方英里换算平方千米',
-  '平方千米和平方英里的换算',
-  '一平方千米等于多少平方英里',
-  '平方英里和平方千米换算',
-  '平方千米单位',
-  '平方英里单位换算',
-  '平方千米符号',
-  '平方英里符号',
-  '平方千米换算平方英里',
-  '平方英里和平方千米',
-  '平方千米到平方英里',
-  '平方英里到平方千米',
-  '面积单位换算',
-  '一平方英里等于多少平方千米',
-  '平方千米和平方英里',
-  '国际面积单位换算',
-  '英制面积单位',
-  '平方英里换算',
-  '平方千米换算',
-  '面积计算',
-  '面积测量单位',
-  '平方英里面积',
-  '平方千米面积',
-  '大面积单位',
-  '地理面积换算',
-  '土地面积换算',
-  '国土面积单位'
+  'square kilometers to square miles conversion',
+  'km² to mi² conversion',
+  'square kilometers to square miles',
+  'kilometer square to square miles',
+  'square kilometers square miles converter',
+  'km² to mi²',
+  'square kilometers convert square miles',
+  'kilometer square to square miles',
+  'square kilometers to square miles conversion',
+  'km² square miles conversion',
+  'square kilometers square miles calculation',
+  'kilometer square square miles conversion',
+  'square kilometers convert square miles',
+  'km² to square miles',
+  'square kilometers square miles converter',
+  'kilometer square to square miles conversion',
+  'square kilometers square miles conversion formula',
+  'km² convert square miles',
+  'square kilometers to square miles calculation',
+  'kilometer square convert square miles',
+  'square kilometers square miles conversion table',
+  'km² square miles conversion',
+  'square kilometers to square miles calculation',
+  'kilometer square square miles conversion',
+  'square kilometers to square miles conversion tool',
+  'km² to square miles conversion',
+  'square kilometers square miles unit conversion',
+  'area conversion'
 ]
 const convert = inject('convert')
 
 const form = reactive({
   number: null,
   result: '',
-  title: '平方千米 (km²) 到 平方英里 (mi²) 的换算',
+  title: 'Square Kilometers (km²) to Square Miles (mi²) Conversion',
 })
 
 const convertHandler = () => {
   if (form.number !== null && !isNaN(form.number)) {
-    const convertedValue = parseFloat(form.number) / 2.589988110336
-    form.result = `${form.number}km² = ${convertedValue.toFixed(4)}mi²`
+    const convertedValue = parseFloat(form.number) * 0.386102
+    form.result = `${form.number}km² = ${convertedValue.toFixed(6)}mi²`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="平方千米 (km²)">
-    <n-input-number v-model:value="form.number" placeholder="输入平方千米" style="width: 100%" />
+  <n-form-item label="Square Kilometers (km²)">
+    <n-input-number v-model:value="form.number" placeholder="Enter square kilometers" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
@@ -92,45 +92,43 @@ const convertHandler = () => {
   </div>
     <template #footer>
     <div>
-      <span v-for="item of seoKey">{{item}}，</span>
+      <span v-for="item of seoKey">{{item}}, </span>
     </div>
   </template>
 </n-card>
 
-## 公式
+## Formula
 
-从 **平方千米 (km²)** 换算到 **平方英里 (mi²)** 的公式为：
-$$ mi² = km² \div 2.589988110336 $$
+The formula for converting from **Square Kilometers (km²)** to **Square Miles (mi²)** is:
+$$ mi² = km² \times 0.386102 $$
 
-## 平方千米到平方英里换算指南
+## Square Kilometers to Square Miles Conversion Guide
 
-在地理测量和大面积土地规划中，面积单位的换算是一个常见需求。本文专注于平方千米 (km²) 到平方英里 (mi²) 的换算，提供了详细的公式与实用示例。
+In geographic measurement and international land planning, area unit conversion is a common requirement. This article focuses on the conversion from square kilometers (km²) to square miles (mi²), providing detailed formulas and practical examples.
 
-### 为什么需要 km² 到 mi² 的换算？
+### Why Do We Need km² to mi² Conversion?
 
-平方千米和平方英里是常见的面积单位，尤其在农业、土地规划以及大规模地理测量中尤为重要。通过精确的换算，可以确保测量的一致性和准确性。
+Square kilometers and square miles are commonly used area units, especially important in international geographic measurement, land planning, and cross-border projects. Through precise conversion, we can ensure measurement consistency and accuracy.
 
-### km² 到 mi² 的换算方法
+### km² to mi² Conversion Method
 
-从平方千米到平方英里的换算公式为：
+The conversion formula from square kilometers to square miles is:
 
-- **公式：** `mi² = km² ÷ 2.589988110336`
+- **Formula:** `mi² = km² × 0.386102`
 
-### 实际应用示例
+### Practical Application Examples
 
-以下是一些常见的换算实例：
+Here are some common conversion examples:
 
-- 1 km² = 0.3861 mi²
-ddd
-- 2.589988110336 km² = 1 mi²
-- 25.89988110336 km² = 10 mi²
-ddd
+- 1 km² = 0.386102 mi²
+- 10 km² = 3.86102 mi²
+- 100 km² = 38.6102 mi²
 
-### 总结
+### Summary
 
-掌握平方千米到平方英里的换算可以帮助您更好地理解和使用这些面积单位。希望本指南能为您提供有价值的参考。
+Mastering the conversion from square kilometers to square miles can help you better understand and use these area units. We hope this guide provides valuable reference for you.
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Area" :key="index">
     <n-button

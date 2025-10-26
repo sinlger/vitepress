@@ -1,181 +1,158 @@
 ---
-sidebar: false
-aside: false
-lastUpdated: false
+outline: deep
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Length/index
-      linkText: 长度换算
+      linkText: Length Conversion
   - - link: /Length/Nanometer-to-Micrometer
-      linkText: 纳米到微米
+      linkText: Nanometer to Micrometer
 head:
   - - meta
     - name: description
-      content: "专业的纳米(nm)到微米(μm)单位转换器和长度单位换算指南。提供精确的纳米微米换算公式、转换表和计算器，适用于纳米科技、微电子制造、生物医学和精密测量等领域的长度单位转换需求。"
+      content: "Professional nanometer (nm) to micrometer (μm) length unit conversion tool and guide. Provides precise conversion formulas, practical application scenarios, and frequently asked questions, suitable for nanotechnology research, semiconductor manufacturing, precision engineering, scientific measurement, materials science, and other fields requiring ultra-precise microscale length measurement."
   - - meta
     - name: keywords
-      content: "单位转换器,单位换算,长度单位转换器,长度单位转换,尺寸换算,长度单位换算,纳米微米,纳米和微米,纳米单位,一纳米等于多少微米,纳米到微米换算,nm μm,纳米和微米的换算单位,纳米微米转换,μm是什么单位,纳米换算,nm,微米单位,长度换算公式,纳米转微米,微米换算,纳米计算器,微米计算器,长度单位,纳米到微米公式,微米转换器,纳米微米对照表,长度转换,单位换算表,纳米微米换算器,微米长度,纳米长度,长度计算,单位转换公式,纳米微米计算,长度换算器,微米单位换算,纳米单位换算,长度单位转换表,纳米微米转换表"
+      content: "nanometer to micrometer conversion,nm to μm conversion,length unit conversion,micrometer converter,nanotechnology research,semiconductor manufacturing,precision engineering,scientific measurement,materials science,ultra-precise length measurement,microscale measurement,length converter,unit conversion table,nanoscale measurement,microscopic measurement,precision measurement,scientific conversion,engineering measurement,nanotechnology measurement,semiconductor measurement,precision tools"
 ---
-# 纳米 (nm) 到 微米 (μm) 的换算
+# Nanometer (nm) to Micrometer (μm) Conversion
 
-纳米到微米的单位转换是现代纳米科技、微电子制造、生物医学和精密测量等领域中的核心长度单位换算。本专业的纳米微米转换器提供精确的换算公式和计算工具，帮助您快速完成从纳米(nm)到微米(μm)的长度单位转换，确保在科学研究、工程设计和技术应用中的测量精度和数据准确性。
+The conversion from nanometers to micrometers is a fundamental skill in nanotechnology research, semiconductor manufacturing, and precision engineering. The nanometer, as the basic unit for nanoscale measurement, is widely used in semiconductor manufacturing, materials science, precision optics, and scientific research; while the micrometer is an important unit for microscale measurement, playing a key role in precision engineering, biological research, and materials characterization. Mastering precise nanometer to micrometer conversion methods is of great practical value for scientists, engineers, and measurement professionals working in microscale and nanoscale applications.
 
----
 <script setup>
-import { onMounted, reactive, inject, ref } from 'vue'
-import { NButton, NForm, NFormItem, NInput, NInputNumber, NSelect, NCard, useMessage,NGrid ,NGi } from 'naive-ui'
-import { defineClientComponent } from 'vitepress'
-import { Length } from '../files';
-const seoKey = ['单位转换器','单位换算','长度单位转换器','长度单位转换','尺寸换算','长度单位换算','长度单位换算表','纳米微米','纳米和微米','纳米单位','一纳米等于多少微米','纳米到微米换算','nm μm','纳米和微米的换算单位','纳米微米转换','μm是什么单位','纳米和微米','纳米换算','nm','微米单位','长度换算公式','纳米转微米','微米换算','纳米计算器','微米计算器','长度单位','纳米到微米公式','微米转换器','纳米微米对照表','长度转换','单位换算表','纳米微米换算器','微米长度','纳米长度','长度计算','单位转换公式','纳米微米计算','长度换算器','微米单位换算','纳米单位换算','长度单位转换表','纳米微米转换表']
+import { ref, reactive, inject } from 'vue'
+import { NForm, NFormItem, NInputNumber, NButton, NCard, NGrid, NGi } from 'naive-ui'
+
+const Length = inject('Length')
 const convert = inject('convert')
+
+const seoKey = ['unit converter','unit conversion','length unit converter','length unit conversion','size conversion','length unit conversion','length unit conversion table','nanometer to micrometer','micrometer conversion','micrometer','nanometer conversion','nm conversion','μm conversion','micrometer unit','nanotechnology research','semiconductor manufacturing','precision engineering','scientific measurement','materials science','ultra-precise length measurement','microscale measurement','length converter','nanometer micrometer conversion','micrometer nanometer conversion','nanoscale measurement','microscopic measurement','precision measurement','scientific conversion','engineering measurement','nanotechnology measurement','semiconductor measurement','precision tools','scientific tools','measurement conversion','microscale conversion']
 
 const form = reactive({
   number: null,
   result: '',
-  title: '纳米 (nm) 到 微米 (μm) 的换算'
+  title: 'Nanometer (nm) to Micrometer (μm) Length Unit Converter'
 })
 
 const convertHandler = () => {
-  if (form.number !== null && !isNaN(form.number)) {
-    const convertedValue = parseFloat(form.number) / 1000
-    form.result = `${form.number}nm = ${convertedValue.toFixed(3)}μm`
+  if (form.number !== null && form.number !== '') {
+    const convertedValue = convert(form.number, 'nm', 'μm')
+    form.result = `${form.number}nm = ${convertedValue.toFixed(6)}μm`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
+<n-card :title="form.title" size="large">
 <n-form size="large" :model="form">
-  <n-form-item label="纳米 (nm)">
-    <n-input-number v-model:value="form.number" placeholder="输入纳米" style="width: 100%" />
+  <n-form-item label="Nanometer (nm)">
+    <n-input-number v-model:value="form.number" placeholder="Enter nanometers" style="width: 100%" />
   </n-form-item>
-  <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
-  </n-form-item>
+  
+  <n-button type="info" @click="convertHandler" block>Convert</n-button>
 </n-form>
 
-<n-card  
-  :title="form.title"
-  :segmented="{
-    content: true,
-    footer: 'soft',
-  }"
->
-  <div  style="text-align:center;font-size:20px;">
-    <strong>{{form.result}}</strong>
+<n-card style="margin-top: 20px;">
+  <div style="font-size: 18px; font-weight: bold; color: #2080f0;">
+    {{ form.result }}
   </div>
-    <template #footer>
-    <div>
-      <span v-for="item of seoKey">{{item}}，</span>
-    </div>
-  </template>
+</n-card>
 </n-card>
 
-## 实际应用场景
+## Practical Application Scenarios
 
-纳米到微米的长度单位转换在现代科技和工程领域中具有重要的应用价值，涵盖从纳米尺度到微米尺度的精确测量需求：
+Nanometer (nm) and micrometer (μm) are closely related units in microscale measurement, playing crucial roles in the following professional scenarios:
 
-### 纳米科技与材料工程
-- **纳米材料表征**：纳米颗粒尺寸分析与微米级材料结构的关联研究
-- **纳米复合材料**：纳米填料分散度评估与微米级基体材料的性能优化
-- **表面纳米结构**：纳米级表面形貌与微米级器件性能的相关性分析
-- 应用示例：石墨烯片层厚度1nm = 0.001μm，用于制备微米级复合材料
+### Nanotechnology Research and Development
+- **Nanomaterial Characterization**: Nanoparticle sizes are measured in nanometers, while aggregate structures are characterized in micrometers
+- **Precision Manufacturing**: Feature sizes are controlled in nanometers, while overall device dimensions are specified in micrometers
+- **Surface Analysis**: Surface roughness is measured in nanometers, while surface features are analyzed in micrometers
 
-### 微电子制造与半导体技术
-- **集成电路工艺**：纳米级特征尺寸控制与微米级芯片布局的精密匹配
-- **薄膜技术**：纳米级薄膜厚度测量与微米级器件结构的工艺优化
-- **光刻技术**：纳米级图案精度与微米级电路设计的制造协调
-- 应用示例：栅极氧化层厚度5nm = 0.005μm，影响微米级晶体管性能
+### Semiconductor Manufacturing and Electronics
+- **Chip Design**: Transistor gate lengths are measured in nanometers, while chip dimensions are expressed in micrometers
+- **Process Control**: Critical dimensions are controlled in nanometers, while wafer features are measured in micrometers
+- **Quality Assurance**: Defect detection operates at nanometer scale, while inspection areas are defined in micrometers
 
-### 生物医学与生命科学
-- **细胞生物学**：纳米级细胞器结构与微米级细胞整体的多尺度研究
-- **药物传递**：纳米药物载体设计与微米级组织渗透的效果评估
-- **生物传感器**：纳米级敏感元件与微米级传感器系统的集成应用
-- 应用示例：DNA双螺旋直径2nm = 0.002μm，用于微米级生物芯片设计
+### Precision Engineering and Metrology
+- **Surface Finish**: Surface roughness specifications use nanometers, while tolerance zones are defined in micrometers
+- **Optical Systems**: Wavelength precision is specified in nanometers, while optical component dimensions use micrometers
+- **Calibration Standards**: Reference standards operate at nanometer precision, while measurement ranges span micrometers
 
-### 精密测量与计量技术
-- **表面粗糙度**：纳米级表面质量控制与微米级零件精度的质量保证
-- **光学测量**：纳米级光学元件精度与微米级光学系统的性能匹配
-- **机械加工**：纳米级加工精度与微米级零件尺寸的制造协调
-- 应用示例：激光波长633nm = 0.633μm，用于微米级精密测量
+### Materials Science and Characterization
+- **Microstructure Analysis**: Grain boundaries are measured in nanometers, while grain sizes are characterized in micrometers
+- **Coating Technology**: Coating thickness is controlled in nanometers, while coating uniformity is assessed in micrometers
+- **Composite Materials**: Fiber diameters are measured in micrometers, while interface layers are characterized in nanometers
 
-### 环境科学与检测技术
-- **颗粒物分析**：纳米颗粒检测与微米级污染物的综合评估
-- **空气质量监测**：纳米级超细颗粒与微米级PM颗粒的协同分析
-- **水质检测**：纳米污染物识别与微米级悬浮物的综合处理
-- 应用示例：病毒颗粒100nm = 0.1μm，与细菌尺寸(1-10μm)的对比分析
+### Biological and Medical Applications
+- **Cell Biology**: Molecular dimensions are measured in nanometers, while cellular structures are characterized in micrometers
+- **Medical Devices**: Drug delivery precision operates at nanometer scale, while device features are sized in micrometers
+- **Tissue Engineering**: Scaffold pore sizes are designed in micrometers, while surface modifications operate at nanometer scale
 
-### 纳米微米换算对照表
+### Nanometer to Micrometer Conversion Reference Table
 
-| 纳米 (nm) | 微米 (μm) | 典型应用 |
-|----------|-------------|----------|
-| 1 nm | 0.001 μm | 原子级精度 |
-| 10 nm | 0.010 μm | 分子结构 |
-| 50 nm | 0.050 μm | 病毒尺寸 |
-| 100 nm | 0.100 μm | 纳米材料 |
-| 200 nm | 0.200 μm | 光学波长 |
-| 500 nm | 0.500 μm | 可见光范围 |
-| 700 nm | 0.700 μm | 红光波长 |
-| 1000 nm | 1.000 μm | 微米基准 |
+| Nanometer (nm) | Micrometer (μm) | Application Scenario |
+|----------------|-----------------|---------------------|
+| 1 nm | 0.001 μm | Atomic scale measurement |
+| 10 nm | 0.01 μm | Molecular scale measurement |
+| 100 nm | 0.1 μm | Nanoparticle measurement |
+| 500 nm | 0.5 μm | Submicron measurement |
+| 1,000 nm | 1 μm | Micron scale conversion |
+| 2,000 nm | 2 μm | Microscale measurement |
+| 5,000 nm | 5 μm | Cell scale measurement |
+| 10,000 nm | 10 μm | Tissue scale measurement |
 
-## 公式
+## Formula
 
-### 纳米到微米转换公式
-从 **纳米 (nm)** 换算到 **微米 (μm)** 的精确公式为：
-$$ μm = nm \times 10^{-3} $$
+### Nanometer to Micrometer Conversion Formula
+The precise formula for converting from **Nanometer (nm)** to **Micrometer (μm)** is:
+$$ μm = nm \times 0.001 $$
 
-简化公式：
-$$ μm = nm \div 1000 $$
-
-### 微米到纳米转换公式
-从 **微米 (μm)** 换算到 **纳米 (nm)** 的精确公式为：
-$$ nm = μm \times 10^{3} $$
-
-简化公式：
+### Micrometer to Nanometer Conversion Formula
+The precise formula for converting from **Micrometer (μm)** to **Nanometer (nm)** is:
 $$ nm = μm \times 1000 $$
 
-### 长度单位换算对照表
+### Length Unit Conversion Reference Table
 
-| 纳米 (nm) | 微米 (μm) | 应用场景 |
-|-----------|-----------|----------|
-| 1 nm | 0.001 μm | 原子间距测量 |
-| 10 nm | 0.010 μm | 分子尺寸分析 |
-| 50 nm | 0.050 μm | 病毒颗粒检测 |
-| 100 nm | 0.100 μm | 纳米材料制备 |
-| 200 nm | 0.200 μm | 光学波长应用 |
-| 500 nm | 0.500 μm | 可见光范围 |
-| 700 nm | 0.700 μm | 红光激光器 |
-| 1000 nm | 1.000 μm | 微米基准单位 |
+| Nanometer (nm) | Micrometer (μm) | Millimeter (mm) | Meter (m) | Application Scenario |
+|----------------|-----------------|-----------------|-----------|---------------------|
+| 1 nm | 0.001 μm | 1×10⁻⁶ mm | 1×10⁻⁹ m | Atomic scale measurement |
+| 10 nm | 0.01 μm | 1×10⁻⁵ mm | 1×10⁻⁸ m | Molecular scale measurement |
+| 100 nm | 0.1 μm | 1×10⁻⁴ mm | 1×10⁻⁷ m | Nanoparticle measurement |
+| 500 nm | 0.5 μm | 5×10⁻⁴ mm | 5×10⁻⁷ m | Submicron measurement |
+| 1,000 nm | 1 μm | 1×10⁻³ mm | 1×10⁻⁶ m | Micron scale conversion |
+| 2,000 nm | 2 μm | 2×10⁻³ mm | 2×10⁻⁶ m | Microscale measurement |
+| 5,000 nm | 5 μm | 5×10⁻³ mm | 5×10⁻⁶ m | Cell scale measurement |
+| 10,000 nm | 10 μm | 1×10⁻² mm | 1×10⁻⁵ m | Tissue scale measurement |
 
-### 转换示例
-- **纳米科技应用**：1000nm = 1.000μm
-- **微电子应用**：500nm = 0.500μm
-- **生物医学应用**：100nm = 0.100μm
-- **光学应用**：633nm = 0.633μm
-- **材料科学应用**：50nm = 0.050μm
+### Conversion Examples
+- **Nanotechnology Research Application**: 100nm = 0.1μm
+- **Semiconductor Manufacturing Application**: 500nm = 0.5μm
+- **Precision Engineering Application**: 1,000nm = 1μm
+- **Materials Science Application**: 2,000nm = 2μm
+- **Biological Research Application**: 5,000nm = 5μm
 
-## 常见问题 (FAQ)
+## Frequently Asked Questions (FAQ)
 
-### 1. 纳米和微米换算的科学意义是什么？
-纳米到微米的换算跨越了3个数量级，连接了原子分子尺度和细胞器件尺度，在纳米科技、微电子和生物医学中具有重要的桥梁作用。
+### 1. What is the practical significance of nanometer to micrometer conversion?
+The nanometer to micrometer conversion connects two closely related scales in microscopic measurement. It has important practical value in nanotechnology research, semiconductor manufacturing, and precision engineering, especially in applications that require precise measurement and specification across nanoscale and microscale dimensions.
 
-### 2. 在微电子制造中为什么需要nm到μm的换算？
-微电子制造中，器件特征尺寸以纳米表示，而芯片布局和封装尺寸以微米计量，换算确保了制造工艺的精确控制和系统集成。
+### 2. How is this conversion applied in semiconductor manufacturing?
+In semiconductor manufacturing, critical dimensions and feature sizes are often specified in nanometers for precision, while chip dimensions, wafer features, and packaging specifications use micrometers. Through accurate conversion, engineers can maintain consistency across different design and manufacturing stages.
 
-### 3. 如何确保纳米到微米换算的精度？
-使用科学计数法表示（1 μm = 10³ nm），采用高精度测量仪器，并进行多次验证以确保换算的准确性和重现性。
+### 3. How to ensure the precision of nanometer to micrometer conversion?
+Use the standard conversion ratio (1 micrometer = 1000 nanometers), employ high-precision calculation tools, and select appropriate precision levels according to specific engineering or scientific requirements to ensure conversion results meet manufacturing and research standards.
 
-### 4. 在生物医学中这种换算有什么实际价值？
-生物医学中，病毒和蛋白质尺寸以纳米表示，而细胞和组织结构以微米计量，换算有助于多尺度生物系统的理解和应用。
+### 4. What value does this conversion have in materials science?
+In materials science, microstructure characterization often involves measurements at both nanometer and micrometer scales. Grain boundaries, interface layers, and surface features may be measured in nanometers, while grain sizes, particle distributions, and coating thicknesses are characterized in micrometers.
 
-### 5. 纳米级精度对微米级系统的影响？
-纳米级的精度控制直接影响微米级系统的整体性能，如光学器件、电子芯片和生物传感器等高精度应用。
+### 5. How is nanometer to micrometer conversion applied in biological research?
+In biological research, molecular and cellular structures span both nanometer and micrometer scales. DNA molecules, proteins, and cellular organelles are measured in nanometers, while cell sizes, tissue structures, and biological devices are characterized in micrometers.
 
-### 6. 如何在实际研究中应用这种换算？
-在科学研究和工程应用中，通过标准换算公式和专业测量设备，实现纳米到微米的精确转换和跨尺度分析。
+### 6. How to apply this conversion in practical work?
+In nanotechnology, semiconductor, and precision engineering work, use standard conversion formulas and high-precision calculation tools, establish complete measurement standards across scales, and ensure accurate conversion and quality control from nanoscale precision to microscale applications.
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Length" :key="index">
     <n-button

@@ -1,165 +1,153 @@
 ---
-sidebar: false
-aside: false
-lastUpdated: false
+outline: deep
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Length/index
-      linkText: 长度换算
+      linkText: Length Conversion
   - - link: /Length/Yard-to-Fathom
-      linkText: 码到英寻
+      linkText: Yard to Fathom
 head:
   - - meta
     - name: description
-      content: "专业的码(yd)到英寻(fathom)长度单位换算工具和指南。提供精确的换算公式、实际应用场景和常见问题解答，适用于海洋工程、航海导航、潜水作业、船舶制造等领域的深度测量需求。"
+      content: "Professional yard (yd) to fathom length unit conversion tool and guide. Provides precise conversion formulas, practical application scenarios, and frequently asked questions, suitable for marine engineering, maritime navigation, diving operations, shipbuilding, and other fields requiring depth measurement."
   - - meta
     - name: keywords
-      content: "码到英寻换算,yd到fathom转换,长度单位换算,英寻换算器,海洋工程,航海导航,潜水作业,船舶制造,深度测量,海洋测量,水下工程,航海单位,海洋科学,潜水深度,船舶设计,海洋探测,水深测量,英制单位,长度转换器,单位换算表"
+      content: "yard to fathom conversion,yd to fathom conversion,length unit conversion,fathom converter,marine engineering,maritime navigation,diving operations,shipbuilding,depth measurement,marine measurement,underwater engineering,maritime units,marine science,diving depth,ship design,marine exploration,water depth measurement,imperial units,length converter,unit conversion table"
 ---
-# 码 (yd) 到 英寻 (fathom) 的换算
+# Yard (yd) to Fathom Conversion
 
-码到英寻的换算是海洋工程、航海导航和潜水作业中的重要技术技能。英寻(fathom)作为传统的海洋深度测量单位，广泛应用于航海导航、潜水作业、船舶制造和海洋科学研究；而码(yd)则是英制长度单位体系中的基础单位，在船舶设计、海洋工程和水下设备制造中发挥重要作用。掌握精确的码到英寻换算方法，对于海洋工程师、航海人员和潜水专业人士具有重要的实践价值。
+The conversion from yards to fathoms is an important technical skill in marine engineering, maritime navigation, and diving operations. The fathom, as a traditional marine depth measurement unit, is widely used in maritime navigation, diving operations, shipbuilding, and marine science research; while the yard is a fundamental unit in the imperial length unit system, playing an important role in ship design, marine engineering, and underwater equipment manufacturing. Mastering precise yard to fathom conversion methods is of great practical value for marine engineers, maritime personnel, and diving professionals.
 
----
 <script setup>
-import { onMounted, reactive, inject, ref } from 'vue'
-import { NButton, NForm, NFormItem, NInput, NInputNumber, NSelect, NCard, useMessage,NGrid ,NGi } from 'naive-ui'
-import { defineClientComponent } from 'vitepress'
-import { Length } from '../files';
-const seoKey = ['单位转换器','单位换算','长度单位转换器','长度单位转换','尺寸换算','长度单位换算','长度单位换算表','码到英寻','英寻换算','fathom','码换算','yd换算','英寻单位','海洋测量','深度测量','航海单位','潜水深度','船舶制造','海洋工程','航海导航','潜水作业','水下工程','海洋科学','船舶设计','海洋探测','水深测量','英制单位','长度转换器','码英寻换算','英寻码转换','海洋深度单位','航海测量','潜水测量','船舶工程','海洋技术','水下测量','深海探测','航海工程','海洋装备','潜水设备']
+import { ref, reactive, inject } from 'vue'
+import { NForm, NFormItem, NInputNumber, NButton, NCard, NGrid, NGi } from 'naive-ui'
+
+const Length = inject('Length')
 const convert = inject('convert')
+
+const seoKey = ['unit converter','unit conversion','length unit converter','length unit conversion','size conversion','length unit conversion','length unit conversion table','yard to fathom','fathom conversion','fathom','yard conversion','yd conversion','fathom unit','marine measurement','depth measurement','maritime units','diving depth','shipbuilding','marine engineering','maritime navigation','diving operations','underwater engineering','marine science','ship design','marine exploration','water depth measurement','imperial units','length converter','yard fathom conversion','fathom yard conversion','marine depth units','maritime measurement','diving measurement','ship engineering','marine technology','underwater measurement','deep sea exploration','maritime engineering','marine equipment','diving equipment']
 
 const form = reactive({
   number: null,
   result: '',
-  title: '码 (yd) 到英寻 (fathom) 的长度单位换算'
+  title: 'Yard (yd) to Fathom Length Unit Converter'
 })
 
 const convertHandler = () => {
-  if (form.number !== null && !isNaN(form.number)) {
-    const convertedValue = parseFloat(form.number) * 0.5
-    form.result = `${form.number}yd = ${convertedValue.toFixed(2)}fathom`
+  if (form.number !== null && form.number !== '') {
+    const convertedValue = convert(form.number, 'yd', 'fathom')
+    form.result = `${form.number}yd = ${convertedValue.toFixed(6)}fathom`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
+<n-card :title="form.title" size="large">
 <n-form size="large" :model="form">
-  <n-form-item label="码 (yd)">
-    <n-input-number v-model:value="form.number" placeholder="输入码" style="width: 100%" />
+  <n-form-item label="Yard (yd)">
+    <n-input-number v-model:value="form.number" placeholder="Enter yards" style="width: 100%" />
   </n-form-item>
-  <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
-  </n-form-item>
+  
+  <n-button type="info" @click="convertHandler" block>Convert</n-button>
 </n-form>
 
-<n-card 
-  :title="form.title"
-  :segmented="{
-    content: true,
-    footer: 'soft',
-  }"
->
-  <div  style="text-align:center;font-size:20px;">
-    <strong>{{form.result}}</strong>
+<n-card style="margin-top: 20px;">
+  <div style="font-size: 18px; font-weight: bold; color: #2080f0;">
+    {{ form.result }}
   </div>
-  <template #footer>
-    <div>
-      <span v-for="item of seoKey">{{item}}，</span>
-    </div>
-  </template>
+</n-card>
 </n-card>
 
-## 实际应用场景
+## Practical Application Scenarios
 
-码 (yd) 和英寻 (fathom) 是海洋工程和航海领域中重要的长度单位，在以下专业场景中发挥关键作用：
+Yard (yd) and fathom are important length units in marine engineering and maritime fields, playing key roles in the following professional scenarios:
 
-### 海洋工程与船舶制造
-- **船舶设计**：船舶的甲板长度常用码表示，而船舶的吃水深度和锚链长度则用英寻计量
-- **海洋平台建设**：海上钻井平台的结构尺寸用码标注，作业水深用英寻测量
-- **港口工程**：码头设施的建设尺寸用码计算，港口水深用英寻标示
+### Marine Engineering and Shipbuilding
+- **Ship Design**: Ship deck lengths are often expressed in yards, while ship draft depth and anchor chain lengths are measured in fathoms
+- **Marine Platform Construction**: Offshore drilling platform structural dimensions are marked in yards, while operating water depths are measured in fathoms
+- **Port Engineering**: Wharf facility construction dimensions are calculated in yards, while port water depths are indicated in fathoms
 
-### 航海导航与海洋测量
-- **航海图制作**：海图上的距离标注用码表示，水深测量用英寻记录
-- **航道测量**：航道宽度用码计量，航道深度用英寻标示
-- **海洋勘探**：勘探设备的尺寸用码表示，勘探深度用英寻计算
+### Maritime Navigation and Marine Surveying
+- **Nautical Chart Production**: Distances on sea charts are marked in yards, while water depth measurements are recorded in fathoms
+- **Channel Surveying**: Channel widths are measured in yards, while channel depths are indicated in fathoms
+- **Marine Exploration**: Exploration equipment dimensions are expressed in yards, while exploration depths are calculated in fathoms
 
-### 潜水作业与水下工程
-- **潜水设备**：潜水装备的规格用码标注，潜水深度用英寻计量
-- **水下施工**：水下结构的尺寸用码表示，施工深度用英寻测量
-- **海底电缆铺设**：电缆长度用码计算，铺设深度用英寻标示
+### Diving Operations and Underwater Engineering
+- **Diving Equipment**: Diving gear specifications are marked in yards, while diving depths are measured in fathoms
+- **Underwater Construction**: Underwater structure dimensions are expressed in yards, while construction depths are measured in fathoms
+- **Submarine Cable Laying**: Cable lengths are calculated in yards, while laying depths are indicated in fathoms
 
-### 海洋科学研究
-- **海洋生物研究**：研究设备尺寸用码表示，生物栖息深度用英寻记录
-- **海洋地质调查**：取样设备规格用码标注，取样深度用英寻计量
-- **海洋环境监测**：监测设备尺寸用码表示，监测深度用英寻测量
+### Marine Science Research
+- **Marine Biology Research**: Research equipment dimensions are expressed in yards, while biological habitat depths are recorded in fathoms
+- **Marine Geological Survey**: Sampling equipment specifications are marked in yards, while sampling depths are measured in fathoms
+- **Marine Environmental Monitoring**: Monitoring equipment dimensions are expressed in yards, while monitoring depths are measured in fathoms
 
-### 码英寻换算对照表
+### Yard to Fathom Conversion Reference Table
 
-| 码 (yd) | 英寻 (fathom) | 应用场景 |
-|---------|---------------|----------|
-| 2 yd | 1 fathom | 基础换算单位 |
-| 6 yd | 3 fathom | 小型船舶尺寸 |
-| 20 yd | 10 fathom | 中型船舶长度 |
-| 60 yd | 30 fathom | 大型船舶尺寸 |
-| 100 yd | 50 fathom | 港口设施规模 |
-| 200 yd | 100 fathom | 海洋工程项目 |
-| 600 yd | 300 fathom | 大型海洋平台 |
-| 1000 yd | 500 fathom | 海洋勘探范围 |
+| Yard (yd) | Fathom | Application Scenario |
+|-----------|--------|---------------------|
+| 2 yd | 1 fathom | Basic conversion unit |
+| 6 yd | 3 fathom | Small vessel dimensions |
+| 20 yd | 10 fathom | Medium vessel length |
+| 60 yd | 30 fathom | Large vessel dimensions |
+| 100 yd | 50 fathom | Port facility scale |
+| 200 yd | 100 fathom | Marine engineering projects |
+| 600 yd | 300 fathom | Large marine platforms |
+| 1000 yd | 500 fathom | Marine exploration range |
 
-## 公式
+## Formula
 
-### 码到英寻转换公式
-从 **码 (yd)** 换算到 **英寻 (fathom)** 的精确公式为：
-$$ fathom = yd \times 0.5 $$
+### Yard to Fathom Conversion Formula
+The precise formula for converting from **Yard (yd)** to **Fathom** is:
+$$ fathom = yd \div 2 $$
 
-### 英寻到码转换公式
-从 **英寻 (fathom)** 换算到 **码 (yd)** 的精确公式为：
-$$ yd = fathom \times 2.0 $$
+### Fathom to Yard Conversion Formula
+The precise formula for converting from **Fathom** to **Yard (yd)** is:
+$$ yd = fathom \times 2 $$
 
-### 长度单位换算对照表
+### Length Unit Conversion Reference Table
 
-| 码 (yd) | 英寻 (fathom) | 米 (m) | 英尺 (ft) | 应用场景 |
-|---------|---------------|--------|-----------|----------|
-| 1 yd | 0.5 fathom | 0.914 m | 3 ft | 小型设备尺寸 |
-| 2 yd | 1 fathom | 1.829 m | 6 ft | 标准换算单位 |
-| 6 yd | 3 fathom | 5.486 m | 18 ft | 小型船舶 |
-| 20 yd | 10 fathom | 18.29 m | 60 ft | 中型船舶 |
-| 60 yd | 30 fathom | 54.86 m | 180 ft | 大型船舶 |
-| 100 yd | 50 fathom | 91.44 m | 300 ft | 港口设施 |
-| 200 yd | 100 fathom | 182.88 m | 600 ft | 海洋工程 |
-| 1000 yd | 500 fathom | 914.4 m | 3000 ft | 大型项目 |
+| Yard (yd) | Fathom | Meter (m) | Foot (ft) | Application Scenario |
+|-----------|--------|-----------|-----------|---------------------|
+| 1 yd | 0.5 fathom | 0.914 m | 3 ft | Small equipment dimensions |
+| 2 yd | 1 fathom | 1.829 m | 6 ft | Standard conversion unit |
+| 6 yd | 3 fathom | 5.486 m | 18 ft | Small vessels |
+| 20 yd | 10 fathom | 18.29 m | 60 ft | Medium vessels |
+| 60 yd | 30 fathom | 54.86 m | 180 ft | Large vessels |
+| 100 yd | 50 fathom | 91.44 m | 300 ft | Port facilities |
+| 200 yd | 100 fathom | 182.88 m | 600 ft | Marine engineering |
+| 1000 yd | 500 fathom | 914.4 m | 3000 ft | Large projects |
 
-### 转换示例
-- **船舶设计应用**：2yd = 1fathom
-- **港口工程应用**：4yd = 2fathom
-- **海洋平台应用**：10yd = 5fathom
-- **深海作业应用**：100yd = 50fathom
-- **海洋勘探应用**：1000yd = 500fathom
+### Conversion Examples
+- **Ship Design Application**: 2yd = 1fathom
+- **Port Engineering Application**: 4yd = 2fathom
+- **Marine Platform Application**: 10yd = 5fathom
+- **Deep Sea Operations Application**: 100yd = 50fathom
+- **Marine Exploration Application**: 1000yd = 500fathom
 
-## 常见问题 (FAQ)
+## Frequently Asked Questions (FAQ)
 
-### 1. 码和英寻换算的实际意义是什么？
-码到英寻的换算连接了英制长度单位与传统海洋深度测量体系。在海洋工程、航海导航和船舶制造中具有重要的实践价值，特别是在需要精确测量海洋深度和船舶尺寸的专业场合。
+### 1. What is the practical significance of yard to fathom conversion?
+The yard to fathom conversion connects imperial length units with traditional marine depth measurement systems. It has important practical value in marine engineering, maritime navigation, and shipbuilding, especially in professional settings that require precise measurement of marine depths and vessel dimensions.
 
-### 2. 在船舶制造中如何应用这种换算？
-在船舶制造中，船舶的甲板长度、舱室尺寸常用码表示，而船舶的吃水深度、锚链长度则用英寻计量。通过准确换算，造船工程师能够在设计和建造过程中实现尺寸参数的精确控制。
+### 2. How is this conversion applied in shipbuilding?
+In shipbuilding, ship deck lengths and cabin dimensions are often expressed in yards, while ship draft depths and anchor chain lengths are measured in fathoms. Through accurate conversion, shipbuilding engineers can achieve precise control of dimensional parameters during design and construction processes.
 
-### 3. 如何确保码到英寻换算的精度？
-使用标准换算比例（1 fathom = 2 yd），采用高精度计算工具，并根据海洋工程的具体要求选择合适的精度等级，确保换算结果满足航海安全和工程质量要求。
+### 3. How to ensure the precision of yard to fathom conversion?
+Use the standard conversion ratio (1 fathom = 2 yd), employ high-precision calculation tools, and select appropriate precision levels according to specific marine engineering requirements to ensure conversion results meet maritime safety and engineering quality requirements.
 
-### 4. 在航海导航中这种换算有什么价值？
-在现代航海中，航海图上的距离标注与水深测量需要统一的计量体系。这种换算帮助航海人员准确理解海图信息，确保航行安全和导航精度。
+### 4. What value does this conversion have in maritime navigation?
+In modern navigation, distance markings on nautical charts and water depth measurements require a unified measurement system. This conversion helps maritime personnel accurately understand chart information, ensuring navigation safety and positioning accuracy.
 
-### 5. 海洋工程中如何应用码到英寻换算？
-在海洋工程中，海上平台的结构尺寸与作业水深需要精确对应。这种换算确保工程设计的准确性，促进海洋资源开发和海洋工程建设的安全进行。
+### 5. How is yard to fathom conversion applied in marine engineering?
+In marine engineering, offshore platform structural dimensions and operating water depths need precise correspondence. This conversion ensures the accuracy of engineering design and promotes the safe conduct of marine resource development and marine engineering construction.
 
-### 6. 如何在实际工作中应用这种换算？
-在海洋相关工作中，使用标准换算公式和专业计算工具，建立完整的海洋测量标准，确保从船舶设计到海洋作业的准确转换和安全实施。
+### 6. How to apply this conversion in practical work?
+In marine-related work, use standard conversion formulas and professional calculation tools, establish complete marine measurement standards, and ensure accurate conversion and safe implementation from ship design to marine operations.
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Length" :key="index">
     <n-button

@@ -4,19 +4,19 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
 
   - - link: /Area/SquareMeter-to-SquareKilometer
-      linkText: 平方米到平方千米
+      linkText: Square Meter to Square Kilometer
 head:
   - - meta
     - name: description
-      content: "面积单位换算指南，涵盖平方米 (m²) 到平方千米 (km²) 的详细换算公式与说明。"
+      content: "Area unit conversion guide covering detailed conversion formulas and explanations from square meters (m²) to square kilometers (km²)."
   - - meta
     - name: keywords
-      content: "面积, 单位换算, 平方米, 平方千米, m², km², 平方米到平方千米, 面积换算指南, 平方米换算平方千米, 平方米到平方千米, 平方千米换算, 面积单位换算, 平方米转平方千米, 平方千米计算, 大面积测量, 地理面积计算, 平方米符号, 平方千米符号, 面积单位对照, 平方米换算表, 平方千米换算公式, 面积转换工具, 平方米计算, 平方千米计算器, 面积换算公式, 地理测量单位, 城市规划面积, 土地规划面积, 平方米到平方千米公式, 平方千米面积计算, 面积单位转换, 大规模土地测量, 地理研究单位, 平方米平方千米对照表, 面积计算工具, 国际地理单位"
+      content: "area, unit conversion, square meter, square kilometer, m², km², square meter to square kilometer, area conversion guide, square meter conversion square kilometer, square meter to square kilometer, square kilometer conversion, area unit conversion, square meter convert square kilometer, square kilometer calculation, large area measurement, geographical area calculation, square meter symbol, square kilometer symbol, area unit comparison, square meter conversion table, square kilometer conversion formula, area conversion tool, square meter calculation, square kilometer calculator, area conversion formula, geographical measurement unit, urban planning area, land planning area, square meter to square kilometer formula, square kilometer area calculation, area unit conversion, large scale land measurement, geographical research unit, square meter square kilometer comparison table, area calculation tool, international geographical unit"
 ---
-# 平方米 (m²) 到 平方千米 (km²) 的换算
+# Square Meter (m²) to Square Kilometer (km²) Conversion
 ---
 <script setup>
 import { onMounted, reactive, inject, ref } from 'vue'
@@ -24,41 +24,41 @@ import { NButton, NForm, NFormItem, NInput, NInputNumber, NSelect, NCard, useMes
 import { defineClientComponent } from 'vitepress'
 import { Area } from '../files';
 const seoKey = [
-  '平方米换算平方千米',
-  '平方米到平方千米',
-  '平方千米换算',
-  '面积单位换算',
-  '平方米转平方千米',
-  '平方千米计算',
-  '大面积测量',
-  '地理面积计算',
-  '平方米符号',
-  '平方千米符号',
-  '面积单位对照',
-  '平方米换算表',
-  '平方千米换算公式',
-  '面积转换工具',
-  '平方米计算',
-  '平方千米计算器',
-  '面积换算公式',
-  '地理测量单位',
-  '城市规划面积',
-  '土地规划面积',
-  '平方米到平方千米公式',
-  '平方千米面积计算',
-  '面积单位转换',
-  '地理研究单位',
-  '大规模土地测量',
-  '平方米平方千米对照表',
-  '面积计算工具',
-  '地理面积单位'
+  'square meter conversion square kilometer',
+  'square meter to square kilometer',
+  'square kilometer conversion',
+  'area unit conversion',
+  'square meter convert square kilometer',
+  'square kilometer calculation',
+  'large area measurement',
+  'geographical area calculation',
+  'square meter symbol',
+  'square kilometer symbol',
+  'area unit comparison',
+  'square meter conversion table',
+  'square kilometer conversion formula',
+  'area conversion tool',
+  'square meter calculation',
+  'square kilometer calculator',
+  'area conversion formula',
+  'geographical measurement unit',
+  'urban planning area',
+  'land planning area',
+  'square meter to square kilometer formula',
+  'square kilometer area calculation',
+  'area unit conversion',
+  'geographical research unit',
+  'large scale land measurement',
+  'square meter square kilometer comparison table',
+  'area calculation tool',
+  'geographical area unit'
 ]
 const convert = inject('convert')
 
 const form = reactive({
   number: null,
   result: '',
-  title: '平方米 (m²) 到平方千米 (km²) 的换算',
+  title: 'Square Meter (m²) to Square Kilometer (km²) Conversion',
 })
 
 const convertHandler = () => {
@@ -66,17 +66,17 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) / 1000000
     form.result = `${form.number}m² = ${convertedValue.toFixed(6)}km²`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="平方米 (m²)">
-    <n-input-number v-model:value="form.number" placeholder="输入平方米" style="width: 100%" />
+  <n-form-item label="Square Meter (m²)">
+    <n-input-number v-model:value="form.number" placeholder="Enter square meters" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
@@ -92,44 +92,43 @@ const convertHandler = () => {
   </div>
     <template #footer>
     <div>
-      <span v-for="item of seoKey">{{item}}，</span>
+      <span v-for="item of seoKey">{{item}}, </span>
     </div>
   </template>
 </n-card>
 
-## 公式
+## Formula
 
-从 **平方米 (m²)** 换算到 **平方千米 (km²)** 的公式为：
+The formula for converting from **Square Meter (m²)** to **Square Kilometer (km²)** is:
 $$ km² = m² \div 1000000 $$
 
-## 平方米到平方千米换算指南
+## Square Meter to Square Kilometer Conversion Guide
 
-在地理测量和大面积土地规划中，面积单位的换算是一个常见需求。本文专注于平方米 (m²) 到平方千米 (km²) 的换算，提供了详细的公式与实用示例。
+In geographical measurement and large-scale land planning, area unit conversion is a common requirement. This article focuses on the conversion from square meters (m²) to square kilometers (km²), providing detailed formulas and practical examples.
 
-### 为什么需要 m² 到 km² 的换算？
+### Why Do We Need m² to km² Conversion?
 
-平方米和平方千米是常见的面积单位，尤其在地理研究、城市规划以及大规模土地测量中尤为重要。通过精确的换算，可以确保测量的一致性和准确性。
+Square meters and square kilometers are common area units, especially important in geographical research, urban planning, and large-scale land measurement. Through accurate conversion, measurement consistency and precision can be ensured.
 
-### m² 到 km² 的换算方法
+### m² to km² Conversion Method
 
-从平方米到平方千米的换算公式为：
+The conversion formula from square meters to square kilometers is:
 
-- **公式：** `km² = m² ÷ 1000000`
+- **Formula:** `km² = m² ÷ 1000000`
 
-### 实际应用示例
+### Practical Application Examples
 
-以下是一些常见的换算实例：
+Here are some common conversion examples:
 
 - 1000 m² = 0.001 km²
 - 1000000 m² = 1 km²
 - 5000000 m² = 5 km²
-ddd
 
-### 总结
+### Summary
 
-掌握平方米到平方千米的换算可以帮助您更好地理解和使用这些面积单位。希望本指南能为您提供有价值的参考。
+Mastering the conversion from square meters to square kilometers can help you better understand and use these area units. We hope this guide provides valuable reference for you.
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Area" :key="index">
     <n-button

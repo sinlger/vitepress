@@ -1,170 +1,153 @@
 ---
-sidebar: false
-aside: false
-lastUpdated: false
+outline: deep
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Length/index
-      linkText: 长度换算
+      linkText: Length Conversion
   - - link: /Length/Yard-to-Foot
-      linkText: 码到英尺
+      linkText: Yard to Foot
 head:
   - - meta
     - name: description
-      content: "专业的码(yd)到英尺(ft)长度单位换算工具和指南。提供精确的换算公式、实际应用场景和常见问题解答，适用于建筑工程、体育运动、纺织工业、室内设计等领域的精密测量需求。"
+      content: "Professional yard (yd) to foot (ft) length unit conversion tool and guide. Provides precise conversion formulas, practical application scenarios, and frequently asked questions, suitable for construction engineering, interior design, sports measurement, textile industry, and other fields requiring precise length measurement."
   - - meta
     - name: keywords
-      content: "码到英尺换算,yd到ft转换,长度单位换算,英尺换算器,建筑工程测量,体育运动测量,纺织工业,室内设计,英制单位,长度转换,建筑测量,工程测量,英国标准,长度转换器,单位换算表,英制长度单位,建筑设计,工程制图,测量工具,精密测量"
+      content: "yard to foot conversion,yd to ft conversion,length unit conversion,foot converter,construction engineering,interior design,sports measurement,textile industry,precise length measurement,imperial units,length converter,unit conversion table,building measurement,architectural measurement,fabric measurement,athletic measurement,engineering measurement,construction measurement,design measurement,measurement tools"
 ---
-# 码 (yd) 到 英尺 (ft) 的换算
+# Yard (yd) to Foot (ft) Conversion
 
-码到英尺的换算是英制长度单位体系中的基础转换，在建筑工程、体育运动、纺织工业和室内设计中广泛应用。英尺作为英制长度单位的重要组成部分，在建筑测量、工程制图、体育场地规划和日常生活测量中发挥着重要作用。掌握准确的码到英尺换算方法，对于确保工程测量精度、体育设施标准化和建筑设计质量具有重要意义。
+The conversion from yards to feet is a fundamental skill in construction engineering, interior design, and sports measurement. The foot, as a basic unit in the imperial length measurement system, is widely used in construction engineering, interior design, sports measurement, and textile industry; while the yard is an important unit in the imperial length unit system, playing a key role in fabric measurement, sports facilities, and architectural design. Mastering precise yard to foot conversion methods is of great practical value for construction engineers, designers, and measurement professionals.
 
 <script setup>
-import { onMounted, reactive, inject, ref } from 'vue'
-import { NButton, NForm, NFormItem, NInput, NInputNumber, NSelect, NCard, useMessage,NGrid ,NGi } from 'naive-ui'
-import { defineClientComponent } from 'vitepress'
-import { Length } from '../files';
+import { ref, reactive, inject } from 'vue'
+import { NForm, NFormItem, NInputNumber, NButton, NCard, NGrid, NGi } from 'naive-ui'
 
+const Length = inject('Length')
 const convert = inject('convert')
 
-const seoKey = [
-  '码到英尺换算', 'yd到ft转换', '英尺换算器', '建筑工程测量',
-  '体育运动测量', '纺织工业', '室内设计', '英制单位换算',
-  '建筑测量工具', '工程制图标准', '英国标准单位', '长度转换器',
-  '建筑设计测量', '精密测量工具', '英制长度单位', '工程测量标准'
-]
+const seoKey = ['unit converter','unit conversion','length unit converter','length unit conversion','size conversion','length unit conversion','length unit conversion table','yard to foot','foot conversion','foot','yard conversion','yd conversion','ft conversion','foot unit','construction engineering','interior design','sports measurement','textile industry','precise length measurement','imperial units','length converter','yard foot conversion','foot yard conversion','building measurement','architectural measurement','fabric measurement','athletic measurement','engineering measurement','construction measurement','design measurement','measurement tools','building construction','architectural design','textile measurement','sports facilities','construction tools','design tools','measurement conversion','imperial measurement']
 
 const form = reactive({
   number: null,
   result: '',
-  title: '码到英尺换算器 - 专业建筑工程测量工具'
+  title: 'Yard (yd) to Foot (ft) Length Unit Converter'
 })
 
 const convertHandler = () => {
-  if (form.number !== null && !isNaN(form.number)) {
-    const convertedValue = parseFloat(form.number) * 3.0
-    form.result = `${form.number}yd = ${convertedValue.toFixed(2)}ft`
+  if (form.number !== null && form.number !== '') {
+    const convertedValue = convert(form.number, 'yd', 'ft')
+    form.result = `${form.number}yd = ${convertedValue.toFixed(6)}ft`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
+<n-card :title="form.title" size="large">
 <n-form size="large" :model="form">
-  <n-form-item label="码 (yd)">
-    <n-input-number v-model:value="form.number" placeholder="输入码" style="width: 100%" />
+  <n-form-item label="Yard (yd)">
+    <n-input-number v-model:value="form.number" placeholder="Enter yards" style="width: 100%" />
   </n-form-item>
-  <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
-  </n-form-item>
+  
+  <n-button type="info" @click="convertHandler" block>Convert</n-button>
 </n-form>
 
-<n-card embedded :bordered="false" hoverable>
-  <template #header>
-    <div style="text-align:center;font-size:16px;color:#666;">
-      {{form.title}}
-    </div>
-  </template>
-  <div style="text-align:center;font-size:20px;">
-    <strong>{{form.result}}</strong>
+<n-card style="margin-top: 20px;">
+  <div style="font-size: 18px; font-weight: bold; color: #2080f0;">
+    {{ form.result }}
   </div>
-  <template #footer>
-    <div style="text-align:center;font-size:12px;color:#999;">
-      <span v-for="(keyword, index) in seoKey" :key="index">
-        {{keyword}}<span v-if="index < seoKey.length - 1"> | </span>
-      </span>
-    </div>
-  </template>
+</n-card>
 </n-card>
 
-## 实际应用场景
+## Practical Application Scenarios
 
-码到英尺的换算在英制长度单位体系中具有重要的实际应用价值，特别是在需要精确测量和标准化的专业领域：
+Yard (yd) and foot (ft) are important length units in construction and design fields, playing key roles in the following professional scenarios:
 
-### 建筑工程测量
-在建筑工程中，建筑图纸和施工规范经常混合使用码和英尺单位。建筑师在设计阶段使用码标注大型结构尺寸，而施工人员在具体操作中更习惯使用英尺进行精确测量。准确的单位换算确保了建筑项目的设计精度和施工质量。
+### Construction Engineering and Architecture
+- **Building Construction**: Building structural dimensions are often expressed in yards, while detailed construction measurements are calculated in feet
+- **Architectural Design**: Architectural planning dimensions are marked in yards, while interior space measurements are expressed in feet
+- **Civil Engineering**: Engineering project scales are calculated in yards, while construction detail measurements are marked in feet
 
-### 体育运动测量
-体育场地和运动设施的建设严格遵循标准尺寸要求。足球场、田径跑道等体育设施的设计规范使用码标注，而具体的设备安装和场地标线使用英尺测量，精确的换算保证了体育设施符合国际竞赛标准。
+### Interior Design and Decoration
+- **Space Planning**: Room layout dimensions are expressed in yards, while furniture placement measurements are calculated in feet
+- **Material Calculation**: Large area material requirements are marked in yards, while detailed installation measurements are expressed in feet
+- **Decoration Engineering**: Overall decoration scales are calculated in yards, while detail work measurements are marked in feet
 
-### 纺织工业应用
-纺织工业在面料生产、服装设计和质量控制中广泛应用这种换算。面料的批量生产以码为单位计量，而服装制作的精细尺寸控制使用英尺，准确换算确保了纺织产品的质量标准和生产效率。
+### Sports Measurement and Athletic Facilities
+- **Sports Venue Construction**: Stadium overall dimensions are expressed in yards, while track and field measurements are calculated in feet
+- **Athletic Equipment**: Sports equipment specifications are marked in yards, while precise measurement requirements are expressed in feet
+- **Competition Standards**: Competition venue scales are calculated in yards, while performance measurements are marked in feet
 
-### 室内设计装修
-室内设计师在空间规划和装修施工中需要在码和英尺之间进行准确换算。房间的整体布局使用码进行规划，而家具摆放和装饰细节使用英尺进行精确定位，确保室内设计的美观性和实用性。
+### Textile Industry and Fabric Measurement
+- **Fabric Production**: Fabric production lengths are expressed in yards, while cutting measurements are calculated in feet
+- **Garment Manufacturing**: Garment design dimensions are marked in yards, while detailed tailoring measurements are expressed in feet
+- **Textile Engineering**: Textile equipment specifications are calculated in yards, while process measurements are marked in feet
 
-### 工程制图标准
-在工程制图和技术文档中，不同的图纸可能使用不同的长度单位。工程师需要在码和英尺之间进行准确换算，确保技术文档的准确性和工程项目的成功实施。
+### Yard to Foot Conversion Reference Table
 
-### 国际贸易合作
-在国际贸易中，英制单位的产品规格需要在不同单位之间转换。码到英尺的换算是英制单位体系内部转换的基础，为国际商务合作提供了标准化的测量基准。
+| Yard (yd) | Foot (ft) | Application Scenario |
+|-----------|-----------|---------------------|
+| 1 yd | 3 ft | Standard conversion unit |
+| 2 yd | 6 ft | Small construction measurements |
+| 5 yd | 15 ft | Medium construction measurements |
+| 10 yd | 30 ft | Large construction measurements |
+| 20 yd | 60 ft | Building structural measurements |
+| 50 yd | 150 ft | Engineering project measurements |
+| 100 yd | 300 ft | Large facility measurements |
+| 500 yd | 1,500 ft | Major construction projects |
 
-### 码英尺换算对照表
+## Formula
 
-| 码 (yd) | 英尺 (ft) | 米 (m) | 厘米 (cm) | 应用场景 |
-|---------|-----------|--------|-----------|----------|
-| 1 yd | 3 ft | 0.914 m | 91.4 cm | 小型物品测量 |
-| 5 yd | 15 ft | 4.572 m | 457.2 cm | 房间尺寸 |
-| 10 yd | 30 ft | 9.144 m | 914.4 cm | 建筑构件 |
-| 20 yd | 60 ft | 18.288 m | 1828.8 cm | 建筑跨度 |
-| 50 yd | 150 ft | 45.72 m | 4572 cm | 体育场地 |
-| 100 yd | 300 ft | 91.44 m | 9144 cm | 工程项目 |
-| 200 yd | 600 ft | 182.88 m | 18288 cm | 基础设施 |
-| 500 yd | 1500 ft | 457.2 m | 45720 cm | 大型工程 |
+### Yard to Foot Conversion Formula
+The precise formula for converting from **Yard (yd)** to **Foot (ft)** is:
+$$ ft = yd \times 3 $$
 
-## 公式
+### Foot to Yard Conversion Formula
+The precise formula for converting from **Foot (ft)** to **Yard (yd)** is:
+$$ yd = ft \div 3 $$
 
-### 码到英尺转换公式
-从 **码 (yd)** 换算到 **英尺 (ft)** 的精确公式为：
-$$ ft = yd \times 3.0 $$
+### Length Unit Conversion Reference Table
 
-### 英尺到码转换公式
-从 **英尺 (ft)** 换算到 **码 (yd)** 的精确公式为：
-$$ yd = ft \div 3.0 $$
+| Yard (yd) | Foot (ft) | Meter (m) | Inch (in) | Application Scenario |
+|-----------|-----------|-----------|-----------|---------------------|
+| 1 yd | 3 ft | 0.914 m | 36 in | Standard conversion unit |
+| 2 yd | 6 ft | 1.829 m | 72 in | Small construction measurements |
+| 5 yd | 15 ft | 4.572 m | 180 in | Medium construction measurements |
+| 10 yd | 30 ft | 9.144 m | 360 in | Large construction measurements |
+| 20 yd | 60 ft | 18.288 m | 720 in | Building structural measurements |
+| 50 yd | 150 ft | 45.72 m | 1,800 in | Engineering project measurements |
+| 100 yd | 300 ft | 91.44 m | 3,600 in | Large facility measurements |
+| 500 yd | 1,500 ft | 457.2 m | 18,000 in | Major construction projects |
 
-### 长度单位换算对照表
+### Conversion Examples
+- **Construction Engineering Application**: 1yd = 3ft
+- **Interior Design Application**: 5yd = 15ft
+- **Sports Measurement Application**: 10yd = 30ft
+- **Textile Industry Application**: 20yd = 60ft
+- **Architectural Design Application**: 100yd = 300ft
 
-| 码 (yd) | 英尺 (ft) | 英寸 (in) | 米 (m) | 应用场景 |
-|---------|-----------|-----------|--------|----------|
-| 1 yd | 3 ft | 36 in | 0.914 m | 标准换算单位 |
-| 2 yd | 6 ft | 72 in | 1.829 m | 小型建筑构件 |
-| 5 yd | 15 ft | 180 in | 4.572 m | 房间尺寸测量 |
-| 10 yd | 30 ft | 360 in | 9.144 m | 建筑设计标准 |
-| 25 yd | 75 ft | 900 in | 22.86 m | 体育场地规格 |
-| 50 yd | 150 ft | 1800 in | 45.72 m | 大型建筑跨度 |
-| 100 yd | 300 ft | 3600 in | 91.44 m | 工程项目测量 |
-| 500 yd | 1500 ft | 18000 in | 457.2 m | 基础设施建设 |
+## Frequently Asked Questions (FAQ)
 
-### 转换示例
-- **建筑设计应用**：1yd = 3ft
-- **体育运动应用**：2yd = 6ft
-- **纺织工业应用**：10yd = 30ft
-- **室内设计应用**：50yd = 150ft
-- **工程项目应用**：100yd = 300ft
+### 1. What is the practical significance of yard to foot conversion?
+The yard to foot conversion connects different scales within the imperial length unit system. It has important practical value in construction engineering, interior design, and sports measurement, especially in professional settings that require precise measurement and standardized dimensions.
 
-## 常见问题 (FAQ)
+### 2. How is this conversion applied in construction engineering?
+In construction engineering, building structural dimensions and project scales are often expressed in yards, while detailed construction measurements and installation dimensions are calculated in feet. Through accurate conversion, construction engineers can achieve precise control of dimensional parameters during design and construction processes.
 
-### 1. 码和英尺换算的实际意义是什么？
-码到英尺的换算连接了英制长度单位体系中的两个重要单位。在建筑工程、体育运动、纺织工业和室内设计中具有重要的实践价值，特别是在需要精确测量和标准化的专业场合。
+### 3. How to ensure the precision of yard to foot conversion?
+Use the standard conversion ratio (1 yard = 3 feet), employ high-precision calculation tools, and select appropriate precision levels according to specific engineering requirements to ensure conversion results meet construction safety and engineering quality requirements.
 
-### 2. 在建筑工程中如何应用这种换算？
-在建筑行业中，建筑图纸设计阶段常用码标注大型结构尺寸，而施工现场测量更习惯使用英尺。通过准确换算，建筑师和施工人员能够在设计和建造过程中实现尺寸参数的精确控制。
+### 4. What value does this conversion have in interior design?
+In interior design, room layout dimensions and overall space planning are often expressed in yards, while furniture placement and detailed measurements are calculated in feet. This conversion helps designers accurately understand spatial relationships, ensuring design accuracy and implementation feasibility.
 
-### 3. 如何确保码到英尺换算的精度？
-使用标准换算比例（1 yd = 3 ft），采用高精度计算工具，并根据具体应用场景的要求选择合适的精度等级，确保换算结果满足工程质量和制造标准要求。
+### 5. How is yard to foot conversion applied in the textile industry?
+In the textile industry, fabric production lengths and material requirements are often expressed in yards, while cutting measurements and detailed processing dimensions are calculated in feet. This conversion ensures the accuracy of textile production and promotes standardization of manufacturing processes.
 
-### 4. 在体育运动中这种换算有什么价值？
-在体育场地建设中，设计规范与实际施工可能使用不同单位。这种换算帮助体育设施建设者准确理解设计要求，确保体育场地符合国际竞赛标准和安全要求。
+### 6. How to apply this conversion in practical work?
+In construction and design-related work, use standard conversion formulas and professional calculation tools, establish complete measurement standards, and ensure accurate conversion and safe implementation from design planning to construction execution.
 
-### 5. 纺织工业中如何应用码到英尺换算？
-在纺织生产中，面料批量生产与精细加工可能使用不同单位。这种换算确保生产流程的标准化，促进纺织产品质量控制和生产效率提升。
-
-### 6. 如何在实际工作中应用这种换算？
-在英制单位相关工作中，使用标准换算公式和专业计算工具，建立完整的测量标准体系，确保从设计到施工的准确转换和质量控制。
-
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Length" :key="index">
     <n-button

@@ -4,19 +4,19 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
 
   - - link: /Area/SquareMeter-to-SquareMillimeter
-      linkText: 平方米到平方毫米
+      linkText: Square Meter to Square Millimeter
 head:
   - - meta
     - name: description
-      content: "面积单位换算指南，涵盖平方米 (m²) 到平方毫米 (mm²) 的详细换算公式与说明。"
+      content: "Area unit conversion guide covering detailed conversion formulas and explanations from square meters (m²) to square millimeters (mm²)."
   - - meta
     - name: keywords
-      content: "面积, 单位换算, 平方米, 平方毫米, m², mm², 平方米到平方毫米, 面积换算指南, 平方米换算平方毫米, 平方米到平方毫米, 平方毫米换算, 面积单位换算, 平方米转平方毫米, 平方毫米计算, 精密面积测量, 微小面积计算, 平方米符号, 平方毫米符号, 面积单位对照, 平方米换算表, 平方毫米换算公式, 面积转换工具, 平方米计算, 平方毫米计算器, 面积换算公式, 精密测量单位, 科学研究面积, 实验室面积测量, 平方米到平方毫米公式, 平方毫米面积计算, 面积单位转换, 微观面积测量, 精密制造单位, 平方米平方毫米对照表, 面积计算工具, 科学计量单位"
+      content: "area, unit conversion, square meter, square millimeter, m², mm², square meter to square millimeter, area conversion guide, square meter convert square millimeter, square meter to square millimeter, square millimeter conversion, area unit conversion, square meter to square millimeter, square millimeter calculation, precision area measurement, micro area calculation, square meter symbol, square millimeter symbol, area unit comparison, square meter conversion table, square millimeter conversion formula, area conversion tool, square meter calculation, square millimeter calculator, area conversion formula, precision measurement unit, scientific research area, laboratory area measurement, square meter to square millimeter formula, square millimeter area calculation, area unit conversion, microscopic area measurement, precision manufacturing unit, square meter square millimeter comparison table, area calculation tool, scientific measurement unit"
 ---
-# 平方米 (m²) 到 平方毫米 (mm²) 的换算
+# Square Meter (m²) to Square Millimeter (mm²) Conversion
 ---
 <script setup>
 import { onMounted, reactive, inject, ref } from 'vue'
@@ -24,41 +24,41 @@ import { NButton, NForm, NFormItem, NInput, NInputNumber, NSelect, NCard, useMes
 import { defineClientComponent } from 'vitepress'
 import { Area } from '../files';
 const seoKey = [
-  '平方米换算平方毫米',
-  '平方米到平方毫米',
-  '平方毫米换算',
-  '面积单位换算',
-  '平方米转平方毫米',
-  '平方毫米计算',
-  '精密测量单位',
-  '微小面积计算',
-  '平方米符号',
-  '平方毫米符号',
-  '面积单位对照',
-  '平方米换算表',
-  '平方毫米换算公式',
-  '面积转换工具',
-  '平方米计算',
-  '平方毫米计算器',
-  '面积换算公式',
-  '精密制造单位',
-  '建筑设计面积',
-  '科学研究面积',
-  '平方米到平方毫米公式',
-  '平方毫米面积计算',
-  '面积单位转换',
-  '工业生产单位',
-  '微观面积测量',
-  '平方米平方毫米对照表',
-  '面积计算工具',
-  '精密工程单位'
+  'square meter convert square millimeter',
+  'square meter to square millimeter',
+  'square millimeter conversion',
+  'area unit conversion',
+  'square meter to square millimeter',
+  'square millimeter calculation',
+  'precision measurement unit',
+  'micro area calculation',
+  'square meter symbol',
+  'square millimeter symbol',
+  'area unit comparison',
+  'square meter conversion table',
+  'square millimeter conversion formula',
+  'area conversion tool',
+  'square meter calculation',
+  'square millimeter calculator',
+  'area conversion formula',
+  'precision manufacturing unit',
+  'architectural design area',
+  'scientific research area',
+  'square meter to square millimeter formula',
+  'square millimeter area calculation',
+  'area unit conversion',
+  'industrial production unit',
+  'microscopic area measurement',
+  'square meter square millimeter comparison table',
+  'area calculation tool',
+  'precision engineering unit'
 ]
 const convert = inject('convert')
 
 const form = reactive({
   number: null,
   result: '',
-  title: '平方米 (m²) 到平方毫米 (mm²) 的换算',
+  title: 'Square Meter (m²) to Square Millimeter (mm²) Conversion',
 })
 
 const convertHandler = () => {
@@ -66,17 +66,17 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) * 1000000
     form.result = `${form.number}m² = ${convertedValue.toFixed(2)}mm²`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="平方米 (m²)">
-    <n-input-number v-model:value="form.number" placeholder="输入平方米" style="width: 100%" />
+  <n-form-item label="Square Meter (m²)">
+    <n-input-number v-model:value="form.number" placeholder="Enter square meters" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
@@ -97,38 +97,38 @@ const convertHandler = () => {
   </template>
 </n-card>
 
-## 公式
+## Formula
 
-从 **平方米 (m²)** 换算到 **平方毫米 (mm²)** 的公式为：
+The formula for converting from **square meters (m²)** to **square millimeters (mm²)** is:
 $$ mm² = m² \times 1000000 $$
 
-## 平方米到平方毫米换算指南
+## Square Meter to Square Millimeter Conversion Guide
 
-在日常生活和工业生产中，面积单位的换算是一个常见需求。本文专注于平方米 (m²) 到平方毫米 (mm²) 的换算，提供了详细的公式与实用示例。
+In daily life and industrial production, area unit conversion is a common requirement. This article focuses on the conversion from square meters (m²) to square millimeters (mm²), providing detailed formulas and practical examples.
 
-### 为什么需要 m² 到 mm² 的换算？
+### Why Do We Need m² to mm² Conversion?
 
-平方米和平方毫米是常见的面积单位，尤其在精密制造、建筑设计以及科学研究中尤为重要。通过精确的换算，可以确保测量的一致性和准确性。
+Square meters and square millimeters are common area units, especially important in precision manufacturing, architectural design, and scientific research. Through precise conversion, we can ensure measurement consistency and accuracy.
 
-### m² 到 mm² 的换算方法
+### m² to mm² Conversion Method
 
-从平方米到平方毫米的换算公式为：
+The conversion formula from square meters to square millimeters is:
 
-- **公式：** `mm² = m² × 1000000`
+- **Formula:** `mm² = m² × 1000000`
 
-### 实际应用示例
+### Practical Application Examples
 
-以下是一些常见的换算实例：
+Here are some common conversion examples:
 
 - 1 m² = 1000000 mm²
 - 5 m² = 5000000 mm²
 - 10 m² = 10000000 mm²
 
-### 总结
+### Summary
 
-掌握平方米到平方毫米的换算可以帮助您更好地理解和使用这些面积单位。希望本指南能为您提供有价值的参考。
+Mastering the conversion from square meters to square millimeters can help you better understand and use these area units. We hope this guide provides valuable reference for you.
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Area" :key="index">
     <n-button

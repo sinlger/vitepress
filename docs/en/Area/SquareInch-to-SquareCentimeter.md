@@ -4,26 +4,55 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
 
   - - link: /Area/SquareInch-to-SquareCentimeter
-      linkText: 平方英寸到平方厘米
+      linkText: Square Inch to Square Centimeter
 head:
   - - meta
     - name: description
-      content: "面积单位换算指南，涵盖平方英寸 (in²) 到平方厘米 (cm²) 的详细换算公式与说明。"
+      content: "Area unit conversion guide covering detailed conversion formulas and explanations from square inches (in²) to square centimeters (cm²)."
   - - meta
     - name: keywords
-      content: "面积, 单位换算, 平方英寸, 平方厘米, in², cm², 平方英寸到平方厘米, 面积换算指南, 平方英寸到平方厘米换算, in²到cm²换算, 平方英寸转平方厘米, 英寸平方到平方厘米, 平方英寸平方厘米换算器, in²转cm², 平方英寸换算平方厘米, 英寸平方转平方厘米, 平方英寸到平方厘米转换, in²平方厘米换算, 平方英寸平方厘米计算, 英寸平方平方厘米换算, 平方英寸转换平方厘米, in²到平方厘米, 平方英寸平方厘米转换器, 英寸平方到平方厘米换算, 平方英寸平方厘米换算公式, in²转换平方厘米, 平方英寸到平方厘米计算, 英寸平方转换平方厘米, 平方英寸平方厘米换算表, in²平方厘米转换, 平方英寸转平方厘米计算, 英寸平方平方厘米转换, 平方英寸到平方厘米换算工具, in²到平方厘米换算, 平方英寸平方厘米单位换算, 面积换算"
+      content: "area, unit conversion, square inches, square centimeter, in², cm², square inches to square centimeter, area conversion guide, square inches to cm² conversion, in² to cm² conversion, square inches to square centimeter, inch square to square centimeter, square inches square centimeter converter, in² to cm², square inches convert square centimeter, inch square to square centimeter, square inches to square centimeter conversion, in² square centimeter conversion, square inches square centimeter calculation, inch square square centimeter conversion, square inches convert square centimeter, in² to square centimeter, square inches square centimeter converter, inch square to square centimeter conversion, square inches square centimeter conversion formula, in² convert square centimeter, square inches to square centimeter calculation, inch square convert square centimeter, square inches square centimeter conversion table, in² square centimeter conversion, square inches to square centimeter calculation, inch square square centimeter conversion, square inches to square centimeter conversion tool, in² to square centimeter conversion, square inches square centimeter unit conversion, area conversion"
 ---
-# 平方英寸 (in²) 到 平方厘米 (cm²) 的换算
+# Square Inches (in²) to Square Centimeter (cm²) Conversion
 ---
 <script setup>
 import { onMounted, reactive, inject, ref } from 'vue'
 import { NButton, NForm, NFormItem, NInput, NInputNumber, NSelect, NCard, useMessage,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
 import { Area } from '../files';
-
+const seoKey = [
+  'square inches to square centimeter conversion',
+  'in² to cm² conversion',
+  'square inches to square centimeter',
+  'inch square to square centimeter',
+  'square inches square centimeter converter',
+  'in² to cm²',
+  'square inches convert square centimeter',
+  'inch square to square centimeter',
+  'square inches to square centimeter conversion',
+  'in² square centimeter conversion',
+  'square inches square centimeter calculation',
+  'inch square square centimeter conversion',
+  'square inches convert square centimeter',
+  'in² to square centimeter',
+  'square inches square centimeter converter',
+  'inch square to square centimeter conversion',
+  'square inches square centimeter conversion formula',
+  'in² convert square centimeter',
+  'square inches to square centimeter calculation',
+  'inch square convert square centimeter',
+  'square inches square centimeter conversion table',
+  'in² square centimeter conversion',
+  'square inches to square centimeter calculation',
+  'inch square square centimeter conversion',
+  'square inches to square centimeter conversion tool',
+  'in² to square centimeter conversion',
+  'square inches square centimeter unit conversion',
+  'area conversion'
+]
 const convert = inject('convert')
 
 const form = reactive({
@@ -34,60 +63,71 @@ const form = reactive({
 const convertHandler = () => {
   if (form.number !== null && !isNaN(form.number)) {
     const convertedValue = parseFloat(form.number) * 6.4516
-    form.result = `${form.number}in² = ${convertedValue.toFixed(2)}cm²`
+    form.result = `${form.number}in² = ${convertedValue.toFixed(6)}cm²`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="平方英寸 (in²)">
-    <n-input-number v-model:value="form.number" placeholder="输入平方英寸" style="width: 100%" />
+  <n-form-item label="Square Inches (in²)">
+    <n-input-number v-model:value="form.number" placeholder="Enter square inches" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
-<n-card  embedded :bordered="false" hoverable>
+<n-card  
+  :title="form.title"
+  :segmented="{
+    content: true,
+    footer: 'soft',
+  }"
+>
   <div  style="text-align:center;font-size:20px;">
     <strong>{{form.result}}</strong>
   </div>
+    <template #footer>
+    <div>
+      <span v-for="item of seoKey">{{item}}, </span>
+    </div>
+  </template>
 </n-card>
 
-## 公式
+## Formula
 
-从 **平方英寸 (in²)** 换算到 **平方厘米 (cm²)** 的公式为：
+The formula for converting from **Square Inches (in²)** to **Square Centimeters (cm²)** is:
 $$ cm² = in² \times 6.4516 $$
 
-## 平方英寸到平方厘米换算指南
+## Square Inches to Square Centimeter Conversion Guide
 
-在工业制造和国际贸易中，面积单位的换算是一个常见需求。本文专注于平方英寸 (in²) 到平方厘米 (cm²) 的换算，提供了详细的公式与实用示例。
+In engineering design and precision measurement, area unit conversion is a common requirement. This article focuses on the conversion from square inches (in²) to square centimeters (cm²), providing detailed formulas and practical examples.
 
-### 为什么需要 in² 到 cm² 的换算？
+### Why Do We Need in² to cm² Conversion?
 
-平方英寸和平方厘米是常见的面积单位，尤其在电子产品、印刷行业以及国际工程中尤为重要。通过精确的换算，可以确保测量的一致性和准确性。
+Square inches and square centimeters are common area units, especially important in engineering, manufacturing, and precision measurement. Through precise conversion, we can ensure measurement consistency and accuracy.
 
-### in² 到 cm² 的换算方法
+### in² to cm² Conversion Method
 
-从平方英寸到平方厘米的换算公式为：
+The conversion formula from square inches to square centimeters is:
 
-- **公式：** `cm² = in² × 6.4516`
+- **Formula:** `cm² = in² × 6.4516`
 
-### 实际应用示例
+### Practical Application Examples
 
-以下是一些常见的换算实例：
+Here are some common conversion examples:
 
 - 1 in² = 6.4516 cm²
 - 5 in² = 32.258 cm²
 - 10 in² = 64.516 cm²
 
-### 总结
+### Summary
 
-掌握平方英寸到平方厘米的换算可以帮助您更好地理解和使用这些面积单位。希望本指南能为您提供有价值的参考。
+Mastering the conversion from square inches to square centimeters can help you better understand and use these area units. We hope this guide provides valuable reference for you.
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Area" :key="index">
     <n-button

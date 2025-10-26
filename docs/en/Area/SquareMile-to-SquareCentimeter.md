@@ -4,19 +4,19 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
 
   - - link: /Area/SquareMile-to-SquareCentimeter
-      linkText: 平方英里到平方厘米
+      linkText: Square Mile to Square Centimeter
 head:
   - - meta
     - name: description
-      content: "面积单位换算指南，涵盖平方英里 (mi²) 到平方厘米 (cm²) 的详细换算公式与说明。"
+      content: "Area unit conversion guide covering detailed conversion formulas and explanations from square miles (mi²) to square centimeters (cm²)."
   - - meta
     - name: keywords
-      content: "面积, 单位换算, 平方英里, 平方厘米, mi², cm², 平方英里到平方厘米, 面积换算指南, 平方英里换算平方厘米, 平方英里到平方厘米, 平方厘米换算, 平方英里转平方厘米, 平方厘米计算, 大面积换算, 精密面积测量, 平方英里符号, 平方厘米符号, 面积单位对照, 平方英里换算表, 平方厘米换算公式, 面积转换工具, 平方英里计算, 平方厘米计算器, 面积换算公式, 地理测量单位, 土地规划面积, 大规模面积换算, 平方英里到平方厘米公式, 平方厘米面积计算, 面积单位转换, 地图测量单位, 建筑设计面积, 平方英里平方厘米对照表, 面积计算工具, 国际面积单位"
+      content: "area, unit conversion, square mile, square centimeter, mi², cm², square mile to square centimeter, area conversion guide, square mile convert square centimeter, square mile to square centimeter, square centimeter conversion, square mile to square centimeter, square centimeter calculation, large area conversion, precision area measurement, square mile symbol, square centimeter symbol, area unit comparison, square mile conversion table, square centimeter conversion formula, area conversion tool, square mile calculation, square centimeter calculator, area conversion formula, geographical measurement unit, land planning area, large scale area conversion, square mile to square centimeter formula, square centimeter area calculation, area unit conversion, map measurement unit, architectural design area, square mile square centimeter comparison table, area calculation tool, international area unit"
 ---
-# 平方英里 (mi²) 到 平方厘米 (cm²) 的换算
+# Square Mile (mi²) to Square Centimeter (cm²) Conversion
 ---
 <script setup>
 import { onMounted, reactive, inject, ref } from 'vue'
@@ -36,17 +36,17 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) * 25899881103.36
     form.result = `${form.number}mi² = ${convertedValue.toFixed(2)}cm²`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="平方英里 (mi²)">
-    <n-input-number v-model:value="form.number" placeholder="输入平方英里" style="width: 100%" />
+  <n-form-item label="Square Mile (mi²)">
+    <n-input-number v-model:value="form.number" placeholder="Enter square miles" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
@@ -56,40 +56,38 @@ const convertHandler = () => {
   </div>
 </n-card>
 
-## 公式
+## Formula
 
-从 **平方英里 (mi²)** 换算到 **平方厘米 (cm²)** 的公式为：
+The formula for converting from **square miles (mi²)** to **square centimeters (cm²)** is:
 $$ cm² = mi² \times 25899881103.36 $$
 
-## 平方英里到平方厘米换算指南
+## Square Mile to Square Centimeter Conversion Guide
 
-在土地测量和建筑设计中，面积单位的换算是一个常见需求。本文专注于平方英里 (mi²) 到平方厘米 (cm²) 的换算，提供了详细的公式与实用示例。
+In geographical measurement and large-scale area calculations, area unit conversion is a common requirement. This article focuses on the conversion from square miles (mi²) to square centimeters (cm²), providing detailed formulas and practical examples.
 
-### 为什么需要 mi² 到 cm² 的换算？
+### Why Do We Need mi² to cm² Conversion?
 
-平方英里和平方厘米是常见的面积单位，尤其在农业、土地规划以及大规模地理测量中尤为重要。通过精确的换算，可以确保测量的一致性和准确性。
+Square miles and square centimeters are area units used in different scales, especially important in geographical research, map making, and architectural design. Through precise conversion, we can ensure measurement consistency and accuracy.
 
-### mi² 到 cm² 的换算方法
+### mi² to cm² Conversion Method
 
-从平方英里到平方厘米的换算公式为：
+The conversion formula from square miles to square centimeters is:
 
-- **公式：** `cm² = mi² × 25899881103.36`
+- **Formula:** `cm² = mi² × 25899881103.36`
 
-### 实际应用示例
+### Practical Application Examples
 
-以下是一些常见的换算实例：
+Here are some common conversion examples:
 
-- 1 mi² = 25,899,881,103.36 cm²
-- 5 mi² = 129,499,405,516.8 cm²
-ddd
-- 10 mi² = 258,998,811,033.6 cm²
-ddd
+- 1 mi² = 25899881103.36 cm²
+- 0.1 mi² = 2589988110.336 cm²
+- 0.01 mi² = 258998811.0336 cm²
 
-### 总结
+### Summary
 
-掌握平方英里到平方厘米的换算可以帮助您更好地理解和使用这些面积单位。希望本指南能为您提供有价值的参考。
+Mastering the conversion from square miles to square centimeters can help you better understand and use these area units. We hope this guide provides valuable reference for you.
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Area" :key="index">
     <n-button

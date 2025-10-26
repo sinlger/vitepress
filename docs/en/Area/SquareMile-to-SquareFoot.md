@@ -4,19 +4,19 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
 
   - - link: /Area/SquareMile-to-SquareFoot
-      linkText: 平方英里到平方英尺
+      linkText: Square Mile to Square Foot
 head:
   - - meta
     - name: description
-      content: "面积单位换算指南，涵盖平方英里 (mi²) 到平方英尺 (ft²) 的详细换算公式与说明。"
+      content: "Area unit conversion guide covering detailed conversion formulas and explanations from square miles (mi²) to square feet (ft²)."
   - - meta
     - name: keywords
-      content: "面积, 单位换算, 平方英里, 平方英尺, mi², ft², 平方英里到平方英尺, 面积换算指南, 平方英里换算平方英尺, 平方英里到平方英尺, 平方英尺换算, 平方英里转平方英尺, 平方英尺计算, 大面积换算, 建筑面积测量, 平方英里符号, 平方英尺符号, 面积单位对照, 平方英里换算表, 平方英尺换算公式, 面积转换工具, 平方英里计算, 平方英尺计算器, 面积换算公式, 建筑测量单位, 土地规划面积, 大规模土地换算, 平方英里到平方英尺公式, 平方英尺面积计算, 面积单位转换, 房地产测量单位, 建筑工程面积, 平方英里平方英尺对照表, 面积计算工具, 建筑设计单位"
+      content: "area, unit conversion, square mile, square foot, mi², ft², square mile to square foot, area conversion guide, square mile convert square foot, square mile to square foot, square foot conversion, square mile to square foot, square foot calculation, large area conversion, land survey area, square mile symbol, square foot symbol, area unit comparison, square mile conversion table, square foot conversion formula, area conversion tool, square mile calculation, square foot calculator, area conversion formula, real estate measurement unit, land planning area, large scale area conversion, square mile to square foot formula, square foot area calculation, area unit conversion, construction measurement unit, property area unit, square mile square foot comparison table, area calculation tool, imperial area unit"
 ---
-# 平方英里 (mi²) 到 平方英尺 (ft²) 的换算
+# Square Mile (mi²) to Square Foot (ft²) Conversion
 ---
 <script setup>
 import { onMounted, reactive, inject, ref } from 'vue'
@@ -36,17 +36,17 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) * 27878400
     form.result = `${form.number}mi² = ${convertedValue.toFixed(2)}ft²`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="平方英里 (mi²)">
-    <n-input-number v-model:value="form.number" placeholder="输入平方英里" style="width: 100%" />
+  <n-form-item label="Square Mile (mi²)">
+    <n-input-number v-model:value="form.number" placeholder="Enter square miles" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
@@ -56,40 +56,38 @@ const convertHandler = () => {
   </div>
 </n-card>
 
-## 公式
+## Formula
 
-从 **平方英里 (mi²)** 换算到 **平方英尺 (ft²)** 的公式为：
+The formula for converting from **square miles (mi²)** to **square feet (ft²)** is:
 $$ ft² = mi² \times 27878400 $$
 
-## 平方英里到平方英尺换算指南
+## Square Mile to Square Foot Conversion Guide
 
-在土地测量和建筑规划中，面积单位的换算是一个常见需求。本文专注于平方英里 (mi²) 到平方英尺 (ft²) 的换算，提供了详细的公式与实用示例。
+In land surveying and real estate, area unit conversion is a common requirement. This article focuses on the conversion from square miles (mi²) to square feet (ft²), providing detailed formulas and practical examples.
 
-### 为什么需要 mi² 到 ft² 的换算？
+### Why Do We Need mi² to ft² Conversion?
 
-平方英里和平方英尺是常见的面积单位，尤其在农业、房地产以及大规模土地测量中尤为重要。通过精确的换算，可以确保测量的一致性和准确性。
+Square miles and square feet are common area units, especially important in real estate, construction, and large-scale land surveying. Through precise conversion, we can ensure measurement consistency and accuracy.
 
-### mi² 到 ft² 的换算方法
+### mi² to ft² Conversion Method
 
-从平方英里到平方英尺的换算公式为：
+The conversion formula from square miles to square feet is:
 
-- **公式：** `ft² = mi² × 27878400`
+- **Formula:** `ft² = mi² × 27878400`
 
-### 实际应用示例
+### Practical Application Examples
 
-以下是一些常见的换算实例：
+Here are some common conversion examples:
 
-- 1 mi² = 27,878,400 ft²
-- 5 mi² = 139,392,000 ft²
-ddd
-- 10 mi² = 278,784,000 ft²
-ddd
+- 1 mi² = 27878400 ft²
+- 0.1 mi² = 2787840 ft²
+- 0.01 mi² = 278784 ft²
 
-### 总结
+### Summary
 
-掌握平方英里到平方英尺的换算可以帮助您更好地理解和使用这些面积单位。希望本指南能为您提供有价值的参考。
+Mastering the conversion from square miles to square feet can help you better understand and use these area units. We hope this guide provides valuable reference for you.
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Area" :key="index">
     <n-button

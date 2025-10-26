@@ -4,11 +4,11 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Length/index
-      linkText: 长度换算
+      linkText: Length Conversion
   - - link: /Length/Millimeter-to-Yard
-      linkText: 毫米到码
+      linkText: Millimeter to Yard
 head:
   - - meta
     - name: description

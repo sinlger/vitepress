@@ -1,115 +1,100 @@
 ---
-sidebar: false
-aside: false
-lastUpdated: false
-breadcrumb:
-  - - link: /
-      linkText: 首页
-
-  - - link: /Area/Hectare-to-SquareKilometer
-      linkText: 公顷到平方千米
-head:
-  - - meta
-    - name: description
-      content: "面积单位换算指南，涵盖公顷 (ha) 到平方千米 (km²) 的详细换算公式与说明。"
-  - - meta
-    - name: keywords
-      content: "面积, 单位换算, 公顷, 平方千米, ha, km², 公顷到平方千米, 面积换算指南, 公顷换算平方千米, 公顷到平方千米, 平方千米换算, 面积单位换算, 公顷转平方千米, 平方千米计算, 大面积土地测量, 农业土地面积, 公顷符号, 平方千米符号, 面积单位对照, 公顷换算表, 平方千米换算公式, 面积转换工具, 公顷计算, 平方千米计算器, 面积换算公式, 国际测量单位, 农场面积计算, 地理面积测量, 公顷到平方千米公式, 平方千米面积计算, 面积单位转换, 国际土地单位, 农业规划面积, 公顷平方千米对照表, 面积计算工具, 国际农业单位"
+title: "Hectare to Square Kilometer Converter - Accurate Area Unit Conversion Tool"
+description: "Professional hectare to square kilometer converter. Quickly convert hectares to square kilometers with precise calculations. Includes conversion formula, practical examples, and usage guide."
+keywords: ["hectare to square kilometer", "hectare converter", "square kilometer converter", "area conversion", "land area calculator", "hectare calculation", "square kilometer calculation", "area unit conversion"]
 ---
-# 公顷 (ha) 到 平方千米 (km²) 的换算
----
-<script setup>
-import { onMounted, reactive, inject, ref } from 'vue'
-import { NButton, NForm, NFormItem, NInput, NInputNumber, NSelect, NCard, useMessage,NGrid ,NGi } from 'naive-ui'
-import { defineClientComponent } from 'vitepress'
-import { Area } from '../files';
-const seoKey = ['公顷平方千米','公顷和平方千米的换算','一公顷等于多少平方千米','公顷转平方千米','hectares km²','公顷换算','平方千米换算','面积换算','单位换算','公顷到平方千米','ha km²','公顷平方千米转换','面积单位换算','公顷平方千米计算器','公顷平方千米对照表','长度换算','单位转换','公顷平方千米换算器','平方千米长度','公顷长度','面积计算','单位换算公式','公顷平方千米计算','面积换算器','平方千米单位换算','公顷单位换算','面积单位转换表','公顷平方千米转换表']
-const convert = inject('convert')
 
-const form = reactive({
-  number: null,
-  result: '',
-  title: '公顷 (ha) 到 平方千米 (km²) 的换算'
-})
+# Hectare to Square Kilometer Converter
 
-const convertHandler = () => {
-  if (form.number !== null && !isNaN(form.number)) {
-    const convertedValue = parseFloat(form.number) / 100
-    form.result = `${form.number}ha = ${convertedValue.toFixed(4)}km²`
-  } else {
-    form.result = '请输入有效的数值。'
-  }
-}
-</script>
+<Breadcrumb>
+  <BreadcrumbItem linkText="Home" link="/" />
+  <BreadcrumbItem linkText="Area Conversion" link="/en/Area/" />
+  <BreadcrumbItem content="Hectare to Square Kilometer" />
+</Breadcrumb>
 
-<n-form size="large" :model="form">
-  <n-form-item label="公顷 (ha)">
-    <n-input-number v-model:value="form.number" placeholder="输入公顷" style="width: 100%" />
-  </n-form-item>
-  <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
-  </n-form-item>
-</n-form>
+## Hectare to Square Kilometer Conversion Tool
 
-<n-card  
-  :title="form.title"
-  :segmented="{
-    content: true,
-    footer: 'soft',
+<UnitConverter
+  :seoKey="['hectare to square kilometer', 'hectare converter', 'square kilometer converter', 'area conversion', 'land area calculator', 'hectare calculation', 'square kilometer calculation', 'area unit conversion', 'hectare to sq km', 'ha to square kilometer']"
+  title="Hectare to Square Kilometer Converter"
+  :formItems="[
+    {
+      label: 'Hectares',
+      placeholder: 'Enter hectare value',
+      key: 'hectare',
+      unitOptions: [
+        { label: 'Hectare (ha)', value: 'hectare' }
+      ]
+    },
+    {
+      label: 'Square Kilometers',
+      placeholder: 'Conversion result',
+      key: 'squarekilometer',
+      unitOptions: [
+        { label: 'Square Kilometer (sq km)', value: 'squarekilometer' }
+      ]
+    }
+  ]"
+  :resultText="{
+    hectare: 'hectares equals',
+    squarekilometer: 'square kilometers'
   }"
->
-  <div  style="text-align:center;font-size:20px;">
-    <strong>{{form.result}}</strong>
-  </div>
-    <template #footer>
-    <div>
-      <span v-for="item of seoKey">{{item}}，</span>
-    </div>
-  </template>
-</n-card>
+  buttonText="Convert"
+/>
 
-## 公式
+## Conversion Formula
 
-从 **公顷 (ha)** 换算到 **平方千米 (km²)** 的公式为：
-$$ km² = ha \div 100 $$
+**1 hectare = 0.01 square kilometers**
 
-## 公顷到平方千米换算指南
+The conversion formula is:
+- Square kilometers = Hectares × 0.01
+- Hectares = Square kilometers × 100
 
-在地理测量和城市规划中，面积单位的换算是一个常见需求。本文专注于公顷 (ha) 到平方千米 (km²) 的换算，提供了详细的公式与实用示例。
+## Conversion Guide
 
-### 为什么需要 ha 到 km² 的换算？
+### What is a Hectare?
+A hectare is a metric unit of area measurement, primarily used for measuring land areas. One hectare equals 10,000 square meters or 2.471 acres. It's commonly used in agriculture, forestry, and land planning.
 
-公顷和平方千米是常见的面积单位，尤其在土地规划、农业以及大规模地理测量中尤为重要。通过精确的换算，可以确保测量的一致性和准确性。
+### What is a Square Kilometer?
+A square kilometer is a metric unit of area measurement, equal to a square with sides of one kilometer each. It's used for measuring large areas such as cities, countries, forests, and other geographical regions.
 
-### ha 到 km² 的换算方法
+### Conversion Steps
+1. Identify the hectare value you want to convert
+2. Multiply the hectare value by 0.01 (or divide by 100)
+3. The result is the equivalent area in square kilometers
 
-从公顷到平方千米的换算公式为：
+## Practical Application Examples
 
-- **公式：** `km² = ha ÷ 100`
+### Example 1: Agricultural Planning
+A large farm covering 500 hectares:
+- 500 hectares × 0.01 = 5 square kilometers
+- This helps in regional agricultural planning and land management
 
-### 实际应用示例
+### Example 2: Forest Management
+A protected forest area of 2,500 hectares:
+- 2,500 hectares × 0.01 = 25 square kilometers
+- Useful for environmental conservation and forest management planning
 
-以下是一些常见的换算实例：
+### Example 3: Urban Development
+A city development project spanning 1,200 hectares:
+- 1,200 hectares × 0.01 = 12 square kilometers
+- Important for urban planning and infrastructure development
 
-- 1 ha = 0.01 km²
-ddd
-- 100 ha = 1 km²
-- 500 ha = 5 km²
+## Summary
 
-### 总结
+The hectare to square kilometer converter is essential for:
+- **Geographic Planning**: Converting between common metric area units
+- **Environmental Studies**: Measuring large natural areas and ecosystems
+- **Urban Planning**: City and regional development projects
+- **Agriculture**: Large-scale farming and land management
+- **Government**: Land administration and policy planning
 
-掌握公顷到平方千米的换算可以帮助您更好地理解和使用这些面积单位。希望本指南能为您提供有价值的参考。
+This tool provides accurate conversions between hectares and square kilometers, making it invaluable for professionals in geography, environmental science, urban planning, and agriculture.
 
-## 相关连接
-<n-grid x-gap="12" :cols="2">
-  <n-gi v-for="(file, index) in Area" :key="index">
-    <n-button
-      text
-      tag="a"
-      :href="file.path"
-      type="info"
-    >
-      {{file.name}}
-    </n-button>
-  </n-gi>
-</n-grid>
+## Related Conversions
+
+- [Hectare to Acre](/en/Area/Hectare-to-Acre)
+- [Hectare to Square Meter](/en/Area/Hectare-to-SquareMeter)
+- [Hectare to Square Mile](/en/Area/Hectare-to-SquareMile)
+- [Hectare to Square Foot](/en/Area/Hectare-to-SquareFoot)
+- [Square Kilometer to Hectare](/en/Area/SquareKilometer-to-Hectare)
