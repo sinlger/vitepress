@@ -4,156 +4,117 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Length/index
-      linkText: 长度换算
+      linkText: Length Conversion
   - - link: /Length/Foot-to-Mile
-      linkText: 英尺到英里
+      linkText: Foot to Mile
 head:
   - - meta
     - name: description
-      content: "英尺到英里换算器 - 专业的长度单位转换工具。支持英尺(ft)到英里(mi)的精确换算，提供详细的换算公式和实际应用案例。适用于英制单位转换、距离测量等场景。"
+      content: Foot to Mile Converter — Convert foot (ft) to mile (mi) with precise formulas and tables. Suitable for mapping, navigation, and engineering measurements.
   - - meta
     - name: keywords
-      content: "单位转换器,单位换算,长度单位转换器,长度单位转换,尺寸换算,长度单位换算,长度单位换算表,incho,foot long,imperial unit,one foot,feet foot,一英尺是多少厘米,英尺的英文,英寸英尺,一尺等于多少平方米,英尺 英寸,一平方英尺等于多少平方米,五英尺,英尺英寸,英尺单位,ft单位,一尺等于多少寸,一米等于多少英尺,一寸是多长,英寸和英尺,六英尺,一英尺等于多少英寸,一寸多长,feet是什么单位,英尺换算厘米,英制单位,英尺和英寸,一英尺等于多少米,英尺和厘米的换算,ft是什么单位,一英尺等于多少厘米,一英寸,英尺和米的换算,英尺换算"
+      content: foot to mile, ft to mi, length converter, unit conversion, imperial units, navigation, mapping, measurement conversion
 ---
-# 英尺 (ft) 到 英里 (mi) 的换算
 
-英尺到英里换算是英制长度单位系统中的重要转换。英尺(foot)是英制基本长度单位，英里(mile)是英制长距离测量单位。本工具提供精确的英尺到英里换算功能。
+# Foot (ft) to Mile (mi) Conversion
 
----
+Easily convert feet to miles. 1 mile = 5280 feet. This page provides formulas, tables, and practical scenarios.
+
 <script setup>
-import { onMounted, reactive, inject, ref } from 'vue'
-import { NButton, NForm, NFormItem, NInput, NInputNumber, NSelect, NCard, useMessage,NGrid ,NGi } from 'naive-ui'
-import { defineClientComponent } from 'vitepress'
-import { Length } from '../files';
-const seoKey = ['单位转换器','单位换算','长度单位转换器','长度单位转换','尺寸换算','长度单位换算','长度单位换算表','incho','foot long','imperial unit','one foot','feet foot','一英尺是多少厘米','英尺的英文','英寸英尺','一尺等于多少平方米','英尺 英寸','一平方英尺等于多少平方米','五英尺','英尺英寸','英尺单位','ft单位','一尺等于多少寸','一米等于多少英尺','一寸是多长','英寸和英尺','六英尺','一英尺等于多少英寸','一寸多长','feet是什么单位','英尺换算厘米','英制单位','英尺和英寸','一英尺等于多少米','英尺和厘米的换算','ft是什么单位','一英尺等于多少厘米','一英寸','英尺和米的换算','英尺换算']
-const convert = inject('convert')
-
-const form = reactive({
-  number: null,
-  result: '',
-  title: '英尺 (ft) 到 英里 (mi) 的换算',
-})
-
+import { reactive } from 'vue'
+import { NCard, NButton, NForm, NFormItem, NInputNumber, NGrid, NGi, NTag } from 'naive-ui'
+import { Length } from '../files'
+const seoKey = [
+  'Unit converter','Unit conversion','Foot to mile','imperial units','navigation','mapping','measurement conversion','engineering'
+]
+const form = reactive({ title: 'Foot to Mile Conversion', value: 0, result: 0 })
 const convertHandler = () => {
-  if (form.number !== null && !isNaN(form.number)) {
-    const convertedValue = parseFloat(form.number) * 0.00018939
-    form.result = `${form.number}ft = ${convertedValue.toFixed(6)}mi`
-  } else {
-    form.result = '请输入有效的数值。'
-  }
+  if (!form.value) return (form.result = 'Please enter a valid number.')
+  form.result = `${form.value} ft = ${(form.value / 5280).toFixed(6)} mi`
 }
 </script>
 
-<n-form size="large" :model="form">
-  <n-form-item label="英尺 (ft)">
-    <n-input-number v-model:value="form.number" placeholder="输入英尺" style="width: 100%" />
-  </n-form-item>
-  <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
-  </n-form-item>
-</n-form>
+<n-grid cols="1 s:1 m:1 l:1 xl:2 2xl:2" x-gap="40">
+  <n-gi>
+    <n-card :hoverable="true" :bordered="false" size="huge" :title="form.title">
+      <n-form label-placement="left" label-width="auto" require-mark-placement="right-hanging" :style="{ maxWidth: '640px' }">
+        <n-form-item label="Foot (ft)">
+          <n-input-number v-model:value="form.value" clearable placeholder="Enter feet" />
+        </n-form-item>
+        <n-form-item>
+          <n-button type="primary" @click="convertHandler">Convert</n-button>
+        </n-form-item>
+        <n-form-item label="Result">
+          <n-tag type="success">{{ form.result }}</n-tag>
+        </n-form-item>
+      </n-form>
+      <template #footer>
+        <div style="display: inline-block">
+          SEO: Foot to mile keywords —
+          <span v-for="(item, index) in seoKey" :key="index">{{ item }}, </span>
+        </div>
+      </template>
+    </n-card>
+  </n-gi>
+  <n-gi>
+    <n-grid cols="1 s:1 m:1 l:1 xl:2 2xl:2" x-gap="40">
+      <n-gi>
+        <n-card :bordered="false" :hoverable="true" title="Common Conversion Formulas">
+          <p>1 mi = 5280 ft</p>
+          <p>1 ft = 0.000189394 mi</p>
+          <p>Related conversions: foot to fathom, foot to nautical mile, foot to meter</p>
+        </n-card>
+      </n-gi>
+      <n-gi>
+        <n-card :bordered="false" :hoverable="true" title="Basic Conversion Table">
+          <p>1 ft = 0.000189 mi</p>
+          <p>5280 ft = 1 mi</p>
+          <p>10560 ft = 2 mi</p>
+          <p>26400 ft = 5 mi</p>
+        </n-card>
+      </n-gi>
+      <n-gi>
+        <n-card :bordered="false" :hoverable="true" title="Practical Applications">
+          <p>
+            Foot is widely used in architecture and engineering, while mile is used in navigation and mapping for long-distance measurement. This conversion helps unify units across disciplines.
+          </p>
+          <p>
+            • Navigation: Convert route distance (ft) to miles for map planning.
+          </p>
+          <p>
+            • Civil engineering: Convert feet in drawings to miles for large-scale projects.
+          </p>
+          <p>
+            • Sports: Convert track or hiking distances from feet to miles.
+          </p>
+        </n-card>
+      </n-gi>
+      <n-gi>
+        <n-card :bordered="false" :hoverable="true" title="Conversion Formula">
+          <p>mi = ft ÷ 5280</p>
+          <p>Example: 10560 ft = 10560 ÷ 5280 = 2 mi</p>
+        </n-card>
+      </n-gi>
+      <n-gi>
+        <n-card :hoverable="true" :bordered="false" title="Frequently Asked Questions">
+          <p>Q: What is a mile?</p>
+          <p>A: An imperial unit commonly used for long-distance measurement. 1 mile ≈ 1.609344 km.</p>
+          <p>Q: How to convert ft to mi?</p>
+          <p>A: mi = ft ÷ 5280, or ft × 0.000189394.</p>
+        </n-card>
+      </n-gi>
+    </n-grid>
+  </n-gi>
+</n-grid>
 
-<n-card 
-  :title="form.title"
-  :segmented="{
-    content: true,
-    footer: 'soft',
-  }"
->
-  <div  style="text-align:center;font-size:20px;">
-    <strong>{{form.result}}</strong>
-  </div>
-  <template #footer>
-    <div>
-      <span v-for="item of seoKey">{{item}}，</span>
-    </div>
-  </template>
-</n-card>
-
-## 常用换算公式
-
-### 基本换算关系
-- 1 英尺 = 0.00018939 英里
-- 1 英里 = 5280 英尺
-- 1 英尺 = 12 英寸 = 0.3048 米
-- 1 英里 = 5280 英尺 = 1.609344 千米
-
-### 长度单位换算表
-
-| 英尺 (ft) | 英里 (mi) | 英寸 (inch) | 米 (m) | 千米 (km) |
-|-----------|-----------|-------------|--------|-----------|
-| 1 | 0.000189 | 12 | 0.3048 | 0.0003048 |
-| 528 | 0.1000 | 6336 | 160.9344 | 0.1609 |
-| 1056 | 0.2000 | 12672 | 321.8688 | 0.3219 |
-| 2640 | 0.5000 | 31680 | 804.672 | 0.8047 |
-| 5280 | 1.0000 | 63360 | 1609.344 | 1.6093 |
-
-## 实际应用场景
-
-英尺到英里的换算在多个领域中具有重要意义：
-
-### 建筑与工程
-- **建筑设计**：建筑物高度、房间尺寸用英尺，项目总长度可能用英里
-- **道路工程**：路面宽度用英尺，道路总长度用英里
-- **桥梁工程**：桥梁跨度用英尺，连接距离用英里
-
-### 交通运输
-- **航空业**：飞机尺寸用英尺，航行距离用英里
-- **铁路运输**：车厢长度用英尺，线路总长用英里
-- **公路运输**：车辆尺寸用英尺，运输距离用英里
-
-### 体育与娱乐
-- **田径运动**：跑道宽度用英尺，马拉松距离用英里
-- **高尔夫球场**：球洞长度用英尺，球场总长用英里
-- **赛车运动**：赛道宽度用英尺，赛程距离用英里
-
-### 房地产与土地测量
-- **房产测量**：房屋尺寸用英尺，地块距离用英里
-- **土地规划**：建筑间距用英尺，规划范围用英里
-- **农业用地**：田地宽度用英尺，农场总面积涉及英里计算
-
-## 常见问题解答
-
-### 1. 英尺和英里有什么区别？
-英尺(foot)是英制长度的基本单位，主要用于较短距离的测量；英里(mile)是英制长距离单位，1英里等于5280英尺。英里主要用于测量较长的距离，如道路长度、航行距离等。
-
-### 2. 为什么1英里等于5280英尺？
-这个换算关系源于古罗马时期，1英里(mile)来自拉丁语"mille passus"，意为"一千步"。经过历史演变，最终确定为5280英尺，这个标准在1959年被国际确认。
-
-### 3. 英尺到英里的换算公式是什么？
-英尺到英里的换算公式为：英里 = 英尺 ÷ 5280，或者英里 = 英尺 × 0.00018939。反之，英尺 = 英里 × 5280。
-
-### 4. 在什么情况下需要进行英尺到英里的换算？
-主要在交通运输、建筑工程、体育运动、房地产测量等领域需要此类换算。当涉及长距离测量但需要精确到英尺级别时经常用到。
-
-### 5. 英制单位在现代还有使用价值吗？
-虽然国际单位制推广米制，但英制单位在美国、英国等国家仍广泛使用。特别是在航空、建筑、体育等领域，英制单位仍是重要的测量标准。
-
-### 6. 如何快速估算英尺到英里的换算？
-可以记住1英里≈5000英尺作为快速估算。精确值是5280英尺，但5000这个近似值在日常估算中很实用。
-
-## 公式
-
-从 **英尺 (ft)** 换算到 **英里 (mi)** 的公式为：
-$$ mi = ft \times 0.00018939 $$
-
-### 示例
-- 5280ft = 1.0000mi
-- 2640ft = 0.5000mi
-- 528ft = 0.1000mi
-
-## 相关连接
-<n-grid x-gap="12" :cols="2">
-  <n-gi v-for="(file, index) in Length" :key="index">
-    <n-button
-      text
-      tag="a"
-      :href="file.path"
-      type="info"
-    >
-      {{file.name}}
-    </n-button>
+<n-grid cols="1 200:2 600:3 800:4 1200:5" x-gap="20" y-gap="20">
+  <n-gi v-for="(item, index) in Length" :key="index">
+    <n-card :title="item.title" :bordered="false" :hoverable="true">
+      <ul style="padding-left: 20px">
+        <li v-for="(list, key) in item.list" :key="key"><a :href="list.link">{{ list.title }}</a></li>
+      </ul>
+    </n-card>
   </n-gi>
 </n-grid>

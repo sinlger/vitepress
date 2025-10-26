@@ -4,148 +4,121 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Length/index
-      linkText: 长度换算
+      linkText: Length Conversion
   - - link: /Length/Fathom-to-Mile
-      linkText: 英寻到英里
+      linkText: Fathom to Mile
 head:
   - - meta
     - name: description
-      content: "英寻到英里换算器 - 专业的长度单位转换工具。支持英寻(fathom)到英里(mi)的精确换算，提供详细的换算公式和实际应用案例。适用于海里换算、英制单位转换等场景。"
+      content: Fathom to Mile Converter — Convert fathom (fathom) to miles (mi) with accurate formulas and tables. Applicable in marine operations, diving, and navigation.
   - - meta
     - name: keywords
-      content: "单位转换器,单位换算,长度单位转换器,长度单位转换,尺寸换算,长度单位换算,长度单位换算表,一海里等于多少公里,一英里等于多少米,miles,海里和公里怎么换算,mile,一英里等于多少公里,英里和公里换算,米换算英尺,英尺单位,英制,英尺和英寸的换算,英尺英寸,英尺和米换算,ft单位,英尺 米,一米等于多少英尺,英尺厘米换算,英寸和英尺,ft to m,呎,英尺换算米,英尺转换,ft和m换算,六英尺,英尺和米,一英尺等于多少英寸,feet 多少米,米和英尺换算,feet是什么单位,英尺换算厘米,英制单位,英尺和英寸,英寸 厘米,一英尺,一英尺等于多少米,公尺,来源,ft是什么单位,一英尺等于多少厘米,英尺和厘米的换算,英里,foot,厘米和英寸换算,英尺和米的换算,英尺换算,ft,一英寸等于多少厘米,英寸换算,英寸和厘米的换算"
+      content: fathom to mile, ftm to mi, marine units, length converter, unit conversion, navigation, diving, marine engineering, mile conversion, fathom conversion
 ---
-# 英寻 (fathom) 到 英里 (mi) 的换算
 
-英寻到英里换算是海洋测量和航海中常用的长度单位转换。英寻(fathom)主要用于测量水深，而英里(mile)则广泛应用于距离测量。本工具提供精确的英寻到英里换算功能。
+# Fathom (fathom) to Mile (mi) Conversion
 
----
+Convert fathoms to miles quickly and accurately. Fathom is commonly used in marine operations and diving, while mile is used for long-distance measurement in road transport, sports, and mapping.
+
 <script setup>
-import { onMounted, reactive, inject, ref } from 'vue'
-import { NButton, NForm, NFormItem, NInput, NInputNumber, NSelect, NCard, useMessage,NGrid ,NGi } from 'naive-ui'
-import { defineClientComponent } from 'vitepress'
-import { Length } from '../files';
-const seoKey = ['单位转换器','单位换算','长度单位转换器','长度单位转换','尺寸换算','长度单位换算','长度单位换算表','一海里等于多少公里','一英里等于多少米','miles','海里和公里怎么换算','mile','一英里等于多少公里','英里和公里换算','米换算英尺','英尺单位','英制','英尺和英寸的换算','英尺英寸','英尺和米换算','ft单位','英尺 米','一米等于多少英尺','英尺厘米换算','英寸和英尺','ft to m','呎','英尺换算米','英尺转换','ft和m换算','六英尺','英尺和米','一英尺等于多少英寸','feet 多少米','米和英尺换算','feet是什么单位','英尺换算厘米','英制单位','英尺和英寸','英寸 厘米','一英尺','一英尺等于多少米','公尺','来源','ft是什么单位','一英尺等于多少厘米','英尺和厘米的换算','英里','foot','厘米和英寸换算','英尺和米的换算','英尺换算','ft','一英寸等于多少厘米','英寸换算','英寸和厘米的换算']
-const convert = inject('convert')
-
-const form = reactive({
-  number: null,
-  result: '',
-  title: '英寻到英里的换算',
-})
-
+import { reactive } from 'vue'
+import { NCard, NButton, NForm, NFormItem, NInputNumber, NGrid, NGi, NTag } from 'naive-ui'
+import { Length } from '../files'
+const seoKey = [
+  'Unit converter','Unit conversion','Length converter','Fathom to mile','marine units','navigation','diving','distance conversion','engineering measurement'
+]
+const form = reactive({ title: 'Fathom to Mile Conversion', value: 0, result: 0 })
 const convertHandler = () => {
-  if (form.number !== null && !isNaN(form.number)) {
-    const convertedValue = parseFloat(form.number) * 0.00113636
-    form.result = `${form.number}fathom = ${convertedValue.toFixed(6)}mi`
-  } else {
-    form.result = '请输入有效的数值。'
-  }
+  if (!form.value) return (form.result = 'Please enter a valid number.')
+  form.result = `${form.value} fathom = ${(form.value * 0.00113636).toFixed(8)} mi`
 }
 </script>
 
-<n-form size="large" :model="form">
-  <n-form-item label="英寻 (fathom)">
-    <n-input-number v-model:value="form.number" placeholder="输入英寻" style="width: 100%" />
-  </n-form-item>
-  <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
-  </n-form-item>
-</n-form>
+<n-grid cols="1 s:1 m:1 l:1 xl:2 2xl:2" x-gap="40">
+  <n-gi>
+    <n-card :hoverable="true" :bordered="false" size="huge" :title="form.title">
+      <n-form label-placement="left" label-width="auto" require-mark-placement="right-hanging" :style="{ maxWidth: '640px' }">
+        <n-form-item label="Fathom (fathom)">
+          <n-input-number v-model:value="form.value" clearable placeholder="Enter fathoms" />
+        </n-form-item>
+        <n-form-item>
+          <n-button type="primary" @click="convertHandler">Convert</n-button>
+        </n-form-item>
+        <n-form-item label="Result">
+          <n-tag type="success">{{ form.result }}</n-tag>
+        </n-form-item>
+      </n-form>
+      <template #footer>
+        <div style="display: inline-block">
+          SEO: Marine operations, navigation —
+          <span v-for="(item, index) in seoKey" :key="index">{{ item }}, </span>
+        </div>
+      </template>
+    </n-card>
+  </n-gi>
+  <n-gi>
+    <n-grid cols="1 s:1 m:1 l:1 xl:2 2xl:2" x-gap="40">
+      <n-gi>
+        <n-card :bordered="false" :hoverable="true" title="Common Conversion Formulas">
+          <p>1 fathom = 6 feet</p>
+          <p>1 mile = 5280 feet</p>
+          <p>Therefore: 1 fathom = 6 / 5280 = 0.00113636 mi</p>
+          <p>Related conversions: fathom to nautical mile, foot to mile, meter to mile</p>
+        </n-card>
+      </n-gi>
+      <n-gi>
+        <n-card :bordered="false" :hoverable="true" title="Basic Conversion Table">
+          <p>1 fathom = 0.00113636 mi</p>
+          <p>10 fathoms = 0.0113636 mi</p>
+          <p>100 fathoms = 0.113636 mi</p>
+          <p>1,000 fathoms = 1.13636 mi</p>
+        </n-card>
+      </n-gi>
+      <n-gi>
+        <n-card :bordered="false" :hoverable="true" title="Practical Applications">
+          <p>
+            Fathom is a marine unit mainly used to measure water depth and rope length in diving and sailing. Mile is used for road mileage, sports events, and geographic mapping. This conversion bridges detailed marine measurements with long-distance planning.
+          </p>
+          <p>
+            • Marine operations: Convert anchored rope length (fathom) to route distance (mi) for planning.
+          </p>
+          <p>
+            • Diving & underwater construction: Convert operational range and positioning information between fathom and mile for efficient task coordination.
+          </p>
+          <p>
+            • Navigation & mapping: Combine marine depth measurement in fathoms with distance planning in miles.
+          </p>
+        </n-card>
+      </n-gi>
+      <n-gi>
+        <n-card :bordered="false" :hoverable="true" title="Conversion Formula">
+          <p>mi = fathom × 0.00113636</p>
+          <p>Example: 500 fathoms = 500 × 0.00113636 = 0.56818 mi</p>
+          <p>Example: 1,000 fathoms = 1.13636 mi</p>
+        </n-card>
+      </n-gi>
+      <n-gi>
+        <n-card :hoverable="true" :bordered="false" title="Frequently Asked Questions">
+          <p>Q: What is a fathom?</p>
+          <p>A: Fathom is a marine unit equal to 6 feet (about 1.8288 meters). Common for depth measurement and rope length.</p>
+          <p>Q: How to convert fathom to mile?</p>
+          <p>A: mi = fathom × 0.00113636. 1 fathom ≈ 0.00113636 mile.</p>
+          <p>Q: Where is this conversion used?</p>
+          <p>A: Marine engineering, navigation, diving, underwater construction, mapping.</p>
+        </n-card>
+      </n-gi>
+    </n-grid>
+  </n-gi>
+</n-grid>
 
-<n-card  
-  title="长度单位换算"
-  :segmented="{
-    content: true,
-    footer: 'soft',
-  }"
->
-  <div  style="text-align:center;font-size:20px;">
-    <strong>{{form.result}}</strong>
-  </div>
-    <template #footer>
-    <div>
-      <span v-for="item of seoKey">{{item}}，</span>
-    </div>
-  </template>
-</n-card>
-
-## 常用换算公式
-
-### 基本换算关系
-- 1 英寻 = 0.00113636 英里
-- 1 英里 = 880 英寻
-- 1 英寻 = 6 英尺 = 1.8288 米
-- 1 英里 = 5280 英尺 = 1.609344 公里
-
-### 长度单位换算表
-
-| 英寻 (fathom) | 英里 (mi) | 公里 (km) | 米 (m) |
-|---------------|-----------|-----------|--------|
-| 1 | 0.001136 | 0.001829 | 1.8288 |
-| 10 | 0.011364 | 0.018288 | 18.288 |
-| 100 | 0.113636 | 0.182880 | 182.88 |
-| 500 | 0.568182 | 0.914400 | 914.40 |
-| 880 | 1.000000 | 1.609344 | 1609.34 |
-
-## 实际应用场景
-
-英寻到英里的换算在以下领域中具有重要意义：
-
-### 海洋测量与航海
-- **水深测量**：传统航海中使用英寻测量水深，现代海图标注则常用英里表示距离
-- **航线规划**：船舶航行距离用英里计算，而锚链长度、水深等用英寻表示
-- **海洋工程**：海底电缆铺设、海洋平台建设中的深度和距离换算
-
-### 渔业与海洋科学
-- **渔网作业**：渔网下放深度用英寻，渔场位置用英里表示
-- **海洋研究**：科研船作业时的深度测量和航行距离记录
-- **海洋生物调查**：生物分布深度和调查范围的单位换算
-
-### 军事与国防
-- **潜艇作业**：潜艇下潜深度用英寻，巡航距离用英里
-- **海军演习**：作战深度和作战半径的单位转换
-- **海防工程**：防御设施的布设深度和覆盖范围
-
-## 公式
-
-从 **英寻 (fathom)** 换算到 **英里 (mi)** 的公式为：
-$$ mi = fathom \times 0.00113636 $$
-
-### 示例
-- 880fathom = 1.0000mi
-- 440fathom = 0.5000mi
-- 88fathom = 0.1000mi
-
-## 常见问题 (FAQ)
-
-### 1. 英寻和英里有什么区别？
-英寻(fathom)是传统的海洋深度测量单位，1英寻等于6英尺或1.8288米。英里(mile)是距离测量单位，1英里等于5280英尺或1.609344公里。英寻主要用于测量水深，英里用于测量距离。
-
-### 2. 为什么海洋测量要用英寻？
-英寻起源于古代航海，大约等于成年人张开双臂的长度。这个单位便于船员用绳索测量水深，在传统航海中非常实用。现代虽然有了先进的测深设备，但英寻仍在某些海洋作业中使用。
-
-### 3. 1英寻等于多少米？
-1英寻 = 1.8288米 = 6英尺。这是国际标准的换算关系。
-
-### 4. 英里和海里有什么不同？
-英里(statute mile)是陆地距离单位，1英里 = 1.609344公里。海里(nautical mile)是海洋和航空中使用的距离单位，1海里 = 1.852公里。海里基于地球的纬度线，更适合航海导航。
-
-### 5. 如何快速估算英寻到英里的换算？
-可以记住880英寻约等于1英里这个关系。对于快速估算，可以将英寻数除以880得到大概的英里数。例如：440英寻 ≈ 0.5英里，176英寻 ≈ 0.2英里。
-
-## 相关连接
-<n-grid x-gap="12" :cols="2">
-  <n-gi v-for="(file, index) in Length" :key="index">
-    <n-button
-      text
-      tag="a"
-      :href="file.path"
-      type="info"
-    >
-      {{file.name}}
-    </n-button>
+<n-grid cols="1 200:2 600:3 800:4 1200:5" x-gap="20" y-gap="20">
+  <n-gi v-for="(item, index) in Length" :key="index">
+    <n-card :title="item.title" :bordered="false" :hoverable="true">
+      <ul style="padding-left: 20px">
+        <li v-for="(list, key) in item.list" :key="key"><a :href="list.link">{{ list.title }}</a></li>
+      </ul>
+    </n-card>
   </n-gi>
 </n-grid>
