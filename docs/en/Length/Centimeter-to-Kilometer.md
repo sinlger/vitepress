@@ -4,36 +4,36 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Length/index
-      linkText: 长度换算
+      linkText: Length Conversion
   - - link: /Length/Centimeter-to-Kilometer
-      linkText: 厘米到千米
+      linkText: Centimeter to Kilometer
 head:
   - - meta
     - name: description
-      content: "厘米到千米转换器 - 专业的长度单位换算工具。支持厘米、千米、米、毫米等多种单位转换，提供精确的换算公式和实用转换表。"
+      content: "Centimeter to Kilometer Converter - Professional length unit conversion tool. Supports conversion between centimeters, kilometers, meters, millimeters and other units, providing accurate conversion formulas and practical conversion tables."
   - - meta
     - name: keywords
-      content: "厘米到千米转换器, 长度单位转换器, 单位换算, 厘米转换, 千米换算, cm转换, km换算, 尺寸换算器, 长度换算, 厘米和米换算, 米换算千米, 千米厘米, 长度单位换算表, 公里换算, 距离换算, 厘米换算千米"
+      content: "centimeter to kilometer converter, length unit converter, unit conversion, centimeter conversion, kilometer conversion, cm conversion, km conversion, dimension converter, length conversion, centimeter and meter conversion, meter to kilometer conversion, kilometer centimeter, length unit conversion table, kilometer conversion, distance conversion, centimeter to kilometer conversion"
 ---
-# 厘米 (cm) 到 千米 (km) 的换算
+# Centimeter (cm) to Kilometer (km) Conversion
 
-厘米到千米转换器是一个专业的长度单位换算工具，帮助您快速准确地在厘米(cm)和千米(km)之间进行转换。本工具广泛应用于地理测量、工程设计、科学研究等领域，支持高精度计算和实时转换。
+The centimeter to kilometer converter is a professional length unit conversion tool that helps you quickly and accurately convert between centimeters (cm) and kilometers (km). This tool is widely used in geographical surveying, engineering design, scientific research and other fields, supporting high-precision calculations and real-time conversion.
 
 ---
 <script setup>
 import { onMounted, reactive, inject, ref } from 'vue'
 import { NButton, NForm, NFormItem, NInput, NInputNumber, NSelect, NCard, useMessage,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
-import { Length } from '../files';
-const seoKey = ['单位转换器','单位换算','长度单位转换器','长度单位转换','尺寸换算','长度单位换算','长度单位换算表','厘米转换','厘米和米换算','米厘米分米毫米的换算','cm和m换算','cm是什么','厘米单位','cm换算','厘米和米的换算公式','厘米 英寸','一厘米等于多少米','公分是什么单位','cm是什么意思','厘米和米','尺寸转换器','量尺','米尺','长度换算器','厘米换算','一厘米','cm是什么单位','长度转换','直尺在线测量','英尺换算厘米','英寸 厘米','尺寸换算器','长度','分米','尺寸转换','刻度尺','厘米换算米','一厘米等于多少毫米','长度单位','毫米和厘米','寸','英尺和厘米的换算','尺','一米等于多少厘米','长度换算','公分','尺寸','一公分等于多少厘米','英尺换算','cm','长度单位换算','尺寸换算','英寸换算','mm','厘米换算英寸']
+import { Length } from '../../files';
+const seoKey = ['unit converter','unit conversion','length unit converter','length unit conversion','dimension conversion','length unit conversion','length unit conversion table','centimeter conversion','centimeter and meter conversion','cm and m conversion','cm and m conversion','what is cm','centimeter unit','cm conversion','centimeter and meter conversion formula','centimeter inch','how many meters in one centimeter','what unit is cm','what does cm mean','centimeter and meter','dimension converter','measuring ruler','meter ruler','length converter','centimeter conversion','one centimeter','what unit is cm','length conversion','online ruler measurement','foot to centimeter conversion','inch centimeter','dimension converter','length','decimeter','dimension conversion','scale ruler','centimeter to meter conversion','how many millimeters in one centimeter','length unit','millimeter and centimeter','inch','foot and centimeter conversion','foot','how many centimeters in one meter','length conversion','cm','dimension','how many centimeters in one cm','foot conversion','cm','length unit conversion','dimension conversion','inch conversion','mm','centimeter to inch conversion']
 const convert = inject('convert')
 
 const form = reactive({
   number: null,
   result: '',
-  title: '厘米到千米的换算',
+  title: 'Centimeter to Kilometer Conversion',
 })
 
 const convertHandler = () => {
@@ -41,17 +41,17 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) / 100000
     form.result = `${form.number}cm = ${convertedValue.toFixed(5)}km`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="厘米 (cm)">
-    <n-input-number v-model:value="form.number" placeholder="输入厘米" style="width: 100%" />
+  <n-form-item label="Centimeter (cm)">
+    <n-input-number v-model:value="form.number" placeholder="Enter centimeters" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
@@ -72,22 +72,22 @@ const convertHandler = () => {
   </template>
 </n-card>
 
-## 常用转换公式
+## Common Conversion Formulas
 
-### 厘米到千米转换
-- **1厘米 = 0.00001千米**
-- **1千米 = 100,000厘米**
+### Centimeter to Kilometer Conversion
+- **1 centimeter = 0.00001 kilometers**
+- **1 kilometer = 100,000 centimeters**
 
-### 其他常用长度单位转换
-- **厘米到米**: 1cm = 0.01m
-- **厘米到毫米**: 1cm = 10mm
-- **米到千米**: 1m = 0.001km
-- **千米到米**: 1km = 1000m
-- **千米到毫米**: 1km = 1,000,000mm
+### Other Common Length Unit Conversions
+- **Centimeter to Meter**: 1cm = 0.01m
+- **Centimeter to Millimeter**: 1cm = 10mm
+- **Meter to Kilometer**: 1m = 0.001km
+- **Kilometer to Meter**: 1km = 1000m
+- **Kilometer to Millimeter**: 1km = 1,000,000mm
 
-## 长度单位换算表
+## Length Unit Conversion Table
 
-| 厘米(cm) | 千米(km) | 米(m) | 毫米(mm) | 英里(mi) |
+| Centimeter(cm) | Kilometer(km) | Meter(m) | Millimeter(mm) | Mile(mi) |
 |----------|----------|-------|----------|----------|
 | 1 | 0.00001 | 0.01 | 10 | 0.0000062 |
 | 100 | 0.001 | 1 | 1,000 | 0.00062 |
@@ -95,58 +95,58 @@ const convertHandler = () => {
 | 10,000 | 0.1 | 100 | 100,000 | 0.062 |
 | 100,000 | 1 | 1,000 | 1,000,000 | 0.621 |
 
-## 实际应用
+## Practical Applications
 
-厘米 (cm) 和千米 (km) 是测量不同尺度物体时常用的单位，在以下真实场景中非常重要：
+Centimeters (cm) and kilometers (km) are commonly used units for measuring objects of different scales, and are very important in the following real-world scenarios:
 
-- **地理测量**：
-  - 在地图制作中，小比例尺地图上的1厘米可能代表实际的几千米距离。
-  - 示例：某地图比例尺为1:100000，图上1cm代表实际距离1km。
+- **Geographical Surveying**:
+  - In map making, 1 centimeter on a small-scale map may represent several kilometers of actual distance.
+  - Example: A map with a scale of 1:100000, where 1cm on the map represents 1km of actual distance.
 
-- **工程设计**：
-  - 大型工程项目中，细节尺寸用厘米表示，而总体规模用千米衡量。
-  - 示例：某高速公路总长100km，但路面厚度仅为30cm。
+- **Engineering Design**:
+  - In large engineering projects, detail dimensions are expressed in centimeters, while overall scale is measured in kilometers.
+  - Example: A highway has a total length of 100km, but the pavement thickness is only 30cm.
 
-- **科学研究**：
-  - 在天文学或地质学研究中，需要在微观和宏观尺度之间进行换算。
-  - 示例：某岩石样本厚度为5cm，而地层总厚度为2km。
+- **Scientific Research**:
+  - In astronomy or geology research, conversions between microscopic and macroscopic scales are needed.
+  - Example: A rock sample thickness of 5cm, while the total stratum thickness is 2km.
 
-- **体育运动**：
-  - 田径比赛中，跑道宽度用厘米衡量，而比赛距离用千米表示。
-  - 示例：马拉松比赛距离为42.195km，但跑道宽度标准为122cm。
+- **Sports**:
+  - In track and field competitions, track width is measured in centimeters, while race distances are expressed in kilometers.
+  - Example: Marathon race distance is 42.195km, but the standard track width is 122cm.
 
-## 公式
+## Formula
 
-从 **厘米 (cm)** 换算到 **千米 (km)** 的公式为：
+The formula for converting from **centimeters (cm)** to **kilometers (km)** is:
 $$ km = cm \div 100000 $$
 
-### 示例
+### Examples
 - 100000cm = 1.00000km
 - 50000cm = 0.50000km
 - 1000cm = 0.01000km
 
-## 常见问题 (FAQ)
+## Frequently Asked Questions (FAQ)
 
-### 1. 千米是什么单位？
-千米(km)是公制长度单位，也称为公里，1千米等于1000米或100,000厘米。它主要用于测量较长的距离，如城市间距离、道路长度等。
+### 1. What is a kilometer unit?
+A kilometer (km) is a metric length unit, also called a kilometre, where 1 kilometer equals 1000 meters or 100,000 centimeters. It is mainly used for measuring longer distances, such as distances between cities, road lengths, etc.
 
-### 2. 厘米和千米的换算公式是什么？
-厘米到千米的换算公式为：千米 = 厘米 ÷ 100,000
-千米到厘米的换算公式为：厘米 = 千米 × 100,000
+### 2. What is the conversion formula between centimeters and kilometers?
+The conversion formula from centimeters to kilometers is: kilometers = centimeters ÷ 100,000
+The conversion formula from kilometers to centimeters is: centimeters = kilometers × 100,000
 
-### 3. 什么时候使用千米单位？
-千米主要用于测量较长距离，如城市间距离、公路长度、跑步距离、地理测量等。在日常生活中，汽车里程、旅行距离等都用千米表示。
+### 3. When is the kilometer unit used?
+Kilometers are mainly used for measuring longer distances, such as distances between cities, highway lengths, running distances, geographical measurements, etc. In daily life, car mileage, travel distances, etc. are all expressed in kilometers.
 
-### 4. 如何快速估算厘米到千米的转换？
-可以记住：100,000厘米等于1千米。因此，厘米数除以100,000可以得到千米数。或者先转换为米（厘米÷100），再转换为千米（米÷1000）。
+### 4. How to quickly estimate centimeter to kilometer conversion?
+You can remember: 100,000 centimeters equals 1 kilometer. Therefore, dividing centimeters by 100,000 gives you kilometers. Or first convert to meters (centimeters ÷ 100), then convert to kilometers (meters ÷ 1000).
 
-### 5. 常见的千米和厘米对应关系？
-- 1千米 = 100,000厘米
-- 1厘米 = 0.00001千米
-- 1米 = 100厘米 = 0.001千米
-- 1毫米 = 0.1厘米 = 0.000001千米
+### 5. What are common kilometer and centimeter correspondences?
+- 1 kilometer = 100,000 centimeters
+- 1 centimeter = 0.00001 kilometers
+- 1 meter = 100 centimeters = 0.001 kilometers
+- 1 millimeter = 0.1 centimeters = 0.000001 kilometers
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Length" :key="index">
     <n-button
