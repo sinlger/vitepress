@@ -4,22 +4,22 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Length/index
-      linkText: 长度换算
+      linkText: Length Conversion
   - - link: /Length/Millimeter-to-Fathom
-      linkText: 毫米到英寻
+      linkText: Millimeter to Fathom
 head:
   - - meta
     - name: description
-      content: "毫米到英寻换算器 - 精确的mm到fathom长度单位转换工具。提供毫米英寻换算公式、换算表和海洋工程应用场景。支持在线计算，适用于航海导航、海洋工程、潜水作业等领域的长度单位换算需求。"
+      content: "Millimeter to Fathom Converter - Precise mm to fathom length unit conversion tool. Provides millimeter fathom conversion formulas, conversion tables and marine engineering application scenarios. Supports online calculation, suitable for marine navigation, marine engineering, diving operations and other fields' length unit conversion needs."
   - - meta
     - name: keywords
-      content: "毫米到英寻, mm到fathom, 毫米英寻换算, 长度单位换算, 单位转换器, 英寻换算, 海洋长度单位, 航海测量, 潜水深度, 海洋工程, 水下测量, 船舶工程, 海底探测, 深海研究, 海洋科学, 在线换算工具"
+      content: "millimeter to fathom, mm to fathom, millimeter fathom conversion, length unit conversion, unit converter, fathom conversion, marine length unit, marine measurement, diving depth, marine engineering, underwater measurement, ship engineering, seabed detection, deep sea research, marine science, online conversion tool"
 ---
-# 毫米 (mm) 到 英寻 (fathom) 的换算
+# Millimeter (mm) to Fathom Conversion
 
-毫米到英寻的换算连接了精密测量与海洋导航的重要转换。毫米(mm)作为公制长度单位，广泛应用于精密制造、工程设计和科学研究中，而英寻(fathom)则是传统的海洋深度测量单位，主要用于航海、潜水和海洋工程领域。掌握毫米与英寻之间的准确换算关系，对于海洋工程、船舶制造、潜水作业和海底探测具有重要的实际意义。
+Millimeter to fathom conversion connects the important transformation between precision measurement and marine navigation. Millimeter (mm), as a metric length unit, is widely used in precision manufacturing, engineering design, and scientific research, while fathom is a traditional marine depth measurement unit, mainly used in navigation, diving, and marine engineering fields. Mastering the accurate conversion relationship between millimeters and fathoms has important practical significance for marine engineering, shipbuilding, diving operations, and seabed exploration.
 
 ---
 <script setup>
@@ -27,13 +27,13 @@ import { onMounted, reactive, inject, ref } from 'vue'
 import { NButton, NForm, NFormItem, NInput, NInputNumber, NSelect, NCard, useMessage,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
 import { Length } from '../files';
-const seoKey = ['毫米到英寻','mm到fathom','毫米英寻换算','长度单位换算','单位转换器','英寻换算','海洋长度单位','航海测量','潜水深度','海洋工程','水下测量','船舶工程','海底探测','深海研究','海洋科学','英寻单位','fathom换算','海洋距离','水深测量','航海单位','海洋导航','潜水测量','海底距离','水下工程','海洋勘探','深海测量','船舶设计','海洋技术','水下作业','海洋测绘','航海工程','海底工程','深海探测','海洋调查','水下探测','海洋研究','航海科学','海洋物理','水深换算','海洋测量']
+const seoKey = ['millimeter to fathom','mm to fathom','millimeter fathom conversion','length unit conversion','unit converter','fathom conversion','marine length unit','marine measurement','diving depth','marine engineering','underwater measurement','ship engineering','seabed detection','deep sea research','marine science','fathom unit','fathom conversion','marine distance','depth measurement','marine unit','marine navigation','diving measurement','seabed distance','underwater engineering','marine exploration','deep sea measurement','ship design','marine technology','underwater operations','marine surveying','marine engineering','seabed engineering','deep sea exploration','marine survey','underwater detection','marine research','marine science','marine physics','depth conversion','marine measurement']
 const convert = inject('convert')
 
 const form = reactive({
   number: null,
   result: '',
-  title: '毫米 (mm) 到英寻 (fathom) 的长度单位换算'
+  title: 'Millimeter (mm) to Fathom Length Unit Conversion'
 })
 
 const convertHandler = () => {
@@ -47,11 +47,11 @@ const convertHandler = () => {
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="毫米 (mm)">
-    <n-input-number v-model:value="form.number" placeholder="输入毫米" style="width: 100%" />
+  <n-form-item label="Millimeter (mm)">
+    <n-input-number v-model:value="form.number" placeholder="Enter millimeters" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
@@ -72,90 +72,90 @@ const convertHandler = () => {
   </template>
 </n-card>
 
-## 实际应用场景
+## Practical Application Scenarios
 
-毫米到英寻的换算在海洋工程和精密制造领域具有重要应用，连接了微观精度与宏观海洋测量：
+Millimeter to fathom conversion has important applications in marine engineering and precision manufacturing fields, connecting microscopic precision with macroscopic marine measurement:
 
-### 1. 海洋工程与船舶制造
-- **船舶设计**：船体板材厚度的精密测量与水深适应性评估
-- **海洋平台**：钻井平台结构件的制造精度与作业水深的关系
-- **潜水器制造**：载人潜水器壳体厚度设计与下潜深度的安全评估
-- **海底管道**：海底石油管道壁厚设计与铺设深度的工程计算
-- 示例：某深海潜水器壳体厚度为150mm，约合0.082fathom，设计下潜深度为500fathom
+### 1. Marine Engineering and Shipbuilding
+- **Ship Design**: Precision measurement of hull plate thickness and water depth adaptability assessment
+- **Marine Platforms**: Relationship between manufacturing precision of drilling platform structural components and operating water depth
+- **Submersible Manufacturing**: Hull thickness design of manned submersibles and safety assessment of diving depth
+- **Submarine Pipelines**: Engineering calculations for submarine oil pipeline wall thickness design and laying depth
+- Example: A deep-sea submersible hull thickness of 150mm equals approximately 0.082 fathom, with a design diving depth of 500 fathoms
 
-### 2. 航海导航与水深测量
-- **海图制作**：精密测深仪器的分辨率与海图水深标注的换算
-- **港口工程**：港口疏浚工程中的精度控制与水深测量
-- **航道维护**：航道测量设备精度与水深安全标准的对应关系
-- **锚泊系统**：锚链规格设计与锚泊水深的工程计算
-- 示例：测深仪精度为5mm，在20fathom水深处的测量误差约为0.0027fathom
+### 2. Marine Navigation and Depth Measurement
+- **Chart Making**: Conversion between precision depth sounder resolution and chart depth marking
+- **Port Engineering**: Precision control and depth measurement in port dredging projects
+- **Channel Maintenance**: Correspondence between channel measurement equipment precision and depth safety standards
+- **Anchoring Systems**: Engineering calculations for anchor chain specification design and anchoring depth
+- Example: Depth sounder precision of 5mm, measurement error at 20 fathom depth is approximately 0.0027 fathom
 
-### 3. 潜水作业与水下工程
-- **商业潜水**：潜水装备厚度规格与安全作业深度的关系
-- **水下焊接**：焊接设备精度要求与作业深度环境的适应性
-- **海底施工**：水下施工工具的制造精度与作业深度的匹配
-- **海底维修**：海底设备维修中的精密测量与深度定位
-- 示例：水下焊接设备精度要求10mm，作业深度为30fathom
+### 3. Diving Operations and Underwater Engineering
+- **Commercial Diving**: Relationship between diving equipment thickness specifications and safe operating depth
+- **Underwater Welding**: Adaptability of welding equipment precision requirements to operating depth environment
+- **Seabed Construction**: Matching of underwater construction tool manufacturing precision with operating depth
+- **Seabed Maintenance**: Precision measurement and depth positioning in seabed equipment maintenance
+- Example: Underwater welding equipment precision requirement of 10mm, operating depth of 30 fathoms
 
-### 4. 海洋科学研究与深海探测
-- **深海取样**：取样器械的制造精度与取样深度的科学要求
-- **海底地质**：地质钻探设备精度与钻探深度的技术规范
-- **海洋生物**：深海生物研究设备的精密度与栖息深度的关系
-- **海底观测**：海底观测站设备规格与部署深度的工程设计
-- 示例：深海取样器精度为2mm，部署深度为100fathom
+### 4. Marine Scientific Research and Deep Sea Exploration
+- **Deep Sea Sampling**: Scientific requirements for sampling equipment manufacturing precision and sampling depth
+- **Seabed Geology**: Technical specifications for geological drilling equipment precision and drilling depth
+- **Marine Biology**: Relationship between deep sea biological research equipment precision and habitat depth
+- **Seabed Observation**: Engineering design of seabed observation station equipment specifications and deployment depth
+- Example: Deep sea sampler precision of 2mm, deployment depth of 100 fathoms
 
-### 5. 海底资源开发与勘探
-- **海底采矿**：采矿设备制造精度与作业深度的技术要求
-- **海底石油**：钻井设备精密度与钻探深度的工程标准
-- **海底电缆**：海底光缆规格与铺设深度的技术规范
-- **海洋能源**：海上风电基础结构精度与安装水深的关系
-- 示例：海底钻井设备精度要求20mm，钻探深度为200fathom
+### 5. Seabed Resource Development and Exploration
+- **Seabed Mining**: Technical requirements for mining equipment manufacturing precision and operating depth
+- **Submarine Oil**: Engineering standards for drilling equipment precision and drilling depth
+- **Submarine Cables**: Technical specifications for submarine optical cable specifications and laying depth
+- **Marine Energy**: Relationship between offshore wind power foundation structure precision and installation water depth
+- Example: Seabed drilling equipment precision requirement of 20mm, drilling depth of 200 fathoms
 
-## 公式
+## Formulas
 
-### 毫米到英寻的换算公式
-从 **毫米 (mm)** 换算到 **英寻 (fathom)** 的公式为：
+### Millimeter to Fathom Conversion Formula
+The formula to convert from **millimeter (mm)** to **fathom** is:
 $$ fathom = mm \times 0.00054681 $$
 
-### 英寻到毫米的换算公式
-从 **英寻 (fathom)** 换算到 **毫米 (mm)** 的公式为：
+### Fathom to Millimeter Conversion Formula
+The formula to convert from **fathom** to **millimeter (mm)** is:
 $$ mm = fathom \times 1828.8 $$
 
-### 换算示例
+### Conversion Examples
 - 100mm = 0.0547fathom
 - 500mm = 0.2734fathom
 - 1000mm = 0.5468fathom
 - 1500mm = 0.8202fathom
 - 2000mm = 1.0936fathom
 
-### 长度单位换算表
-| 毫米 (mm) | 英寻 (fathom) | 米 (m) | 英尺 (ft) | 英寸 (in) |
-|-----------|---------------|--------|-----------|----------|
+### Length Unit Conversion Table
+| Millimeter (mm) | Fathom | Meter (m) | Foot (ft) | Inch (in) |
+|-----------------|--------|-----------|-----------|----------|
 | 100 | 0.0547 | 0.1 | 0.328 | 3.937 |
 | 500 | 0.2734 | 0.5 | 1.640 | 19.685 |
 | 1000 | 0.5468 | 1.0 | 3.281 | 39.370 |
 | 1500 | 0.8202 | 1.5 | 4.921 | 59.055 |
 | 2000 | 1.0936 | 2.0 | 6.562 | 78.740 |
 
-## 常见问题 (FAQ)
+## Frequently Asked Questions (FAQ)
 
-### 1. 什么是英寻(fathom)？
-英寻是传统的海洋深度测量单位，1英寻等于6英尺或1.8288米，主要用于航海、潜水和海洋工程领域。
+### 1. What is a fathom?
+A fathom is a traditional marine depth measurement unit, where 1 fathom equals 6 feet or 1.8288 meters, mainly used in navigation, diving, and marine engineering fields.
 
-### 2. 毫米到英寻换算在什么情况下使用？
-主要用于海洋工程、船舶制造、潜水作业、海底探测等需要将精密制造尺寸与海洋深度进行对比的场合。
+### 2. When is millimeter to fathom conversion used?
+Mainly used in marine engineering, shipbuilding, diving operations, seabed exploration, and other situations where precision manufacturing dimensions need to be compared with marine depths.
 
-### 3. 英寻换算系数0.00054681是如何得出的？
-1英寻 = 1.8288米 = 1828.8毫米，因此1毫米 = 1/1828.8英寻 ≈ 0.00054681英寻。
+### 3. How is the fathom conversion factor 0.00054681 derived?
+1 fathom = 1.8288 meters = 1828.8 millimeters, therefore 1 millimeter = 1/1828.8 fathoms ≈ 0.00054681 fathoms.
 
-### 4. 在海洋工程中为什么要进行毫米到英寻的换算？
-海洋工程设备的制造精度通常以毫米计量，而作业深度以英寻表示，换算有助于评估设备精度与作业环境的匹配性。
+### 4. Why is millimeter to fathom conversion needed in marine engineering?
+Marine engineering equipment manufacturing precision is usually measured in millimeters, while operating depth is expressed in fathoms. Conversion helps evaluate the compatibility between equipment precision and operating environment.
 
-### 5. 如何快速估算毫米到英寻的换算？
-可以记住1000mm约等于0.55fathom，或者1mm约等于0.0005fathom进行快速估算。
+### 5. How to quickly estimate millimeter to fathom conversion?
+You can remember that 1000mm equals approximately 0.55 fathoms, or 1mm equals approximately 0.0005 fathoms for quick estimation.
 
-### 6. 现代航海还使用英寻吗？
-虽然国际标准多使用米制单位，但在传统航海、潜水作业和某些海洋工程领域，英寻仍有广泛应用。
+### 6. Are fathoms still used in modern navigation?
+Although international standards mostly use metric units, fathoms are still widely used in traditional navigation, diving operations, and certain marine engineering fields.
 
 ## 相关连接
 <n-grid x-gap="12" :cols="2">

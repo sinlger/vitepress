@@ -4,22 +4,22 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Length/index
-      linkText: 长度换算
+      linkText: Length Conversion
   - - link: /Length/Meter-to-Foot
-      linkText: 米到英尺
+      linkText: Meter to Foot
 head:
   - - meta
     - name: description
-      content: "米到英尺换算器 - 专业的长度单位转换工具。支持m到ft的精确换算，提供单位转换器、长度单位换算表和尺寸换算。一米是多少厘米？一米等于多少分米？专业解答米单位换算问题。"
+      content: "Meter to Foot Converter - Professional length unit conversion tool. Supports precise m to ft conversion, provides unit converter, length unit conversion table and dimension conversion. How many centimeters in a meter? How many decimeters equal one meter? Professional answers to meter unit conversion questions."
   - - meta
     - name: keywords
-      content: "单位转换器,单位换算,长度单位转换器,长度单位转换,尺寸换算,长度单位换算表,一米是多少厘米,一米等于多少分米,米,一分米等于多少厘米,一公尺,米的英文,米的单位,m单位,分米,公尺,一米等于多少厘米,1m等于多少cm,一米,米和厘米的换算,m是什么单位,1m是多少,1米等于多少厘米"
+      content: "unit converter,unit conversion,length unit converter,length unit conversion,dimension conversion,length unit conversion table,how many centimeters in a meter,how many decimeters equal one meter,meter,how many centimeters in a decimeter,one meter,meter in English,meter unit,m unit,decimeter,meter,how many centimeters equal one meter,1m equals how many cm,one meter,meter and centimeter conversion,what is m unit,how much is 1m,1 meter equals how many centimeters"
 ---
-# 米 (m) 到 英尺 (ft) 的换算
+# Meter (m) to Foot (ft) Conversion
 
-米到英尺换算是长度单位转换中的常用应用。米(m)作为国际标准长度单位，广泛用于科学测量和日常生活；英尺(ft)作为英制长度单位，在建筑、航空和体育等领域广泛使用。一米是多少厘米？一米等于100厘米，一米等于10分米。我们的单位转换器提供精确的米英尺换算功能，是专业的长度单位转换器工具。
+Meter to foot conversion is a common application in length unit conversion. The meter (m), as an international standard length unit, is widely used in scientific measurements and daily life; the foot (ft), as an imperial length unit, is extensively used in construction, aviation, and sports fields. How many centimeters in a meter? One meter equals 100 centimeters, and one meter equals 10 decimeters. Our unit converter provides precise meter to foot conversion functionality and is a professional length unit conversion tool.
 
 ---
 <script setup>
@@ -27,13 +27,13 @@ import { onMounted, reactive, inject, ref } from 'vue'
 import { NButton, NForm, NFormItem, NInput, NInputNumber, NSelect, NCard, useMessage,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
 import { Length } from '../files';
-const seoKey = ['单位转换器','单位换算','长度单位转换器','长度单位转换','尺寸换算','长度单位换算','长度单位换算表','一米是多少厘米啊','一米等于多少分米','米','一米是多少厘米','一分米等于多少厘米','一公尺','米的英文','米的单位','m单位','分米','公尺','一米等于多少厘米','米','1m等于多少cm','一米','米和厘米的换算','m单位','k是什么单位','一米等于多少厘米','m是什么单位','1m是多少','1米等于多少厘米','m']
+const seoKey = ['unit converter','unit conversion','length unit converter','length unit conversion','dimension conversion','length unit conversion','length unit conversion table','how many centimeters in a meter','how many decimeters equal one meter','meter','how many centimeters in a meter','how many centimeters in a decimeter','one meter','meter in English','meter unit','m unit','decimeter','meter','how many centimeters equal one meter','meter','1m equals how many cm','one meter','meter and centimeter conversion','m unit','what is k unit','how many centimeters equal one meter','what is m unit','how much is 1m','1 meter equals how many centimeters','m']
 const convert = inject('convert')
 
 const form = reactive({
   number: null,
   result: '',
-  title:'米 (m) 到英尺 (ft) 的长度单位换算',
+  title:'Meter (m) to Foot (ft) Length Unit Conversion',
 })
 
 const convertHandler = () => {
@@ -41,17 +41,17 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) * 3.28084
     form.result = `${form.number}m = ${convertedValue.toFixed(4)}ft`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="米 (m)">
-    <n-input-number v-model:value="form.number" placeholder="输入米" style="width: 100%" />
+  <n-form-item label="Meter (m)">
+    <n-input-number v-model:value="form.number" placeholder="Enter meters" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
@@ -72,63 +72,63 @@ const convertHandler = () => {
   </template>
 </n-card>
 
-## 实际应用场景
+## Practical Application Scenarios
 
-### 建筑工程领域
-在国际建筑项目中，米到英尺的换算极为重要。建筑设计图纸常用英尺标注，而材料规格多用米表示。例如，某办公楼高度为30米，换算为98.425英尺，便于英制国家的建筑师和工程师理解设计要求。
+### Construction Engineering
+In international construction projects, meter to foot conversion is extremely important. Architectural design drawings often use feet for annotations, while material specifications are mostly expressed in meters. For example, an office building with a height of 30 meters converts to 98.425 feet, making it easier for architects and engineers in imperial countries to understand design requirements.
 
-### 航空航天工业
-航空领域中，飞机尺寸和跑道长度的单位换算至关重要。商用客机长度为50米时，换算为164.042英尺，有助于机场地勤人员安排停机位和维护作业空间。
+### Aerospace Industry
+In the aviation field, unit conversion for aircraft dimensions and runway lengths is crucial. When a commercial aircraft is 50 meters long, it converts to 164.042 feet, helping airport ground crew arrange parking positions and maintenance workspace.
 
-### 体育运动与场馆
-国际体育赛事中，场地标准多用米制，而某些地区习惯使用英尺。标准足球场长度100米换算为328.084英尺，便于不同地区体育场馆的规划和建设。
+### Sports and Venues
+In international sporting events, field standards mostly use the metric system, while some regions are accustomed to using feet. A standard football field length of 100 meters converts to 328.084 feet, facilitating the planning and construction of sports venues in different regions.
 
-### 制造业与产品设计
-精密制造业中，产品尺寸和设备规格的单位转换不可或缺。机械设备长度5米换算为16.404英尺，有助于客户评估安装空间和运输要求，确保设备顺利投入使用。
+### Manufacturing and Product Design
+In precision manufacturing, unit conversion for product dimensions and equipment specifications is indispensable. A mechanical equipment length of 5 meters converts to 16.404 feet, helping customers evaluate installation space and transportation requirements, ensuring smooth equipment deployment.
 
-## 换算公式与对照表
+## Conversion Formulas and Reference Table
 
-### 基本换算公式
-从 **米 (m)** 换算到 **英尺 (ft)** 的公式为：
+### Basic Conversion Formula
+The formula for converting from **meters (m)** to **feet (ft)** is:
 $$ ft = m \times 3.28084 $$
 
-### 常用换算对照表
-| 米 (m) | 英尺 (ft) | 应用场景 |
-|--------|-----------|----------|
-| 0.5 m | 1.640 ft | 小型物品 |
-| 1 m | 3.281 ft | 标准换算 |
-| 2 m | 6.562 ft | 家具尺寸 |
-| 3 m | 9.843 ft | 房间高度 |
-| 5 m | 16.404 ft | 建筑测量 |
-| 10 m | 32.808 ft | 工程项目 |
+### Common Conversion Reference Table
+| Meters (m) | Feet (ft) | Application Scenario |
+|------------|-----------|---------------------|
+| 0.5 m | 1.640 ft | Small items |
+| 1 m | 3.281 ft | Standard conversion |
+| 2 m | 6.562 ft | Furniture dimensions |
+| 3 m | 9.843 ft | Room height |
+| 5 m | 16.404 ft | Building measurements |
+| 10 m | 32.808 ft | Engineering projects |
 
-### 长度单位换算参考
-- **1米** = 100厘米 = 10分米 = 3.281英尺
-- **1分米** = 10厘米 = 0.1米
-- **一米等于多少厘米**：1米 = 100厘米
-- **一米等于多少分米**：1米 = 10分米
+### Length Unit Conversion Reference
+- **1 meter** = 100 centimeters = 10 decimeters = 3.281 feet
+- **1 decimeter** = 10 centimeters = 0.1 meters
+- **How many centimeters in a meter**: 1 meter = 100 centimeters
+- **How many decimeters equal one meter**: 1 meter = 10 decimeters
 
-## 常见问题解答
+## Frequently Asked Questions
 
-### 1. 一米是多少厘米？
-一米等于100厘米。这是公制长度单位的基本换算关系，1m = 100cm，是我们长度单位转换器中最常用的换算。
+### 1. How many centimeters in a meter?
+One meter equals 100 centimeters. This is the basic conversion relationship for metric length units, 1m = 100cm, and is the most commonly used conversion in our length unit converter.
 
-### 2. 一米等于多少分米？
-一米等于10分米。分米是米和厘米之间的中间单位，1m = 10dm = 100cm，便于中等长度的测量。
+### 2. How many decimeters equal one meter?
+One meter equals 10 decimeters. The decimeter is an intermediate unit between meters and centimeters, 1m = 10dm = 100cm, convenient for measuring medium lengths.
 
-### 3. 米到英尺的换算公式是什么？
-米到英尺的换算公式为：英尺数 = 米数 × 3.28084。这个单位转换器公式可以快速进行m到ft的换算。
+### 3. What is the conversion formula from meters to feet?
+The conversion formula from meters to feet is: feet = meters × 3.28084. This unit converter formula allows for quick conversion from m to ft.
 
-### 4. 英尺单位主要用在哪些地方？
-英尺(ft)主要用于建筑工程、航空航天、体育运动和日常测量。在美国、英国等国家，英尺是常用的长度单位。
+### 4. Where are feet units mainly used?
+Feet (ft) are mainly used in construction engineering, aerospace, sports, and daily measurements. In countries like the United States and United Kingdom, feet are commonly used length units.
 
-### 5. 如何快速进行长度单位换算？
-使用专业的单位转换器工具，输入数值即可获得精确的换算结果。我们的长度单位换算表提供常用数值的快速查询。
+### 5. How to quickly perform length unit conversions?
+Use professional unit converter tools, input values to get precise conversion results. Our length unit conversion table provides quick lookup for common values.
 
-### 6. m单位和ft单位的精确换算关系？
-1米 = 3.28084英尺，这是国际标准的精确换算关系。在工程计算中，通常使用3.281作为近似值进行快速换算。
+### 6. What is the precise conversion relationship between m and ft units?
+1 meter = 3.28084 feet, this is the internationally standard precise conversion relationship. In engineering calculations, 3.281 is usually used as an approximate value for quick conversions.
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Length" :key="index">
     <n-button

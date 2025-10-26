@@ -4,22 +4,22 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Length/index
-      linkText: 长度换算
+      linkText: Length Conversion
   - - link: /Length/Kilometer-to-Nautical-mile
-      linkText: 千米到海里
+      linkText: Kilometer to Nautical Mile
 head:
   - - meta
     - name: description
-      content: "千米到海里换算器 - 专业的长度单位转换工具。支持km到海里的精确换算，提供单位转换器、长度单位换算表。一海里等于多少公里？海里和公里怎么换算？专业解答海里换算问题。"
+      content: "Kilometer to nautical mile converter - Professional length unit conversion tool. Supports accurate km to nautical mile conversion, provides unit converter and length unit conversion table. How many kilometers in a nautical mile? How to convert nautical miles and kilometers? Professional answers to nautical mile conversion questions."
   - - meta
     - name: keywords
-      content: "千米到海里,km到海里换算,一海里等于多少公里,海里和公里怎么换算,单位转换器,长度单位转换器,长度单位换算,尺寸换算,长度单位换算表,海里,nautical mile,海里换算,单位换算"
+      content: "kilometer to nautical mile,km to nautical mile conversion,how many kilometers in a nautical mile,how to convert nautical miles and kilometers,unit converter,length unit converter,length unit conversion,dimension conversion,length unit conversion table,nautical mile,nautical mile conversion,unit conversion"
 ---
-# 千米 (km) 到 海里 (nMi) 的换算
+# Kilometer (km) to Nautical Mile (nMi) Conversion
 
-千米到海里换算是航海和航空领域中的重要长度单位转换。千米(km)作为公制长度单位，海里(nautical mile/nMi)作为国际航海通用单位，广泛应用于海上导航、航空飞行等领域。一海里等于多少公里？一海里等于1.852公里，反之一公里等于0.54海里。我们的单位转换器提供精确的海里和公里换算功能，是专业的长度单位转换器工具。
+Kilometer to nautical mile conversion is an important length unit conversion in maritime and aviation fields. Kilometer (km) as a metric length unit and nautical mile (nMi) as an international maritime standard unit are widely used in marine navigation, aviation flight and other fields. How many kilometers in a nautical mile? One nautical mile equals 1.852 kilometers, conversely one kilometer equals 0.54 nautical miles. Our unit converter provides precise nautical mile and kilometer conversion functionality, serving as a professional length unit converter tool.
 
 ---
 <script setup>
@@ -27,13 +27,13 @@ import { onMounted, reactive, inject, ref } from 'vue'
 import { NButton, NForm, NFormItem, NInput, NInputNumber, NSelect, NCard, useMessage,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
 import { Length } from '../files';
-const seoKey = ['单位转换器','单位换算','长度单位转换器','长度单位转换','尺寸换算','长度单位换算','长度单位换算表','一海里等于多少公里','一英里等于多少米','miles','海里和公里怎么换算','mile','一英里等于多少公里','英里和公里换算','米换算英尺','英尺单位','英制','英尺和英寸的换算','英尺英寸','英尺和米换算','ft单位','英尺 米','一米等于多少英尺','英尺厘米换算','英寸和英尺','ft to m','呎','英尺换算米','英尺转换','ft和m换算','六英尺','英尺和米','一英尺等于多少英寸','feet 多少米','米和英尺换算','feet是什么单位','英尺换算厘米','英制单位','英尺和英寸','英寸 厘米','一英尺','一英尺等于多少米','公尺','来源','ft是什么单位','一英尺等于多少厘米','英尺和厘米的换算','英里','foot','厘米和英寸换算','英尺和米的换算','英尺换算','ft','一英寸等于多少厘米','英寸换算','英寸和厘米的换算']
+const seoKey = ['unit converter','unit conversion','length unit converter','length unit conversion','dimension conversion','length unit conversion','length unit conversion table','how many kilometers in a nautical mile','how many meters in a mile','miles','how to convert nautical miles and kilometers','mile','how many kilometers in a mile','mile and kilometer conversion','meter to feet conversion','feet unit','imperial','feet and inch conversion','feet inch','feet and meter conversion','ft unit','feet meter','how many feet in a meter','feet centimeter conversion','inch and feet','ft to m','feet','feet to meter conversion','feet conversion','ft and m conversion','six feet','feet and meter','how many inches in a foot','feet how many meters','meter and feet conversion','what is feet unit','feet to centimeter conversion','imperial unit','feet and inch','inch centimeter','one foot','how many meters in a foot','meter','source','what is ft unit','how many centimeters in a foot','feet and centimeter conversion','mile','foot','centimeter and inch conversion','feet and meter conversion','feet conversion','ft','how many centimeters in an inch','inch conversion','inch and centimeter conversion']
 const convert = inject('convert')
 
 const form = reactive({
   number: null,
   result: '',
-  title:'千米到海里换算',
+  title:'Kilometer to Nautical Mile Conversion',
 })
 
 const convertHandler = () => {
@@ -41,17 +41,17 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) * 0.53996
     form.result = `${form.number}km = ${convertedValue.toFixed(5)}nMi`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="千米 (km)">
-    <n-input-number v-model:value="form.number" placeholder="输入千米" style="width: 100%" />
+  <n-form-item label="Kilometers (km)">
+    <n-input-number v-model:value="form.number" placeholder="Enter kilometers" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
@@ -72,72 +72,72 @@ const convertHandler = () => {
   </template>
 </n-card>
 
-## 实际应用场景
+## Practical Application Scenarios
 
-千米到海里的单位转换在海洋和航空领域中极为重要，我们的长度单位转换器为以下应用提供精确换算：
+Kilometer to nautical mile unit conversion is extremely important in maritime and aviation fields. Our length unit converter provides precise conversion for the following applications:
 
-### 海上导航与航海
-- **船舶导航系统**：GPS显示千米距离，海图标注海里，需要进行海里和公里换算
-- **港口管理**：港口到港口的距离用海里表示，而港内作业距离用千米计算
-- **示例**：上海港到釜山港距离约540海里，相当于1000公里；一海里等于多少公里？答案是1.852公里
+### Marine Navigation and Sailing
+- **Ship Navigation Systems**: GPS displays distances in kilometers, while nautical charts mark nautical miles, requiring nautical mile and kilometer conversion
+- **Port Management**: Port-to-port distances are expressed in nautical miles, while intra-port operational distances are calculated in kilometers
+- **Example**: The distance from Shanghai Port to Busan Port is approximately 540 nautical miles, equivalent to 1000 kilometers; How many kilometers in a nautical mile? The answer is 1.852 kilometers
 
-### 航空飞行与空中交通
-- **航线规划**：国际航线距离常用海里表示，而地面距离用千米计算
-- **空中交通管制**：飞行高度和水平距离的单位转换
-- **示例**：北京到东京航线距离约1,300海里，相当于2,408公里
+### Aviation Flight and Air Traffic
+- **Route Planning**: International airline distances are commonly expressed in nautical miles, while ground distances are calculated in kilometers
+- **Air Traffic Control**: Unit conversion for flight altitude and horizontal distances
+- **Example**: The Beijing to Tokyo airline distance is approximately 1,300 nautical miles, equivalent to 2,408 kilometers
 
-### 海洋科学研究
-- **海洋调查**：科研船航行距离用海里记录，海底地形测量用千米标注
-- **海洋生物研究**：鱼类洄游路线用海里表示，栖息地范围用千米描述
-- **示例**：某海洋调查船航行200海里，覆盖370.4平方公里的海域
+### Marine Scientific Research
+- **Ocean Surveys**: Research vessel navigation distances are recorded in nautical miles, while seafloor topography measurements are marked in kilometers
+- **Marine Biology Research**: Fish migration routes are expressed in nautical miles, while habitat ranges are described in kilometers
+- **Example**: A marine research vessel travels 200 nautical miles, covering 370.4 square kilometers of sea area
 
-### 海上运输与物流
-- **货运航线**：国际海运距离用海里计算运费，港口间陆路距离用千米表示
-- **船期计算**：根据海里距离和航速计算到港时间
-- **示例**：从青岛到洛杉矶海运距离约6,500海里，相当于12,038公里
+### Maritime Transportation and Logistics
+- **Freight Routes**: International shipping distances are calculated in nautical miles for freight charges, while inter-port land distances are expressed in kilometers
+- **Schedule Calculation**: Calculate arrival times based on nautical mile distances and sailing speeds
+- **Example**: The shipping distance from Qingdao to Los Angeles is approximately 6,500 nautical miles, equivalent to 12,038 kilometers
 
-## 换算公式与对照表
+## Conversion Formulas and Reference Tables
 
-### 基本换算公式
-从 **千米 (km)** 换算到 **海里 (nMi)** 的公式为：
+### Basic Conversion Formula
+The formula for converting from **Kilometers (km)** to **Nautical Miles (nMi)** is:
 $$ nMi = km \times 0.53996 $$
 
-### 常用换算对照表
-| 千米 (km) | 海里 (nMi) | 应用场景 |
-|-----------|------------|----------|
-| 1 km | 0.540 nMi | 基础换算 |
-| 5 km | 2.700 nMi | 近海航行 |
-| 10 km | 5.400 nMi | 沿海导航 |
-| 50 km | 27.000 nMi | 中程航行 |
-| 100 km | 53.996 nMi | 远程航行 |
-| 1000 km | 539.96 nMi | 跨洋航行 |
+### Common Conversion Reference Table
+| Kilometers (km) | Nautical Miles (nMi) | Application Scenario |
+|-----------------|----------------------|---------------------|
+| 1 km | 0.540 nMi | Basic conversion |
+| 5 km | 2.700 nMi | Coastal sailing |
+| 10 km | 5.400 nMi | Coastal navigation |
+| 50 km | 27.000 nMi | Medium-range sailing |
+| 100 km | 53.996 nMi | Long-range sailing |
+| 1000 km | 539.96 nMi | Transoceanic sailing |
 
-### 长度单位换算参考
-- **1千米** = 0.540海里 = 0.621英里 = 3,280.84英尺
-- **1海里** = 1.852千米 = 1.151英里 = 6,076.12英尺
-- **一海里等于多少公里**：1海里 = 1.852公里
+### Length Unit Conversion Reference
+- **1 kilometer** = 0.540 nautical miles = 0.621 miles = 3,280.84 feet
+- **1 nautical mile** = 1.852 kilometers = 1.151 miles = 6,076.12 feet
+- **How many kilometers in a nautical mile**: 1 nautical mile = 1.852 kilometers
 
-## 常见问题解答
+## Frequently Asked Questions
 
-### 1. 一海里等于多少公里？
-一海里等于1.852公里（准确值为1.852000公里）。这是国际标准换算系数，我们的单位转换器采用精确数值进行海里和公里换算。
+### 1. How many kilometers in a nautical mile?
+One nautical mile equals 1.852 kilometers (exact value is 1.852000 kilometers). This is the international standard conversion factor, and our unit converter uses precise values for nautical mile and kilometer conversion.
 
-### 2. 海里和公里怎么换算？为什么海里不等于普通英里？
-海里和公里的换算：1海里=1.852公里，1公里=0.540海里。海里(nautical mile)是基于地球周长定义的，1海里等于地球子午线上1分弧长，而普通英里(mile)=1.609公里，两者不同。
+### 2. How to convert nautical miles and kilometers? Why is a nautical mile different from a regular mile?
+Nautical mile to kilometer conversion: 1 nautical mile = 1.852 kilometers, 1 kilometer = 0.540 nautical miles. A nautical mile is defined based on Earth's circumference, where 1 nautical mile equals 1 minute of arc on Earth's meridian, while a regular mile = 1.609 kilometers, making them different.
 
-### 3. 为什么航海和航空要使用海里而不是公里？
-海里基于地球的几何特性定义，1海里对应地球表面1分弧长，便于导航计算。在海图和航空图上，经纬度与距离的换算更加直观，这是长度单位转换器中海里换算的重要意义。
+### 3. Why do maritime and aviation use nautical miles instead of kilometers?
+Nautical miles are defined based on Earth's geometric properties, where 1 nautical mile corresponds to 1 minute of arc on Earth's surface, making navigation calculations more convenient. On nautical charts and aviation charts, the conversion between latitude/longitude and distance is more intuitive, which is the important significance of nautical mile conversion in length unit converters.
 
-### 4. 如何快速进行千米到海里的换算？
-简单记忆法：1公里≈0.54海里，1海里≈1.85公里。精确换算请使用我们的专业单位转换器，支持小数点精确计算和长度单位换算表查询。
+### 4. How to quickly convert kilometers to nautical miles?
+Simple memory method: 1 kilometer ≈ 0.54 nautical miles, 1 nautical mile ≈ 1.85 kilometers. For precise conversion, please use our professional unit converter, which supports accurate decimal calculations and length unit conversion table queries.
 
-### 5. GPS显示的距离单位如何转换？
-现代GPS可设置显示单位，但海图仍使用海里。船舶导航时需要在千米和海里间转换，我们的长度单位换算表提供快速查询功能。
+### 5. How to convert GPS distance units?
+Modern GPS can be set to display units, but nautical charts still use nautical miles. Ship navigation requires conversion between kilometers and nautical miles, and our length unit conversion table provides quick lookup functionality.
 
-### 6. 除了千米到海里，还支持哪些长度单位换算？
-我们的长度单位转换器支持米、厘米、毫米、英尺、英寸、码、英里等多种单位间的相互转换，是全面的尺寸换算工具平台。
+### 6. Besides kilometer to nautical mile, what other length unit conversions are supported?
+Our length unit converter supports mutual conversion between meters, centimeters, millimeters, feet, inches, yards, miles and other units, serving as a comprehensive dimension conversion tool platform.
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Length" :key="index">
     <n-button

@@ -4,22 +4,22 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Length/index
-      linkText: 长度换算
+      linkText: Length Conversion
   - - link: /Length/Mile-to-Nautical-mile
-      linkText: 英里到海里
+      linkText: Mile to Nautical Mile
 head:
   - - meta
     - name: description
-      content: "英里到海里换算工具和指南。提供精确的英里(mi)到海里(nMi)单位转换，包含换算公式、实际应用场景和详细计算示例。适用于航海、海洋工程和国际贸易等领域的长度单位换算需求。"
+      content: "Mile to Nautical Mile conversion tool and guide. Provides precise mile (mi) to nautical mile (nMi) unit conversion, including conversion formulas, practical application scenarios and detailed calculation examples. Suitable for navigation, marine engineering and international trade length unit conversion needs."
   - - meta
     - name: keywords
-      content: "单位转换器,单位换算,长度单位转换器,长度单位转换,尺寸换算,长度单位换算,长度单位换算表,英里换算,海里换算,英里到海里,mi换算,nMi换算,航海单位,海洋距离,国际单位,英制单位,公制单位,距离测量,长度计算,换算工具,在线换算,精确换算,mi,nMi,km,m,cm,mm,英里,海里,千米,米,厘米,毫米,航海里程,海洋工程,船舶导航,海上距离"
+      content: "unit converter,unit conversion,length unit converter,length unit conversion,dimension conversion,length unit conversion,length unit conversion table,mile conversion,nautical mile conversion,mile to nautical mile,mi conversion,nMi conversion,navigation units,marine distance,international units,imperial units,metric units,distance measurement,length calculation,conversion tool,online conversion,precise conversion,mi,nMi,km,m,cm,mm,mile,nautical mile,kilometer,meter,centimeter,millimeter,navigation mileage,marine engineering,ship navigation,marine distance"
 ---
-# 英里 (mi) 到 海里 (nMi) 的换算
+# Mile (mi) to Nautical Mile (nMi) Conversion
 
-英里到海里的换算是连接陆地距离测量与海洋导航的重要转换。英里(mile)作为英制长度单位，广泛应用于陆地交通、体育运动等领域，而海里(nautical mile)则是国际航海和航空的标准距离单位。掌握英里与海里之间的准确换算关系，对于航海导航、海洋工程、国际贸易和跨国运输具有重要的实际意义。
+Mile to nautical mile conversion is an important transformation connecting land distance measurement with marine navigation. The mile, as an imperial length unit, is widely used in land transportation, sports and other fields, while the nautical mile is the standard distance unit for international navigation and aviation. Mastering the accurate conversion relationship between miles and nautical miles has important practical significance for marine navigation, ocean engineering, international trade and transnational transportation.
 
 ---
 <script setup>
@@ -27,13 +27,13 @@ import { onMounted, reactive, inject, ref } from 'vue'
 import { NButton, NForm, NFormItem, NInput, NInputNumber, NSelect, NCard, useMessage,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
 import { Length } from '../files';
-const seoKey = ['单位转换器','单位换算','长度单位转换器','长度单位转换','尺寸换算','长度单位换算','长度单位换算表','英里换算','海里换算','英里到海里','mi换算','nMi换算','航海单位','海洋距离','国际单位','英制单位','公制单位','距离测量','长度计算','换算工具','在线换算','精确换算','mi','nMi','km','m','cm','mm','英里','海里','千米','米','厘米','毫米','航海里程','海洋工程','船舶导航','海上距离']
+const seoKey = ['unit converter','unit conversion','length unit converter','length unit conversion','dimension conversion','length unit conversion','length unit conversion table','mile conversion','nautical mile conversion','mile to nautical mile','mi conversion','nMi conversion','navigation units','marine distance','international units','imperial units','metric units','distance measurement','length calculation','conversion tool','online conversion','precise conversion','mi','nMi','km','m','cm','mm','mile','nautical mile','kilometer','meter','centimeter','millimeter','navigation mileage','marine engineering','ship navigation','marine distance']
 const convert = inject('convert')
 
 const form = reactive({
   number: null,
   result: '',
-  title: '英里 (mi) 到海里 (nMi) 的长度单位换算'
+  title: 'Mile (mi) to Nautical Mile (nMi) Length Unit Conversion'
 })
 
 const convertHandler = () => {
@@ -41,17 +41,17 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) * 0.86898
     form.result = `${form.number}mi = ${convertedValue.toFixed(5)}nMi`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="英里 (mi)">
-    <n-input-number v-model:value="form.number" placeholder="输入英里" style="width: 100%" />
+  <n-form-item label="Mile (mi)">
+    <n-input-number v-model:value="form.number" placeholder="Enter miles" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
@@ -72,92 +72,92 @@ const convertHandler = () => {
   </template>
 </n-card>
 
-## 实际应用场景
+## Practical Application Scenarios
 
-英里到海里的换算在多个专业领域和实际应用中具有重要意义，连接了陆地测量与海洋导航：
+Mile to nautical mile conversion has important significance in multiple professional fields and practical applications, connecting land measurement with marine navigation:
 
-### 1. 航海导航与船舶运输
-- **商业航运**：国际货运航线规划中的距离计算与燃油消耗估算
-- **游轮旅游**：邮轮航线设计和旅行距离的准确标注
-- **渔业作业**：渔船作业范围规划和渔场距离测量
-- **海上救援**：搜救范围确定和救援船只调度的距离计算
-- 示例：从纽约到伦敦的航线距离约3000英里，相当于2607海里
+### 1. Marine Navigation and Ship Transportation
+- **Commercial Shipping**: Distance calculation and fuel consumption estimation in international freight route planning
+- **Cruise Tourism**: Cruise route design and accurate marking of travel distances
+- **Fishing Operations**: Fishing vessel operation range planning and fishing ground distance measurement
+- **Marine Rescue**: Search and rescue range determination and rescue vessel dispatch distance calculation
+- Example: The route distance from New York to London is approximately 3000 miles, equivalent to 2607 nautical miles
 
-### 2. 海洋工程与港口建设
-- **海上平台**：石油钻井平台与陆地基地之间的距离测量
-- **海底电缆**：跨洋通信电缆的铺设距离规划
-- **港口规划**：港口与主要航道之间的距离计算
-- **海洋风电**：海上风电场与陆地电网的连接距离
-- 示例：某海上风电场距离海岸线50英里，约合43.4海里
+### 2. Marine Engineering and Port Construction
+- **Offshore Platforms**: Distance measurement between oil drilling platforms and land bases
+- **Submarine Cables**: Trans-oceanic communication cable laying distance planning
+- **Port Planning**: Distance calculation between ports and major shipping lanes
+- **Offshore Wind Power**: Connection distance between offshore wind farms and land power grids
+- Example: An offshore wind farm is 50 miles from the coastline, approximately 43.4 nautical miles
 
-### 3. 国际贸易与物流运输
-- **货运成本**：国际海运费用计算和运输距离评估
-- **供应链管理**：全球供应链中的运输距离优化
-- **保险评估**：海上货物保险的风险距离评估
-- **时效计算**：国际快递和货运的时间预估
-- 示例：亚洲到欧洲的主要航线距离约12000英里，相当于10428海里
+### 3. International Trade and Logistics Transportation
+- **Freight Costs**: International shipping cost calculation and transportation distance assessment
+- **Supply Chain Management**: Transportation distance optimization in global supply chains
+- **Insurance Assessment**: Risk distance assessment for marine cargo insurance
+- **Time Calculation**: Time estimation for international express and freight services
+- Example: The main shipping route from Asia to Europe is approximately 12000 miles, equivalent to 10428 nautical miles
 
-### 4. 航空导航与飞行计划
-- **跨洋航线**：国际航班的航线距离计算和燃油规划
-- **航空管制**：海上空域的管制范围和导航点设置
-- **应急降落**：海上紧急降落点的距离计算
-- **航空搜救**：海上飞行器失联时的搜索范围确定
-- 示例：跨太平洋航班的航线距离约6000英里，相当于5214海里
+### 4. Aviation Navigation and Flight Planning
+- **Trans-oceanic Routes**: Route distance calculation and fuel planning for international flights
+- **Air Traffic Control**: Control range and navigation point setting for maritime airspace
+- **Emergency Landing**: Distance calculation for emergency landing points at sea
+- **Aviation Search and Rescue**: Search range determination when aircraft are lost at sea
+- Example: Trans-Pacific flight routes are approximately 6000 miles, equivalent to 5214 nautical miles
 
-### 5. 海洋科学研究与环境监测
-- **海洋调查**：科研船只的调查航线规划和站点距离
-- **环境监测**：海洋污染扩散范围的距离测量
-- **气象预报**：海上气象观测站的覆盖范围计算
-- **生态保护**：海洋保护区边界的精确划定
-- 示例：某海洋科考船的调查范围覆盖500英里，约合434海里的海域
+### 5. Marine Scientific Research and Environmental Monitoring
+- **Marine Surveys**: Research vessel survey route planning and station distance
+- **Environmental Monitoring**: Distance measurement of marine pollution spread range
+- **Weather Forecasting**: Coverage range calculation for marine weather observation stations
+- **Ecological Protection**: Precise demarcation of marine protected area boundaries
+- Example: A marine research vessel's survey range covers 500 miles, approximately 434 nautical miles of sea area
 
-## 公式
+## Formulas
 
-### 英里到海里的换算公式
-从 **英里 (mi)** 换算到 **海里 (nMi)** 的公式为：
+### Mile to Nautical Mile Conversion Formula
+The formula for converting from **miles (mi)** to **nautical miles (nMi)** is:
 $$ nMi = mi \times 0.86898 $$
 
-### 海里到英里的换算公式
-从 **海里 (nMi)** 换算到 **英里 (mi)** 的公式为：
+### Nautical Mile to Mile Conversion Formula
+The formula for converting from **nautical miles (nMi)** to **miles (mi)** is:
 $$ mi = nMi \times 1.15078 $$
 
-### 换算示例
+### Conversion Examples
 - 1mi = 0.86898nMi
 - 5mi = 4.3449nMi
 - 10mi = 8.6898nMi
 - 50mi = 43.449nMi
 - 100mi = 86.898nMi
 
-### 长度单位换算表
-| 英里 (mi) | 海里 (nMi) | 千米 (km) | 米 (m) | 英尺 (ft) |
-|-----------|------------|-----------|--------|----------|
+### Length Unit Conversion Table
+| Miles (mi) | Nautical Miles (nMi) | Kilometers (km) | Meters (m) | Feet (ft) |
+|------------|---------------------|-----------------|------------|-----------|
 | 1 | 0.86898 | 1.60934 | 1609.34 | 5280 |
 | 5 | 4.3449 | 8.0467 | 8046.7 | 26400 |
 | 10 | 8.6898 | 16.0934 | 16093.4 | 52800 |
 | 50 | 43.449 | 80.467 | 80467 | 264000 |
 | 100 | 86.898 | 160.934 | 160934 | 528000 |
 
-## 常见问题 (FAQ)
+## Frequently Asked Questions (FAQ)
 
-### 1. 英里和海里有什么区别？
-英里是陆地距离测量单位，1英里等于1609.34米；海里是海洋和航空导航专用单位，1海里等于1852米，基于地球子午线弧长定义。
+### 1. What is the difference between miles and nautical miles?
+Miles are land distance measurement units, with 1 mile equal to 1609.34 meters; nautical miles are specialized units for marine and aviation navigation, with 1 nautical mile equal to 1852 meters, based on the definition of Earth's meridian arc length.
 
-### 2. 为什么航海要使用海里而不是英里？
-海里基于地球的几何特性，1海里等于地球表面1分弧度的距离，便于航海导航计算和经纬度换算。
+### 2. Why do we use nautical miles instead of miles for navigation?
+Nautical miles are based on Earth's geometric characteristics, with 1 nautical mile equal to the distance of 1 arc minute on Earth's surface, making it convenient for navigation calculations and latitude-longitude conversions.
 
-### 3. 英里到海里的换算系数是多少？
-1英里 = 0.86898海里，换算系数为0.86898。反之，1海里 = 1.15078英里。
+### 3. What is the conversion factor from miles to nautical miles?
+1 mile = 0.86898 nautical miles, with a conversion factor of 0.86898. Conversely, 1 nautical mile = 1.15078 miles.
 
-### 4. 在什么情况下需要进行英里到海里的换算？
-主要用于国际航运、跨洋航班规划、海洋工程项目、国际贸易运输距离计算等场景。
+### 4. In what situations do we need to convert miles to nautical miles?
+Mainly used in international shipping, trans-oceanic flight planning, marine engineering projects, international trade transportation distance calculations, and similar scenarios.
 
-### 5. 如何快速估算英里到海里的换算？
-可以记住1英里约等于0.87海里，进行快速估算。精确计算时使用0.86898的换算系数。
+### 5. How to quickly estimate mile to nautical mile conversion?
+You can remember that 1 mile is approximately equal to 0.87 nautical miles for quick estimation. Use the conversion factor of 0.86898 for precise calculations.
 
-### 6. 英里到海里换算在GPS导航中的应用？
-现代GPS系统可以同时显示英里和海里，在海上导航时自动切换到海里显示，确保导航精度。
+### 6. How is mile to nautical mile conversion applied in GPS navigation?
+Modern GPS systems can display both miles and nautical miles simultaneously, automatically switching to nautical mile display during marine navigation to ensure navigation accuracy.
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Length" :key="index">
     <n-button

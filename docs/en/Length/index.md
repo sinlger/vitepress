@@ -4,29 +4,29 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Length/index
-      linkText: 长度换算
+      linkText: Length Conversion
   - - link: /Length/index
-      linkText: 长度单位换算
+      linkText: Length Unit Conversion
 head:
   - - meta
     - name: description
-      content: "专业的长度单位转换器和单位换算工具。支持米、英尺、英寸、海里、英里等多种长度单位换算，提供精确的换算公式和换算表。一站式解决尺寸换算需求。"
+      content: "Professional length unit converter and conversion tool. Supports conversion between meters, feet, inches, nautical miles, miles and other length units, providing accurate conversion formulas and conversion tables. One-stop solution for dimension conversion needs."
   - - meta
     - name: keywords
-      content: "单位转换器, 单位换算, 长度单位转换器, 长度单位转换, 尺寸换算, 长度单位换算, 长度单位换算表, 一海里等于多少公里, 一英里等于多少米, miles, 海里和公里怎么换算, mile, 一英里等于多少公里, 英里和公里换算, 米换算英尺, 英尺单位, 英制, 英尺和英寸的换算, 英尺英寸, 英尺和米换算, ft单位, 英尺 米, 一米等于多少英尺, 英尺厘米换算, 英寸和英尺, ft to m, 呎, 英尺换算米, 英尺转换, ft和m换算, 六英尺, 英尺和米, 一英尺等于多少英寸, feet 多少米, 米和英尺换算, feet是什么单位, 英尺换算厘米, 英制单位, 英尺和英寸, 英寸 厘米, 一英尺, 一英尺等于多少米, 公尺, 来源, ft是什么单位, 一英尺等于多少厘米, 英尺和厘米的换算, 英里, foot, 厘米和英寸换算, 英尺和米的换算, 英尺换算, ft, 一英寸等于多少厘米, 英寸换算, 英寸和厘米的换算"
+      content: "unit converter, unit conversion, length unit converter, length unit conversion, dimension conversion, length unit conversion, length unit conversion table, how many kilometers in a nautical mile, how many meters in a mile, miles, nautical mile to kilometer conversion, mile, how many kilometers in a mile, mile to kilometer conversion, meter to feet conversion, feet unit, imperial system, feet to inches conversion, feet inches, feet to meter conversion, ft unit, feet meter, how many feet in a meter, feet to centimeter conversion, inches and feet, ft to m, feet, feet to meter conversion, feet conversion, ft and m conversion, six feet, feet and meter, how many inches in a foot, how many meters in feet, meter to feet conversion, what unit is feet, feet to centimeter conversion, imperial units, feet and inches, inches centimeters, one foot, how many meters in a foot, meter, source, what unit is ft, how many centimeters in a foot, feet to centimeter conversion, mile, foot, centimeter to inches conversion, feet to meter conversion, feet conversion, ft, how many centimeters in an inch, inch conversion, inches to centimeters conversion"
 ---
-# 长度单位换算 - 专业的长度单位转换器
+# Length Unit Conversion - Professional Length Unit Converter
 
-欢迎使用我们的专业长度单位转换器！本工具支持纳米、毫米、厘米、米、千米、英寸、英尺、码、英里、海里等多种长度单位之间的精确换算。无论您需要进行米换算英尺、英寸和厘米的换算，还是海里和公里怎么换算，我们都能为您提供准确的结果和详细的换算公式。
+Welcome to our professional length unit converter! This tool supports precise conversion between nanometers, millimeters, centimeters, meters, kilometers, inches, feet, yards, miles, nautical miles and other length units. Whether you need to convert meters to feet, inches to centimeters, or nautical miles to kilometers, we provide accurate results and detailed conversion formulas.
 
-## 为什么选择我们的长度单位转换器？
+## Why Choose Our Length Unit Converter?
 
-- **全面覆盖**：支持公制、英制和特殊单位的全方位换算
-- **精确计算**：采用国际标准换算系数，确保结果准确
-- **实时转换**：输入数值即可获得即时换算结果
-- **专业可靠**：基于权威计量标准，适用于工程、科研和日常使用
+- **Comprehensive Coverage**: Supports full-range conversion between metric, imperial and special units
+- **Precise Calculation**: Uses international standard conversion factors to ensure accurate results
+- **Real-time Conversion**: Get instant conversion results upon entering values
+- **Professional Reliability**: Based on authoritative measurement standards, suitable for engineering, scientific research and daily use
 
 ---
 <script setup>
@@ -34,23 +34,23 @@ import { onMounted, reactive, inject ,ref  } from 'vue'
 import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage,NGrid ,NGi  } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
 import { Length } from '../files';
-const seoKey = ['单位转换器','单位换算','长度单位转换器','长度单位转换','尺寸换算','长度单位换算','长度单位换算表','一海里等于多少公里','一英里等于多少米','miles','海里和公里怎么换算','mile','一英里等于多少公里','英里和公里换算','米换算英尺','英尺单位','英制','英尺和英寸的换算','英尺英寸','英尺和米换算','ft单位','英尺 米','一米等于多少英尺','英尺厘米换算','英寸和英尺','ft to m','呎','英尺换算米','英尺转换','ft和m换算','六英尺','英尺和米','一英尺等于多少英寸','feet 多少米','米和英尺换算','feet是什么单位','英尺换算厘米','英制单位','英尺和英寸','英寸 厘米','一英尺','一英尺等于多少米','公尺','来源','ft是什么单位','一英尺等于多少厘米','英尺和厘米的换算','英里','foot','厘米和英寸换算','英尺和米的换算','英尺换算','ft','一英寸等于多少厘米','英寸换算','英寸和厘米的换算']
+const seoKey = ['unit converter','unit conversion','length unit converter','length unit conversion','dimension conversion','length unit conversion','length unit conversion table','how many kilometers in a nautical mile','how many meters in a mile','miles','nautical mile to kilometer conversion','mile','how many kilometers in a mile','mile to kilometer conversion','meter to feet conversion','feet unit','imperial system','feet to inches conversion','feet inches','feet to meter conversion','ft unit','feet meter','how many feet in a meter','feet to centimeter conversion','inches and feet','ft to m','feet','feet to meter conversion','feet conversion','ft and m conversion','six feet','feet and meter','how many inches in a foot','how many meters in feet','meter to feet conversion','what unit is feet','feet to centimeter conversion','imperial units','feet and inches','inches centimeters','one foot','how many meters in a foot','meter','source','what unit is ft','how many centimeters in a foot','feet to centimeter conversion','mile','foot','centimeter to inches conversion','feet to meter conversion','feet conversion','ft','how many centimeters in an inch','inch conversion','inches to centimeters conversion']
 
 const convert = inject('convert')
 const options =  [
-  { label: '纳米', value: 'nm' },
-  { label: '微米', value: 'μm' },
-  { label: '毫米', value: 'mm' },
-  { label: '厘米', value: 'cm' },   
-  { label: '米', value: 'm' },
-  { label: '千米', value: 'km' },
-  { label: '英寸', value: 'in' },
-  { label: '码', value: 'yd' },
-  { label: '英尺-us', value: 'ft-us' },
-  { label: '英尺', value: 'ft' },
-  { label: '拓', value: 'fathom' },
-  { label: '英里', value: 'mi' },
-  { label: '海里', value: 'nMi' }
+  { label: 'Nanometer', value: 'nm' },
+  { label: 'Micrometer', value: 'μm' },
+  { label: 'Millimeter', value: 'mm' },
+  { label: 'Centimeter', value: 'cm' },   
+  { label: 'Meter', value: 'm' },
+  { label: 'Kilometer', value: 'km' },
+  { label: 'Inch', value: 'in' },
+  { label: 'Yard', value: 'yd' },
+  { label: 'Foot (US)', value: 'ft-us' },
+  { label: 'Foot', value: 'ft' },
+  { label: 'Fathom', value: 'fathom' },
+  { label: 'Mile', value: 'mi' },
+  { label: 'Nautical Mile', value: 'nMi' }
 ];
 const formRef = ref(null);
 const rules = {
@@ -58,17 +58,17 @@ const rules = {
     required: true,
     type: 'number',
     trigger: "blur",
-    message: '请输入数字'
+    message: 'Please enter a number'
   },
   to:{
     required: true,
     trigger: "select",
-    message: '请选择转换单位'
+    message: 'Please select target unit'
   },
   from:{
     required: true,
     trigger: "select",
-    message: '请选择原始单位'
+    message: 'Please select source unit'
   }
 }
 const form = reactive({
@@ -76,7 +76,7 @@ const form = reactive({
   to:'',
   from:'',
   result:'',
-  title:'长度单位换算',
+  title:'Length Unit Conversion',
 })
 const convertHandler = (e) => {
    e.preventDefault();
@@ -89,21 +89,21 @@ const convertHandler = (e) => {
 </script>
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="数值"  path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数值" />
+  <n-form-item label="Value"  path="number">
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="Enter the value to convert" />
   </n-form-item>
-  <n-form-item label="从" path="from">
-    <n-select  size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
+  <n-form-item label="From" path="from">
+    <n-select  size="large" :options="options" v-model:value="form.from" placeholder="Select source unit" />
   </n-form-item>
-  <n-form-item label="到" path="to">
-    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
+  <n-form-item label="To" path="to">
+    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="Select target unit" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
+    <n-button type="info" style="width:100%" @click="convertHandler">Convert</n-button>
   </n-form-item>
 </n-form>
 <n-card  
-  title="长度单位换算"
+  title="Length Unit Conversion"
   :segmented="{
     content: true,
     footer: 'soft',
@@ -119,31 +119,31 @@ const convertHandler = (e) => {
   </template>
 </n-card>
 
-## 常用长度单位快速换算参考
+## Quick Reference for Common Length Unit Conversions
 
-### 英制单位常见换算
-- **一英尺等于多少英寸**：1 ft = 12 in
-- **一英尺等于多少米**：1 ft = 0.3048 m
-- **一英尺等于多少厘米**：1 ft = 30.48 cm
-- **一英寸等于多少厘米**：1 in = 2.54 cm
-- **一英里等于多少米**：1 mi = 1,609.344 m
-- **一英里等于多少公里**：1 mi = 1.609344 km
-- **一海里等于多少公里**：1 nMi = 1.852 km
+### Common Imperial Unit Conversions
+- **How many inches in a foot**: 1 ft = 12 in
+- **How many meters in a foot**: 1 ft = 0.3048 m
+- **How many centimeters in a foot**: 1 ft = 30.48 cm
+- **How many centimeters in an inch**: 1 in = 2.54 cm
+- **How many meters in a mile**: 1 mi = 1,609.344 m
+- **How many kilometers in a mile**: 1 mi = 1.609344 km
+- **How many kilometers in a nautical mile**: 1 nMi = 1.852 km
 
-### 公制单位基础换算
-- **米和厘米**：1 m = 100 cm
-- **千米和米**：1 km = 1,000 m
-- **厘米和毫米**：1 cm = 10 mm
+### Basic Metric Unit Conversions
+- **Meters and centimeters**: 1 m = 100 cm
+- **Kilometers and meters**: 1 km = 1,000 m
+- **Centimeters and millimeters**: 1 cm = 10 mm
 
-## 详细长度单位换算表
+## Detailed Length Unit Conversion Table
 
-单位符号| 英文全称| 中文名称| 换算公式（以米为基准）| 示例换算
+Unit Symbol| English Name| Chinese Name| Conversion Formula (meter-based)| Example Conversion
 ---|---|---|---|---
 nm| Nanometer| 纳米| 1 nm = 10⁻⁹ m| 1 m = 1,000,000,000 nm
 μm| Micrometer| 微米| 1 μm = 10⁻⁶ m| 1 m = 1,000,000 μm
 mm| Millimeter| 毫米| 1 mm = 10⁻³ m| 1 m = 1,000 mm
 cm| Centimeter| 厘米| 1 cm = 10⁻² m| 1 m = 100 cm
-m| Meter| 米| 基准单位| 1m = 1m
+m| Meter| 米| Base unit| 1m = 1m
 km| Kilometer| 千米| 1 km = 10³ m| 1 m = 0.001 km
 in| Inch| 英寸| 1 in = 0.0254 m | 1 m ≈ 39.37 in
 yd| Yard| 码| 1 yd = 0.9144 m | 1 m ≈ 1.0936 yd
@@ -152,94 +152,94 @@ ft| Foot| 英尺| 1 ft = 0.3048 m | 1 m ≈ 3.28084 ft
 fathom| Fathom| 英寻| 1 fathom = 1.8288 m | 1 m ≈ 0.5468 fathom
 mi| Mile| 英里| 1 mi = 1,609.344 m | 1 m ≈ 0.00062137 mi
 nMi| Nautical mile| 海里| 1 nMi = 1,852 m| 1 m ≈ 0.00053996 nMi
-## 长度单位换算方法详解
+## Detailed Length Unit Conversion Methods
 
-### 英制单位换算技巧
+### Imperial Unit Conversion Techniques
 
-**英尺和英寸的换算**：
-- 英尺转英寸：ft × 12 = in
-- 英寸转英尺：in ÷ 12 = ft
-- 记忆口诀：一英尺十二英寸
+**Feet and Inches Conversion**:
+- Feet to inches: ft × 12 = in
+- Inches to feet: in ÷ 12 = ft
+- Memory tip: One foot equals twelve inches
 
-**英尺和米换算**：
-- 英尺转米：ft × 0.3048 = m
-- 米转英尺：m ÷ 0.3048 = ft
-- 快速估算：1米约等于3.28英尺
+**Feet and Meter Conversion**:
+- Feet to meters: ft × 0.3048 = m
+- Meters to feet: m ÷ 0.3048 = ft
+- Quick estimation: 1 meter ≈ 3.28 feet
 
-**英寸和厘米的换算**：
-- 英寸转厘米：in × 2.54 = cm
-- 厘米转英寸：cm ÷ 2.54 = in
-- 记忆技巧：1英寸约等于2.5厘米
+**Inches and Centimeters Conversion**:
+- Inches to centimeters: in × 2.54 = cm
+- Centimeters to inches: cm ÷ 2.54 = in
+- Memory trick: 1 inch ≈ 2.5 centimeters
 
-**英里和公里换算**：
-- 英里转公里：mi × 1.609344 = km
-- 公里转英里：km ÷ 1.609344 = mi
-- 快速估算：1英里约等于1.6公里
+**Miles and Kilometers Conversion**:
+- Miles to kilometers: mi × 1.609344 = km
+- Kilometers to miles: km ÷ 1.609344 = mi
+- Quick estimation: 1 mile ≈ 1.6 kilometers
 
-**海里和公里怎么换算**：
-- 海里转公里：nMi × 1.852 = km
-- 公里转海里：km ÷ 1.852 = nMi
-- 海里主要用于航海和航空导航
+**Nautical Miles to Kilometers Conversion**:
+- Nautical miles to kilometers: nMi × 1.852 = km
+- Kilometers to nautical miles: km ÷ 1.852 = nMi
+- Nautical miles are primarily used for maritime and aviation navigation
 
-### 公制单位换算（nm到km）
+### Metric Unit Conversion (nm to km)
 
-进率规则：相邻单位进率为 10（如 `1 cm = 10 mm`）。
+Progression rule: Adjacent units have a factor of 10 (e.g., `1 cm = 10 mm`).
 
-公式：`目标单位值 = 原值 × 10^(原单位指数 - 目标单位指数)`
+Formula: `Target unit value = Original value × 10^(Original unit exponent - Target unit exponent)`
 
-例：`5 km → m = 5 × 10³ = 5,000 m`
+Example: `5 km → m = 5 × 10³ = 5,000 m`
 
-### 英制/特殊单位换算
+### Imperial/Special Unit Conversion
 
-直接乘法：`目标值 = 原值 × 换算系数`（见上表）
+Direct multiplication: `Target value = Original value × Conversion factor` (see table above)
 
-例：`10 in → m = 10 × 0.0254 = 0.254 m`
+Example: `10 in → m = 10 × 0.0254 = 0.254 m`
 
-反向换算：`原值 = 目标值 ÷ 换算系数`
+Reverse conversion: `Original value = Target value ÷ Conversion factor`
 
-例：`100 m → mi = 100 ÷ 1609.344 ≈ 0.0621 mi`
+Example: `100 m → mi = 100 ÷ 1609.344 ≈ 0.0621 mi`
 
-## 长度单位换算实用指南
+## Practical Length Unit Conversion Guide
 
-### 常见应用场景
+### Common Application Scenarios
 
-**工程建筑**：
-- 建筑图纸中的英制单位转换
-- 装修材料的尺寸换算
-- 工程测量中的精度要求
+**Engineering and Construction**:
+- Imperial unit conversion in architectural drawings
+- Dimension conversion for construction materials
+- Precision requirements in engineering measurements
 
-**日常生活**：
-- 身高体重的单位转换
-- 家具尺寸的换算
-- 运动距离的计算
+**Daily Life**:
+- Height and weight unit conversions
+- Furniture dimension calculations
+- Sports distance calculations
 
-**国际贸易**：
-- 产品规格的单位统一
-- 运输距离的计算
-- 包装尺寸的标准化
+**International Trade**:
+- Product specification unit standardization
+- Transportation distance calculations
+- Packaging dimension standardization
 
-### 重要提示
+### Important Notes
 
-- **单位差异注意**：
-  - 美制英尺（`ft-us`）与标准英尺（`ft`）差异极小（约 0.0000006 m），日常可通用
-  - 海里（`nMi`）专用于航海/航空，与英里（`mi`）不同
-  - feet是什么单位：feet是foot的复数形式，即英尺
+- **Unit Differences to Note**:
+  - U.S. Survey Foot (`ft-us`) differs minimally from standard foot (`ft`) (about 0.0000006 m), interchangeable for daily use
+  - Nautical mile (`nMi`) is specific to maritime/aviation, different from mile (`mi`)
+  - What unit is feet: feet is the plural form of foot
 
-- **精度要求**：
-  - 科学计算需要使用精确的换算系数
-  - 工程应用中要考虑测量误差
-  - 日常使用可采用近似值快速估算
+- **Precision Requirements**:
+  - Scientific calculations require precise conversion factors
+  - Engineering applications must consider measurement errors
+  - Daily use can employ approximate values for quick estimation
 
-### 换算工具推荐
+### Conversion Tool Recommendations
 
-本页面提供的长度单位转换器具有以下优势：
-- 支持13种常用长度单位
-- 实时计算，即输即得
-- 精确到小数点后多位
-- 界面简洁，操作便捷
+The length unit converter provided on this page offers the following advantages:
+- Supports 13 common length units
+- Real-time calculation with instant results
+- Precision to multiple decimal places
+- Clean interface, easy operation
 
-此工具综合了国际标准（SI）、英制及特殊用途单位，数据源自权威计量资料。无论是专业工程计算还是日常生活应用，都能满足您的换算需求。
-## 相关连接
+This tool integrates international standards (SI), imperial and special-purpose units, with data sourced from authoritative measurement references. Whether for professional engineering calculations or daily life applications, it can meet your conversion needs.
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Length" :key="index">
     <n-button

@@ -4,22 +4,22 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Length/index
-      linkText: 长度换算
+      linkText: Length Conversion
   - - link: /Length/Nanometer-to-Fathom
-      linkText: 纳米到英寻
+      linkText: Nanometer to Fathom
 head:
   - - meta
     - name: description
-      content: "纳米到英寻换算器 - 精确的nm到fathom长度单位转换工具。适用于海洋工程、深海探测、海底科学研究和海洋测量的微观到宏观尺度换算。"
+      content: "Nanometer to fathom converter - precise nm to fathom length unit conversion tool. Suitable for marine engineering, deep-sea exploration, submarine scientific research and marine measurement micro to macro scale conversion."
   - - meta
     - name: keywords
-      content: "纳米到英寻, nm到fathom, 长度单位换算, 单位转换器, 纳米换算, 英寻换算, 海洋工程, 深海探测, 海底科学, 海洋测量, 水深测量, 长度转换, 单位换算表, 纳米英寻对照表"
+      content: "nanometer to fathom, nm to fathom, length unit conversion, unit converter, nanometer conversion, fathom conversion, marine engineering, deep-sea exploration, submarine science, marine measurement, water depth measurement, length conversion, unit conversion table, nanometer fathom comparison table"
 ---
-# 纳米 (nm) 到 英寻 (fathom) 的换算
+# Nanometer (nm) to Fathom Conversion
 
-纳米到英寻的长度单位换算在现代海洋科学、深海探测、海洋工程和水下技术中发挥着重要作用。纳米作为极微小尺度的测量单位，广泛应用于海洋生物学、海水化学分析、海底沉积物研究和海洋纳米材料科学；而英寻作为传统的海洋深度测量单位，在航海、深海探测、海底地形测量和海洋工程中仍然占据重要地位。掌握nm到fathom的精确换算方法，对于跨尺度的海洋科学研究、深海技术开发和海洋工程设计具有重要意义。
+The length unit conversion from nanometers to fathoms plays an important role in modern marine science, deep-sea exploration, marine engineering and underwater technology. Nanometers, as extremely small-scale measurement units, are widely used in marine biology, seawater chemical analysis, submarine sediment research and marine nanomaterial science; while fathoms, as traditional marine depth measurement units, still occupy an important position in navigation, deep-sea exploration, submarine topographic surveying and marine engineering. Mastering the precise conversion method from nm to fathom is of great significance for cross-scale marine scientific research, deep-sea technology development and marine engineering design.
 
 ---
 <script setup>
@@ -27,13 +27,13 @@ import { onMounted, reactive, inject, ref } from 'vue'
 import { NButton, NForm, NFormItem, NInput, NInputNumber, NSelect, NCard, useMessage,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
 import { Length } from '../files';
-const seoKey = ['单位转换器','单位换算','长度单位转换器','长度单位转换','尺寸换算','长度单位换算','长度单位换算表','纳米英寻','纳米和英寻','纳米单位','一纳米等于多少英寻','纳米到英寻换算','nm fathom','纳米和英寻的换算单位','纳米英寻转换','fathom是什么单位','纳米和英寻','纳米换算','nm','英寻单位','长度换算公式','纳米转英寻','英寻换算','纳米计算器','英寻计算器','长度单位','纳米到英寻公式','英寻转换器','纳米英寻对照表','长度转换','单位换算表','纳米英寻换算器','英寻长度','纳米长度','长度计算','单位转换公式','纳米英寻计算','长度换算器','英寻单位换算','纳米单位换算','长度单位转换表','纳米英寻转换表']
+const seoKey = ['unit converter','unit conversion','length unit converter','length unit conversion','dimension conversion','length unit conversion','length unit conversion table','nanometer fathom','nanometer and fathom','nanometer unit','how many fathoms in a nanometer','nanometer to fathom conversion','nm fathom','nanometer and fathom conversion units','nanometer fathom conversion','what is fathom unit','nanometer and fathom','nanometer conversion','nm','fathom unit','length conversion formula','nanometer to fathom','fathom conversion','nanometer calculator','fathom calculator','length unit','nanometer to fathom formula','fathom converter','nanometer fathom comparison table','length conversion','unit conversion table','nanometer fathom converter','fathom length','nanometer length','length calculation','unit conversion formula','nanometer fathom calculation','length converter','fathom unit conversion','nanometer unit conversion','length unit conversion table','nanometer fathom conversion table']
 const convert = inject('convert')
 
 const form = reactive({
   number: null,
   result: '',
-  title: '纳米 (nm) 到 英寻 (fathom) 的换算'
+  title: 'Nanometer (nm) to Fathom Conversion'
 })
 
 const convertHandler = () => {
@@ -41,17 +41,17 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) * 0.00000000054681
     form.result = `${form.number}nm = ${convertedValue.toFixed(13)}fathom`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="纳米 (nm)">
-    <n-input-number v-model:value="form.number" placeholder="输入纳米" style="width: 100%" />
+  <n-form-item label="Nanometer (nm)">
+    <n-input-number v-model:value="form.number" placeholder="Enter nanometers" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
@@ -73,9 +73,9 @@ const convertHandler = () => {
 </n-card>
 
 
-以下是 1nm 到 100000nm 每隔 10000nm 对应的英寻值（基于公式 `fathom = nm × 0.00000000054681`）：
+The following are the corresponding fathom values for 1nm to 100000nm at intervals of 10000nm (based on the formula `fathom = nm × 0.00000000054681`):
 
-| 纳米 (nm) | 英寻 (fathom) |
+| Nanometer (nm) | Fathom (fathom) |
 |----------|----------------|
 | 10000    | 0.0000000054681   |
 | 20000    | 0.0000000109362   |
@@ -88,51 +88,51 @@ const convertHandler = () => {
 | 90000    | 0.0000000492129   |
 | 100000   | 0.0000000546810   |
 
-## 实际应用场景
+## Practical Application Scenarios
 
-纳米到英寻的长度单位换算在多个海洋科学和工程技术领域中具有重要的实际应用价值：
+The nanometer to fathom length unit conversion has important practical application value in multiple marine science and engineering technology fields:
 
-### 海洋科学与深海研究
-- **海洋生物学研究**：海洋微生物和浮游生物尺寸以纳米测量，而海洋深度和采样位置以英寻表示
-- **海水化学分析**：纳米颗粒污染物检测精确到纳米级别，而海水采样深度采用英寻计量
-- **海底沉积物研究**：沉积物颗粒大小分析精确到纳米，而沉积层厚度和海底深度以英寻表示
-- 示例：海洋病毒颗粒直径50nm，而深海采样深度为1000英寻（1828800000000nm）
+### Marine Science and Deep Sea Research
+- **Marine Biology Research**: Marine microorganisms and plankton sizes are measured in nanometers, while ocean depths and sampling locations are expressed in fathoms
+- **Seawater Chemical Analysis**: Nanoparticle pollutant detection is accurate to the nanometer level, while seawater sampling depths use fathom measurements
+- **Seafloor Sediment Research**: Sediment particle size analysis is accurate to nanometers, while sediment layer thickness and seafloor depths are expressed in fathoms
+- Example: Marine virus particle diameter 50nm, while deep-sea sampling depth is 1000 fathoms (1828800000000nm)
 
-### 深海探测与海底工程
-- **深海潜水器设计**：传感器精度达到纳米级别，而潜水深度和海底距离以英寻计量
-- **海底管道工程**：管道表面防腐涂层厚度控制在纳米级别，而管道铺设深度采用英寻标准
-- **海底钻探技术**：钻头表面处理精度达到纳米级别，而钻探深度和海底地层厚度以英寻表示
-- 示例：防腐涂层厚度100nm，而海底管道铺设深度为500英寻（914400000000nm）
+### Deep Sea Exploration and Seafloor Engineering
+- **Deep Sea Submersible Design**: Sensor accuracy reaches nanometer level, while diving depths and seafloor distances are measured in fathoms
+- **Seafloor Pipeline Engineering**: Pipeline surface anti-corrosion coating thickness is controlled at nanometer level, while pipeline laying depths use fathom standards
+- **Seafloor Drilling Technology**: Drill bit surface treatment accuracy reaches nanometer level, while drilling depths and seafloor formation thickness are expressed in fathoms
+- Example: Anti-corrosion coating thickness 100nm, while seafloor pipeline laying depth is 500 fathoms (914400000000nm)
 
-### 海洋测量与导航技术
-- **声纳系统**：声波传感器精度达到纳米级别，而水深测量和目标距离以英寻表示
-- **海底地形测绘**：测量设备精度控制在纳米范围，而海底地形高度差以英寻计量
-- **海洋GPS定位**：定位精度可达纳米级别，而船舶航行距离和锚泊深度以英寻表示
-- 示例：GPS定位精度10nm，而锚泊深度为20英寻（36576000000nm）
+### Marine Surveying and Navigation Technology
+- **Sonar Systems**: Sound wave sensor accuracy reaches nanometer level, while water depth measurements and target distances are expressed in fathoms
+- **Seafloor Topographic Mapping**: Measurement equipment accuracy is controlled within nanometer range, while seafloor topographic height differences are measured in fathoms
+- **Marine GPS Positioning**: Positioning accuracy can reach nanometer level, while ship navigation distances and anchoring depths are expressed in fathoms
+- Example: GPS positioning accuracy 10nm, while anchoring depth is 20 fathoms (36576000000nm)
 
-### 海洋材料科学与技术
-- **海洋防腐材料**：纳米涂层厚度和表面结构控制在纳米级别，而海洋结构物尺寸以英寻计量
-- **海水淡化技术**：膜孔径和过滤精度达到纳米级别，而设备安装深度采用英寻标准
-- **海洋能源开发**：纳米材料表面处理精确到纳米，而海上平台高度和水深以英寻表示
-- 示例：海水淡化膜孔径1nm，而海上平台水深为200英寻（365760000000nm）
+### Marine Materials Science and Technology
+- **Marine Anti-corrosion Materials**: Nano-coating thickness and surface structure are controlled at nanometer level, while marine structure dimensions are measured in fathoms
+- **Seawater Desalination Technology**: Membrane pore size and filtration accuracy reach nanometer level, while equipment installation depths use fathom standards
+- **Marine Energy Development**: Nanomaterial surface treatment is accurate to nanometers, while offshore platform heights and water depths are expressed in fathoms
+- Example: Seawater desalination membrane pore size 1nm, while offshore platform water depth is 200 fathoms (365760000000nm)
 
-### 海洋环境监测与保护
-- **海洋污染检测**：纳米塑料颗粒检测精确到纳米级别，而监测站点深度以英寻计量
-- **海洋生态保护**：微塑料颗粒大小分析精确到纳米，而保护区域深度范围以英寻表示
-- **海洋气候研究**：海洋气溶胶颗粒尺寸在纳米级别，而海洋观测深度采用英寻标准
-- 示例：微塑料颗粒直径500nm，而海洋保护区深度为100英寻（182880000000nm）
+### Marine Environmental Monitoring and Protection
+- **Marine Pollution Detection**: Nanoplastic particle detection is accurate to nanometer level, while monitoring station depths are measured in fathoms
+- **Marine Ecological Protection**: Microplastic particle size analysis is accurate to nanometers, while protection area depth ranges are expressed in fathoms
+- **Marine Climate Research**: Marine aerosol particle sizes are at nanometer level, while marine observation depths use fathom standards
+- Example: Microplastic particle diameter 500nm, while marine protection area depth is 100 fathoms (182880000000nm)
 
-## 转换公式与计算方法
+## Conversion Formulas and Calculation Methods
 
-### 基础转换公式
+### Basic Conversion Formulas
 
-**纳米到英寻转换：**
+**Nanometer to Fathom Conversion:**
 $$ fathom = nm \times 0.00000000054681 $$
 
-**英寻到纳米转换：**
+**Fathom to Nanometer Conversion:**
 $$ nm = fathom \times 1,828,800,000 $$
 
-### 转换示例
+### Conversion Examples
 - 1,000,000,000 nm = 0.5468100000000 fathom
 - 500,000,000 nm = 0.2734050000000 fathom
 - 1,000 nm = 0.0000005468100 fathom
@@ -140,40 +140,40 @@ $$ nm = fathom \times 1,828,800,000 $$
 - 0.5 fathom = 914,400,000 nm
 - 0.1 fathom = 182,880,000 nm
 
-### 长度单位换算对照表
+### Length Unit Conversion Reference Table
 
-| 应用场景 | 纳米 (nm) | 英寻 (fathom) | 实际应用 |
+| Application Scenario | Nanometer (nm) | Fathom (fathom) | Practical Application |
 |---------|-----------|---------------|----------|
-| 海洋病毒 | 50 | 2.73 × 10⁻¹¹ | 海洋微生物学研究 |
-| 纳米涂层 | 100 | 5.47 × 10⁻¹¹ | 海洋防腐材料 |
-| 微塑料颗粒 | 500 | 2.73 × 10⁻¹⁰ | 海洋污染检测 |
-| 海水淡化膜 | 1,000 | 5.47 × 10⁻¹⁰ | 海水处理技术 |
-| 浅海锚泊 | 36,576,000,000 | 20 | 近海航行 |
-| 深海采样 | 182,880,000,000 | 100 | 海洋科学研究 |
-| 海底管道 | 914,400,000,000 | 500 | 海洋工程 |
-| 深海探测 | 1,828,800,000,000 | 1,000 | 深海科学研究 |
+| Marine Virus | 50 | 2.73 × 10⁻¹¹ | Marine Microbiology Research |
+| Nano Coating | 100 | 5.47 × 10⁻¹¹ | Marine Anti-corrosion Materials |
+| Microplastic Particles | 500 | 2.73 × 10⁻¹⁰ | Marine Pollution Detection |
+| Seawater Desalination Membrane | 1,000 | 5.47 × 10⁻¹⁰ | Seawater Treatment Technology |
+| Shallow Water Anchoring | 36,576,000,000 | 20 | Coastal Navigation |
+| Deep Sea Sampling | 182,880,000,000 | 100 | Marine Science Research |
+| Seafloor Pipeline | 914,400,000,000 | 500 | Marine Engineering |
+| Deep Sea Exploration | 1,828,800,000,000 | 1,000 | Deep Sea Scientific Research |
 
-## 常见问题 (FAQ)
+## Frequently Asked Questions (FAQ)
 
-### 1. 为什么需要进行纳米到英寻的换算？
-在海洋科学研究中，经常需要将微观尺度的测量（如纳米颗粒、病毒大小）与宏观的海洋深度、距离测量进行对比分析。这种跨尺度的换算对于理解海洋生态系统、污染物分布和海洋工程设计至关重要。
+### 1. Why is nanometer to fathom conversion needed?
+In marine science research, it is often necessary to compare microscopic measurements (such as nanoparticle and virus sizes) with macroscopic ocean depth and distance measurements. This cross-scale conversion is crucial for understanding marine ecosystems, pollutant distribution, and marine engineering design.
 
-### 2. 纳米到英寻换算的精度要求是什么？
-由于纳米和英寻之间存在巨大的数量级差异（约10⁹倍），在进行换算时需要保持足够的有效数字。建议在科学计算中保留至少6-8位有效数字，以确保换算结果的准确性。
+### 2. What are the precision requirements for nanometer to fathom conversion?
+Due to the huge order of magnitude difference between nanometers and fathoms (approximately 10⁹ times), sufficient significant figures must be maintained during conversion. It is recommended to retain at least 6-8 significant figures in scientific calculations to ensure the accuracy of conversion results.
 
-### 3. 在海洋工程中如何应用这种换算？
-海洋工程中，纳米级精度常用于材料表面处理、防腐涂层厚度控制，而英寻用于水深测量、结构物尺寸标注。工程师需要在设计阶段进行跨尺度换算，确保微观材料性能与宏观结构要求的匹配。
+### 3. How is this conversion applied in marine engineering?
+In marine engineering, nanometer-level precision is commonly used for material surface treatment and anti-corrosion coating thickness control, while fathoms are used for water depth measurement and structural dimension marking. Engineers need to perform cross-scale conversions during the design phase to ensure the matching of microscopic material performance with macroscopic structural requirements.
 
-### 4. 海洋科学研究中的典型换算场景有哪些？
-典型场景包括：海洋微生物尺寸与采样深度的关联分析、纳米污染物浓度与海水深度分布的研究、海底沉积物颗粒大小与沉积层厚度的对比分析等。
+### 4. What are typical conversion scenarios in marine science research?
+Typical scenarios include: correlation analysis of marine microorganism sizes with sampling depths, research on nanopollutant concentration and seawater depth distribution, comparative analysis of seafloor sediment particle sizes with sediment layer thickness, etc.
 
-### 5. 如何验证纳米到英寻换算结果的正确性？
-可以通过反向换算进行验证：将换算结果再转换回原单位，检查是否与原始数值一致。同时可以使用在线换算工具或专业软件进行交叉验证，确保计算准确性。
+### 5. How to verify the correctness of nanometer to fathom conversion results?
+Verification can be performed through reverse conversion: convert the conversion result back to the original unit and check if it matches the original value. Online conversion tools or professional software can also be used for cross-verification to ensure calculation accuracy.
 
-### 6. 在深海探测中这种换算有什么特殊意义？
-深海探测设备的传感器精度往往达到纳米级别，而探测深度以英寻计量。通过精确换算，科学家可以建立微观检测精度与宏观探测范围的关系，优化探测设备的设计和数据分析方法。
+### 6. What special significance does this conversion have in deep-sea exploration?
+Deep-sea exploration equipment sensors often achieve nanometer-level precision, while exploration depths are measured in fathoms. Through precise conversion, scientists can establish the relationship between microscopic detection precision and macroscopic exploration range, optimizing the design of exploration equipment and data analysis methods.
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Length" :key="index">
     <n-button

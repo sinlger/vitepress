@@ -4,22 +4,22 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Length/index
-      linkText: 长度换算
+      linkText: Length Conversion
   - - link: /Length/Nanometer-to-Foot-us
-      linkText: 纳米到英尺-us
+      linkText: Nanometer to US Foot
 head:
   - - meta
     - name: description
-      content: "纳米到美制英尺换算器 - 精确的nm到ft-us长度单位转换工具。适用于精密制造、建筑工程、科学研究和工业测量的微观到宏观尺度换算。"
+      content: "Nanometer to US foot converter - Precise nm to ft-us length unit conversion tool. Suitable for precision manufacturing, construction engineering, scientific research and industrial measurement from microscopic to macroscopic scale conversion."
   - - meta
     - name: keywords
-      content: "纳米到美制英尺, nm到ft-us, 长度单位换算, 单位转换器, 纳米换算, 美制英尺换算, 精密制造, 建筑工程, 科学研究, 工业测量, 精密测量, 长度转换, 单位换算表, 纳米英尺对照表"
+      content: "nanometer to US foot, nm to ft-us, length unit conversion, unit converter, nanometer conversion, US foot conversion, precision manufacturing, construction engineering, scientific research, industrial measurement, precision measurement, length conversion, unit conversion table, nanometer foot reference table"
 ---
-# 纳米 (nm) 到 美制英尺 (ft-us) 的换算
+# Nanometer (nm) to US Foot (ft-us) Conversion
 
-纳米到美制英尺的长度单位换算在现代精密制造、建筑工程、科学研究和工业测量中发挥着重要作用。纳米作为极微小尺度的测量单位，广泛应用于半导体制造、纳米材料科学、精密仪器和生物医学工程；而美制英尺作为美国标准的长度单位，在建筑工程、机械制造、航空航天和工业设计中占据重要地位。掌握nm到ft-us的精确换算方法，对于跨尺度的工程设计、科学研究、质量控制和精密测量具有重要意义。
+The nanometer to US foot length unit conversion plays an important role in modern precision manufacturing, construction engineering, scientific research and industrial measurement. Nanometers, as an extremely small-scale measurement unit, are widely used in semiconductor manufacturing, nanomaterial science, precision instruments and biomedical engineering; while US feet, as the standard length unit in the United States, occupy an important position in construction engineering, mechanical manufacturing, aerospace and industrial design. Mastering the precise conversion method from nm to ft-us is of great significance for cross-scale engineering design, scientific research, quality control and precision measurement.
 
 ---
 <script setup>
@@ -27,13 +27,13 @@ import { onMounted, reactive, inject, ref } from 'vue'
 import { NButton, NForm, NFormItem, NInput, NInputNumber, NSelect, NCard, useMessage,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
 import { Length } from '../files';
-const seoKey = ['单位转换器','单位换算','长度单位转换器','长度单位转换','尺寸换算','长度单位换算','长度单位换算表','纳米美制英尺','纳米和美制英尺','纳米单位','一纳米等于多少美制英尺','纳米到美制英尺换算','nm ft-us','纳米和美制英尺的换算单位','纳米美制英尺转换','ft-us是什么单位','纳米和美制英尺','纳米换算','nm','美制英尺单位','长度换算公式','纳米转美制英尺','美制英尺换算','纳米计算器','美制英尺计算器','长度单位','纳米到美制英尺公式','美制英尺转换器','纳米美制英尺对照表','长度转换','单位换算表','纳米美制英尺换算器','美制英尺长度','纳米长度','长度计算','单位转换公式','纳米美制英尺计算','长度换算器','美制英尺单位换算','纳米单位换算','长度单位转换表','纳米美制英尺转换表']
+const seoKey = ['unit converter','unit conversion','length unit converter','length unit conversion','dimension conversion','length unit conversion','length unit conversion table','nanometer US foot','nanometer and US foot','nanometer unit','how many US feet in one nanometer','nanometer to US foot conversion','nm ft-us','nanometer and US foot conversion units','nanometer US foot conversion','what is ft-us unit','nanometer and US foot','nanometer conversion','nm','US foot unit','length conversion formula','nanometer to US foot','US foot conversion','nanometer calculator','US foot calculator','length unit','nanometer to US foot formula','US foot converter','nanometer US foot reference table','length conversion','unit conversion table','nanometer US foot converter','US foot length','nanometer length','length calculation','unit conversion formula','nanometer US foot calculation','length converter','US foot unit conversion','nanometer unit conversion','length unit conversion table','nanometer US foot conversion table']
 const convert = inject('convert')
 
 const form = reactive({
   number: null,
   result: '',
-  title: '纳米 (nm) 到 美制英尺 (ft-us) 的换算'
+  title: 'Nanometer (nm) to US Foot (ft-us) Conversion'
 })
 
 const convertHandler = () => {
@@ -41,17 +41,17 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) * 0.0000000032808
     form.result = `${form.number}nm = ${convertedValue.toFixed(12)}ft-us`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="纳米 (nm)">
-    <n-input-number v-model:value="form.number" placeholder="输入纳米" style="width: 100%" />
+  <n-form-item label="Nanometer (nm)">
+    <n-input-number v-model:value="form.number" placeholder="Enter nanometers" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
@@ -72,51 +72,51 @@ const convertHandler = () => {
   </template>
 </n-card>
 
-## 实际应用场景
+## Practical Application Scenarios
 
-纳米到美制英尺的长度单位换算在多个精密制造和工程技术领域中具有重要的实际应用价值：
+The nanometer to US foot length unit conversion has important practical application value in multiple precision manufacturing and engineering technology fields:
 
-### 精密制造与半导体工业
-- **半导体芯片制造**：芯片制程节点以纳米标注（如7nm、5nm工艺），而晶圆厂房尺寸以美制英尺计量
-- **精密机械加工**：零件表面粗糙度控制在纳米级别，而加工设备占地面积采用美制英尺标准
-- **光学器件制造**：透镜表面精度达到纳米级别，而光学实验室空间布局以美制英尺规划
-- 示例：7nm制程芯片线宽，对应光学实验室长度为30美制英尺（9144000000nm）
+### Precision Manufacturing and Semiconductor Industry
+- **Semiconductor Chip Manufacturing**: Chip process nodes are marked in nanometers (such as 7nm, 5nm processes), while wafer fab dimensions are measured in US feet
+- **Precision Mechanical Processing**: Component surface roughness controlled at nanometer level, while processing equipment floor area uses US foot standards
+- **Optical Device Manufacturing**: Lens surface precision reaches nanometer level, while optical laboratory space layout is planned in US feet
+- Example: 7nm process chip line width, corresponding optical laboratory length is 30 US feet (9144000000nm)
 
-### 建筑工程与施工技术
-- **建筑材料科学**：纳米涂料和防护材料厚度控制在纳米级别，而建筑物尺寸采用美制英尺标准
-- **结构工程设计**：材料表面处理精度达到纳米级别，而建筑结构尺寸以美制英尺表示
-- **施工质量控制**：表面平整度检测精确到纳米，而施工现场布局采用美制英尺计量
-- 示例：纳米防水涂层厚度100nm，而建筑物高度为100美制英尺（30480000000nm）
+### Construction Engineering and Construction Technology
+- **Building Materials Science**: Nanocoating and protective material thickness controlled at nanometer level, while building dimensions use US foot standards
+- **Structural Engineering Design**: Material surface treatment precision reaches nanometer level, while building structure dimensions are expressed in US feet
+- **Construction Quality Control**: Surface flatness detection accurate to nanometers, while construction site layout uses US foot measurements
+- Example: Nano waterproof coating thickness 100nm, while building height is 100 US feet (30480000000nm)
 
-### 科学研究与实验室技术
-- **生物医学研究**：细胞器和病毒尺寸以纳米测量，而实验室设备布局以美制英尺规划
-- **材料科学研究**：纳米材料粒径分析精确到纳米级别，而实验设备占地面积采用美制英尺标准
-- **物理化学实验**：分子尺度测量达到纳米精度，而实验室空间设计以美制英尺计量
-- 示例：DNA双螺旋直径2nm，而生物实验室长度为20美制英尺（6096000000nm）
+### Scientific Research and Laboratory Technology
+- **Biomedical Research**: Organelle and virus sizes measured in nanometers, while laboratory equipment layout planned in US feet
+- **Materials Science Research**: Nanomaterial particle size analysis accurate to nanometer level, while experimental equipment floor area uses US foot standards
+- **Physical Chemistry Experiments**: Molecular scale measurement reaches nanometer precision, while laboratory space design measured in US feet
+- Example: DNA double helix diameter 2nm, while biology laboratory length is 20 US feet (6096000000nm)
 
-### 工业测量与质量控制
-- **精密仪器制造**：传感器精度达到纳米级别，而生产线布局以美制英尺规划
-- **质量检测技术**：产品表面缺陷检测精确到纳米，而检测设备安装空间采用美制英尺标准
-- **计量标准技术**：长度基准精度控制在纳米范围，而计量实验室尺寸以美制英尺表示
-- 示例：表面粗糙度检测精度1nm，而计量实验室宽度为15美制英尺（4572000000nm）
+### Industrial Measurement and Quality Control
+- **Precision Instrument Manufacturing**: Sensor precision reaches nanometer level, while production line layout planned in US feet
+- **Quality Detection Technology**: Product surface defect detection accurate to nanometers, while detection equipment installation space uses US foot standards
+- **Metrology Standard Technology**: Length reference precision controlled in nanometer range, while metrology laboratory dimensions expressed in US feet
+- Example: Surface roughness detection precision 1nm, while metrology laboratory width is 15 US feet (4572000000nm)
 
-### 航空航天与国防技术
-- **航天器制造**：卫星表面涂层厚度控制在纳米级别，而装配车间尺寸采用美制英尺标准
-- **精密导航系统**：GPS定位精度可达纳米级别，而航天发射场布局以美制英尺计量
-- **军用精密设备**：雷达天线表面精度达到纳米级别，而设备安装平台尺寸以美制英尺表示
-- 示例：卫星天线表面精度50nm，而发射塔高度为200美制英尺（60960000000nm）
+### Aerospace and Defense Technology
+- **Spacecraft Manufacturing**: Satellite surface coating thickness controlled at nanometer level, while assembly workshop dimensions use US foot standards
+- **Precision Navigation Systems**: GPS positioning accuracy can reach nanometer level, while aerospace launch site layout measured in US feet
+- **Military Precision Equipment**: Radar antenna surface precision reaches nanometer level, while equipment installation platform dimensions expressed in US feet
+- Example: Satellite antenna surface precision 50nm, while launch tower height is 200 US feet (60960000000nm)
 
-## 转换公式与计算方法
+## Conversion Formulas and Calculation Methods
 
-### 基础转换公式
+### Basic Conversion Formulas
 
-**纳米到美制英尺转换：**
+**Nanometer to US Foot Conversion:**
 $$ ft-us = nm \times 0.0000000032808 $$
 
-**美制英尺到纳米转换：**
+**US Foot to Nanometer Conversion:**
 $$ nm = ft-us \times 304,800,000 $$
 
-### 转换示例
+### Conversion Examples
 - 1,000,000,000 nm = 3.280800000000 ft-us
 - 500,000,000 nm = 1.640400000000 ft-us
 - 1,000 nm = 0.000003280800 ft-us
@@ -124,40 +124,40 @@ $$ nm = ft-us \times 304,800,000 $$
 - 0.5 ft-us = 152,400,000 nm
 - 0.1 ft-us = 30,480,000 nm
 
-### 长度单位换算对照表
+### Length Unit Conversion Reference Table
 
-| 应用场景 | 纳米 (nm) | 美制英尺 (ft-us) | 实际应用 |
-|---------|-----------|------------------|----------|
-| 芯片制程 | 7 | 2.30 × 10⁻¹¹ | 半导体制造 |
-| 纳米涂层 | 100 | 3.28 × 10⁻¹⁰ | 建筑材料 |
-| 病毒直径 | 100 | 3.28 × 10⁻¹⁰ | 生物医学 |
-| 表面粗糙度 | 1,000 | 3.28 × 10⁻⁹ | 精密制造 |
-| 实验室宽度 | 4,572,000,000 | 15 | 科学研究 |
-| 生产线长度 | 9,144,000,000 | 30 | 工业制造 |
-| 建筑物高度 | 30,480,000,000 | 100 | 建筑工程 |
-| 发射塔高度 | 60,960,000,000 | 200 | 航空航天 |
+| Application Scenario | Nanometer (nm) | US Foot (ft-us) | Practical Application |
+|----------------------|----------------|------------------|----------------------|
+| Chip Process | 7 | 2.30 × 10⁻¹¹ | Semiconductor Manufacturing |
+| Nanocoating | 100 | 3.28 × 10⁻¹⁰ | Building Materials |
+| Virus Diameter | 100 | 3.28 × 10⁻¹⁰ | Biomedical |
+| Surface Roughness | 1,000 | 3.28 × 10⁻⁹ | Precision Manufacturing |
+| Laboratory Width | 4,572,000,000 | 15 | Scientific Research |
+| Production Line Length | 9,144,000,000 | 30 | Industrial Manufacturing |
+| Building Height | 30,480,000,000 | 100 | Construction Engineering |
+| Launch Tower Height | 60,960,000,000 | 200 | Aerospace |
 
-## 常见问题 (FAQ)
+## Frequently Asked Questions (FAQ)
 
-### 1. 为什么需要进行纳米到美制英尺的换算？
-在现代工程和科学研究中，经常需要将微观尺度的精密测量（如纳米级表面处理、芯片制程）与宏观的空间布局、设备尺寸进行对比分析。这种跨尺度的换算对于工程设计、质量控制和科学研究至关重要。
+### 1. Why is nanometer to US foot conversion needed?
+In modern engineering and scientific research, it is often necessary to compare and analyze microscopic precision measurements (such as nanometer-level surface treatment, chip processes) with macroscopic spatial layout and equipment dimensions. This cross-scale conversion is crucial for engineering design, quality control and scientific research.
 
-### 2. 纳米到美制英尺换算的精度要求是什么？
-由于纳米和美制英尺之间存在巨大的数量级差异（约3×10⁸倍），在进行换算时需要保持足够的有效数字。建议在工程计算中保留至少6-8位有效数字，以确保换算结果的准确性。
+### 2. What are the precision requirements for nanometer to US foot conversion?
+Due to the huge order of magnitude difference between nanometers and US feet (approximately 3×10⁸ times), sufficient significant figures must be maintained during conversion. It is recommended to retain at least 6-8 significant figures in engineering calculations to ensure the accuracy of conversion results.
 
-### 3. 在精密制造中如何应用这种换算？
-精密制造中，纳米级精度常用于表面处理、涂层厚度控制、加工精度标准，而美制英尺用于设备布局、厂房设计、生产线规划。工程师需要在设计阶段进行跨尺度换算，确保微观精度要求与宏观空间布局的协调。
+### 3. How is this conversion applied in precision manufacturing?
+In precision manufacturing, nanometer-level precision is commonly used for surface treatment, coating thickness control, and processing precision standards, while US feet are used for equipment layout, facility design, and production line planning. Engineers need to perform cross-scale conversions during the design phase to ensure coordination between microscopic precision requirements and macroscopic spatial layout.
 
-### 4. 建筑工程中的典型换算场景有哪些？
-典型场景包括：纳米涂料厚度与建筑物尺寸的关系分析、表面处理精度与结构尺寸的匹配设计、材料性能测试中微观参数与宏观尺寸的对比分析等。
+### 4. What are typical conversion scenarios in construction engineering?
+Typical scenarios include: analysis of the relationship between nanocoating thickness and building dimensions, matching design of surface treatment precision with structural dimensions, comparative analysis of microscopic parameters and macroscopic dimensions in material performance testing, etc.
 
-### 5. 如何验证纳米到美制英尺换算结果的正确性？
-可以通过反向换算进行验证：将换算结果再转换回原单位，检查是否与原始数值一致。同时可以使用专业计算软件或在线换算工具进行交叉验证，确保计算准确性。
+### 5. How to verify the correctness of nanometer to US foot conversion results?
+Verification can be performed through reverse conversion: convert the conversion result back to the original unit and check if it matches the original value. Professional calculation software or online conversion tools can also be used for cross-verification to ensure calculation accuracy.
 
-### 6. 在科学研究中这种换算有什么特殊意义？
-科学研究中，实验精度往往达到纳米级别，而实验室空间、设备布局采用美制英尺标准。通过精确换算，研究人员可以建立微观测量精度与宏观实验环境的关系，优化实验设计和数据分析方法。
+### 6. What special significance does this conversion have in scientific research?
+In scientific research, experimental precision often reaches the nanometer level, while laboratory space and equipment layout use US foot standards. Through precise conversion, researchers can establish the relationship between microscopic measurement precision and macroscopic experimental environment, optimizing experimental design and data analysis methods.
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Length" :key="index">
     <n-button

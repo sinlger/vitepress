@@ -12,14 +12,14 @@ breadcrumb:
 head:
   - - meta
     - name: description
-      content: "毫米到码换算器 - 精确的mm到yd长度单位转换工具。适用于纺织工业、体育场地建设、制造业和建筑工程的精密测量与换算。"
+      content: "Millimeter to yard converter - Precise mm to yd length unit conversion tool. Suitable for precision measurement and conversion in textile industry, sports field construction, manufacturing, and construction engineering."
   - - meta
     - name: keywords
-      content: "毫米到码, mm到yd, 长度单位换算, 单位转换器, 毫米换算, 码换算, 纺织工业, 体育场地, 制造业, 建筑工程, 精密测量, 长度转换, 单位换算表, 毫米码对照表"
+      content: "millimeter to yard, mm to yd, length unit conversion, unit converter, millimeter conversion, yard conversion, textile industry, sports field, manufacturing, construction engineering, precision measurement, length conversion, unit conversion table, millimeter yard comparison table"
 ---
-# 毫米 (mm) 到 码 (yd) 的换算
+# Millimeter (mm) to Yard (yd) Conversion
 
-毫米到码的长度单位换算在现代工业制造、纺织工业、体育场地建设和建筑工程中发挥着重要作用。毫米作为精密测量的基础单位，广泛应用于机械制造、电子工业和精密仪器领域；而码作为传统的长度单位，在纺织工业、体育运动和国际贸易中仍然占据重要地位。掌握mm到yd的准确换算方法，对于跨行业的技术交流、国际项目合作和精密制造具有重要意义。
+The length unit conversion from millimeters to yards plays an important role in modern industrial manufacturing, textile industry, sports field construction, and construction engineering. Millimeters, as the basic unit for precision measurement, are widely used in mechanical manufacturing, electronics industry, and precision instrument fields; while yards, as a traditional length unit, still occupy an important position in textile industry, sports, and international trade. Mastering the accurate conversion method from mm to yd is of great significance for cross-industry technical communication, international project cooperation, and precision manufacturing.
 
 ---
 <script setup>
@@ -27,13 +27,13 @@ import { onMounted, reactive, inject, ref } from 'vue'
 import { NButton, NForm, NFormItem, NInput, NInputNumber, NSelect, NCard, useMessage,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
 import { Length } from '../files';
-const seoKey = ['单位转换器','单位换算','长度单位转换器','长度单位转换','尺寸换算','长度单位换算','长度单位换算表','厘米和毫米换算','mm是毫米吗','毫米和厘米换算','m cm','毫米换算','厘米毫米换算','一毫米等于多少厘米','cm和mm换算','毫米单位','一毫米等于多少米','mm换算cm','mm和cm换算','ｍｍ','毫米换算厘米','毫米英文','mm单位','mm换算m','英寸转毫米','分米单位','.mm','mm和m换算','cm mm','厘米换算毫米','mm cm','毫米和米换算','一厘米等于多少毫米','平方毫米','一米等于多少毫米','毫米和厘米','毫米换算米','mm是什么单位','mm to m','mm to cm','um','nm','cm','mm','mi','m']
+const seoKey = ['unit converter','unit conversion','length unit converter','length unit conversion','dimension conversion','length unit conversion','length unit conversion table','millimeter to yard conversion','mm to yd','millimeter yard conversion','length conversion','millimeter conversion','yard conversion','textile industry','sports field','manufacturing','construction engineering','precision measurement','millimeter unit','yard unit','mm unit','yd unit','mm to yard','millimeter to yard','length measurement','distance measurement','unit conversion tool','conversion calculator','mm','yd','yard','millimeter']
 const convert = inject('convert')
 
 const form = reactive({
   number: null,
   result: '',
-  title: '毫米 (mm) 到码 (yd) 的长度单位换算'
+  title: 'Millimeter (mm) to Yard (yd) Length Unit Conversion'
 })
 
 const convertHandler = () => {
@@ -41,17 +41,17 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) * 0.0010936
     form.result = `${form.number}mm = ${convertedValue.toFixed(5)}yd`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="毫米 (mm)">
-    <n-input-number v-model:value="form.number" placeholder="输入毫米" style="width: 100%" />
+  <n-form-item label="Millimeter (mm)">
+    <n-input-number v-model:value="form.number" placeholder="Enter millimeters" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
@@ -74,91 +74,93 @@ const convertHandler = () => {
 
 ## 实际应用场景
 
-毫米到码的长度单位换算在多个专业领域中具有重要的实际应用价值：
+The length unit conversion from millimeters to yards has important practical application value in multiple professional fields:
 
-### 纺织工业与服装制造
-- **面料生产**：纤维直径和织物厚度以毫米精确测量，而面料销售长度通常以码为单位
-- **服装设计**：缝纫精度要求毫米级别，但面料采购和库存管理使用码制单位
-- **质量控制**：织物密度检测精确到毫米，生产线长度规划采用码制标准
-- 示例：高档丝绸面料厚度为0.2mm，一匹面料长度为50码（45720mm）
+### Practical Application Scenarios
 
-### 体育场地建设与运动器材
-- **田径场建设**：跑道标线宽度精确到毫米，而赛道总长度以码或米为标准
-- **高尔夫球场**：果岭草坪修剪高度控制在毫米级别，球道距离以码为单位测量
-- **足球场维护**：草皮厚度管理精确到毫米，场地尺寸规划使用码制标准
-- 示例：标准跑道线宽50mm，相当于0.0547码
+### Textile Industry and Garment Manufacturing
+- **Fabric Production**: Yarn diameter and fabric thickness require millimeter-level precision control, while fabric length measurement uses yard units
+- **Garment Design**: Sewing precision requires millimeter-level accuracy, but fabric procurement and inventory management use yard units
+- **Quality Control**: Fabric density detection is accurate to millimeters, while production line length planning uses yard standards
+- Example: High-grade silk fabric thickness is 0.2mm, one bolt of fabric length is 50 yards (45720mm)
 
-### 精密制造与机械工程
-- **零部件加工**：机械零件公差控制在毫米范围内，装配线布局采用码制规划
-- **模具制造**：模具精度要求毫米级别，生产车间空间布局使用码制单位
-- **质量检测**：产品尺寸检验精确到毫米，物流运输距离以码为计量单位
-- 示例：精密轴承内径公差±0.01mm，生产线长度规划为20码（18288mm）
+### Sports Field Construction and Athletic Equipment
+- **Track and Field Construction**: Track line width is precise to millimeters, while total track length uses yards or meters as standards
+- **Golf Course**: Green grass cutting height is controlled at millimeter level, while fairway distances are measured in yards
+- **Football Field Maintenance**: Turf thickness management is precise to millimeters, while field dimension planning uses yard standards
+- Example: Standard track line width is 50mm, equivalent to 0.0547 yards
 
-### 建筑工程与室内设计
-- **施工图纸**：建筑细节尺寸标注使用毫米，总体规划采用码制或米制
-- **装修工程**：瓷砖厚度、门窗间隙等精确到毫米，房间尺寸常用码表示
-- **景观设计**：植物种植间距精确到毫米，园林总体布局使用码制规划
-- 示例：瓷砖厚度8mm，客厅长度为6码（5486.4mm）
+### Precision Manufacturing and Mechanical Engineering
+- **Component Processing**: Mechanical part tolerances are controlled within millimeter ranges, while assembly line layout uses yard planning
+- **Mold Manufacturing**: Mold precision requires millimeter-level accuracy, while production workshop space layout uses yard units
+- **Quality Testing**: Product dimension inspection is accurate to millimeters, while logistics transportation distances use yards as measurement units
+- Example: Precision bearing inner diameter tolerance ±0.01mm, production line length planning is 20 yards (18288mm)
 
-### 电子工业与精密仪器
-- **电路板制造**：导线宽度和间距控制在毫米级别，设备机柜尺寸采用码制标准
-- **光学仪器**：透镜厚度精确到毫米，光学平台尺寸使用码制规划
-- **精密测量**：传感器精度达到毫米级别，测量范围以码为单位表示
-- 示例：PCB线宽0.1mm，测试设备工作台长度为3码（2743.2mm）
+### Construction Engineering and Interior Design
+- **Construction Drawings**: Building detail dimensions are marked in millimeters, while overall planning uses yard or meter systems
+- **Renovation Projects**: Tile thickness, door and window gaps are precise to millimeters, while room dimensions commonly use yards
+- **Landscape Design**: Plant spacing is precise to millimeters, while overall garden layout uses yard planning
+- Example: Tile thickness 8mm, living room length is 6 yards (5486.4mm)
 
-## 转换公式与计算方法
+### Electronics Industry and Precision Instruments
+- **Circuit Board Manufacturing**: Wire width and spacing are controlled at millimeter level, while equipment cabinet dimensions use yard standards
+- **Optical Instruments**: Lens thickness is precise to millimeters, while optical platform dimensions use yard planning
+- **Precision Measurement**: Sensor accuracy reaches millimeter level, while measurement range is expressed in yards
+- Example: PCB line width 0.1mm, test equipment workbench length is 3 yards (2743.2mm)
 
-### 基础转换公式
+## Conversion Formulas and Calculation Methods
 
-**毫米到码的转换公式：**
+### Basic Conversion Formulas
+
+**Millimeter to Yard Conversion Formula:**
 $$ yd = mm \times 0.0010936 $$
 
-**码到毫米的转换公式：**
+**Yard to Millimeter Conversion Formula:**
 $$ mm = yd \times 914.4 $$
 
-### 精确换算示例
+### Precise Conversion Examples
 - 1000mm = 1.09360yd
 - 500mm = 0.54680yd
 - 100mm = 0.10936yd
 - 50mm = 0.05468yd
 - 10mm = 0.01094yd
 
-### 长度单位换算对照表
+### Length Unit Conversion Reference Table
 
-| 毫米 (mm) | 码 (yd) | 应用场景 |
-|-----------|---------|----------|
-| 1 | 0.00109 | 精密测量 |
-| 10 | 0.01094 | 电子元件 |
-| 25 | 0.02734 | 建筑细节 |
-| 50 | 0.05468 | 纺织厚度 |
-| 100 | 0.10936 | 制造公差 |
-| 500 | 0.54680 | 设备尺寸 |
-| 914.4 | 1.00000 | 标准换算 |
-| 1000 | 1.09360 | 工程测量 |
-| 5000 | 5.46800 | 建筑构件 |
-| 10000 | 10.93600 | 场地规划 |
+| Millimeter (mm) | Yard (yd) | Application Scenario |
+|-----------------|-----------|---------------------|
+| 1 | 0.00109 | Precision Measurement |
+| 10 | 0.01094 | Electronic Components |
+| 25 | 0.02734 | Construction Details |
+| 50 | 0.05468 | Textile Thickness |
+| 100 | 0.10936 | Manufacturing Tolerance |
+| 500 | 0.54680 | Equipment Dimensions |
+| 914.4 | 1.00000 | Standard Conversion |
+| 1000 | 1.09360 | Engineering Measurement |
+| 5000 | 5.46800 | Building Components |
+| 10000 | 10.93600 | Site Planning |
 
-## 常见问题 (FAQ)
+## Frequently Asked Questions (FAQ)
 
-**Q1: 为什么需要进行毫米到码的换算？**
-A: 在国际贸易、纺织工业和体育运动中，不同国家和行业使用不同的长度单位。毫米适用于精密测量，码适用于传统贸易和体育领域，准确换算确保技术交流和商业合作的顺利进行。
+**Q1: Why is millimeter to yard conversion necessary?**
+A: In international trade, textile industry, and sports, different countries and industries use different length units. Millimeters are suitable for precision measurement, while yards are used in traditional trade and sports fields. Accurate conversion ensures smooth technical communication and business cooperation.
 
-**Q2: 毫米到码换算的精度要求是多少？**
-A: 一般工程应用中保留4-5位小数即可满足需求，精密制造领域可能需要更高精度。建议根据具体应用场景选择合适的精度等级。
+**Q2: What is the precision requirement for millimeter to yard conversion?**
+A: In general engineering applications, retaining 4-5 decimal places can meet requirements, while precision manufacturing fields may require higher precision. It is recommended to choose appropriate precision levels based on specific application scenarios.
 
-**Q3: 在纺织工业中如何应用mm到yd换算？**
-A: 纺织工业中，纤维直径、织物厚度用毫米测量，而面料长度、生产线规划用码计算。准确换算有助于质量控制和生产管理。
+**Q3: How is mm to yd conversion applied in the textile industry?**
+A: In the textile industry, fiber diameter and fabric thickness are measured in millimeters, while fabric length and production line planning are calculated in yards. Accurate conversion helps with quality control and production management.
 
-**Q4: 体育场地建设中的换算应用有哪些？**
-A: 田径跑道线宽、草坪修剪高度用毫米控制，而赛道长度、场地尺寸用码或米规划。换算确保场地建设符合国际标准。
+**Q4: What are the conversion applications in sports field construction?**
+A: Track line width and grass cutting height are controlled in millimeters, while track length and field dimensions are planned in yards or meters. Conversion ensures that field construction meets international standards.
 
-**Q5: 如何快速进行mm到yd的心算换算？**
-A: 可以记住关键换算值：1000mm ≈ 1.094yd，500mm ≈ 0.547yd。对于快速估算，可以用mm数值除以900得到近似的码数值。
+**Q5: How to quickly perform mental calculation for mm to yd conversion?**
+A: You can remember key conversion values: 1000mm ≈ 1.094yd, 500mm ≈ 0.547yd. For quick estimation, you can divide the mm value by 900 to get an approximate yard value.
 
-**Q6: 毫米到码换算在建筑工程中的重要性？**
-A: 建筑图纸细节用毫米标注，而总体规划可能用码表示。准确换算确保施工精度和国际项目的技术对接。
+**Q6: What is the importance of millimeter to yard conversion in construction engineering?**
+A: Construction drawing details are marked in millimeters, while overall planning may be expressed in yards. Accurate conversion ensures construction precision and technical integration of international projects.
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Length" :key="index">
     <n-button

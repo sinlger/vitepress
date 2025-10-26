@@ -4,22 +4,22 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Length/index
-      linkText: 长度换算
+      linkText: Length Conversion
   - - link: /Length/Meter-to-Fathom
-      linkText: 米到英寻
+      linkText: Meter to Fathom
 head:
   - - meta
     - name: description
-      content: "米到英寻换算器 - 专业的长度单位转换工具。支持m到fathom的精确换算，提供单位转换器、长度单位换算表和尺寸换算。一米是多少厘米？一米等于多少分米？专业解答米单位换算问题。"
+      content: "Meter to Fathom Converter - Professional length unit conversion tool. Supports precise m to fathom conversion, provides unit converter, length unit conversion table and dimension conversion. How many centimeters in a meter? How many decimeters in a meter? Professional answers to meter unit conversion questions."
   - - meta
     - name: keywords
-      content: "单位转换器,单位换算,长度单位转换器,长度单位转换,尺寸换算,长度单位换算表,一米是多少厘米,一米等于多少分米,米,一分米等于多少厘米,一公尺,米的英文,米的单位,m单位,分米,公尺,一米等于多少厘米,1m等于多少cm,一米,米和厘米的换算,m是什么单位,1m是多少,1米等于多少厘米"
+      content: "unit converter,unit conversion,length unit converter,length unit conversion,dimension conversion,length unit conversion table,how many centimeters in a meter,how many decimeters in a meter,meter,how many centimeters in a decimeter,meter unit,meter in English,meter unit,m unit,decimeter,meter,how many centimeters in a meter,1m equals how many cm,one meter,meter and centimeter conversion,what is m unit,how much is 1m,1 meter equals how many centimeters"
 ---
-# 米 (m) 到 英寻 (fathom) 的换算
+# Meter (m) to Fathom Conversion
 
-米到英寻换算是长度单位转换中的专业应用。米(m)作为国际标准长度单位，广泛用于日常测量；英寻(fathom)作为传统海洋测量单位，主要用于海洋深度测量。一米是多少厘米？一米等于100厘米，一米等于10分米。我们的单位转换器提供精确的米英寻换算功能，是专业的长度单位转换器工具。
+Meter to fathom conversion is a specialized application in length unit conversion. Meter (m) as the international standard length unit is widely used in daily measurements; fathom as a traditional marine measurement unit is mainly used for ocean depth measurement. How many centimeters in a meter? One meter equals 100 centimeters, one meter equals 10 decimeters. Our unit converter provides precise meter to fathom conversion functionality and is a professional length unit converter tool.
 
 ---
 <script setup>
@@ -27,13 +27,13 @@ import { onMounted, reactive, inject, ref } from 'vue'
 import { NButton, NForm, NFormItem, NInput, NInputNumber, NSelect, NCard, useMessage,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
 import { Length } from '../files';
-const seoKey = ['单位转换器','单位换算','长度单位转换器','长度单位转换','尺寸换算','长度单位换算','长度单位换算表','一米是多少厘米啊','一米等于多少分米','米','一米是多少厘米','一分米等于多少厘米','一公尺','米的英文','米的单位','m单位','分米','公尺','一米等于多少厘米','米','1m等于多少cm','一米','米和厘米的换算','m单位','k是什么单位','一米等于多少厘米','m是什么单位','1m是多少','1米等于多少厘米','m']
+const seoKey = ['unit converter','unit conversion','length unit converter','length unit conversion','dimension conversion','length unit conversion','length unit conversion table','how many centimeters in a meter','how many decimeters in a meter','meter','how many centimeters in a meter','how many centimeters in a decimeter','meter unit','meter in English','meter unit','m unit','decimeter','meter','how many centimeters in a meter','meter','1m equals how many cm','one meter','meter and centimeter conversion','m unit','what is k unit','how many centimeters in a meter','what is m unit','how much is 1m','1 meter equals how many centimeters','m']
 const convert = inject('convert')
 
 const form = reactive({
   number: null,
   result: '',
-  title:'米 (m) 到英寻 (fathom) 的长度单位换算',
+  title:'Meter (m) to Fathom Length Unit Conversion',
 })
 
 const convertHandler = () => {
@@ -41,17 +41,17 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) * 0.54681
     form.result = `${form.number}m = ${convertedValue.toFixed(5)}fathom`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="米 (m)">
-    <n-input-number v-model:value="form.number" placeholder="输入米" style="width: 100%" />
+  <n-form-item label="Meters (m)">
+    <n-input-number v-model:value="form.number" placeholder="Enter meters" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
@@ -72,73 +72,73 @@ const convertHandler = () => {
   </template>
 </n-card>
 
-## 实际应用场景
+## Practical Application Scenarios
 
-米到英寻的单位转换在多个专业领域中发挥重要作用，我们的长度单位转换器为以下应用提供精确换算：
+Meter to fathom unit conversion plays an important role in multiple professional fields, and our length unit converter provides precise conversion for the following applications:
 
-### 海洋工程与船舶制造
-- **船舶设计**：船体长度用米表示，而水深测量使用英寻单位
-- **海洋平台建设**：平台高度用米计算，海底深度用英寻标注
-- **示例**：某海洋钻井平台高度50米，相当于27.3英寻，作业水深200英寻
+### Marine Engineering and Shipbuilding
+- **Ship Design**: Hull length is expressed in meters, while water depth measurement uses fathom units
+- **Offshore Platform Construction**: Platform height is calculated in meters, seabed depth is marked in fathoms
+- **Example**: An offshore drilling platform with a height of 50 meters, equivalent to 27.3 fathoms, operating at a water depth of 200 fathoms
 
-### 潜水与水下作业
-- **潜水设备**：设备尺寸用米标注，潜水深度用英寻计算
-- **水下施工**：施工精度用米衡量，作业深度用英寻表示
-- **示例**：某潜水器长度5米，最大下潜深度100英寻(约183米)
+### Diving and Underwater Operations
+- **Diving Equipment**: Equipment dimensions are marked in meters, diving depth is calculated in fathoms
+- **Underwater Construction**: Construction precision is measured in meters, operating depth is expressed in fathoms
+- **Example**: A submersible with a length of 5 meters, maximum diving depth of 100 fathoms (approximately 183 meters)
 
-### 海洋科学研究
-- **海洋调查**：仪器尺寸用米表示，海洋深度用英寻记录
-- **海底地质勘探**：钻探设备长度用米计算，勘探深度用英寻标注
-- **示例**：某海底取样器长度2米，在50英寻深度进行取样作业
+### Marine Scientific Research
+- **Ocean Survey**: Instrument dimensions are expressed in meters, ocean depth is recorded in fathoms
+- **Seabed Geological Exploration**: Drilling equipment length is calculated in meters, exploration depth is marked in fathoms
+- **Example**: A seabed sampler with a length of 2 meters, conducting sampling operations at a depth of 50 fathoms
 
-### 航海导航与测量
-- **海图制作**：陆地距离用米表示，水深用英寻标注
-- **港口建设**：码头长度用米计算，港口水深用英寻衡量
-- **示例**：某港口码头长度500米，港池深度15英寻
+### Maritime Navigation and Surveying
+- **Chart Making**: Land distances are expressed in meters, water depth is marked in fathoms
+- **Port Construction**: Wharf length is calculated in meters, port water depth is measured in fathoms
+- **Example**: A port wharf with a length of 500 meters, harbor basin depth of 15 fathoms
 
-## 换算公式与对照表
+## Conversion Formulas and Reference Tables
 
-### 基本换算公式
-从 **米 (m)** 换算到 **英寻 (fathom)** 的公式为：
+### Basic Conversion Formula
+The formula for converting from **Meters (m)** to **Fathoms** is:
 $$ fathom = m \times 0.54681 $$
 
-### 常用换算对照表
-| 米 (m) | 英寻 (fathom) | 应用场景 |
-|--------|---------------|----------|
-| 1 m | 0.547 fathom | 基础换算 |
-| 2 m | 1.094 fathom | 小型设备 |
-| 5 m | 2.734 fathom | 中型测量 |
-| 10 m | 5.468 fathom | 深度测量 |
-| 20 m | 10.936 fathom | 海洋调查 |
-| 100 m | 54.681 fathom | 深海探测 |
+### Common Conversion Reference Table
+| Meters (m) | Fathoms | Application Scenario |
+|------------|---------|---------------------|
+| 1 m | 0.547 fathom | Basic conversion |
+| 2 m | 1.094 fathom | Small equipment |
+| 5 m | 2.734 fathom | Medium measurement |
+| 10 m | 5.468 fathom | Depth measurement |
+| 20 m | 10.936 fathom | Ocean survey |
+| 100 m | 54.681 fathom | Deep sea exploration |
 
-### 长度单位换算参考
-- **1米** = 100厘米 = 10分米 = 0.547英寻
-- **1分米** = 10厘米 = 0.1米
-- **一米等于多少厘米**：1米 = 100厘米
-- **一米等于多少分米**：1米 = 10分米
+### Length Unit Conversion Reference
+- **1 meter** = 100 centimeters = 10 decimeters = 0.547 fathoms
+- **1 decimeter** = 10 centimeters = 0.1 meters
+- **How many centimeters in a meter**: 1 meter = 100 centimeters
+- **How many decimeters in a meter**: 1 meter = 10 decimeters
 
-## 常见问题解答
+## Frequently Asked Questions
 
-### 1. 一米是多少厘米？
-一米等于100厘米。这是公制长度单位的基本换算关系，1m = 100cm，是我们长度单位转换器中最常用的换算。
+### 1. How many centimeters in a meter?
+One meter equals 100 centimeters. This is the basic conversion relationship of metric length units, 1m = 100cm, which is the most commonly used conversion in our length unit converter.
 
-### 2. 一米等于多少分米？
-一米等于10分米。分米是米和厘米之间的中间单位，1m = 10dm = 100cm，便于中等长度的测量。
+### 2. How many decimeters in a meter?
+One meter equals 10 decimeters. Decimeter is an intermediate unit between meter and centimeter, 1m = 10dm = 100cm, convenient for medium-length measurements.
 
-### 3. 米到英寻的换算公式是什么？
-米到英寻的换算公式为：英寻数 = 米数 × 0.54681。这个单位转换器公式可以快速进行m到fathom的换算。
+### 3. What is the conversion formula from meters to fathoms?
+The conversion formula from meters to fathoms is: fathoms = meters × 0.54681. This unit converter formula can quickly perform m to fathom conversions.
 
-### 4. 英寻单位主要用在哪里？
-英寻(fathom)主要用于海洋深度测量、航海导航和海洋工程。在海图、潜水作业和船舶制造中广泛使用。
+### 4. Where is the fathom unit mainly used?
+Fathom is mainly used for ocean depth measurement, maritime navigation, and marine engineering. It is widely used in nautical charts, diving operations, and shipbuilding.
 
-### 5. 如何快速进行长度单位换算？
-使用专业的单位转换器工具，输入数值即可获得精确的换算结果。我们的长度单位换算表提供常用数值的快速查询。
+### 5. How to quickly perform length unit conversions?
+Use professional unit converter tools - simply input values to get precise conversion results. Our length unit conversion table provides quick lookup for common values.
 
-### 6. m单位和其他长度单位的关系？
-m是米的国际符号，是国际单位制的基本长度单位。1米 = 100厘米 = 1000毫米 = 0.547英寻，在尺寸换算中起到基准作用。
+### 6. What is the relationship between m unit and other length units?
+m is the international symbol for meter, which is the basic length unit in the International System of Units. 1 meter = 100 centimeters = 1000 millimeters = 0.547 fathoms, serving as a reference in dimension conversions.
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Length" :key="index">
     <n-button

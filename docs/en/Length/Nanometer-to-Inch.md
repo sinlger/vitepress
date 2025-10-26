@@ -4,22 +4,22 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Length/index
-      linkText: 长度换算
+      linkText: Length Conversion
   - - link: /Length/Nanometer-to-Inch
-      linkText: 纳米到英寸
+      linkText: Nanometer to Inch
 head:
   - - meta
     - name: description
-      content: "纳米到英寸换算器 - 精确的nm到in长度单位转换工具。适用于精密工程、电子制造、机械设计和工业测量的微观到宏观尺度换算。"
+      content: "Nanometer to inch converter - precise nm to in length unit conversion tool. Suitable for precision engineering, electronic manufacturing, mechanical design and industrial measurement micro to macro scale conversion."
   - - meta
     - name: keywords
-      content: "纳米到英寸, nm到in, 长度单位换算, 单位转换器, 纳米换算, 英寸换算, 精密工程, 电子制造, 机械设计, 工业测量, 精密测量, 长度转换, 单位换算表, 纳米英寸对照表"
+      content: "nanometer to inch, nm to in, length unit conversion, unit converter, nanometer conversion, inch conversion, precision engineering, electronic manufacturing, mechanical design, industrial measurement, precision measurement, length conversion, unit conversion table, nanometer inch comparison table"
 ---
-# 纳米 (nm) 到 英寸 (in) 的换算
+# Nanometer (nm) to Inch (in) Conversion
 
-纳米到英寸的长度单位换算在现代精密工程、电子制造、机械设计和工业测量中发挥着重要作用。纳米作为极微小尺度的测量单位，广泛应用于半导体工艺、纳米材料科学、精密加工和表面工程；而英寸作为传统工业标准的长度单位，在机械制造、电子设备、工具设计和精密仪器中占据重要地位。掌握nm到in的精确换算方法，对于跨尺度的工程设计、质量控制、产品开发和精密测量具有重要意义。
+The conversion from nanometers to inches is a transformation from extremely small nanometer-scale dimensions to relatively large inch units. A nanometer is a fundamental unit of length, equal to one billionth of a meter (10⁻⁹ meters), primarily used to describe the dimensions of atoms, molecules, and nanomaterials. An inch is an imperial unit of length, equal to 2.54 centimeters, widely used in engineering design, manufacturing, and daily measurements. This unit conversion spanning multiple orders of magnitude is of great significance in fields such as semiconductor manufacturing, precision engineering, materials science, and nanotechnology.
 
 ---
 <script setup>
@@ -27,13 +27,13 @@ import { onMounted, reactive, inject, ref } from 'vue'
 import { NButton, NForm, NFormItem, NInput, NInputNumber, NSelect, NCard, useMessage,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
 import { Length } from '../files';
-const seoKey = ['单位转换器','单位换算','长度单位转换器','长度单位转换','尺寸换算','长度单位换算','长度单位换算表','纳米英寸','纳米和英寸','纳米单位','一纳米等于多少英寸','纳米到英寸换算','nm in','纳米和英寸的换算单位','纳米英寸转换','in是什么单位','纳米和英寸','纳米换算','nm','英寸单位','长度换算公式','纳米转英寸','英寸换算','纳米计算器','英寸计算器','长度单位','纳米到英寸公式','英寸转换器','纳米英寸对照表','长度转换','单位换算表','纳米英寸换算器','英寸长度','纳米长度','长度计算','单位转换公式','纳米英寸计算','长度换算器','英寸单位换算','纳米单位换算','长度单位转换表','纳米英寸转换表']
+const seoKey = ['unit converter','unit conversion','length unit converter','length unit conversion','dimension conversion','length unit conversion','length unit conversion table','nanometer inch','nanometer and inch','nanometer unit','how many inches in a nanometer','nanometer to inch conversion','nm in','nanometer and inch conversion units','nanometer inch conversion','what is in unit','nanometer and inch','nanometer conversion','nm','inch unit','length conversion formula','nanometer to inch','inch conversion','nanometer calculator','inch calculator','length unit','nanometer to inch formula','inch converter','nanometer inch comparison table','length conversion','unit conversion table','nanometer inch converter','inch length','nanometer length','length calculation','unit conversion formula','nanometer inch calculation','length converter','inch unit conversion','nanometer unit conversion','length unit conversion table','nanometer inch conversion table']
 const convert = inject('convert')
 
 const form = reactive({
   number: null,
   result: '',
-  title: '纳米 (nm) 到 英寸 (in) 的换算'
+  title: 'Nanometer (nm) to Inch (in) Conversion'
 })
 
 const convertHandler = () => {
@@ -41,17 +41,17 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) * 0.00000003937
     form.result = `${form.number}nm = ${convertedValue.toFixed(10)}in`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="纳米 (nm)">
-    <n-input-number v-model:value="form.number" placeholder="输入纳米" style="width: 100%" />
+  <n-form-item label="Nanometer (nm)">
+    <n-input-number v-model:value="form.number" placeholder="Enter nanometers" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
@@ -72,94 +72,94 @@ const convertHandler = () => {
   </template>
 </n-card>
 
-## 实际应用场景
+## Practical Application Scenarios
 
-纳米到英寸的长度单位换算在多个精密工程和制造技术领域中具有重要的实际应用价值：
+The length unit conversion from nanometers to inches has important practical application value in multiple precision engineering and manufacturing technology fields:
 
-### 精密工程与机械设计
-- **精密机械加工**：零件表面粗糙度控制在纳米级别，而机械零件尺寸采用传统的英寸标准
-- **精密仪器制造**：传感器精度达到纳米级别，而仪器外壳和结构尺寸以英寸表示
-- **光学设备工程**：透镜表面精度控制在纳米范围，而光学系统整体尺寸采用英寸计量
-- 示例：光学透镜表面粗糙度50nm，而透镜直径为2英寸（50800000nm）
+### Precision Engineering and Mechanical Design
+- **Precision Mechanical Processing**: Component surface roughness controlled at nanometer level, while mechanical component dimensions use traditional inch standards
+- **Precision Instrument Manufacturing**: Sensor accuracy reaches nanometer level, while instrument housing and structural dimensions are expressed in inches
+- **Optical Equipment Engineering**: Lens surface accuracy controlled within nanometer range, while optical system overall dimensions use inch measurement
+- Example: Optical lens surface roughness 50nm, while lens diameter is 2 inches (50,800,000nm)
 
-### 电子制造与半导体工业
-- **半导体芯片制造**：芯片制程节点以纳米标注（如7nm、5nm工艺），而晶圆尺寸和设备规格以英寸表示
-- **电路板设计制造**：电路线宽和间距控制在纳米级别，而PCB板尺寸采用英寸标准
-- **电子元器件生产**：元器件内部结构精度达到纳米级别，而封装尺寸以英寸计量
-- 示例：7nm制程芯片线宽，对应12英寸晶圆直径（304800000nm）
+### Electronic Manufacturing and Semiconductor Industry
+- **Semiconductor Chip Manufacturing**: Chip process nodes marked in nanometers (such as 7nm, 5nm processes), while wafer sizes and equipment specifications are expressed in inches
+- **Circuit Board Design and Manufacturing**: Circuit line width and spacing controlled at nanometer level, while PCB board dimensions use inch standards
+- **Electronic Component Production**: Component internal structure accuracy reaches nanometer level, while package dimensions are measured in inches
+- Example: 7nm process chip line width, corresponding to 12-inch wafer diameter (304,800,000nm)
 
-### 工业测量与质量控制
-- **精密测量技术**：测量精度达到纳米级别，而测量设备和工具尺寸采用英寸标准
-- **表面质量检测**：表面缺陷检测精确到纳米，而检测设备规格以英寸表示
-- **计量标准技术**：长度基准精度控制在纳米范围，而标准器具尺寸以英寸计量
-- 示例：表面粗糙度检测精度10nm，而检测设备探头直径为0.5英寸（12700000nm）
+### Industrial Measurement and Quality Control
+- **Precision Measurement Technology**: Measurement accuracy reaches nanometer level, while measurement equipment and tool dimensions use inch standards
+- **Surface Quality Detection**: Surface defect detection accurate to nanometers, while detection equipment specifications are expressed in inches
+- **Metrology Standard Technology**: Length reference accuracy controlled within nanometer range, while standard instruments dimensions are measured in inches
+- Example: Surface roughness detection accuracy 10nm, while detection equipment probe diameter is 0.5 inches (12,700,000nm)
 
-### 机械设计与制造工程
-- **精密机床制造**：加工精度控制在纳米级别，而机床规格和工件尺寸采用英寸标准
-- **模具设计制造**：模具表面精度达到纳米级别，而模具整体尺寸以英寸表示
-- **精密工具制造**：工具刃口精度控制在纳米范围，而工具规格采用英寸计量
-- 示例：刀具刃口精度100nm，而刀具长度为6英寸（152400000nm）
+### Mechanical Design and Manufacturing Engineering
+- **Precision Machine Tool Manufacturing**: Processing accuracy controlled at nanometer level, while machine tool specifications and workpiece dimensions use inch standards
+- **Mold Design and Manufacturing**: Mold surface accuracy reaches nanometer level, while mold overall dimensions are expressed in inches
+- **Precision Tool Manufacturing**: Tool edge accuracy controlled within nanometer range, while tool specifications use inch measurement
+- Example: Tool edge accuracy 100nm, while tool length is 6 inches (152,400,000nm)
 
-### 材料科学与表面工程
-- **纳米涂层技术**：涂层厚度控制在纳米级别，而基材尺寸采用英寸标准
-- **表面改性工程**：表面处理精度达到纳米级别，而工件尺寸以英寸表示
-- **薄膜技术应用**：薄膜厚度精确到纳米，而基板尺寸采用英寸计量
-- 示例：防腐涂层厚度200nm，而钢板厚度为0.25英寸（6350000nm）
+### Materials Science and Surface Engineering
+- **Nano Coating Technology**: Coating thickness controlled at nanometer level, while substrate dimensions use inch standards
+- **Surface Modification Engineering**: Surface treatment accuracy reaches nanometer level, while workpiece dimensions are expressed in inches
+- **Thin Film Technology Applications**: Film thickness accurate to nanometers, while substrate dimensions use inch measurement
+- Example: Anti-corrosion coating thickness 200nm, while steel plate thickness is 0.25 inches (6,350,000nm)
 
-## 公式
+## Conversion Formulas and Calculation Methods
 
-### 纳米到英寸转换公式
-从 **纳米 (nm)** 换算到 **英寸 (in)** 的精确公式为：
+### Nanometer to Inch Conversion Formula
+The precise formula for converting from **nanometers (nm)** to **inches (in)** is:
 $$ in = nm \times 3.937007874 \times 10^{-8} $$
 
-简化公式：
+Simplified formula:
 $$ in = nm \times 0.00000003937 $$
 
-### 英寸到纳米转换公式
-从 **英寸 (in)** 换算到 **纳米 (nm)** 的精确公式为：
+### Inch to Nanometer Conversion Formula
+The precise formula for converting from **inches (in)** to **nanometers (nm)** is:
 $$ nm = in \times 25400000 $$
 
-### 长度单位换算对照表
+### Length Unit Conversion Reference Table
 
-| 纳米 (nm) | 英寸 (in) | 应用场景 |
-|-----------|-----------|----------|
-| 1 nm | 3.937×10⁻⁸ in | 原子级精度测量 |
-| 10 nm | 3.937×10⁻⁷ in | 分子尺度研究 |
-| 100 nm | 3.937×10⁻⁶ in | 纳米材料制备 |
-| 1,000 nm | 3.937×10⁻⁵ in | 细胞生物学研究 |
-| 10,000 nm | 3.937×10⁻⁴ in | 微电子器件 |
-| 100,000 nm | 3.937×10⁻³ in | 精密机械加工 |
-| 1,000,000 nm | 0.03937 in | 工业测量标准 |
-| 25,400,000 nm | 1 in | 机械设计基准 |
+| Nanometer (nm) | Inch (in) | Application Scenario |
+|----------------|-----------|---------------------|
+| 1 nm | 3.937×10⁻⁸ in | Atomic-level precision measurement |
+| 10 nm | 3.937×10⁻⁷ in | Molecular scale research |
+| 100 nm | 3.937×10⁻⁶ in | Nanomaterial preparation |
+| 1,000 nm | 3.937×10⁻⁵ in | Cell biology research |
+| 10,000 nm | 3.937×10⁻⁴ in | Microelectronic devices |
+| 100,000 nm | 3.937×10⁻³ in | Precision mechanical processing |
+| 1,000,000 nm | 0.03937 in | Industrial measurement standards |
+| 25,400,000 nm | 1 in | Mechanical design reference |
 
-### 转换示例
-- **精密工程应用**：10,000,000nm = 0.3937000000in
-- **半导体制造**：5,000,000nm = 0.1968500000in
-- **纳米技术**：1,000nm = 0.0000393700in
-- **表面工程**：50nm = 0.0000019685in
-- **材料科学**：200nm = 0.0000078740in
+### Conversion Examples
+- **Precision Engineering Applications**: 10,000,000nm = 0.3937000000in
+- **Semiconductor Manufacturing**: 5,000,000nm = 0.1968500000in
+- **Nanotechnology**: 1,000nm = 0.0000393700in
+- **Surface Engineering**: 50nm = 0.0000019685in
+- **Materials Science**: 200nm = 0.0000078740in
 
-## 常见问题 (FAQ)
+## Frequently Asked Questions (FAQ)
 
-### 1. 纳米和英寸换算的精度要求是什么？
-在精密工程和电子制造中，纳米到英寸的换算精度通常要求保持8位有效数字，以确保测量和设计的准确性。
+### 1. What are the precision requirements for nanometer to inch conversion?
+In precision engineering and electronic manufacturing, nanometer to inch conversion accuracy typically requires maintaining 8 significant digits to ensure measurement and design accuracy.
 
-### 2. 为什么在半导体工业中需要nm到in的换算？
-半导体制造中，芯片制程以纳米表示（如7nm、5nm），而晶圆尺寸、设备规格和封装标准采用英寸制，因此需要精确的单位换算。
+### 2. Why is nm to in conversion needed in the semiconductor industry?
+In semiconductor manufacturing, chip processes are expressed in nanometers (such as 7nm, 5nm), while wafer sizes, equipment specifications, and packaging standards use the inch system, requiring precise unit conversion.
 
-### 3. 在精密机械设计中如何应用这种换算？
-精密机械设计中，表面粗糙度和加工精度以纳米表示，而零件尺寸和公差采用英寸制，换算确保了设计的一致性和可制造性。
+### 3. How is this conversion applied in precision mechanical design?
+In precision mechanical design, surface roughness and processing accuracy are expressed in nanometers, while component dimensions and tolerances use the inch system. Conversion ensures design consistency and manufacturability.
 
-### 4. 纳米级测量在工业质量控制中的重要性？
-纳米级测量精度对于表面质量检测、薄膜厚度控制和精密装配至关重要，而设备规格和标准器具采用英寸制。
+### 4. What is the importance of nanometer-level measurement in industrial quality control?
+Nanometer-level measurement accuracy is crucial for surface quality detection, thin film thickness control, and precision assembly, while equipment specifications and standard instruments use the inch system.
 
-### 5. 如何确保nm到in换算的准确性？
-使用标准换算系数（1 inch = 25,400,000 nm），采用高精度计算器或专业软件，并进行多次验证以确保换算准确性。
+### 5. How to ensure the accuracy of nm to in conversion?
+Use standard conversion coefficients (1 inch = 25,400,000 nm), employ high-precision calculators or professional software, and perform multiple verifications to ensure conversion accuracy.
 
-### 6. 在材料科学研究中这种换算有什么意义？
-材料科学中，纳米涂层厚度、薄膜特性以纳米计量，而基材尺寸和实验设备采用英寸制，换算有助于实验设计和结果分析。
+### 6. What is the significance of this conversion in materials science research?
+In materials science, nano coating thickness and thin film properties are measured in nanometers, while substrate dimensions and experimental equipment use the inch system. Conversion helps with experimental design and result analysis.
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Length" :key="index">
     <n-button

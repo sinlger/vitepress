@@ -4,22 +4,22 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Length/index
-      linkText: 长度换算
+      linkText: Length Conversion
   - - link: /Length/Kilometer-to-Yard
-      linkText: 千米到码
+      linkText: Kilometer to Yard
 head:
   - - meta
     - name: description
-      content: "千米到码换算器 - 专业的长度单位转换工具。支持km到yard的精确换算，提供单位转换器、长度单位换算表和英制单位转换。一码等于多少米？专业解答码换算问题。"
+      content: "Kilometer to yard converter - Professional length unit conversion tool. Supports accurate km to yard conversion, provides unit converter, length unit conversion table and imperial unit conversion. How many meters in a yard? Professional answers to yard conversion questions."
   - - meta
     - name: keywords
-      content: "千米到码,km到yard换算,一码等于多少米,码换算,单位转换器,长度单位转换器,长度单位换算,尺寸换算,长度单位换算表,英制单位,yard,码单位,单位换算"
+      content: "kilometer to yard,km to yard conversion,how many meters in a yard,yard conversion,unit converter,length unit converter,length unit conversion,dimension conversion,length unit conversion table,imperial unit,yard,yard unit,unit conversion"
 ---
-# 千米 (km) 到 码 (yd) 的换算
+# Kilometer (km) to Yard (yd) Conversion
 
-千米到码换算是长度单位转换中的重要组成部分。千米(km)作为公制长度单位，主要用于测量较长距离；码(yard/yd)作为英制单位，广泛应用于体育运动、纺织工业和建筑工程。一码等于多少米？一码等于0.9144米，反之一千米等于1093.6码。我们的单位转换器提供精确的千米码换算功能，是专业的长度单位转换器工具。
+Kilometer to yard conversion is an important component of length unit conversion. Kilometer (km) as a metric length unit is mainly used for measuring longer distances; yard (yd) as an imperial unit is widely used in sports, textile industry and construction engineering. How many meters in a yard? One yard equals 0.9144 meters, conversely one kilometer equals 1093.6 yards. Our unit converter provides precise kilometer to yard conversion functionality, serving as a professional length unit converter tool.
 
 ---
 <script setup>
@@ -27,13 +27,13 @@ import { onMounted, reactive, inject, ref } from 'vue'
 import { NButton, NForm, NFormItem, NInput, NInputNumber, NSelect, NCard, useMessage,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
 import { Length } from '../files';
-const seoKey = ['单位转换器','单位换算','长度单位转换器','长度单位转换','尺寸换算','长度单位换算','长度单位换算表','一海里等于多少公里','一英里等于多少米','miles','海里和公里怎么换算','mile','一英里等于多少公里','英里和公里换算','米换算英尺','英尺单位','英制','英尺和英寸的换算','英尺英寸','英尺和米换算','ft单位','英尺 米','一米等于多少英尺','英尺厘米换算','英寸和英尺','ft to m','呎','英尺换算米','英尺转换','ft和m换算','六英尺','英尺和米','一英尺等于多少英寸','feet 多少米','米和英尺换算','feet是什么单位','英尺换算厘米','英制单位','英尺和英寸','英寸 厘米','一英尺','一英尺等于多少米','公尺','来源','ft是什么单位','一英尺等于多少厘米','英尺和厘米的换算','英里','foot','厘米和英寸换算','英尺和米的换算','英尺换算','ft','一英寸等于多少厘米','英寸换算','英寸和厘米的换算']
+const seoKey = ['unit converter','unit conversion','length unit converter','length unit conversion','dimension conversion','length unit conversion','length unit conversion table','how many kilometers in a nautical mile','how many meters in a mile','miles','how to convert nautical miles and kilometers','mile','how many kilometers in a mile','mile and kilometer conversion','meter to feet conversion','feet unit','imperial','feet and inch conversion','feet inch','feet and meter conversion','ft unit','feet meter','how many feet in a meter','feet centimeter conversion','inch and feet','ft to m','feet','feet to meter conversion','feet conversion','ft and m conversion','six feet','feet and meter','how many inches in a foot','feet how many meters','meter and feet conversion','what is feet unit','feet to centimeter conversion','imperial unit','feet and inch','inch centimeter','one foot','how many meters in a foot','meter','source','what is ft unit','how many centimeters in a foot','feet and centimeter conversion','mile','foot','centimeter and inch conversion','feet and meter conversion','feet conversion','ft','how many centimeters in an inch','inch conversion','inch and centimeter conversion']
 const convert = inject('convert')
 
 const form = reactive({
   number: null,
   result: '',
-  title:'千米到码换算',
+  title:'Kilometer to Yard Conversion',
 })
 
 const convertHandler = () => {
@@ -41,17 +41,17 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) * 1093.6
     form.result = `${form.number}km = ${convertedValue.toFixed(1)}yd`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="千米 (km)">
-    <n-input-number v-model:value="form.number" placeholder="输入千米" style="width: 100%" />
+  <n-form-item label="Kilometers (km)">
+    <n-input-number v-model:value="form.number" placeholder="Enter kilometers" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
@@ -72,72 +72,72 @@ const convertHandler = () => {
   </template>
 </n-card>
 
-## 实际应用场景
+## Practical Application Scenarios
 
-千米到码的单位转换在多个专业领域中发挥重要作用，我们的长度单位转换器为以下应用提供精确换算：
+Kilometer to yard unit conversion plays an important role in multiple professional fields. Our length unit converter provides precise conversion for the following applications:
 
-### 体育运动与竞技
-- **田径运动**：马拉松距离42.195公里，相当于46,145码；100米短跑相当于109.4码
-- **高尔夫球场**：球场总长度用千米表示，而球道距离用码标注
-- **示例**：某高尔夫球场总长6公里，18洞球道总长度约6,562码
+### Sports and Athletics
+- **Track and Field**: Marathon distance is 42.195 kilometers, equivalent to 46,145 yards; 100-meter sprint equals 109.4 yards
+- **Golf Courses**: Course total length is expressed in kilometers, while fairway distances are marked in yards
+- **Example**: A golf course with total length of 6 kilometers has 18 holes with total fairway length of approximately 6,562 yards
 
-### 纺织工业与服装制造
-- **面料生产**：布料生产线长度用千米计算，而面料销售常用码作为单位
-- **服装设计**：大批量生产时用千米计算面料需求，零售时用码计价
-- **示例**：某纺织厂日产面料2公里，相当于2,187码布料
+### Textile Industry and Garment Manufacturing
+- **Fabric Production**: Fabric production line length is calculated in kilometers, while fabric sales commonly use yards as the unit
+- **Fashion Design**: Large-scale production calculates fabric requirements in kilometers, retail pricing uses yards
+- **Example**: A textile factory produces 2 kilometers of fabric daily, equivalent to 2,187 yards of fabric
 
-### 建筑工程与土木建设
-- **工程测量**：大型工程项目总长度用千米表示，施工细节用码标注
-- **材料采购**：钢材、管道等建材的采购长度换算
-- **示例**：某高速公路长50公里，护栏总长度约54,680码
+### Construction Engineering and Civil Construction
+- **Engineering Surveying**: Large engineering project total length is expressed in kilometers, construction details are marked in yards
+- **Material Procurement**: Length conversion for purchasing steel, pipes and other building materials
+- **Example**: A highway 50 kilometers long has guardrails with total length of approximately 54,680 yards
 
-### 国际贸易与物流
-- **货物运输**：运输距离用千米计算，仓储空间布局用码规划
-- **港口作业**：码头长度用千米表示，货物堆放区域用码计算
-- **示例**：从工厂到港口距离100公里，货物在109,360码长的码头装卸
+### International Trade and Logistics
+- **Cargo Transportation**: Transportation distance is calculated in kilometers, warehouse space layout is planned in yards
+- **Port Operations**: Dock length is expressed in kilometers, cargo storage areas are calculated in yards
+- **Example**: Distance from factory to port is 100 kilometers, cargo is loaded/unloaded at a 109,360-yard long dock
 
-## 换算公式与对照表
+## Conversion Formulas and Reference Tables
 
-### 基本换算公式
-从 **千米 (km)** 换算到 **码 (yd)** 的公式为：
+### Basic Conversion Formula
+The formula for converting from **Kilometers (km)** to **Yards (yd)** is:
 $$ yd = km \times 1093.6 $$
 
-### 常用换算对照表
-| 千米 (km) | 码 (yd) | 应用场景 |
-|-----------|---------|----------|
-| 0.1 km | 109.4 yd | 体育场地 |
-| 0.5 km | 546.8 yd | 中距离测量 |
-| 1 km | 1,093.6 yd | 标准换算 |
-| 5 km | 5,468 yd | 长跑距离 |
-| 10 km | 10,936 yd | 马拉松训练 |
-| 100 km | 109,360 yd | 长距离运输 |
+### Common Conversion Reference Table
+| Kilometers (km) | Yards (yd) | Application Scenario |
+|-----------------|------------|---------------------|
+| 0.1 km | 109.4 yd | Sports venues |
+| 0.5 km | 546.8 yd | Medium distance measurement |
+| 1 km | 1,093.6 yd | Standard conversion |
+| 5 km | 5,468 yd | Long-distance running |
+| 10 km | 10,936 yd | Marathon training |
+| 100 km | 109,360 yd | Long-distance transportation |
 
-### 长度单位换算参考
-- **1千米** = 1,093.6码 = 3,280.84英尺 = 39,370英寸
-- **1码** = 0.0009144千米 = 3英尺 = 36英寸
-- **一码等于多少米**：1码 = 0.9144米
+### Length Unit Conversion Reference
+- **1 kilometer** = 1,093.6 yards = 3,280.84 feet = 39,370 inches
+- **1 yard** = 0.0009144 kilometers = 3 feet = 36 inches
+- **How many meters in a yard**: 1 yard = 0.9144 meters
 
-## 常见问题解答
+## Frequently Asked Questions
 
-### 1. 一码等于多少米？
-一码等于0.9144米。这是国际标准的精确换算值，广泛应用于英制单位转换中。
+### 1. How many meters in a yard?
+One yard equals 0.9144 meters. This is the internationally standardized precise conversion value, widely used in imperial unit conversions.
 
-### 2. 千米到码的换算公式是什么？
-千米到码的换算公式为：码数 = 千米数 × 1093.6。这个单位转换器公式可以快速进行km到yard的换算。
+### 2. What is the conversion formula from kilometers to yards?
+The conversion formula from kilometers to yards is: yards = kilometers × 1093.6. This unit converter formula can quickly perform km to yard conversions.
 
-### 3. 为什么需要千米码换算？
-在国际贸易、体育运动、纺织工业等领域，经常需要在公制和英制单位间转换。我们的长度单位转换器提供精确的换算服务。
+### 3. Why is kilometer to yard conversion needed?
+In international trade, sports, textile industry and other fields, conversion between metric and imperial units is frequently required. Our length unit converter provides precise conversion services.
 
-### 4. 码单位在哪些国家使用？
-码(yard)主要在美国、英国等使用英制单位的国家使用，特别在体育、纺织、建筑等行业应用广泛。
+### 4. In which countries is the yard unit used?
+Yard is mainly used in countries that use imperial units such as the United States and United Kingdom, particularly widely applied in sports, textiles, construction and other industries.
 
-### 5. 如何快速进行长度单位换算？
-使用专业的单位转换器工具，输入数值即可获得精确的换算结果。我们的长度单位换算表提供常用数值的快速查询。
+### 5. How to quickly perform length unit conversions?
+Use professional unit converter tools - simply input values to get precise conversion results. Our length unit conversion table provides quick lookup for common values.
 
-### 6. 千米和码哪个单位更大？
-千米比码大得多。1千米等于1093.6码，即1千米约等于1094码。在尺寸换算中要注意单位的量级差异。
+### 6. Which unit is larger, kilometer or yard?
+Kilometer is much larger than yard. 1 kilometer equals 1093.6 yards, meaning 1 kilometer is approximately equal to 1094 yards. Pay attention to the magnitude difference between units in dimension conversions.
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Length" :key="index">
     <n-button

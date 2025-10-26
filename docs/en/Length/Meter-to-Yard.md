@@ -4,22 +4,22 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Length/index
-      linkText: 长度换算
+      linkText: Length Conversion
   - - link: /Length/Meter-to-Yard
-      linkText: 米到码
+      linkText: Meter to Yard
 head:
   - - meta
     - name: description
-      content: "专业的米到码单位转换器，提供精确的长度单位换算。支持m到yd的快速转换，包含详细的换算表格和实际应用场景。适用于纺织、体育、建筑等领域的长度单位换算需求。"
+      content: "Professional meter to yard unit converter, providing precise length unit conversion. Supports fast m to yd conversion, includes detailed conversion tables and practical application scenarios. Suitable for textile, sports, construction and other fields' length unit conversion needs."
   - - meta
     - name: keywords
-      content: "单位转换器,单位换算,长度单位转换器,长度单位转换,尺寸换算,长度单位换算,长度单位换算表,一米是多少厘米啊,一米等于多少分米,米,一米是多少厘米,一分米等于多少厘米,一公尺,米的英文,米的单位,m单位,分米,公尺,一米等于多少厘米,米,1m等于多少cm,一米,米和厘米的换算,m单位,k是什么单位,一米等于多少厘米,m是什么单位,1m是多少,1米等于多少厘米,m,码,yd,米到码,英制单位,纺织单位"
+      content: "unit converter,unit conversion,length unit converter,length unit conversion,dimension conversion,length unit conversion,length unit conversion table,how many centimeters in a meter,how many decimeters equal one meter,meter,how many centimeters in a meter,how many centimeters in a decimeter,meter,meter in English,meter unit,m unit,decimeter,meter,how many centimeters equal one meter,meter,1m equals how many cm,one meter,meter and centimeter conversion,m unit,what is k unit,how many centimeters equal one meter,m is what unit,what is 1m,1 meter equals how many centimeters,m,yard,yd,meter to yard,imperial unit,textile unit"
 ---
-# 米 (m) 到 码 (yd) 的换算
+# Meter (m) to Yard (yd) Conversion
 
-米到码的单位转换器是国际贸易和工程设计中重要的长度单位换算工具。码作为英制长度单位，在纺织工业、体育运动和建筑工程中广泛应用。我们的长度单位转换器提供精确的m到yd换算，满足不同行业对长度单位转换的专业需求，确保国际项目中的单位统一和计算准确。
+The meter to yard unit converter is an important length unit conversion tool in international trade and engineering design. Yard as an imperial length unit is widely used in textile industry, sports, and construction engineering. Our length unit converter provides precise m to yd conversion, meeting the professional needs of different industries for length unit conversion, ensuring unit uniformity and calculation accuracy in international projects.
 
 ---
 <script setup>
@@ -27,13 +27,13 @@ import { onMounted, reactive, inject, ref } from 'vue'
 import { NButton, NForm, NFormItem, NInput, NInputNumber, NSelect, NCard, useMessage,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
 import { Length } from '../files';
-const seoKey = ['单位转换器','单位换算','长度单位转换器','长度单位转换','尺寸换算','长度单位换算','长度单位换算表','一米是多少厘米啊','一米等于多少分米','米','一米是多少厘米','一分米等于多少厘米','一公尺','米的英文','米的单位','m单位','分米','公尺','一米等于多少厘米','米','1m等于多少cm','一米','米和厘米的换算','m单位','k是什么单位','一米等于多少厘米','m是什么单位','1m是多少','1米等于多少厘米','m']
+const seoKey = ['unit converter','unit conversion','length unit converter','length unit conversion','dimension conversion','length unit conversion','length unit conversion table','how many centimeters in a meter','how many decimeters equal one meter','meter','how many centimeters in a meter','how many centimeters in a decimeter','meter','meter in English','meter unit','m unit','decimeter','meter','how many centimeters equal one meter','meter','1m equals how many cm','one meter','meter and centimeter conversion','m unit','what is k unit','how many centimeters equal one meter','m is what unit','what is 1m','1 meter equals how many centimeters','m','yard','yd','meter to yard','imperial unit','textile unit']
 const convert = inject('convert')
 
 const form = reactive({
   number: null,
   result: '',
-  title:'米 (m) 到码 (yd) 的长度单位换算',
+  title:'Meter (m) to Yard (yd) Conversion',
 })
 
 const convertHandler = () => {
@@ -41,17 +41,17 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) * 1.0936
     form.result = `${form.number}m = ${convertedValue.toFixed(4)}yd`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="米 (m)">
-    <n-input-number v-model:value="form.number" placeholder="输入米" style="width: 100%" />
+  <n-form-item label="Meters (m)">
+    <n-input-number v-model:value="form.number" placeholder="Enter meters" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
@@ -67,38 +67,38 @@ const convertHandler = () => {
   </div>
     <template #footer>
     <div>
-      <span v-for="item of seoKey">{{item}}，</span>
+      <span v-for="item of seoKey">{{item}}, </span>
     </div>
   </template>
 </n-card>
 
-## 实际应用场景
+## Practical Application Scenarios
 
-### 纺织工业与服装制造
-在国际纺织贸易中，面料规格通常以米为单位标注，而销售长度多用码计算。例如，某高档丝绸面料宽度1.5米，销售长度100码，换算为91.44米，便于纺织企业进行成本核算和库存管理，确保国际订单的准确交付。
+### Textile Industry and Fabric Procurement
+In the textile industry, fabric length is often expressed in yards, while production equipment uses meters. When a garment factory purchases 500 yards of fabric, converting to 457.2 meters helps in production planning and raw material inventory management, ensuring smooth production processes.
 
-### 体育运动与竞技场地
-体育场地建设中，设施尺寸以米标注，而比赛距离常用码表示。美式足球场长度100码，换算为91.44米，有助于体育场馆设计师进行场地规划和设备配置，满足国际体育赛事的标准要求。
+### Sports Venue Construction and Event Organization
+In sports venue construction, facility dimensions are marked in meters, while competition distances are often expressed in yards. An American football field length of 100 yards converts to 91.44 meters, helping sports venue designers with field planning and equipment configuration to meet international sports event standards.
 
-### 建筑工程与室内设计
-建筑工程中，结构尺寸用米表示，而装饰材料采购常用码计算。某办公楼走廊长度50米时，换算为54.68码，便于室内设计师选择地毯、壁纸等装饰材料，确保材料用量的精确计算。
+### Construction Engineering and Interior Design
+In construction engineering, structural dimensions are expressed in meters, while decorative material procurement often uses yards. When an office building corridor length is 50 meters, converting to 54.68 yards helps interior designers select carpets, wallpaper and other decorative materials, ensuring precise calculation of material quantities.
 
-### 国际贸易与物流运输
-跨国贸易中，产品规格以米标注，而运输距离可能用码表示。货物包装尺寸2米×1米时，运输路径1000码换算为914.4米，有助于物流公司优化运输方案和成本控制。
+### International Trade and Logistics Transportation
+In international trade, product specifications are marked in meters, while transportation distances may be expressed in yards. When cargo packaging dimensions are 2m×1m, a transportation route of 1000 yards converts to 914.4 meters, helping logistics companies optimize transportation plans and cost control.
 
-## 换算公式与对照表
+## Conversion Formulas and Reference Tables
 
-### 基本换算公式
-从 **米 (m)** 换算到 **码 (yd)** 的公式为：
+### Basic Conversion Formulas
+The formula for converting from **Meters (m)** to **Yards (yd)** is:
 $$ yd = m \times 1.0936 $$
 
-从 **码 (yd)** 换算到 **米 (m)** 的公式为：
+The formula for converting from **Yards (yd)** to **Meters (m)** is:
 $$ m = yd \times 0.9144 $$
 
-### 常用换算对照表
+### Common Conversion Reference Table
 
-| 米 (m) | 码 (yd) | 米 (m) | 码 (yd) |
-|--------|---------|--------|----------|
+| Meters (m) | Yards (yd) | Meters (m) | Yards (yd) |
+|------------|------------|------------|-------------|
 | 1 | 1.094 | 50 | 54.681 |
 | 2 | 2.187 | 60 | 65.617 |
 | 5 | 5.468 | 80 | 87.489 |
@@ -108,33 +108,33 @@ $$ m = yd \times 0.9144 $$
 | 30 | 32.808 | 500 | 546.807 |
 | 40 | 43.745 | 1000 | 1093.613 |
 
-### 长度单位换算参考
-- **1码** = 0.9144米 = 91.44厘米 = 9.144分米
-- **1米** = 100厘米 = 10分米 = 1.0936码
-- **一米等于多少厘米**：1米 = 100厘米
-- **一米等于多少分米**：1米 = 10分米
+### Length Unit Conversion Reference
+- **1 yard** = 0.9144 meters = 91.44 centimeters = 9.144 decimeters
+- **1 meter** = 100 centimeters = 10 decimeters = 1.0936 yards
+- **How many centimeters in one meter**: 1 meter = 100 centimeters
+- **How many decimeters in one meter**: 1 meter = 10 decimeters
 
-## 常见问题解答
+## Frequently Asked Questions
 
-### 1. 一米是多少厘米？
-一米等于100厘米。这是公制长度单位的基本换算关系，1m = 100cm，是我们长度单位转换器中最常用的换算。
+### 1. How many centimeters are in one meter?
+One meter equals 100 centimeters. This is the basic conversion relationship of metric length units, 1m = 100cm, which is the most commonly used conversion in our length unit converter.
 
-### 2. 一米等于多少分米？
-一米等于10分米。分米是米和厘米之间的中间单位，1m = 10dm = 100cm，便于中等长度的测量。
+### 2. How many decimeters equal one meter?
+One meter equals 10 decimeters. Decimeter is an intermediate unit between meter and centimeter, 1m = 10dm = 100cm, convenient for measuring medium lengths.
 
-### 3. 米到码的换算公式是什么？
-米到码的换算公式为：码数 = 米数 × 1.0936。这个单位转换器公式可以快速进行m到yd的换算。
+### 3. What is the conversion formula from meters to yards?
+The conversion formula from meters to yards is: yards = meters × 1.0936. This unit converter formula can quickly perform m to yd conversion.
 
-### 4. 码单位主要用在哪些领域？
-码主要用于纺织工业、体育运动、建筑装饰等领域。在英制国家和国际贸易中，码是常用的长度单位。
+### 4. In which fields are yards mainly used?
+Yards are mainly used in textile industry, sports, construction decoration and other fields. In imperial countries and international trade, yard is a commonly used length unit.
 
-### 5. 如何快速进行长度单位换算？
-使用专业的单位转换器工具，输入数值即可获得精确的换算结果。我们的长度单位换算表提供常用数值的快速查询。
+### 5. How to quickly perform length unit conversion?
+Use professional unit converter tools, input values to get precise conversion results. Our length unit conversion table provides quick lookup for common values.
 
-### 6. 一码等于多少米？
-一码等于0.9144米。这是国际标准的精确换算关系，在纺织工业和体育运动中广泛使用。
+### 6. How many meters equal one yard?
+One yard equals 0.9144 meters. This is the internationally standardized precise conversion relationship, widely used in textile industry and sports.
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Length" :key="index">
     <n-button

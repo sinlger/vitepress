@@ -4,22 +4,22 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Length/index
-      linkText: 长度换算
+      linkText: Length Conversion
   - - link: /Length/Nanometer-to-Mile
-      linkText: 纳米到英里
+      linkText: Nanometer to Mile
 head:
   - - meta
     - name: description
-      content: "专业的纳米(nm)到英里(mi)单位转换器和长度单位换算指南。提供精确的纳米英里换算公式、转换表和计算器，适用于科学研究、工程测量、国际贸易和地理测绘等领域的长度单位转换需求。"
+      content: "Professional nanometer (nm) to mile (mi) unit converter and length unit conversion guide. Provides precise nanometer mile conversion formulas, conversion tables and calculators, suitable for length unit conversion needs in scientific research, engineering measurement, international trade and geographic surveying."
   - - meta
     - name: keywords
-      content: "单位转换器,单位换算,长度单位转换器,长度单位转换,尺寸换算,长度单位换算,纳米英里,纳米和英里,纳米单位,一纳米等于多少英里,纳米到英里换算,nm mi,纳米和英里的换算单位,纳米英里转换,mi是什么单位,纳米换算,nm,英里单位,长度换算公式,纳米转英里,英里换算,纳米计算器,英里计算器,长度单位,纳米到英里公式,英里转换器,纳米英里对照表,长度转换,单位换算表,纳米英里换算器,英里长度,纳米长度,长度计算,单位转换公式,纳米英里计算,长度换算器,英里单位换算,纳米单位换算,长度单位转换表,纳米英里转换表"
+      content: "unit converter,unit conversion,length unit converter,length unit conversion,dimension conversion,length unit conversion,nanometer mile,nanometer and mile,nanometer unit,how many miles in one nanometer,nanometer to mile conversion,nm mi,nanometer and mile conversion units,nanometer mile conversion,what is mi unit,nanometer and mile,nanometer conversion,nm,mile unit,length conversion formula,nanometer to mile,mile conversion,nanometer calculator,mile calculator,length unit,nanometer to mile formula,mile converter,nanometer mile reference table,length conversion,unit conversion table,nanometer mile converter,mile length,nanometer length,length calculation,unit conversion formula,nanometer mile calculation,length converter,mile unit conversion,nanometer unit conversion,length unit conversion table,nanometer mile conversion table"
 ---
-# 纳米 (nm) 到 英里 (mi) 的换算
+# Nanometer (nm) to Mile (mi) Conversion
 
-纳米到英里的单位转换是连接微观纳米尺度与宏观地理距离的重要长度单位换算。本专业的纳米英里转换器提供精确的换算公式和计算工具，帮助您快速完成从纳米(nm)到英里(mi)的长度单位转换，适用于科学研究、工程测量、国际贸易和地理测绘等领域的跨尺度测量需求。
+The nanometer to mile unit conversion is an important length unit conversion that connects microscopic nanometer scale with macroscopic geographic distances. This professional nanometer mile converter provides precise conversion formulas and calculation tools to help you quickly complete length unit conversion from nanometer (nm) to mile (mi), suitable for cross-scale measurement needs in scientific research, engineering measurement, international trade and geographic surveying.
 
 ---
 <script setup>
@@ -27,13 +27,13 @@ import { onMounted, reactive, inject, ref } from 'vue'
 import { NButton, NForm, NFormItem, NInput, NInputNumber, NSelect, NCard, useMessage,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
 import { Length } from '../files';
-const seoKey = ['单位转换器','单位换算','长度单位转换器','长度单位转换','尺寸换算','长度单位换算','长度单位换算表','纳米英里','纳米和英里','纳米单位','一纳米等于多少英里','纳米到英里换算','nm mi','纳米和英里的换算单位','纳米英里转换','mi是什么单位','纳米和英里','纳米换算','nm','英里单位','长度换算公式','纳米转英里','英里换算','纳米计算器','英里计算器','长度单位','纳米到英里公式','英里转换器','纳米英里对照表','长度转换','单位换算表','纳米英里换算器','英里长度','纳米长度','长度计算','单位转换公式','纳米英里计算','长度换算器','英里单位换算','纳米单位换算','长度单位转换表','纳米英里转换表']
+const seoKey = ['unit converter','unit conversion','length unit converter','length unit conversion','dimension conversion','length unit conversion','length unit conversion table','nanometer mile','nanometer and mile','nanometer unit','how many miles in one nanometer','nanometer to mile conversion','nm mi','nanometer and mile conversion units','nanometer mile conversion','what is mi unit','nanometer and mile','nanometer conversion','nm','mile unit','length conversion formula','nanometer to mile','mile conversion','nanometer calculator','mile calculator','length unit','nanometer to mile formula','mile converter','nanometer mile reference table','length conversion','unit conversion table','nanometer mile converter','mile length','nanometer length','length calculation','unit conversion formula','nanometer mile calculation','length converter','mile unit conversion','nanometer unit conversion','length unit conversion table','nanometer mile conversion table']
 const convert = inject('convert')
 
 const form = reactive({
   number: null,
   result: '',
-  title: '纳米 (nm) 到 英里 (mi) 的换算'
+  title: 'Nanometer (nm) to Mile (mi) Conversion'
 })
 
 const convertHandler = () => {
@@ -41,17 +41,17 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) * 0.00000000000062137
     form.result = `${form.number}nm = ${convertedValue.toFixed(15)}mi`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="纳米 (nm)">
-    <n-input-number v-model:value="form.number" placeholder="输入纳米" style="width: 100%" />
+  <n-form-item label="Nanometer (nm)">
+    <n-input-number v-model:value="form.number" placeholder="Enter nanometers" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
@@ -72,110 +72,110 @@ const convertHandler = () => {
   </template>
 </n-card>
 
-## 实际应用场景
+## Practical Application Scenarios
 
-纳米到英里的长度单位转换虽然跨越了极大的尺度差异，但在现代科技和工程领域中具有重要的理论和实际应用价值：
+Although the nanometer to mile length unit conversion spans an enormous scale difference, it has important theoretical and practical application value in modern technology and engineering fields:
 
-### 科学研究与理论分析
-- **尺度对比研究**：纳米材料特征尺寸与地理距离的科学对比分析
-- **物理学教学**：展示从原子尺度到宏观世界的尺度概念
-- **数据可视化**：科学数据中不同尺度单位的统一表示
-- 应用示例：碳纳米管直径2nm相当于1.24×10⁻¹²英里，用于尺度概念教学
+### Scientific Research and Theoretical Analysis
+- **Scale Comparison Research**: Scientific comparative analysis of nanomaterial characteristic dimensions with geographic distances
+- **Physics Education**: Demonstrating scale concepts from atomic scale to macroscopic world
+- **Data Visualization**: Unified representation of different scale units in scientific data
+- Application Example: Carbon nanotube diameter 2nm equals 1.24×10⁻¹² miles, used for scale concept teaching
 
-### 国际工程与技术标准
-- **国际标准制定**：跨国工程项目中不同计量体系的统一换算
-- **技术文档翻译**：科技文献中长度单位的准确转换
-- **产品规格说明**：国际贸易中产品尺寸的多单位表示
-- 应用示例：芯片制程7nm = 4.35×10⁻¹²英里，用于国际技术交流
+### International Engineering and Technical Standards
+- **International Standard Development**: Unified conversion of different measurement systems in multinational engineering projects
+- **Technical Document Translation**: Accurate conversion of length units in scientific literature
+- **Product Specification Description**: Multi-unit representation of product dimensions in international trade
+- Application Example: Chip process 7nm = 4.35×10⁻¹² miles, used for international technical communication
 
-### 地理信息系统(GIS)与测绘
-- **多尺度地图制作**：从纳米精度到英里范围的综合地理信息系统
-- **卫星遥感数据**：高分辨率影像中像素尺寸与地理距离的换算
-- **精密测量应用**：大地测量中不同精度等级的单位统一
-- 应用示例：卫星影像分辨率30nm像素对应1.86×10⁻¹¹英里地面距离
+### Geographic Information Systems (GIS) and Surveying
+- **Multi-scale Map Production**: Comprehensive geographic information systems from nanometer precision to mile range
+- **Satellite Remote Sensing Data**: Conversion between pixel size and geographic distance in high-resolution imagery
+- **Precision Measurement Applications**: Unit unification of different precision levels in geodetic surveying
+- Application Example: Satellite image resolution 30nm pixel corresponds to 1.86×10⁻¹¹ miles ground distance
 
-### 材料科学与工程应用
-- **纳米材料表征**：纳米材料尺寸与宏观应用范围的关联分析
-- **质量控制标准**：精密制造中不同尺度精度要求的统一表达
-- **研发数据管理**：材料研发过程中多尺度数据的统一存储
-- 应用示例：纳米涂层厚度100nm = 6.21×10⁻¹¹英里，用于大型设备防护
+### Materials Science and Engineering Applications
+- **Nanomaterial Characterization**: Correlation analysis between nanomaterial dimensions and macroscopic application ranges
+- **Quality Control Standards**: Unified expression of different scale precision requirements in precision manufacturing
+- **R&D Data Management**: Unified storage of multi-scale data in material development processes
+- Application Example: Nanocoating thickness 100nm = 6.21×10⁻¹¹ miles, used for large equipment protection
 
-### 教育培训与科普宣传
-- **科学教育**：帮助学生理解从微观到宏观的尺度概念
-- **科普活动**：向公众展示纳米技术与日常生活的尺度对比
-- **培训教材**：工程技术人员的单位换算能力培养
-- 应用示例：DNA双螺旋直径2nm相当于行走1.24×10⁻¹²英里的距离概念
+### Education and Training & Science Communication
+- **Science Education**: Helping students understand scale concepts from microscopic to macroscopic
+- **Science Popularization Activities**: Demonstrating scale comparisons between nanotechnology and daily life to the public
+- **Training Materials**: Cultivating unit conversion capabilities for engineering and technical personnel
+- Application Example: DNA double helix diameter 2nm equivalent to walking 1.24×10⁻¹² miles distance concept
 
-### 纳米英里换算对照表
+### Nanometer Mile Conversion Reference Table
 
-| 纳米 (nm) | 英里 (mi) | 应用场景 |
-|----------|-------------|----------|
-| 1 nm | 6.21×10⁻¹³ mi | 原子尺度参考 |
-| 10 nm | 6.21×10⁻¹² mi | 分子结构对比 |
-| 100 nm | 6.21×10⁻¹¹ mi | 病毒尺寸参考 |
-| 1,000 nm | 6.21×10⁻¹⁰ mi | 细胞器尺寸 |
-| 10,000 nm | 6.21×10⁻⁹ mi | 细胞尺寸范围 |
-| 100,000 nm | 6.21×10⁻⁸ mi | 毛发直径参考 |
-| 1,000,000 nm | 6.21×10⁻⁷ mi | 毫米级对比 |
-| 10,000,000 nm | 6.21×10⁻⁶ mi | 厘米级参考 |
+| Nanometer (nm) | Mile (mi) | Application Scenario |
+|----------------|-----------|---------------------|
+| 1 nm | 6.21×10⁻¹³ mi | Atomic scale reference |
+| 10 nm | 6.21×10⁻¹² mi | Molecular structure comparison |
+| 100 nm | 6.21×10⁻¹¹ mi | Virus size reference |
+| 1,000 nm | 6.21×10⁻¹⁰ mi | Organelle size |
+| 10,000 nm | 6.21×10⁻⁹ mi | Cell size range |
+| 100,000 nm | 6.21×10⁻⁸ mi | Hair diameter reference |
+| 1,000,000 nm | 6.21×10⁻⁷ mi | Millimeter level comparison |
+| 10,000,000 nm | 6.21×10⁻⁶ mi | Centimeter level reference |
 
-## 公式
+## Formulas
 
-### 纳米到英里转换公式
-从 **纳米 (nm)** 换算到 **英里 (mi)** 的精确公式为：
+### Nanometer to Mile Conversion Formula
+The precise formula for converting from **nanometer (nm)** to **mile (mi)** is:
 $$ mi = nm \times 6.2137 \times 10^{-13} $$
 
-简化公式：
+Simplified formula:
 $$ mi = nm \times 0.00000000000062137 $$
 
-### 英里到纳米转换公式
-从 **英里 (mi)** 换算到 **纳米 (nm)** 的精确公式为：
+### Mile to Nanometer Conversion Formula
+The precise formula for converting from **mile (mi)** to **nanometer (nm)** is:
 $$ nm = mi \times 1.609344 \times 10^{12} $$
 
-简化公式：
+Simplified formula:
 $$ nm = mi \times 1609344000000 $$
 
-### 长度单位换算对照表
+### Length Unit Conversion Reference Table
 
-| 纳米 (nm) | 英里 (mi) | 应用场景 |
-|-----------|-----------|----------|
-| 1 nm | 6.21×10⁻¹³ mi | 原子间距参考 |
-| 100 nm | 6.21×10⁻¹¹ mi | 病毒尺寸对比 |
-| 1,000 nm | 6.21×10⁻¹⁰ mi | 细菌尺寸范围 |
-| 10,000 nm | 6.21×10⁻⁹ mi | 细胞尺寸参考 |
-| 100,000 nm | 6.21×10⁻⁸ mi | 毛发直径对比 |
-| 1,000,000 nm | 6.21×10⁻⁷ mi | 毫米级参考 |
-| 10,000,000 nm | 6.21×10⁻⁶ mi | 厘米级对比 |
-| 1,000,000,000,000 nm | 6.21×10⁻¹ mi | 千米级参考 |
+| Nanometer (nm) | Mile (mi) | Application Scenario |
+|----------------|-----------|---------------------|
+| 1 nm | 6.21×10⁻¹³ mi | Atomic spacing reference |
+| 100 nm | 6.21×10⁻¹¹ mi | Virus size comparison |
+| 1,000 nm | 6.21×10⁻¹⁰ mi | Bacterial size range |
+| 10,000 nm | 6.21×10⁻⁹ mi | Cell size reference |
+| 100,000 nm | 6.21×10⁻⁸ mi | Hair diameter comparison |
+| 1,000,000 nm | 6.21×10⁻⁷ mi | Millimeter level reference |
+| 10,000,000 nm | 6.21×10⁻⁶ mi | Centimeter level comparison |
+| 1,000,000,000,000 nm | 6.21×10⁻¹ mi | Kilometer level reference |
 
-### 转换示例
-- **科学研究应用**：1,000,000,000,000nm = 0.621370000000000mi
-- **工程对比应用**：500,000,000,000nm = 0.310685000000000mi
-- **教育演示应用**：1,000nm = 6.21×10⁻¹⁰mi
-- **技术标准应用**：100nm = 6.21×10⁻¹¹mi
-- **尺度概念应用**：10nm = 6.21×10⁻¹²mi
+### Conversion Examples
+- **Scientific Research Application**: 1,000,000,000,000nm = 0.621370000000000mi
+- **Engineering Comparison Application**: 500,000,000,000nm = 0.310685000000000mi
+- **Educational Demonstration Application**: 1,000nm = 6.21×10⁻¹⁰mi
+- **Technical Standard Application**: 100nm = 6.21×10⁻¹¹mi
+- **Scale Concept Application**: 10nm = 6.21×10⁻¹²mi
 
-## 常见问题 (FAQ)
+## Frequently Asked Questions (FAQ)
 
-### 1. 纳米和英里换算的实际意义是什么？
-纳米到英里的换算跨越了约13个数量级，虽然在日常应用中较少直接使用，但在科学教育、国际标准制定和跨尺度研究中具有重要的理论和实践价值。
+### 1. What is the practical significance of nanometer to mile conversion?
+The nanometer to mile conversion spans approximately 13 orders of magnitude. Although rarely used directly in daily applications, it has important theoretical and practical value in science education, international standard development, and cross-scale research.
 
-### 2. 为什么需要进行nm到mi的换算？
-在国际科技交流、教育培训、标准制定和跨国工程项目中，需要在不同计量体系间进行准确换算，确保技术参数和规格的一致性理解。
+### 2. Why is nm to mi conversion needed?
+In international scientific and technological exchanges, education and training, standard development, and multinational engineering projects, accurate conversion between different measurement systems is needed to ensure consistent understanding of technical parameters and specifications.
 
-### 3. 如何确保纳米到英里换算的精度？
-使用科学计数法表示（1 mi = 1.609344×10¹² nm），采用高精度计算工具，并注意有效数字的保留，确保换算结果的科学性和准确性。
+### 3. How to ensure the precision of nanometer to mile conversion?
+Use scientific notation representation (1 mi = 1.609344×10¹² nm), employ high-precision calculation tools, and pay attention to the retention of significant figures to ensure the scientific accuracy of conversion results.
 
-### 4. 在科学教育中这种换算有什么价值？
-通过纳米到英里的换算，可以帮助学生和公众直观理解从微观原子世界到宏观地理距离的巨大尺度差异，增强科学认知和空间概念。
+### 4. What value does this conversion have in science education?
+Through nanometer to mile conversion, students and the public can intuitively understand the enormous scale difference from the microscopic atomic world to macroscopic geographic distances, enhancing scientific cognition and spatial concepts.
 
-### 5. 国际工程项目中如何应用这种换算？
-在跨国技术合作、产品规格制定和质量标准统一中，通过准确的单位换算确保不同国家和地区间的技术参数理解一致。
+### 5. How is this conversion applied in international engineering projects?
+In multinational technical cooperation, product specification development, and quality standard unification, accurate unit conversion ensures consistent understanding of technical parameters across different countries and regions.
 
-### 6. 如何在实际工作中应用这种换算？
-在科研报告、技术文档、教学材料和国际交流中，通过标准换算公式和专业计算工具，实现纳米到英里的精确转换和多单位表示。
+### 6. How to apply this conversion in practical work?
+In research reports, technical documents, teaching materials, and international exchanges, achieve precise conversion from nanometers to miles and multi-unit representation through standard conversion formulas and professional calculation tools.
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Length" :key="index">
     <n-button

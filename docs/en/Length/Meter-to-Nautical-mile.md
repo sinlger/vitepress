@@ -4,22 +4,22 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Length/index
-      linkText: 长度换算
+      linkText: Length Conversion
   - - link: /Length/Meter-to-Nautical-mile
-      linkText: 米到海里
+      linkText: Meter to Nautical Mile
 head:
   - - meta
     - name: description
-      content: "专业的米到海里单位转换器，提供精确的长度单位换算。支持m到nMi的快速转换，包含详细的换算表格和实际应用场景。适用于航海、海洋工程等领域的长度单位换算需求。"
+      content: "Professional meter to nautical mile unit converter, providing precise length unit conversion. Supports fast m to nMi conversion, includes detailed conversion tables and practical application scenarios. Suitable for navigation, marine engineering and other fields' length unit conversion needs."
   - - meta
     - name: keywords
-      content: "单位转换器,单位换算,长度单位转换器,长度单位转换,尺寸换算,长度单位换算,长度单位换算表,一米是多少厘米啊,一米等于多少分米,米,一米是多少厘米,一分米等于多少厘米,一公尺,米的英文,米的单位,m单位,分米,公尺,一米等于多少厘米,米,1m等于多少cm,一米,米和厘米的换算,m单位,k是什么单位,一米等于多少厘米,m是什么单位,1m是多少,1米等于多少厘米,m,海里,nMi,米到海里,航海单位,海洋测量"
+      content: "unit converter,unit conversion,length unit converter,length unit conversion,dimension conversion,length unit conversion,length unit conversion table,how many centimeters in a meter,how many decimeters equal one meter,meter,how many centimeters in a meter,how many centimeters in a decimeter,meter,meter in English,meter unit,m unit,decimeter,meter,how many centimeters equal one meter,meter,1m equals how many cm,one meter,meter and centimeter conversion,m unit,what is k unit,how many centimeters equal one meter,m is what unit,what is 1m,1 meter equals how many centimeters,m,nautical mile,nMi,meter to nautical mile,navigation unit,marine measurement"
 ---
-# 米 (m) 到 海里 (nMi) 的换算
+# Meter (m) to Nautical Mile (nMi) Conversion
 
-米到海里的单位转换器是航海和海洋工程中不可或缺的长度单位换算工具。海里作为国际通用的海上距离单位，与米的精确换算关系为海洋导航、船舶设计和海洋科学研究提供了重要的计算基础。我们的长度单位转换器支持快速准确的m到nMi换算，满足专业航海和海洋工程的计算需求。
+The meter to nautical mile unit converter is an indispensable length unit conversion tool in navigation and marine engineering. Nautical mile as the internationally recognized maritime distance unit, its precise conversion relationship with meters provides important computational foundation for marine navigation, ship design, and marine scientific research. Our length unit converter supports fast and accurate m to nMi conversion, meeting the calculation needs of professional navigation and marine engineering.
 
 ---
 <script setup>
@@ -27,13 +27,13 @@ import { onMounted, reactive, inject, ref } from 'vue'
 import { NButton, NForm, NFormItem, NInput, NInputNumber, NSelect, NCard, useMessage,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
 import { Length } from '../files';
-const seoKey = ['单位转换器','单位换算','长度单位转换器','长度单位转换','尺寸换算','长度单位换算','长度单位换算表','一米是多少厘米啊','一米等于多少分米','米','一米是多少厘米','一分米等于多少厘米','一公尺','米的英文','米的单位','m单位','分米','公尺','一米等于多少厘米','米','1m等于多少cm','一米','米和厘米的换算','m单位','k是什么单位','一米等于多少厘米','m是什么单位','1m是多少','1米等于多少厘米','m']
+const seoKey = ['unit converter','unit conversion','length unit converter','length unit conversion','dimension conversion','length unit conversion','length unit conversion table','how many centimeters in a meter','how many decimeters equal one meter','meter','how many centimeters in a meter','how many centimeters in a decimeter','meter','meter in English','meter unit','m unit','decimeter','meter','how many centimeters equal one meter','meter','1m equals how many cm','one meter','meter and centimeter conversion','m unit','what is k unit','how many centimeters equal one meter','m is what unit','what is 1m','1 meter equals how many centimeters','m']
 const convert = inject('convert')
 
 const form = reactive({
   number: null,
   result: '',
-  title:'米 (m) 到海里 (nMi) 的长度单位换算',
+  title:'Meter (m) to Nautical Mile (nMi) Length Unit Conversion',
 })
 
 const convertHandler = () => {
@@ -41,17 +41,17 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) * 0.00053996
     form.result = `${form.number}m = ${convertedValue.toFixed(6)}nMi`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="米 (m)">
-    <n-input-number v-model:value="form.number" placeholder="输入米" style="width: 100%" />
+  <n-form-item label="Meters (m)">
+    <n-input-number v-model:value="form.number" placeholder="Enter meters" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
@@ -72,33 +72,33 @@ const convertHandler = () => {
   </template>
 </n-card>
 
-## 实际应用场景
+## Practical Application Scenarios
 
-### 航海导航与海洋工程
-在现代航海中，船舶设计规格通常以米为单位，而航行距离则使用海里计算。例如，某大型货轮长度350米，其跨太平洋航线距离约5000海里，换算为9260000米，便于船舶工程师进行燃油消耗和航行时间的精确计算。
+### Marine Navigation and Ocean Engineering
+In modern navigation, ship design specifications are usually measured in meters, while sailing distances are calculated in nautical miles. For example, a large cargo ship with a length of 350 meters on a trans-Pacific route of approximately 5,000 nautical miles, converting to 9,260,000 meters, facilitates ship engineers in precise calculations of fuel consumption and sailing time.
 
-### 海洋科学研究
-海洋科学研究中，实验设备的尺寸以米标注，而研究区域范围用海里表示。深海探测器长度10米时，换算为0.0054海里，其探测范围可达100海里，为海洋生物分布和地质结构研究提供重要数据支撑。
+### Marine Scientific Research
+In marine scientific research, experimental equipment dimensions are marked in meters, while research area ranges are expressed in nautical miles. When a deep-sea detector is 10 meters long, converting to 0.0054 nautical miles, its detection range can reach 100 nautical miles, providing important data support for marine biological distribution and geological structure research.
 
-### 港口建设与管理
-港口基础设施建设中，码头长度、水深等参数用米表示，而船舶进出港航线距离用海里计算。某港口主航道长度5000米，换算为2.7海里，有助于港口管理部门制定船舶调度和安全管理方案。
+### Port Construction and Management
+In port infrastructure construction, parameters such as wharf length and water depth are expressed in meters, while ship entry and exit route distances are calculated in nautical miles. A port's main channel length of 5,000 meters converts to 2.7 nautical miles, helping port management departments formulate ship scheduling and safety management plans.
 
-### 海上救援与搜索
-海上救援行动中，救援设备的技术参数以米为单位，而搜索范围和救援距离用海里表示。救生艇长度8米时，换算为0.0043海里，其有效救援半径可达50海里，为海上安全保障提供重要的技术支持。
+### Maritime Rescue and Search
+In maritime rescue operations, technical parameters of rescue equipment are measured in meters, while search ranges and rescue distances are expressed in nautical miles. When a lifeboat is 8 meters long, converting to 0.0043 nautical miles, its effective rescue radius can reach 50 nautical miles, providing important technical support for maritime safety assurance.
 
-## 换算公式与对照表
+## Conversion Formulas and Reference Tables
 
-### 基本换算公式
-从 **米 (m)** 换算到 **海里 (nMi)** 的公式为：
+### Basic Conversion Formula
+The formula for converting from **Meters (m)** to **Nautical Miles (nMi)** is:
 $$ nMi = m \times 0.00053996 $$
 
-从 **海里 (nMi)** 换算到 **米 (m)** 的公式为：
+The formula for converting from **Nautical Miles (nMi)** to **Meters (m)** is:
 $$ m = nMi \times 1852 $$
 
-### 常用换算对照表
+### Common Conversion Reference Table
 
-| 米 (m) | 海里 (nMi) | 米 (m) | 海里 (nMi) |
-|--------|------------|--------|------------|
+| Meters (m) | Nautical Miles (nMi) | Meters (m) | Nautical Miles (nMi) |
+|------------|----------------------|------------|----------------------|
 | 100 | 0.054 | 5000 | 2.700 |
 | 200 | 0.108 | 6000 | 3.240 |
 | 500 | 0.270 | 8000 | 4.320 |
@@ -108,33 +108,33 @@ $$ m = nMi \times 1852 $$
 | 3000 | 1.620 | 50000 | 26.998 |
 | 4000 | 2.160 | 100000 | 53.996 |
 
-### 长度单位换算参考
-- **1海里** = 1852米 = 185200厘米 = 18520分米
-- **1米** = 100厘米 = 10分米 = 0.00053996海里
-- **一米等于多少厘米**：1米 = 100厘米
-- **一米等于多少分米**：1米 = 10分米
+### Length Unit Conversion Reference
+- **1 nautical mile** = 1852 meters = 185200 centimeters = 18520 decimeters
+- **1 meter** = 100 centimeters = 10 decimeters = 0.00053996 nautical miles
+- **How many centimeters in one meter**: 1 meter = 100 centimeters
+- **How many decimeters equal one meter**: 1 meter = 10 decimeters
 
-## 常见问题解答
+## Frequently Asked Questions
 
-### 1. 一米是多少厘米？
-一米等于100厘米。这是公制长度单位的基本换算关系，1m = 100cm，是我们长度单位转换器中最常用的换算。
+### 1. How many centimeters in a meter?
+One meter equals 100 centimeters. This is the basic conversion relationship of metric length units, 1m = 100cm, which is the most commonly used conversion in our length unit converter.
 
-### 2. 一米等于多少分米？
-一米等于10分米。分米是米和厘米之间的中间单位，1m = 10dm = 100cm，便于中等长度的测量。
+### 2. How many decimeters equal one meter?
+One meter equals 10 decimeters. Decimeter is an intermediate unit between meter and centimeter, 1m = 10dm = 100cm, convenient for measuring medium lengths.
 
-### 3. 米到海里的换算公式是什么？
-米到海里的换算公式为：海里数 = 米数 × 0.00053996。这个单位转换器公式可以快速进行m到nMi的换算。
+### 3. What is the conversion formula from meters to nautical miles?
+The conversion formula from meters to nautical miles is: nautical miles = meters × 0.00053996. This unit converter formula can quickly perform m to nMi conversions.
 
-### 4. 海里单位主要用在哪些领域？
-海里主要用于航海、海洋工程、海上运输等领域。在国际航海中，海里是标准的距离单位，便于全球航海导航统一计算。
+### 4. Which fields primarily use the nautical mile unit?
+Nautical miles are mainly used in navigation, marine engineering, maritime transportation and other fields. In international navigation, nautical miles are the standard distance unit, facilitating unified calculations for global maritime navigation.
 
-### 5. 如何快速进行长度单位换算？
-使用专业的单位转换器工具，输入数值即可获得精确的换算结果。我们的长度单位换算表提供常用数值的快速查询。
+### 5. How to quickly perform length unit conversions?
+Use professional unit converter tools, input values to get precise conversion results. Our length unit conversion table provides quick lookup for common values.
 
-### 6. 一海里等于多少米？
-一海里等于1852米。这是国际标准的精确换算关系，在航海导航和海洋工程中广泛使用。
+### 6. How many meters equal one nautical mile?
+One nautical mile equals 1852 meters. This is the internationally standardized precise conversion relationship, widely used in maritime navigation and marine engineering.
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Length" :key="index">
     <n-button

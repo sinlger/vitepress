@@ -4,22 +4,22 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Length/index
-      linkText: 长度换算
+      linkText: Length Conversion
   - - link: /Length/Nanometer-to-Kilometer
-      linkText: 纳米到千米
+      linkText: Nanometer to Kilometer
 head:
   - - meta
     - name: description
-      content: "专业的纳米到千米长度单位换算工具和指南。提供精确的nm到km转换公式、实际应用场景和详细计算示例。适用于科学研究、工程测量、纳米技术和精密制造等领域的长度单位转换需求。"
+      content: "Professional nanometer to kilometer length unit conversion tool and guide. Provides precise nm to km conversion formulas, practical application scenarios and detailed calculation examples. Suitable for length unit conversion needs in scientific research, engineering measurement, nanotechnology and precision manufacturing."
   - - meta
     - name: keywords
-      content: "纳米千米换算, 长度单位转换器, nm km转换, 纳米到千米公式, 长度换算表, 单位转换工具, 纳米千米计算器, 科学计量单位, 工程测量换算, 纳米技术应用, 精密制造测量, 长度单位对照表, 纳米千米转换器, 距离单位换算, 长度计算工具"
+      content: "nanometer kilometer conversion, length unit converter, nm km conversion, nanometer to kilometer formula, length conversion table, unit conversion tool, nanometer kilometer calculator, scientific measurement units, engineering measurement conversion, nanotechnology applications, precision manufacturing measurement, length unit reference table, nanometer kilometer converter, distance unit conversion, length calculation tool"
 ---
-# 纳米 (nm) 到 千米 (km) 的换算
+# Nanometer (nm) to Kilometer (km) Conversion
 
-纳米到千米的长度单位换算在现代科学研究、工程测量、纳米技术和精密制造中发挥着重要作用。纳米作为极微小尺度的测量单位，广泛应用于纳米材料科学、半导体工艺、生物医学工程和表面技术；而千米作为宏观距离的标准单位，在地理测量、交通运输、航空航天和工程建设中占据重要地位。掌握nm到km的精确换算方法，对于跨尺度的科学研究、工程设计、技术开发和精密测量具有重要意义。
+The nanometer to kilometer length unit conversion plays an important role in modern scientific research, engineering measurement, nanotechnology and precision manufacturing. Nanometers, as an extremely small-scale measurement unit, are widely used in nanomaterial science, semiconductor processes, biomedical engineering and surface technology; while kilometers, as a standard unit for macroscopic distances, occupy an important position in geographic surveying, transportation, aerospace and engineering construction. Mastering the precise conversion method from nm to km is of great significance for cross-scale scientific research, engineering design, technology development and precision measurement.
 
 ---
 <script setup>
@@ -27,13 +27,13 @@ import { onMounted, reactive, inject, ref } from 'vue'
 import { NButton, NForm, NFormItem, NInput, NInputNumber, NSelect, NCard, useMessage,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
 import { Length } from '../files';
-const seoKey = ['单位转换器','单位换算','长度单位转换器','长度单位转换','尺寸换算','长度单位换算','长度单位换算表','纳米千米','纳米和千米','纳米单位','一纳米等于多少千米','纳米到千米换算','nm km','纳米和千米的换算单位','纳米千米转换','km是什么单位','纳米和千米','纳米换算','nm','千米单位','长度换算公式','纳米转千米','千米换算','纳米计算器','千米计算器','长度单位','纳米到千米公式','千米转换器','纳米千米对照表','长度转换','单位换算表','纳米千米换算器','千米长度','纳米长度','长度计算','单位转换公式','纳米千米计算','长度换算器','千米单位换算','纳米单位换算','长度单位转换表','纳米千米转换表']
+const seoKey = ['unit converter','unit conversion','length unit converter','length unit conversion','dimension conversion','length unit conversion','length unit conversion table','nanometer kilometer','nanometer and kilometer','nanometer unit','how many kilometers in one nanometer','nanometer to kilometer conversion','nm km','nanometer and kilometer conversion units','nanometer kilometer conversion','what is km unit','nanometer and kilometer','nanometer conversion','nm','kilometer unit','length conversion formula','nanometer to kilometer','kilometer conversion','nanometer calculator','kilometer calculator','length unit','nanometer to kilometer formula','kilometer converter','nanometer kilometer reference table','length conversion','unit conversion table','nanometer kilometer converter','kilometer length','nanometer length','length calculation','unit conversion formula','nanometer kilometer calculation','length converter','kilometer unit conversion','nanometer unit conversion','length unit conversion table','nanometer kilometer conversion table']
 const convert = inject('convert')
 
 const form = reactive({
   number: null,
   result: '',
-  title: '纳米 (nm) 到 千米 (km) 的换算'
+  title: 'Nanometer (nm) to Kilometer (km) Conversion'
 })
 
 const convertHandler = () => {
@@ -41,17 +41,17 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) / 1000000000000
     form.result = `${form.number}nm = ${convertedValue.toFixed(12)}km`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="纳米 (nm)">
-    <n-input-number v-model:value="form.number" placeholder="输入纳米" style="width: 100%" />
+  <n-form-item label="Nanometer (nm)">
+    <n-input-number v-model:value="form.number" placeholder="Enter nanometers" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
@@ -72,97 +72,97 @@ const convertHandler = () => {
   </template>
 </n-card>
 
-## 实际应用场景
+## Practical Application Scenarios
 
-纳米到千米的长度单位换算在多个科学技术和工程应用领域中具有重要的实际价值：
+The nanometer to kilometer length unit conversion has important practical value in multiple scientific technology and engineering application fields:
 
-### 科学研究与纳米技术
-- **纳米材料科学**：纳米颗粒尺寸控制在纳米级别，而材料运输和分布范围可达千米级别
-- **纳米器件制造**：器件特征尺寸以纳米计量，而生产线和厂房规模以千米表示
-- **表面工程技术**：纳米涂层厚度精确控制，而应用覆盖面积可跨越千米范围
-- 示例：纳米催化剂颗粒直径50nm，而催化反应器管道长度为2千米（2000000000000nm）
+### Scientific Research and Nanotechnology
+- **Nanomaterial Science**: Nanoparticle size control at the nanometer level, while material transportation and distribution range can reach kilometer level
+- **Nanodevice Manufacturing**: Device feature dimensions are measured in nanometers, while production line and facility scales are expressed in kilometers
+- **Surface Engineering Technology**: Precise control of nanocoating thickness, while application coverage area can span kilometer ranges
+- Example: Nanocatalyst particle diameter 50nm, while catalytic reactor pipeline length is 2 kilometers (2000000000000nm)
 
-### 工程测量与精密制造
-- **精密仪器制造**：器件内部结构精度达到纳米级别，而设备安装和调试空间以千米计量
-- **光学工程技术**：光学元件表面粗糙度控制在纳米范围，而光学系统传输距离以千米表示
-- **机械工程设计**：零件表面精度要求纳米级别，而机械系统运行距离可达千米级别
-- 示例：激光器光学镜面粗糙度10nm，而激光传输距离为5千米（5000000000000nm）
+### Engineering Measurement and Precision Manufacturing
+- **Precision Instrument Manufacturing**: Internal device structure precision reaches nanometer level, while equipment installation and debugging space is measured in kilometers
+- **Optical Engineering Technology**: Optical component surface roughness controlled in nanometer range, while optical system transmission distance is expressed in kilometers
+- **Mechanical Engineering Design**: Component surface precision requirements at nanometer level, while mechanical system operating distance can reach kilometer level
+- Example: Laser optical mirror surface roughness 10nm, while laser transmission distance is 5 kilometers (5000000000000nm)
 
-### 生物医学工程
-- **生物纳米技术**：生物分子和纳米载体尺寸在纳米级别，而药物分布和传输距离以千米计量
-- **医疗器械工程**：医疗设备精度控制在纳米范围，而医疗服务覆盖范围以千米表示
-- **生物传感技术**：传感器检测精度达到纳米级别，而监测网络覆盖距离可达千米级别
-- 示例：药物纳米载体直径100nm，而药物配送网络覆盖半径为10千米（10000000000000nm）
+### Biomedical Engineering
+- **Biological Nanotechnology**: Biological molecules and nanocarrier sizes at nanometer level, while drug distribution and transmission distance measured in kilometers
+- **Medical Device Engineering**: Medical device precision controlled in nanometer range, while medical service coverage expressed in kilometers
+- **Biosensor Technology**: Sensor detection precision reaches nanometer level, while monitoring network coverage distance can reach kilometer level
+- Example: Drug nanocarrier diameter 100nm, while drug delivery network coverage radius is 10 kilometers (10000000000000nm)
 
-### 航空航天工程
-- **航天器制造**：航天器表面涂层厚度控制在纳米级别，而轨道高度和飞行距离以千米表示
-- **卫星通信技术**：卫星天线表面精度要求纳米级别，而通信覆盖范围可达千米级别
-- **空间探测工程**：探测器精密部件精度控制在纳米范围，而探测距离以千米计量
-- 示例：卫星太阳能板表面涂层厚度200nm，而卫星轨道高度为400千米（400000000000000nm）
+### Aerospace Engineering
+- **Spacecraft Manufacturing**: Spacecraft surface coating thickness controlled at nanometer level, while orbital height and flight distance expressed in kilometers
+- **Satellite Communication Technology**: Satellite antenna surface precision requirements at nanometer level, while communication coverage can reach kilometer level
+- **Space Exploration Engineering**: Probe precision component accuracy controlled in nanometer range, while detection distance measured in kilometers
+- Example: Satellite solar panel surface coating thickness 200nm, while satellite orbital height is 400 kilometers (400000000000000nm)
 
-### 环境监测与地理测量
-- **环境传感技术**：传感器检测精度达到纳米级别，而监测网络覆盖距离以千米表示
-- **地质勘探工程**：岩石样品分析精度控制在纳米范围，而勘探区域范围以千米计量
-- **气象观测技术**：观测设备精度要求纳米级别，而观测覆盖范围可达千米级别
-- 示例：大气颗粒物检测精度50nm，而气象观测网络覆盖半径为100千米（100000000000000nm）
+### Environmental Monitoring and Geographic Surveying
+- **Environmental Sensor Technology**: Sensor detection precision reaches nanometer level, while monitoring network coverage distance expressed in kilometers
+- **Geological Exploration Engineering**: Rock sample analysis precision controlled in nanometer range, while exploration area scope measured in kilometers
+- **Meteorological Observation Technology**: Observation equipment precision requirements at nanometer level, while observation coverage can reach kilometer level
+- Example: Atmospheric particulate detection precision 50nm, while meteorological observation network coverage radius is 100 kilometers (100000000000000nm)
 
-## 公式
+## Formula
 
-### 纳米到千米转换公式
-从 **纳米 (nm)** 换算到 **千米 (km)** 的精确公式为：
+### Nanometer to Kilometer Conversion Formula
+The precise formula for converting from **Nanometer (nm)** to **Kilometer (km)** is:
 $$ km = nm \times 10^{-12} $$
 
-简化公式：
+Simplified formula:
 $$ km = nm \div 1000000000000 $$
 
-### 千米到纳米转换公式
-从 **千米 (km)** 换算到 **纳米 (nm)** 的精确公式为：
+### Kilometer to Nanometer Conversion Formula
+The precise formula for converting from **Kilometer (km)** to **Nanometer (nm)** is:
 $$ nm = km \times 10^{12} $$
 
-简化公式：
+Simplified formula:
 $$ nm = km \times 1000000000000 $$
 
-### 长度单位换算对照表
+### Length Unit Conversion Reference Table
 
-| 纳米 (nm) | 千米 (km) | 应用场景 |
-|-----------|-----------|----------|
-| 1 nm | 1×10⁻¹² km | 原子级精度测量 |
-| 100 nm | 1×10⁻¹⁰ km | 纳米材料制备 |
-| 1,000 nm | 1×10⁻⁹ km | 细胞生物学研究 |
-| 10,000 nm | 1×10⁻⁸ km | 微电子器件 |
-| 100,000 nm | 1×10⁻⁷ km | 精密机械加工 |
-| 1,000,000 nm | 1×10⁻⁶ km | 工业测量标准 |
-| 1,000,000,000 nm | 1×10⁻³ km | 工程设计基准 |
-| 1,000,000,000,000 nm | 1 km | 地理测量标准 |
+| Nanometer (nm) | Kilometer (km) | Application Scenario |
+|----------------|----------------|-----------------------|
+| 1 nm | 1×10⁻¹² km | Atomic-level precision measurement |
+| 100 nm | 1×10⁻¹⁰ km | Nanomaterial preparation |
+| 1,000 nm | 1×10⁻⁹ km | Cell biology research |
+| 10,000 nm | 1×10⁻⁸ km | Microelectronic devices |
+| 100,000 nm | 1×10⁻⁷ km | Precision mechanical processing |
+| 1,000,000 nm | 1×10⁻⁶ km | Industrial measurement standards |
+| 1,000,000,000 nm | 1×10⁻³ km | Engineering design benchmarks |
+| 1,000,000,000,000 nm | 1 km | Geographic measurement standards |
 
-### 转换示例
-- **科学研究应用**：1,000,000,000,000nm = 1.000000000000km
-- **工程测量应用**：500,000,000,000nm = 0.500000000000km
-- **纳米技术应用**：1,000,000,000nm = 0.001000000000km
-- **精密制造应用**：100,000,000nm = 0.000100000000km
-- **材料科学应用**：10,000,000nm = 0.000010000000km
+### Conversion Examples
+- **Scientific Research Application**: 1,000,000,000,000nm = 1.000000000000km
+- **Engineering Measurement Application**: 500,000,000,000nm = 0.500000000000km
+- **Nanotechnology Application**: 1,000,000,000nm = 0.001000000000km
+- **Precision Manufacturing Application**: 100,000,000nm = 0.000100000000km
+- **Materials Science Application**: 10,000,000nm = 0.000010000000km
 
-## 常见问题 (FAQ)
+## Frequently Asked Questions (FAQ)
 
-### 1. 纳米和千米换算的科学意义是什么？
-纳米到千米的换算跨越了12个数量级，体现了从微观到宏观的尺度转换，在科学研究、工程设计和技术开发中具有重要意义。
+### 1. What is the scientific significance of nanometer to kilometer conversion?
+The nanometer to kilometer conversion spans 12 orders of magnitude, representing the scale transition from microscopic to macroscopic, which is of great significance in scientific research, engineering design and technology development.
 
-### 2. 在纳米技术中为什么需要nm到km的换算？
-纳米技术研究中，纳米材料的特征尺寸以纳米表示，而材料的应用范围、运输距离和分布区域通常以千米计量，换算确保了技术应用的准确性。
+### 2. Why is nm to km conversion needed in nanotechnology?
+In nanotechnology research, the characteristic dimensions of nanomaterials are expressed in nanometers, while the application range, transportation distance and distribution area are usually measured in kilometers. Conversion ensures the accuracy of technology applications.
 
-### 3. 如何确保纳米到千米换算的精度？
-使用科学计数法表示（1 km = 10¹² nm），采用高精度计算工具，并进行多次验证以确保换算的准确性和可靠性。
+### 3. How to ensure the precision of nanometer to kilometer conversion?
+Use scientific notation (1 km = 10¹² nm), employ high-precision calculation tools, and perform multiple verifications to ensure the accuracy and reliability of the conversion.
 
-### 4. 在工程测量中这种换算有什么实际价值？
-工程测量中，精密部件的制造精度以纳米表示，而工程项目的规模和距离以千米计量，换算有助于工程设计和质量控制。
+### 4. What practical value does this conversion have in engineering measurement?
+In engineering measurement, the manufacturing precision of precision components is expressed in nanometers, while the scale and distance of engineering projects are measured in kilometers. Conversion helps with engineering design and quality control.
 
-### 5. 纳米级精度在千米级工程中的重要性？
-纳米级精度控制对于大型工程项目的质量和性能至关重要，如航空航天、精密制造和科学仪器等领域。
+### 5. What is the importance of nanometer-level precision in kilometer-scale engineering?
+Nanometer-level precision control is crucial for the quality and performance of large-scale engineering projects, such as in aerospace, precision manufacturing and scientific instruments.
 
-### 6. 如何在实际应用中应用这种换算？
-在科学研究、工程设计和技术开发中，通过标准换算公式和专业软件工具，实现纳米到千米的精确转换和应用。
+### 6. How to apply this conversion in practical applications?
+In scientific research, engineering design and technology development, achieve precise conversion and application from nanometers to kilometers through standard conversion formulas and professional software tools.
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Length" :key="index">
     <n-button

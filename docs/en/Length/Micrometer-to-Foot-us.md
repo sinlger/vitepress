@@ -4,22 +4,22 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Length/index
-      linkText: 长度换算
+      linkText: Length Conversion
   - - link: /Length/Micrometer-to-Foot-us
-      linkText: 微米到英尺-us
+      linkText: Micrometer to US Foot
 head:
   - - meta
     - name: description
-      content: "微米到美制英尺换算器 - 专业的长度单位转换工具。支持μm、ft-us等多种单位换算，提供精确的微米和美制英尺换算公式及工程应用案例。"
+      content: "Micrometer to US Foot converter - Professional length unit conversion tool. Supports μm, ft-us and other unit conversions, providing precise micrometer to US foot conversion formulas and engineering application examples."
   - - meta
     - name: keywords
-      content: "单位转换器,单位换算,长度单位转换器,长度单位转换,尺寸换算,长度单位换算,长度单位换算表,微米,毫米,微米和厘米的换算,一微米,微米和米的换算,um单位,微米的单位,µm,毫米和微米的换算,micron是什么单位,分米单位,微米和米,一微米等于多少毫米,microns,um和mm换算,一毫米等于多少微米,weimi,micrometer,目数,微米的符号,μm和mm换算,微米和毫米的换算,毫米和微米,微米单位,miu,m是什么单位,um是什么单位,μm是什么单位,微米和毫米,μm,um,微米符号"
+      content: "unit converter,unit conversion,length unit converter,length unit conversion,dimension conversion,length unit conversion,length unit conversion table,micrometer,millimeter,micrometer to centimeter conversion,one micrometer,micrometer to meter conversion,um unit,micrometer unit,µm,millimeter to micrometer conversion,what is micron unit,decimeter unit,micrometer and meter,how many millimeters in one micrometer,microns,um to mm conversion,how many micrometers in one millimeter,micrometer,目数,micrometer symbol,μm to mm conversion,micrometer to millimeter conversion,millimeter and micrometer,micrometer unit,miu,what is m unit,what is um unit,what is μm unit,micrometer and millimeter,μm,um,micrometer symbol"
 ---
-# 微米 (μm) 到 美制英尺 (ft-us) 的换算
+# Micrometer (μm) to US Foot (ft-us) Conversion
 
-微米到美制英尺的单位转换在精密工程和制造业中具有重要应用价值。微米（μm）作为精密测量的基本单位，广泛应用于半导体制造、精密机械加工和材料科学研究，而美制英尺（ft-us）则是美国工程和建筑行业的标准长度单位。本页面提供专业的微米到美制英尺换算器，支持高精度的单位转换计算，帮助您在精密制造、工程设计和科学研究等领域快速完成μm到ft-us的换算。
+The unit conversion from micrometers to US feet has important application value in precision engineering and manufacturing. Micrometer (μm), as a basic unit for precision measurement, is widely used in semiconductor manufacturing, precision machining, and materials science research, while US foot (ft-us) is the standard length unit in American engineering and construction industries. This page provides a professional micrometer to US foot converter, supporting high-precision unit conversion calculations to help you quickly complete μm to ft-us conversions in precision manufacturing, engineering design, and scientific research fields.
 
 ---
 <script setup>
@@ -27,13 +27,13 @@ import { onMounted, reactive, inject, ref } from 'vue'
 import { NButton, NForm, NFormItem, NInput, NInputNumber, NSelect, NCard, useMessage,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
 import { Length } from '../files';
-const seoKey = ['单位转换器','单位换算','长度单位转换器','长度单位转换','尺寸换算','长度单位换算','长度单位换算表','微米','毫米','毫米','微米','微米','纳米','米和微米的换算','微米和厘米的换算','一微米','微米和米的换算','um单位','微米的单位','µm','毫米和微米的换算','micron是什么单位','分米单位','微米和米','一微米等于多少毫米','microns','um和mm换算','一毫米等于多少微米','weimi','micrometer','目数','微米的符号','μm和mm换算','微米和毫米的换算','毫米和微米','微米单位','miu','m是什么单位','um是什么单位','μm是什么单位','微米和毫米','μm','um','微米符号']
+const seoKey = ['unit converter','unit conversion','length unit converter','length unit conversion','dimension conversion','length unit conversion','length unit conversion table','micrometer','millimeter','millimeter','micrometer','micrometer','nanometer','meter to micrometer conversion','micrometer to centimeter conversion','one micrometer','micrometer to meter conversion','um unit','micrometer unit','µm','millimeter to micrometer conversion','what is micron unit','decimeter unit','micrometer and meter','how many millimeters in one micrometer','microns','um to mm conversion','how many micrometers in one millimeter','micrometer','micrometer','目数','micrometer symbol','μm to mm conversion','micrometer to millimeter conversion','millimeter and micrometer','micrometer unit','miu','what is m unit','what is um unit','what is μm unit','micrometer and millimeter','μm','um','micrometer symbol']
 const convert = inject('convert')
 
 const form = reactive({
   number: null,
   result: '',
-  title:'微米 (μm) 到美制英尺 (ft-us) 的换算',
+  title:'Micrometer (μm) to US Foot (ft-us) Conversion',
 })
 
 const convertHandler = () => {
@@ -41,17 +41,17 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) * 0.0000032808
     form.result = `${form.number}μm = ${convertedValue.toFixed(8)}ft-us`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="微米 (μm)">
-    <n-input-number v-model:value="form.number" placeholder="输入微米" style="width: 100%" />
+  <n-form-item label="Micrometers (μm)">
+    <n-input-number v-model:value="form.number" placeholder="Enter micrometers" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
@@ -72,53 +72,53 @@ const convertHandler = () => {
   </template>
 </n-card>
 
-## 实际应用场景
+## Practical Application Scenarios
 
-微米到美制英尺的单位转换在精密工程和制造业中发挥着重要作用，以下是一些典型的应用场景：
+The unit conversion from micrometers to US feet plays an important role in precision engineering and manufacturing. Here are some typical application scenarios:
 
-### 半导体制造与微电子工业
-- **芯片制造工艺**：现代半导体制造中，晶体管特征尺寸已达到纳米级别，而制造设备和厂房尺寸则以美制英尺计量。例如，7纳米工艺节点的晶体管栅极宽度约为7000μm，相当于0.0229659ft-us，而无尘室的层高通常为12-15英尺。
-- **精密光刻设备**：光刻机的分辨率达到微米甚至亚微米级别，而设备本身的占地面积和安装空间则用美制英尺表示。某型EUV光刻机的最小线宽为13.5μm，设备占地面积约为20×30英尺。
+### Semiconductor Manufacturing and Microelectronics Industry
+- **Chip Manufacturing Process**: In modern semiconductor manufacturing, transistor feature sizes have reached nanometer levels, while manufacturing equipment and facility dimensions are measured in US feet. For example, the transistor gate width of a 7-nanometer process node is approximately 7000μm, equivalent to 0.0229659ft-us, while cleanroom ceiling heights are typically 12-15 feet.
+- **Precision Lithography Equipment**: Lithography machines achieve resolution at micrometer or even sub-micrometer levels, while the equipment's footprint and installation space are expressed in US feet. A certain EUV lithography machine has a minimum line width of 13.5μm and occupies approximately 20×30 feet of floor space.
 
-### 精密机械制造
-- **精密加工技术**：CNC机床的加工精度可达到微米级别，而机床的工作台面和行程范围则用美制英尺衡量。例如，某精密车床的重复定位精度为±2μm（±0.00000656ft-us），但其最大加工直径可达8英尺。
-- **表面处理工艺**：金属表面的粗糙度和涂层厚度以微米表示，而处理设备的尺寸用美制英尺计算。某航空发动机叶片的表面粗糙度要求Ra≤0.8μm，而叶片长度可达3英尺。
+### Precision Mechanical Manufacturing
+- **Precision Machining Technology**: CNC machine tools can achieve micrometer-level machining accuracy, while the machine's worktable and travel range are measured in US feet. For example, a precision lathe has a repeat positioning accuracy of ±2μm (±0.00000656ft-us), but its maximum machining diameter can reach 8 feet.
+- **Surface Treatment Processes**: Metal surface roughness and coating thickness are expressed in micrometers, while processing equipment dimensions are calculated in US feet. An aircraft engine blade requires surface roughness Ra≤0.8μm, while the blade length can reach 3 feet.
 
-### 光学与激光技术
-- **激光系统设计**：激光器的波长和光束质量参数以微米表示，而激光系统的光路长度和实验室空间则用美制英尺规划。HeNe激光器的波长为632.8μm，而激光干涉仪的光路长度可达50英尺。
-- **光学元件制造**：透镜和反射镜的表面精度要求达到λ/10（约63μm），而光学平台和支撑结构的尺寸用美制英尺设计。
+### Optical and Laser Technology
+- **Laser System Design**: Laser wavelength and beam quality parameters are expressed in micrometers, while laser system optical path length and laboratory space are planned in US feet. A HeNe laser has a wavelength of 632.8μm, while laser interferometer optical path length can reach 50 feet.
+- **Optical Component Manufacturing**: Lens and mirror surface accuracy requirements reach λ/10 (approximately 63μm), while optical platforms and support structures are designed in US feet dimensions.
 
-### 建筑工程与材料科学
-- **建筑材料检测**：混凝土、钢材等建筑材料的微观结构分析需要微米级精度，而建筑物的整体尺寸用美制英尺表示。混凝土的平均孔径约为50-200μm，而摩天大楼的高度可达1000英尺以上。
-- **精密测量仪器**：建筑测量中使用的激光测距仪精度可达毫米甚至微米级别，而测量距离则以英尺为单位。某型激光测距仪的精度为±100μm，测量范围可达1000英尺。
+### Construction Engineering and Materials Science
+- **Building Material Testing**: Microstructural analysis of building materials such as concrete and steel requires micrometer-level precision, while overall building dimensions are expressed in US feet. Concrete average pore diameter is approximately 50-200μm, while skyscraper heights can exceed 1000 feet.
+- **Precision Measuring Instruments**: Laser rangefinders used in construction surveying can achieve millimeter or even micrometer-level accuracy, while measurement distances are in feet. A certain laser rangefinder has an accuracy of ±100μm with a measurement range of up to 1000 feet.
 
-## 公式
+## Formulas
 
-### 常用换算公式
+### Common Conversion Formulas
 
-**微米 (μm) 到 美制英尺 (ft-us) 的换算公式：**
+**Micrometer (μm) to US Foot (ft-us) Conversion Formula:**
 
 ```
 ft-us = μm × 0.000003280833
 ```
 
-**美制英尺 (ft-us) 到 微米 (μm) 的换算公式：**
+**US Foot (ft-us) to Micrometer (μm) Conversion Formula:**
 
 ```
 μm = ft-us × 304,800.6096
 ```
 
-**示例：**
+**Examples:**
 - 1 μm = 0.000003280833 ft-us
 - 1000 μm = 0.003280833 ft-us
 - 1000000 μm = 3.280833 ft-us
 - 1 ft-us = 304,800.6096 μm
 - 0.5 ft-us = 152,400.3048 μm
 
-### 长度单位换算表
+### Length Unit Conversion Table
 
-| 微米 (μm) | 美制英尺 (ft-us) | 米 (m) | 厘米 (cm) | 毫米 (mm) |
-|-----------|------------------|---------|-----------|----------|
+| Micrometers (μm) | US Feet (ft-us) | Meters (m) | Centimeters (cm) | Millimeters (mm) |
+|------------------|-----------------|------------|------------------|------------------|
 | 1 | 0.000003280833 | 0.000001 | 0.0001 | 0.001 |
 | 10 | 0.00003280833 | 0.00001 | 0.001 | 0.01 |
 | 100 | 0.0003280833 | 0.0001 | 0.01 | 0.1 |
@@ -128,27 +128,27 @@ ft-us = μm × 0.000003280833
 | 1,000,000 | 3.280833 | 1 | 100 | 1,000 |
 | 304,800.6096 | 1 | 0.30480061 | 30.480061 | 304.80061 |
 
-## 常见问题 (FAQ)
+## Frequently Asked Questions (FAQ)
 
-### 1. 微米和美制英尺分别是什么单位？
-微米（μm）是长度的公制单位，等于百万分之一米，主要用于精密测量和科学研究。美制英尺（ft-us）是美国使用的长度单位，等于0.30480061米，广泛应用于建筑、工程和日常测量。
+### 1. What are micrometers and US feet respectively?
+Micrometer (μm) is a metric unit of length equal to one millionth of a meter, mainly used for precision measurement and scientific research. US foot (ft-us) is a length unit used in the United States, equal to 0.30480061 meters, widely applied in construction, engineering, and daily measurements.
 
-### 2. 微米到美制英尺的换算系数是多少？
-1微米 = 0.000003280833美制英尺，换算系数为0.000003280833。反之，1美制英尺 = 304,800.6096微米。
+### 2. What is the conversion factor from micrometers to US feet?
+1 micrometer = 0.000003280833 US foot, with a conversion factor of 0.000003280833. Conversely, 1 US foot = 304,800.6096 micrometers.
 
-### 3. 在什么情况下需要进行微米到美制英尺的换算？
-主要应用于精密制造、半导体工业、光学仪器制造、建筑工程等领域，当需要将微观尺度的精密测量数据与宏观的工程尺寸进行对比分析时。
+### 3. In what situations do you need to convert micrometers to US feet?
+Mainly applied in precision manufacturing, semiconductor industry, optical instrument manufacturing, construction engineering, and other fields when comparing microscale precision measurement data with macroscale engineering dimensions.
 
-### 4. 如何快速进行微米到美制英尺的换算？
-使用公式：美制英尺 = 微米 × 0.000003280833。对于大数值，可以先将微米转换为毫米或厘米，再转换为美制英尺。
+### 4. How to quickly convert micrometers to US feet?
+Use the formula: US foot = micrometer × 0.000003280833. For large values, you can first convert micrometers to millimeters or centimeters, then convert to US feet.
 
-### 5. 微米到美制英尺换算的精度如何保证？
-我们的换算器采用高精度算法，保留足够的小数位数，确保换算结果的准确性。对于精密制造和科学研究，建议根据实际需要选择合适的精度。
+### 5. How is the accuracy of micrometer to US foot conversion ensured?
+Our converter uses high-precision algorithms and retains sufficient decimal places to ensure conversion result accuracy. For precision manufacturing and scientific research, it is recommended to choose appropriate precision based on actual needs.
 
-### 6. 美制英尺与国际英尺有什么区别？
-美制英尺（ft-us）= 0.30480061米，而国际英尺（ft）= 0.3048米。两者差异很小，但在高精度测量中需要区分使用。
+### 6. What is the difference between US feet and international feet?
+US foot (ft-us) = 0.30480061 meters, while international foot (ft) = 0.3048 meters. The difference is small, but needs to be distinguished in high-precision measurements.
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Length" :key="index">
     <n-button

@@ -4,35 +4,35 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Length/index
-      linkText: 长度换算
+      linkText: Length Conversion
   - - link: /Length/Millimeter-to-Meter
-      linkText: 毫米到米
+      linkText: Millimeter to Meter
 head:
   - - meta
     - name: description
-      content: "专业的毫米(mm)到米(m)长度单位换算工具。提供精确的单位转换器、换算公式和实际应用场景。支持精密制造、建筑工程、科学研究等领域的尺寸换算需求。"
+      content: "Professional millimeter (mm) to meter (m) length unit conversion tool. Provides precise unit converter, conversion formulas, and practical application scenarios. Supports dimension conversion needs in precision manufacturing, construction engineering, scientific research, and other fields."
   - - meta
     - name: keywords
-      content: "毫米到米换算, 长度单位转换器, mm到m换算, 单位换算工具, 精密测量, 建筑工程换算, 制造业尺寸转换, 科学计量单位, 长度换算公式, 毫米米换算表"
+      content: "millimeter to meter conversion, length unit converter, mm to m conversion, unit conversion tool, precision measurement, construction engineering conversion, manufacturing dimension conversion, scientific measurement units, length conversion formula, millimeter meter conversion table"
 ---
-# 毫米 (mm) 到 米 (m) 的换算
+# Millimeter (mm) to Meter (m) Conversion
 ---
 
-毫米到米的换算是连接微观精密测量与宏观距离计算的重要桥梁。在现代工业制造、建筑工程、科学研究和精密测量领域，准确的单位转换对于确保产品质量、工程精度和实验准确性至关重要。我们的专业换算工具提供快速、精确的毫米到米单位转换，满足各行业的精密计量需求。
+The conversion from millimeters to meters serves as an important bridge connecting microscopic precision measurement with macroscopic distance calculation. In modern industrial manufacturing, construction engineering, scientific research, and precision measurement fields, accurate unit conversion is crucial for ensuring product quality, engineering precision, and experimental accuracy. Our professional conversion tool provides fast and precise millimeter to meter unit conversion, meeting the precision measurement needs of various industries.
 <script setup>
 import { onMounted, reactive, inject, ref } from 'vue'
 import { NButton, NForm, NFormItem, NInput, NInputNumber, NSelect, NCard, useMessage,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
 import { Length } from '../files';
-const seoKey = ['单位转换器','单位换算','长度单位转换器','长度单位转换','尺寸换算','长度单位换算','长度单位换算表','厘米和毫米换算','mm是毫米吗','毫米和厘米换算','m cm','毫米换算','厘米毫米换算','一毫米等于多少厘米','cm和mm换算','毫米单位','一毫米等于多少米','mm换算cm','mm和cm换算','ｍｍ','毫米换算厘米','毫米英文','mm单位','mm换算m','英寸转毫米','分米单位','.mm','mm和m换算','cm mm','厘米换算毫米','mm cm','毫米和米换算','一厘米等于多少毫米','平方毫米','一米等于多少毫米','毫米和厘米','毫米换算米','mm是什么单位','mm to m','mm to cm','um','nm','cm','mm','mi','m']
+const seoKey = ['unit converter','unit conversion','length unit converter','length unit conversion','dimension conversion','length unit conversion','length unit conversion table','centimeter and millimeter conversion','is mm millimeter','millimeter and centimeter conversion','m cm','millimeter conversion','centimeter millimeter conversion','how many centimeters in one millimeter','cm and mm conversion','millimeter unit','how many meters in one millimeter','mm to cm conversion','mm and cm conversion','mm','millimeter to centimeter conversion','millimeter english','mm unit','mm to m conversion','inch to millimeter','decimeter unit','.mm','mm and m conversion','cm mm','centimeter to millimeter conversion','mm cm','millimeter and meter conversion','how many millimeters in one centimeter','square millimeter','how many millimeters in one meter','millimeter and centimeter','millimeter to meter conversion','what unit is mm','mm to m','mm to cm','um','nm','cm','mm','mi','m']
 const convert = inject('convert')
 
 const form = reactive({
   number: null,
   result: '',
-  title: '毫米 (mm) 到米 (m) 的长度单位换算'
+  title: 'Millimeter (mm) to Meter (m) Length Unit Conversion'
 })
 
 const convertHandler = () => {
@@ -40,17 +40,17 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) / 1000
     form.result = `${form.number}mm = ${convertedValue.toFixed(3)}m`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="毫米 (mm)">
-    <n-input-number v-model:value="form.number" placeholder="输入毫米" style="width: 100%" />
+  <n-form-item label="Millimeter (mm)">
+    <n-input-number v-model:value="form.number" placeholder="Enter millimeters" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
@@ -71,85 +71,85 @@ const convertHandler = () => {
   </template>
 </n-card>
 
-## 实际应用场景
+## Practical Application Scenarios
 
-毫米到米的单位转换在现代工业和科学领域具有广泛的应用价值，是精密测量和工程计算的基础：
+The unit conversion from millimeters to meters has wide application value in modern industry and scientific fields, serving as the foundation for precision measurement and engineering calculations:
 
-- **精密制造与机械加工**：
-  - 数控机床编程中，刀具路径以毫米为单位，而工件整体尺寸常用米表示
-  - 质量控制中的公差分析，从毫米级精度到米级装配精度的转换
-  - 示例：精密轴承内径公差±0.005mm，装配到直径2.5m的大型设备中
+- **Precision Manufacturing and Mechanical Processing**:
+  - In CNC machine programming, tool paths are in millimeters while overall workpiece dimensions are often expressed in meters
+  - Tolerance analysis in quality control, converting from millimeter-level precision to meter-level assembly precision
+  - Example: Precision bearing inner diameter tolerance ±0.005mm, assembled into large equipment with 2.5m diameter
 
-- **建筑工程与施工管理**：
-  - 建筑图纸详图标注（毫米）与总平面图尺寸（米）的协调转换
-  - 装修材料规格换算，如瓷砖厚度8mm与房间净高2.7m的计算
-  - 示例：钢筋直径12mm，楼板厚度120mm，建筑总高度45.6m
+- **Construction Engineering and Construction Management**:
+  - Coordinated conversion between detailed architectural drawing annotations (millimeters) and general plan dimensions (meters)
+  - Decoration material specification conversion, such as calculating 8mm tile thickness with 2.7m room net height
+  - Example: Rebar diameter 12mm, floor slab thickness 120mm, total building height 45.6m
 
-- **科学研究与实验测量**：
-  - 材料科学中样品尺寸（毫米）与实验设备尺寸（米）的匹配
-  - 生物医学研究中细胞培养皿尺寸与实验室空间规划
-  - 示例：培养皿直径90mm，实验台长度2.4m，无菌室面积12m²
+- **Scientific Research and Experimental Measurement**:
+  - Matching sample dimensions (millimeters) with experimental equipment dimensions (meters) in materials science
+  - Cell culture dish dimensions and laboratory space planning in biomedical research
+  - Example: Culture dish diameter 90mm, laboratory bench length 2.4m, sterile room area 12m²
 
-- **工业设计与产品开发**：
-  - 产品零部件尺寸设计（毫米）与包装运输尺寸（米）的优化
-  - 人机工程学设计中的尺寸换算与空间布局
-  - 示例：手机厚度7.5mm，展示柜深度0.8m，展厅总面积200m²
+- **Industrial Design and Product Development**:
+  - Optimization of product component dimension design (millimeters) and packaging transportation dimensions (meters)
+  - Dimension conversion and spatial layout in ergonomic design
+  - Example: Mobile phone thickness 7.5mm, display cabinet depth 0.8m, exhibition hall total area 200m²
 
-- **质量检测与计量标准**：
-  - 精密仪器校准中的多尺度测量标准转换
-  - 国际标准化组织(ISO)标准中的尺寸规范换算
-  - 示例：测量精度0.01mm，标准长度块1m，检测范围0-5m
+- **Quality Testing and Measurement Standards**:
+  - Multi-scale measurement standard conversion in precision instrument calibration
+  - Dimension specification conversion in International Organization for Standardization (ISO) standards
+  - Example: Measurement accuracy 0.01mm, standard length block 1m, detection range 0-5m
 
-## 换算公式与计算方法
+## Conversion Formulas and Calculation Methods
 
-### 基础换算公式
+### Basic Conversion Formulas
 
-**毫米到米的换算公式：**
+**Millimeter to Meter Conversion Formula:**
 $$ m = mm \div 1000 $$
 
-**米到毫米的换算公式：**
+**Meter to Millimeter Conversion Formula:**
 $$ mm = m \times 1000 $$
 
-### 换算示例
+### Conversion Examples
 - 1000mm = 1.000m
 - 500mm = 0.500m
 - 100mm = 0.100m
 - 25mm = 0.025m
 - 1.5mm = 0.0015m
 
-### 长度单位换算表
+### Length Unit Conversion Table
 
-| 毫米 (mm) | 米 (m) | 应用场景 |
-|-----------|--------|----------|
-| 1mm | 0.001m | 精密零件厚度 |
-| 10mm | 0.01m | 板材厚度 |
-| 100mm | 0.1m | 建筑构件尺寸 |
-| 500mm | 0.5m | 设备部件长度 |
-| 1000mm | 1.0m | 标准长度单位 |
-| 2500mm | 2.5m | 房间净高 |
-| 5000mm | 5.0m | 车间跨度 |
+| Millimeter (mm) | Meter (m) | Application Scenario |
+|-----------------|-----------|---------------------|
+| 1mm | 0.001m | Precision component thickness |
+| 10mm | 0.01m | Plate thickness |
+| 100mm | 0.1m | Building component dimensions |
+| 500mm | 0.5m | Equipment component length |
+| 1000mm | 1.0m | Standard length unit |
+| 2500mm | 2.5m | Room net height |
+| 5000mm | 5.0m | Workshop span |
 
-## 常见问题 (FAQ)
+## Frequently Asked Questions (FAQ)
 
-**Q1: 为什么毫米到米要除以1000？**
-A: 因为1米 = 1000毫米，所以毫米数值除以1000就得到对应的米数值。这是基于国际单位制(SI)的十进制换算关系。
+**Q1: Why do we divide by 1000 when converting millimeters to meters?**
+A: Because 1 meter = 1000 millimeters, dividing the millimeter value by 1000 gives the corresponding meter value. This is based on the decimal conversion relationship of the International System of Units (SI).
 
-**Q2: 在工程图纸中如何正确标注毫米和米？**
-A: 详细尺寸通常用毫米标注（如φ25mm），总体尺寸用米标注（如L=2.5m）。标注时应明确单位，避免混淆。
+**Q2: How to correctly mark millimeters and meters in engineering drawings?**
+A: Detailed dimensions are usually marked in millimeters (such as φ25mm), while overall dimensions are marked in meters (such as L=2.5m). Units should be clearly indicated when marking to avoid confusion.
 
-**Q3: 精密测量中毫米到米换算的精度要求？**
-A: 精密测量通常保留小数点后3-6位，如1.234mm = 0.001234m。具体精度要求依据测量标准和应用场景确定。
+**Q3: What are the precision requirements for millimeter to meter conversion in precision measurement?**
+A: Precision measurements typically retain 3-6 decimal places, such as 1.234mm = 0.001234m. Specific precision requirements are determined based on measurement standards and application scenarios.
 
-**Q4: CAD软件中如何设置毫米和米的单位？**
-A: 大多数CAD软件支持单位设置，建议详图用毫米，总图用米。输入时注意单位标识，如25mm或0.025m。
+**Q4: How to set millimeter and meter units in CAD software?**
+A: Most CAD software supports unit settings. It is recommended to use millimeters for detailed drawings and meters for general drawings. Pay attention to unit identification when inputting, such as 25mm or 0.025m.
 
-**Q5: 国际贸易中毫米到米换算的标准？**
-A: 遵循ISO国际标准，产品规格书中应明确标注单位。出口产品通常需要提供多种单位制的对照表。
+**Q5: What are the standards for millimeter to meter conversion in international trade?**
+A: Follow ISO international standards, and units should be clearly marked in product specifications. Export products usually need to provide conversion tables for multiple unit systems.
 
-**Q6: 如何快速心算毫米到米的换算？**
-A: 记住关键换算点：1000mm=1m，100mm=0.1m，10mm=0.01m，1mm=0.001m。大数值可先换算到最接近的整数米，再加减小数部分。
+**Q6: How to quickly calculate millimeter to meter conversion mentally?**
+A: Remember key conversion points: 1000mm=1m, 100mm=0.1m, 10mm=0.01m, 1mm=0.001m. For large values, first convert to the nearest whole meter, then add or subtract the decimal part.
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Length" :key="index">
     <n-button
