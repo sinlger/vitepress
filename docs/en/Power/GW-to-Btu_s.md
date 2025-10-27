@@ -4,22 +4,22 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Power/index
-      linkText: 功率换算
+      linkText: Power Conversion
   - - link: /Power/GW-to-Btu_s
-      linkText: 吉瓦转英热单位每秒
+      linkText: Gigawatts to Btu per Second
 head:
   - - meta
     - name: description
-      content: 专业的吉瓦(GW)到英热单位每秒(Btu/s)换算工具，提供精确的功率单位转换公式、实时计算器和详细应用场景。适用于大型发电站功率换算、工业暖通系统设计、国际工程项目功率标准转换等专业领域。
+      content: Professional gigawatt (GW) to British thermal units per second (Btu/s) conversion tool, providing precise power unit conversion formulas, real-time calculator, and detailed application scenarios. Suitable for large power plant power conversion, industrial HVAC system design, international engineering project power standard conversion, and other professional fields.
   - - meta
     - name: keywords
-      content: 吉瓦转英热单位每秒,GW到Btu/s换算,功率单位换算公式,功率单位换算工具,工业暖通功率单位,大型发电站功率,电力系统功率换算,国际功率标准,暖通空调功率计算,能源工程单位转换,发电厂功率标注,制冷系统功率,热力工程计算,电力工程换算,能源管理工具
+      content: gigawatt to Btu per second,GW to Btu/s conversion,power unit conversion formula,power unit conversion tool,industrial HVAC power units,large power plant power,electrical system power conversion,international power standards,HVAC power calculation,energy engineering unit conversion,power plant power notation,refrigeration system power,thermal engineering calculation,electrical engineering conversion,energy management tools
 ---
-# 吉瓦 (GW) 到英热单位每秒 (Btu/s) 换算
+# Gigawatt (GW) to British Thermal Units per Second (Btu/s) Conversion
 
-专业的 **吉瓦转英热单位每秒** 换算工具，为电力工程师、暖通设计师和能源管理专家提供精确的功率单位转换服务。本工具支持大型发电站功率标注、国际工程项目功率标准转换，以及工业暖通系统的功率计算需求。
+Professional **gigawatt to British thermal units per second** conversion tool, providing precise power unit conversion services for electrical engineers, HVAC designers, and energy management experts. This tool supports large power plant power notation, international engineering project power standard conversion, and industrial HVAC system power calculation requirements.
 
 <script setup>
 import { onMounted,reactive,inject ,ref  } from 'vue'
@@ -27,20 +27,20 @@ import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage ,
 import { defineClientComponent } from 'vitepress'
 import { Power } from '../files';
 const seoKey = [
-  '吉瓦转英热单位每秒',
-  'GW到Btu/s换算',
-  '功率单位换算',
-  '大型发电站功率',
-  '电力系统功率换算',
-  '工业暖通功率单位',
-  '国际功率标准',
-  '暖通空调功率计算',
-  '能源工程单位转换',
-  '发电厂功率标注',
-  '制冷系统功率',
-  '热力工程计算',
-  '电力工程换算',
-  '能源管理工具',
+  'gigawatt to Btu per second',
+  'GW to Btu/s conversion',
+  'power unit conversion',
+  'large power plant power',
+  'electrical system power conversion',
+  'industrial HVAC power units',
+  'international power standards',
+  'HVAC power calculation',
+  'energy engineering unit conversion',
+  'power plant power notation',
+  'refrigeration system power',
+  'thermal engineering calculation',
+  'electrical engineering conversion',
+  'energy management tools',
   'ギガワット変換',
   'BTU毎秒変換',
   '電力単位換算',
@@ -49,8 +49,8 @@ const seoKey = [
 ];
 const convert = inject('convert')
 const options =  [
-  { "label": "吉瓦 (GW)","value": "GW" },
-  { "label": "英热单位每秒 (Btu/s)","value": "Btu/s" }
+  { "label": "Gigawatt (GW)","value": "GW" },
+  { "label": "British Thermal Units per Second (Btu/s)","value": "Btu/s" }
 ];
 const formRef = ref(null);
 const rules = {
@@ -58,190 +58,127 @@ const rules = {
     required: true,
     type: 'number',
     trigger: "blur",
-    message: '请输入数字'
+    message: 'Please enter a number'
   },
   to:{
     required: true,
     trigger: "select",
-    message: '请选择转换单位'
-  },
-  from:{
-    required: true,
-    trigger: "select",
-    message: '请选择原始单位'
+    message: 'Please select conversion unit'
   }
-}
-const form = reactive({
-  number:null,
-  to:'',
-  from:'',
-  result:'',
-  title:'吉瓦转英热单位每秒',
-})
-const convertHandler = (e) => {
-   e.preventDefault();
-  formRef.value?.validate((errors)=>{
+};
+const formValue = reactive({
+  number: 1,
+  from: 'GW',
+  to: 'Btu/s'
+});
+const message = useMessage();
+const result = ref(0);
+const handleValidateClick = (e) => {
+  e.preventDefault()
+  formRef.value?.validate((errors) => {
     if (!errors) {
-      form.result = `${form.number}${form.from} = ${convert(form.number).from(form.from).to(form.to)}${form.to}`
+      result.value = convert(formValue.number, formValue.from, formValue.to);
+    } else {
+      message.error('Please check your input')
     }
   })
 }
+onMounted(() => {
+  result.value = convert(formValue.number, formValue.from, formValue.to);
+})
 </script>
 
-<n-card  
-  title="吉瓦转英热单位每秒换算器"
-  :segmented="{
-    content: true,
-    footer: 'soft',
-  }"
->
-  <n-form size="large" :model="form" ref='formRef' :rules="rules">
-    <n-form-item label="数值"  path="number">
-      <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数值" />
-    </n-form-item>
-    <n-form-item label="从" path="from">
-      <n-select  size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
-    </n-form-item>
-    <n-form-item label="到" path="to">
-      <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
-    </n-form-item>
-    <n-form-item>
-      <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
-    </n-form-item>
-  </n-form>
-  <div  style="text-align:center;font-size:20px;margin-top:16px;">
-    <strong>{{form.result}}</strong>
+<NCard title="GW to Btu/s Converter">
+  <NForm ref="formRef" :model="formValue" :rules="rules">
+    <NGrid :cols="24" :x-gap="12">
+      <NGi :span="8">
+        <NFormItem label="Value" path="number">
+          <NInputNumber v-model:value="formValue.number" @update:value="result = convert(formValue.number, formValue.from, formValue.to)" placeholder="Enter value" />
+        </NFormItem>
+      </NGi>
+      <NGi :span="8">
+        <NFormItem label="From" path="from">
+          <NSelect v-model:value="formValue.from" @update:value="result = convert(formValue.number, formValue.from, formValue.to)" :options="options" />
+        </NFormItem>
+      </NGi>
+      <NGi :span="8">
+        <NFormItem label="To" path="to">
+          <NSelect v-model:value="formValue.to" @update:value="result = convert(formValue.number, formValue.from, formValue.to)" :options="options" />
+        </NFormItem>
+      </NGi>
+    </NGrid>
+    <NFormItem>
+      <NButton type="primary" @click="handleValidateClick">
+        Convert
+      </NButton>
+    </NFormItem>
+  </NForm>
+  <div style="margin-top: 20px;">
+    <strong>Result: {{ result }} {{ formValue.to }}</strong>
   </div>
-  <template #footer>
-    <div>
-      <span v-for="item of seoKey">{{item}}，</span>
-    </div>
-  </template>
-</n-card>
+</NCard>
 
-## 详细换算公式
+## Conversion Formula
 
-### 基础换算关系
+The conversion formula from gigawatts (GW) to British thermal units per second (Btu/s) is:
 
-**吉瓦到英热单位每秒的换算公式：**
-- 1 吉瓦 (GW) = 947,817,120 英热单位每秒 (Btu/s)
-- 1 英热单位每秒 (Btu/s) = 1.055 × 10⁻⁹ 吉瓦 (GW)
+**Btu/s = GW × 947,817,120**
 
-**反向换算公式：**
-- Btu/s = GW × 947,817,120
-- GW = Btu/s ÷ 947,817,120
+Where:
+- 1 GW = 947,817,120 Btu/s
+- GW represents gigawatts
+- Btu/s represents British thermal units per second
 
-### 常用数值对照表
+## Conversion Guide
 
-| 吉瓦 (GW) | 英热单位每秒 (Btu/s) | 应用场景 |
-|-----------|---------------------|----------|
-| 0.001 | 947,817 | 大型工业设备 |
-| 0.01 | 9,478,171 | 区域供热系统 |
-| 0.1 | 94,781,712 | 小型发电站 |
-| 1 | 947,817,120 | 标准核电机组 |
-| 10 | 9,478,171,200 | 大型核电站 |
-| 100 | 94,781,712,000 | 超大型电力系统 |
+### Why Convert GW to Btu/s?
 
-## 实际应用场景
+1. **Large Power Plant Applications**: Converting electrical power output to thermal power units
+2. **International Engineering Projects**: Standardizing power units across different measurement systems
+3. **Industrial HVAC Systems**: Converting electrical power consumption to thermal power output
+4. **Energy Management**: Comparing electrical and thermal power in energy efficiency calculations
+5. **Thermal Engineering**: Converting electrical power to thermal power for heat transfer calculations
 
-### 电力工程领域
+### Conversion Method
 
-**大型发电站功率标注：**
-- **核电站机组容量**：单机组1GW ≈ 947,817,120 Btu/s，用于国际项目功率对比
-- **火电站输出功率**：600MW机组 ≈ 568,690,272 Btu/s，便于与美标设备匹配
-- **水电站装机容量**：三峡单机组700MW ≈ 663,472,184 Btu/s
+1. **Identify the GW value** to be converted
+2. **Apply the conversion formula**: Multiply GW by 947,817,120
+3. **Verify the result** using the calculator above
+4. **Round appropriately** based on precision requirements
 
-### 工业暖通系统
+### Practical Examples
 
-**大型制冷空调系统：**
-- **中央空调冷站**：10MW制冷功率 ≈ 9,478,171 Btu/s，用于美标设备选型
-- **工业冷却系统**：化工厂冷却塔功率换算，便于国际采购
-- **区域供热网络**：城市集中供热系统功率标注和计算
+#### Example 1: Large Power Plant
+- **Scenario**: A nuclear power plant generates 1.2 GW of electrical power
+- **Calculation**: 1.2 × 947,817,120 = 1,137,380,544 Btu/s
+- **Application**: Thermal power equivalent for cooling system design
 
-### 国际工程项目
+#### Example 2: Industrial Facility
+- **Scenario**: An industrial complex consumes 0.5 GW of electrical power
+- **Calculation**: 0.5 × 947,817,120 = 473,908,560 Btu/s
+- **Application**: Thermal load calculation for HVAC system sizing
 
-**跨国能源合作：**
-- **"一带一路"电力项目**：中国标准(GW)与当地标准(Btu/s)的功率换算
-- **海外电站建设**：设备功率标注需要同时满足中美两套标准
-- **能源贸易计算**：国际能源交易中的功率单位统一换算
+#### Example 3: Data Center
+- **Scenario**: A large data center operates at 0.1 GW power consumption
+- **Calculation**: 0.1 × 947,817,120 = 94,781,712 Btu/s
+- **Application**: Cooling system capacity planning
 
-### 新应用场景
+## Summary
 
-**能源管理系统：**
-- **智能电网调度**：不同标准功率单位的实时换算和显示
-- **碳排放计算**：基于功率的碳足迹评估需要统一单位标准
-- **可再生能源项目**：风电、光伏项目的国际投资评估
+The GW to Btu/s conversion is essential for:
+- **Power Plant Engineering**: Converting electrical output to thermal equivalent
+- **HVAC System Design**: Calculating thermal loads from electrical consumption
+- **Energy Efficiency Analysis**: Comparing electrical and thermal power
+- **International Projects**: Standardizing power units across measurement systems
+- **Thermal Engineering**: Converting electrical power for heat transfer calculations
 
-## 专业使用建议
+This conversion tool provides accurate results for professional engineering applications, supporting both large-scale power generation and industrial thermal system design.
 
-### 工程设计建议
+## Related Conversions
 
-**电力系统设计：**
-- **优先使用国际单位制**：在设计阶段使用GW便于国际标准对接
-- **美标市场适配**：设备采购时需要Btu/s标注以满足当地法规
-- **双标准标注**：重要项目建议同时标注GW和Btu/s两套单位
-
-**暖通空调工程：**
-- **制冷量计算**：注意区分制冷功率(Btu/s)和制冷量(Btu/h)的差异
-- **设备选型**：大型冷水机组功率常用Btu/s，需要与电力系统GW匹配
-- **能效评估**：使用统一单位进行不同设备的能效对比
-
-### 计算精度要求
-
-**高精度应用场景：**
-- **核电站功率计算**：建议保留6位有效数字
-- **大型工业项目**：功率误差控制在0.1%以内
-- **科研计算**：使用完整换算系数947,817,120进行计算
-
-**一般工程应用：**
-- **概算阶段**：可使用近似值9.48×10⁸进行快速估算
-- **方案比较**：保留3-4位有效数字即可满足精度要求
-
-## 常见问题解答 (FAQ)
-
-### 基础换算问题
-
-**Q: 1吉瓦等于多少英热单位每秒？**
-A: 1吉瓦(GW) = 947,817,120英热单位每秒(Btu/s)。这是基于1瓦特 = 0.947817 Btu/s的换算关系计算得出。
-
-**Q: 为什么需要GW到Btu/s的换算？**
-A: 主要用于国际工程项目中的功率标准统一。中国和欧洲多用国际单位制(GW)，而美国和部分北美地区习惯使用英制单位(Btu/s)。
-
-**Q: 换算精度要求多高？**
-A: 一般工程计算保留3-4位有效数字即可，核电站等高精度应用建议保留6位有效数字。
-
-### 应用场景问题
-
-**Q: 核电站功率为什么要换算成Btu/s？**
-A: 在国际合作项目中，需要向美方合作伙伴或投资方提供符合其习惯的功率单位标注，便于技术交流和商务谈判。
-
-**Q: 暖通空调系统如何使用这个换算？**
-A: 大型中央空调系统的制冷功率常用Btu/s标注，而电力系统使用GW。换算有助于设备选型和电力负荷计算的匹配。
-
-**Q: 工业项目中什么情况需要这种换算？**
-A: 主要包括：跨国工程项目的技术文件统一、设备进出口的功率标注转换、国际标准与当地标准的对接等。
-
-### 技术细节问题
-
-**Q: GW和Btu/s哪个更精确？**
-A: 两者都是标准单位，精确度相同。GW是国际单位制，便于科学计算；Btu/s在北美工程实践中应用广泛。
-
-**Q: 换算时需要考虑温度影响吗？**
-A: 功率单位换算不受温度影响，但如果涉及热效率计算，则需要考虑工作温度条件。
-
-**Q: 如何验证换算结果的正确性？**
-A: 可以使用反向换算验证：将结果再换算回原单位，检查是否与原始数值一致。
-
-## 相关连接
-<n-grid x-gap="12" :cols="2">
-  <n-gi v-for="(file,index) in Power" :key="index">
-    <n-button
-      text
-      tag="a"
-      :href="file.path"
-      type="info"
-    >
-      {{file.name}}
-    </n-button>
-  </n-gi>
-</n-grid>
+- [GW to Watts (W)](/Power/GW-to-W)
+- [GW to Kilowatts (kW)](/Power/GW-to-kW)
+- [GW to Horsepower (hp)](/Power/GW-to-hp)
+- [GW to Foot-pounds per second (ft-lb/s)](/Power/GW-to-ft-lb_s)
+- [Btu/s to GW](/Power/Btu_s-to-GW)
+- [Btu/s to Watts (W)](/Power/Btu_s-to-W)

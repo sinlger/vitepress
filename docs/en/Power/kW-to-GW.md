@@ -1,199 +1,177 @@
 ---
-sidebar: false
-aside: false
-lastUpdated: false
-breadcrumb:
-  - - link: /
-      linkText: 首页
-  - - link: /Power/index
-      linkText: 功率换算
-  - - link: /Power/kW-to-GW
-      linkText: 千瓦转吉瓦
-head:
-  - - meta
-    - name: description
-      content: "专业的千瓦(kW)到吉瓦(GW)功率单位换算工具，提供精确的kW转GW计算公式和实时换算功能。涵盖大型发电站、核电工程、超大型工业基地等应用场景，支持国家级能源设施功率计算、电网规划设计、大型电力项目评估等专业需求。"
-  - - meta
-    - name: keywords
-      content: "千瓦转吉瓦,kW到GW换算,功率单位换算,gw是什么单位,千瓦单位,功率计算公式,电力单位,大型发电站功率,核电站功率,超大型工业功率,国家电网功率,电力工程计算,能源设施功率"
+title: "Kilowatt (kW) to Gigawatt (GW) Conversion"
+description: "Professional kilowatt (kW) to gigawatt (GW) power unit conversion tool, providing precise kW to GW calculation formulas and real-time conversion functions. Covers application scenarios such as large power plants, nuclear engineering, and mega-scale industrial bases, supporting professional needs for national energy facility power calculations, grid planning and design, and large-scale power project evaluation."
+keywords:
+  - Kilowatt to gigawatt
+  - kW to GW conversion
+  - Power unit conversion
+  - What is GW unit
+  - Kilowatt unit
+  - Power calculation formula
+  - Electrical units
+  - Large power plant capacity
+  - Nuclear power plant capacity
+  - Mega-scale industrial power
+  - National grid power
+  - Electrical engineering calculation
+  - Energy facility power
+breadcrumbs:
+  - name: Home
+    linkText: Home
+    linkUrl: /
+  - name: Power Conversion
+    linkText: Power Conversion
+    linkUrl: /zh/Power/
+  - name: Kilowatt to Gigawatt
+    linkText: Kilowatt to Gigawatt
+    linkUrl: /zh/Power/kW-to-GW
+meta:
+  - name: description
+    content: "Professional kilowatt (kW) to gigawatt (GW) power unit conversion tool, providing precise kW to GW calculation formulas and real-time conversion functions. Covers application scenarios such as large power plants, nuclear engineering, and mega-scale industrial bases, supporting professional needs for national energy facility power calculations, grid planning and design, and large-scale power project evaluation."
+  - name: keywords
+    content: "Kilowatt to gigawatt,kW to GW conversion,Power unit conversion,What is GW unit,Kilowatt unit,Power calculation formula,Electrical units,Large power plant capacity,Nuclear power plant capacity,Mega-scale industrial power,National grid power,Electrical engineering calculation,Energy facility power"
 ---
-# 千瓦 (kW) 到吉瓦 (GW) 换算
+# Kilowatt (kW) to Gigawatt (GW) Conversion
 
-千瓦(kW)到吉瓦(GW)的功率单位换算是大型电力工程和国家级能源设施规划中的重要计算。本工具提供精确的kW转GW换算功能，支持超大型发电站容量计算、国家电网规划、大型工业基地功率统计等专业应用。广泛用于核电工程、大型火电站、超大型新能源基地等国家级能源项目的功率计算和工程设计。
+Kilowatt (kW) to gigawatt (GW) power unit conversion is an important calculation in large-scale electrical engineering and national energy facility planning. This tool provides precise kW to GW conversion functionality, supporting mega-scale power plant capacity calculations, national grid planning, large industrial base power statistics and other professional applications. Widely used in nuclear engineering, large thermal power plants, mega-scale renewable energy bases and other national energy projects for power calculations and engineering design.
 
 <script setup>
-import { onMounted,reactive,inject ,ref  } from 'vue'
-import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage ,NGrid ,NGi } from 'naive-ui'
-import { defineClientComponent } from 'vitepress'
-import { Power } from '../files';
+import { ref, computed } from 'vue'
+
 const seoKey = [
-  '千瓦转吉瓦',
-  'kW到GW换算',
-  'gw是什么单位',
-  '千瓦单位',
-  '功率计算公式',
-  '电力单位',
-  '大型发电站功率',
-  '核电站功率',
-  '超大型工业功率',
-  '国家电网功率',
-  '电力工程计算',
-  '能源设施功率'
+  'Kilowatt to gigawatt',
+  'kW to GW conversion',
+  'What is GW unit',
+  'Kilowatt unit',
+  'Power calculation formula',
+  'Electrical units',
+  'Large power plant capacity',
+  'Nuclear power plant capacity',
+  'Mega-scale industrial power',
+  'National grid power',
+  'Electrical engineering calculation',
+  'Energy facility power'
 ]
-const convert = inject('convert')
-const options =  [
-  { "label": "千瓦 (kW)","value": "kW" },
-  { "label": "吉瓦 (GW)","value": "GW" }
-];
-const formRef = ref(null);
+
+const form = ref({
+  number: 0,
+  from: 'kW',
+  to: 'GW',
+  result: ''
+})
+
+const options = [
+  { "label": "Kilowatt (kW)", "value": "kW" },
+  { "label": "Gigawatt (GW)", "value": "GW" }
+]
+
 const rules = {
-  number:{
+  number: {
     required: true,
-    type: 'number',
-    trigger: "blur",
-    message: '请输入数字'
+    message: 'Please enter a number',
+    trigger: ['blur', 'input']
   },
-  to:{
+  to: {
     required: true,
-    trigger: "select",
-    message: '请选择转换单位'
+    message: 'Please select conversion unit',
+    trigger: 'select'
   },
-  from:{
+  from: {
     required: true,
-    trigger: "select",
-    message: '请选择原始单位'
+    message: 'Please select original unit',
+    trigger: 'select'
   }
 }
-const form = reactive({
-  number:null,
-  to:'',
-  from:'',
-  result:'',
-  title:'千瓦转吉瓦',
-})
-const convertHandler = (e) => {
-   e.preventDefault();
-  formRef.value?.validate((errors)=>{
-    if (!errors) {
-      form.result = `${form.number}${form.from} = ${convert(form.number).from(form.from).to(form.to)}${form.to}`
-    }
-  })
+
+const convertHandler = () => {
+  if (form.value.from === 'kW' && form.value.to === 'GW') {
+    form.value.result = `${form.value.number} kW = ${(form.value.number / 1000000).toFixed(6)} GW`
+  } else if (form.value.from === 'GW' && form.value.to === 'kW') {
+    form.value.result = `${form.value.number} GW = ${(form.value.number * 1000000).toFixed(0)} kW`
+  } else {
+    form.value.result = `${form.value.number} ${form.value.from} = ${form.value.number} ${form.value.to}`
+  }
 }
 </script>
 
-<n-card
-  title="千瓦(kW)到吉瓦(GW)换算器"
+<n-form size="large" :model="form" :rules="rules">
+  <n-form-item label="Value" path="number">
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="Enter the value to convert" />
+  </n-form-item>
+  <n-form-item label="From" path="from">
+    <n-select size="large" :options="options" v-model:value="form.from" placeholder="Select original unit" />
+  </n-form-item>
+  <n-form-item label="To" path="to">
+    <n-select size="large" :options="options" v-model:value="form.to" placeholder="Select conversion unit" />
+  </n-form-item>
+  <n-form-item>
+    <n-button type="info" style="width:100%" @click="convertHandler">Convert</n-button>
+  </n-form-item>
+</n-form>
+<n-card  
+  title="Kilowatt to Gigawatt Conversion"
   :segmented="{
     content: true,
     footer: 'soft',
   }"
 >
-  <n-form size="large" :model="form" ref='formRef' :rules="rules">
-    <n-form-item label="数值"  path="number">
-      <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数值" />
-    </n-form-item>
-    <n-form-item label="从" path="from">
-      <n-select  size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
-    </n-form-item>
-    <n-form-item label="到" path="to">
-      <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
-    </n-form-item>
-    <n-form-item>
-      <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
-    </n-form-item>
-  </n-form>
-  <n-card  embedded :bordered="false" hoverable>
-    <div  style="text-align:center;font-size:20px;">
-      <strong>{{form.result}}</strong>
-    </div>
-  </n-card>
+  <div style="text-align:center;font-size:20px;">
+    <strong>{{form.result}}</strong>
+  </div>
   <template #footer>
     <div>
-      <span v-for="item of seoKey">{{item}}，</span>
+      <span v-for="item of seoKey">{{item}}, </span>
     </div>
   </template>
 </n-card>
 
-## 换算公式
+## Conversion Formula
 
-**基本换算关系：**
-- 1 吉瓦 (GW) = 1,000,000 千瓦 (kW)
-- 1 千瓦 (kW) = 0.000001 吉瓦 (GW)
-- 1 吉瓦 (GW) = 1000 兆瓦 (MW)
+The conversion between kilowatt (kW) and gigawatt (GW) is based on the decimal system:
 
-**计算公式：**
-- GW = kW ÷ 1,000,000
-- kW = GW × 1,000,000
+**Basic Formula:**
+- 1 GW = 1,000,000 kW (10⁶ kW)
+- 1 kW = 0.000001 GW (10⁻⁶ GW)
 
-**常用数值对照表：**
-| 千瓦 (kW) | 吉瓦 (GW) | 应用场景 |
-|-----------|-----------|----------|
-| 100,000 kW | 0.1 GW | 小型发电站 |
-| 500,000 kW | 0.5 GW | 中型发电站 |
-| 1,000,000 kW | 1 GW | 大型核电机组 |
-| 5,000,000 kW | 5 GW | 超大型发电基地 |
-| 10,000,000 kW | 10 GW | 国家级能源项目 |
-| 100,000,000 kW | 100 GW | 国家电网总装机 |
+**Conversion Formulas:**
+- kW to GW: GW = kW ÷ 1,000,000
+- GW to kW: kW = GW × 1,000,000
 
-## 工程应用示例
+## Application Examples
 
-### 电力工程设计
-- **核电站容量规划**：AP1000核电机组单机容量1.25 GW (1,250,000 kW)，用于国家核电发展规划
-- **火电站装机容量**：超超临界火电机组单机容量1 GW (1,000,000 kW)，用于大型电厂设计
-- **电网负荷计算**：省级电网最大负荷50-100 GW (50,000,000-100,000,000 kW)，用于电网规划设计
+### Large Power Plants
+- **Nuclear Power Plant**: 1,200,000 kW = 1.2 GW
+- **Coal Power Plant**: 2,500,000 kW = 2.5 GW
+- **Combined Cycle Plant**: 800,000 kW = 0.8 GW
+- **Hydroelectric Dam**: 22,500,000 kW = 22.5 GW (Three Gorges Dam)
 
-### 新能源工程
-- **大型风电基地**：内蒙古风电基地装机容量10 GW (10,000,000 kW)，用于新能源基地规划
-- **光伏发电站设计**：沙漠光伏电站装机容量2 GW (2,000,000 kW)，用于大型光伏项目设计
-- **抽水蓄能电站**：大型抽水蓄能电站装机容量1.2 GW (1,200,000 kW)，用于储能项目规划
+### Renewable Energy Projects
+- **Solar Power Plant**: 500,000 kW = 0.5 GW
+- **Wind Farm**: 1,000,000 kW = 1.0 GW
+- **Offshore Wind**: 3,600,000 kW = 3.6 GW
+- **Geothermal Plant**: 300,000 kW = 0.3 GW
 
-### 国家级能源项目
-- **特高压输电工程**：特高压直流输电容量8-12 GW (8,000,000-12,000,000 kW)，用于跨区域电力传输
-- **国家电网统计**：全国发电装机容量2000+ GW (2,000,000,000+ kW)，用于国家能源统计
-- **大型工业基地**：钢铁联合企业总用电负荷1-2 GW (1,000,000-2,000,000 kW)，用于工业园区规划
+### National Grid Systems
+- **Country Peak Demand**: 50,000,000 kW = 50 GW
+- **Regional Grid**: 10,000,000 kW = 10 GW
+- **Provincial Grid**: 5,000,000 kW = 5 GW
+- **City Power System**: 2,000,000 kW = 2 GW
 
-## 使用建议
+### Industrial Complexes
+- **Steel Mill**: 100,000 kW = 0.1 GW
+- **Aluminum Smelter**: 200,000 kW = 0.2 GW
+- **Chemical Plant**: 150,000 kW = 0.15 GW
+- **Data Center**: 50,000 kW = 0.05 GW
 
-### 工程设计规范
-- **国家级项目**：装机容量≥1 GW的项目建议使用GW单位，便于与国际标准对接
-- **电网规划设计**：省级以上电网负荷计算使用GW单位，提高数据可读性
-- **大型发电站设计**：单机容量≥100 MW的发电机组可用GW表示总装机容量
+## Usage Recommendations
 
-### 技术文档标准
-- **工程可研报告**：大型能源项目可研中装机容量统一使用GW单位
-- **电力系统分析**：电网潮流计算、稳定性分析中大容量节点使用GW
-- **国际工程项目**：海外电力工程项目技术文档建议使用GW单位
+1. **Power System Planning**: Calculate total generation capacity and demand
+2. **Grid Analysis**: Analyze power flow and transmission requirements
+3. **Energy Policy**: Evaluate national energy production and consumption
+4. **Engineering Design**: Size electrical equipment and infrastructure
+5. **Project Evaluation**: Assess large-scale power project feasibility
 
-### 计算精度要求
-- **精确计算**：保留小数点后3位，如1.250 GW
-- **工程估算**：可保留1-2位小数，如1.2 GW
-- **国际交流**：遵循IEC标准，使用标准GW单位表示法
-
-### 应用场景指导
-- **国家级能源设施管理**：适用于从中小型电站到大型核能系统的能量换算计算
-- **科学计算**：使用国际单位制（瓦特 W），便于统一标准
-
-## 常见问题 (FAQ)
-
-**Q: GW是什么单位？**
-A: GW是吉瓦(Gigawatt)的缩写，是功率单位，1 GW = 1,000,000,000瓦特，主要用于表示大型发电站、电网系统等超大功率设备的容量。
-
-**Q: 1千瓦等于多少吉瓦？**
-A: 1千瓦(kW) = 0.000001吉瓦(GW)，即100万千瓦等于1吉瓦。
-
-**Q: 什么情况下使用GW单位？**
-A: 当功率值≥100MW时建议使用GW单位，特别适用于核电站、大型火电站、省级电网负荷、国家级能源项目等场景。
-
-**Q: GW和MW的换算关系？**
-A: 1 GW = 1000 MW，GW比MW大1000倍，用于更大规模的电力系统描述。
-
-**Q: 中国电网装机容量用什么单位？**
-A: 中国国家电网总装机容量超过2000 GW，省级电网通常用GW表示，地市级电网用MW表示。
-
-**Q: 国际电力工程中GW使用标准？**
-A: 遵循IEC国际标准，大型电力项目技术文档、国际招标文件中装机容量≥1GW的项目统一使用GW单位。
-
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file,index) in Power" :key="index">
     <n-button

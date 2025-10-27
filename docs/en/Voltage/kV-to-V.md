@@ -4,44 +4,44 @@ aside: false
 lastUpdated: false
 breadcrumb: 
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Voltage/index
-      linkText: 电压换算
+      linkText: Voltage Conversion
   - - link: /Voltage/kV-to-V
-      linkText: 千伏转伏特
+      linkText: Kilovolt to Volt
 head:
   - - meta
     - name: description
-      content: 专业的千伏(kV)到伏特(V)转换工具。提供精确的kV转V换算，详解高压电力系统电压等级、配电网络、输电线路电压转换。适用于电力工程师、电气设计师、运维人员和电力系统相关从业人员，涵盖从高压输电到低压配电的完整电压体系。
+      content: Professional kilovolt (kV) to volt (V) conversion tool. Provides precise kV to V conversion, detailed explanation of high voltage power system voltage levels, distribution networks, and transmission line voltage conversion. Suitable for power engineers, electrical designers, maintenance personnel, and power system professionals, covering the complete voltage system from high voltage transmission to low voltage distribution.
   - - meta
     - name: keywords
-      content: 千伏转伏特,kV转V,千伏到伏特,电压单位换算,kV to V,千伏换算伏特,高压电力,电压等级,配电网络,输电线路,电力系统,电压转换,高压配电,电力工程,电网电压
+      content: kilovolt to volt,kV to V,kilovolt to volt conversion,voltage unit conversion,kV to V converter,kilovolt volt conversion,high voltage power,voltage levels,distribution network,transmission lines,power system,voltage conversion,high voltage distribution,power engineering,grid voltage
 seoKey:
-  - "千伏转伏特"
-  - "kV转V"
-  - "千伏到伏特"
-  - "电压单位换算"
+  - "kilovolt to volt"
   - "kV to V"
-  - "千伏换算伏特"
-  - "高压电力"
-  - "电压等级"
-  - "配电网络"
-  - "输电线路"
-  - "电力系统"
-  - "电压转换"
-  - "高压配电"
-  - "电力工程"
-  - "电网电压"
-  - "1kV等于多少V"
-  - "电力系统电压"
-  - "高压转低压"
-  - "电压等级划分"
-  - "电网标准电压"
+  - "kilovolt to volt conversion"
+  - "voltage unit conversion"
+  - "kV to V converter"
+  - "kilovolt volt conversion"
+  - "high voltage power"
+  - "voltage levels"
+  - "distribution network"
+  - "transmission lines"
+  - "power system"
+  - "voltage conversion"
+  - "high voltage distribution"
+  - "power engineering"
+  - "grid voltage"
+  - "1kV equals how many V"
+  - "power system voltage"
+  - "high voltage to low voltage"
+  - "voltage level classification"
+  - "grid standard voltage"
 ---
 
-# 千伏(kV)转伏特(V)换算器 - 电力系统电压转换工具
+# Kilovolt (kV) to Volt (V) Converter - Power System Voltage Conversion Tool
 
-**千伏到伏特转换**是电力系统中最常用的电压单位换算，涵盖从高压输电到低压配电的完整电压体系。本页面提供专业的kV转V计算工具，并详细介绍电力系统电压等级、配电网络结构和安全规范，帮助您深入理解电力系统的电压体系。
+**Kilovolt to volt conversion** is the most commonly used voltage unit conversion in power systems, covering the complete voltage system from high voltage transmission to low voltage distribution. This page provides professional kV to V calculation tools and detailed introduction to power system voltage levels, distribution network structures, and safety standards to help you deeply understand the voltage system of power systems.
 
 ---
 
@@ -53,10 +53,26 @@ import { Voltage } from '../files';
 
 const convert = inject('convert')
 const seoKey = [
-  '千伏转伏特','kV转V','千伏到伏特','电压单位换算','kV to V',
-  '千伏换算伏特','高压电力','电压等级','配电网络','输电线路',
-  '电力系统','电压转换','高压配电','电力工程','电网电压',
-  '1kV等于多少V','电力系统电压','高压转低压','电压等级划分','电网标准电压'
+  "kilovolt to volt",
+  "kV to V",
+  "kilovolt to volt conversion",
+  "voltage unit conversion",
+  "kV to V converter",
+  "kilovolt volt conversion",
+  "high voltage power",
+  "voltage levels",
+  "distribution network",
+  "transmission lines",
+  "power system",
+  "voltage conversion",
+  "high voltage distribution",
+  "power engineering",
+  "grid voltage",
+  "1kV equals how many V",
+  "power system voltage",
+  "high voltage to low voltage",
+  "voltage level classification",
+  "grid standard voltage"
 ]
 
 const formRef = ref(null);
@@ -65,14 +81,14 @@ const rules = {
     required: true,
     type: 'number',
     trigger: "blur",
-    message: '请输入数字'
+    message: 'Please enter a number'
   }
 }
 
 const form = reactive({
   number: null,
   result: '',
-  title: '千伏(kV)转伏特(V)',
+  title: 'Kilovolt (kV) to Volt (V)',
 })
 
 const convertHandler = (e) => {
@@ -87,11 +103,11 @@ const convertHandler = (e) => {
 </script>
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="千伏(kV)数值" path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="请输入千伏数值" />
+  <n-form-item label="Kilovolt (kV) Value" path="number">
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="Enter kilovolt value" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" style="width:100%" @click="convertHandler">转换为伏特(V)</n-button>
+    <n-button type="info" style="width:100%" @click="convertHandler">Convert to Volt (V)</n-button>
   </n-form-item>
 </n-form>
 <n-card embedded :bordered="false" hoverable style="margin-top: 16px;">
@@ -112,185 +128,188 @@ const convertHandler = (e) => {
   </template>
 </n-card>
 
-## 千伏转伏特换算知识
+## Kilovolt to Volt Conversion Knowledge
 
-### 换算公式
+### Conversion Formula
 
-**基本换算关系：**
+**Basic conversion relationship:**
 - **1kV = 1,000V**
-- **换算公式：V = kV × 1,000**
+- **Conversion formula: V = kV × 1,000**
 
-**常用电压等级换算：**
-| 千伏(kV) | 伏特(V) | 电压等级 | 应用领域 |
-|----------|---------|----------|----------|
-| 0.22kV | 220V | 低压 | 民用电力 |
-| 0.38kV | 380V | 低压 | 工业用电 |
-| 0.4kV | 400V | 低压 | 欧洲标准 |
-| 0.69kV | 690V | 低压 | 大功率设备 |
-| 3kV | 3000V | 中压 | 工业配电 |
-| 6kV | 6000V | 中压 | 厂用电 |
-| 10kV | 10000V | 中压 | 城市配电 |
-| 35kV | 35000V | 高压 | 区域配电 |
-| 110kV | 110000V | 高压 | 输电网络 |
-| 220kV | 220000V | 超高压 | 主干输电 |
-| 500kV | 500000V | 特高压 | 远距离输电 |
-| 800kV | 800000V | 特高压 | 直流输电 |
+**Common voltage level conversions:**
+| Kilovolt (kV) | Volt (V) | Voltage Level | Application Field |
+|---------------|----------|---------------|-------------------|
+| 0.22kV | 220V | Low voltage | Residential power |
+| 0.38kV | 380V | Low voltage | Industrial power |
+| 0.4kV | 400V | Low voltage | European standard |
+| 0.69kV | 690V | Low voltage | High-power equipment |
+| 3kV | 3000V | Medium voltage | Industrial distribution |
+| 6kV | 6000V | Medium voltage | Plant power |
+| 10kV | 10000V | Medium voltage | Urban distribution |
+| 35kV | 35000V | High voltage | Regional distribution |
+| 110kV | 110000V | High voltage | Transmission network |
+| 220kV | 220000V | Extra high voltage | Main transmission |
+| 500kV | 500000V | Ultra high voltage | Long-distance transmission |
+| 800kV | 800000V | Ultra high voltage | DC transmission |
 
-### 电力系统电压等级
+### Power System Voltage Levels
 
-#### 低压系统 (≤1kV)
-- **0.22kV (220V)**：单相民用电压
-- **0.38kV (380V)**：三相工业电压
-- **0.4kV (400V)**：欧洲三相标准
-- **0.69kV (690V)**：大功率电机
+#### Low Voltage Systems (≤1kV)
+- **0.22kV (220V)**: Single-phase residential voltage
+- **0.38kV (380V)**: Three-phase industrial voltage
+- **0.4kV (400V)**: European three-phase standard
+- **0.69kV (690V)**: High-power motors
 
-**应用特点：**
-- 直接供电给用户
-- 安全电压要求严格
-- 配电变压器低压侧
-- 电能计量点
+**Application characteristics:**
+- Direct power supply to users
+- Strict safety voltage requirements
+- Low voltage side of distribution transformers
+- Power metering points
 
-#### 中压系统 (1-35kV)
-- **3kV**：矿山、冶金专用
-- **6kV**：工厂内部配电
-- **10kV**：城市配电主干
-- **20kV**：农村配电网
-- **35kV**：县级输电网
+#### Medium Voltage Systems (1-35kV)
+- **3kV**: Mining and metallurgy applications
+- **6kV**: Internal factory distribution
+- **10kV**: Urban distribution backbone
+- **20kV**: Rural distribution networks
+- **35kV**: County-level transmission networks
 
-**应用特点：**
-- 城市配电网主要电压
-- 工业用户进线电压
-- 配电变压器高压侧
-- 开关柜额定电压
+**Application characteristics:**
+- Main voltage for urban distribution networks
+- Industrial user supply voltage
+- High voltage side of distribution transformers
+- Switchgear rated voltage
 
-#### 高压系统 (35-220kV)
-- **35kV**：地区配电网
-- **66kV**：工业园区输电
-- **110kV**：地市级输电网
-- **220kV**：省级输电网
+#### High Voltage Systems (35-220kV)
+- **35kV**: Regional distribution networks
+- **66kV**: Industrial park transmission
+- **110kV**: Municipal transmission networks
+- **220kV**: Provincial transmission networks
 
-**应用特点：**
-- 区域电网互联
-- 大型工业用户供电
-- 主变压器额定电压
-- 电网调度控制
+**Application characteristics:**
+- Regional power grid interconnection
+- Large industrial user power supply
+- Main transformer rated voltage
+- Power grid dispatch control
 
-#### 超高压/特高压系统 (≥220kV)
-- **220kV**：省际联络线
-- **330kV**：西北电网标准
-- **500kV**：国家电网主干
-- **750kV**：西北特高压交流
-- **800kV**：特高压直流
+#### Extra High Voltage/Ultra High Voltage Systems (≥220kV)
+- **220kV**: Inter-provincial tie lines
+- **330kV**: Northwest power grid standard
+- **500kV**: National power grid backbone
+- **750kV**: Northwest ultra-high voltage AC
+- **800kV**: Ultra-high voltage DC
 
-**应用特点：**
-- 跨省区电力传输
-- 大容量远距离输电
-- 电网安全稳定运行
-- 新能源并网接入
+**Application characteristics:**
+- Inter-provincial power transmission
+- Large-capacity long-distance transmission
+- Power grid safety and stable operation
+- Renewable energy grid integration
 
-### 电压转换应用
+### Voltage Conversion Applications
 
-#### 变压器应用
-- **升压变压器**：0.38kV → 10kV
-- **降压变压器**：10kV → 0.38kV
-- **联络变压器**：110kV → 35kV
-- **主变压器**：220kV → 110kV → 10kV
+#### Transformer Applications
+- **Step-up transformers**: 0.38kV → 10kV
+- **Step-down transformers**: 10kV → 0.38kV
+- **Tie transformers**: 110kV → 35kV
+- **Main transformers**: 220kV → 110kV → 10kV
 
-#### 电压互感器
-- **测量用**：将高压转换为100V标准
-- **保护用**：将高压转换为100V/√3
-- **计量用**：精确电压变换
-- **绝缘监测**：电压信号采集
+#### Voltage Transformers
+- **Measurement use**: Convert high voltage to 100V standard
+- **Protection use**: Convert high voltage to 100V/√3
+- **Metering use**: Precise voltage transformation
+- **Insulation monitoring**: Voltage signal acquisition
 
-#### 调压设备
-- **有载调压**：±5%电压调节
-- **无载调压**：±2×2.5%调节
-- **调压器**：连续电压调节
-- **稳压器**：电压稳定控制
+#### Voltage Regulation Equipment
+- **On-load tap changing**: ±5% voltage regulation
+- **Off-load tap changing**: ±2×2.5% regulation
+- **Voltage regulators**: Continuous voltage regulation
+- **Voltage stabilizers**: Voltage stability control
 
-### 电力系统设计考虑
+### Power System Design Considerations
 
-#### 电压等级选择
-- **经济性**：投资成本与运行费用
-- **技术性**：电压损耗与功率传输
-- **可靠性**：供电连续性要求
-- **标准化**：国家电网标准
+#### Voltage Level Selection
+- **Economic efficiency**: Investment cost and operating expenses
+- **Technical aspects**: Voltage loss and power transmission
+- **Reliability**: Power supply continuity requirements
+- **Standardization**: National grid standards
 
-#### 电压质量要求
-- **电压偏差**：±7%（220V），±10%（380V）
-- **电压波动**：≤4%
-- **电压不平衡**：≤2%
-- **谐波畸变**：≤5%
+#### Voltage Quality Requirements
+- **Voltage deviation**: ±7% (220V), ±10% (380V)
+- **Voltage fluctuation**: ≤4%
+- **Voltage unbalance**: ≤2%
+- **Harmonic distortion**: ≤5%
 
-#### 绝缘配合
-- **绝缘水平**：设备绝缘强度
-- **过电压保护**：避雷器配置
-- **接地系统**：安全接地要求
-- **安全距离**：带电体安全间距
+#### Insulation Coordination
+- **Insulation level**: Equipment insulation strength
+- **Overvoltage protection**: Surge arrester configuration
+- **Grounding system**: Safety grounding requirements
+- **Safety distance**: Live conductor safety clearance
 
-### 实际工程应用
+### Practical Engineering Applications
 
-#### 配电网设计
-- **10kV配电网**：城市主要配电电压
-- **变电站设计**：110kV/10kV变电站
-- **配电变压器**：10kV/0.4kV配变
-- **用户接入**：不同电压等级用户
+#### Distribution Network Design
+- **10kV distribution network**: Urban main distribution voltage
+- **Substation design**: 110kV/10kV substations
+- **Distribution transformers**: 10kV/0.4kV distribution transformers
+- **User connections**: Different voltage level users
 
-#### 工业用电
-- **大型工厂**：35kV或10kV进线
-- **中型企业**：10kV专线供电
-- **小型用户**：0.4kV低压供电
-- **特殊设备**：6kV电机供电
+#### Industrial Power Supply
+- **Large factories**: 35kV or 10kV incoming lines
+- **Medium enterprises**: 10kV dedicated power supply
+- **Small users**: 0.4kV low voltage power supply
+- **Special equipment**: 6kV motor power supply
 
-#### 新能源接入
-- **风电场**：35kV集电线路
-- **光伏电站**：10kV或35kV并网
-- **储能系统**：10kV或35kV接入
-- **微电网**：0.4kV或10kV
+#### Renewable Energy Integration
+- **Wind farms**: 35kV collector lines
+- **Photovoltaic stations**: 10kV or 35kV grid connection
+- **Energy storage systems**: 10kV or 35kV connection
+- **Microgrids**: 0.4kV or 10kV
 
-### 安全防护措施
+### Safety Protection Measures
 
-#### 高压安全
-- **安全距离**：不同电压等级的安全距离
-- **防护用具**：绝缘手套、绝缘靴
-- **安全标识**：高压危险警示
-- **操作规程**：停电、验电、接地
+#### High Voltage Safety
+- **Safety distance**: Safety distance requirements for different voltage levels
+- **Personal protection**: Insulating gloves, insulating shoes, safety helmets
+- **Work permit system**: High voltage equipment operation permits
+- **Voltage testing and grounding**: Power-off voltage testing, installation of grounding wires
 
-#### 低压安全
-- **漏电保护**：剩余电流保护器
-- **过载保护**：断路器、熔断器
-- **接地保护**：PE线、等电位联结
-- **绝缘监测**：绝缘电阻测试
+#### Low Voltage Safety
+- **Leakage protection**: Residual current operated protective devices
+- **Overload protection**: Thermal relays, circuit breakers
+- **Short circuit protection**: Fuses, circuit breakers
+- **Grounding protection**: Protective grounding, working grounding
 
-### 测量与监测
+### Measurement and Monitoring
 
-#### 电压测量
-- **数字万用表**：0-1000V测量
-- **高压表**：kV级电压测量
-- **示波器**：电压波形分析
-- **电能质量分析仪**：综合测量
+#### Voltage Measurement
+- **Digital multimeter**: 0-1000V measurement
+- **High voltage meter**: kV level voltage measurement
+- **Oscilloscope**: Voltage waveform analysis
+- **Power quality analyzer**: Comprehensive measurement
 
-#### 在线监测
-- **SCADA系统**：电网电压监测
-- **PMU装置**：同步相量测量
-- **故障录波**：电压故障记录
-- **电能质量监测**：连续监测
+#### Online Monitoring
+- **SCADA system**: Power grid voltage monitoring
+- **PMU devices**: Synchronized phasor measurement
+- **Fault recording**: Voltage fault recording
+- **Power quality monitoring**: Continuous monitoring
 
-### 常见问题解答
+### Frequently Asked Questions
 
-**Q: 1kV等于多少V？**
-A: 1kV = 1000V，千伏是伏特的1000倍。
+**Q: How many volts equal 1kV?**
+A: 1kV = 1,000V. Kilovolt is 1000 times volt, which is the international standard conversion relationship.
 
-**Q: 为什么电力系统要使用不同电压等级？**
-A: 不同电压等级适应不同的输电距离和功率需求，高电压用于远距离大功率传输，低电压用于就近供电。
+**Q: Why do power systems use kilovolt as a unit?**
+A: Voltages in power systems are usually very high. Using kilovolt can simplify numerical representation, avoid excessive zeros, and facilitate engineering calculations and equipment identification.
 
-**Q: 如何选择合适的电压等级？**
-A: 根据用电功率、传输距离、经济性和技术要求综合考虑。
+**Q: What are the differences in voltage standards between different countries?**
+A: China uses 220V/380V, the United States uses 120V/240V, and Europe mostly uses 230V/400V. High voltage systems vary significantly between countries.
 
-**Q: 电压等级转换时需要注意什么？**
-A: 需要考虑变压器容量、短路电流、保护配置和绝缘配合等因素。
+**Q: How to choose the appropriate voltage level?**
+A: It is necessary to consider factors such as electrical load, transmission distance, economy, and reliability, usually following the principles of nearby power supply and voltage level matching.
 
-### 相关链接
+**Q: What safety issues should be noted during voltage conversion?**
+A: High voltage is dangerous. Safety operating procedures must be followed, qualified protective equipment must be used, and safety measures such as power-off, voltage testing, and grounding must be implemented.
+
+### Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Voltage" :key="index">
     <n-button

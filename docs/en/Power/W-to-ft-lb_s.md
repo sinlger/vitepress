@@ -4,32 +4,32 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Power/index
-      linkText: 功率换算
+      linkText: Power Conversion
   - - link: /Power/W-to-ft-lb_s
-      linkText: 瓦特转英尺磅每秒
+      linkText: Watts to ft-lb/s
 head:
   - - meta
     - name: description
-      content: "提供瓦特 (W) 到英尺・磅每秒 (ft-lb/s) 的单位换算公式及实际应用场景。"
+      content: "Provides unit conversion formulas and practical application scenarios for Watts (W) to foot-pounds per second (ft-lb/s)."
   - - meta
     - name: keywords
-      content: "瓦特转英尺磅每秒,W到ft-lb/s换算,功率单位换算公式,功率单位换算工具,机械工程功率单位"
+      content: "watts to foot pounds per second,W to ft-lb/s conversion,power unit conversion formula,power unit conversion tool,mechanical engineering power units"
 ---
-# 瓦特 (W) 到英尺・磅每秒 (ft-lb/s) 换算
+# Watts (W) to Foot-Pounds per Second (ft-lb/s) Conversion
 
-这是关于 **瓦特转英尺磅每秒** 的详细介绍，并提供一个实用的 **功率单位换算工具**。
+This is a detailed introduction to **Watts to ft-lb/s conversion** and provides a practical **power unit conversion tool**.
 
 <script setup>
 import { onMounted,reactive,inject ,ref  } from 'vue'
 import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage ,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
-import { Power } from '../files';
+import { Power } from '../../files';
 const convert = inject('convert')
 const options =  [
-  { "label": "瓦特 (W)","value": "W" },
-  { "label": "英尺・磅每秒 (ft-lb/s)","value": "ft-lb/s" }
+  { "label": "Watts (W)","value": "W" },
+  { "label": "Foot-pounds per second (ft-lb/s)","value": "ft-lb/s" }
 ];
 const formRef = ref(null);
 const rules = {
@@ -37,17 +37,17 @@ const rules = {
     required: true,
     type: 'number',
     trigger: "blur",
-    message: '请输入数字'
+    message: 'Please enter a number'
   },
   to:{
     required: true,
     trigger: "select",
-    message: '请选择转换单位'
+    message: 'Please select conversion unit'
   },
   from:{
     required: true,
     trigger: "select",
-    message: '请选择原始单位'
+    message: 'Please select source unit'
   }
 }
 const form = reactive({
@@ -55,7 +55,7 @@ const form = reactive({
   to:'',
   from:'',
   result:'',
-  title:'瓦特转英尺磅每秒',
+  title:'Watts to ft-lb/s',
 })
 const convertHandler = (e) => {
    e.preventDefault();
@@ -67,51 +67,67 @@ const convertHandler = (e) => {
 }
 </script>
 
-<n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="数值"  path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数值" />
-  </n-form-item>
-  <n-form-item label="从" path="from">
-    <n-select  size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
-  </n-form-item>
-  <n-form-item label="到" path="to">
-    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
-  </n-form-item>
-  <n-form-item>
-    <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
-  </n-form-item>
-</n-form>
-<n-card  embedded :bordered="false" hoverable>
-  <div  style="text-align:center;font-size:20px;">
-    <strong>{{form.result}}</strong>
-  </div>
+<n-card title="Watts (W) to ft-lb/s Converter" embedded :bordered="false" hoverable>
+  <n-form size="large" :model="form" ref='formRef' :rules="rules">
+    <n-form-item label="Value"  path="number">
+      <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="Enter the value to convert" />
+    </n-form-item>
+    <n-form-item label="From" path="from">
+      <n-select  size="large" :options="options" v-model:value="form.from" placeholder="Select source unit" />
+    </n-form-item>
+    <n-form-item label="To" path="to">
+      <n-select  size="large" :options="options" v-model:value="form.to" placeholder="Select conversion unit" />
+    </n-form-item>
+    <n-form-item>
+      <n-button type="info" style="width:100%" @click="convertHandler">Convert</n-button>
+    </n-form-item>
+  </n-form>
+  <n-card  embedded :bordered="false" hoverable>
+    <div  style="text-align:center;font-size:20px;">
+      <strong>{{form.result}}</strong>
+    </div>
+  </n-card>
 </n-card>
 
-## 换算公式
+## Conversion Formula
 
-1 英尺・磅每秒 (ft-lb/s) ≈ 1.356 瓦特 (W)
+### Basic Conversion Relationship
+- **1 Watt (W) = 0.737562 ft-lb/s**
+- **1 ft-lb/s = 1.35582 Watts (W)**
 
-## 生活中的应用示例
+### Detailed Calculation Process
+**W to ft-lb/s:** ft-lb/s = W × 0.737562
+**ft-lb/s to W:** W = ft-lb/s × 1.35582
 
-- **小型发动机扭矩输出测量**：如割草机引擎功率约为 5–10 ft-lb/s。
-- **机械传动系统效率测试**：通过测量输入和输出功率评估传动系统的能量损耗。
-- **农业与工业设备动力传输**：用于计算机械设备的实际输出功率。
+### Common Value Reference Table
+| Watts (W) | ft-lb/s | Application Scenario |
+|-----------|---------|---------------------|
+| 100 W | 73.76 ft-lb/s | Small motor |
+| 500 W | 368.78 ft-lb/s | Power tool |
+| 1000 W | 737.56 ft-lb/s | Industrial equipment |
+| 5000 W | 3687.81 ft-lb/s | Heavy machinery |
 
-## 使用建议
+## Application Examples
 
-- **机械工程领域**：优先使用英尺・磅每秒 (ft-lb/s)，特别是在美制单位体系中。
-- **科学计算**：使用国际单位制（瓦特 W），便于统一标准。
+### Mechanical Engineering
+- **Motor power rating**: Converting electrical power to mechanical power output
+- **Machine design**: Calculating torque and rotational speed relationships
+- **Power transmission**: Analyzing power transfer in mechanical systems
 
-## 相关连接
+### Automotive Industry
+- **Engine power**: Converting between different power measurement standards
+- **Drivetrain analysis**: Power loss calculations in transmission systems
+- **Performance testing**: Standardizing power measurements across different units
+
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file,index) in Power" :key="index">
-    <n-button
-      text
-      tag="a"
-      :href="file.path"
-      type="info"
-    >
-      {{file.name}}
-    </n-button>
+    <n-card size="small" hoverable>
+      <template #header>
+        <a :href="file.link" style="text-decoration: none; color: inherit;">
+          {{ file.title }}
+        </a>
+      </template>
+    </n-card>
   </n-gi>
 </n-grid>

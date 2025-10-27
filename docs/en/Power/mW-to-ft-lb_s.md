@@ -4,39 +4,39 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Power/index
-      linkText: 功率换算
-  - - link: /Power/MW-to-ft-lb_s
-      linkText: 兆瓦转英尺磅每秒
+      linkText: Power Conversion
+  - - link: /Power/mW-to-ft-lb_s
+      linkText: Milliwatt to Foot-pound per Second
 head:
   - - meta
     - name: description
-      content: "专业的毫瓦(mW)到英尺磅每秒(ft-lb/s)功率单位换算工具，提供精确的换算公式、小功率设备应用实例和技术规范指导，适用于电子设备、传感器、微型机械等领域的功率计算。"
+      content: "Professional milliwatt (mW) to foot-pound per second (ft-lb/s) power unit conversion tool, providing precise conversion formulas, low-power device application examples and technical specification guidance, suitable for power calculations in electronics, sensors, micro-mechanical systems and other fields."
   - - meta
     - name: keywords
-      content: "毫瓦转英尺磅每秒,mW到ft-lb/s换算,功率单位换算,小功率设备,电子设备功率,传感器功率,微型机械,毫瓦,功率单位转换器,电子工程计算,低功耗设备"
+      content: "milliwatt to foot-pound per second,mW to ft-lb/s conversion,power unit conversion,low power devices,electronic device power,sensor power,micro-mechanical systems,milliwatt,power unit converter,electronic engineering calculation,low power consumption devices"
 ---
-# 毫瓦 (mW) 到英尺磅每秒 (ft-lb/s) 换算
+# Milliwatt (mW) to Foot-pound per Second (ft-lb/s) Conversion
 
-毫瓦(mW)和英尺磅每秒(ft-lb/s)分别代表小功率电子设备和机械系统中的功率单位。毫瓦是瓦特的千分之一，主要用于电子设备、传感器、通信模块等低功耗设备的功率标注，而英尺磅每秒则在北美机械工程中广泛应用，特别是微型机械和精密仪器领域。掌握mW与ft-lb/s之间的换算关系，对于跨领域工程设计和国际项目合作具有重要意义。
+Milliwatt (mW) and foot-pound per second (ft-lb/s) represent power units in low-power electronic devices and mechanical systems respectively. Milliwatt is one thousandth of a watt, mainly used for power rating of electronic devices, sensors, communication modules and other low-power consumption devices, while foot-pound per second is widely used in North American mechanical engineering, particularly in micro-mechanical and precision instrument fields. Mastering the conversion relationship between mW and ft-lb/s is of great significance for cross-field engineering design and international project cooperation.
 
-本工具提供专业的 **毫瓦转英尺磅每秒** 换算功能，支持双向转换，适用于电子工程设计、微型机械选型和技术规范制定需求。
+This tool provides professional **milliwatt to foot-pound per second** conversion functionality, supporting bidirectional conversion, suitable for electronic engineering design, micro-mechanical equipment selection and technical specification development needs.
 
 <script setup>
 import { onMounted,reactive,inject ,ref  } from 'vue'
 import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage ,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
-import { Power } from '../files';
+import { Power } from '../../files';
 const convert = inject('convert')
 const seoKey = [
-  '毫瓦转英尺磅每秒', 'mW到ft-lb/s换算', '功率单位换算', '小功率设备', '电子设备功率',
-  '传感器功率', '微型机械', '毫瓦', '功率单位转换器', '电子工程计算',
-  '低功耗设备', 'w是什么单位', '瓦特单位', 'w单位', 'power'
+  'milliwatt to foot-pound per second', 'mW to ft-lb/s conversion', 'power unit conversion', 'low power devices', 'electronic device power',
+  'sensor power', 'micro-mechanical systems', 'milliwatt', 'power unit converter', 'electronic engineering calculation',
+  'low power consumption devices', 'what is w unit', 'watt unit', 'w unit', 'power'
 ]
 const options =  [
-  { "label": "毫瓦 (mW)","value": "mW" },
-  { "label": "英尺磅每秒 (ft-lb/s)","value": "ft-lb/s" }
+  { "label": "Milliwatt (mW)","value": "mW" },
+  { "label": "Foot-pound per Second (ft-lb/s)","value": "ft-lb/s" }
 ];
 const formRef = ref(null);
 const rules = {
@@ -44,147 +44,132 @@ const rules = {
     required: true,
     type: 'number',
     trigger: "blur",
-    message: '请输入数字'
+    message: 'Please enter a number'
   },
   to:{
     required: true,
     trigger: "select",
-    message: '请选择转换单位'
+    message: 'Please select conversion unit'
   },
   from:{
     required: true,
     trigger: "select",
-    message: '请选择原始单位'
+    message: 'Please select source unit'
   }
 }
-const form = reactive({
-  number:null,
-  to:'',
-  from:'',
-  result:'',
-  title:'毫瓦转英尺磅每秒',
+const message = useMessage()
+const formValue = reactive({
+  number: 1,
+  from: 'mW',
+  to: 'ft-lb/s'
 })
-const convertHandler = (e) => {
-   e.preventDefault();
-  formRef.value?.validate((errors)=>{
+const result = ref('')
+const handleValidateClick = (e) => {
+  e.preventDefault()
+  formRef.value?.validate((errors) => {
     if (!errors) {
-      form.result = `${form.number}${form.from} = ${convert(form.number).from(form.from).to(form.to)}${form.to}`
+      result.value = convert(formValue.number, formValue.from, formValue.to, Power)
+    } else {
+      console.log(errors)
+      message.error('Invalid')
     }
   })
 }
 </script>
 
-<n-card title="毫瓦(mW)到英尺磅每秒(ft-lb/s)换算器" embedded :bordered="false" hoverable>
-  <n-form size="large" :model="form" ref='formRef' :rules="rules">
-    <n-form-item label="数值"  path="number">
-      <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数值" />
-    </n-form-item>
-    <n-form-item label="从" path="from">
-      <n-select  size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
-    </n-form-item>
-    <n-form-item label="到" path="to">
-      <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
-    </n-form-item>
-    <n-form-item>
-      <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
-    </n-form-item>
-  </n-form>
-  <n-card  embedded :bordered="false" hoverable>
-    <div  style="text-align:center;font-size:20px;">
-      <strong>{{form.result}}</strong>
-    </div>
-  </n-card>
-  <template #footer>
-    <div style="display: flex; flex-wrap: wrap; gap: 8px; font-size: 12px; color: #666;">
-      <span v-for="(keyword, index) in seoKey" :key="index" style="background: #f5f5f5; padding: 2px 6px; border-radius: 3px;">
-        {{ keyword }}
-      </span>
-    </div>
-  </template>
-</n-card>
+<NCard title="Milliwatt to Foot-pound per Second Converter">
+<NForm ref="formRef" :model="formValue" :rules="rules">
+<NGrid :cols="24" :x-gap="12">
+<NGi :span="24">
+<NFormItem path="number" label="Enter Value">
+<NInputNumber v-model:value="formValue.number" placeholder="Enter the value to convert" />
+</NFormItem>
+</NGi>
+<NGi :span="12">
+<NFormItem path="from" label="From">
+<NSelect v-model:value="formValue.from" placeholder="Select source unit" :options="options" />
+</NFormItem>
+</NGi>
+<NGi :span="12">
+<NFormItem path="to" label="To">
+<NSelect v-model:value="formValue.to" placeholder="Select target unit" :options="options" />
+</NFormItem>
+</NGi>
+<NGi :span="24">
+<NFormItem>
+<NButton type="primary" @click="handleValidateClick">
+Convert
+</NButton>
+</NFormItem>
+</NGi>
+</NGrid>
+</NForm>
+<div v-if="result" style="margin-top: 20px;">
+<h3>Conversion Result:</h3>
+<p>{{ result }}</p>
+</div>
+</NCard>
 
-## 换算公式
+## Conversion Formula
 
-### 基本换算关系
-- 1 mW = 0.001 W
-- 1 ft-lb/s ≈ 1.356 W = 1,356 mW
-- 1 mW ≈ 7.376 × 10⁻⁴ ft-lb/s
+The conversion between milliwatt (mW) and foot-pound per second (ft-lb/s) is based on the following relationship:
 
-### 计算公式
-- **毫瓦转英尺磅每秒**: ft-lb/s = mW × 7.376 × 10⁻⁴
-- **英尺磅每秒转毫瓦**: mW = ft-lb/s × 1,356
+**1 mW = 7.3756 × 10⁻⁴ ft-lb/s**
 
-### 常用数值对照表
+### Conversion Formula:
+- **mW to ft-lb/s**: ft-lb/s = mW × 7.3756 × 10⁻⁴
+- **ft-lb/s to mW**: mW = ft-lb/s ÷ (7.3756 × 10⁻⁴)
 
-| 毫瓦 (mW) | 英尺磅每秒 (ft-lb/s) | 应用场景 |
-|-----------|---------------------|----------|
-| 1 mW | 7.376 × 10⁻⁴ ft-lb/s | LED指示灯 |
-| 10 mW | 7.376 × 10⁻³ ft-lb/s | 激光指示器 |
-| 100 mW | 7.376 × 10⁻² ft-lb/s | 蓝牙模块 |
-| 1,000 mW (1W) | 0.7376 ft-lb/s | 手机充电器 |
-| 10,000 mW (10W) | 7.376 ft-lb/s | 小型电机 |
+## Conversion Guide
 
-## 应用示例
+### Why Convert Between mW and ft-lb/s?
 
-### 电子设备工程设计
-- **传感器模块**: 1-50 mW，对应 7.376×10⁻⁴ - 3.688×10⁻² ft-lb/s
-- **无线通信芯片**: 10-200 mW，对应 7.376×10⁻³ - 0.147 ft-lb/s
-- **微控制器**: 5-100 mW，对应 3.688×10⁻³ - 7.376×10⁻² ft-lb/s
+1. **Cross-field Engineering**: When electronic systems need to interface with mechanical systems
+2. **International Projects**: Converting between metric electronic specifications and imperial mechanical units
+3. **Micro-mechanical Design**: Combining electronic control with mechanical actuation
+4. **System Integration**: Designing systems that combine electronic and mechanical components
+5. **Technical Documentation**: Standardizing power specifications across different engineering disciplines
 
-### 微型机械系统
-- **精密步进电机**: 100-1000 mW，对应 7.376×10⁻² - 0.7376 ft-lb/s
-- **微型泵**: 50-500 mW，对应 3.688×10⁻² - 0.3688 ft-lb/s
-- **微型风扇**: 10-100 mW，对应 7.376×10⁻³ - 7.376×10⁻² ft-lb/s
+### Conversion Method
 
-### 精密仪器设备
-- **光学扫描器**: 20-200 mW，对应 1.475×10⁻² - 0.147 ft-lb/s
-- **微型振动器**: 5-50 mW，对应 3.688×10⁻³ - 3.688×10⁻² ft-lb/s
-- **精密定位器**: 10-150 mW，对应 7.376×10⁻³ - 0.111 ft-lb/s
+1. **Identify the source unit** (mW or ft-lb/s)
+2. **Apply the appropriate conversion factor**
+3. **Verify the result** using the inverse calculation
+4. **Round to appropriate significant figures** based on measurement precision
 
-## 使用建议
+## Practical Examples
 
-### 电子工程设计规范
-- **器件选型**: 在选择电子元器件时，准确换算功率有助于扭矩计算和机械设计
-- **系统集成**: 多模块系统设计时，统一功率单位便于机械负载分析
-- **国际合作**: 与北美客户合作时，提供ft-lb/s单位有助于技术沟通
+### Example 1: Micro Motor Control
+A micro motor controller consumes 100 mW of electrical power. Convert to mechanical equivalent:
+- **Calculation**: 100 mW × 7.3756 × 10⁻⁴ = 0.073756 ft-lb/s
+- **Application**: Understanding power efficiency in micro-mechanical systems
 
-### 技术文档标准
-- **产品规格书**: 建议同时标注mW和ft-lb/s数值，满足不同地区客户需求
-- **测试报告**: 功率测试数据应包含机械单位，便于扭矩评估
-- **认证文件**: 产品认证时可能需要特定单位的功率标注
+### Example 2: Sensor Actuator
+A piezoelectric actuator operates at 50 mW. Convert to ft-lb/s:
+- **Calculation**: 50 mW × 7.3756 × 10⁻⁴ = 0.036878 ft-lb/s
+- **Application**: Mechanical power output calculation for precision positioning
 
-### 计算精度要求
-- **精确计算**: 使用完整换算系数 1 mW = 7.375621492772654×10⁻⁴ ft-lb/s
-- **工程估算**: 可使用简化系数 1 mW ≈ 7.376×10⁻⁴ ft-lb/s
-- **安全设计**: 功率计算时建议预留10-20%的安全余量
+### Example 3: Vibration Motor
+A vibration motor in a mobile device consumes 200 mW. Convert to ft-lb/s:
+- **Calculation**: 200 mW × 7.3756 × 10⁻⁴ = 0.147512 ft-lb/s
+- **Application**: Mechanical power analysis for haptic feedback systems
 
-## 常见问题解答
+## Summary
 
-### Q: 毫瓦(mW)主要用于什么场合？
-A: 毫瓦主要用于小功率电子设备，如传感器、无线模块、LED指示灯、微控制器等。这些设备功耗通常在1-1000mW范围内。
+The conversion between milliwatt and foot-pound per second bridges the gap between electronic power measurements and mechanical engineering applications. This conversion is essential for:
 
-### Q: 英尺磅每秒(ft-lb/s)是什么单位？
-A: ft-lb/s是英制功率单位，表示每秒钟做功的英尺磅数。在北美地区的机械工程中较为常用，1 ft-lb/s ≈ 1.356 W。
+- **System Integration**: Combining electronic and mechanical systems
+- **Power Analysis**: Understanding total power consumption and conversion efficiency
+- **International Standards**: Working with different measurement systems
+- **Technical Communication**: Facilitating cross-disciplinary collaboration
 
-### Q: 为什么需要mW到ft-lb/s的换算？
-A: 在国际合作项目中，特别是与北美客户合作时，可能需要将电子设备的功率从mW换算为ft-lb/s，以便进行机械系统的扭矩分析和设计。
+Understanding this conversion enables engineers to work effectively across electronic and mechanical engineering domains, ensuring accurate power calculations in integrated electro-mechanical systems.
 
-### Q: 换算精度对工程设计有什么影响？
-A: 精确的功率换算有助于准确计算机械负载、扭矩需求和系统效率。在精密设备设计中，建议使用高精度换算系数并预留安全余量。
+## Related Conversions
 
-### Q: 如何验证换算结果的正确性？
-A: 可以通过反向计算验证，即将ft-lb/s结果再换算回mW，检查是否与原始数值一致。同时可参考标准工程手册中的换算表。
-
-## 相关连接
-<n-grid x-gap="12" :cols="2">
-  <n-gi v-for="(file,index) in Power" :key="index">
-    <n-button
-      text
-      tag="a"
-      :href="file.path"
-      type="info"
-    >
-      {{file.name}}
-    </n-button>
-  </n-gi>
-</n-grid>
+- [Milliwatt to Watt (mW to W)](/Power/mW-to-W)
+- [Milliwatt to Kilowatt (mW to kW)](/Power/mW-to-kW)
+- [Milliwatt to Horsepower (mW to hp)](/Power/mW-to-hp)
+- [Milliwatt to British Thermal Unit per Second (mW to Btu/s)](/Power/mW-to-Btu_s)
+- [Foot-pound per Second to Watt (ft-lb/s to W)](/Power/ft-lb_s-to-W)
+- [Foot-pound per Second to Kilowatt (ft-lb/s to kW)](/Power/ft-lb_s-to-kW)

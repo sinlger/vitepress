@@ -1,118 +1,139 @@
 ---
-sidebar: false
-aside: false
-lastUpdated: false
-breadcrumb:
-  - - link: /
-      linkText: 首页
-  - - link: /Power/index
-      linkText: 功率换算
-  - - link: /Power/W-to-MW
-      linkText: 瓦特转兆瓦
-head:
-  - - meta
-    - name: description
-      content: 提供瓦特 (W) 到兆瓦 (MW) 的单位换算公式及实际应用场景。
-  - - meta
-    - name: keywords
-      content: 瓦特转兆瓦,W到MW换算,功率单位换算公式,功率单位换算工具,能源领域功率单位
+title: "Watt (W) to Megawatt (MW) Conversion"
+description: "Provides unit conversion formulas and practical application scenarios for converting watts (W) to megawatts (MW)."
+keywords:
+  - Watt to Megawatt
+  - W to MW conversion
+  - Power unit conversion formula
+  - Power unit conversion tool
+  - Energy field power units
+breadcrumbs:
+  - name: Home
+    linkText: Home
+    linkUrl: /
+  - name: Power Conversion
+    linkText: Power Conversion
+    linkUrl: /zh/Power/
+  - name: Watt to Megawatt Conversion
+    linkText: Watt to Megawatt Conversion
+    linkUrl: /zh/Power/W-to-mW
+meta:
+  - name: description
+    content: Provides unit conversion formulas and practical application scenarios for converting watts (W) to megawatts (MW).
+  - name: keywords
+    content: Watt to Megawatt,W to MW conversion,Power unit conversion formula,Power unit conversion tool,Energy field power units
 ---
 
-# 瓦特 (W) 到兆瓦 (MW) 换算
+# Watt (W) to Megawatt (MW) Conversion
 
-这是关于 **瓦特转兆瓦** 的详细介绍，并提供一个实用的 **功率单位换算工具**。
+This is a detailed introduction to **Watt to Megawatt conversion** and provides a practical **power unit conversion tool**.
 
 <script setup>
-import { onMounted,reactive,inject ,ref  } from 'vue'
-import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage ,NGrid ,NGi } from 'naive-ui'
-import { defineClientComponent } from 'vitepress'
-import { Power } from '../files';
-const convert = inject('convert')
-const options =  [
-  { "label": "瓦特 (W)","value": "W" },
-  { "label": "兆瓦 (MW)","value": "MW" }
-];
-const formRef = ref(null);
+import { ref, computed } from 'vue'
+
+const form = ref({
+  number: 0,
+  to: 'MW'
+})
+
+const options = [
+  { label: 'Megawatt (MW)', value: 'MW' },
+  { label: 'Watt (W)', value: 'W' }
+]
+
 const rules = {
-  number:{
+  number: {
     required: true,
-    type: 'number',
-    trigger: "blur",
-    message: '请输入数字'
-  },
-  to:{
-    required: true,
-    trigger: "select",
-    message: '请选择转换单位'
-  },
-  from:{
-    required: true,
-    trigger: "select",
-    message: '请选择原始单位'
+    message: 'Please enter a number',
+    trigger: ['blur', 'input']
   }
 }
-const form = reactive({
-  number:null,
-  to:'',
-  from:'',
-  result:'',
-  title:'瓦特转兆瓦',
-})
-const convertHandler = (e) => {
-   e.preventDefault();
-  formRef.value?.validate((errors)=>{
-    if (!errors) {
-      form.result = `${form.number}${form.from} = ${convert(form.number).from(form.from).to(form.to)}${form.to}`
-    }
-  })
+
+const result = ref('')
+
+const convertHandler = () => {
+  if (form.value.to === 'MW') {
+    result.value = (form.value.number / 1000000).toFixed(6) + ' MW'
+  } else {
+    result.value = (form.value.number * 1000000).toFixed(0) + ' W'
+  }
 }
 </script>
 
-<n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="数值"  path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数值" />
-  </n-form-item>
-  <n-form-item label="从" path="from">
-    <n-select  size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
-  </n-form-item>
-  <n-form-item label="到" path="to">
-    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
-  </n-form-item>
-  <n-form-item>
-    <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
-  </n-form-item>
+<n-card title="Watt (W) to Megawatt (MW) Converter" embedded :bordered="false" hoverable>
+<n-form :model="form" :rules="rules" ref="formRef">
+<n-form-item label="Value" path="number">
+<n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="Enter the value to convert" />
+</n-form-item>
+<n-form-item label="To" path="to">
+<n-select size="large" :options="options" v-model:value="form.to" placeholder="Select conversion unit" />
+</n-form-item>
+<n-form-item>
+<n-button type="info" style="width:100%" @click="convertHandler">Convert</n-button>
+</n-form-item>
+<n-form-item v-if="result">
+<n-text type="success" style="font-size: 18px; font-weight: bold;">{{ result }}</n-text>
+</n-form-item>
 </n-form>
-<n-card  embedded :bordered="false" hoverable>
-  <div  style="text-align:center;font-size:20px;">
-    <strong>{{form.result}}</strong>
-  </div>
 </n-card>
 
-## 换算公式
+## Conversion Formula
 
-1 兆瓦 (MW) = 1,000,000 瓦特 (W) = 1000 千瓦 (kW)
+### Basic Conversion Relationship
+- 1 Megawatt (MW) = 1,000,000 Watts (W)
+- 1 Watt (W) = 0.000001 Megawatts (MW)
 
-## 生活中的应用示例
+### Conversion Formulas
+- **W to MW**: MW = W ÷ 1,000,000
+- **MW to W**: W = MW × 1,000,000
 
-- **风电场输出功率**：一般以兆瓦 (MW) 表示，例如单台风力发电机可提供 2 MW 电力。
-- **小型发电站功率**：如太阳能电站或柴油发电机，通常以 MW 为单位计算总发电能力。
-- **工业设备能耗**：大型工厂的用电负荷常达到数 MW。
+### Common Value Reference Table
+| Watts (W) | Megawatts (MW) |
+|-----------|----------------|
+| 1,000 | 0.001 |
+| 10,000 | 0.01 |
+| 100,000 | 0.1 |
+| 1,000,000 | 1 |
+| 10,000,000 | 10 |
 
-## 使用建议
+## Application Examples
 
-- **能源领域大功率设备**：优先使用兆瓦 (MW)，例如风力发电机、光伏发电站等。
-- **科学计算**：使用国际单位制（瓦特 W），便于统一标准。
+### Power Plant Capacity
+- **Small hydroelectric power station**: 5 MW = 5,000,000 W
+- **Wind farm**: 100 MW = 100,000,000 W
+- **Nuclear power plant unit**: 1000 MW = 1,000,000,000 W
 
-## 相关连接
-<n-grid x-gap="12" :cols="2">
-  <n-gi v-for="(file,index) in Power" :key="index">
-    <n-button
-      text
-      tag="a"
-      :href="file.path"
-      type="info"
-    >
-      {{file.name}}
-    </n-button>
-  </n-gi>
-</n-grid>
+### Industrial Equipment
+- **Large motor**: 500 kW = 0.5 MW = 500,000 W
+- **Industrial furnace**: 2 MW = 2,000,000 W
+- **Data center**: 10 MW = 10,000,000 W
+
+## Usage Recommendations
+
+### When to Use MW
+- Large power plant capacity marking
+- Grid transmission power calculation
+- Large industrial facility power statistics
+- National energy planning and analysis
+
+### When to Use W
+- Small electrical equipment power marking
+- Household appliance power calculation
+- Electronic device power consumption
+- Precision power measurement
+
+## FAQ
+
+**Q: What is the conversion relationship between W and MW?**
+A: 1 Megawatt (MW) = 1,000,000 Watts (W). This is the standard conversion relationship in the International System of Units.
+
+**Q: Why use MW instead of W for large power values?**
+A: Using MW can simplify numerical expression and avoid too many zeros. For example, 1,000,000 W is more concisely expressed as 1 MW.
+
+**Q: What should be noted when converting W and MW?**
+A: Pay attention to the precision of the conversion factor 1,000,000, and it's recommended to retain appropriate significant figures in engineering calculations to avoid cumulative errors.
+
+## Related Links
+- [Kilowatt to Megawatt Conversion](/zh/Power/kW-to-mW)
+- [Megawatt to Gigawatt Conversion](/zh/Power/mW-to-GW)
+- [Power Unit Conversion](/zh/Power/)

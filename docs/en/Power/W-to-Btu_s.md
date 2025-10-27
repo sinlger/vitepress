@@ -4,32 +4,32 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Power/index
-      linkText: 功率换算
+      linkText: Power Conversion
   - - link: /Power/W-to-Btu_s
-      linkText: 瓦特转英热单位每秒
+      linkText: Watts to Btu/s
 head:
   - - meta
     - name: description
-      content: "提供瓦特 (W) 到英热单位每秒 (Btu/s) 的单位换算公式及实际应用场景。"
+      content: "Provides unit conversion formulas and practical application scenarios for Watts (W) to British thermal units per second (Btu/s)."
   - - meta
     - name: keywords
-      content: "瓦特转英热单位每秒,W到Btu/s换算,功率单位换算公式,功率单位换算工具,制冷行业功率单位"
+      content: "watts to btu per second,W to Btu/s conversion,power unit conversion formula,power unit conversion tool,refrigeration industry power units"
 ---
-# 瓦特 (W) 到英热单位每秒 (Btu/s) 换算
+# Watts (W) to British Thermal Units per Second (Btu/s) Conversion
 
-这是关于 **瓦特转英热单位每秒** 的详细介绍，并提供一个实用的 **功率单位换算工具**。
+This is a detailed introduction to **Watts to Btu/s conversion** and provides a practical **power unit conversion tool**.
 
 <script setup>
 import { onMounted,reactive,inject ,ref  } from 'vue'
 import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage ,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
-import { Power } from '../files';
+import { Power } from '../../files';
 const convert = inject('convert')
 const options =  [
-  { "label": "瓦特 (W)","value": "W" },
-  { "label": "英热单位每秒 (Btu/s)","value": "Btu/s" }
+  { "label": "Watts (W)","value": "W" },
+  { "label": "British thermal units per second (Btu/s)","value": "Btu/s" }
 ];
 const formRef = ref(null);
 const rules = {
@@ -37,17 +37,17 @@ const rules = {
     required: true,
     type: 'number',
     trigger: "blur",
-    message: '请输入数字'
+    message: 'Please enter a number'
   },
   to:{
     required: true,
     trigger: "select",
-    message: '请选择转换单位'
+    message: 'Please select conversion unit'
   },
   from:{
     required: true,
     trigger: "select",
-    message: '请选择原始单位'
+    message: 'Please select source unit'
   }
 }
 const form = reactive({
@@ -55,7 +55,7 @@ const form = reactive({
   to:'',
   from:'',
   result:'',
-  title:'瓦特转英热单位每秒',
+  title:'Watts to Btu/s',
 })
 const convertHandler = (e) => {
    e.preventDefault();
@@ -67,51 +67,67 @@ const convertHandler = (e) => {
 }
 </script>
 
-<n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="数值"  path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数值" />
-  </n-form-item>
-  <n-form-item label="从" path="from">
-    <n-select  size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
-  </n-form-item>
-  <n-form-item label="到" path="to">
-    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
-  </n-form-item>
-  <n-form-item>
-    <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
-  </n-form-item>
-</n-form>
-<n-card  embedded :bordered="false" hoverable>
-  <div  style="text-align:center;font-size:20px;">
-    <strong>{{form.result}}</strong>
-  </div>
+<n-card title="Watts (W) to Btu/s Converter" embedded :bordered="false" hoverable>
+  <n-form size="large" :model="form" ref='formRef' :rules="rules">
+    <n-form-item label="Value"  path="number">
+      <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="Enter the value to convert" />
+    </n-form-item>
+    <n-form-item label="From" path="from">
+      <n-select  size="large" :options="options" v-model:value="form.from" placeholder="Select source unit" />
+    </n-form-item>
+    <n-form-item label="To" path="to">
+      <n-select  size="large" :options="options" v-model:value="form.to" placeholder="Select conversion unit" />
+    </n-form-item>
+    <n-form-item>
+      <n-button type="info" style="width:100%" @click="convertHandler">Convert</n-button>
+    </n-form-item>
+  </n-form>
+  <n-card  embedded :bordered="false" hoverable>
+    <div  style="text-align:center;font-size:20px;">
+      <strong>{{form.result}}</strong>
+    </div>
+  </n-card>
 </n-card>
 
-## 换算公式
+## Conversion Formula
 
-1 英热单位每秒 (Btu/s) ≈ 1055 瓦特 (W)
+### Basic Conversion Relationship
+- **1 Watt (W) = 0.000947817 Btu/s**
+- **1 Btu/s = 1055.06 Watts (W)**
 
-## 生活中的应用示例
+### Detailed Calculation Process
+**W to Btu/s:** Btu/s = W × 0.000947817
+**Btu/s to W:** W = Btu/s × 1055.06
 
-- **空调制冷量标注**：家用空调常用 Btu/h 表示制冷能力，如 12,000 Btu/h ≈ 3.517 kW。
-- **工业加热设备功率**：如蒸汽锅炉的输出功率常以 Btu/s 或 Btu/h 标注。
-- **暖通空调系统设计**：工程师使用 Btu/s 来计算建筑供暖和制冷需求。
+### Common Value Reference Table
+| Watts (W) | Btu/s | Application Scenario |
+|-----------|-------|---------------------|
+| 1000 W | 0.948 Btu/s | Small air conditioning unit |
+| 3000 W | 2.843 Btu/s | Household heating system |
+| 5000 W | 4.739 Btu/s | Commercial refrigeration |
+| 10000 W | 9.478 Btu/s | Industrial cooling system |
 
-## 使用建议
+## Application Examples
 
-- **制冷与暖通行业**：优先使用英热单位 (Btu/s)，便于工程计算与匹配设备参数。
-- **科学计算**：使用国际单位制（瓦特 W），便于统一标准。
+### HVAC Industry
+- **Air conditioning systems**: Power rating conversion for cooling capacity calculation
+- **Heating systems**: Thermal output measurement and efficiency analysis
+- **Refrigeration equipment**: Cooling power specification and energy consumption evaluation
 
-## 相关连接
+### Industrial Applications
+- **Process cooling**: Industrial process heat removal calculation
+- **Power plant cooling**: Thermal management system design
+- **Chemical processing**: Heat transfer equipment sizing
+
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file,index) in Power" :key="index">
-    <n-button
-      text
-      tag="a"
-      :href="file.path"
-      type="info"
-    >
-      {{file.name}}
-    </n-button>
+    <n-card size="small" hoverable>
+      <template #header>
+        <a :href="file.link" style="text-decoration: none; color: inherit;">
+          {{ file.title }}
+        </a>
+      </template>
+    </n-card>
   </n-gi>
 </n-grid>

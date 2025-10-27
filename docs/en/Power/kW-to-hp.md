@@ -1,195 +1,224 @@
 ---
-sidebar: false
-aside: false
-lastUpdated: false
-breadcrumb:
-  - - link: /
-      linkText: 首页
-  - - link: /Power/index
-      linkText: 功率换算
-  - - link: /Power/kW-to-hp
-      linkText: 千瓦转英制马力
-head:
-  - - meta
-    - name: description
-      content: "专业的千瓦(kW)到英制马力(hp)功率单位换算工具，提供精确的kW转hp计算公式和实时换算功能。涵盖汽车发动机、船舶动力、工业机械等应用场景，支持美系设备功率计算、国际贸易技术对接、机械设备选型等专业需求。"
-  - - meta
-    - name: keywords
-      content: "千瓦转英制马力,kW到hp换算,功率单位换算,hp是什么单位,千瓦单位,功率计算公式,英制马力,汽车发动机功率,船舶动力,工业机械功率,美系设备功率,机械设备选型,国际贸易技术"
+title: "Kilowatt (kW) to Imperial Horsepower (hp) Conversion"
+description: "Professional kilowatt (kW) to imperial horsepower (hp) power unit conversion tool, providing precise kW to hp calculation formulas and real-time conversion functions. Covers application scenarios such as automotive engines, marine power, industrial machinery, supporting American equipment power calculations, international trade technical integration, mechanical equipment selection and other professional needs."
+keywords:
+  - Kilowatt to imperial horsepower
+  - kW to hp conversion
+  - Power unit conversion
+  - What is hp unit
+  - Kilowatt unit
+  - Power calculation formula
+  - Imperial horsepower
+  - Automotive engine power
+  - Marine power
+  - Industrial machinery power
+  - American equipment power
+  - Mechanical equipment selection
+  - International trade technology
+breadcrumbs:
+  - name: Home
+    linkText: Home
+    linkUrl: /
+  - name: Power Conversion
+    linkText: Power Conversion
+    linkUrl: /zh/Power/
+  - name: Kilowatt to Imperial Horsepower
+    linkText: Kilowatt to Imperial Horsepower
+    linkUrl: /zh/Power/kW-to-hp
+meta:
+  - name: description
+    content: "Professional kilowatt (kW) to imperial horsepower (hp) power unit conversion tool, providing precise kW to hp calculation formulas and real-time conversion functions. Covers application scenarios such as automotive engines, marine power, industrial machinery, supporting American equipment power calculations, international trade technical integration, mechanical equipment selection and other professional needs."
+  - name: keywords
+    content: "Kilowatt to imperial horsepower,kW to hp conversion,Power unit conversion,What is hp unit,Kilowatt unit,Power calculation formula,Imperial horsepower,Automotive engine power,Marine power,Industrial machinery power,American equipment power,Mechanical equipment selection,International trade technology"
 ---
-# 千瓦 (kW) 到英制马力 (hp) 换算
+# Kilowatt (kW) to Imperial Horsepower (hp) Conversion
 
-千瓦(kW)到英制马力(hp)的功率单位换算是国际贸易和跨标准工程应用中的重要计算。本工具提供精确的kW转hp换算功能，支持汽车发动机功率对比、船舶动力系统设计、美系工业设备选型等专业应用。广泛用于汽车工程、船舶制造、工业机械、石油化工等领域的功率计算和技术对接。
+The conversion from kilowatt (kW) to imperial horsepower (hp) is an important calculation in international trade and cross-standard engineering applications. This tool provides precise kW to hp conversion functionality, supporting automotive engine power comparison, marine power system design, American industrial equipment selection and other professional applications. Widely used in automotive engineering, shipbuilding, industrial machinery, petrochemical and other fields for power calculations and technical integration.
 
 <script setup>
-import { onMounted,reactive,inject ,ref  } from 'vue'
-import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage ,NGrid ,NGi } from 'naive-ui'
-import { defineClientComponent } from 'vitepress'
-import { Power } from '../files';
+import { ref, computed } from 'vue'
+
 const seoKey = [
-  '千瓦转英制马力',
-  'kW到hp换算',
-  'hp是什么单位',
-  '千瓦单位',
-  '功率计算公式',
-  '英制马力',
-  '汽车发动机功率',
-  '船舶动力',
-  '工业机械功率',
-  '美系设备功率',
-  '机械设备选型',
-  '国际贸易技术'
+  'Kilowatt to imperial horsepower',
+  'kW to hp conversion',
+  'What is hp unit',
+  'Kilowatt unit',
+  'Power calculation formula',
+  'Imperial horsepower',
+  'Automotive engine power',
+  'Marine power',
+  'Industrial machinery power',
+  'American equipment power',
+  'Mechanical equipment selection',
+  'International trade technology'
 ]
-const convert = inject('convert')
-const options =  [
-  { "label": "千瓦 (kW)","value": "kW" },
-  { "label": "英制马力 (hp)","value": "hp" }
-];
-const formRef = ref(null);
+
+const form = ref({
+  number: 0,
+  from: 'kW',
+  to: 'hp',
+  result: ''
+})
+
+const options = [
+  { "label": "Kilowatt (kW)", "value": "kW" },
+  { "label": "Imperial Horsepower (hp)", "value": "hp" }
+]
+
 const rules = {
-  number:{
+  number: {
     required: true,
-    type: 'number',
-    trigger: "blur",
-    message: '请输入数字'
+    message: 'Please enter a number',
+    trigger: ['blur', 'input']
   },
-  to:{
+  to: {
     required: true,
-    trigger: "select",
-    message: '请选择转换单位'
+    message: 'Please select conversion unit',
+    trigger: 'select'
   },
-  from:{
+  from: {
     required: true,
-    trigger: "select",
-    message: '请选择原始单位'
+    message: 'Please select original unit',
+    trigger: 'select'
   }
 }
-const form = reactive({
-  number:null,
-  to:'',
-  from:'',
-  result:'',
-  title:'千瓦转英制马力',
-})
-const convertHandler = (e) => {
-   e.preventDefault();
-  formRef.value?.validate((errors)=>{
-    if (!errors) {
-      form.result = `${form.number}${form.from} = ${convert(form.number).from(form.from).to(form.to)}${form.to}`
-    }
-  })
+
+const convertHandler = () => {
+  if (form.value.from === 'kW' && form.value.to === 'hp') {
+    form.value.result = `${form.value.number} kW = ${(form.value.number * 1.34102).toFixed(2)} hp`
+  } else if (form.value.from === 'hp' && form.value.to === 'kW') {
+    form.value.result = `${form.value.number} hp = ${(form.value.number / 1.34102).toFixed(4)} kW`
+  } else {
+    form.value.result = `${form.value.number} ${form.value.from} = ${form.value.number} ${form.value.to}`
+  }
 }
 </script>
 
-<n-card
-  title="千瓦(kW)到英制马力(hp)换算器"
+<n-form size="large" :model="form" :rules="rules">
+  <n-form-item label="Value" path="number">
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="Enter the value to convert" />
+  </n-form-item>
+  <n-form-item label="From" path="from">
+    <n-select size="large" :options="options" v-model:value="form.from" placeholder="Select original unit" />
+  </n-form-item>
+  <n-form-item label="To" path="to">
+    <n-select size="large" :options="options" v-model:value="form.to" placeholder="Select conversion unit" />
+  </n-form-item>
+  <n-form-item>
+    <n-button type="info" style="width:100%" @click="convertHandler">Convert</n-button>
+  </n-form-item>
+</n-form>
+<n-card  
+  title="Kilowatt to Imperial Horsepower Conversion"
   :segmented="{
     content: true,
     footer: 'soft',
   }"
 >
-  <n-form size="large" :model="form" ref='formRef' :rules="rules">
-    <n-form-item label="数值"  path="number">
-      <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数值" />
-    </n-form-item>
-    <n-form-item label="从" path="from">
-      <n-select  size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
-    </n-form-item>
-    <n-form-item label="到" path="to">
-      <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
-    </n-form-item>
-    <n-form-item>
-      <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
-    </n-form-item>
-  </n-form>
-  <n-card  embedded :bordered="false" hoverable>
-    <div  style="text-align:center;font-size:20px;">
-      <strong>{{form.result}}</strong>
-    </div>
-  </n-card>
+  <div style="text-align:center;font-size:20px;">
+    <strong>{{form.result}}</strong>
+  </div>
   <template #footer>
     <div>
-      <span v-for="item of seoKey">{{item}}，</span>
+      <span v-for="item of seoKey">{{item}}, </span>
     </div>
   </template>
 </n-card>
 
-## 换算公式
+## Conversion Formula
 
-**基本换算关系：**
-- 1 英制马力 (hp) = 0.7457 千瓦 (kW)
-- 1 千瓦 (kW) = 1.341 英制马力 (hp)
-- 1 英制马力 (hp) = 745.7 瓦特 (W)
+The conversion between kilowatt (kW) and imperial horsepower (hp) is based on the relationship between metric and imperial power units:
 
-**计算公式：**
-- hp = kW × 1.341
-- kW = hp × 0.7457
+**Basic Formula:**
+- 1 kW = 1.34102 hp
+- 1 hp = 0.7457 kW
 
-**常用数值对照表：**
-| 千瓦 (kW) | 英制马力 (hp) | 应用场景 |
-|-----------|---------------|----------|
-| 1 kW | 1.34 hp | 小型电机 |
-| 10 kW | 13.4 hp | 家用发电机 |
-| 50 kW | 67.1 hp | 小型船舶发动机 |
-| 100 kW | 134.1 hp | 中型工业设备 |
-| 200 kW | 268.2 hp | 汽车发动机 |
-| 500 kW | 670.5 hp | 大型船舶发动机 |
+**Conversion Formulas:**
+- kW to hp: hp = kW × 1.34102
+- hp to kW: kW = hp ÷ 1.34102
 
-## 工程应用示例
+**Conversion Reference Table:**
+| Kilowatt (kW) | Imperial Horsepower (hp) | Application |
+|---------------|--------------------------|-------------|
+| 50 kW | 67.05 hp | Small Car Engine |
+| 100 kW | 134.10 hp | Mid-size Car Engine |
+| 150 kW | 201.15 hp | Large Car Engine |
+| 200 kW | 268.20 hp | Performance Car Engine |
+| 300 kW | 402.31 hp | High-Performance Engine |
 
-### 汽车工程设计
-- **发动机功率标注**：美系汽车发动机300 hp (224 kW)，用于北美市场技术规格
-- **电动汽车功率对比**：特斯拉Model S 670 hp (500 kW)，用于国际市场功率对比
-- **混合动力系统**：丰田普锐斯电机80 hp (60 kW)，用于混动系统功率计算
+## Application Examples
 
-### 船舶动力工程
-- **游艇发动机选型**：40英尺游艇主机400 hp (298 kW)，用于船舶动力匹配
-- **商用船舶设计**：集装箱船主机20000 hp (14914 kW)，用于大型船舶设计
-- **渔船动力配置**：近海渔船柴油机150 hp (112 kW)，用于渔业装备选型
+### Automotive Engines
+- **Compact Car**: 75 kW = 100.58 hp
+- **Mid-size Sedan**: 120 kW = 160.92 hp
+- **SUV Engine**: 180 kW = 241.38 hp
+- **Sports Car**: 250 kW = 335.26 hp
+- **Muscle Car**: 400 kW = 536.41 hp
 
-### 工业机械工程
-- **压缩机功率计算**：螺杆式空压机200 hp (149 kW)，用于工厂设备选型
-- **泵站设备设计**：离心泵电机100 hp (75 kW)，用于水处理系统设计
-- **发电机组配置**：柴油发电机500 hp (373 kW)，用于备用电源系统设计
+### Marine Applications
+- **Small Boat Engine**: 30 kW = 40.23 hp
+- **Yacht Engine**: 150 kW = 201.15 hp
+- **Fishing Vessel**: 300 kW = 402.31 hp
+- **Commercial Ship**: 1000 kW = 1341.02 hp
+- **Large Vessel**: 2000 kW = 2682.05 hp
 
-## 使用建议
+### Industrial Equipment
+- **Small Generator**: 10 kW = 13.41 hp
+- **Industrial Motor**: 50 kW = 67.05 hp
+- **Compressor**: 75 kW = 100.58 hp
+- **Pump System**: 100 kW = 134.10 hp
+- **Heavy Machinery**: 500 kW = 670.51 hp
 
-### 工程设计规范
-- **美系设备选型**：进口美国设备时使用hp单位，便于技术对接和规格匹配
-- **汽车工程项目**：北美市场车型开发使用hp标注，欧洲市场使用kW标注
-- **船舶设计标准**：美国船级社(ABS)认证使用hp，国际海事组织(IMO)使用kW
+### Agricultural Machinery
+- **Small Tractor**: 25 kW = 33.53 hp
+- **Medium Tractor**: 60 kW = 80.46 hp
+- **Large Tractor**: 120 kW = 160.92 hp
+- **Combine Harvester**: 200 kW = 268.20 hp
+- **Heavy Farm Equipment**: 300 kW = 402.31 hp
 
-### 技术文档标准
-- **国际贸易合同**：设备采购合同中功率规格需要双单位标注(kW/hp)
-- **技术规格书**：跨国项目技术文档建议同时提供kW和hp数值
-- **认证测试报告**：美国EPA认证使用hp，欧盟CE认证使用kW
+## Usage Recommendations
 
-### 计算精度要求
-- **精确计算**：保留小数点后2位，如134.10 hp
-- **工程估算**：可保留整数，如134 hp
-- **安全系数**：设备选型时建议预留10-20%功率余量
+1. **Automotive Industry**: Convert between kW and hp for American market specifications
+2. **Marine Engineering**: Compare power ratings for international vessel specifications
+3. **Equipment Selection**: Evaluate American vs. metric equipment power ratings
+4. **Technical Documentation**: Ensure consistency in international projects
+5. **Performance Analysis**: Compare engine and machinery performance across standards
 
-## 常见问题 (FAQ)
+## Technical Notes
 
-**Q: hp是什么单位？**
-A: hp是英制马力(Horsepower)的缩写，是功率单位，1 hp = 745.7瓦特，主要用于美国、英国等国家的汽车、船舶、工业设备功率标注。
+### Unit Background
+- **hp (Horsepower)**: Imperial horsepower, commonly used in the United States
+- **kW (Kilowatt)**: International standard power unit
+- **Conversion Factor**: 1 hp = 745.7 watts exactly
 
-**Q: 1千瓦等于多少英制马力？**
-A: 1千瓦(kW) = 1.341英制马力(hp)，这是国际单位制与英制单位间的标准换算关系。
+### Regional Usage
+- **American Market**: hp commonly used for automotive and machinery specifications
+- **International Standard**: kW preferred for technical and scientific applications
+- **Documentation**: Both units often specified for global compatibility
 
-**Q: 汽车发动机功率为什么用hp？**
-A: 北美汽车市场传统使用英制单位，发动机功率习惯用hp标注，便于消费者理解和市场推广。
+### Engineering Applications
+- **Automotive Design**: American cars typically rated in hp, European in kW
+- **Marine Industry**: International shipping uses both units depending on region
+- **Industrial Equipment**: American manufacturers use hp, international use kW
 
-**Q: hp和PS有什么区别？**
-A: hp是英制马力(1 hp = 745.7W)，PS是公制马力(1 PS = 735.5W)，hp比PS略大约1.4%。
+## Frequently Asked Questions
 
-**Q: 船舶发动机功率用什么单位？**
-A: 美国船舶使用hp，欧洲船舶使用kW，国际海事组织(IMO)标准使用kW，具体看船舶注册地和认证标准。
+**Q: What is the difference between hp and PS?**
+A: hp (imperial horsepower) = 745.7W, while PS (metric horsepower) = 735.5W. hp is slightly larger than PS and is commonly used in the United States.
 
-**Q: 工业设备选型时如何换算？**
-A: 美系设备规格书用hp，选型时需换算为kW对比，建议预留10-20%功率余量确保设备可靠运行。
+**Q: Why is hp used in the American automotive industry?**
+A: hp is the traditional American standard for automotive power rating, deeply embedded in American automotive culture and consumer understanding.
 
-## 相关连接
+**Q: When should I use kW vs hp?**
+A: Use kW for technical and engineering calculations, hp for consumer-facing specifications in American markets, especially automotive applications.
+
+**Q: How accurate is the conversion?**
+A: The conversion factor 1 hp = 745.7W is exact by definition, making conversions mathematically precise.
+
+**Q: Which unit is better for international trade?**
+A: kW is preferred for international technical specifications as it's part of the SI system, but hp may be needed for American market documentation.
+
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file,index) in Power" :key="index">
     <n-button

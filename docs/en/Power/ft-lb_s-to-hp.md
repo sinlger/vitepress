@@ -4,199 +4,326 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Power/index
-      linkText: 功率换算
+      linkText: Power Conversion
   - - link: /Power/ft-lb_s-to-hp
-      linkText: 英尺磅每秒转英制马力
+      linkText: ft-lb/s to hp
 head:
   - - meta
     - name: description
-      content: "专业的英尺磅每秒(ft-lb/s)转英制马力(hp)换算工具，提供精确的功率单位转换公式、详细应用场景和实用计算器。适用于汽车工程、船舶动力、工业机械等美制功率单位换算需求。"
+      content: "Professional ft-lb/s (foot-pound per second) to hp (horsepower) power unit conversion tool. Provides precise power unit conversion formulas, detailed application scenarios, and practical calculator. Suitable for mechanical engineering, automotive industry, industrial equipment, and other power conversion requirements."
   - - meta
     - name: keywords
-      content: "英尺磅每秒转英制马力,ft-lb/s到hp换算,功率单位换算,马力换算器,汽车发动机功率,船舶动力换算,工业机械功率,美制功率单位,机械功率计算,动力系统换算"
+      content: "ft-lb/s to hp conversion,ft-lb/s to hp calculator,power unit conversion,horsepower converter,mechanical power,automotive power,engine power conversion,industrial power units,engineering power conversion,mechanical engineering"
 ---
-# 英尺・磅每秒 (ft-lb/s) 到英制马力 (hp) 换算
+# Foot-Pound per Second (ft-lb/s) to Horsepower (hp) Conversion
 
-**英尺磅每秒转英制马力换算工具**是专为美制机械系统设计的专业功率单位转换器。英尺磅每秒(ft-lb/s)是基础的英制功率单位，而英制马力(hp)是北美地区广泛使用的标准功率单位，特别在汽车工程、船舶动力、工业机械等领域应用广泛。本工具提供精确的换算公式和实时计算功能，帮助工程师、技术人员和机械专业人士进行准确的功率单位转换。
+**ft-lb/s to hp conversion tool** is a professional power unit converter designed for mechanical engineering applications. Foot-pound per second (ft-lb/s) is an Imperial power unit representing the rate of work done, while horsepower (hp) is a widely used power unit in automotive, industrial, and mechanical applications. This tool provides precise conversion formulas and real-time calculation functions to help engineers, technicians, and professionals perform accurate power unit conversions.
 
 <script setup>
 import { onMounted,reactive,inject ,ref  } from 'vue'
 import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage ,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
 import { Power } from '../files';
-const convert = inject('convert')
-const options =  [
-  { "label": "英尺・磅每秒 (ft-lb/s)","value": "ft-lb/s" },
-  { "label": "英制马力 (hp)","value": "hp" }
-];
-const formRef = ref(null);
-const rules = {
-  number:{
-    required: true,
-    type: 'number',
-    trigger: "blur",
-    message: '请输入数字'
-  },
-  to:{
-    required: true,
-    trigger: "select",
-    message: '请选择转换单位'
-  },
-  from:{
-    required: true,
-    trigger: "select",
-    message: '请选择原始单位'
-  }
-}
 const seoKey = [
-  '英尺磅每秒转英制马力', 'ft-lb/s到hp', '功率单位换算', '马力换算器',
-  '汽车发动机功率', '船舶动力换算', '工业机械功率', '美制功率单位',
-  '机械功率计算', '动力系统换算', 'フィート・ポンド毎秒から馬力',
-  'パワー単位変換', '馬力計算機', '自動車エンジン出力'
+  'ft-lb/s to hp conversion',
+  'ft-lb/s to hp calculator',
+  'power unit conversion',
+  'horsepower converter',
+  'mechanical power',
+  'automotive power',
+  'engine power conversion',
+  'industrial power units',
+  'engineering power conversion',
+  'mechanical engineering',
+  'foot-pound per second',
+  'horsepower power',
+  'motor power rating',
+  'engine specifications',
+  'automotive engineering',
+  'industrial machinery',
+  'power transmission',
+  'mechanical systems',
+  'power measurement',
+  'engineering calculations'
 ]
-const form = reactive({
-  number:null,
-  to:'',
-  from:'',
-  result:'',
-  title:'英尺磅每秒转英制马力换算器',
+
+const message = useMessage()
+const formValue = reactive({
+  inputValue: 1,
+  outputValue: 0.0018181818,
+  inputUnit: 'ft-lb/s',
+  outputUnit: 'hp'
 })
-const convertHandler = (e) => {
-   e.preventDefault();
-  formRef.value?.validate((errors)=>{
-    if (!errors) {
-      form.result = `${form.number}${form.from} = ${convert(form.number).from(form.from).to(form.to)}${form.to}`
-    }
-  })
+
+const handleConvert = () => {
+  if (formValue.inputValue === null || formValue.inputValue === undefined) {
+    message.warning('Please enter a valid number')
+    return
+  }
+  
+  // Conversion formula: 1 ft-lb/s = 0.0018181818 hp
+  formValue.outputValue = Number((formValue.inputValue * 0.0018181818).toFixed(10))
 }
+
+const handleSwap = () => {
+  const tempValue = formValue.inputValue
+  const tempUnit = formValue.inputUnit
+  
+  formValue.inputValue = formValue.outputValue
+  formValue.inputUnit = formValue.outputUnit
+  formValue.outputValue = tempValue
+  formValue.outputUnit = tempUnit
+  
+  handleConvert()
+}
+
+onMounted(() => {
+  handleConvert()
+})
 </script>
 
-<n-card title="英尺磅每秒转英制马力换算器" embedded :bordered="false" hoverable>
-  <n-form size="large" :model="form" ref='formRef' :rules="rules">
-    <n-form-item label="数值"  path="number">
-      <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数值" />
-    </n-form-item>
-    <n-form-item label="从" path="from">
-      <n-select  size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
-    </n-form-item>
-    <n-form-item label="到" path="to">
-      <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
-    </n-form-item>
-    <n-form-item>
-      <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
-    </n-form-item>
+<n-card title="ft-lb/s to hp Converter" style="margin: 20px 0;">
+  <n-form>
+    <n-grid :cols="24" :gutter="12">
+      <n-gi :span="11">
+        <n-form-item label="Input Value">
+          <n-input-number 
+            v-model:value="formValue.inputValue" 
+            :precision="6"
+            placeholder="Enter ft-lb/s value"
+            style="width: 100%"
+            @input="handleConvert"
+          />
+        </n-form-item>
+      </n-gi>
+      <n-gi :span="2" style="display: flex; align-items: end; justify-content: center;">
+        <n-button @click="handleSwap" style="margin-bottom: 24px;">⇄</n-button>
+      </n-gi>
+      <n-gi :span="11">
+        <n-form-item label="Result">
+          <n-input-number 
+            v-model:value="formValue.outputValue" 
+            :precision="10"
+            placeholder="hp result"
+            style="width: 100%"
+            readonly
+          />
+        </n-form-item>
+      </n-gi>
+    </n-grid>
+    <n-grid :cols="24" :gutter="12" style="margin-top: 12px;">
+      <n-gi :span="11">
+        <n-form-item label="Input Unit">
+          <n-input v-model:value="formValue.inputUnit" readonly />
+        </n-form-item>
+      </n-gi>
+      <n-gi :span="2"></n-gi>
+      <n-gi :span="11">
+        <n-form-item label="Output Unit">
+          <n-input v-model:value="formValue.outputUnit" readonly />
+        </n-form-item>
+      </n-gi>
+    </n-grid>
   </n-form>
-  <n-card  embedded :bordered="false" hoverable>
-    <div  style="text-align:center;font-size:20px;">
-      <strong>{{form.result}}</strong>
-    </div>
-  </n-card>
-  <template #footer>
-    <div style="font-size: 12px; color: #666; text-align: center;">
-      关键词: {{ seoKey.join(' | ') }}
-    </div>
-  </template>
 </n-card>
 
-## 详细换算公式
+## Conversion Formula
 
-### 基础换算关系
-- **1 英制马力 (hp) = 550 英尺磅每秒 (ft-lb/s)**
-- **1 英尺磅每秒 (ft-lb/s) = 0.001818 英制马力 (hp)**
+The conversion formula from ft-lb/s to hp is:
 
-### 换算公式
-- **hp → ft-lb/s**: P(ft-lb/s) = P(hp) × 550
-- **ft-lb/s → hp**: P(hp) = P(ft-lb/s) ÷ 550
+**1 ft-lb/s = 0.0018181818 hp**
 
-### 常用数值对照表
-| 英制马力 (hp) | 英尺磅每秒 (ft-lb/s) | 应用场景 |
-|---------------|---------------------|----------|
-| 1 | 550 | 小型电机 |
-| 10 | 5,500 | 家用设备 |
-| 50 | 27,500 | 小型汽车发动机 |
-| 200 | 110,000 | 中型汽车发动机 |
-| 500 | 275,000 | 大型卡车发动机 |
-| 1000 | 550,000 | 船舶主机 |
+Therefore:
+- **hp = ft-lb/s × 0.0018181818**
+- **hp = ft-lb/s ÷ 550**
 
-## 实际应用示例
+## Conversion Guide
 
-### 典型功率值换算
-- **小型汽车发动机**: 150 hp = 82,500 ft-lb/s
-- **中型SUV发动机**: 250 hp = 137,500 ft-lb/s
-- **大型卡车发动机**: 400 hp = 220,000 ft-lb/s
-- **船舶主机**: 800 hp = 440,000 ft-lb/s
-- **工业压缩机**: 100 hp = 55,000 ft-lb/s
+### What is ft-lb/s (Foot-Pound per Second)?
 
-### 工程应用场景
-- **美系汽车发动机功率标注**：200 hp发动机相当于110,000 ft-lb/s的机械功率输出
-- **船舶引擎功率匹配**：将北美标准ft-lb/s换算为常用hp单位进行设备选型和功率匹配
-- **工业机械动力系统对比**：进口美系压缩机或泵的功率换算，便于与本地设备对比
-- **农业机械功率评估**：拖拉机、收割机等农机设备的功率换算和性能比较
+ft-lb/s (foot-pound per second) is a unit of power in the Imperial system, representing the rate at which work is done. One ft-lb/s equals the power required to perform one foot-pound of work in one second.
 
-## 实际应用场景
+**Common applications:**
+- Mechanical engineering calculations
+- Motor and engine power analysis
+- Industrial machinery specifications
+- Pump and compressor power ratings
+- Mechanical system design
 
-### 汽车工程领域
-- **发动机设计**: 汽车发动机功率规格制定和性能评估
-- **动力匹配**: 发动机与传动系统的功率匹配计算
-- **性能测试**: 发动机台架试验中的功率数据换算
-- **技术交流**: 与国际汽车厂商的技术沟通和标准对接
+### What is hp (Horsepower)?
 
-### 船舶与海洋工程
-- **主机选型**: 船舶主机功率规格确定和设备选择
-- **推进系统**: 螺旋桨与发动机的功率匹配设计
-- **海事认证**: 船舶功率认证和国际标准符合性
-- **维修保养**: 船舶动力系统的维护和功率检测
+hp (horsepower) is a unit of power originally defined to compare the output of steam engines with the power of draft horses. One mechanical horsepower equals 550 foot-pounds per second or 745.7 watts.
 
-### 工业机械应用
-- **设备选型**: 工业设备功率规格确定和采购决策
-- **系统集成**: 多设备功率匹配和系统优化
-- **能耗分析**: 工厂设备功率消耗统计和节能改造
-- **国际贸易**: 进出口机械设备的功率标准转换
+**Common applications:**
+- Automotive engine ratings
+- Industrial motor specifications
+- Agricultural machinery power
+- Marine engine power
+- HVAC system ratings
 
-## 常见问题解答 (FAQ)
+## Why Convert ft-lb/s to hp?
 
-### 1. 为什么英制马力与英尺磅每秒的换算比例是550？
-这个比例来源于马力的历史定义：1马力等于在1分钟内将550磅重物提升1英尺的功率，换算为每秒就是550 ft-lb/s。
+Converting between ft-lb/s and hp is essential in various engineering applications:
 
-### 2. 英制马力与公制马力有什么区别？
-英制马力(hp)约等于745.7瓦，而公制马力(PS)约等于735.5瓦。在进行功率换算时需要注意区分这两种马力单位。
+1. **Automotive engineering**: Converting engine power calculations to standard horsepower ratings
+2. **Industrial equipment**: Standardizing motor and machinery power specifications
+3. **Mechanical design**: Comparing different power sources and requirements
+4. **Performance analysis**: Evaluating system efficiency and power output
+5. **Equipment selection**: Choosing appropriate motors and engines for applications
 
-### 3. 在汽车工程中如何应用这种换算？
-汽车发动机功率通常用hp表示，但在进行详细的机械计算时，需要转换为ft-lb/s来计算扭矩、转速等参数的关系。
+## Conversion Method
 
-### 4. 船舶工程中这种换算有什么特殊意义？
-船舶主机功率常用hp表示，但螺旋桨设计和推进效率计算需要用到ft-lb/s，两者的准确换算对船舶性能至关重要。
+### Step-by-step conversion:
 
-### 5. 如何快速进行hp到ft-lb/s的心算？
-可以记住1 hp = 550 ft-lb/s这个基础关系，对于快速估算，可以用hp数值乘以500作为近似值。
+1. **Identify the ft-lb/s value** you want to convert
+2. **Apply the conversion factor**: Multiply by 0.0018181818 (or divide by 550)
+3. **Calculate the result**: ft-lb/s × 0.0018181818 = hp
+4. **Round to appropriate precision** based on application requirements
 
-### 6. 工业设备选型时如何使用这种换算？
-在选择电机、泵、压缩机等设备时，需要将设备铭牌上的hp功率转换为ft-lb/s，以便进行负载匹配和系统设计。
+### Example Calculations:
 
-## 使用建议
+**Example 1: Small Motor**
+- Input: 275 ft-lb/s
+- Calculation: 275 × 0.0018181818 = 0.5 hp
+- Result: 275 ft-lb/s = 0.5 hp
 
-本换算工具特别适用于美制机械系统的工程应用，建议在以下情况使用：
-- **汽车工程**: 发动机功率计算和动力系统设计
-- **船舶工程**: 主机功率选型和推进系统匹配
-- **工业设备**: 机械设备功率换算和系统集成
-- **技术交流**: 与使用英制单位的工程团队协作
+**Example 2: Industrial Motor**
+- Input: 2,750 ft-lb/s
+- Calculation: 2,750 × 0.0018181818 = 5 hp
+- Result: 2,750 ft-lb/s = 5 hp
 
-## 总结
+**Example 3: Large Engine**
+- Input: 55,000 ft-lb/s
+- Calculation: 55,000 × 0.0018181818 = 100 hp
+- Result: 55,000 ft-lb/s = 100 hp
 
-英尺磅每秒到英制马力的换算是美制机械工程中的基础计算工具。掌握准确的换算方法和应用场景，有助于提高工程设计效率和设备选型准确性。无论是汽车发动机设计、船舶动力系统，还是工业机械应用，这种功率单位换算都发挥着重要作用。
+## Practical Applications
 
-## 相关连接
-<n-grid x-gap="12" :cols="2">
-  <n-gi v-for="(file,index) in Power" :key="index">
-    <n-button
-      text
-      tag="a"
-      :href="file.path"
-      type="info"
-    >
-      {{file.name}}
-    </n-button>
-  </n-gi>
-</n-grid>
+### Automotive Industry
+- **Engine specifications**: Converting calculated power to standard horsepower ratings
+- **Performance tuning**: Analyzing engine modifications and improvements
+- **Transmission design**: Calculating power requirements for drivetrain components
+- **Vehicle testing**: Standardizing power measurements across different test methods
+
+### Industrial Equipment
+- **Motor selection**: Choosing appropriate motors for specific applications
+- **Pump systems**: Calculating pump power requirements and efficiency
+- **Compressor design**: Determining compressor power needs for various applications
+- **Manufacturing equipment**: Specifying power requirements for production machinery
+
+### Mechanical Engineering
+- **System design**: Balancing power requirements across mechanical systems
+- **Efficiency analysis**: Comparing power input and output in mechanical systems
+- **Equipment sizing**: Determining appropriate power ratings for components
+- **Performance optimization**: Analyzing and improving system power efficiency
+
+### Agricultural Machinery
+- **Tractor specifications**: Converting engine power to standard horsepower ratings
+- **Implement requirements**: Calculating power needs for agricultural equipment
+- **Irrigation systems**: Determining pump power for water management systems
+- **Harvesting equipment**: Specifying power requirements for processing machinery
+
+## Understanding Power Relationships
+
+### Mechanical Power Fundamentals
+- **Power = Force × Velocity**: Basic relationship in mechanical systems
+- **Power = Torque × Angular velocity**: For rotational systems
+- **Efficiency considerations**: Real-world power losses in mechanical systems
+- **Load characteristics**: How power requirements vary with operating conditions
+
+### Horsepower Variations
+- **Mechanical horsepower**: 550 ft-lb/s (standard in US)
+- **Metric horsepower**: 542.5 ft-lb/s (European standard)
+- **Electrical horsepower**: 746 watts (electrical equivalent)
+- **Brake horsepower**: Actual power output measured at engine/motor shaft
+
+## Common Power Ranges
+
+### Typical ft-lb/s Values
+- **Small appliances**: 50-500 ft-lb/s
+- **Household tools**: 500-2,000 ft-lb/s
+- **Industrial motors**: 2,000-50,000 ft-lb/s
+- **Large engines**: 50,000-500,000 ft-lb/s
+
+### Equivalent Horsepower
+- **0.1-1 hp**: Small appliances and tools
+- **1-10 hp**: Medium industrial equipment
+- **10-100 hp**: Large industrial motors
+- **100-1000 hp**: Heavy industrial and automotive applications
+
+## Engineering Considerations
+
+### Conversion Accuracy
+- **Precision requirements**: Choose appropriate decimal places for application
+- **Measurement uncertainty**: Consider accuracy of original measurements
+- **Rounding effects**: Understand impact of rounding on final calculations
+- **Standards compliance**: Ensure conversions meet industry standards
+
+### System Design Implications
+- **Power matching**: Ensure power sources match load requirements
+- **Safety factors**: Include appropriate margins in power calculations
+- **Efficiency considerations**: Account for losses in power transmission
+- **Operating conditions**: Consider how environment affects power output
+
+### Performance Analysis
+- **Power curves**: Understanding how power varies with operating conditions
+- **Efficiency mapping**: Analyzing system efficiency across operating range
+- **Load matching**: Optimizing power source and load characteristics
+- **System optimization**: Improving overall power system performance
+
+## Applications by Industry
+
+### Automotive and Transportation
+- **Engine development**: Converting test data to standard horsepower ratings
+- **Performance comparison**: Standardizing power measurements across vehicles
+- **Transmission design**: Calculating power handling requirements
+- **Fuel efficiency**: Analyzing power-to-weight ratios for efficiency optimization
+
+### Manufacturing and Industrial
+- **Production equipment**: Specifying motor power for manufacturing machinery
+- **Process optimization**: Analyzing power consumption in industrial processes
+- **Equipment maintenance**: Monitoring power output for predictive maintenance
+- **Energy management**: Optimizing power usage across industrial facilities
+
+### Marine and Aerospace
+- **Propulsion systems**: Converting engine power to standard ratings
+- **Auxiliary systems**: Calculating power requirements for support equipment
+- **Performance analysis**: Evaluating propulsion efficiency and power output
+- **System integration**: Balancing power requirements across multiple systems
+
+### Construction and Heavy Equipment
+- **Equipment specifications**: Standardizing power ratings for construction machinery
+- **Job planning**: Calculating power requirements for construction tasks
+- **Equipment selection**: Choosing appropriate machinery for specific applications
+- **Performance monitoring**: Tracking equipment power output and efficiency
+
+## Measurement and Testing
+
+### Power Measurement Methods
+- **Dynamometer testing**: Direct measurement of mechanical power output
+- **Torque and speed measurement**: Calculating power from torque and RPM
+- **Electrical measurement**: Using electrical power as proxy for mechanical power
+- **Performance testing**: Standardized test procedures for power measurement
+
+### Calibration and Standards
+- **Measurement standards**: Ensuring traceability to national standards
+- **Calibration procedures**: Regular calibration of power measurement equipment
+- **Uncertainty analysis**: Understanding and quantifying measurement uncertainty
+- **Quality assurance**: Maintaining measurement accuracy and reliability
+
+## Summary
+
+ft-lb/s to hp conversion is fundamental in mechanical engineering, providing a bridge between calculated mechanical power and standardized horsepower ratings. Understanding this conversion enables engineers to properly specify equipment, analyze performance, and communicate power requirements effectively across different industries and applications.
+
+The simple conversion factor of 1 ft-lb/s = 0.0018181818 hp (or 1 hp = 550 ft-lb/s) makes this conversion straightforward while maintaining the precision required for engineering applications.
+
+## Related Conversions
+
+- [ft-lb/s to Watts (W)](/Power/ft-lb_s-to-W)
+- [ft-lb/s to Kilowatts (kW)](/Power/ft-lb_s-to-kW)
+- [ft-lb/s to PS (Metric Horsepower)](/Power/ft-lb_s-to-PS)
+- [hp to Watts (W)](/Power/hp-to-W)
+- [hp to Kilowatts (kW)](/Power/hp-to-kW)
+- [hp to ft-lb/s](/Power/hp-to-ft-lb_s)

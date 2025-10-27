@@ -1,167 +1,159 @@
 ---
-sidebar: false
-aside: false
-lastUpdated: false
-breadcrumb:
-  - - link: /
-      linkText: 首页
-  - - link: /Power/index
-      linkText: 功率换算
-  - - link: /Power/GW-to-W
-      linkText: 吉瓦转瓦特
-head:
-  - - meta
-    - name: description
-      content: "专业的吉瓦(GW)到瓦特(W)功率单位换算工具。提供精确换算公式、电力工程应用实例和详细技术说明，适用于电力系统、科学计算和工程设计的基础功率换算。"
-  - - meta
-    - name: keywords
-      content: "吉瓦转瓦特,GW到W换算,功率单位换算,电力工程计算,科学计算,工程设计,国际单位制,电力系统,核电站功率,功率换算工具,ギガワット,ワット,電力変換"
+title: "Gigawatt (GW) to Watt (W) Conversion"
+description: "Professional gigawatt (GW) to watt (W) power unit conversion tool. Provides precise conversion formulas, electrical engineering application examples and detailed technical explanations for power systems, scientific calculations and engineering design."
+keywords:
+  - Gigawatt to watt
+  - GW to W conversion
+  - Power unit conversion
+  - Electrical engineering calculation
+  - Scientific calculation
+  - Engineering design
+  - International System of Units
+  - Power systems
+  - Nuclear power plant power
+  - Power conversion tool
+breadcrumbs:
+  - name: Home
+    linkText: Home
+    linkUrl: /
+  - name: Power Conversion
+    linkText: Power Conversion
+    linkUrl: /zh/Power/
+  - name: Gigawatt to Watt
+    linkText: Gigawatt to Watt
+    linkUrl: /zh/Power/GW-to-W
+meta:
+  - name: description
+    content: "Professional gigawatt (GW) to watt (W) power unit conversion tool. Provides precise conversion formulas, electrical engineering application examples and detailed technical explanations for power systems, scientific calculations and engineering design."
+  - name: keywords
+    content: "Gigawatt to watt,GW to W conversion,Power unit conversion,Electrical engineering calculation,Scientific calculation,Engineering design,International System of Units,Power systems,Nuclear power plant power,Power conversion tool"
 ---
-# 吉瓦 (GW) 到瓦特 (W) 换算
+# Gigawatt (GW) to Watt (W) Conversion
 
-吉瓦(GW)到瓦特(W)是电力工程和科学计算中最基础的功率单位换算。本工具提供精确的换算公式和专业的工程应用指导，帮助工程师和科研人员进行准确的功率计算和系统设计。
+Gigawatt (GW) to watt (W) is the most fundamental power unit conversion in electrical engineering and scientific calculations. This tool provides precise conversion formulas and professional engineering application guidance to help engineers and researchers perform accurate power calculations and system design.
 
 <script setup>
+import { ref, computed } from 'vue'
+
 const seoKey = [
-  '吉瓦转瓦特', 'GW到W换算', '功率单位换算', '电力工程计算',
-  '科学计算', '工程设计', '国际单位制', '电力系统',
-  '核电站功率', '功率换算工具', 'ギガワット', 'ワット', '電力変換'
+  'Gigawatt to watt', 'GW to W conversion', 'Power unit conversion', 'Electrical engineering calculation',
+  'Scientific calculation', 'Engineering design', 'International System of Units', 'Power systems',
+  'Nuclear power plant power', 'Power conversion tool', 'Large scale power', 'Grid power', 'Power generation'
 ]
-import { onMounted,reactive,inject ,ref  } from 'vue'
-import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage ,NGrid ,NGi } from 'naive-ui'
-import { defineClientComponent } from 'vitepress'
-import { Power } from '../files';
-const convert = inject('convert')
-const options =  [
-  { "label": "吉瓦 (GW)","value": "GW" },
-  { "label": "瓦特 (W)","value": "W" }
-];
-const formRef = ref(null);
+
+const form = ref({
+  number: 0,
+  from: 'GW',
+  to: 'W',
+  result: ''
+})
+
+const options = [
+  { "label": "Gigawatt (GW)", "value": "GW" },
+  { "label": "Watt (W)", "value": "W" }
+]
+
 const rules = {
-  number:{
+  number: {
     required: true,
-    type: 'number',
-    trigger: "blur",
-    message: '请输入数字'
+    message: 'Please enter a number',
+    trigger: ['blur', 'input']
   },
-  to:{
+  to: {
     required: true,
-    trigger: "select",
-    message: '请选择转换单位'
+    message: 'Please select conversion unit',
+    trigger: 'select'
   },
-  from:{
+  from: {
     required: true,
-    trigger: "select",
-    message: '请选择原始单位'
+    message: 'Please select original unit',
+    trigger: 'select'
   }
 }
-const form = reactive({
-  number:null,
-  to:'',
-  from:'',
-  result:'',
-  title:'吉瓦转瓦特',
-})
-const convertHandler = (e) => {
-   e.preventDefault();
-  formRef.value?.validate((errors)=>{
-    if (!errors) {
-      form.result = `${form.number}${form.from} = ${convert(form.number).from(form.from).to(form.to)}${form.to}`
-    }
-  })
+
+const convertHandler = () => {
+  if (form.value.from === 'GW' && form.value.to === 'W') {
+    form.value.result = `${form.value.number} GW = ${(form.value.number * 1000000000).toFixed(0)} W`
+  } else if (form.value.from === 'W' && form.value.to === 'GW') {
+    form.value.result = `${form.value.number} W = ${(form.value.number / 1000000000).toFixed(9)} GW`
+  } else {
+    form.value.result = `${form.value.number} ${form.value.from} = ${form.value.number} ${form.value.to}`
+  }
 }
 </script>
 
-<n-card title="吉瓦(GW) ⇄ 瓦特(W) 功率换算器" embedded :bordered="false" hoverable>
-  <n-form size="large" :model="form" ref='formRef' :rules="rules">
-    <n-form-item label="数值"  path="number">
-      <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数值" />
-    </n-form-item>
-    <n-form-item label="从" path="from">
-      <n-select  size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
-    </n-form-item>
-    <n-form-item label="到" path="to">
-      <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
-    </n-form-item>
-    <n-form-item>
-      <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
-    </n-form-item>
-  </n-form>
-  <n-card  embedded :bordered="false" hoverable>
-    <div  style="text-align:center;font-size:20px;">
-      <strong>{{form.result}}</strong>
-    </div>
-  </n-card>
+<n-form size="large" :model="form" :rules="rules">
+  <n-form-item label="Value" path="number">
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="Enter the value to convert" />
+  </n-form-item>
+  <n-form-item label="From" path="from">
+    <n-select size="large" :options="options" v-model:value="form.from" placeholder="Select original unit" />
+  </n-form-item>
+  <n-form-item label="To" path="to">
+    <n-select size="large" :options="options" v-model:value="form.to" placeholder="Select conversion unit" />
+  </n-form-item>
+  <n-form-item>
+    <n-button type="info" style="width:100%" @click="convertHandler">Convert</n-button>
+  </n-form-item>
+</n-form>
+<n-card  
+  title="Gigawatt to Watt Conversion"
+  :segmented="{
+    content: true,
+    footer: 'soft',
+  }"
+>
+  <div style="text-align:center;font-size:20px;">
+    <strong>{{form.result}}</strong>
+  </div>
   <template #footer>
-    <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px;">
-      <span v-for="keyword in seoKey" :key="keyword" 
-            style="background: #f0f0f0; padding: 4px 8px; border-radius: 4px; font-size: 12px; color: #666;">
-        {{ keyword }}
-      </span>
+    <div>
+      <span v-for="item of seoKey">{{item}}, </span>
     </div>
   </template>
 </n-card>
 
-## 详细换算公式
+## Conversion Formula
 
-### 基本换算关系
-- **1 吉瓦 (GW) = 1,000,000,000 瓦特 (W) = 10⁹ W**
-- **1 瓦特 (W) = 0.000000001 吉瓦 (GW) = 10⁻⁹ GW**
+The conversion between gigawatt (GW) and watt (W) is based on the decimal system:
 
-### 逆向换算公式
-- GW → W: `W = GW × 1,000,000,000`
-- W → GW: `GW = W ÷ 1,000,000,000`
+**Basic Formula:**
+- 1 GW = 1,000,000,000 W (10⁹ W)
+- 1 W = 0.000000001 GW (10⁻⁹ GW)
 
-### 常用数值对照表
-| 吉瓦 (GW) | 瓦特 (W) | 应用场景 |
-|-----------|----------|----------|
-| 0.000001 | 1,000 | 家用电器 |
-| 0.001 | 1,000,000 | 小型工厂 |
-| 0.1 | 100,000,000 | 中型发电厂 |
-| 1 | 1,000,000,000 | 核电机组 |
-| 10 | 10,000,000,000 | 超大型电力系统 |
+**Conversion Formulas:**
+- GW to W: W = GW × 1,000,000,000
+- W to GW: GW = W ÷ 1,000,000,000
 
-## 工程应用实例
+## Application Examples
 
-### 电力发电系统
-- **核电站**: 单机组功率1-1.7GW，即10-17亿瓦特
-- **火电厂**: 大型机组300-1000MW，即3-10亿瓦特
-- **水电站**: 三峡电站总装机22.5GW，即225亿瓦特
+### Large Power Plants
+- **Nuclear Power Plant**: 1.2 GW = 1,200,000,000 W
+- **Coal Power Plant**: 2.5 GW = 2,500,000,000 W
+- **Hydroelectric Dam**: 22.5 GW = 22,500,000,000 W (Three Gorges Dam)
+- **Solar Power Plant**: 0.5 GW = 500,000,000 W
 
-### 新能源项目
-- **太阳能电站**: 大型光伏电站1-2GW，即10-20亿瓦特
-- **风电场**: 海上风电项目0.5-1GW，即5-10亿瓦特
-- **储能系统**: 大型电池储能100MW-1GW，即1-10亿瓦特
+### National Power Grids
+- **Country Peak Demand**: 50 GW = 50,000,000,000 W
+- **Regional Grid**: 10 GW = 10,000,000,000 W
+- **City Power Consumption**: 2 GW = 2,000,000,000 W
+- **Industrial Complex**: 0.1 GW = 100,000,000 W
 
-### 科学计算应用
-- **物理实验**: 粒子加速器功率可达数百MW到数GW
-- **激光系统**: 高功率激光器峰值功率可达TW级别
-- **等离子体研究**: 聚变实验装置功率通常为数百MW
+### Renewable Energy Systems
+- **Wind Farm**: 1 GW = 1,000,000,000 W
+- **Offshore Wind**: 3.6 GW = 3,600,000,000 W
+- **Solar Array**: 0.8 GW = 800,000,000 W
+- **Geothermal Plant**: 0.3 GW = 300,000,000 W
 
-## 专业使用建议
+## Usage Recommendations
 
-### 工程设计指导
-- **单位选择**: 瓦特(W)是国际标准单位，适用于所有功率计算
-- **精度要求**: 科学计算建议保留6-9位有效数字
-- **标准化**: 国际工程项目统一使用W作为基础单位
+1. **Power System Planning**: Calculate total generation capacity and demand
+2. **Grid Analysis**: Analyze power flow and transmission requirements
+3. **Energy Policy**: Evaluate national energy production and consumption
+4. **Engineering Design**: Size electrical equipment and infrastructure
+5. **Scientific Research**: Perform large-scale energy calculations
 
-### 计算注意事项
-- **数值范围**: W适用于小功率设备，GW适用于大型电力系统
-- **换算精度**: 使用精确换算系数10⁹
-- **应用场景**: 从家用电器到核电站的全范围功率计算
-
-## 常见问题解答
-
-**Q: 什么情况下需要进行GW到W的换算？**
-A: 主要用于电力系统设计、科学研究、工程计算和教学演示，特别是需要统一功率单位时。
-
-**Q: 为什么瓦特(W)是功率的基本单位？**
-A: 瓦特是国际单位制(SI)中功率的基本单位，定义为每秒传递1焦耳能量，便于科学计算和工程应用。
-
-**Q: 这种换算在实际工程中的重要性如何？**
-A: 非常重要，是电力工程的基础换算，从设备选型到系统设计都需要准确的功率单位换算。
-
-## 相关功率换算工具
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file,index) in Power" :key="index">
     <n-button

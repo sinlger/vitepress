@@ -4,39 +4,39 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Power/index
-      linkText: 功率换算
+      linkText: Power Conversion
   - - link: /Power/mW-to-Btu_s
-      linkText: 毫瓦转英热单位每秒
+      linkText: Milliwatt to Btu per Second
 head:
   - - meta
     - name: description
-      content: "专业的毫瓦(mW)到英热单位每秒(Btu/s)功率单位换算工具，提供精确的换算公式、小功率设备应用实例和技术规范指导，适用于电子设备、传感器、通信设备等领域的功率计算。"
+      content: "Professional milliwatt (mW) to British thermal unit per second (Btu/s) power unit conversion tool, providing precise conversion formulas, low-power device application examples and technical specification guidance, suitable for power calculations in electronics, sensors, communication equipment and other fields."
   - - meta
     - name: keywords
-      content: "毫瓦转英热单位每秒,mW到Btu/s换算,功率单位换算,小功率设备,电子设备功率,传感器功率,通信设备功率,毫瓦,功率单位转换器,电子工程计算,低功耗设备"
+      content: "milliwatt to Btu per second,mW to Btu/s conversion,power unit conversion,low power devices,electronic device power,sensor power,communication equipment power,milliwatt,power unit converter,electronic engineering calculation,low power consumption devices"
 ---
-# 毫瓦 (mW) 到英热单位每秒 (Btu/s) 换算
+# Milliwatt (mW) to British Thermal Unit per Second (Btu/s) Conversion
 
-毫瓦(mW)和英热单位每秒(Btu/s)分别代表小功率电子设备和制冷空调系统中的功率单位。毫瓦是瓦特的千分之一，主要用于电子设备、传感器、通信模块等低功耗设备的功率标注，而英热单位每秒则在北美制冷空调行业中广泛应用。掌握mW与Btu/s之间的换算关系，对于跨领域工程设计和国际项目合作具有重要意义。
+Milliwatt (mW) and British thermal unit per second (Btu/s) represent power units in low-power electronic devices and refrigeration/air conditioning systems respectively. Milliwatt is one thousandth of a watt, mainly used for power rating of electronic devices, sensors, communication modules and other low-power consumption devices, while British thermal unit per second is widely used in the North American refrigeration and air conditioning industry. Mastering the conversion relationship between mW and Btu/s is of great significance for cross-field engineering design and international project cooperation.
 
-本工具提供专业的 **毫瓦转英热单位每秒** 换算功能，支持双向转换，适用于电子工程设计、设备选型和技术规范制定需求。
+This tool provides professional **milliwatt to British thermal unit per second** conversion functionality, supporting bidirectional conversion, suitable for electronic engineering design, equipment selection and technical specification development needs.
 
 <script setup>
 import { onMounted,reactive,inject ,ref  } from 'vue'
 import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage ,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
-import { Power } from '../files';
+import { Power } from '../../files';
 const convert = inject('convert')
 const seoKey = [
-  '毫瓦转英热单位每秒', 'mW到Btu/s换算', '功率单位换算', '小功率设备', '电子设备功率',
-  '传感器功率', '通信设备功率', '毫瓦', '功率单位转换器', '电子工程计算',
-  '低功耗设备', 'w是什么单位', '瓦特单位', 'w单位', 'power'
+  'milliwatt to Btu per second', 'mW to Btu/s conversion', 'power unit conversion', 'low power devices', 'electronic device power',
+  'sensor power', 'communication equipment power', 'milliwatt', 'power unit converter', 'electronic engineering calculation',
+  'low power consumption devices', 'what is w unit', 'watt unit', 'w unit', 'power'
 ]
 const options =  [
-  { "label": "毫瓦 (mW)","value": "mW" },
-  { "label": "英热单位每秒 (Btu/s)","value": "Btu/s" }
+  { "label": "Milliwatt (mW)","value": "mW" },
+  { "label": "British Thermal Unit per Second (Btu/s)","value": "Btu/s" }
 ];
 const formRef = ref(null);
 const rules = {
@@ -44,150 +44,132 @@ const rules = {
     required: true,
     type: 'number',
     trigger: "blur",
-    message: '请输入数字'
+    message: 'Please enter a number'
   },
   to:{
     required: true,
     trigger: "select",
-    message: '请选择转换单位'
+    message: 'Please select conversion unit'
   },
   from:{
     required: true,
     trigger: "select",
-    message: '请选择原始单位'
+    message: 'Please select source unit'
   }
 }
-const form = reactive({
-  number:null,
-  to:'',
-  from:'',
-  result:'',
-  title:'毫瓦转英热单位每秒',
+const message = useMessage()
+const formValue = reactive({
+  number: 1,
+  from: 'mW',
+  to: 'Btu/s'
 })
-const convertHandler = (e) => {
-   e.preventDefault();
-  formRef.value?.validate((errors)=>{
+const result = ref('')
+const handleValidateClick = (e) => {
+  e.preventDefault()
+  formRef.value?.validate((errors) => {
     if (!errors) {
-      form.result = `${form.number}${form.from} = ${convert(form.number).from(form.from).to(form.to)}${form.to}`
+      result.value = convert(formValue.number, formValue.from, formValue.to, Power)
+    } else {
+      console.log(errors)
+      message.error('Invalid')
     }
   })
 }
 </script>
 
-<n-card title="毫瓦(mW)到英热单位每秒(Btu/s)换算器" embedded :bordered="false" hoverable>
-  <n-form size="large" :model="form" ref='formRef' :rules="rules">
-    <n-form-item label="数值"  path="number">
-      <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数值" />
-    </n-form-item>
-    <n-form-item label="从" path="from">
-      <n-select  size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
-    </n-form-item>
-    <n-form-item label="到" path="to">
-      <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
-    </n-form-item>
-    <n-form-item>
-      <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
-    </n-form-item>
-  </n-form>
-  <n-card  embedded :bordered="false" hoverable>
-    <div  style="text-align:center;font-size:20px;">
-      <strong>{{form.result}}</strong>
-    </div>
-  </n-card>
-  <template #footer>
-    <div style="display: flex; flex-wrap: wrap; gap: 8px; font-size: 12px; color: #666;">
-      <span v-for="(keyword, index) in seoKey" :key="index" style="background: #f5f5f5; padding: 2px 6px; border-radius: 3px;">
-        {{ keyword }}
-      </span>
-    </div>
-  </template>
-</n-card>
+<NCard title="Milliwatt to British Thermal Unit per Second Converter">
+<NForm ref="formRef" :model="formValue" :rules="rules">
+<NGrid :cols="24" :x-gap="12">
+<NGi :span="24">
+<NFormItem path="number" label="Enter Value">
+<NInputNumber v-model:value="formValue.number" placeholder="Enter the value to convert" />
+</NFormItem>
+</NGi>
+<NGi :span="12">
+<NFormItem path="from" label="From">
+<NSelect v-model:value="formValue.from" placeholder="Select source unit" :options="options" />
+</NFormItem>
+</NGi>
+<NGi :span="12">
+<NFormItem path="to" label="To">
+<NSelect v-model:value="formValue.to" placeholder="Select target unit" :options="options" />
+</NFormItem>
+</NGi>
+<NGi :span="24">
+<NFormItem>
+<NButton type="primary" @click="handleValidateClick">
+Convert
+</NButton>
+</NFormItem>
+</NGi>
+</NGrid>
+</NForm>
+<div v-if="result" style="margin-top: 20px;">
+<h3>Conversion Result:</h3>
+<p>{{ result }}</p>
+</div>
+</NCard>
 
-## 换算公式
+## Conversion Formula
 
-### 基本换算关系
-- 1 mW = 0.001 W
-- 1 Btu/s ≈ 1055.06 W = 1,055,060 mW
-- 1 mW ≈ 9.478 × 10⁻⁷ Btu/s
+The conversion between milliwatt (mW) and British thermal unit per second (Btu/s) is based on the following relationship:
 
-### 计算公式
-- **毫瓦转英热单位每秒**: Btu/s = mW × 9.478 × 10⁻⁷
-- **英热单位每秒转毫瓦**: mW = Btu/s × 1,055,060
+**1 mW = 9.4782 × 10⁻⁷ Btu/s**
 
-### 常用数值对照表
+### Conversion Formula:
+- **mW to Btu/s**: Btu/s = mW × 9.4782 × 10⁻⁷
+- **Btu/s to mW**: mW = Btu/s ÷ (9.4782 × 10⁻⁷)
 
-| 毫瓦 (mW) | 英热单位每秒 (Btu/s) | 应用场景 |
-|-----------|---------------------|----------|
-| 1 mW | 9.478 × 10⁻⁷ Btu/s | LED指示灯 |
-| 10 mW | 9.478 × 10⁻⁶ Btu/s | 激光指示器 |
-| 100 mW | 9.478 × 10⁻⁵ Btu/s | 蓝牙模块 |
-| 1,000 mW (1W) | 9.478 × 10⁻⁴ Btu/s | 手机充电器 |
-| 10,000 mW (10W) | 9.478 × 10⁻³ Btu/s | 小型电机 |
+## Conversion Guide
 
-## 应用示例
+### Why Convert Between mW and Btu/s?
 
-### 电子设备工程设计
-- **传感器模块**: 1-50 mW，对应 9.478×10⁻⁷ - 4.739×10⁻⁵ Btu/s
-- **无线通信芯片**: 10-200 mW，对应 9.478×10⁻⁶ - 1.896×10⁻⁴ Btu/s
-- **微控制器**: 5-100 mW，对应 4.739×10⁻⁶ - 9.478×10⁻⁵ Btu/s
+1. **Cross-field Engineering**: When electronic systems need to interface with HVAC systems
+2. **International Projects**: Converting between metric electronic specifications and imperial thermal units
+3. **Energy Efficiency Analysis**: Comparing electronic device power consumption with thermal loads
+4. **System Integration**: Designing systems that combine electronic and thermal components
+5. **Technical Documentation**: Standardizing power specifications across different engineering disciplines
 
-### 消费电子产品
-- **智能手表**: 50-500 mW，对应 4.739×10⁻⁵ - 4.739×10⁻⁴ Btu/s
-- **蓝牙耳机**: 10-100 mW，对应 9.478×10⁻⁶ - 9.478×10⁻⁵ Btu/s
-- **LED指示灯**: 1-20 mW，对应 9.478×10⁻⁷ - 1.896×10⁻⁵ Btu/s
+### Conversion Method
 
-### 物联网设备
-- **环境监测传感器**: 1-10 mW，对应 9.478×10⁻⁷ - 9.478×10⁻⁶ Btu/s
-- **智能门锁模块**: 100-1000 mW，对应 9.478×10⁻⁵ - 9.478×10⁻⁴ Btu/s
-- **无线数据采集器**: 50-200 mW，对应 4.739×10⁻⁵ - 1.896×10⁻⁴ Btu/s
+1. **Identify the source unit** (mW or Btu/s)
+2. **Apply the appropriate conversion factor**
+3. **Verify the result** using the inverse calculation
+4. **Round to appropriate significant figures** based on measurement precision
 
-## 使用建议
+## Practical Examples
 
-### 电子工程设计规范
-- **器件选型**: 在选择电子元器件时，准确换算功耗有助于热设计和电源管理
-- **系统集成**: 多模块系统设计时，统一功率单位便于功耗预算和散热计算
-- **国际合作**: 与北美客户合作时，提供Btu/s单位有助于技术沟通
+### Example 1: Sensor Power Consumption
+A temperature sensor consumes 50 mW of power. Convert to Btu/s:
+- **Calculation**: 50 mW × 9.4782 × 10⁻⁷ = 4.7391 × 10⁻⁵ Btu/s
+- **Application**: Understanding thermal impact in HVAC control systems
 
-### 技术文档标准
-- **产品规格书**: 建议同时标注mW和Btu/s数值，满足不同地区客户需求
-- **测试报告**: 功耗测试数据应包含国际通用单位，便于技术评估
-- **认证文件**: 产品认证时可能需要特定单位的功率标注
+### Example 2: Communication Module
+A wireless communication module operates at 250 mW. Convert to Btu/s:
+- **Calculation**: 250 mW × 9.4782 × 10⁻⁷ = 2.3696 × 10⁻⁴ Btu/s
+- **Application**: Thermal management in building automation systems
 
-### 计算精度要求
-- **精确计算**: 使用完整换算系数 1 mW = 9.478171203133172×10⁻⁷ Btu/s
-- **工程估算**: 可使用简化系数 1 mW ≈ 9.478×10⁻⁷ Btu/s
-- **安全设计**: 功耗计算时建议预留10-20%的安全余量
+### Example 3: LED Lighting
+An LED indicator consumes 20 mW. Convert to Btu/s:
+- **Calculation**: 20 mW × 9.4782 × 10⁻⁷ = 1.8956 × 10⁻⁵ Btu/s
+- **Application**: Heat load calculation for precision environments
 
-## 常见问题 (FAQ)
+## Summary
 
-### 什么是毫瓦(mW)？
-毫瓦是功率单位，等于千分之一瓦特(0.001W)。主要用于描述小功率电子设备的功耗，如传感器、芯片、LED等低功耗器件。
+The conversion between milliwatt and British thermal unit per second bridges the gap between electronic power measurements and thermal engineering applications. This conversion is essential for:
 
-### 什么是英热单位每秒(Btu/s)？
-Btu/s是英制功率单位，表示每秒传递的英热单位数量。1 Btu/s约等于1055.06瓦特，主要在北美制冷空调行业使用。
+- **System Integration**: Combining electronic and thermal systems
+- **Energy Analysis**: Understanding total energy consumption
+- **International Standards**: Working with different measurement systems
+- **Technical Communication**: Facilitating cross-disciplinary collaboration
 
-### mW和Btu/s换算在什么场景下使用？
-主要用于：电子产品出口北美市场时的功率标注、国际技术合作项目的规格统一、跨国公司的技术文档标准化、产品认证时的单位要求。
+Understanding this conversion enables engineers to work effectively across electronic and thermal engineering domains, ensuring accurate power and thermal calculations in integrated systems.
 
-### 为什么电子设备功率这么小还要换算成Btu/s？
-虽然电子设备功率很小，但在大规模部署(如数据中心、物联网网络)时，累积功耗会很可观。准确的单位换算有助于整体能耗管理和散热设计。
+## Related Conversions
 
-### 如何选择合适的换算精度？
-- 产品设计阶段：使用精确换算系数
-- 工程估算：使用简化系数即可
-- 安全设计：建议增加10-20%余量
-- 商业文档：根据客户要求选择精度
-
-## 相关连接
-<n-grid x-gap="12" :cols="2">
-  <n-gi v-for="(file,index) in Power" :key="index">
-    <n-button
-      text
-      tag="a"
-      :href="file.path"
-      type="info"
-    >
-      {{file.name}}
-    </n-button>
-  </n-gi>
-</n-grid>
+- [Milliwatt to Watt (mW to W)](/Power/mW-to-W)
+- [Milliwatt to Kilowatt (mW to kW)](/Power/mW-to-kW)
+- [Milliwatt to Horsepower (mW to hp)](/Power/mW-to-hp)
+- [Milliwatt to Foot-pound per Second (mW to ft-lb/s)](/Power/mW-to-ft-lb_s)
+- [Btu per Second to Watt (Btu/s to W)](/Power/Btu_s-to-W)
+- [Btu per Second to Kilowatt (Btu/s to kW)](/Power/Btu_s-to-kW)

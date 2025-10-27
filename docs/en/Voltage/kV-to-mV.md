@@ -4,44 +4,43 @@ aside: false
 lastUpdated: false
 breadcrumb: 
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Voltage/index
-      linkText: 电压换算
+      linkText: Voltage Conversion
   - - link: /Voltage/kV-to-mV
-      linkText: 千伏转毫伏
+      linkText: Kilovolt to Millivolt
 head:
   - - meta
     - name: description
-      content: 专业的千伏(kV)到毫伏(mV)转换工具。提供精确的kV转mV换算，详解高压电力到微弱信号的极值转换、电压互感器原理、信号调理技术。适用于电力工程师、测控技术人员、仪表工程师和电压测量相关从业人员，涵盖从高压电网到精密测量的完整技术链条。
+      content: Professional kilovolt (kV) to millivolt (mV) conversion tool. Provides precise kV to mV conversion, detailed explanation of extreme conversion from high voltage power to weak signals, voltage transformer principles, and signal conditioning technology. Suitable for power engineers, measurement and control technicians, instrumentation engineers, and voltage measurement professionals, covering the complete technical chain from high voltage grids to precision measurement.
   - - meta
     - name: keywords
-      content: 千伏转毫伏,kV转mV,千伏到毫伏,电压单位换算,kV to mV,千伏换算毫伏,电压互感器,信号调理,高压测量,精密测量,电压变换,量程转换,电力测量,高压转换,极值电压
+      content: kilovolt to millivolt,kV to mV,kilovolt to millivolt conversion,voltage unit conversion,kV to mV converter,voltage transformer,signal conditioning,high voltage measurement,precision measurement,voltage transformation,range conversion,power measurement,high voltage conversion,extreme voltage
 seoKey:
-  - "千伏转毫伏"
-  - "kV转mV"
-  - "千伏到毫伏"
-  - "电压单位换算"
+  - "kilovolt to millivolt"
   - "kV to mV"
-  - "千伏换算毫伏"
-  - "电压互感器"
-  - "信号调理"
-  - "高压测量"
-  - "精密测量"
-  - "电压变换"
-  - "量程转换"
-  - "电力测量"
-  - "高压转换"
-  - "极值电压"
-  - "1kV等于多少mV"
-  - "高压信号转换"
-  - "电压传感器"
-  - "测量变换器"
-  - "电压采集"
+  - "kilovolt to millivolt conversion"
+  - "voltage unit conversion"
+  - "kV to mV converter"
+  - "voltage transformer"
+  - "signal conditioning"
+  - "high voltage measurement"
+  - "precision measurement"
+  - "voltage transformation"
+  - "range conversion"
+  - "power measurement"
+  - "high voltage conversion"
+  - "extreme voltage"
+  - "1kV equals how many mV"
+  - "high voltage signal conversion"
+  - "voltage sensor"
+  - "measurement transformer"
+  - "voltage acquisition"
 ---
 
-# 千伏(kV)转毫伏(mV)换算器 - 高压到微信号转换工具
+# Kilovolt (kV) to Millivolt (mV) Converter - High Voltage to Micro Signal Conversion Tool
 
-**千伏到毫伏转换**展现了电压测量技术的精髓，从高压电力系统到精密测量仪表的完整技术链条。本页面提供专业的kV转mV计算工具，并详细介绍电压互感器、信号调理技术和高压测量原理，帮助您掌握高压到微弱信号的转换技术。
+**Kilovolt to millivolt conversion** demonstrates the essence of voltage measurement technology, the complete technical chain from high voltage power systems to precision measurement instruments. This page provides professional kV to mV calculation tools and detailed introduction to voltage transformers, signal conditioning technology, and high voltage measurement principles, helping you master the conversion technology from high voltage to weak signals.
 
 ---
 
@@ -53,10 +52,10 @@ import { Voltage } from '../files';
 
 const convert = inject('convert')
 const seoKey = [
-  '千伏转毫伏','kV转mV','千伏到毫伏','电压单位换算','kV to mV',
-  '千伏换算毫伏','电压互感器','信号调理','高压测量','精密测量',
-  '电压变换','量程转换','电力测量','高压转换','极值电压',
-  '1kV等于多少mV','高压信号转换','电压传感器','测量变换器','电压采集'
+  'kilovolt to millivolt','kV to mV','kilovolt to millivolt conversion','voltage unit conversion','kV to mV converter',
+  'voltage transformer','signal conditioning','high voltage measurement','precision measurement',
+  'voltage transformation','range conversion','power measurement','high voltage conversion','extreme voltage',
+  '1kV equals how many mV','high voltage signal conversion','voltage sensor','measurement transformer','voltage acquisition'
 ]
 
 const formRef = ref(null);
@@ -65,14 +64,14 @@ const rules = {
     required: true,
     type: 'number',
     trigger: "blur",
-    message: '请输入数字'
+    message: 'Please enter a number'
   }
 }
 
 const form = reactive({
   number: null,
   result: '',
-  title: '千伏(kV)转毫伏(mV)',
+  title: 'Kilovolt (kV) to Millivolt (mV)',
 })
 
 const convertHandler = (e) => {
@@ -87,11 +86,11 @@ const convertHandler = (e) => {
 </script>
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="千伏(kV)数值" path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="请输入千伏数值" />
+  <n-form-item label="Kilovolt (kV) Value" path="number">
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="Enter kilovolt value" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" style="width:100%" @click="convertHandler">转换为毫伏(mV)</n-button>
+    <n-button type="info" style="width:100%" @click="convertHandler">Convert to Millivolt (mV)</n-button>
   </n-form-item>
 </n-form>
 <n-card embedded :bordered="false" hoverable style="margin-top: 16px;">
@@ -112,172 +111,172 @@ const convertHandler = (e) => {
   </template>
 </n-card>
 
-## 千伏转毫伏换算知识
+## Kilovolt to Millivolt Conversion Knowledge
 
-### 换算公式
+### Conversion Formula
 
-**基本换算关系：**
+**Basic conversion relationship:**
 - **1kV = 1,000,000mV**
-- **换算公式：mV = kV × 1,000,000**
+- **Conversion formula: mV = kV × 1,000,000**
 
-**电力系统电压转换示例：**
-| 千伏(kV) | 毫伏(mV) | 变换比 | 应用场景 |
-|----------|----------|--------|----------|
-| 0.22kV | 220,000mV | 1:2200 | 家用电压测量 |
-| 0.38kV | 380,000mV | 1:3800 | 工业电压监测 |
-| 10kV | 10,000,000mV | 1:100000 | 配电网监测 |
-| 35kV | 35,000,000mV | 1:350000 | 输电线路监测 |
-| 110kV | 110,000,000mV | 1:1100000 | 变电站监测 |
-| 220kV | 220,000,000mV | 1:2200000 | 主网监测 |
-| 500kV | 500,000,000mV | 1:5000000 | 特高压监测 |
+**Power system voltage conversion examples:**
+| Kilovolt (kV) | Millivolt (mV) | Transformation Ratio | Application Scenario |
+|---------------|----------------|---------------------|---------------------|
+| 0.22kV | 220,000mV | 1:2200 | Household voltage measurement |
+| 0.38kV | 380,000mV | 1:3800 | Industrial voltage monitoring |
+| 10kV | 10,000,000mV | 1:100000 | Distribution network monitoring |
+| 35kV | 35,000,000mV | 1:350000 | Transmission line monitoring |
+| 110kV | 110,000,000mV | 1:1100000 | Substation monitoring |
+| 220kV | 220,000,000mV | 1:2200000 | Main grid monitoring |
+| 500kV | 500,000,000mV | 1:5000000 | Extra high voltage monitoring |
 
-### 电压互感器技术
+### Voltage Transformer Technology
 
-#### 电磁式电压互感器
-- **工作原理**：基于电磁感应原理
-- **变比范围**：10kV/100V，35kV/100V
-- **精度等级**：0.2级、0.5级、1.0级
-- **应用场景**：电力系统测量保护
+#### Electromagnetic Voltage Transformers
+- **Working principle**: Based on electromagnetic induction principle
+- **Transformation ratio range**: 10kV/100V, 35kV/100V
+- **Accuracy classes**: 0.2 class, 0.5 class, 1.0 class
+- **Application scenarios**: Power system measurement and protection
 
-**典型变比：**
-- **10kV/100V**：变比100:1，10kV → 100V → 100000mV
-- **35kV/100V**：变比350:1，35kV → 100V → 100000mV
-- **110kV/100V**：变比1100:1，110kV → 100V → 100000mV
+**Typical transformation ratios:**
+- **10kV/100V**: Ratio 100:1, 10kV → 100V → 100000mV
+- **35kV/100V**: Ratio 350:1, 35kV → 100V → 100000mV
+- **110kV/100V**: Ratio 1100:1, 110kV → 100V → 100000mV
 
-#### 电容式电压互感器
-- **工作原理**：电容分压原理
-- **适用电压**：110kV及以上
-- **结构特点**：电容分压器+电磁单元
-- **优势**：成本低、体积小
+#### Capacitive Voltage Transformers
+- **Working principle**: Capacitive voltage division principle
+- **Applicable voltage**: 110kV and above
+- **Structural features**: Capacitive voltage divider + electromagnetic unit
+- **Advantages**: Low cost, compact size
 
-#### 光电式电压互感器
-- **工作原理**：电光效应
-- **技术特点**：数字化输出
-- **应用优势**：绝缘性能好、抗干扰强
-- **发展趋势**：智能电网首选
+#### Optical Voltage Transformers
+- **Working principle**: Electro-optical effect
+- **Technical features**: Digital output
+- **Application advantages**: Good insulation performance, strong anti-interference
+- **Development trend**: Preferred choice for smart grids
 
-### 信号调理技术
+### Signal Conditioning Technology
 
-#### 电压衰减
-- **电阻分压**：高精度电阻网络
-- **衰减比例**：1:1000，1:10000
-- **频率响应**：DC-100kHz
-- **精度要求**：±0.1%
+#### Voltage Attenuation
+- **Resistive voltage division**: High-precision resistor networks
+- **Attenuation ratios**: 1:1000, 1:10000
+- **Frequency response**: DC-100kHz
+- **Accuracy requirements**: ±0.1%
 
-#### 隔离放大
-- **光电隔离**：隔离电压>2.5kV
-- **磁隔离**：变压器隔离
-- **数字隔离**：数字信号隔离
-- **共模抑制**：>100dB
+#### Isolation Amplification
+- **Optical isolation**: Isolation voltage >2.5kV
+- **Magnetic isolation**: Transformer isolation
+- **Digital isolation**: Digital signal isolation
+- **Common mode rejection**: >100dB
 
-#### 滤波处理
-- **低通滤波**：抑制高频干扰
-- **带通滤波**：提取特定频率
-- **数字滤波**：软件算法实现
-- **自适应滤波**：动态调整参数
+#### Filtering Processing
+- **Low-pass filtering**: Suppress high-frequency interference
+- **Band-pass filtering**: Extract specific frequencies
+- **Digital filtering**: Software algorithm implementation
+- **Adaptive filtering**: Dynamic parameter adjustment
 
-### 高压测量系统
+### High Voltage Measurement System
 
-#### 测量链路设计
+#### Measurement Chain Design
 ```
-高压电网 → 电压互感器 → 信号调理 → ADC采集 → 数字处理 → 显示输出
-  kV级    →    100V     →   0-5V    →  数字量  →  算法   →   mV显示
+High Voltage Grid → Voltage Transformer → Signal Conditioning → ADC Acquisition → Digital Processing → Display Output
+    kV level      →      100V          →      0-5V        →   Digital      →   Algorithm    →   mV Display
 ```
 
-#### 精度分配
-- **互感器精度**：0.2级 (±0.2%)
-- **信号调理精度**：±0.1%
-- **ADC精度**：16位 (±0.0015%)
-- **系统总精度**：±0.5%
+#### Precision Allocation
+- **Transformer accuracy**: 0.2 class (±0.2%)
+- **Signal conditioning accuracy**: ±0.1%
+- **ADC accuracy**: 16-bit (±0.0015%)
+- **System total accuracy**: ±0.5%
 
-#### 校准技术
-- **标准电压源**：高精度基准
-- **比较法校准**：与标准比较
-- **溯源体系**：国家计量标准
-- **现场校验**：便携式校验仪
+#### Calibration Technology
+- **Standard voltage source**: High-precision reference
+- **Comparison calibration**: Comparison with standards
+- **Traceability system**: National measurement standards
+- **Field verification**: Portable verification instruments
 
-### 实际应用案例
+### Practical Application Cases
 
-#### 电力系统监测
-- **SCADA系统**：电网实时监测
-- **PMU装置**：同步相量测量
-- **故障录波器**：故障信息记录
-- **电能质量监测**：电压质量分析
+#### Power System Monitoring
+- **SCADA systems**: Real-time grid monitoring
+- **PMU devices**: Synchronized phasor measurement
+- **Fault recorders**: Fault information recording
+- **Power quality monitoring**: Voltage quality analysis
 
-**技术参数：**
-- **采样频率**：10kHz-100kHz
-- **测量范围**：0.1kV-800kV
-- **测量精度**：±0.5%
-- **响应时间**：<1ms
+**Technical parameters:**
+- **Sampling frequency**: 10kHz-100kHz
+- **Measurement range**: 0.1kV-800kV
+- **Measurement accuracy**: ±0.5%
+- **Response time**: <1ms
 
-#### 科研实验室
-- **高压试验**：绝缘试验监测
-- **材料研究**：电介质特性测试
-- **器件测试**：高压器件性能
-- **标准实验室**：电压标准维持
+#### Research Laboratories
+- **High voltage testing**: Insulation test monitoring
+- **Material research**: Dielectric property testing
+- **Device testing**: High voltage device performance
+- **Standards laboratories**: Voltage standard maintenance
 
-#### 工业自动化
-- **过程监控**：工业电压监测
-- **设备保护**：过压欠压保护
-- **质量控制**：产品电压测试
-- **安全监测**：人员安全保护
+#### Industrial Automation
+- **Process monitoring**: Industrial voltage monitoring
+- **Equipment protection**: Overvoltage and undervoltage protection
+- **Quality control**: Product voltage testing
+- **Safety monitoring**: Personnel safety protection
 
-### 技术发展趋势
+### Technology Development Trends
 
-#### 数字化技术
-- **数字化互感器**：IEC61850标准
-- **智能传感器**：自诊断功能
-- **网络化测量**：以太网通信
-- **云端处理**：大数据分析
+#### Digitalization Technology
+- **Digital transformers**: IEC61850 standard
+- **Smart sensors**: Self-diagnostic functions
+- **Networked measurement**: Ethernet communication
+- **Cloud processing**: Big data analysis
 
-#### 精度提升
-- **温度补偿**：全温度范围补偿
-- **非线性校正**：软件算法校正
-- **多点校准**：全量程校准
-- **实时校准**：在线校准技术
+#### Precision Improvement
+- **Temperature compensation**: Full temperature range compensation
+- **Nonlinearity correction**: Software algorithm correction
+- **Multi-point calibration**: Full-range calibration
+- **Real-time calibration**: Online calibration technology
 
-#### 安全性增强
-- **冗余设计**：双重保护
-- **故障诊断**：自动故障检测
-- **安全隔离**：多重隔离保护
-- **网络安全**：信息安全防护
+#### Safety Enhancement
+- **Redundant design**: Dual protection
+- **Fault diagnosis**: Automatic fault detection
+- **Safety isolation**: Multiple isolation protection
+- **Network security**: Information security protection
 
-### 设计考虑要素
+### Design Considerations
 
-#### 安全要求
-- **绝缘等级**：满足电压等级要求
-- **爬电距离**：防止表面闪络
-- **安全距离**：人员安全保护
-- **接地系统**：可靠接地保护
+#### Safety Requirements
+- **Insulation level**: Meet voltage level requirements
+- **Creepage distance**: Prevent surface flashover
+- **Safety distance**: Personnel safety protection
+- **Grounding system**: Reliable grounding protection
 
-#### 环境适应性
-- **温度范围**：-40℃~+85℃
-- **湿度要求**：5%~95%RH
-- **海拔高度**：≤4000m
-- **抗震要求**：地震烈度8度
+#### Environmental Adaptability
+- **Temperature range**: -40℃~+85℃
+- **Humidity requirements**: 5%~95%RH
+- **Altitude**: ≤4000m
+- **Seismic requirements**: Seismic intensity 8 degrees
 
-#### 电磁兼容
-- **抗干扰能力**：工频磁场、射频干扰
-- **发射限制**：不影响其他设备
-- **浪涌保护**：雷电冲击保护
-- **静电防护**：ESD保护
+#### Electromagnetic Compatibility
+- **Anti-interference capability**: Power frequency magnetic field, radio frequency interference
+- **Emission limits**: Do not affect other equipment
+- **Surge protection**: Lightning impulse protection
+- **Electrostatic protection**: ESD protection
 
-### 常见问题解答
+### Frequently Asked Questions
 
-**Q: 1kV等于多少mV？**
-A: 1kV = 1,000,000mV，相差100万倍。
+**Q: How many mV does 1kV equal?**
+A: 1kV = 1,000,000mV, a difference of 1 million times.
 
-**Q: 为什么需要将kV转换为mV？**
-A: 高压不能直接测量，需要通过电压互感器等设备转换为低电压信号进行测量。
+**Q: Why is it necessary to convert kV to mV?**
+A: High voltage cannot be measured directly and needs to be converted to low voltage signals through voltage transformers and other equipment for measurement.
 
-**Q: 电压互感器的精度如何保证？**
-A: 通过精密制造、温度补偿、定期校准等措施保证精度。
+**Q: How is the accuracy of voltage transformers ensured?**
+A: Accuracy is ensured through precision manufacturing, temperature compensation, regular calibration, and other measures.
 
-**Q: 高压测量有哪些安全注意事项？**
-A: 必须使用专用测量设备，保持安全距离，做好绝缘防护。
+**Q: What are the safety precautions for high voltage measurement?**
+A: Must use specialized measurement equipment, maintain safe distances, and ensure proper insulation protection.
 
-**Q: 数字化电压互感器有什么优势？**
-A: 精度高、抗干扰强、便于组网、支持智能化功能。
+**Q: What are the advantages of digital voltage transformers?**
+A: High accuracy, strong anti-interference capability, easy networking, and support for intelligent functions.
 
 ### 相关链接
 <n-grid x-gap="12" :cols="2">

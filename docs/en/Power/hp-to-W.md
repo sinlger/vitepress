@@ -1,202 +1,172 @@
 ---
-sidebar: false
-aside: false
-lastUpdated: false
-breadcrumb:
-  - - link: /
-      linkText: 首页
-  - - link: /Power/index
-      linkText: 功率换算
-  - - link: /Power/hp-to-W
-      linkText: 英制马力转瓦特
-head:
-  - - meta
-    - name: description
-      content: "专业的英制马力(hp)到瓦特(W)功率单位换算工具。提供精确换算公式、实时计算器、工程应用案例和技术指导，适用于电机设备、汽车工程、机械设备等领域的国际标准功率单位转换需求。"
-  - - meta
-    - name: keywords
-      content: "英制马力转瓦特,hp到W换算,瓦特换算,功率单位换算,电机功率换算,汽车功率换算,机械设备功率,国际标准功率,功率单位转换工具,hp换算公式,W计算器,电机马力换算,工程功率计算"
+title: "Horsepower (hp) to Watt (W) Conversion"
+description: "Professional horsepower (hp) to watt (W) conversion tool, providing precise power unit conversion formulas and real-time calculation functions. Suitable for automotive engineering, industrial equipment, motor selection, and other professional application scenarios, supporting bidirectional conversion between hp and W."
+keywords:
+  - Horsepower to watt
+  - hp to W conversion
+  - Power unit conversion
+  - Horsepower unit
+  - Power unit
+  - Power calculation formula
+  - Automotive power conversion
+  - Motor power unit
+  - Industrial equipment power
+  - Watt unit conversion
+  - Power unit conversion tool
+  - Automotive and industrial units
+breadcrumbs:
+  - name: Home
+    linkText: Home
+    linkUrl: /
+  - name: Power Conversion
+    linkText: Power Conversion
+    linkUrl: /zh/Power/
+  - name: Horsepower to Watt Conversion
+    linkText: Horsepower to Watt Conversion
+    linkUrl: /zh/Power/hp-to-W
+meta:
+  - name: description
+    content: "Professional horsepower (hp) to watt (W) conversion tool, providing precise power unit conversion formulas and real-time calculation functions. Suitable for automotive engineering, industrial equipment, motor selection, and other professional application scenarios, supporting bidirectional conversion between hp and W."
+  - name: keywords
+    content: "Horsepower to watt,hp to W conversion,Power unit conversion,Horsepower unit,Power unit,Power calculation formula,Automotive power conversion,Motor power unit,Industrial equipment power,Watt unit conversion,Power unit conversion tool,Automotive and industrial units"
 ---
-# 英制马力 (hp) 到瓦特 (W) 换算
 
-英制马力(hp)到瓦特(W)的换算是从传统机械功率单位到国际标准功率单位的重要转换。瓦特是国际单位制(SI)中的功率单位，广泛应用于电机、电子设备和科学计算中，而英制马力则常用于汽车、船舶和传统机械设备的功率标注。这种换算在国际贸易、技术交流和设备选型中具有重要意义。
+# Horsepower (hp) to Watt (W) Conversion
 
-本工具提供专业的hp到W换算功能，支持高精度计算和实时转换，适用于工程师、技术人员和设备采购人员的专业需求。
+The conversion from horsepower (hp) to watt (W) is a fundamental calculation in automotive engineering and industrial equipment. Horsepower is a traditional power unit widely used in automotive and mechanical industries, while watt is the international standard power unit. This tool provides precise hp to W conversion functionality, supporting bidirectional conversion, suitable for automotive engine power calculation, motor selection, industrial equipment power matching, and other professional application scenarios.
 
 <script setup>
-import { onMounted,reactive,inject ,ref  } from 'vue'
-import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage ,NGrid ,NGi } from 'naive-ui'
-import { defineClientComponent } from 'vitepress'
-import { Power } from '../files';
+import { ref, computed } from 'vue'
 
-// SEO关键词数组
-const seoKey = [
-  '英制马力换算', 'hp转W', '瓦特计算', '功率单位换算', 
-  '电机功率换算', '汽车功率换算', '机械设备功率', '国际标准功率',
-  'W计算器', '电机马力换算', '工程功率计算', '功率转换工具'
-];
-const convert = inject('convert')
-const options =  [
-  { "label": "英制马力 (hp)","value": "hp" },
-  { "label": "瓦特 (W)","value": "W" }
-];
-const formRef = ref(null);
+const form = ref({
+  number: 0,
+  to: 'W'
+})
+
+const options = [
+  { label: 'Horsepower (hp)', value: 'hp' },
+  { label: 'Watt (W)', value: 'W' }
+]
+
 const rules = {
-  number:{
+  number: {
     required: true,
-    type: 'number',
-    trigger: "blur",
-    message: '请输入数字'
-  },
-  to:{
-    required: true,
-    trigger: "select",
-    message: '请选择转换单位'
-  },
-  from:{
-    required: true,
-    trigger: "select",
-    message: '请选择原始单位'
+    message: 'Please enter a number',
+    trigger: ['blur', 'input']
   }
 }
-const form = reactive({
-  number:null,
-  to:'',
-  from:'',
-  result:'',
-  title:'英制马力转瓦特',
-})
-const convertHandler = (e) => {
-   e.preventDefault();
-  formRef.value?.validate((errors)=>{
-    if (!errors) {
-      form.result = `${form.number}${form.from} = ${convert(form.number).from(form.from).to(form.to)}${form.to}`
-    }
-  })
+
+const result = ref('')
+
+const convertHandler = () => {
+  if (form.value.to === 'W') {
+    result.value = (form.value.number * 745.7).toFixed(4) + ' W'
+  } else {
+    result.value = (form.value.number / 745.7).toFixed(4) + ' hp'
+  }
 }
 </script>
 
-<n-card title="英制马力(hp) ⇄ 瓦特(W) 换算器" size="large" :bordered="false" embedded>
-<n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="数值"  path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数值" />
-  </n-form-item>
-  <n-form-item label="从" path="from">
-    <n-select  size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
-  </n-form-item>
-  <n-form-item label="到" path="to">
-    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
-  </n-form-item>
-  <n-form-item>
-    <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
-  </n-form-item>
+<n-card
+  title="Horsepower (hp) to Watt (W) Converter"
+  embedded
+  :bordered="false"
+  hoverable
+>
+<n-form :model="form" :rules="rules" ref="formRef">
+<n-form-item label="Value" path="number">
+<n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="Enter the value to convert" />
+</n-form-item>
+<n-form-item label="To" path="to">
+<n-select size="large" :options="options" v-model:value="form.to" placeholder="Select conversion unit" />
+</n-form-item>
+<n-form-item>
+<n-button type="info" style="width:100%" @click="convertHandler">Convert</n-button>
+</n-form-item>
+<n-form-item v-if="result">
+<n-text type="success" style="font-size: 18px; font-weight: bold;">{{ result }}</n-text>
+</n-form-item>
 </n-form>
-<n-card  embedded :bordered="false" hoverable>
-  <div  style="text-align:center;font-size:20px;">
-    <strong>{{form.result}}</strong>
-  </div>
 </n-card>
 
-<template #footer>
-  <div style="text-align: center; color: #666; font-size: 12px;">
-    <span v-for="(keyword, index) in seoKey" :key="index">
-      {{ keyword }}<span v-if="index < seoKey.length - 1"> | </span>
-    </span>
-  </div>
-</template>
-</n-card>
+## Detailed Conversion Formula
 
-## 换算公式
+**Basic conversion relationship:**
+- 1 horsepower (hp) = 745.7 watts (W)
+- 1 watt (W) = 0.001341 horsepower (hp)
 
-### 基本换算关系
-- **1 英制马力 (hp) = 745.7 瓦特 (W)**
-- **1 瓦特 (W) = 0.001341 英制马力 (hp)**
+**Precise conversion formula:**
+- **hp to W**: W = hp × 745.7
+- **W to hp**: hp = W × 0.001341
 
-### 换算系数
-- hp → W：乘以 745.7
-- W → hp：乘以 0.001341 (或除以 745.7)
+**Common value reference table:**
+| Horsepower (hp) | Watts (W) |
+|-----------------|-----------|
+| 1 | 745.7 |
+| 5 | 3,728.5 |
+| 10 | 7,457 |
+| 50 | 37,285 |
+| 100 | 74,570 |
+| 500 | 372,850 |
 
-### 精确换算公式
-- 1 hp = 745.699872 W (精确值)
-- 工程计算中通常使用 745.7 W
+## Application Examples
 
-### 常用数值对照表
-| 英制马力 (hp) | 瓦特 (W) |
-|---------------|----------|
-| 0.5 hp | 373 W |
-| 1 hp | 746 W |
-| 2 hp | 1,491 W |
-| 5 hp | 3,729 W |
-| 10 hp | 7,457 W |
-| 50 hp | 37,285 W |
-| 100 hp | 74,570 W |
+### Automotive Engineering
+- **Engine power**: Car engines typically range from 100-500hp (74.57-372.85kW), requiring precise W conversion for technical specifications
+- **Electric vehicle motors**: Electric vehicle motor power is usually marked in kW, but traditional automotive industry still uses hp for comparison
+- **Motorcycle engines**: Motorcycle engine power ranges from 10-200hp, requiring hp to W conversion for international market specifications
 
-## 工程应用实例
+### Industrial Equipment
+- **Industrial motors**: Industrial motor power is usually marked in kW, but some traditional equipment still uses hp marking
+- **Pumps and compressors**: Pump and compressor power conversion between hp and W standards for equipment selection
+- **Generator sets**: Generator power marking (hp) and electrical output (W) conversion calculation
 
-### 电机与驱动系统
-- **工业电机**：5 hp三相异步电机(3,729 W)，广泛用于泵、风机、压缩机驱动
-- **伺服电机**：2 hp伺服电机(1,491 W)，用于数控机床和自动化设备
-- **变频器选型**：10 hp电机需要配置7.5 kW(7,500 W)变频器
+### Motor Selection
+- **Electric motor power**: Motor nameplate power (hp) and actual power consumption (W) conversion
+- **Servo motor applications**: Precision servo motor power calculation and unit conversion
+- **Variable frequency drive**: VFD motor power matching and unit unification
 
-### 汽车与交通工具
-- **家用汽车发动机**：150 hp发动机(111,855 W)，适用于中型轿车
-- **摩托车发动机**：50 hp摩托车发动机(37,285 W)，用于大排量运动摩托
-- **电动汽车电机**：200 hp电动机(149,140 W)，提供强劲的加速性能
+## Usage Recommendations
 
-### 工业设备与机械
-- **空压机系统**：25 hp螺杆空压机(18,643 W)，满足中型工厂用气需求
-- **水泵设备**：15 hp离心泵(11,186 W)，用于建筑给排水系统
-- **农业机械**：100 hp拖拉机(74,570 W)，适用于大型农田作业
+### Conversion Precision
+- **Engineering calculations**: Use precise conversion coefficient 745.7, retain 4 decimal places
+- **Equipment selection**: Consider motor efficiency, usually 85-95%
+- **Load conditions**: Motor actual power varies with load, perform conversion under rated conditions
 
-### 家用电器与设备
-- **中央空调**：5 hp中央空调压缩机(3,729 W)，适用于大型住宅
-- **洗衣机电机**：0.5 hp洗衣机电机(373 W)，提供洗涤动力
-- **吸尘器电机**：2 hp工业吸尘器(1,491 W)，用于重型清洁作业
+### Application Standards
+- **International projects**: Recommend using international units (W/kW) as primary units
+- **Regional standards**: North America commonly uses hp, Europe and Asia use W/kW
+- **Technical documentation**: Recommend providing both hp and W values simultaneously
 
-## 专业使用指南
+### Design Considerations
+- **Safety margin**: Motor selection should consider 15-25% power margin
+- **Efficiency factors**: Actual power conversion should consider motor efficiency
+- **Operating conditions**: Consider the impact of ambient temperature and load characteristics on motor performance
 
-### 换算精度要求
-- **电机选型**：建议保留整数瓦特值，便于标准电机规格匹配
-- **功率计算**：工程计算中使用745.7作为换算系数，满足工程精度
-- **能效分析**：使用精确值745.699872进行科学计算和能效评估
+## FAQ
 
-### 注意事项
-- **额定功率vs输出功率**：区分电机额定功率和实际输出功率
-- **效率因素**：考虑传动效率、电机效率等损耗因素
-- **环境条件**：温度、湿度、海拔等环境因素影响实际功率
+**Q: Why is hp to W conversion needed?**
+A: In automotive and industrial fields, traditional equipment uses hp marking, while modern international standards use W/kW. Conversion helps with equipment selection and technical communication.
 
-### 相关标准
-- **IEC 60034**：国际电工委员会电机标准
-- **NEMA MG1**：美国电机制造商协会电机标准
-- **GB/T 1032**：中国三相异步电动机试验方法
+**Q: Is the hp to W conversion accurate?**
+A: The conversion coefficient is a precise physical constant. Theoretical conversion: 1 hp = 745.7 W, but practical applications need to consider equipment efficiency.
 
-## 常见问题解答
+**Q: What are the characteristics of hp as a power unit?**
+A: Horsepower is a traditional power unit, mainly used in automotive and mechanical industries, suitable for describing engine and motor power.
 
-### Q: 为什么电机功率要从hp换算到W？
-A: 瓦特是国际标准单位，便于与其他设备功率比较，也是电力系统计算的标准单位。在国际贸易和技术交流中使用W更加通用。
+**Q: How to use this conversion in motor selection?**
+A: Motor nameplate power (hp) can be converted to electrical power (W), but actual power consumption also depends on load conditions and motor efficiency.
 
-### Q: 电机铭牌上的hp和实际功率有什么区别？
-A: 铭牌功率是额定功率，实际运行功率取决于负载情况。电机通常不会满负荷运行，实际功率可能是额定功率的60-80%。
+**Q: What special requirements do automotive engines have for power conversion?**
+A: Automotive engines need to consider power output under different operating conditions. It's recommended to use maximum power for conversion and consider actual operating efficiency.
 
-### Q: 如何根据hp选择合适的电缆和开关？
-A: 先将hp换算为W，再根据电压计算电流，然后选择合适的电缆截面和保护开关。需要考虑启动电流和安全系数。
+**Q: What should be noted in international project applications?**
+A: International projects should consider different regional standards, recommend using W/kW as the primary unit and providing hp conversion values, ensuring technical documentation clarity.
 
-### Q: 变频器功率如何与电机hp匹配？
-A: 一般选择比电机功率大一个等级的变频器。例如5 hp电机(3.7 kW)选择4 kW变频器，确保有足够的过载能力。
+**Q: Is conversion through kW intermediate more accurate?**
+A: Yes, using kW as intermediate conversion (hp→kW→W) can reduce cumulative errors and is suitable for high-precision engineering calculations.
 
-### Q: 电动汽车的kW功率如何与传统汽车hp比较？
-A: 电动汽车通常标注kW，可以换算为hp进行比较。但需要注意电机和内燃机的功率特性不同，电机可以在更宽转速范围内提供峰值功率。
-
-## 相关连接
-<n-grid x-gap="12" :cols="2">
-  <n-gi v-for="(file,index) in Power" :key="index">
-    <n-button
-      text
-      tag="a"
-      :href="file.path"
-      type="info"
-    >
-      {{file.name}}
-    </n-button>
-  </n-gi>
-</n-grid>
+## Related Links
+- [Horsepower to Kilowatt Conversion](/zh/Power/hp-to-kW)
+- [Watt to Horsepower Conversion](/zh/Power/W-to-hp)
+- [Power Unit Conversion](/zh/Power/)

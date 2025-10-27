@@ -1,195 +1,213 @@
 ---
-sidebar: false
-aside: false
-lastUpdated: false
-breadcrumb:
-  - - link: /
-      linkText: 首页
-  - - link: /Power/index
-      linkText: 功率换算
-  - - link: /Power/kW-to-PS
-      linkText: 千瓦转公制马力
-head:
-  - - meta
-    - name: description
-      content: "专业的千瓦(kW)到公制马力(PS)功率单位换算工具，提供精确的kW转PS计算公式和实时换算功能。涵盖汽车发动机、农业机械、工业设备等应用场景，支持欧系设备功率计算、汽车工程设计、机械设备选型等专业需求。"
-  - - meta
-    - name: keywords
-      content: "千瓦转公制马力,kW到PS换算,功率单位换算,PS是什么单位,千瓦单位,功率计算公式,公制马力,汽车发动机功率,农业机械功率,工业设备功率,欧系设备功率,汽车工程设计,机械设备选型"
+title: "Kilowatt (kW) to Metric Horsepower (PS) Conversion"
+description: "Professional kilowatt (kW) to metric horsepower (PS) power unit conversion tool, providing precise kW to PS calculation formulas and real-time conversion functions. Covers application scenarios such as automotive engines, agricultural machinery, industrial equipment, supporting European equipment power calculations, automotive engineering design, mechanical equipment selection and other professional needs."
+keywords:
+  - Kilowatt to metric horsepower
+  - kW to PS conversion
+  - Power unit conversion
+  - What is PS unit
+  - Kilowatt unit
+  - Power calculation formula
+  - Metric horsepower
+  - Automotive engine power
+  - Agricultural machinery power
+  - Industrial equipment power
+  - European equipment power
+  - Automotive engineering design
+  - Mechanical equipment selection
+breadcrumbs:
+  - name: Home
+    linkText: Home
+    linkUrl: /
+  - name: Power Conversion
+    linkText: Power Conversion
+    linkUrl: /zh/Power/
+  - name: Kilowatt to Metric Horsepower
+    linkText: Kilowatt to Metric Horsepower
+    linkUrl: /zh/Power/kW-to-PS
+meta:
+  - name: description
+    content: "Professional kilowatt (kW) to metric horsepower (PS) power unit conversion tool, providing precise kW to PS calculation formulas and real-time conversion functions. Covers application scenarios such as automotive engines, agricultural machinery, industrial equipment, supporting European equipment power calculations, automotive engineering design, mechanical equipment selection and other professional needs."
+  - name: keywords
+    content: "Kilowatt to metric horsepower,kW to PS conversion,Power unit conversion,What is PS unit,Kilowatt unit,Power calculation formula,Metric horsepower,Automotive engine power,Agricultural machinery power,Industrial equipment power,European equipment power,Automotive engineering design,Mechanical equipment selection"
 ---
-# 千瓦 (kW) 到公制马力 (PS) 换算
+# Kilowatt (kW) to Metric Horsepower (PS) Conversion
 
-千瓦(kW)到公制马力(PS)的功率单位换算是欧洲汽车工业和机械工程中的重要计算。本工具提供精确的kW转PS换算功能，支持汽车发动机功率标注、农业机械选型、欧系工业设备配置等专业应用。广泛用于汽车工程、农业机械、工业制造、能源设备等领域的功率计算和技术对接。
+The conversion from kilowatt (kW) to metric horsepower (PS) is an important calculation in European automotive industry and mechanical engineering. This tool provides precise kW to PS conversion functionality, supporting automotive engine power rating, agricultural machinery selection, European industrial equipment configuration and other professional applications. Widely used in automotive engineering, agricultural machinery, industrial manufacturing, energy equipment and other fields for power calculations and technical integration.
 
 <script setup>
-import { onMounted,reactive,inject ,ref  } from 'vue'
-import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage ,NGrid ,NGi } from 'naive-ui'
-import { defineClientComponent } from 'vitepress'
-import { Power } from '../files';
+import { ref, computed } from 'vue'
+
 const seoKey = [
-  '千瓦转公制马力',
-  'kW到PS换算',
-  'PS是什么单位',
-  '千瓦单位',
-  '功率计算公式',
-  '公制马力',
-  '汽车发动机功率',
-  '农业机械功率',
-  '工业设备功率',
-  '欧系设备功率',
-  '汽车工程设计',
-  '机械设备选型'
+  'Kilowatt to metric horsepower',
+  'kW to PS conversion',
+  'What is PS unit',
+  'Kilowatt unit',
+  'Power calculation formula',
+  'Metric horsepower',
+  'Automotive engine power',
+  'Agricultural machinery power',
+  'Industrial equipment power',
+  'European equipment power',
+  'Automotive engineering design',
+  'Mechanical equipment selection'
 ]
-const convert = inject('convert')
-const options =  [
-  { "label": "千瓦 (kW)","value": "kW" },
-  { "label": "公制马力 (PS)","value": "PS" }
-];
-const formRef = ref(null);
+
+const form = ref({
+  number: 0,
+  from: 'kW',
+  to: 'PS',
+  result: ''
+})
+
+const options = [
+  { "label": "Kilowatt (kW)", "value": "kW" },
+  { "label": "Metric Horsepower (PS)", "value": "PS" }
+]
+
 const rules = {
-  number:{
+  number: {
     required: true,
-    type: 'number',
-    trigger: "blur",
-    message: '请输入数字'
+    message: 'Please enter a number',
+    trigger: ['blur', 'input']
   },
-  to:{
+  to: {
     required: true,
-    trigger: "select",
-    message: '请选择转换单位'
+    message: 'Please select conversion unit',
+    trigger: 'select'
   },
-  from:{
+  from: {
     required: true,
-    trigger: "select",
-    message: '请选择原始单位'
+    message: 'Please select original unit',
+    trigger: 'select'
   }
 }
-const form = reactive({
-  number:null,
-  to:'',
-  from:'',
-  result:'',
-  title:'千瓦转公制马力',
-})
-const convertHandler = (e) => {
-   e.preventDefault();
-  formRef.value?.validate((errors)=>{
-    if (!errors) {
-      form.result = `${form.number}${form.from} = ${convert(form.number).from(form.from).to(form.to)}${form.to}`
-    }
-  })
+
+const convertHandler = () => {
+  if (form.value.from === 'kW' && form.value.to === 'PS') {
+    form.value.result = `${form.value.number} kW = ${(form.value.number * 1.35962).toFixed(2)} PS`
+  } else if (form.value.from === 'PS' && form.value.to === 'kW') {
+    form.value.result = `${form.value.number} PS = ${(form.value.number / 1.35962).toFixed(4)} kW`
+  } else {
+    form.value.result = `${form.value.number} ${form.value.from} = ${form.value.number} ${form.value.to}`
+  }
 }
 </script>
 
-<n-card
-  title="千瓦(kW)到公制马力(PS)换算器"
+<n-form size="large" :model="form" :rules="rules">
+  <n-form-item label="Value" path="number">
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="Enter the value to convert" />
+  </n-form-item>
+  <n-form-item label="From" path="from">
+    <n-select size="large" :options="options" v-model:value="form.from" placeholder="Select original unit" />
+  </n-form-item>
+  <n-form-item label="To" path="to">
+    <n-select size="large" :options="options" v-model:value="form.to" placeholder="Select conversion unit" />
+  </n-form-item>
+  <n-form-item>
+    <n-button type="info" style="width:100%" @click="convertHandler">Convert</n-button>
+  </n-form-item>
+</n-form>
+<n-card  
+  title="Kilowatt to Metric Horsepower Conversion"
   :segmented="{
     content: true,
     footer: 'soft',
   }"
 >
-  <n-form size="large" :model="form" ref='formRef' :rules="rules">
-    <n-form-item label="数值"  path="number">
-      <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数值" />
-    </n-form-item>
-    <n-form-item label="从" path="from">
-      <n-select  size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
-    </n-form-item>
-    <n-form-item label="到" path="to">
-      <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
-    </n-form-item>
-    <n-form-item>
-      <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
-    </n-form-item>
-  </n-form>
-  <n-card  embedded :bordered="false" hoverable>
-    <div  style="text-align:center;font-size:20px;">
-      <strong>{{form.result}}</strong>
-    </div>
-  </n-card>
+  <div style="text-align:center;font-size:20px;">
+    <strong>{{form.result}}</strong>
+  </div>
   <template #footer>
     <div>
-      <span v-for="item of seoKey">{{item}}，</span>
+      <span v-for="item of seoKey">{{item}}, </span>
     </div>
   </template>
 </n-card>
 
-## 换算公式
+## Conversion Formula
 
-**基本换算关系：**
-- 1 公制马力 (PS) = 0.7355 千瓦 (kW)
-- 1 千瓦 (kW) = 1.360 公制马力 (PS)
-- 1 公制马力 (PS) = 735.5 瓦特 (W)
+The conversion between kilowatt (kW) and metric horsepower (PS) is based on the relationship between metric power units:
 
-**计算公式：**
-- PS = kW × 1.360
-- kW = PS × 0.7355
+**Basic Formula:**
+- 1 kW = 1.35962 PS
+- 1 PS = 0.7355 kW
 
-**常用数值对照表：**
-| 千瓦 (kW) | 公制马力 (PS) | 应用场景 |
-|-----------|---------------|----------|
-| 1 kW | 1.36 PS | 小型电机 |
-| 10 kW | 13.6 PS | 家用发电机 |
-| 50 kW | 68.0 PS | 小型拖拉机 |
-| 100 kW | 136.0 PS | 中型汽车发动机 |
-| 200 kW | 272.0 PS | 大型汽车发动机 |
-| 500 kW | 680.0 PS | 大型农业机械 |
+**Conversion Formulas:**
+- kW to PS: PS = kW × 1.35962
+- PS to kW: kW = PS ÷ 1.35962
 
-## 工程应用示例
+**Conversion Reference Table:**
+| Kilowatt (kW) | Metric Horsepower (PS) | Application |
+|---------------|------------------------|-------------|
+| 50 kW | 67.98 PS | Small Car Engine |
+| 100 kW | 135.96 PS | Mid-size Car Engine |
+| 150 kW | 203.94 PS | Large Car Engine |
+| 200 kW | 271.92 PS | Performance Car Engine |
+| 300 kW | 407.89 PS | High-Performance Engine |
 
-### 汽车工程设计
-- **欧系汽车发动机**：大众TSI发动机150 PS (110 kW)，用于欧洲市场技术规格
-- **豪华车动力系统**：奔驰AMG发动机630 PS (463 kW)，用于高性能车型设计
-- **新能源汽车**：保时捷Taycan电机625 PS (460 kW)，用于电动车功率标注
+## Application Examples
 
-### 农业机械工程
-- **拖拉机动力配置**：约翰迪尔拖拉机180 PS (132 kW)，用于大型农场作业
-- **联合收割机设计**：克拉斯收割机350 PS (257 kW)，用于高效农业机械
-- **农用发电机组**：柴油发电机100 PS (74 kW)，用于农场备用电源
+### Automotive Engines
+- **Compact Car**: 75 kW = 101.97 PS
+- **Mid-size Sedan**: 120 kW = 163.15 PS
+- **SUV Engine**: 180 kW = 244.73 PS
+- **Sports Car**: 250 kW = 339.91 PS
+- **Supercar**: 400 kW = 543.85 PS
 
-### 工业设备工程
-- **压缩机功率计算**：阿特拉斯空压机250 PS (184 kW)，用于工业气源系统
-- **泵站设备设计**：格兰富水泵75 PS (55 kW)，用于工业供水系统
-- **风机设备选型**：西门子风机300 PS (221 kW)，用于通风系统设计
+### Agricultural Machinery
+- **Small Tractor**: 25 kW = 33.99 PS
+- **Medium Tractor**: 60 kW = 81.58 PS
+- **Large Tractor**: 120 kW = 163.15 PS
+- **Combine Harvester**: 200 kW = 271.92 PS
+- **Heavy Farm Equipment**: 300 kW = 407.89 PS
 
-## 使用建议
+### Industrial Equipment
+- **Small Generator**: 10 kW = 13.60 PS
+- **Industrial Motor**: 50 kW = 67.98 PS
+- **Compressor**: 75 kW = 101.97 PS
+- **Pump System**: 100 kW = 135.96 PS
+- **Heavy Machinery**: 500 kW = 679.81 PS
 
-### 工程设计规范
-- **欧系设备选型**：进口德国、法国设备时使用PS单位，便于技术对接和规格匹配
-- **汽车工程项目**：欧洲市场车型开发使用PS标注，中国市场可双单位标注
-- **农业机械标准**：欧洲农机制造商使用PS，国际贸易时需要kW换算
+### Marine Applications
+- **Small Boat Engine**: 30 kW = 40.79 PS
+- **Yacht Engine**: 150 kW = 203.94 PS
+- **Fishing Vessel**: 300 kW = 407.89 PS
+- **Commercial Ship**: 1000 kW = 1359.62 PS
+- **Large Vessel**: 2000 kW = 2719.24 PS
 
-### 技术文档标准
-- **设备采购合同**：欧系设备采购合同中功率规格建议使用PS(kW)双标注
-- **技术规格书**：国际农机项目技术文档建议同时提供PS和kW数值
-- **认证测试报告**：欧盟CE认证使用kW，德国TÜV认证可使用PS
+## Usage Recommendations
 
-### 计算精度要求
-- **精确计算**：保留小数点后1位，如136.0 PS
-- **工程估算**：可保留整数，如136 PS
-- **功率匹配**：设备选型时建议预留15-25%功率余量
+1. **Automotive Industry**: Convert between kW and PS for European market specifications
+2. **Equipment Selection**: Compare power ratings across different manufacturer standards
+3. **Technical Documentation**: Ensure consistency in international projects
+4. **Performance Analysis**: Evaluate engine and machinery performance in preferred units
+5. **Regulatory Compliance**: Meet regional power rating requirements
 
-## 常见问题 (FAQ)
+## Technical Notes
 
-**Q: PS是什么单位？**
-A: PS是公制马力(Pferdestärke)的缩写，是功率单位，1 PS = 735.5瓦特，主要用于德国、法国等欧洲国家的汽车、农机、工业设备功率标注。
+### Unit Background
+- **PS (Pferdestärke)**: German metric horsepower, commonly used in Europe
+- **kW (Kilowatt)**: International standard power unit
+- **Conversion Factor**: 1 PS = 735.5 watts exactly
 
-**Q: 1千瓦等于多少公制马力？**
-A: 1千瓦(kW) = 1.360公制马力(PS)，这是国际单位制与欧洲公制单位间的标准换算关系。
+### Regional Usage
+- **European Market**: PS commonly used for automotive and machinery specifications
+- **International Standard**: kW preferred for technical and scientific applications
+- **Documentation**: Both units often specified for global compatibility
 
-**Q: PS和hp有什么区别？**
-A: PS是公制马力(1 PS = 735.5W)，hp是英制马力(1 hp = 745.7W)，PS比hp小约1.4%，欧洲用PS，美国用hp。
+## Frequently Asked Questions
 
-**Q: 为什么欧洲汽车用PS？**
-A: 欧洲传统使用公制单位系统，汽车发动机功率习惯用PS标注，便于消费者理解和技术规范统一。
+**Q: What is the difference between PS and HP?**
+A: PS (metric horsepower) = 735.5W, while HP (imperial horsepower) = 745.7W. PS is slightly smaller than HP and is commonly used in Europe.
 
-**Q: 农业机械为什么用PS？**
-A: 欧洲农机制造商如约翰迪尔、克拉斯等使用PS标注拖拉机功率，已成为国际农机行业惯例。
+**Q: Why is PS used in the automotive industry?**
+A: PS is the traditional European standard for automotive power rating, especially in German automotive engineering, and remains widely used for consumer specifications.
 
-**Q: 设备选型时如何换算？**
-A: 欧系设备规格书用PS，选型时需换算为kW对比，建议预留15-25%功率余量确保设备可靠运行。
+**Q: When should I use kW vs PS?**
+A: Use kW for technical and engineering calculations, PS for consumer-facing specifications in European markets, especially automotive applications.
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file,index) in Power" :key="index">
     <n-button

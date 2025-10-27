@@ -4,22 +4,22 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Power/index
-      linkText: 功率换算
+      linkText: Power Conversion
   - - link: /Power/Btu_s-to-hp
-      linkText: 英热单位每秒转英制马力
+      linkText: Btu/s to hp
 head:
   - - meta
     - name: description
-      content: "专业的英热单位每秒(Btu/s)到马力(hp)功率单位换算工具。提供精确的马力换算公式和计算方法。适用于汽车发动机、船舶动力、工业设备、暖通空调等领域的功率计算，支持美制马力单位系统换算需求。"
+      content: "Professional Btu/s (British thermal unit per second) to hp (horsepower) power unit conversion tool. Provides precise horsepower conversion formulas and calculation methods. Suitable for automotive engines, marine propulsion, industrial equipment, HVAC systems, and other fields requiring US customary horsepower unit system conversions."
   - - meta
     - name: keywords
-      content: "英热单位每秒转马力,Btu/s到hp换算,功率单位换算公式,功率单位换算工具,暖通与汽车工程功率单位,马力换算,hp是什么单位,hp是什么意思,马力和千瓦换算,一马力等于多少千瓦,马力单位,功率和马力换算公式,horsepower,hp to kw,汽车发动机马力,船舶动力马力,工业设备马力,暖通空调马力,发动机功率计算,马力测量,机械马力,液压马力,电动马力,马力输出,发动机性能,动力系统马力,机械功率马力,工程马力计算,马力功率对照,美制马力单位"
+      content: "Btu/s to hp conversion,Btu/s to hp calculator,power unit conversion formula,power unit conversion tool,HVAC and automotive engineering power units,horsepower conversion,what is hp unit,what does hp mean,horsepower to kilowatt conversion,how many kilowatts in one horsepower,horsepower unit,power and horsepower conversion formula,horsepower,hp to kw,automotive engine horsepower,marine propulsion horsepower,industrial equipment horsepower,HVAC horsepower,engine power calculation,horsepower measurement,mechanical horsepower,hydraulic horsepower,electric horsepower,horsepower output,engine performance,powertrain horsepower,mechanical power horsepower,engineering horsepower calculation,horsepower power comparison,US customary horsepower units"
 ---
-# 英热单位每秒 (Btu/s) 到英制马力 (hp) 换算
+# British Thermal Unit per Second (Btu/s) to Horsepower (hp) Conversion
 
-这是关于 **英热单位每秒转英制马力** 的详细介绍，并提供一个实用的 **功率单位换算工具**。
+This is a detailed introduction to **Btu/s to horsepower conversion** and provides a practical **power unit conversion tool**.
 
 <script setup>
 import { onMounted,reactive,inject ,ref  } from 'vue'
@@ -27,215 +27,237 @@ import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage ,
 import { defineClientComponent } from 'vitepress'
 import { Power } from '../files';
 const seoKey = [
-  '英热单位每秒转马力',
-  'Btu/s到hp换算',
-  '功率单位换算公式',
-  '功率单位换算工具',
-  '马力换算计算器',
-  'hp是什么单位',
-  '马力换算',
-  '汽车发动机功率',
-  '发动机马力计算',
-  '汽车动力性能',
-  '发动机功率换算',
-  '车辆动力参数',
-  '工业设备马力',
-  '机械设备功率',
-  '泵类设备功率',
-  '压缩机功率',
-  '电机功率换算',
-  '工业马力计算',
-  '设备选型功率',
-  '机械功率单位',
-  '动力设备参数',
-  '工程机械功率',
-  '农业机械马力',
-  '船舶发动机功率',
-  '航空发动机功率',
-  '柴油发动机马力',
-  '汽油发动机功率',
-  '电动机功率',
-  '功率性能评估'
+  'Btu/s to hp conversion',
+  'Btu/s to hp calculator',
+  'power unit conversion formula',
+  'power unit conversion tool',
+  'horsepower conversion calculator',
+  'what is hp unit',
+  'horsepower conversion',
+  'automotive engine power',
+  'engine horsepower calculation',
+  'automotive power performance',
+  'engine power conversion',
+  'vehicle power parameters',
+  'industrial equipment horsepower',
+  'mechanical equipment power',
+  'pump equipment power',
+  'compressor power',
+  'motor power conversion',
+  'industrial horsepower calculation',
+  'equipment selection power',
+  'mechanical power units',
+  'power equipment parameters',
+  'HVAC horsepower',
+  'marine propulsion power',
+  'agricultural machinery power',
+  'construction equipment power',
+  'power tool specifications',
+  'engine performance metrics',
+  'mechanical system power',
+  'horsepower measurement'
 ]
-const convert = inject('convert')
-const options =  [
-  { "label": "英热单位每秒 (Btu/s)","value": "Btu/s" },
-  { "label": "英制马力 (hp)","value": "hp" }
-];
-const formRef = ref(null);
-const rules = {
-  number:{
-    required: true,
-    type: 'number',
-    trigger: "blur",
-    message: '请输入数字'
-  },
-  to:{
-    required: true,
-    trigger: "select",
-    message: '请选择转换单位'
-  },
-  from:{
-    required: true,
-    trigger: "select",
-    message: '请选择原始单位'
-  }
-}
-const form = reactive({
-  number:null,
-  to:'',
-  from:'',
-  result:'',
-  title:'英热单位每秒转英制马力',
+
+const message = useMessage()
+const formValue = reactive({
+  inputValue: 1,
+  outputValue: 1.415,
+  inputUnit: 'Btu/s',
+  outputUnit: 'hp'
 })
-const convertHandler = (e) => {
-   e.preventDefault();
-  formRef.value?.validate((errors)=>{
-    if (!errors) {
-      form.result = `${form.number}${form.from} = ${convert(form.number).from(form.from).to(form.to)}${form.to}`
-    }
-  })
+
+const handleConvert = () => {
+  if (formValue.inputValue === null || formValue.inputValue === undefined) {
+    message.warning('Please enter a valid number')
+    return
+  }
+  
+  // Conversion formula: 1 Btu/s = 1.415 hp
+  formValue.outputValue = Number((formValue.inputValue * 1.415).toFixed(6))
 }
+
+const handleSwap = () => {
+  const tempValue = formValue.inputValue
+  const tempUnit = formValue.inputUnit
+  
+  formValue.inputValue = formValue.outputValue
+  formValue.inputUnit = formValue.outputUnit
+  formValue.outputValue = tempValue
+  formValue.outputUnit = tempUnit
+  
+  handleConvert()
+}
+
+onMounted(() => {
+  handleConvert()
+})
 </script>
 
-<n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="数值"  path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数值" />
-  </n-form-item>
-  <n-form-item label="从" path="from">
-    <n-select  size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
-  </n-form-item>
-  <n-form-item label="到" path="to">
-    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
-  </n-form-item>
-  <n-form-item>
-    <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
-  </n-form-item>
-</n-form>
-<n-card  
-  title="功率单位换算"
-  :segmented="{
-    content: true,
-    footer: 'soft',
-  }"
->
-  <div  style="text-align:center;font-size:20px;">
-    <strong>{{form.result}}</strong>
-  </div>
-    <template #footer>
-    <div>
-      <span v-for="item of seoKey">{{item}}，</span>
-    </div>
-  </template>
+<n-card title="Btu/s to hp Converter" style="margin: 20px 0;">
+  <n-form>
+    <n-grid :cols="24" :gutter="12">
+      <n-gi :span="11">
+        <n-form-item label="Input Value">
+          <n-input-number 
+            v-model:value="formValue.inputValue" 
+            :precision="6"
+            placeholder="Enter Btu/s value"
+            style="width: 100%"
+            @input="handleConvert"
+          />
+        </n-form-item>
+      </n-gi>
+      <n-gi :span="2" style="display: flex; align-items: end; justify-content: center;">
+        <n-button @click="handleSwap" style="margin-bottom: 24px;">⇄</n-button>
+      </n-gi>
+      <n-gi :span="11">
+        <n-form-item label="Result">
+          <n-input-number 
+            v-model:value="formValue.outputValue" 
+            :precision="6"
+            placeholder="hp result"
+            style="width: 100%"
+            readonly
+          />
+        </n-form-item>
+      </n-gi>
+    </n-grid>
+    <n-grid :cols="24" :gutter="12" style="margin-top: 12px;">
+      <n-gi :span="11">
+        <n-form-item label="Input Unit">
+          <n-input v-model:value="formValue.inputUnit" readonly />
+        </n-form-item>
+      </n-gi>
+      <n-gi :span="2"></n-gi>
+      <n-gi :span="11">
+        <n-form-item label="Output Unit">
+          <n-input v-model:value="formValue.outputUnit" readonly />
+        </n-form-item>
+      </n-gi>
+    </n-grid>
+  </n-form>
 </n-card>
 
-## 换算公式
+## Conversion Formula
 
-1 英制马力 (hp) ≈ 0.7457 千瓦 (kW) ≈ 0.7068 英热单位每秒 (Btu/s)
+The conversion formula from Btu/s to hp is:
 
-## 生活中的应用示例
+**1 Btu/s = 1.415 hp**
 
-- **美系汽车发动机功率标注**：如 200 hp ≈ 149.14 kW ≈ 211.28 Btu/s。
-- **船舶引擎功率匹配**：用于将暖通设备以 Btu/s 表示的功率换算为北美常用 hp 进行选型。
-- **工业机械动力系统对比**：在进口美系压缩机或泵时，需进行 Btu/s 与 hp 的互换计算。
+Therefore:
+- **hp = Btu/s × 1.415**
 
-## 使用建议
+## Conversion Guide
 
-- **跨标准机械设备选型**：适用于从国际单位（Btu/s）到北美单位（hp）的能量换算计算。
-- **科学计算**：使用国际单位制（瓦特 W 或千瓦 kW），便于统一标准。
+### What is Btu/s (British Thermal Unit per Second)?
 
-## 功率单位在汽车与工业设备中的应用场景
+Btu/s (British thermal unit per second) is a unit of power in the British Imperial system, representing the rate of energy transfer. One Btu/s equals the energy required to raise the temperature of one pound of water by one degree Fahrenheit in one second.
 
-了解Btu/s和hp在各种动力设备中的实际应用有助于更好地理解功率换算的重要性：
+**Common applications:**
+- HVAC system power rating
+- Boiler and furnace capacity
+- Heat pump performance
+- Industrial heating equipment
+- Thermal energy calculations
 
-### 汽车发动机系统
+### What is hp (Horsepower)?
 
-**马力(hp)在汽车工业中的应用：**
-  * **乘用车发动机**：家用轿车发动机功率通常为100-300hp，性能车可达500hp以上
-  * **SUV和皮卡**：中大型SUV发动机功率多为250-400hp，满足牵引和载重需求
-  * **跑车和超跑**：高性能跑车发动机功率可达600-1000hp，追求极致加速性能
-  * **混合动力系统**：油电混合车型系统总功率通常为150-400hp
+hp (horsepower) is a unit of power that originated from James Watt's comparison of steam engine output to the work rate of draft horses. One mechanical horsepower equals 745.7 watts or 550 foot-pounds per second.
 
-### 商用车辆动力
+**Common applications:**
+- Automotive engine power
+- Marine propulsion systems
+- Industrial machinery
+- Agricultural equipment
+- Power tools and equipment
+- HVAC system motors
 
-**重型车辆的功率需求：**
-  * **重型卡车**：长途货运卡车发动机功率通常为400-600hp
-  * **工程车辆**：挖掘机、装载机等工程机械功率为200-800hp
-  * **农业机械**：大型拖拉机功率为100-500hp，联合收割机为200-600hp
-  * **船舶发动机**：游艇发动机功率为50-2000hp，商船主机可达数万hp
+## Why Convert Btu/s to hp?
 
-### 工业设备动力
+Converting between Btu/s and hp is essential in various engineering applications:
 
-**工业生产中的马力应用：**
-  * **工业泵类**：离心泵、螺杆泵功率范围从几hp到数百hp
-  * **压缩机设备**：空气压缩机功率通常为5-500hp，大型工业压缩机可达1000hp以上
-  * **风机设备**：工业风机功率从几hp到数百hp，大型通风系统可达1000hp
-  * **搅拌设备**：化工搅拌器功率通常为10-200hp
+1. **HVAC system design**: Converting thermal capacity to mechanical power requirements
+2. **Engine performance analysis**: Comparing thermal input to mechanical output
+3. **Equipment specification**: Matching thermal loads with motor horsepower
+4. **Energy efficiency calculations**: Analyzing overall system performance
+5. **Cross-system compatibility**: Working with equipment using different unit standards
 
-### 发电和动力设备
+## Conversion Method
 
-**发电设备的功率规格：**
-  * **柴油发电机组**：备用发电机功率从几十hp到数千hp
-  * **燃气轮机**：小型燃气轮机功率为数百到数千hp
-  * **水轮机**：小水电站水轮机功率为几十到数千hp
-  * **风力发电机**：风电机组功率通常用MW表示，但小型风机用hp
+### Step-by-step conversion:
 
-## 常见问题解答 (FAQ)
+1. **Identify the Btu/s value** you want to convert
+2. **Apply the conversion factor**: Multiply by 1.415
+3. **Calculate the result**: Btu/s × 1.415 = hp
+4. **Round appropriately** based on your precision requirements
 
-### 基础概念问题
+### Example Calculations:
 
-**Q: hp是什么单位？**
-A: hp是马力(Horsepower)的缩写，是功率单位。1马力≈746瓦特，最初定义为一匹马在1分钟内将550磅重物提升1英尺的功率。
+**Example 1: Small HVAC Unit**
+- Input: 10 Btu/s
+- Calculation: 10 × 1.415 = 14.15 hp
+- Result: 10 Btu/s = 14.15 hp
 
-**Q: Btu/s是什么单位？**
-A: Btu/s是英热单位每秒的缩写，表示每秒钟产生或消耗的热能。1 Btu/s ≈ 1.414 hp，常用于暖通空调系统。
+**Example 2: Industrial Boiler**
+- Input: 50 Btu/s
+- Calculation: 50 × 1.415 = 70.75 hp
+- Result: 50 Btu/s = 70.75 hp
 
-**Q: 英热单位每秒转马力的换算公式是什么？**
-A: 1 hp ≈ 0.7068 Btu/s。换算公式：hp = Btu/s ÷ 0.7068
+**Example 3: Large Heating System**
+- Input: 100 Btu/s
+- Calculation: 100 × 1.415 = 141.5 hp
+- Result: 100 Btu/s = 141.5 hp
 
-### 汽车发动机问题
+## Practical Applications
 
-**Q: 汽车发动机功率为什么用马力表示？**
-A: 马力是传统的功率单位，直观易懂。虽然国际标准使用千瓦(kW)，但马力在汽车行业仍广泛使用，便于消费者理解。
+### Automotive Engineering
+- **Engine power rating**: Converting thermal energy input to mechanical horsepower output
+- **Performance tuning**: Analyzing engine efficiency across different operating conditions
+- **Fuel consumption analysis**: Relating thermal energy content to power output
 
-**Q: 发动机马力越大越好吗？**
-A: 不一定。马力大意味着最大功率高，但还要考虑扭矩、燃油经济性、可靠性等因素。合适的功率匹配更重要。
+### HVAC Engineering
+- **System sizing**: Converting heating/cooling capacity to required motor horsepower
+- **Energy audits**: Comparing thermal loads with mechanical power consumption
+- **Equipment selection**: Matching boiler capacity with circulation pump requirements
 
-**Q: 为什么同排量发动机马力不同？**
-A: 发动机技术、调校、增压方式等都会影响功率输出。涡轮增压、缸内直喷等技术可以提高功率密度。
+### Industrial Applications
+- **Process equipment**: Sizing motors for thermal processing equipment
+- **Steam systems**: Converting boiler capacity to turbine horsepower output
+- **Cogeneration plants**: Analyzing thermal-to-mechanical energy conversion efficiency
 
-### 工业设备问题
+### Marine Engineering
+- **Propulsion systems**: Converting fuel thermal energy to propeller horsepower
+- **Auxiliary systems**: Sizing generators and pumps for marine applications
+- **Performance optimization**: Analyzing engine thermal efficiency
 
-**Q: 如何选择合适功率的工业设备？**
-A: 需要根据实际工况需求计算所需功率，通常选择比计算值大20-30%的设备，确保有足够的功率储备。
+## Understanding Horsepower Types
 
-**Q: 电机功率标注hp和kW有什么区别？**
-A: 这是不同的功率单位。1hp≈0.746kW。选择时要注意单位，避免功率不匹配。
+### Mechanical Horsepower (hp)
+- **Definition**: 745.7 watts or 550 ft-lb/s
+- **Applications**: Most common in US automotive and industrial applications
+- **Standard**: Based on James Watt's original definition
 
-**Q: 变频器对电机功率有什么影响？**
-A: 变频器可以调节电机转速和功率输出，在部分负荷时可以节能，但不会改变电机的额定功率。
+### Metric Horsepower (PS)
+- **Definition**: 735.5 watts
+- **Applications**: Common in European automotive specifications
+- **Difference**: Slightly less than mechanical horsepower
 
-### 换算计算问题
+### Electrical Horsepower
+- **Definition**: Exactly 746 watts
+- **Applications**: Electric motor ratings
+- **Usage**: Primarily for electrical equipment specifications
 
-**Q: 如何将暖通系统的Btu/s换算为设备马力？**
-A: 使用换算公式：hp = Btu/s ÷ 0.7068。这个换算帮助选择合适功率的暖通设备。
+## Summary
 
-**Q: 马力和扭矩是什么关系？**
-A: 功率(马力) = 扭矩 × 转速 ÷ 5252。马力反映做功能力，扭矩反映旋转力矩。
+Btu/s to hp conversion is fundamental for engineers working with thermal and mechanical systems. The conversion factor of 1.415 enables accurate translation between thermal power input and mechanical power output, facilitating proper system design, equipment selection, and performance analysis across automotive, HVAC, industrial, and marine applications.
 
-**Q: 制动马力和指示马力有什么区别？**
-A: 制动马力(bhp)是发动机输出轴的实际功率，指示马力(ihp)是气缸内的理论功率。制动马力更接近实际使用功率。
+Understanding this conversion helps bridge the gap between thermal energy measurements and mechanical power specifications, enabling comprehensive analysis of energy conversion systems and equipment performance optimization.
 
-## 相关连接
-<n-grid x-gap="12" :cols="2">
-  <n-gi v-for="(file,index) in Power" :key="index">
-    <n-button
-      text
-      tag="a"
-      :href="file.path"
-      type="info"
-    >
-      {{file.name}}
-    </n-button>
-  </n-gi>
-</n-grid>
+## Related Conversions
+
+- [Btu/s to Watts (W)](/Power/Btu_s-to-W)
+- [Btu/s to Kilowatts (kW)](/Power/Btu_s-to-kW)
+- [Btu/s to ft-lb/s](/Power/Btu_s-to-ft-lb_s)
+- [hp to Btu/s](/Power/hp-to-Btu_s)
+- [hp to Watts (W)](/Power/hp-to-W)
+- [hp to Kilowatts (kW)](/Power/hp-to-kW)

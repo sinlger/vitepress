@@ -2,203 +2,370 @@
 sidebar: false
 aside: false
 lastUpdated: false
-# layout: doc
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Power/index
-      linkText: 功率换算
+      linkText: Power Conversion
   - - link: /Power/ft-lb_s-to-W
-      linkText: 英尺磅每秒转瓦特
+      linkText: ft-lb/s to W
 head:
   - - meta
     - name: description
-      content: "专业的英尺・磅每秒(ft-lb/s)到瓦特(W)换算工具，提供精确换算公式、详细应用场景和常用数值对照表。适用于机械工程、电气系统和工业设备的功率单位转换。"
+      content: "Professional ft-lb/s (foot-pound per second) to W (watts) power unit conversion tool. Provides precise power unit conversion formulas, detailed application scenarios, and practical calculator. Suitable for mechanical engineering, electrical systems, industrial equipment, and international power unit conversion requirements."
   - - meta
     - name: keywords
-      content: "英尺磅每秒转瓦特,ft-lb/s到W换算,功率单位换算公式,功率单位换算工具,机械工程功率,电气系统功率,工业设备功率,美制功率单位,国际功率标准,动力系统功率,パワー変換,ワット変換,動力変換"
+      content: "ft-lb/s to W conversion,ft-lb/s to watts calculator,power unit conversion,mechanical to electrical power,engineering power conversion,industrial power measurement,motor power calculation,energy conversion,power system design,mechanical engineering"
 ---
-# 英尺・磅每秒 (ft-lb/s) 到瓦特 (W) 换算
+# Foot-Pound per Second (ft-lb/s) to Watts (W) Conversion
 
-这是关于 **英尺磅每秒转瓦特** 的详细介绍，并提供一个实用的 **功率单位换算工具**。英尺・磅每秒(ft-lb/s)是美制功率单位，主要用于机械工程和工业设备，而瓦特(W)是国际标准的功率单位，广泛应用于电气系统、机械工程和科学计算。
+**ft-lb/s to W conversion tool** is a professional power unit converter designed for mechanical and electrical engineering applications. Foot-pound per second (ft-lb/s) is an Imperial mechanical power unit, while watts (W) is the SI base unit of power used universally in electrical and mechanical systems. This tool provides precise conversion formulas and real-time calculation functions to help engineers, technicians, and professionals perform accurate power unit conversions between mechanical and electrical power measurements.
 
 <script setup>
-const seoKey = [
-  '英尺磅每秒转瓦特', 'ft-lb/s到W换算', '功率单位换算', '机械工程功率',
-  '电气系统功率', '工业设备功率', '美制功率单位', '国际功率标准',
-  'パワー変換', 'ワット変換', '動力変換'
-]
 import { onMounted,reactive,inject ,ref  } from 'vue'
 import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage ,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
 import { Power } from '../files';
-const convert = inject('convert')
-const options =  [
-  { "label": "英尺・磅每秒 (ft-lb/s)","value": "ft-lb/s" },
-  { "label": "瓦特 (W)","value": "W" }
-];
-const formRef = ref(null);
-const rules = {
-  number:{
-    required: true,
-    type: 'number',
-    trigger: "blur",
-    message: '请输入数字'
-  },
-  to:{
-    required: true,
-    trigger: "select",
-    message: '请选择转换单位'
-  },
-  from:{
-    required: true,
-    trigger: "select",
-    message: '请选择原始单位'
-  }
-}
-const form = reactive({
-  number:null,
-  to:'',
-  from:'',
-  result:'',
-  title:'英尺磅每秒转瓦特',
+const seoKey = [
+  'ft-lb/s to W conversion',
+  'ft-lb/s to watts calculator',
+  'power unit conversion',
+  'mechanical to electrical power',
+  'engineering power conversion',
+  'industrial power measurement',
+  'motor power calculation',
+  'energy conversion',
+  'power system design',
+  'mechanical engineering',
+  'electrical engineering',
+  'SI power units',
+  'Imperial power units',
+  'power measurement',
+  'energy systems',
+  'motor specifications',
+  'pump power calculation',
+  'compressor power',
+  'mechanical systems',
+  'electrical systems'
+]
+
+const message = useMessage()
+const formValue = reactive({
+  inputValue: 1,
+  outputValue: 1.3558,
+  inputUnit: 'ft-lb/s',
+  outputUnit: 'W'
 })
-const convertHandler = (e) => {
-   e.preventDefault();
-  formRef.value?.validate((errors)=>{
-    if (!errors) {
-      form.result = `${form.number}${form.from} = ${convert(form.number).from(form.from).to(form.to)}${form.to}`
-    }
-  })
+
+const handleConvert = () => {
+  if (formValue.inputValue === null || formValue.inputValue === undefined) {
+    message.warning('Please enter a valid number')
+    return
+  }
+  
+  // Conversion formula: 1 ft-lb/s = 1.3558 W
+  formValue.outputValue = Number((formValue.inputValue * 1.3558).toFixed(8))
 }
+
+const handleSwap = () => {
+  const tempValue = formValue.inputValue
+  const tempUnit = formValue.inputUnit
+  
+  formValue.inputValue = formValue.outputValue
+  formValue.inputUnit = formValue.outputUnit
+  formValue.outputValue = tempValue
+  formValue.outputUnit = tempUnit
+  
+  handleConvert()
+}
+
+onMounted(() => {
+  handleConvert()
+})
 </script>
 
-<n-card title="英尺・磅每秒到瓦特换算器" embedded :bordered="false" hoverable>
-  <n-form size="large" :model="form" ref='formRef' :rules="rules">
-    <n-form-item label="数值"  path="number">
-      <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数值" />
-    </n-form-item>
-    <n-form-item label="从" path="from">
-      <n-select  size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
-    </n-form-item>
-    <n-form-item label="到" path="to">
-      <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
-    </n-form-item>
-    <n-form-item>
-      <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
-    </n-form-item>
+<n-card title="ft-lb/s to W Converter" style="margin: 20px 0;">
+  <n-form>
+    <n-grid :cols="24" :gutter="12">
+      <n-gi :span="11">
+        <n-form-item label="Input Value">
+          <n-input-number 
+            v-model:value="formValue.inputValue" 
+            :precision="6"
+            placeholder="Enter ft-lb/s value"
+            style="width: 100%"
+            @input="handleConvert"
+          />
+        </n-form-item>
+      </n-gi>
+      <n-gi :span="2" style="display: flex; align-items: end; justify-content: center;">
+        <n-button @click="handleSwap" style="margin-bottom: 24px;">⇄</n-button>
+      </n-gi>
+      <n-gi :span="11">
+        <n-form-item label="Result">
+          <n-input-number 
+            v-model:value="formValue.outputValue" 
+            :precision="8"
+            placeholder="Watts result"
+            style="width: 100%"
+            readonly
+          />
+        </n-form-item>
+      </n-gi>
+    </n-grid>
+    <n-grid :cols="24" :gutter="12" style="margin-top: 12px;">
+      <n-gi :span="11">
+        <n-form-item label="Input Unit">
+          <n-input v-model:value="formValue.inputUnit" readonly />
+        </n-form-item>
+      </n-gi>
+      <n-gi :span="2"></n-gi>
+      <n-gi :span="11">
+        <n-form-item label="Output Unit">
+          <n-input v-model:value="formValue.outputUnit" readonly />
+        </n-form-item>
+      </n-gi>
+    </n-grid>
   </n-form>
-  <n-card  embedded :bordered="false" hoverable>
-    <div  style="text-align:center;font-size:20px;">
-      <strong>{{form.result}}</strong>
-    </div>
-  </n-card>
-  <template #footer>
-    <div style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;">
-      <n-tag v-for="keyword in seoKey" :key="keyword" type="info" size="small">
-        {{ keyword }}
-      </n-tag>
-    </div>
-  </template>
 </n-card>
 
-## 详细换算公式
+## Conversion Formula
 
-### 基础换算关系
-- **1 英尺・磅每秒 (ft-lb/s) = 1.356 瓦特 (W)**
-- **1 瓦特 (W) = 0.7376 英尺・磅每秒 (ft-lb/s)**
+The conversion formula from ft-lb/s to W is:
 
-### 精确换算系数
-- 换算系数：1 ft-lb/s = 1.35582 W
-- 反向换算：1 W = 0.73756 ft-lb/s
-- 精确系数：1.35582 W/ft-lb/s
+**1 ft-lb/s = 1.3558 W**
 
-### 双向换算公式
-- **ft-lb/s 转 W**：W = ft-lb/s × 1.356
-- **W 转 ft-lb/s**：ft-lb/s = W × 0.7376
+Therefore:
+- **W = ft-lb/s × 1.3558**
+- **W = ft-lb/s × 1.3558179**
 
-### 常用数值对照表
-| 英尺・磅每秒 (ft-lb/s) | 瓦特 (W) |
-|---|---|
-| 1 | 1.356 |
-| 10 | 13.56 |
-| 100 | 135.6 |
-| 500 | 678 |
-| 1,000 | 1,356 |
+## Conversion Guide
 
-## 实际应用场景
+### What is ft-lb/s (Foot-Pound per Second)?
 
-### 机械工程应用
-- **小型机械设备**：割草机、小型泵类设备的功率规格转换
-- **精密机械**：仪器设备、实验装置的功率计算
-- **传动系统**：齿轮箱、联轴器等传动部件的功率评估
+ft-lb/s (foot-pound per second) is a unit of power in the Imperial system, representing the rate at which work is done. One ft-lb/s equals the power required to perform one foot-pound of work in one second.
 
-### 电气系统工程
-- **电机选型**：将美制机械功率要求转换为电机瓦特数
-- **控制系统**：自动化设备的功率需求计算
-- **能耗分析**：设备电力消耗的标准化计算
+**Common applications:**
+- Mechanical engineering calculations
+- Motor and engine power analysis
+- Industrial machinery specifications
+- Pump and compressor power ratings
+- Mechanical system design
 
-### 工业设备应用
-- **液压系统**：液压泵、液压马达的功率匹配
-- **气动设备**：空气压缩机、气动工具的功率转换
-- **生产设备**：小型生产线设备的功率规格统一
+### What is W (Watts)?
 
-### 典型工程数值
-- **小型电机**：100-1000 W (约74-738 ft-lb/s)
-- **家用设备**：10-500 W (约7.4-369 ft-lb/s)
-- **工业工具**：500-5000 W (约369-3690 ft-lb/s)
+Watts (W) is the SI base unit of power, named after James Watt. It represents the rate of energy transfer equivalent to one joule per second. Watts are universally used in electrical and mechanical power measurements.
 
-## 使用建议
+**Common applications:**
+- Electrical power consumption and generation
+- Motor and generator power ratings
+- Lighting and appliance specifications
+- HVAC system power requirements
+- Industrial equipment power ratings
 
-### 工程应用建议
-- **设备选型**：在进行设备选型时，建议统一使用瓦特(W)单位便于比较
-- **国际项目**：跨国工程项目中优先使用国际标准W单位
-- **技术文档**：工程文档建议同时标注两种单位便于理解
+## Why Convert ft-lb/s to W?
 
-### 精度要求
-- **工程估算**：一般计算可使用简化系数 1 ft-lb/s ≈ 1.36 W
-- **精密计算**：科学研究和精密工程使用完整系数 1.35582
-- **安全裕度**：设备选型时建议预留10-20%的功率裕度
+Converting between ft-lb/s and W is essential in various engineering applications:
 
-### 常见注意事项
-- 确认功率单位的准确性，避免与能量单位混淆
-- 注意环境条件对设备功率的影响
-- 考虑设备效率和传动损失对实际功率的影响
+1. **Electrical system design**: Converting mechanical power requirements to electrical power specifications
+2. **Motor selection**: Matching mechanical loads with electrical motor ratings
+3. **Energy efficiency analysis**: Standardizing power measurements across different systems
+4. **International standards**: Using SI units for global engineering projects
+5. **System integration**: Combining mechanical and electrical components in unified systems
 
-## 常见问题解答 (FAQ)
+## Conversion Method
 
-### Q1: 为什么要将ft-lb/s转换为瓦特？
-A1: 瓦特是国际标准单位，便于全球工程师理解和交流，且在电气系统中直接对应电功率，便于设备选型和能耗计算。
+### Step-by-step conversion:
 
-### Q2: ft-lb/s与马力有什么关系？
-A2: 1 马力(hp) = 550 ft-lb/s = 746 W。ft-lb/s是更基础的功率单位，瓦特是国际标准。
+1. **Identify the ft-lb/s value** you want to convert
+2. **Apply the conversion factor**: Multiply by 1.3558
+3. **Calculate the result**: ft-lb/s × 1.3558 = W
+4. **Round to appropriate precision** based on application requirements
 
-### Q3: 在什么情况下需要这个换算？
-A3: 主要在美制设备与国际标准对接、技术文档翻译、设备选型、能耗计算等场景中需要进行转换。
+### Example Calculations:
 
-### Q4: 换算精度对实际应用有多重要？
-A4: 对于精密设备和科学计算，精确的换算很重要。即使小的误差也可能影响设备性能和能耗计算。
+**Example 1: Small Motor**
+- Input: 100 ft-lb/s
+- Calculation: 100 × 1.3558 = 135.58 W
+- Result: 100 ft-lb/s = 135.58 W
 
-### Q5: 如何快速估算ft-lb/s和W的关系？
-A5: 可以记住 1 ft-lb/s ≈ 1.36 W 这个近似值，便于快速心算估算。
+**Example 2: Medium Motor**
+- Input: 1,000 ft-lb/s
+- Calculation: 1,000 × 1.3558 = 1,355.8 W
+- Result: 1,000 ft-lb/s = 1,355.8 W (≈ 1.36 kW)
 
-### Q6: 这个换算在哪些行业最常用？
-A6: 主要用于机械制造、电气工程、自动化控制、精密仪器等行业，特别是涉及美制与国际标准对接的项目。
+**Example 3: Large Motor**
+- Input: 10,000 ft-lb/s
+- Calculation: 10,000 × 1.3558 = 13,558 W
+- Result: 10,000 ft-lb/s = 13,558 W (≈ 13.56 kW)
 
-## 总结
+## Practical Applications
 
-英尺・磅每秒到瓦特的换算在现代工程中具有重要意义，特别是在机械工程和电气系统应用中。掌握准确的换算方法和应用场景，有助于工程师在国际项目中进行有效的技术交流和设备选型。建议在实际应用中根据精度要求选择合适的换算系数，并充分考虑工程安全裕度。
+### Electrical Engineering
+- **Motor specifications**: Converting mechanical power requirements to electrical motor ratings
+- **Power system design**: Calculating electrical power needs for mechanical loads
+- **Energy efficiency**: Analyzing power consumption across mechanical and electrical systems
+- **Load calculations**: Determining electrical supply requirements for mechanical equipment
 
-## 相关连接
-<n-grid x-gap="12" :cols="2">
-  <n-gi v-for="(file,index) in Power" :key="index">
-    <n-button
-      text
-      tag="a"
-      :href="file.path"
-      type="info"
-    >
-      {{file.name}}
-    </n-button>
-  </n-gi>
-</n-grid>
+### Mechanical Engineering
+- **Power transmission**: Converting between mechanical and electrical power in drive systems
+- **Equipment selection**: Matching mechanical loads with electrical drive capabilities
+- **System optimization**: Balancing mechanical and electrical power requirements
+- **Performance analysis**: Standardizing power measurements across different systems
+
+### Industrial Applications
+- **Manufacturing equipment**: Specifying electrical power for mechanical processes
+- **Automation systems**: Integrating mechanical and electrical power requirements
+- **Process optimization**: Analyzing power efficiency in industrial operations
+- **Equipment procurement**: Standardizing power specifications for international suppliers
+
+### HVAC Systems
+- **Fan and pump sizing**: Converting mechanical power requirements to electrical specifications
+- **Compressor selection**: Matching mechanical loads with electrical motor ratings
+- **Energy management**: Optimizing power consumption in HVAC systems
+- **System design**: Balancing mechanical and electrical power requirements
+
+## Understanding Power Relationships
+
+### Power Unit Comparisons
+- **1 W = 0.7376 ft-lb/s**
+- **1 kW = 737.6 ft-lb/s**
+- **1 hp = 550 ft-lb/s = 745.7 W**
+- **1 PS = 542.9 ft-lb/s = 735.5 W**
+
+### SI Power Standards
+- **Base unit**: Watt (W) is the SI base unit of power
+- **Derived units**: kW (kilowatt), MW (megawatt), GW (gigawatt)
+- **International acceptance**: Watts are universally recognized and used
+- **Scientific applications**: Standard unit in physics and engineering calculations
+
+## Common Power Ranges
+
+### Typical ft-lb/s Values
+- **Small motors**: 100-1,000 ft-lb/s
+- **Medium motors**: 1,000-10,000 ft-lb/s
+- **Large motors**: 10,000-100,000 ft-lb/s
+- **Industrial equipment**: 500-50,000 ft-lb/s
+
+### Equivalent Watt Ratings
+- **100-1,000 W**: Small motors and appliances
+- **1-10 kW**: Medium motors and equipment
+- **10-100 kW**: Large motors and industrial equipment
+- **100+ kW**: Heavy industrial and utility applications
+
+## Engineering Considerations
+
+### Conversion Accuracy
+- **Precision requirements**: Choose appropriate decimal places for application
+- **Measurement uncertainty**: Consider accuracy of original measurements
+- **Rounding effects**: Understand impact of rounding on final calculations
+- **Standards compliance**: Ensure conversions meet industry standards
+
+### System Design Implications
+- **Power matching**: Ensure electrical supply matches mechanical load requirements
+- **Efficiency factors**: Account for losses in power conversion and transmission
+- **Safety margins**: Include appropriate safety factors in power calculations
+- **Operating conditions**: Consider how environment affects power requirements
+
+### Motor Applications
+- **Motor selection**: Matching electrical motor ratings with mechanical load requirements
+- **Drive systems**: Calculating power requirements for variable frequency drives
+- **Control systems**: Specifying power requirements for motor control equipment
+- **Energy efficiency**: Optimizing motor selection for energy conservation
+
+## Applications by Industry
+
+### Manufacturing Industry
+- **Production equipment**: Specifying electrical power for manufacturing machinery
+- **Assembly lines**: Calculating power requirements for automated systems
+- **Material handling**: Determining motor power for conveyors and lifts
+- **Quality control**: Standardizing power measurements across production facilities
+
+### Automotive Industry
+- **Electric vehicles**: Converting mechanical power requirements to electrical specifications
+- **Manufacturing equipment**: Specifying power for automotive production machinery
+- **Testing equipment**: Standardizing power measurements in automotive testing
+- **Hybrid systems**: Balancing mechanical and electrical power in hybrid vehicles
+
+### Aerospace Industry
+- **Ground support equipment**: Converting mechanical power to electrical specifications
+- **Manufacturing processes**: Specifying power for aerospace manufacturing equipment
+- **Testing facilities**: Standardizing power measurements in aerospace testing
+- **System integration**: Combining mechanical and electrical power requirements
+
+### Marine Industry
+- **Propulsion systems**: Converting mechanical power to electrical motor specifications
+- **Auxiliary equipment**: Specifying electrical power for marine machinery
+- **Power generation**: Balancing mechanical and electrical power in marine systems
+- **System design**: Optimizing power distribution in marine applications
+
+## Measurement and Standards
+
+### Power Measurement Methods
+- **Electrical measurement**: Using wattmeters and power analyzers
+- **Mechanical measurement**: Using dynamometers and torque sensors
+- **Conversion calculations**: Converting between mechanical and electrical measurements
+- **Calibration standards**: Ensuring accuracy in power measurements
+
+### International Standards
+- **SI standards**: International System of Units for power measurement
+- **IEEE standards**: Electrical engineering standards for power measurement
+- **ISO standards**: International organization for standardization guidelines
+- **IEC standards**: International electrotechnical commission standards
+
+## Power Rating Considerations
+
+### Electrical Power Ratings
+- **Nameplate ratings**: Standard electrical power ratings for motors and equipment
+- **Continuous ratings**: Sustained electrical power output under normal conditions
+- **Peak ratings**: Maximum electrical power output for short durations
+- **Efficiency ratings**: Relationship between electrical input and mechanical output
+
+### Mechanical Power Ratings
+- **Brake power**: Actual mechanical power output from engines and motors
+- **Indicated power**: Theoretical power based on pressure and displacement
+- **Shaft power**: Mechanical power transmitted through rotating shafts
+- **Hydraulic power**: Power transmitted through fluid systems
+
+## Conversion Accuracy and Precision
+
+### Measurement Considerations
+- **Instrument accuracy**: Understanding limitations of measurement equipment
+- **Environmental conditions**: Impact of temperature and humidity on measurements
+- **Calibration requirements**: Ensuring measurement accuracy through proper calibration
+- **Uncertainty analysis**: Quantifying measurement uncertainty in power conversions
+
+### Engineering Applications
+- **Design calculations**: Using appropriate precision for engineering calculations
+- **Safety factors**: Including margins for uncertainty in power calculations
+- **Quality control**: Ensuring consistent power measurements in manufacturing
+- **Performance optimization**: Maximizing efficiency through accurate power measurement
+
+## Energy Efficiency Applications
+
+### Motor Efficiency
+- **Energy conservation**: Selecting high-efficiency motors to reduce power consumption
+- **Variable speed drives**: Optimizing motor speed to match load requirements
+- **Power factor correction**: Improving electrical system efficiency
+- **Load matching**: Properly sizing motors for optimal efficiency
+
+### System Optimization
+- **Power management**: Optimizing power distribution in electrical systems
+- **Load balancing**: Distributing power loads for maximum efficiency
+- **Energy monitoring**: Tracking power consumption for efficiency improvements
+- **Cost reduction**: Reducing energy costs through efficient power management
+
+## Summary
+
+ft-lb/s to W conversion is fundamental for bridging mechanical and electrical engineering applications, enabling proper motor selection, system design, and energy efficiency analysis. Understanding this conversion allows engineers to work effectively with both Imperial mechanical and SI electrical power units while ensuring accurate power calculations for modern engineering systems.
+
+The conversion factor of 1.3558 provides the precise relationship needed for professional engineering applications, supporting everything from motor selection to energy management in industrial and commercial systems.
+
+## Related Conversions
+
+- [ft-lb/s to Kilowatts (kW)](/Power/ft-lb_s-to-kW)
+- [ft-lb/s to Horsepower (hp)](/Power/ft-lb_s-to-hp)
+- [ft-lb/s to PS (Metric Horsepower)](/Power/ft-lb_s-to-PS)
+- [Watts to Horsepower (hp)](/Power/W-to-hp)
+- [Watts to Kilowatts (kW)](/Power/W-to-kW)
+- [Watts to ft-lb/s](/Power/W-to-ft-lb_s)

@@ -4,37 +4,37 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Power/index
-      linkText: 功率换算
+      linkText: Power Conversion
   - - link: /Power/PS-to-ft-lb_s
-      linkText: 公制马力转英尺磅每秒
+      linkText: Metric Horsepower to Foot-Pound per Second
 head:
   - - meta
     - name: description
-      content: 专业的公制马力(PS)到英尺磅每秒(ft-lb/s)换算工具，提供精确的功率单位转换公式和实际应用场景。涵盖汽车发动机、机械传动、小型动力设备等跨领域功率换算需求，支持PS转ft-lb/s在线计算。
+      content: "Professional metric horsepower (PS) to foot-pound per second (ft-lb/s) conversion tool, providing precise power unit conversion formulas and practical application scenarios. Covers automotive engines, mechanical transmission, small power equipment and other cross-field power conversion needs, supports PS to ft-lb/s online calculation."
   - - meta
     - name: keywords
-      content: 公制马力转英尺磅每秒,PS到ft-lb/s换算,功率单位换算公式,马力换算,机械功率换算,发动机功率,小型动力设备,PS换算工具,ft-lb/s计算,功率单位转换,欧洲马力标准,美制功率单位,机械传动功率,扭矩功率换算,小型发动机功率
+      content: "metric horsepower to foot-pound per second,PS to ft-lb/s conversion,power unit conversion formula,horsepower conversion,mechanical power conversion,engine power,small power equipment,PS conversion tool,ft-lb/s calculation,power unit conversion,European horsepower standard,American power units,mechanical transmission power,torque power conversion,small engine power"
 ---
-# 公制马力 (PS) 到英尺・磅每秒 (ft-lb/s) 换算
+# Metric Horsepower (PS) to Foot-Pound per Second (ft-lb/s) Conversion
 
-这是关于 **公制马力转英尺磅每秒** 的详细介绍，并提供一个实用的 **功率单位换算工具**。公制马力(PS)是欧洲汽车工业和机械设备的标准功率单位，而英尺磅每秒(ft-lb/s)是美制工程中常用的机械功率单位。两者之间的准确换算对于跨国机械工程项目、设备选型和技术交流具有重要意义，特别是在小型发动机、机械传动系统和精密机械设备的功率匹配等领域。
+This is a detailed introduction to **metric horsepower to foot-pound per second** conversion, providing a practical **power unit conversion tool**. Metric horsepower (PS) is the standard power unit for European automotive industry and mechanical equipment, while foot-pound per second (ft-lb/s) is a commonly used mechanical power unit in American engineering. Accurate conversion between these units is of great significance for international mechanical engineering projects, equipment selection, and technical communication, particularly in small engines, mechanical transmission systems, and precision mechanical equipment power matching.
 
 <script setup>
 import { onMounted,reactive,inject ,ref  } from 'vue'
 import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage ,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
-import { Power } from '../files';
+import { Power } from '../../files';
 const convert = inject('convert')
 const seoKey = [
-  '公制马力转英尺磅每秒', 'PS到ft-lb/s换算', '马力换算', '机械功率换算', '发动机功率',
-  '小型动力设备', 'PS换算工具', 'ft-lb/s计算', '功率单位转换', '欧洲马力标准',
-  '美制功率单位', '机械传动功率', '扭矩功率换算', '小型发动机功率', '功率单位换算公式'
+  'metric horsepower to foot-pound per second', 'PS to ft-lb/s conversion', 'horsepower conversion', 'mechanical power conversion', 'engine power',
+  'small power equipment', 'PS conversion tool', 'ft-lb/s calculation', 'power unit conversion', 'European horsepower standard',
+  'American power units', 'mechanical transmission power', 'torque power conversion', 'small engine power', 'power unit conversion formula'
 ];
 const options =  [
-  { "label": "公制马力 (PS)","value": "PS" },
-  { "label": "英尺・磅每秒 (ft-lb/s)","value": "ft-lb/s" }
+  { "label": "Metric Horsepower (PS)","value": "PS" },
+  { "label": "Foot-Pound per Second (ft-lb/s)","value": "ft-lb/s" }
 ];
 const formRef = ref(null);
 const rules = {
@@ -42,230 +42,167 @@ const rules = {
     required: true,
     type: 'number',
     trigger: "blur",
-    message: '请输入数字'
+    message: 'Please enter a number'
   },
   to:{
     required: true,
     trigger: "select",
-    message: '请选择转换单位'
+    message: 'Please select conversion unit'
   },
   from:{
     required: true,
     trigger: "select",
-    message: '请选择原始单位'
+    message: 'Please select source unit'
   }
 }
-const form = reactive({
-  number:null,
-  to:'',
-  from:'',
-  result:'',
-  title:'公制马力转英尺磅每秒',
+const message = useMessage()
+const formValue = reactive({
+  number: 1,
+  from: 'PS',
+  to: 'ft-lb/s'
 })
-const convertHandler = (e) => {
-   e.preventDefault();
-  formRef.value?.validate((errors)=>{
+const result = ref('')
+const handleValidateClick = (e) => {
+  e.preventDefault()
+  formRef.value?.validate((errors) => {
     if (!errors) {
-      form.result = `${form.number}${form.from} = ${convert(form.number).from(form.from).to(form.to)}${form.to}`
+      result.value = convert(formValue.number, formValue.from, formValue.to, Power)
+    } else {
+      console.log(errors)
+      message.error('Invalid')
     }
   })
 }
 </script>
 
-<n-card title="公制马力(PS)到英尺磅每秒(ft-lb/s)换算器" embedded :bordered="false" hoverable>
-  <n-form size="large" :model="form" ref='formRef' :rules="rules">
-    <n-form-item label="数值"  path="number">
-      <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数值" />
-    </n-form-item>
-    <n-form-item label="从" path="from">
-      <n-select  size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
-    </n-form-item>
-    <n-form-item label="到" path="to">
-      <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
-    </n-form-item>
-    <n-form-item>
-      <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
-    </n-form-item>
-  </n-form>
-  <n-card  embedded :bordered="false" hoverable>
-    <div  style="text-align:center;font-size:20px;">
-      <strong>{{form.result}}</strong>
-    </div>
-  </n-card>
-  <template #footer>
-    <div style="font-size:12px;color:#666;text-align:center;">
-      <span v-for="(key, index) in seoKey" :key="index">
-        {{ key }}<span v-if="index < seoKey.length - 1"> | </span>
-      </span>
-    </div>
-  </template>
-</n-card>
+<NCard title="Metric Horsepower to Foot-Pound per Second Converter">
+<NForm ref="formRef" :model="formValue" :rules="rules">
+<NGrid :cols="24" :x-gap="12">
+<NGi :span="24">
+<NFormItem path="number" label="Enter Value">
+<NInputNumber v-model:value="formValue.number" placeholder="Enter the value to convert" />
+</NFormItem>
+</NGi>
+<NGi :span="12">
+<NFormItem path="from" label="From">
+<NSelect v-model:value="formValue.from" placeholder="Select source unit" :options="options" />
+</NFormItem>
+</NGi>
+<NGi :span="12">
+<NFormItem path="to" label="To">
+<NSelect v-model:value="formValue.to" placeholder="Select target unit" :options="options" />
+</NFormItem>
+</NGi>
+<NGi :span="24">
+<NFormItem>
+<NButton type="primary" @click="handleValidateClick">
+Convert
+</NButton>
+</NFormItem>
+</NGi>
+</NGrid>
+</NForm>
+<div v-if="result" style="margin-top: 20px;">
+<h3>Conversion Result:</h3>
+<p>{{ result }}</p>
+</div>
+</NCard>
 
-## 换算公式
+## Conversion Formula
 
-**基本换算关系：**
-- 1 PS = 735.5 W（瓦特）
-- 1 ft-lb/s = 1.356 W（瓦特）
-- 1 PS ≈ 542.5 ft-lb/s
+The conversion between metric horsepower (PS) and foot-pound per second (ft-lb/s) is based on the following relationship:
 
-**公制马力 (PS) 到英尺磅每秒 (ft-lb/s) 的换算公式：**
+**1 PS = 542.48 ft-lb/s**
+**1 ft-lb/s = 0.001843 PS**
 
-```
-ft-lb/s = PS × 542.5
-```
+### Conversion Formula:
+- **PS to ft-lb/s**: ft-lb/s = PS × 542.48
+- **ft-lb/s to PS**: PS = ft-lb/s × 0.001843
 
-**英尺磅每秒 (ft-lb/s) 到公制马力 (PS) 的换算公式：**
+## Conversion Guide
 
-```
-PS = ft-lb/s ÷ 542.5
-```
+### Why Convert Between PS and ft-lb/s?
 
-**详细计算过程：**
-```
-1 PS = 735.5 W
-1 ft-lb/s = 1.356 W
-因此：1 PS = 735.5 ÷ 1.356 = 542.5 ft-lb/s
-```
+1. **International Engineering**: Converting between European and American mechanical power standards
+2. **Equipment Specification**: Matching power requirements across different measurement systems
+3. **Technical Documentation**: Facilitating communication between international engineering teams
+4. **System Integration**: Combining European and American mechanical components
+5. **Standards Compliance**: Meeting different regional mechanical power requirements
 
-**常用数值对照表：**
+### Conversion Method
 
-| 公制马力 (PS) | 英尺磅每秒 (ft-lb/s) | 应用场景 |
-|---------------|---------------------|----------|
-| 0.01 PS | 5.4 ft-lb/s | 微型电机 |
-| 0.1 PS | 54.3 ft-lb/s | 小型工具电机 |
-| 1 PS | 542.5 ft-lb/s | 割草机发动机 |
-| 5 PS | 2,712.5 ft-lb/s | 小型摩托车发动机 |
-| 10 PS | 5,425 ft-lb/s | 园艺机械发动机 |
-| 50 PS | 27,125 ft-lb/s | 小型汽车发动机 |
-| 100 PS | 54,250 ft-lb/s | 中型汽车发动机 |
+1. **Identify the source unit** (PS or ft-lb/s)
+2. **Apply the appropriate conversion factor**
+3. **Consider the mechanical context** of the application
+4. **Use appropriate precision** for engineering calculations
 
-## 应用示例
+## Practical Examples
 
-### 汽车工程应用
+### Example 1: Small Engine Power Rating
+A European small engine rated at 5 PS. Convert to ft-lb/s:
+- **Calculation**: 5 PS × 542.48 = 2,712.4 ft-lb/s
+- **Application**: Understanding power output for American equipment integration
 
-**小型发动机功率对比：**
-- 一台1.0L三缸发动机输出75 PS
-- 换算为ft-lb/s：75 × 542.5 = 40,687.5 ft-lb/s
-- 用于与美制发动机规格对比和性能分析
+### Example 2: Mechanical Drive System
+A mechanical drive system requires 10,000 ft-lb/s. Convert to PS:
+- **Calculation**: 10,000 ft-lb/s × 0.001843 = 18.43 PS
+- **Application**: Selecting appropriate European motor for the drive system
 
-**摩托车发动机：**
-- 125cc摩托车发动机：15 PS = 8,137.5 ft-lb/s
-- 250cc摩托车发动机：25 PS = 13,562.5 ft-lb/s
-- 便于跨国技术交流和零部件匹配
+### Example 3: Motorcycle Engine Comparison
+A 25 PS motorcycle engine converted to ft-lb/s:
+- **Calculation**: 25 PS × 542.48 = 13,562 ft-lb/s
+- **Application**: Comparing with American motorcycle specifications
 
-### 机械设备应用
+### Example 4: Industrial Equipment Sizing
+A pump requires 50,000 ft-lb/s of power. Express in PS:
+- **Calculation**: 50,000 ft-lb/s × 0.001843 = 92.15 PS
+- **Application**: Selecting appropriate European industrial motor
 
-**园艺机械：**
-- 割草机发动机：3.5 PS = 1,898.8 ft-lb/s
-- 链锯发动机：2.2 PS = 1,193.5 ft-lb/s
-- 用于设备选型和功率匹配
+## Applications in Different Fields
 
-**小型工业设备：**
-- 便携式发电机：5 PS = 2,712.5 ft-lb/s
-- 水泵驱动器：7.5 PS = 4,068.8 ft-lb/s
-- 压缩机驱动：10 PS = 5,425 ft-lb/s
+### Automotive Industry
+- **Engine Specifications**: Converting European engine ratings to American standards
+- **Performance Comparison**: Comparing power outputs across different measurement systems
+- **Component Matching**: Ensuring compatibility between European and American parts
 
-### 精密机械应用
+### Mechanical Engineering
+- **Drive System Design**: Matching motor power to mechanical load requirements
+- **Equipment Selection**: Converting power specifications for international procurement
+- **System Integration**: Combining components from different regional manufacturers
 
-**传动系统设计：**
-- 减速器输入功率：20 PS = 10,850 ft-lb/s
-- 传动效率计算和扭矩分析
-- 机械损耗评估和优化设计
+### Small Engine Applications
+- **Lawn Equipment**: Converting power ratings for international markets
+- **Generator Sets**: Matching power output specifications
+- **Marine Engines**: Converting between European and American marine power standards
 
-## 使用建议
+## Power Conversion Context
 
-### 工程计算精度控制
+### Understanding the Units
+- **Metric Horsepower (PS)**: Based on 75 kg⋅m/s, equals 735.5 watts
+- **Foot-Pound per Second (ft-lb/s)**: Mechanical power unit based on force and distance
+- **Relationship**: Both measure mechanical power but use different base units
 
-**有效数字处理：**
-- 一般工程计算：保留3-4位有效数字
-- 精密机械设计：保留4-5位有效数字
-- 概算评估：保留2-3位有效数字
+### Practical Considerations
+- **Torque vs Power**: ft-lb/s is power, not to be confused with torque (ft-lb)
+- **Speed Dependency**: Power varies with rotational speed in rotating machinery
+- **Efficiency Factors**: Consider mechanical efficiency in real applications
 
-**温度修正：**
-- 标准条件：20°C，1个大气压
-- 高温环境：功率输出可能降低5-10%
-- 高海拔地区：需考虑空气密度影响
+## Summary
 
-### 跨国工程应用
+The conversion between metric horsepower and foot-pound per second facilitates international mechanical engineering collaboration. This conversion is essential for:
 
-**标准对接：**
-- 欧洲标准：优先使用PS作为基准
-- 美国标准：转换为ft-lb/s进行技术交流
-- 文档统一：确保单位标注清晰准确
+- **Cross-Border Projects**: Working with different regional power standards
+- **Equipment Integration**: Combining European and American mechanical systems
+- **Technical Communication**: Ensuring clear understanding across measurement systems
+- **Standards Compliance**: Meeting various regional mechanical power requirements
 
-**设备选型：**
-- 功率匹配：考虑10-20%的安全余量
-- 效率评估：结合传动效率进行计算
-- 成本分析：不同功率单位的设备价格对比
+Understanding this conversion helps mechanical engineers work effectively across different measurement systems, facilitating better equipment selection and system design.
 
-### 实际应用场景
+## Related Conversions
 
-**小型发动机：**
-- 适用范围：0.1-100 PS的小型动力设备
-- 精度要求：±2%的换算误差
-- 应用领域：园艺机械、小型车辆、便携设备
-
-**机械传动：**
-- 扭矩计算：结合转速进行功率验证
-- 效率分析：传动链各环节功率损耗
-- 热管理：功率密度与散热设计
-
-**科学计算：**
-- 跨标准机械系统分析：适用于从欧洲单位（PS）到美制单位（ft-lb/s）的能量换算计算
-- 国际单位制：使用瓦特 W 或千瓦 kW，便于统一标准
-
-## 常见问题 (FAQ)
-
-### Q1: PS和hp有什么区别？
-**A:** PS（公制马力）和hp（英制马力）是不同的功率单位：
-- 1 PS = 735.5 W
-- 1 hp = 745.7 W
-- 1 hp ≈ 1.014 PS
-
-### Q2: 为什么换算系数是542.5？
-**A:** 换算系数来源于基本物理关系：
-- 1 PS = 735.5 W（定义）
-- 1 ft-lb/s = 1.356 W（定义）
-- 因此：1 PS = 735.5 ÷ 1.356 = 542.5 ft-lb/s
-
-### Q3: 小型发动机功率换算有什么注意事项？
-**A:** 小型发动机功率换算需要考虑：
-- **额定功率vs最大功率**：确认使用的是哪种功率标准
-- **工作条件**：温度、海拔、燃料质量等影响实际输出
-- **测试标准**：不同国家的测试标准可能有差异
-- **安全系数**：实际应用中建议预留10-20%余量
-
-### Q4: 如何验证换算结果的准确性？
-**A:** 验证方法包括：
-- **反向计算**：用结果反推原始数值
-- **中间单位**：通过瓦特(W)作为中间单位验证
-- **工程手册**：对照标准工程手册的数据表
-- **实测对比**：与实际测量数据进行对比
-
-### Q5: 机械传动系统中如何应用这个换算？
-**A:** 在机械传动系统中的应用：
-- **输入功率**：发动机输出功率(PS)转换为ft-lb/s
-- **传动效率**：考虑齿轮箱、皮带等传动损耗
-- **输出功率**：最终输出功率的单位统一
-- **扭矩关系**：功率 = 扭矩 × 角速度
-
-### Q6: 不同温度下功率输出如何修正？
-**A:** 温度修正考虑因素：
-- **标准条件**：通常以20°C为基准
-- **高温影响**：每升高10°C，功率约降低3-5%
-- **低温影响**：低温下粘度增加，启动功率需求增大
-- **修正公式**：P_actual = P_rated × (293/(273+T))
-
-## 相关连接
-<n-grid x-gap="12" :cols="2">
-  <n-gi v-for="(file,index) in Power" :key="index">
-    <n-button
-      text
-      tag="a"
-      :href="file.path"
-      type="info"
-    >
-      {{file.name}}
-    </n-button>
-  </n-gi>
-</n-grid>
+- [Metric Horsepower to Watt (PS to W)](/Power/PS-to-W)
+- [Metric Horsepower to Kilowatt (PS to kW)](/Power/PS-to-kW)
+- [Metric Horsepower to Horsepower (PS to hp)](/Power/PS-to-hp)
+- [Foot-Pound per Second to Watt (ft-lb/s to W)](/Power/ft-lb_s-to-W)
+- [Foot-Pound per Second to Kilowatt (ft-lb/s to kW)](/Power/ft-lb_s-to-kW)
+- [Foot-Pound per Second to Horsepower (ft-lb/s to hp)](/Power/ft-lb_s-to-hp)

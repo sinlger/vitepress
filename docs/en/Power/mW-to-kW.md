@@ -4,37 +4,37 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Power/index
-      linkText: 功率换算
-  - - link: /Power/MW-to-kW
-      linkText: 兆瓦转千瓦
+      linkText: Power Conversion
+  - - link: /Power/mW-to-kW
+      linkText: Milliwatt to Kilowatt
 head:
   - - meta
     - name: description
-      content: "提供毫瓦 (mW) 到千瓦 (kW) 的单位换算公式及实际应用场景，适用于小功率设备到中等功率系统的功率分析。"
+      content: "Provides milliwatt (mW) to kilowatt (kW) unit conversion formulas and practical application scenarios, suitable for power analysis from low-power devices to medium-power systems."
   - - meta
     - name: keywords
-      content: "毫瓦转千瓦,mW到kW换算,功率单位换算公式,小功率设备,电子设备功率,功率单位换算工具"
+      content: "milliwatt to kilowatt,mW to kW conversion,power unit conversion formula,low power devices,electronic device power,power unit conversion tool"
 ---
-# 毫瓦 (mW) 到千瓦 (kW) 换算
+# Milliwatt (mW) to Kilowatt (kW) Conversion
 
-毫瓦 (mW) 和千瓦 (kW) 之间存在六个数量级的差异，代表了从微功率电子设备到中等功率系统的跨度。毫瓦常用于描述传感器、芯片、移动设备等小功率电子产品的功耗，而千瓦则广泛应用于家用电器、小型工业设备和电动汽车等中等功率系统。这种换算在现代工程中具有重要意义，特别是在评估电子设备集成对系统总功耗的影响，以及在能效分析和功率预算设计中发挥关键作用。
+There is a six-order-of-magnitude difference between milliwatt (mW) and kilowatt (kW), representing the span from micro-power electronic devices to medium-power systems. Milliwatts are commonly used to describe the power consumption of low-power electronic products such as sensors, chips, and mobile devices, while kilowatts are widely used in medium-power systems such as household appliances, small industrial equipment, and electric vehicles. This conversion is of great significance in modern engineering, especially in evaluating the impact of electronic device integration on total system power consumption, and plays a key role in energy efficiency analysis and power budget design.
 
 <script setup>
 import { onMounted,reactive,inject ,ref  } from 'vue'
 import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage ,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
-import { Power } from '../files';
+import { Power } from '../../files';
 const convert = inject('convert')
 const seoKey = [
-  '毫瓦转千瓦', 'mW到kW换算', '功率单位换算', '小功率设备', '电子设备功耗',
-  '传感器功率', '芯片功耗', '移动设备功率', '家用电器功率', '电动汽车功率',
-  '功率预算', '能效分析', '系统功耗', '功率管理', '电子工程'
+  'milliwatt to kilowatt', 'mW to kW conversion', 'power unit conversion', 'low power devices', 'electronic device power consumption',
+  'sensor power', 'chip power consumption', 'mobile device power', 'household appliance power', 'electric vehicle power',
+  'power budget', 'energy efficiency analysis', 'system power consumption', 'power management', 'electronic engineering'
 ];
 const options =  [
-  { "label": "毫瓦 (mW)","value": "mW" },
-  { "label": "千瓦 (kW)","value": "kW" }
+  { "label": "Milliwatt (mW)","value": "mW" },
+  { "label": "Kilowatt (kW)","value": "kW" }
 ];
 const formRef = ref(null);
 const rules = {
@@ -42,158 +42,141 @@ const rules = {
     required: true,
     type: 'number',
     trigger: "blur",
-    message: '请输入数字'
+    message: 'Please enter a number'
   },
   to:{
     required: true,
     trigger: "select",
-    message: '请选择转换单位'
+    message: 'Please select conversion unit'
   },
   from:{
     required: true,
     trigger: "select",
-    message: '请选择原始单位'
+    message: 'Please select source unit'
   }
 }
-const form = reactive({
-  number:null,
-  to:'',
-  from:'',
-  result:'',
-  title:'毫瓦转千瓦',
+const message = useMessage()
+const formValue = reactive({
+  number: 1,
+  from: 'mW',
+  to: 'kW'
 })
-const convertHandler = (e) => {
-   e.preventDefault();
-  formRef.value?.validate((errors)=>{
+const result = ref('')
+const handleValidateClick = (e) => {
+  e.preventDefault()
+  formRef.value?.validate((errors) => {
     if (!errors) {
-      form.result = `${form.number}${form.from} = ${convert(form.number).from(form.from).to(form.to)}${form.to}`
+      result.value = convert(formValue.number, formValue.from, formValue.to, Power)
+    } else {
+      console.log(errors)
+      message.error('Invalid')
     }
   })
 }
 </script>
 
-<n-card title="毫瓦(mW)到千瓦(kW)换算器" embedded :bordered="false" hoverable>
-  <n-form size="large" :model="form" ref='formRef' :rules="rules">
-    <n-form-item label="数值"  path="number">
-      <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数值" />
-    </n-form-item>
-    <n-form-item label="从" path="from">
-      <n-select  size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
-    </n-form-item>
-    <n-form-item label="到" path="to">
-      <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
-    </n-form-item>
-    <n-form-item>
-      <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
-    </n-form-item>
-  </n-form>
-  <n-card  embedded :bordered="false" hoverable>
-    <div  style="text-align:center;font-size:20px;">
-      <strong>{{form.result}}</strong>
-    </div>
-  </n-card>
-  <template #footer>
-    <div style="font-size:12px;color:#666;text-align:center;">
-      <span v-for="(keyword, index) in seoKey" :key="index">
-        {{ keyword }}<span v-if="index < seoKey.length - 1"> | </span>
-      </span>
-    </div>
-  </template>
-</n-card>
+<NCard title="Milliwatt to Kilowatt Converter">
+<NForm ref="formRef" :model="formValue" :rules="rules">
+<NGrid :cols="24" :x-gap="12">
+<NGi :span="24">
+<NFormItem path="number" label="Enter Value">
+<NInputNumber v-model:value="formValue.number" placeholder="Enter the value to convert" />
+</NFormItem>
+</NGi>
+<NGi :span="12">
+<NFormItem path="from" label="From">
+<NSelect v-model:value="formValue.from" placeholder="Select source unit" :options="options" />
+</NFormItem>
+</NGi>
+<NGi :span="12">
+<NFormItem path="to" label="To">
+<NSelect v-model:value="formValue.to" placeholder="Select target unit" :options="options" />
+</NFormItem>
+</NGi>
+<NGi :span="24">
+<NFormItem>
+<NButton type="primary" @click="handleValidateClick">
+Convert
+</NButton>
+</NFormItem>
+</NGi>
+</NGrid>
+</NForm>
+<div v-if="result" style="margin-top: 20px;">
+<h3>Conversion Result:</h3>
+<p>{{ result }}</p>
+</div>
+</NCard>
 
-## 换算公式
+## Conversion Formula
 
-### 基本换算关系
-- 1 毫瓦 (mW) = 0.001 瓦 (W)
-- 1 千瓦 (kW) = 1000 瓦 (W) = 1,000,000 毫瓦 (mW)
-- 1 千瓦 (kW) = 10⁶ 毫瓦 (mW)
-- 1 毫瓦 (mW) = 10⁻⁶ 千瓦 (kW)
+The conversion between milliwatt (mW) and kilowatt (kW) is based on the following relationship:
 
-### 计算公式
-- **毫瓦转千瓦**：千瓦 = 毫瓦 ÷ 1,000,000
-- **千瓦转毫瓦**：毫瓦 = 千瓦 × 1,000,000
+**1 kW = 1,000,000 mW**
+**1 mW = 0.000001 kW = 1 × 10⁻⁶ kW**
 
-### 常用数值对照表
-| 毫瓦 (mW) | 千瓦 (kW) | 应用场景 |
-|-----------|-----------|----------|
-| 1 mW | 0.000001 kW | LED指示灯 |
-| 10 mW | 0.00001 kW | 蓝牙耳机 |
-| 100 mW | 0.0001 kW | 智能手表 |
-| 1,000 mW (1 W) | 0.001 kW | 手机充电 |
-| 10,000 mW (10 W) | 0.01 kW | 平板电脑 |
-| 100,000 mW (100 W) | 0.1 kW | 笔记本电脑 |
-| 1,000,000 mW | 1 kW | 电热水壶 |
+### Conversion Formula:
+- **mW to kW**: kW = mW × 1 × 10⁻⁶
+- **kW to mW**: mW = kW × 1,000,000
 
-## 应用示例
+## Conversion Guide
 
-### 电子设备功耗分析
-- **物联网传感器网络**：单个传感器功耗约10-50 mW，1000个传感器总功耗约10-50 W (0.01-0.05 kW)
-- **智能手机充电系统**：手机待机功耗约100-500 mW，快充功率可达18-65 W (0.018-0.065 kW)
-- **可穿戴设备**：智能手表功耗约50-200 mW，健身追踪器约10-30 mW
+### Why Convert Between mW and kW?
 
-### 家用电器功率对比
-- **LED照明系统**：单颗LED约3-10 mW，家用LED灯泡5-15 W (0.005-0.015 kW)
-- **电脑设备**：笔记本电脑45-100 W (0.045-0.1 kW)，台式机200-500 W (0.2-0.5 kW)
-- **厨房电器**：微波炉800-1200 W (0.8-1.2 kW)，电磁炉1000-2200 W (1-2.2 kW)
+1. **System Integration**: Understanding power consumption when integrating small devices into larger systems
+2. **Energy Efficiency Analysis**: Comparing device-level consumption with system-level requirements
+3. **Power Budget Planning**: Calculating total power requirements for systems with many small components
+4. **Technology Scaling**: Understanding how micro-power devices scale to system-level power
+5. **Cost Analysis**: Evaluating energy costs from device level to system level
 
-### 跨域功率评估
-- **数据中心能效**：服务器CPU功耗65-200 W，整机功耗300-800 W (0.3-0.8 kW)
-- **电动汽车充电**：慢充功率3.3-7 kW，快充功率50-350 kW
-- **智能建筑系统**：楼宇自动化设备总功耗通常在几十到几百瓦范围
+### Conversion Method
 
-## 使用建议
+1. **Identify the source unit** (mW or kW)
+2. **Apply the appropriate conversion factor**
+3. **Consider the practical context** of the conversion
+4. **Use appropriate precision** for the application
 
-### 跨域功率分析
-- **系统集成设计**：评估大量小功率设备对系统总功耗的累积影响
-- **能效优化**：通过mW级精确测量识别系统中的功耗热点
-- **功率预算规划**：在kW级系统中合理分配mW级组件的功率配额
+## Practical Examples
 
-### 工程计算标准
-- **精度控制**：mW到kW换算涉及10⁶倍数，注意保持足够的有效数字
-- **单位一致性**：在混合功率系统设计中统一使用标准单位制
-- **测量范围**：选择合适的测量工具覆盖mW到kW的宽功率范围
+### Example 1: IoT Sensor Network
+1,000 IoT sensors each consuming 50 mW. Convert total to kW:
+- **Total consumption**: 1,000 × 50 mW = 50,000 mW
+- **Conversion**: 50,000 mW × 1 × 10⁻⁶ = 0.05 kW
+- **Application**: Understanding network power requirements
 
-### 实际应用场景
-- **物联网系统**：评估传感器网络的总体功耗需求
-- **移动设备设计**：平衡组件功耗与电池容量的关系
-- **智能家居**：计算智能设备对家庭总用电量的贡献
+### Example 2: Smartphone vs Electric Kettle
+A smartphone consumes 3,000 mW during heavy use. Compare to a 2 kW electric kettle:
+- **Smartphone**: 3,000 mW × 1 × 10⁻⁶ = 0.003 kW
+- **Comparison**: The kettle uses 667 times more power than the smartphone
+- **Application**: Understanding relative power consumption
 
-## 常见问题 (FAQ)
+### Example 3: Data Center Server
+A server with 1,000 components each consuming 100 mW. Convert total to kW:
+- **Total consumption**: 1,000 × 100 mW = 100,000 mW
+- **Conversion**: 100,000 mW × 1 × 10⁻⁶ = 0.1 kW
+- **Application**: Component-level power budgeting
 
-### Q1: 毫瓦和千瓦相差多少倍？
-A: 毫瓦和千瓦相差100万倍（10⁶倍）。1千瓦 = 1,000,000毫瓦。
+### Example 4: Electric Vehicle Charging
+A 50 kW fast charger converted to mW:
+- **Calculation**: 50 kW × 1,000,000 = 50,000,000 mW (50 MW)
+- **Application**: Understanding the scale difference between device and system power
 
-### Q2: 什么设备通常使用毫瓦作为功率单位？
-A: 主要包括：传感器、芯片、LED指示灯、蓝牙设备、智能手表、物联网设备等小功率电子产品。
+## Summary
 
-### Q3: 千瓦级设备有哪些典型应用？
-A: 包括：家用电器（微波炉、电热水壶）、电动汽车充电桩、小型工业设备、数据中心服务器等。
+The conversion between milliwatt and kilowatt spans six orders of magnitude and is essential for:
 
-### Q4: 如何快速估算mW到kW的换算？
-A: 简单方法是将毫瓦数值除以100万，或者将小数点向左移动6位。例如：500,000 mW = 0.5 kW。
+- **System Design**: Understanding how small components contribute to total system power
+- **Energy Planning**: Scaling from device-level to system-level power requirements
+- **Efficiency Analysis**: Comparing power consumption across different scales
+- **Technology Integration**: Bridging micro-power and macro-power domains
 
-### Q5: 在功率预算中如何处理mW到kW的跨度？
-A: 建议分层管理：组件级使用mW，子系统级使用W，系统级使用kW，确保各层级功率预算的准确性。
+Understanding this conversion helps engineers effectively design systems that integrate numerous small devices while managing overall power consumption and efficiency.
 
-### Q6: 测量mW级功耗时需要注意什么？
-A: 需要使用高精度功率计，注意测量环境的稳定性，避免干扰信号影响测量精度。
+## Related Conversions
 
-### Q7: 为什么要进行mW到kW的换算？
-A: 主要用于：评估大量小功率设备的总体影响、进行系统级能效分析、制定功率预算策略等工程应用。
-
-### Q8: 在物联网系统中如何应用这种换算？
-A: 通过计算单个传感器的mW级功耗，评估整个传感器网络对系统总功耗（kW级）的贡献，优化网络部署策略。
-
-## 相关连接
-<n-grid x-gap="12" :cols="2">
-  <n-gi v-for="(file,index) in Power" :key="index">
-    <n-button
-      text
-      tag="a"
-      :href="file.path"
-      type="info"
-    >
-      {{file.name}}
-    </n-button>
-  </n-gi>
-</n-grid>
+- [Milliwatt to Watt (mW to W)](/Power/mW-to-W)
+- [Milliwatt to Megawatt (mW to MW)](/Power/mW-to-MW)
+- [Milliwatt to Gigawatt (mW to GW)](/Power/mW-to-GW)
+- [Kilowatt to Watt (kW to W)](/Power/kW-to-W)
+- [Kilowatt to Megawatt (kW to MW)](/Power/kW-to-MW)
+- [Kilowatt to Gigawatt (kW to GW)](/Power/kW-to-GW)

@@ -4,22 +4,22 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Power/index
-      linkText: 功率换算
+      linkText: Power Conversion
   - - link: /Power/Btu_s-to-PS
-      linkText: 英热单位每秒转公制马力
+      linkText: Btu/s to PS
 head:
   - - meta
     - name: description
-      content: "专业的英热单位每秒(Btu/s)到公制马力(PS)功率单位换算工具。提供精确的PS马力换算公式和计算方法。适用于欧系汽车、摩托车、船舶、工业设备等领域的功率计算，支持公制马力单位系统换算需求。"
+      content: "Professional Btu/s (British thermal unit per second) to PS (metric horsepower) power unit conversion tool. Provides precise PS conversion formulas and calculation methods. Suitable for automotive engines, industrial machinery, marine engines, and other mechanical equipment requiring metric horsepower unit conversions."
   - - meta
     - name: keywords
-      content: "英热单位每秒转公制马力,Btu/s到PS换算,功率单位换算公式,功率单位换算工具,暖通与欧系汽车工程功率单位,ps是什么单位,公制马力,PS马力,欧系汽车马力,摩托车马力,船舶马力,工业设备马力,德系汽车马力,欧洲汽车标准,公制功率单位,汽车发动机PS,摩托车发动机PS,柴油发动机PS,汽油发动机PS,涡轮增压PS,自然吸气PS,马力功率换算,发动机性能PS,动力输出PS,扭矩马力PS,机械马力PS,液压马力PS,电动马力PS,马力测试标准,欧标马力单位"
+      content: "Btu/s to PS conversion,Btu/s to PS calculator,power unit conversion formula,power unit conversion tool,thermal power and mechanical power units,metric horsepower conversion,what is PS unit,PS horsepower,automotive power,engine power calculation,mechanical equipment power,industrial machinery power,marine engine power,pump power,compressor power,generator power,motor power,turbine power,mechanical transmission power,power system design,automotive engineering,mechanical engineering,industrial equipment power,vehicle performance,engine specifications"
 ---
-# 英热单位每秒 (Btu/s) 到公制马力 (PS) 换算
+# British Thermal Unit per Second (Btu/s) to Metric Horsepower (PS) Conversion
 
-这是关于 **英热单位每秒转公制马力** 的详细介绍，并提供一个实用的 **功率单位换算工具**。
+This is a detailed introduction to **Btu/s to metric horsepower conversion** and provides a practical **power unit conversion tool**.
 
 <script setup>
 import { onMounted,reactive,inject ,ref  } from 'vue'
@@ -27,215 +27,271 @@ import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage ,
 import { defineClientComponent } from 'vitepress'
 import { Power } from '../files';
 const seoKey = [
-  '英热单位每秒转公制马力',
-  'Btu/s到PS换算',
-  '功率单位换算公式',
-  '功率单位换算工具',
-  'PS马力换算计算器',
-  'ps是什么单位',
-  '公制马力换算',
-  '欧洲汽车功率',
-  '德国汽车马力',
-  '欧系车功率',
-  '摩托车功率',
-  '欧洲摩托车马力',
-  '工业设备PS',
-  '机械设备公制马力',
-  '欧标功率单位',
-  '国际马力标准',
-  '汽车发动机PS',
-  '柴油发动机公制马力',
-  '汽油发动机PS',
-  '涡轮增压PS',
-  '电动机公制马力',
-  '船舶发动机PS',
-  '农机设备马力',
-  '工程机械PS',
-  '泵类设备公制马力',
-  '压缩机PS功率',
-  '发电机组PS',
-  '欧洲标准功率',
-  '公制功率换算'
+  'Btu/s to PS conversion',
+  'Btu/s to PS calculator',
+  'power unit conversion formula',
+  'power unit conversion tool',
+  'metric horsepower conversion calculator',
+  'what is PS unit',
+  'PS horsepower conversion',
+  'automotive power units',
+  'engine power calculation',
+  'mechanical equipment power',
+  'industrial machinery power',
+  'marine engine power',
+  'pump power rating',
+  'compressor power',
+  'generator power',
+  'motor power',
+  'turbine power',
+  'mechanical transmission',
+  'power system design',
+  'automotive engineering',
+  'mechanical engineering',
+  'industrial equipment',
+  'vehicle performance',
+  'engine specifications',
+  'power rating standards',
+  'European power units',
+  'DIN horsepower',
+  'metric power system'
 ]
-const convert = inject('convert')
-const options =  [
-  { "label": "英热单位每秒 (Btu/s)","value": "Btu/s" },
-  { "label": "公制马力 (PS)","value": "PS" }
-];
-const formRef = ref(null);
-const rules = {
-  number:{
-    required: true,
-    type: 'number',
-    trigger: "blur",
-    message: '请输入数字'
-  },
-  to:{
-    required: true,
-    trigger: "select",
-    message: '请选择转换单位'
-  },
-  from:{
-    required: true,
-    trigger: "select",
-    message: '请选择原始单位'
-  }
-}
-const form = reactive({
-  number:null,
-  to:'',
-  from:'',
-  result:'',
-  title:'英热单位每秒转公制马力',
+
+const message = useMessage()
+const formValue = reactive({
+  inputValue: 1,
+  outputValue: 1.434,
+  inputUnit: 'Btu/s',
+  outputUnit: 'PS'
 })
-const convertHandler = (e) => {
-   e.preventDefault();
-  formRef.value?.validate((errors)=>{
-    if (!errors) {
-      form.result = `${form.number}${form.from} = ${convert(form.number).from(form.from).to(form.to)}${form.to}`
-    }
-  })
+
+const handleConvert = () => {
+  if (formValue.inputValue === null || formValue.inputValue === undefined) {
+    message.warning('Please enter a valid number')
+    return
+  }
+  
+  // Conversion formula: 1 Btu/s = 1.434 PS
+  formValue.outputValue = Number((formValue.inputValue * 1.434).toFixed(6))
 }
+
+const handleSwap = () => {
+  const tempValue = formValue.inputValue
+  const tempUnit = formValue.inputUnit
+  
+  formValue.inputValue = formValue.outputValue
+  formValue.inputUnit = formValue.outputUnit
+  formValue.outputValue = tempValue
+  formValue.outputUnit = tempUnit
+  
+  handleConvert()
+}
+
+onMounted(() => {
+  handleConvert()
+})
 </script>
 
-<n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="数值"  path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数值" />
-  </n-form-item>
-  <n-form-item label="从" path="from">
-    <n-select  size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
-  </n-form-item>
-  <n-form-item label="到" path="to">
-    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
-  </n-form-item>
-  <n-form-item>
-    <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
-  </n-form-item>
-</n-form>
-<n-card  
-  title="功率单位换算"
-  :segmented="{
-    content: true,
-    footer: 'soft',
-  }"
->
-  <div  style="text-align:center;font-size:20px;">
-    <strong>{{form.result}}</strong>
-  </div>
-    <template #footer>
-    <div>
-      <span v-for="item of seoKey">{{item}}，</span>
-    </div>
-  </template>
+<n-card title="Btu/s to PS Converter" style="margin: 20px 0;">
+  <n-form>
+    <n-grid :cols="24" :gutter="12">
+      <n-gi :span="11">
+        <n-form-item label="Input Value">
+          <n-input-number 
+            v-model:value="formValue.inputValue" 
+            :precision="6"
+            placeholder="Enter Btu/s value"
+            style="width: 100%"
+            @input="handleConvert"
+          />
+        </n-form-item>
+      </n-gi>
+      <n-gi :span="2" style="display: flex; align-items: end; justify-content: center;">
+        <n-button @click="handleSwap" style="margin-bottom: 24px;">⇄</n-button>
+      </n-gi>
+      <n-gi :span="11">
+        <n-form-item label="Result">
+          <n-input-number 
+            v-model:value="formValue.outputValue" 
+            :precision="6"
+            placeholder="PS result"
+            style="width: 100%"
+            readonly
+          />
+        </n-form-item>
+      </n-gi>
+    </n-grid>
+    <n-grid :cols="24" :gutter="12" style="margin-top: 12px;">
+      <n-gi :span="11">
+        <n-form-item label="Input Unit">
+          <n-input v-model:value="formValue.inputUnit" readonly />
+        </n-form-item>
+      </n-gi>
+      <n-gi :span="2"></n-gi>
+      <n-gi :span="11">
+        <n-form-item label="Output Unit">
+          <n-input v-model:value="formValue.outputUnit" readonly />
+        </n-form-item>
+      </n-gi>
+    </n-grid>
+  </n-form>
 </n-card>
 
-## 换算公式
+## Conversion Formula
 
-1 公制马力 (PS) ≈ 0.7355 千瓦 (kW) ≈ 0.6963 英热单位每秒 (Btu/s)
+The conversion formula from Btu/s to PS is:
 
-## 生活中的应用示例
+**1 Btu/s = 1.434 PS**
 
-- **暖通设备功率匹配**：用于将美标 Btu/s 设备功率换算为欧洲常用 PS 进行本地化选型。
-- **工业机械动力系统对比**：在进口美系压缩机或泵时，需进行 Btu/s 与 PS 的互换计算。
-- **跨国项目设备选型**：如冷水机组以 Btu/s 标注，而欧洲标准常使用 PS。
+Therefore:
+- **PS = Btu/s × 1.434**
 
-## 使用建议
+## Conversion Guide
 
-- **跨标准机械设备选型**：适用于从北美单位（Btu/s）到欧洲单位（PS）的能量换算计算。
-- **科学计算**：使用国际单位制（瓦特 W 或千瓦 kW），便于统一标准。
+### What is Btu/s (British Thermal Unit per Second)?
 
-## 功率单位在欧洲汽车与工业设备中的应用场景
+Btu/s (British thermal unit per second) is a unit of power in the British Imperial system, representing the rate of energy transfer. One Btu/s equals the energy required to raise the temperature of one pound of water by one degree Fahrenheit in one second.
 
-了解Btu/s和PS在欧洲标准设备中的实际应用有助于更好地理解公制马力换算的重要性：
+**Common applications:**
+- HVAC system power rating
+- Boiler and furnace capacity
+- Heat pump performance
+- Industrial heating equipment
+- Thermal energy calculations
 
-### 欧洲汽车工业
+### What is PS (Metric Horsepower)?
 
-**公制马力(PS)在欧洲汽车中的应用：**
-  * **德系豪华车**：奔驰、宝马、奥迪发动机功率通常标注为150-600PS
-  * **欧洲跑车**：保时捷、法拉利、兰博基尼等超跑功率可达500-1000PS
-  * **欧系家用车**：大众、标致、雷诺等品牌发动机功率为80-300PS
-  * **欧洲商用车**：奔驰、沃尔沃、斯堪尼亚卡车发动机功率为300-700PS
+PS (Pferdestärke) is a unit of power in the metric system, commonly used in Europe and other regions. One PS equals 735.5 watts and is slightly different from the imperial horsepower (hp). PS is widely used in automotive and mechanical engineering applications.
 
-### 摩托车与两轮车
+**Common applications:**
+- Automotive engine power rating
+- Industrial machinery specifications
+- Marine engine power
+- Agricultural equipment power
+- Pump and compressor ratings
+- Generator and motor specifications
 
-**欧洲摩托车的功率标准：**
-  * **大排量摩托车**：宝马、杜卡迪、KTM等品牌功率为100-200PS
-  * **中排量街车**：欧洲600-800cc摩托车功率通常为80-120PS
-  * **踏板摩托车**：欧洲大踏板功率为15-60PS，城市通勤车为5-20PS
-  * **电动摩托车**：欧洲电动摩托车功率为20-150PS，高端产品可达200PS
+## Why Convert Btu/s to PS?
 
-### 工业与农业机械
+Converting between Btu/s and PS is useful in various engineering applications:
 
-**欧洲工业设备的PS标准：**
-  * **农业拖拉机**：欧洲农机品牌如芬特、道依茨功率为50-500PS
-  * **工程机械**：利勃海尔、沃尔沃建机等设备功率为100-800PS
-  * **船舶发动机**：欧洲船用柴油机功率从几十PS到数万PS
-  * **发电设备**：欧洲柴油发电机组功率为20-5000PS
+1. **International equipment specifications**: Comparing thermal and mechanical power ratings across different standards
+2. **HVAC and mechanical systems**: Understanding power relationships in combined heating and mechanical systems
+3. **Industrial process design**: Converting between thermal input and mechanical output power
+4. **Energy system analysis**: Analyzing efficiency in power generation and conversion systems
+5. **Cross-disciplinary engineering**: Working with both thermal and mechanical power systems
 
-### 工业泵类与压缩机
+## Conversion Method
 
-**欧洲工业设备的功率配置：**
-  * **工业水泵**：欧洲品牌离心泵功率为5-1000PS
-  * **空气压缩机**：欧洲螺杆压缩机功率为10-500PS
-  * **风机设备**：欧洲工业风机功率为10-2000PS
-  * **液压设备**：欧洲液压站功率为5-300PS
+### Step-by-step conversion:
 
-## 常见问题解答 (FAQ)
+1. **Identify the Btu/s value** you want to convert
+2. **Apply the conversion factor**: Multiply by 1.434
+3. **Calculate the result**: Btu/s × 1.434 = PS
+4. **Round appropriately** based on your precision requirements
 
-### 基础概念问题
+### Example Calculations:
 
-**Q: PS是什么单位？**
-A: PS是公制马力(Pferdestärke)的缩写，是功率单位。1PS≈735.5瓦特，主要在欧洲使用，与英制马力(hp)略有不同。
+**Example 1: Small Thermal System**
+- Input: 5 Btu/s
+- Calculation: 5 × 1.434 = 7.17 PS
+- Result: 5 Btu/s = 7.17 PS
 
-**Q: Btu/s是什么单位？**
-A: Btu/s是英热单位每秒的缩写，表示每秒钟产生或消耗的热能。1 Btu/s ≈ 1.434 PS，常用于暖通空调系统。
+**Example 2: Medium Thermal System**
+- Input: 25 Btu/s
+- Calculation: 25 × 1.434 = 35.85 PS
+- Result: 25 Btu/s = 35.85 PS
 
-**Q: 英热单位每秒转公制马力的换算公式是什么？**
-A: 1 PS ≈ 0.6971 Btu/s。换算公式：PS = Btu/s ÷ 0.6971
+**Example 3: Large Thermal System**
+- Input: 100 Btu/s
+- Calculation: 100 × 1.434 = 143.4 PS
+- Result: 100 Btu/s = 143.4 PS
 
-### 汽车功率问题
+## Practical Applications
 
-**Q: PS和hp有什么区别？**
-A: PS是公制马力，hp是英制马力。1PS≈0.9863hp。欧洲车型通常用PS标注，美系车用hp，差异约1.4%。
+### Automotive Engineering
+- **Engine power rating**: Converting thermal efficiency measurements to mechanical power output
+- **Performance analysis**: Understanding power conversion in internal combustion engines
+- **Cooling system design**: Analyzing thermal load versus mechanical power requirements
+- **Fuel efficiency studies**: Comparing thermal input to mechanical output power
 
-**Q: 为什么欧洲汽车喜欢用PS而不是kW？**
-A: 虽然kW是国际标准，但PS在欧洲汽车工业有悠久历史，消费者更熟悉。现在很多车型会同时标注PS和kW。
+### Industrial Machinery
+- **Equipment specification**: Converting between thermal and mechanical power ratings
+- **Process optimization**: Understanding power conversion efficiency in industrial processes
+- **System design**: Balancing thermal input with mechanical output requirements
+- **Energy auditing**: Analyzing overall system efficiency and power conversion
 
-**Q: 如何比较不同标准的汽车功率？**
-A: 统一换算为同一单位进行比较。例如：200PS≈197hp≈147kW。注意测试标准也可能不同。
+### Marine and Transportation
+- **Marine engine rating**: Converting thermal capacity to mechanical power output
+- **Propulsion systems**: Understanding power conversion in marine applications
+- **Transportation efficiency**: Analyzing fuel consumption versus power output
+- **Performance optimization**: Balancing thermal and mechanical power requirements
 
-### 工业设备问题
+### Power Generation
+- **Thermal power plants**: Converting thermal input to mechanical generator power
+- **Combined heat and power**: Understanding power relationships in CHP systems
+- **Energy conversion**: Analyzing efficiency in thermal-to-mechanical power conversion
+- **System optimization**: Balancing thermal input with electrical output power
 
-**Q: 欧洲工业设备为什么使用PS标注功率？**
-A: 欧洲工业传统使用公制单位，PS是公制马力，与欧洲的度量衡体系一致，便于工程师理解和计算。
+## Understanding Power Unit Differences
 
-**Q: 如何选择合适PS功率的工业设备？**
-A: 根据实际工况计算所需功率，选择比计算值大20-30%的设备。注意区分额定功率和最大功率。
+### Thermal Power (Btu/s)
+- **Nature**: Represents rate of thermal energy transfer
+- **Applications**: Heating, cooling, thermal processes
+- **Measurement**: Based on heat energy transfer rate
+- **Standards**: British Imperial system
 
-**Q: 农业机械的PS功率如何影响作业效率？**
-A: 功率越大，牵引力和作业速度越高，但也要考虑燃油经济性和作业精度。合适的功率匹配最重要。
+### Mechanical Power (PS)
+- **Nature**: Represents rate of mechanical work
+- **Applications**: Engines, motors, mechanical equipment
+- **Measurement**: Based on force and velocity
+- **Standards**: Metric system (European standard)
 
-### 换算计算问题
+### Conversion Considerations
+- **Different energy forms**: Converting between thermal and mechanical energy
+- **Efficiency factors**: Real-world conversions involve efficiency losses
+- **Application context**: Consider the specific use case and system efficiency
+- **Standard variations**: PS differs slightly from other horsepower units
 
-**Q: 如何将暖通系统的Btu/s换算为欧洲设备的PS？**
-A: 使用换算公式：PS = Btu/s ÷ 0.6971。这个换算帮助选择合适的欧洲品牌设备。
+## Power Rating Examples
 
-**Q: PS、kW、hp之间如何快速换算？**
-A: 记住关键比例：1PS≈0.735kW≈0.986hp。或使用在线换算工具进行精确计算。
+### Typical Thermal Power (Btu/s)
+- **Residential boiler**: 50-200 Btu/s
+- **Commercial HVAC**: 100-1000 Btu/s
+- **Industrial heater**: 500-5000 Btu/s
+- **Power plant boiler**: 10,000-100,000 Btu/s
 
-**Q: 电机功率标注PS和kW有什么实际意义？**
-A: PS更直观易懂，kW便于电力计算。现代设备通常同时标注两种单位，满足不同用户需求。
+### Equivalent Mechanical Power (PS)
+- **71.7-286.8 PS**: Residential heating systems
+- **143.4-1434 PS**: Commercial HVAC systems
+- **717-7170 PS**: Industrial heating equipment
+- **14,340-143,400 PS**: Large power generation systems
 
-## 相关连接
-<n-grid x-gap="12" :cols="2">
-  <n-gi v-for="(file,index) in Power" :key="index">
-    <n-button
-      text
-      tag="a"
-      :href="file.path"
-      type="info"
-    >
-      {{file.name}}
-    </n-button>
-  </n-gi>
-</n-grid>
+## Efficiency Considerations
+
+### Thermal-to-Mechanical Conversion
+- **Internal combustion engines**: 25-40% efficiency
+- **Steam turbines**: 35-45% efficiency
+- **Gas turbines**: 30-40% efficiency
+- **Combined cycle**: 50-60% efficiency
+
+### Real-World Applications
+- **Actual mechanical output**: Always less than thermal input due to efficiency losses
+- **System design**: Must account for conversion efficiency in calculations
+- **Performance optimization**: Focus on improving conversion efficiency
+- **Energy balance**: Consider both thermal input and mechanical output requirements
+
+## Summary
+
+Btu/s to PS conversion enables engineers to understand the relationship between thermal power input and mechanical power output in various systems. This conversion is essential for equipment specification, system design, and performance analysis across multiple industries.
+
+Understanding both thermal and mechanical power units helps in optimizing energy conversion systems, comparing equipment specifications, and designing efficient power generation and utilization systems.
+
+## Related Conversions
+
+- [Btu/s to Horsepower (hp)](/Power/Btu_s-to-hp)
+- [Btu/s to Kilowatts (kW)](/Power/Btu_s-to-kW)
+- [Btu/s to Watts (W)](/Power/Btu_s-to-W)
+- [PS to Horsepower (hp)](/Power/PS-to-hp)
+- [PS to Kilowatts (kW)](/Power/PS-to-kW)
+- [PS to Watts (W)](/Power/PS-to-W)

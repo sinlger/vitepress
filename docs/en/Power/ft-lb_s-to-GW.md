@@ -4,192 +4,311 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Power/index
-      linkText: 功率换算
+      linkText: Power Conversion
   - - link: /Power/ft-lb_s-to-GW
-      linkText: 英尺磅每秒转吉瓦
+      linkText: ft-lb/s to GW
 head:
   - - meta
     - name: description
-      content: "专业的英尺磅每秒(ft-lb/s)转吉瓦(GW)换算工具，提供精确的功率单位转换公式、详细应用场景和实用计算器。适用于大型发电站、核电工程、电网系统等超大规模功率换算需求。"
+      content: "Professional ft-lb/s (foot-pound per second) to GW (gigawatt) power unit conversion tool. Provides precise power unit conversion formulas, detailed application scenarios, and practical calculator. Suitable for large power plants, nuclear engineering, grid systems, and other ultra-large scale power conversion requirements."
   - - meta
     - name: keywords
-      content: "英尺磅每秒转吉瓦,ft-lb/s到GW换算,功率单位换算,吉瓦换算器,大型发电站功率,核电站功率换算,电网功率计算,超大功率单位,工程功率换算,能源功率转换"
+      content: "ft-lb/s to GW conversion,ft-lb/s to GW calculator,power unit conversion,gigawatt converter,large power plant power,nuclear power plant power conversion,grid power calculation,ultra-large power units,engineering power conversion,energy power conversion"
 ---
-# 英尺・磅每秒 (ft-lb/s) 到吉瓦 (GW) 换算
+# Foot-Pound per Second (ft-lb/s) to Gigawatt (GW) Conversion
 
-**英尺磅每秒转吉瓦换算工具**是专为大型能源系统设计的专业功率单位转换器。英尺磅每秒(ft-lb/s)是英制功率单位，主要用于机械工程计算，而吉瓦(GW)是国际标准的超大功率单位，广泛应用于发电站、电网系统和大型工业设施的功率表示。本工具提供精确的换算公式和实时计算功能，帮助工程师、研究人员和能源专业人士进行准确的功率单位转换。
+**ft-lb/s to GW conversion tool** is a professional power unit converter designed for large energy systems. Foot-pound per second (ft-lb/s) is an Imperial power unit mainly used in mechanical engineering calculations, while gigawatt (GW) is an international standard ultra-large power unit widely used in power plants, grid systems, and large industrial facilities. This tool provides precise conversion formulas and real-time calculation functions to help engineers, researchers, and energy professionals perform accurate power unit conversions.
 
 <script setup>
 import { onMounted,reactive,inject ,ref  } from 'vue'
 import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage ,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
 import { Power } from '../files';
-const convert = inject('convert')
-const options =  [
-  { "label": "英尺・磅每秒 (ft-lb/s)","value": "ft-lb/s" },
-  { "label": "吉瓦 (GW)","value": "GW" }
-];
-const formRef = ref(null);
-const rules = {
-  number:{
-    required: true,
-    type: 'number',
-    trigger: "blur",
-    message: '请输入数字'
-  },
-  to:{
-    required: true,
-    trigger: "select",
-    message: '请选择转换单位'
-  },
-  from:{
-    required: true,
-    trigger: "select",
-    message: '请选择原始单位'
-  }
-}
 const seoKey = [
-  '英尺磅每秒转吉瓦', 'ft-lb/s到GW', '功率单位换算', '吉瓦换算器',
-  '大型发电站功率', '核电站功率换算', '电网功率计算', '超大功率单位',
-  '工程功率换算', '能源功率转换', 'フィート・ポンド毎秒からギガワット',
-  'パワー単位変換', 'ギガワット計算機', '発電所出力換算'
+  'ft-lb/s to GW conversion',
+  'ft-lb/s to GW calculator',
+  'power unit conversion',
+  'gigawatt converter',
+  'large power plant power',
+  'nuclear power plant power conversion',
+  'grid power calculation',
+  'ultra-large power units',
+  'engineering power conversion',
+  'energy power conversion',
+  'foot-pound per second',
+  'gigawatt power',
+  'power system design',
+  'energy engineering',
+  'electrical engineering',
+  'mechanical engineering',
+  'power generation',
+  'energy conversion',
+  'large scale power',
+  'industrial power systems'
 ]
-const form = reactive({
-  number:null,
-  to:'',
-  from:'',
-  result:'',
-  title:'英尺磅每秒转吉瓦换算器',
+
+const message = useMessage()
+const formValue = reactive({
+  inputValue: 1,
+  outputValue: 1.3558179e-9,
+  inputUnit: 'ft-lb/s',
+  outputUnit: 'GW'
 })
-const convertHandler = (e) => {
-   e.preventDefault();
-  formRef.value?.validate((errors)=>{
-    if (!errors) {
-      form.result = `${form.number}${form.from} = ${convert(form.number).from(form.from).to(form.to)}${form.to}`
-    }
-  })
+
+const handleConvert = () => {
+  if (formValue.inputValue === null || formValue.inputValue === undefined) {
+    message.warning('Please enter a valid number')
+    return
+  }
+  
+  // Conversion formula: 1 ft-lb/s = 1.3558179e-9 GW
+  formValue.outputValue = Number((formValue.inputValue * 1.3558179e-9).toFixed(15))
 }
+
+const handleSwap = () => {
+  const tempValue = formValue.inputValue
+  const tempUnit = formValue.inputUnit
+  
+  formValue.inputValue = formValue.outputValue
+  formValue.inputUnit = formValue.outputUnit
+  formValue.outputValue = tempValue
+  formValue.outputUnit = tempUnit
+  
+  handleConvert()
+}
+
+onMounted(() => {
+  handleConvert()
+})
 </script>
 
-<n-card title="英尺磅每秒转吉瓦换算器" embedded :bordered="false" hoverable>
-  <n-form size="large" :model="form" ref='formRef' :rules="rules">
-    <n-form-item label="数值"  path="number">
-      <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数值" />
-    </n-form-item>
-    <n-form-item label="从" path="from">
-      <n-select  size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
-    </n-form-item>
-    <n-form-item label="到" path="to">
-      <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
-    </n-form-item>
-    <n-form-item>
-      <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
-    </n-form-item>
+<n-card title="ft-lb/s to GW Converter" style="margin: 20px 0;">
+  <n-form>
+    <n-grid :cols="24" :gutter="12">
+      <n-gi :span="11">
+        <n-form-item label="Input Value">
+          <n-input-number 
+            v-model:value="formValue.inputValue" 
+            :precision="6"
+            placeholder="Enter ft-lb/s value"
+            style="width: 100%"
+            @input="handleConvert"
+          />
+        </n-form-item>
+      </n-gi>
+      <n-gi :span="2" style="display: flex; align-items: end; justify-content: center;">
+        <n-button @click="handleSwap" style="margin-bottom: 24px;">⇄</n-button>
+      </n-gi>
+      <n-gi :span="11">
+        <n-form-item label="Result">
+          <n-input-number 
+            v-model:value="formValue.outputValue" 
+            :precision="15"
+            placeholder="GW result"
+            style="width: 100%"
+            readonly
+          />
+        </n-form-item>
+      </n-gi>
+    </n-grid>
+    <n-grid :cols="24" :gutter="12" style="margin-top: 12px;">
+      <n-gi :span="11">
+        <n-form-item label="Input Unit">
+          <n-input v-model:value="formValue.inputUnit" readonly />
+        </n-form-item>
+      </n-gi>
+      <n-gi :span="2"></n-gi>
+      <n-gi :span="11">
+        <n-form-item label="Output Unit">
+          <n-input v-model:value="formValue.outputUnit" readonly />
+        </n-form-item>
+      </n-gi>
+    </n-grid>
   </n-form>
-  <n-card  embedded :bordered="false" hoverable>
-    <div  style="text-align:center;font-size:20px;">
-      <strong>{{form.result}}</strong>
-    </div>
-  </n-card>
-  <template #footer>
-    <div style="font-size: 12px; color: #666; text-align: center;">
-      关键词: {{ seoKey.join(' | ') }}
-    </div>
-  </template>
 </n-card>
 
-## 详细换算公式
+## Conversion Formula
 
-### 基础换算关系
-- **1 吉瓦 (GW) = 737,562,340 英尺磅每秒 (ft-lb/s)**
-- **1 英尺磅每秒 (ft-lb/s) = 1.35582 × 10⁻⁹ 吉瓦 (GW)**
+The conversion formula from ft-lb/s to GW is:
 
-### 换算公式
-- **GW → ft-lb/s**: P(ft-lb/s) = P(GW) × 737,562,340
-- **ft-lb/s → GW**: P(GW) = P(ft-lb/s) × 1.35582 × 10⁻⁹
+**1 ft-lb/s = 1.3558179 × 10⁻⁹ GW**
 
-### 常用数值对照表
-| 吉瓦 (GW) | 英尺磅每秒 (ft-lb/s) | 应用场景 |
-|-----------|---------------------|----------|
-| 0.001 | 737,562.34 | 小型风力发电机 |
-| 0.1 | 73,756,234 | 中型发电机组 |
-| 1 | 737,562,340 | 大型核电机组 |
-| 10 | 7,375,623,400 | 超大型发电站 |
-| 100 | 73,756,234,000 | 国家级电网容量 |
+Therefore:
+- **GW = ft-lb/s × 1.3558179 × 10⁻⁹**
 
-## 实际应用示例
+## Conversion Guide
 
-### 典型功率值换算
-- **大型核电站机组**: 1.2 GW = 885,074,808 ft-lb/s
-- **海上风电场**: 0.8 GW = 590,049,872 ft-lb/s
-- **燃煤发电站**: 2.5 GW = 1,843,905,850 ft-lb/s
-- **水力发电站**: 1.8 GW = 1,327,612,212 ft-lb/s
-- **太阳能发电园区**: 0.5 GW = 368,781,170 ft-lb/s
+### What is ft-lb/s (Foot-Pound per Second)?
 
-### 工程应用场景
-- **核电站输出功率统计**：单机组容量通常为1-1.6 GW，换算为ft-lb/s便于与机械系统功率对比
-- **大型光伏电站发电能力分析**：10 GW光伏电站相当于73.76亿ft-lb/s的机械功率输出
-- **跨国电网能耗调度**：将GW级发电站功率转换为ft-lb/s单位，便于国际工程项目的功率匹配
-- **海上风电场功率评估**：800 MW海上风电场约等于5.9亿ft-lb/s的等效机械功率
+ft-lb/s (foot-pound per second) is a unit of power in the Imperial system, representing the rate at which work is done. One ft-lb/s equals the power required to perform one foot-pound of work in one second.
 
-## 实际应用场景
+**Common applications:**
+- Mechanical engineering calculations
+- Motor and engine power ratings
+- Industrial machinery specifications
+- Pump and compressor power
+- Mechanical system design
 
-### 电力工程领域
-- **发电站设计**: 核电、火电、水电站的功率规划和容量计算
-- **电网规划**: 大型电网系统的功率分配和负荷平衡
-- **可再生能源**: 风电场、太阳能电站的功率评估和并网计算
-- **国际项目**: 跨国电力工程中的功率单位统一和技术交流
+### What is GW (Gigawatt)?
 
-### 工业应用
-- **大型机械设备**: 超大型压缩机、泵站等设备的功率换算
-- **船舶工程**: 大型船舶推进系统功率与发电系统功率对比
-- **航空航天**: 大型试验设备和地面支持系统的功率计算
-- **重工业**: 钢铁、化工等行业大型设备的功率规划
+GW (gigawatt) is a unit of power in the International System of Units (SI), equal to one billion watts (10⁹ W). It represents extremely large amounts of power typically associated with major power generation facilities and large-scale energy systems.
 
-## 常见问题解答 (FAQ)
+**Common applications:**
+- Nuclear power plant capacity
+- Large thermal power stations
+- Hydroelectric dam output
+- National grid power capacity
+- Large-scale renewable energy projects
 
-### 1. 为什么需要进行GW到ft-lb/s的换算？
-在国际工程项目中，经常需要将发电站的GW级功率与机械设备的ft-lb/s功率进行对比分析，特别是在美国标准和国际标准并存的项目中。
+## Why Convert ft-lb/s to GW?
 
-### 2. 这种换算在哪些行业最常用？
-主要应用于电力工程、核电建设、大型机械制造、船舶工程和国际能源项目，特别是需要进行功率匹配和系统集成的场合。
+Converting between ft-lb/s and GW is essential in specific engineering applications:
 
-### 3. 如何快速估算GW到ft-lb/s的换算？
-可以记住1 GW ≈ 7.38亿ft-lb/s这个近似值，对于快速估算已经足够准确。
+1. **Large-scale power system analysis**: Understanding mechanical power in terms of grid-scale capacity
+2. **Power plant engineering**: Converting mechanical drive power to electrical generation capacity
+3. **International project coordination**: Bridging Imperial and SI unit systems in large projects
+4. **Academic and research applications**: Comparing different power scales in energy studies
+5. **Historical data analysis**: Converting legacy mechanical power data to modern standards
 
-### 4. 换算精度对工程应用有什么影响？
-在大型电力系统设计中，功率换算的精度直接影响设备选型、系统匹配和安全裕度计算，建议使用精确的换算系数。
+## Conversion Method
 
-### 5. GW和ft-lb/s在不同应用中的特点是什么？
-GW主要用于描述发电站、电网等大型电力系统的功率，而ft-lb/s更多用于机械工程中的功率计算，两者的换算有助于跨领域的工程协调。
+### Step-by-step conversion:
 
-### 6. 如何验证换算结果的准确性？
-可以通过反向换算验证，或者使用其他功率单位（如MW、HP等）作为中间单位进行交叉验证。
+1. **Identify the ft-lb/s value** you want to convert
+2. **Apply the conversion factor**: Multiply by 1.3558179 × 10⁻⁹
+3. **Calculate the result**: ft-lb/s × 1.3558179 × 10⁻⁹ = GW
+4. **Express in scientific notation** for very small results
 
-## 使用建议
+### Example Calculations:
 
-本换算工具特别适用于大型电力工程项目，建议在以下情况使用：
-- **国际工程项目**: 需要在美制和国际单位间进行功率换算
-- **设备选型**: 将发电设备功率与机械设备功率进行匹配
-- **技术交流**: 与使用不同单位制的工程团队进行沟通
-- **学术研究**: 能源工程和电力系统相关的科研工作
+**Example 1: Large Industrial Motor**
+- Input: 1,000,000 ft-lb/s
+- Calculation: 1,000,000 × 1.3558179 × 10⁻⁹ = 0.0013558179 GW
+- Result: 1,000,000 ft-lb/s = 1.36 MW
 
-## 总结
+**Example 2: Power Plant Turbine**
+- Input: 100,000,000 ft-lb/s
+- Calculation: 100,000,000 × 1.3558179 × 10⁻⁹ = 0.13558179 GW
+- Result: 100,000,000 ft-lb/s = 135.6 MW
 
-英尺磅每秒到吉瓦的换算是大型电力工程中的重要计算工具。掌握准确的换算方法和应用场景，有助于提高工程设计效率和国际项目协作能力。无论是核电站建设、大型风电场规划，还是跨国电网项目，这种功率单位换算都发挥着关键作用。
+**Example 3: Theoretical Large System**
+- Input: 1,000,000,000 ft-lb/s
+- Calculation: 1,000,000,000 × 1.3558179 × 10⁻⁹ = 1.3558179 GW
+- Result: 1,000,000,000 ft-lb/s = 1.36 GW
 
-## 相关连接
-<n-grid x-gap="12" :cols="2">
-  <n-gi v-for="(file,index) in Power" :key="index">
-    <n-button
-      text
-      tag="a"
-      :href="file.path"
-      type="info"
-    >
-      {{file.name}}
-    </n-button>
-  </n-gi>
-</n-grid>
+## Practical Applications
+
+### Power Generation Industry
+- **Turbine analysis**: Converting mechanical shaft power to electrical generation capacity
+- **Plant design**: Understanding mechanical components in terms of electrical output
+- **Efficiency calculations**: Analyzing mechanical-to-electrical conversion efficiency
+- **Performance monitoring**: Tracking turbine mechanical power in grid terms
+
+### Large-Scale Engineering Projects
+- **Hydroelectric systems**: Converting water turbine mechanical power to electrical capacity
+- **Wind power**: Understanding turbine mechanical power in grid-scale terms
+- **Industrial complexes**: Analyzing large mechanical systems in electrical equivalents
+- **Infrastructure planning**: Sizing electrical systems for large mechanical loads
+
+### Research and Development
+- **Energy system modeling**: Comparing different power scales and technologies
+- **Academic studies**: Analyzing power systems across different unit systems
+- **Technology comparison**: Evaluating mechanical versus electrical power systems
+- **Historical analysis**: Converting legacy power data to modern standards
+
+### International Projects
+- **Cross-border collaboration**: Bridging Imperial and metric unit systems
+- **Technology transfer**: Converting specifications between different standards
+- **Global standards**: Harmonizing power specifications across regions
+- **Documentation**: Ensuring consistent power units in international projects
+
+## Understanding Power Scale
+
+### Typical Mechanical Power (ft-lb/s)
+- **Small motors**: 100-10,000 ft-lb/s
+- **Industrial equipment**: 10,000-1,000,000 ft-lb/s
+- **Large turbines**: 1,000,000-100,000,000 ft-lb/s
+- **Theoretical systems**: 100,000,000+ ft-lb/s
+
+### Equivalent Electrical Power (GW)
+- **0.000000136-0.0000136 GW**: Small industrial applications
+- **0.0000136-0.001356 GW**: Medium industrial systems
+- **0.001356-0.1356 GW**: Large industrial/small utility scale
+- **0.1356+ GW**: Utility-scale power generation
+
+## Power Generation Context
+
+### Nuclear Power Plants
+- **Typical capacity**: 1-1.5 GW electrical output
+- **Mechanical equivalent**: ~740-1100 million ft-lb/s
+- **Efficiency considerations**: Thermal-to-mechanical-to-electrical conversion
+- **Grid integration**: Understanding mechanical power in electrical terms
+
+### Thermal Power Stations
+- **Coal plants**: 0.5-3 GW typical capacity
+- **Gas turbines**: 0.1-1 GW typical capacity
+- **Combined cycle**: 0.4-2 GW typical capacity
+- **Mechanical components**: Turbines, generators, auxiliary systems
+
+### Renewable Energy Systems
+- **Large wind farms**: 0.1-1 GW total capacity
+- **Hydroelectric dams**: 0.1-22 GW (largest installations)
+- **Solar farms**: 0.1-2 GW typical large installations
+- **Mechanical considerations**: Turbine power, tracking systems
+
+## Engineering Considerations
+
+### Conversion Accuracy
+- **Scientific notation**: Essential for expressing very small GW values
+- **Precision requirements**: Depends on application and measurement accuracy
+- **Rounding considerations**: Maintain appropriate significant figures
+- **Error propagation**: Consider cumulative effects in complex calculations
+
+### System Design Implications
+- **Scale differences**: Vast difference between ft-lb/s and GW scales
+- **Practical applications**: Most ft-lb/s values convert to MW or kW range
+- **Design considerations**: Choose appropriate power units for each application
+- **Documentation standards**: Use consistent units throughout projects
+
+### Measurement and Standards
+- **Mechanical power measurement**: Torque and speed sensors
+- **Electrical power measurement**: Voltage, current, and power factor
+- **Conversion standards**: International standards for unit conversions
+- **Calibration requirements**: Ensure measurement accuracy across scales
+
+## Common Applications by Sector
+
+### Utility and Grid Operations
+- **Generation planning**: Understanding mechanical capacity in electrical terms
+- **Load balancing**: Analyzing mechanical generation components
+- **System reliability**: Evaluating mechanical-electrical conversion reliability
+- **Capacity planning**: Sizing electrical infrastructure for mechanical systems
+
+### Industrial Manufacturing
+- **Process design**: Balancing mechanical and electrical power requirements
+- **Equipment specification**: Converting between mechanical and electrical ratings
+- **Energy management**: Optimizing overall power consumption
+- **Cost analysis**: Comparing mechanical versus electrical power costs
+
+### Research and Academia
+- **Energy studies**: Comparing different power scales and technologies
+- **System modeling**: Analyzing complex energy conversion systems
+- **Technology development**: Evaluating new power generation technologies
+- **Educational applications**: Teaching power unit relationships
+
+## Summary
+
+ft-lb/s to GW conversion represents the relationship between mechanical power at the individual machine level and electrical power at the utility scale. While the conversion factor is extremely small, understanding this relationship is crucial for large-scale energy system analysis and power generation engineering.
+
+This conversion helps bridge the gap between mechanical engineering calculations and electrical power system planning, enabling comprehensive analysis of energy conversion systems from component level to grid scale.
+
+## Related Conversions
+
+- [ft-lb/s to Watts (W)](/Power/ft-lb_s-to-W)
+- [ft-lb/s to Kilowatts (kW)](/Power/ft-lb_s-to-kW)
+- [ft-lb/s to Megawatts (MW)](/Power/ft-lb_s-to-MW)
+- [GW to Watts (W)](/Power/GW-to-W)
+- [GW to Kilowatts (kW)](/Power/GW-to-kW)
+- [GW to ft-lb/s](/Power/GW-to-ft-lb_s)

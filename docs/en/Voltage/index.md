@@ -4,22 +4,22 @@ aside: false
 lastUpdated: false
 breadcrumb: 
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Voltage/index
-      linkText: 电压换算
+      linkText: Voltage Conversion
   - - link: /Voltage/index
-      linkText: 电压单位换算
+      linkText: Voltage Unit Conversion
 head:
   - - meta
     - name: description
-      content: 专业的电压单位换算工具和电压知识科普平台。提供伏特(V)、毫伏(mV)、千伏(kV)精确换算，详解电压是什么、电流和电压的关系、相电压与线电压的关系、电压公式等电学基础知识，涵盖电压符号、电压的单位、功率计算公式等实用内容，适用于电工、电子工程师、学生和电压相关从业人员。
+      content: Professional voltage unit conversion tools and voltage knowledge platform. Provides accurate conversion between volts (V), millivolts (mV), and kilovolts (kV). Comprehensive guide covering what is voltage, relationship between current and voltage, phase voltage vs line voltage, voltage formulas, and electrical fundamentals. Includes voltage symbols, voltage units, power calculation formulas for electricians, electronic engineers, students, and voltage-related professionals.
   - - meta
     - name: keywords
-      content: 电压单位换算,电压换算,电压单位转换,电压是什么,电流和电压的关系,相电压与线电压的关系,电压公式,电压符号,线电压和相电压的关系,电压和电流的关系,电压的单位,功率计算公式,电流电压功率计算公式,电压的英文,电压电流功率公式,标称电压,线电压和相电压,相电压和线电压的区别,电势差,voltage definition,相电压,线电压,伏特,线电压与相电压关系,电压英文,电压单位,相电压和线电压,电势,电流,功率,voltage
+      content: voltage unit conversion,voltage conversion,voltage unit converter,what is voltage,current and voltage relationship,phase voltage line voltage relationship,voltage formula,voltage symbol,line voltage phase voltage relationship,voltage current relationship,voltage units,power calculation formula current voltage,current voltage power calculation formula,voltage in english,voltage current power formula,nominal voltage,line voltage phase voltage,phase voltage line voltage difference,potential difference,voltage definition,phase voltage,line voltage,volt,line voltage phase voltage relationship,voltage english,voltage unit,phase voltage line voltage,potential,current,power,voltage
 ---
-# 电压单位换算 - 电压知识科普与应用指南
+# Voltage Unit Conversion - Voltage Knowledge Guide & Application Manual
 
-**电压(Voltage)**是电学中的基本物理量，表示电路中两点间的电势差。本页面提供专业的电压单位换算工具，并详细介绍电压的基本概念、计算公式、实际应用等知识，帮助您深入理解电压原理和正确使用电压单位。
+**Voltage** is a fundamental physical quantity in electrical engineering that represents the potential difference between two points in a circuit. This page provides professional voltage unit conversion tools and detailed explanations of voltage concepts, calculation formulas, and practical applications to help you understand voltage principles and correctly use voltage units.
 
 ---
 <script setup>
@@ -29,18 +29,18 @@ import { defineClientComponent } from 'vitepress'
 import { Voltage } from '../files';
 const convert = inject('convert')
 const options =  [
-  { label: '伏特', value: 'V' },
-  { label: '毫伏', value: 'mV' },
-  { label: '千伏', value: 'kV' }
+  { label: 'Volts', value: 'V' },
+  { label: 'Millivolts', value: 'mV' },
+  { label: 'Kilovolts', value: 'kV' }
 ];
 const seoKey = [
-  '电压单位换算','电压换算','电压单位转换','电压是什么','电流和电压的关系',
-  '相电压与线电压的关系','电压公式','电压符号','线电压和相电压的关系',
-  '电压和电流的关系','电压的单位','功率计算公式 电流 电压','电流电压功率计算公式',
-  '电压的英文','电压电流功率公式','标称电压','线电压和相电压',
-  '相电压和线电压的区别','电势差','voltage definition','相电压','线电压',
-  '伏特','线电压与相电压关系','电压英文','电压单位','相电压和线电压',
-  '电势','电流','功率','voltage'
+  'voltage unit conversion','voltage conversion','voltage unit converter','what is voltage','current and voltage relationship',
+  'phase voltage line voltage relationship','voltage formula','voltage symbol','line voltage phase voltage relationship',
+  'voltage current relationship','voltage units','power calculation formula current voltage','current voltage power calculation formula',
+  'voltage in english','voltage current power formula','nominal voltage','line voltage phase voltage',
+  'phase voltage line voltage difference','potential difference','voltage definition','phase voltage','line voltage',
+  'volt','line voltage phase voltage relationship','voltage english','voltage unit','phase voltage line voltage',
+  'potential','current','power','voltage'
 ]
 const formRef = ref(null);
 const rules = {
@@ -48,17 +48,17 @@ const rules = {
     required: true,
     type: 'number',
     trigger: "blur",
-    message: '请输入数字'
+    message: 'Please enter a number'
   },
   to:{
     required: true,
     trigger: "select",
-    message: '请选择转换单位'
+    message: 'Please select target unit'
   },
   from:{
     required: true,
     trigger: "select",
-    message: '请选择原始单位'
+    message: 'Please select source unit'
   }
 }
 const form = reactive({
@@ -66,7 +66,7 @@ const form = reactive({
   to:'',
   from:'',
   result:'',
-  title:'电压单位转换',
+  title:'Voltage Unit Conversion',
 })
 const convertHandler = (e) => {
    e.preventDefault;
@@ -80,17 +80,17 @@ const convertHandler = (e) => {
 </script>
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="数值"  path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数值" />
+  <n-form-item label="Value"  path="number">
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="Enter the value to convert" />
   </n-form-item>
-  <n-form-item label="从" path="from">
-    <n-select  size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
+  <n-form-item label="From" path="from">
+    <n-select  size="large" :options="options" v-model:value="form.from" placeholder="Select source unit" />
   </n-form-item>
-  <n-form-item label="到" path="to">
-    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
+  <n-form-item label="To" path="to">
+    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="Select target unit" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
+    <n-button type="info" style="width:100%" @click="convertHandler">Convert</n-button>
   </n-form-item>
 </n-form>
 <n-card embedded :bordered="false" hoverable style="margin-top: 16px;">
@@ -111,210 +111,222 @@ const convertHandler = (e) => {
   </template>
 </n-card>
 
-## 电压基础知识科普
+## Voltage Fundamentals
 
-### 一、电压是什么？
+### 1. What is Voltage?
 
-**电压(Voltage)**，也称为电势差或电位差，是衡量电路中两点间电势能差异的物理量。简单来说，电压是推动电流流动的"动力"。
+**Voltage**, also known as potential difference or electric potential difference, is a physical quantity that measures the difference in electrical potential energy between two points in a circuit. Simply put, voltage is the "driving force" that pushes electric current to flow.
 
-**电压的定义：**
-- **物理定义**：单位正电荷从一点移动到另一点时电场力所做的功
-- **数学表达式**：U = W/Q（电压 = 功/电荷量）
-- **电压符号**：通常用字母 **U** 或 **V** 表示
-- **电压的英文**：Voltage，简写为V
+**Voltage Definition:**
+- **Physical Definition**: The work done by electric field force when a unit positive charge moves from one point to another
+- **Mathematical Expression**: U = W/Q (Voltage = Work/Charge)
+- **Voltage Symbol**: Usually represented by letter **U** or **V**
+- **Voltage in English**: Voltage, abbreviated as V
 
-### 二、电流和电压的关系
+### 2. Relationship Between Current and Voltage
 
-**欧姆定律**是描述电压、电流和电阻关系的基本定律：
+**Ohm's Law** is the fundamental law describing the relationship between voltage, current, and resistance:
 
-**核心公式：U = I × R**
-- **U**：电压（伏特，V）
-- **I**：电流（安培，A）  
-- **R**：电阻（欧姆，Ω）
+**Core Formula: U = I × R**
+- **U**: Voltage (Volts, V)
+- **I**: Current (Amperes, A)  
+- **R**: Resistance (Ohms, Ω)
 
-**电压和电流的关系特点：**
-- 电压是电流产生的原因（电压推动电流流动）
-- 在电阻固定的情况下，电压与电流成正比
-- 没有电压就没有电流（在闭合电路中）
+**Characteristics of Voltage and Current Relationship:**
+- Voltage is the cause of current flow (voltage drives current flow)
+- When resistance is fixed, voltage is proportional to current
+- No voltage means no current (in a closed circuit)
 
-### 三、功率计算公式（电流、电压）
+### 3. Power Calculation Formulas (Current, Voltage)
 
-**电功率**表示电路消耗电能的快慢，与电压、电流密切相关：
+**Electric Power** represents the rate at which electrical energy is consumed in a circuit, closely related to voltage and current:
 
-**基本功率公式：**
-- **P = U × I**（功率 = 电压 × 电流）
-- **P = U²/R**（功率 = 电压²/电阻）
-- **P = I²R**（功率 = 电流² × 电阻）
+**Basic Power Formulas:**
+- **P = U × I** (Power = Voltage × Current)
+- **P = U²/R** (Power = Voltage²/Resistance)
+- **P = I²R** (Power = Current² × Resistance)
 
-**电流电压功率计算公式应用：**
-- 家用电器功率计算：P = 220V × I
-- 电池供电设备：P = 电池电压 × 工作电流
-- 电机功率：P = √3 × U线 × I线 × cosφ（三相电机）
+**Current Voltage Power Calculation Formula Applications:**
+- Household appliance power calculation: P = 220V × I
+- Battery-powered devices: P = Battery voltage × Operating current
+- Motor power: P = √3 × U_line × I_line × cosφ (Three-phase motor)
 
-### 四、相电压与线电压的关系
+### 4. Relationship Between Phase Voltage and Line Voltage
 
-在三相电力系统中，存在两种重要的电压概念：
+In three-phase power systems, there are two important voltage concepts:
 
-**相电压（Phase Voltage）：**
-- 定义：任意一相与中性点之间的电压
-- 符号：Up 或 UΦ
-- 我国低压系统：220V
+**Phase Voltage:**
+- Definition: Voltage between any phase and neutral point
+- Symbol: Up or UΦ
+- China's low voltage system: 220V
 
-**线电压（Line Voltage）：**
-- 定义：任意两相之间的电压
-- 符号：Ul 或 UL
-- 我国低压系统：380V
+**Line Voltage:**
+- Definition: Voltage between any two phases
+- Symbol: Ul or UL
+- China's low voltage system: 380V
 
-**线电压和相电压的关系：**
-- **数学关系**：Ul = √3 × Up ≈ 1.732 × Up
-- **实际应用**：380V = √3 × 220V
-- **相电压和线电压的区别**：
-  - 相电压用于单相负载
-  - 线电压用于三相负载
-  - 线电压比相电压大√3倍
+**Relationship Between Line Voltage and Phase Voltage:**
+- **Mathematical Relationship**: Ul = √3 × Up ≈ 1.732 × Up
+- **Practical Application**: 380V = √3 × 220V
+- **Difference Between Phase Voltage and Line Voltage**:
+  - Phase voltage is used for single-phase loads
+  - Line voltage is used for three-phase loads
+  - Line voltage is √3 times larger than phase voltage
 
-### 五、电压单位定义与用途
+### 5. Voltage Unit Definition and Usage
 
-  * V（Volt，伏特）
+The international standard unit for voltage is **Volt**, with symbol **V**. To represent different magnitudes of voltage, the following common units are also used:
 
-    * 是国际主单位，表示电势差或电压。
-    * 常见场景：干电池（1.5V）、手机充电器（5V）、家用插座（220V/110V）。
+#### 1. Volt (V) - Basic Unit
+- **Definition**: The basic unit of voltage in the International System of Units
+- **Named After**: Italian physicist Alessandro Volta
+- **Application Range**:
+  - Household appliances: 220V (China), 110V (USA)
+  - Car battery: 12V
+  - Mobile phone battery: 3.7V
+  - USB charging: 5V
 
-  * mV（毫伏）
+#### 2. Millivolt (mV) - One Thousandth of a Volt
+- **Conversion**: 1V = 1000mV
+- **Application Scenarios**:
+  - Sensor signals: Usually tens to hundreds of millivolts
+  - Audio signals: Microphone output about 1-10mV
+  - Bioelectric signals: Electrocardiogram (ECG) about 1mV
+  - Precision measuring instruments' small signals
 
-    * 1mV=0.001V（千分之一伏特）。
-    * 用途：测量微弱电信号，如生物电（心电图）、传感器输出、音频设备信号。
+#### 3. Kilovolt (kV) - One Thousand Volts
+- **Conversion**: 1kV = 1000V
+- **Application Fields**:
+  - High voltage transmission lines: 110kV, 220kV, 500kV
+  - Substation equipment: 35kV, 10kV
+  - X-ray equipment: Tens to hundreds of kV
+  - Power system distribution: 6kV, 10kV
 
-  * kV（千伏）
+### 6. Voltage Unit Conversion Relationships
 
-    * 1kV=1000V（一千伏特）。
-    * 用途：高压输电（如110kV、220kV电网）、工业设备绝缘测试。
+**Voltage units** follow the International System of Units, with the basic unit being volt (V), and other units are multiples or fractions of volts:
 
-### 六、电压单位换算关系
+**Common Voltage Units and Conversions:**
 
-**电压的单位**采用国际单位制，基本单位是伏特(V)，其他单位都是伏特的倍数或分数：
+| Unit Name | Symbol | Relationship to Volt | Application Scenarios |
+|-----------|--------|---------------------|----------------------|
+| Kilovolt | kV | 1kV = 1,000V | High voltage transmission, substations |
+| Volt | V | Basic unit | Household appliances, batteries |
+| Millivolt | mV | 1mV = 0.001V | Sensors, audio signals |
+| Microvolt | μV | 1μV = 0.000001V | Weak signals, bioelectricity |
 
-**常用电压单位及换算：**
+**Detailed Conversion Formulas:**
 
-| 单位名称 | 符号 | 与伏特的关系 | 应用场景 |
-|---------|------|-------------|----------|
-| 千伏 | kV | 1kV = 1,000V | 高压输电、变电站 |
-| 伏特 | V | 基本单位 | 家用电器、电池 |
-| 毫伏 | mV | 1mV = 0.001V | 传感器、音频信号 |
-| 微伏 | μV | 1μV = 0.000001V | 微弱信号、生物电 |
+| Conversion Direction | Formula | Calculation Example | Practical Application |
+|---------------------|---------|-------------------|----------------------|
+| kV→V | V = kV × 1000 | 10kV = 10,000V | High voltage line voltage |
+| V→mV | mV = V × 1000 | 5V = 5,000mV | Electronic circuit design |
+| mV→μV | μV = mV × 1000 | 2mV = 2,000μV | Precision measurement |
+| **Reverse Conversion** | | | |
+| mV→V | V = mV ÷ 1000 | 1500mV = 1.5V | Battery voltage |
+| V→kV | kV = V ÷ 1000 | 6600V = 6.6kV | Distribution voltage |
+| μV→mV | mV = μV ÷ 1000 | 5000μV = 5mV | Signal processing |
 
-**详细换算公式：**
+**Quick Memory Methods:**
+- **Upward conversion** (large unit→small unit): Multiply by 1000
+- **Downward conversion** (small unit→large unit): Divide by 1000
+- **Mnemonic**: "Thousand-base conversion, large to small multiply by thousand, small to large divide by thousand"
 
-| 换算方向 | 公式 | 计算示例 | 实际应用 |
-|---------|------|----------|----------|
-| kV→V | V = kV × 1000 | 10kV = 10,000V | 高压线路电压 |
-| V→mV | mV = V × 1000 | 5V = 5,000mV | 电子电路设计 |
-| mV→μV | μV = mV × 1000 | 2mV = 2,000μV | 精密测量 |
-| **逆向换算** | | | |
-| mV→V | V = mV ÷ 1000 | 1500mV = 1.5V | 电池电压 |
-| V→kV | kV = V ÷ 1000 | 6600V = 6.6kV | 配电电压 |
-| μV→mV | mV = μV ÷ 1000 | 5000μV = 5mV | 信号处理 |
+### 7. Practical Applications and Safety Knowledge
 
-**快速记忆方法：**
-- **向上换算**（大单位→小单位）：乘以1000
-- **向下换算**（小单位→大单位）：除以1000
-- **口诀**："千进制换算，大到小乘千，小到大除千"
+#### 7.1 Nominal Voltage and Practical Applications
 
-### 七、电压实际应用与安全知识
+**Nominal voltage** is the rated operating voltage of equipment or systems, while actual voltage may fluctuate within certain ranges:
 
-#### 7.1 标称电压与实际应用
+**Common Nominal Voltages:**
+- **1.5V**: Dry batteries (AA, AAA)
+- **3.7V**: Lithium battery nominal voltage
+- **5V**: USB power supply standard
+- **12V**: Car battery, LED strips
+- **24V**: Industrial control systems
+- **220V**: China household single-phase voltage
+- **380V**: China industrial three-phase voltage
 
-**标称电压**是设备或系统的额定工作电压，实际电压可能有一定波动：
+#### 7.2 Safety Voltage Classification
 
-**常见标称电压：**
-- **1.5V**：干电池（AA、AAA）
-- **3.7V**：锂电池标称电压
-- **5V**：USB供电标准
-- **12V**：汽车电瓶、LED灯带
-- **24V**：工业控制系统
-- **220V**：中国家用单相电压
-- **380V**：中国工业三相电压
+According to International Electrotechnical Commission (IEC) standards:
 
-#### 7.2 安全电压分级
+| Voltage Level | Voltage Range | Safety Level | Application Scenarios |
+|---------------|---------------|--------------|----------------------|
+| Safety Extra Low Voltage | ≤42V DC, ≤30V AC | Safe contact | Handheld tools, toys |
+| Low Voltage | 50V~1000V AC | Requires protection | Household appliances, industrial equipment |
+| High Voltage | 1kV~35kV | Professional operation | Distribution systems, factory power supply |
+| Extra High Voltage | 35kV~800kV | Strict protection | Transmission lines, substations |
 
-根据国际电工委员会(IEC)标准：
+#### 7.3 Practical Applications of Potential Difference
 
-| 电压等级 | 电压范围 | 安全等级 | 应用场景 |
-|---------|----------|----------|----------|
-| 安全特低电压 | ≤42V DC, ≤30V AC | 安全接触 | 手持工具、玩具 |
-| 低压 | 50V~1000V AC | 需要防护 | 家用电器、工业设备 |
-| 高压 | 1kV~35kV | 专业操作 | 配电系统、工厂供电 |
-| 超高压 | 35kV~800kV | 严格防护 | 输电线路、变电站 |
+**Potential difference** is the physical essence of voltage, manifested in practical applications as:
 
-#### 7.3 电势差在实际中的应用
+- **Batteries**: Chemical energy converted to potential difference
+- **Generators**: Mechanical energy converted to potential difference
+- **Solar cells**: Light energy converted to potential difference
+- **Sensors**: Physical quantity changes generate potential difference
 
-**电势差**是电压的物理本质，在实际应用中体现为：
+#### 7.4 Engineering Application Considerations
 
-- **电池**：化学能转化为电势差
-- **发电机**：机械能转化为电势差  
-- **太阳能电池**：光能转化为电势差
-- **传感器**：物理量变化产生电势差
+**Measurement Considerations:**
+- Select appropriate range multimeter
+- Pay attention to AC/DC voltage differences
+- High voltage measurement requires specialized equipment and protection
 
-#### 7.4 工程应用注意事项
+**Design Considerations:**
+- Consider voltage fluctuation range (typically ±10%)
+- Reserve safety margin
+- Pay attention to voltage level matching
 
-**测量注意事项：**
-- 选择合适量程的万用表
-- 注意交流/直流电压的区别
-- 高压测量需要专用设备和防护
+**Common Misconceptions Corrected:**
+- ❌ Wrong: 1MV = 0.001V → ✅ Correct: 1MV = 1,000,000V
+- ❌ Wrong: kV and kVA are the same → ✅ Correct: kV is voltage unit, kVA is apparent power unit
+- ❌ Wrong: Higher voltage means higher power → ✅ Correct: Power = Voltage × Current
 
-**设计注意事项：**
-- 考虑电压波动范围（通常±10%）
-- 预留安全裕量
-- 注意电压等级匹配
+### 8. Voltage Knowledge FAQ
 
-**常见误区纠正：**
-- ❌ 错误：1MV = 0.001V → ✅ 正确：1MV = 1,000,000V
-- ❌ 错误：kV与kVA相同 → ✅ 正确：kV是电压单位，kVA是视在功率单位
-- ❌ 错误：电压越高功率越大 → ✅ 正确：功率 = 电压 × 电流
+#### Q1: Why do different countries have different household voltages?
+**A:** Due to historical reasons and different technological development paths:
+- **USA/Japan**: 110V-120V (early technical standards)
+- **China/Europe**: 220V-240V (higher transmission efficiency)
+- **Industrial power**: Most countries use 380V-400V three-phase power
 
-### 八、电压知识FAQ
+#### Q2: Which is more dangerous, voltage or current?
+**A:** Both are important, but **current is the lethal factor**:
+- **Safe current**: ≤10mA (human perception threshold)
+- **Dangerous current**: Above 30mA (potentially lethal)
+- **Voltage role**: Overcomes human body resistance to generate current
+- **Key formula**: I = U/R (Ohm's law)
 
-#### Q1: 为什么不同国家的家用电压不同？
-**A:** 历史原因和技术发展路径不同：
-- **美国/日本**：110V-120V（早期技术标准）
-- **中国/欧洲**：220V-240V（传输效率更高）
-- **工业用电**：多数国家采用380V-400V三相电
+#### Q3: Why is phone charger output 5V?
+**A:** USB standard specifications:
+- **5V**: Sufficient to drive digital circuits
+- **Safety**: Belongs to safety extra low voltage
+- **Compatibility**: International universal standard
+- **Efficiency**: Suitable for switching power supply conversion
 
-#### Q2: 电压和电流哪个更危险？
-**A:** 都很重要，但**电流是致命因素**：
-- **安全电流**：≤10mA（人体感知阈值）
-- **危险电流**：30mA以上（可能致命）
-- **电压作用**：克服人体电阻，产生电流
-- **关键公式**：I = U/R（欧姆定律）
+#### Q4: What's the difference between phase voltage and line voltage?
+**A:** Two types of voltage in three-phase electrical systems:
+- **Phase voltage**: Voltage between any phase line and neutral line (220V)
+- **Line voltage**: Voltage between any two phase lines (380V)
+- **Relationship**: Line voltage = √3 × Phase voltage ≈ 1.732 × Phase voltage
 
-#### Q3: 为什么手机充电器输出是5V？
-**A:** USB标准规定：
-- **5V**：足够驱动数字电路
-- **安全性**：属于安全特低电压
-- **兼容性**：国际通用标准
-- **效率**：适合开关电源转换
+#### Q5: Why does battery voltage drop?
+**A:** Multiple reasons:
+- **Increased internal resistance**: Battery aging, internal impedance rises
+- **Capacity degradation**: Chemical active substances decrease
+- **Temperature effects**: Battery performance drops at low temperatures
+- **Load effects**: Voltage drops during high current discharge
 
-#### Q4: 相电压和线电压有什么区别？
-**A:** 三相电系统中的两种电压：
-- **相电压**：任一相线与中性线间电压（220V）
-- **线电压**：任意两相线间电压（380V）
-- **关系**：线电压 = √3 × 相电压 ≈ 1.732 × 相电压
+#### Q6: How to choose appropriate voltage level?
+**A:** Based on application requirements:
+- **Power requirements**: P = U × I, high power can choose high voltage
+- **Safety requirements**: Choose safe voltage for personnel contact
+- **Transmission distance**: Choose high voltage for long-distance transmission
+- **Cost considerations**: Balance equipment cost and operating cost
 
-#### Q5: 为什么电池电压会下降？
-**A:** 多种原因导致：
-- **内阻增加**：电池老化，内部阻抗上升
-- **容量衰减**：化学活性物质减少
-- **温度影响**：低温下电池性能下降
-- **负载影响**：大电流放电时电压下降
-
-#### Q6: 如何选择合适的电压等级？
-**A:** 根据应用需求：
-- **功率需求**：P = U × I，高功率可选择高电压
-- **安全要求**：人员接触选择安全电压
-- **传输距离**：远距离传输选择高电压
-- **成本考虑**：平衡设备成本和运行成本
-
-### 九、相关链接
+### 9. Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Voltage" :key="index">
     <n-button

@@ -1,190 +1,152 @@
 ---
-sidebar: false
-aside: false
-lastUpdated: false
-breadcrumb:
-  - - link: /
-      linkText: 首页
-  - - link: /Power/index
-      linkText: 功率换算
-  - - link: /Power/MW-to-mW
-      linkText: 兆瓦转毫瓦
-head:
-  - - meta
-    - name: description
-      content: "提供毫瓦 (mW) 到兆瓦 (MW) 的单位换算公式及实际应用场景，适用于小功率设备到大型能源系统的功率分析。"
-  - - meta
-    - name: keywords
-      content: "毫瓦转兆瓦,mW到MW换算,功率单位换算公式,小功率设备,大型能源系统,功率单位换算工具"
+title: "Milliwatt (mW) to Megawatt (MW) Conversion"
+description: "Provides unit conversion formulas and practical application scenarios from milliwatt (mW) to megawatt (MW), suitable for power analysis from small power devices to large energy systems."
+keywords:
+  - Milliwatt to megawatt
+  - mW to MW conversion
+  - Power unit conversion formula
+  - Small power devices
+  - Large energy systems
+  - Power unit conversion tool
+breadcrumbs:
+  - name: Home
+    linkText: Home
+    linkUrl: /
+  - name: Power Conversion
+    linkText: Power Conversion
+    linkUrl: /zh/Power/
+  - name: Milliwatt to Megawatt
+    linkText: Milliwatt to Megawatt
+    linkUrl: /zh/Power/mW-to-MW
+meta:
+  - name: description
+    content: "Provides unit conversion formulas and practical application scenarios from milliwatt (mW) to megawatt (MW), suitable for power analysis from small power devices to large energy systems."
+  - name: keywords
+    content: "Milliwatt to megawatt,mW to MW conversion,Power unit conversion formula,Small power devices,Large energy systems,Power unit conversion tool"
 ---
-# 毫瓦 (mW) 到兆瓦 (MW) 换算
+# Milliwatt (mW) to Megawatt (MW) Conversion
 
-毫瓦 (mW) 和兆瓦 (MW) 之间存在九个数量级的巨大差异，代表了从微功率电子设备到大型能源系统的极端跨度。毫瓦常用于描述传感器、芯片、可穿戴设备等超低功耗电子产品，而兆瓦则应用于发电站、大型工业设施和城市电网等大规模能源系统。这种换算在现代工程中具有重要意义，特别是在评估物联网设备规模化部署对电网的影响，以及在智慧城市、工业4.0等大型系统中进行精确的能耗分析和功率预算规划。
+There is a huge difference of nine orders of magnitude between milliwatt (mW) and megawatt (MW), representing the extreme span from micro-power electronic devices to large energy systems. Milliwatts are commonly used to describe ultra-low power electronic products such as sensors, chips, and wearable devices, while megawatts are applied to large-scale energy systems such as power plants, large industrial facilities, and urban power grids. This conversion is of great significance in modern engineering, especially in evaluating the impact of large-scale deployment of IoT devices on the power grid, and in conducting precise energy consumption analysis and power budget planning in large systems such as smart cities and Industry 4.0.
 
 <script setup>
-import { onMounted,reactive,inject ,ref  } from 'vue'
-import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage ,NGrid ,NGi } from 'naive-ui'
-import { defineClientComponent } from 'vitepress'
-import { Power } from '../files';
-const convert = inject('convert')
+import { ref, computed } from 'vue'
+
 const seoKey = [
-  '毫瓦转兆瓦', 'mW到MW换算', '功率单位换算', '小功率设备', '大型能源系统',
-  '物联网设备', '发电站功率', '工业设施', '智慧城市', '电网分析',
-  '功率预算', '能耗分析', '规模化部署', '电子设备', '能源管理'
-];
-const options =  [
-  { "label": "毫瓦 (mW)","value": "mW" },
-  { "label": "兆瓦 (MW)","value": "MW" }
-];
-const formRef = ref(null);
+  'Milliwatt to megawatt', 'mW to MW conversion', 'Power unit conversion', 'Small power devices', 'Large energy systems',
+  'IoT devices', 'Power plant power', 'Industrial facilities', 'Smart cities', 'Grid analysis',
+  'Power budget', 'Energy consumption analysis', 'Large-scale deployment', 'Electronic devices', 'Energy management'
+]
+
+const form = ref({
+  number: 0,
+  from: 'mW',
+  to: 'MW',
+  result: ''
+})
+
+const options = [
+  { "label": "Milliwatt (mW)", "value": "mW" },
+  { "label": "Megawatt (MW)", "value": "MW" }
+]
+
 const rules = {
-  number:{
+  number: {
     required: true,
-    type: 'number',
-    trigger: "blur",
-    message: '请输入数字'
+    message: 'Please enter a number',
+    trigger: ['blur', 'input']
   },
-  to:{
+  to: {
     required: true,
-    trigger: "select",
-    message: '请选择转换单位'
+    message: 'Please select conversion unit',
+    trigger: 'select'
   },
-  from:{
+  from: {
     required: true,
-    trigger: "select",
-    message: '请选择原始单位'
+    message: 'Please select original unit',
+    trigger: 'select'
   }
 }
-const form = reactive({
-  number:null,
-  to:'',
-  from:'',
-  result:'',
-  title:'毫瓦转兆瓦',
-})
-const convertHandler = (e) => {
-   e.preventDefault();
-  formRef.value?.validate((errors)=>{
-    if (!errors) {
-      form.result = `${form.number}${form.from} = ${convert(form.number).from(form.from).to(form.to)}${form.to}`
-    }
-  })
+
+const convertHandler = () => {
+  if (form.value.from === 'mW' && form.value.to === 'MW') {
+    form.value.result = `${form.value.number} mW = ${(form.value.number / 1000000000).toFixed(12)} MW`
+  } else if (form.value.from === 'MW' && form.value.to === 'mW') {
+    form.value.result = `${form.value.number} MW = ${(form.value.number * 1000000000).toFixed(6)} mW`
+  } else {
+    form.value.result = `${form.value.number} ${form.value.from} = ${form.value.number} ${form.value.to}`
+  }
 }
 </script>
 
-<n-card title="毫瓦(mW)到兆瓦(MW)换算器" embedded :bordered="false" hoverable>
-  <n-form size="large" :model="form" ref='formRef' :rules="rules">
-    <n-form-item label="数值"  path="number">
-      <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数值" />
-    </n-form-item>
-    <n-form-item label="从" path="from">
-      <n-select  size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
-    </n-form-item>
-    <n-form-item label="到" path="to">
-      <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
-    </n-form-item>
-    <n-form-item>
-      <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
-    </n-form-item>
-  </n-form>
-  <n-card  embedded :bordered="false" hoverable>
-    <div  style="text-align:center;font-size:20px;">
-      <strong>{{form.result}}</strong>
-    </div>
-  </n-card>
+<n-form size="large" :model="form" :rules="rules">
+  <n-form-item label="Value" path="number">
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="Enter the value to convert" />
+  </n-form-item>
+  <n-form-item label="From" path="from">
+    <n-select size="large" :options="options" v-model:value="form.from" placeholder="Select original unit" />
+  </n-form-item>
+  <n-form-item label="To" path="to">
+    <n-select size="large" :options="options" v-model:value="form.to" placeholder="Select conversion unit" />
+  </n-form-item>
+  <n-form-item>
+    <n-button type="info" style="width:100%" @click="convertHandler">Convert</n-button>
+  </n-form-item>
+</n-form>
+<n-card  
+  title="Milliwatt to Megawatt Conversion"
+  :segmented="{
+    content: true,
+    footer: 'soft',
+  }"
+>
+  <div style="text-align:center;font-size:20px;">
+    <strong>{{form.result}}</strong>
+  </div>
   <template #footer>
-    <div style="font-size:12px;color:#666;text-align:center;">
-      <span v-for="(keyword, index) in seoKey" :key="index">
-        {{ keyword }}<span v-if="index < seoKey.length - 1"> | </span>
-      </span>
+    <div>
+      <span v-for="item of seoKey">{{item}}, </span>
     </div>
   </template>
 </n-card>
 
-## 换算公式
+## Conversion Formula
 
-### 基本换算关系
-- 1 毫瓦 (mW) = 0.001 瓦 (W)
-- 1 兆瓦 (MW) = 1,000,000 瓦 (W) = 1,000,000,000 毫瓦 (mW)
-- 1 兆瓦 (MW) = 10⁹ 毫瓦 (mW)
-- 1 毫瓦 (mW) = 10⁻⁹ 兆瓦 (MW)
+The conversion between milliwatt (mW) and megawatt (MW) involves a factor of one billion:
 
-### 计算公式
-- **毫瓦转兆瓦**：兆瓦 = 毫瓦 ÷ 1,000,000,000
-- **兆瓦转毫瓦**：毫瓦 = 兆瓦 × 1,000,000,000
+**Basic Formula:**
+- 1 MW = 1,000,000,000 mW (10⁹ mW)
+- 1 mW = 0.000000001 MW (10⁻⁹ MW)
 
-### 常用数值对照表
-| 毫瓦 (mW) | 兆瓦 (MW) | 应用场景 |
-|-----------|-----------|----------|
-| 1 mW | 0.000000001 MW | 传感器芯片 |
-| 1,000 mW (1 W) | 0.000001 MW | 手机充电器 |
-| 1,000,000 mW (1 kW) | 0.001 MW | 家用电器 |
-| 1,000,000,000 mW | 1 MW | 小型风力发电机 |
-| 10,000,000,000 mW | 10 MW | 大型工业设施 |
-| 100,000,000,000 mW | 100 MW | 小型发电站 |
-| 1,000,000,000,000 mW | 1,000 MW (1 GW) | 大型核电站 |
+**Conversion Formulas:**
+- mW to MW: MW = mW ÷ 1,000,000,000
+- MW to mW: mW = MW × 1,000,000,000
 
-## 应用示例
+## Application Examples
 
-### 物联网规模化部署分析
-- **智慧城市传感器网络**：单个传感器功耗10-50 mW，100万个传感器总功耗约10-50 kW (0.01-0.05 MW)
-- **工业4.0监测系统**：每个监测节点功耗约100 mW，10万个节点总功耗约10 kW (0.01 MW)
-- **环境监测网络**：气象站传感器功耗约500 mW，全国网络总功耗可达数十MW级别
+### Small Power Devices (mW Range)
+- **IoT Sensors**: Temperature sensor 5 mW = 0.000000005 MW
+- **Wearable Devices**: Smartwatch 50 mW = 0.00000005 MW
+- **Wireless Modules**: Bluetooth chip 10 mW = 0.00000001 MW
 
-### 能源系统功率对比
-- **发电站与电子设备**：1 MW发电站可同时为10亿个1 mW传感器供电
-- **数据中心与芯片**：大型数据中心功耗100-500 MW，单个处理器芯片功耗65-200 W
-- **电网负载分析**：城市电网MW级负载中，智能设备mW级功耗的累积影响评估
+### Large Energy Systems (MW Range)
+- **Wind Turbine**: Single turbine 3 MW = 3,000,000,000 mW
+- **Solar Power Plant**: Utility-scale facility 100 MW = 100,000,000,000 mW
+- **Nuclear Reactor**: Large reactor 1,200 MW = 1,200,000,000,000 mW
 
-### 跨域技术集成
-- **智能电网**：分布式传感器网络(mW级)与发电设施(MW级)的协调控制
-- **新能源系统**：风力发电机组(MW级)与监控系统(mW级)的功率预算
-- **工业自动化**：大型生产线(MW级)与控制芯片(mW级)的能效优化
+### Scale Comparison
+- **Smart City**: 1 million IoT devices at 10 mW each = 10,000,000 mW = 0.01 MW
+- **Data Center**: Large facility 50 MW = 50,000,000,000 mW
+- **Electric Vehicle**: Fast charging 350 kW = 350,000,000 mW
 
-## 使用建议
+## Usage Recommendations
 
-### 极端跨域功率分析
-- **规模化评估**：评估大量mW级设备对MW级系统的累积影响
-- **系统设计**：在大型能源系统中合理配置微功率监控和控制设备
-- **能效优化**：通过精确的mW级测量优化MW级系统的整体效率
+1. **IoT System Design**: Calculate total power consumption for large-scale deployments
+2. **Energy Planning**: Compare micro-device consumption with grid-scale generation
+3. **Power Budget Analysis**: Assess cumulative impact of small devices on energy systems
+4. **System Scaling**: Understand power requirements from device to infrastructure level
+5. **Efficiency Studies**: Evaluate energy efficiency across different scales
 
-### 工程计算标准
-- **精度控制**：mW到MW换算涉及10⁹倍数，需要使用科学计数法保持精度
-- **单位统一**：在跨域系统设计中统一使用国际标准单位制
-- **数据处理**：使用专业工具处理极大数值范围的功率数据
-
-### 实际应用场景
-- **智慧城市规划**：评估物联网设备部署对城市电网的影响
-- **工业4.0设计**：平衡生产设备功耗与监控系统功耗的关系
-- **能源政策制定**：分析新兴技术对国家电力系统的潜在影响
-
-## 常见问题 (FAQ)
-
-### Q1: 毫瓦和兆瓦相差多少倍？
-A: 毫瓦和兆瓦相差10亿倍（10⁹倍）。1兆瓦 = 1,000,000,000毫瓦。
-
-### Q2: 什么设备通常使用毫瓦作为功率单位？
-A: 主要包括：传感器芯片、物联网设备、可穿戴设备、蓝牙模块、RFID标签、微控制器等超低功耗电子产品。
-
-### Q3: 兆瓦级设备有哪些典型应用？
-A: 包括：发电站、大型工业设施、数据中心、电动汽车快充站、城市电网、风力发电场等大型能源系统。
-
-### Q4: 如何处理mW到MW的极大数值换算？
-A: 建议使用科学计数法，例如：1,000,000,000 mW = 1×10⁹ mW = 1 MW，避免计算错误。
-
-### Q5: 在智慧城市项目中如何应用这种换算？
-A: 用于评估大规模物联网设备部署对城市电网的影响，例如100万个传感器(每个50mW)总功耗约50kW(0.05MW)。
-
-### Q6: 为什么需要进行mW到MW的换算？
-A: 主要用于：规模化部署分析、系统级能效评估、跨域技术集成、能源政策制定等大型工程项目。
-
-### Q7: 在工业4.0中如何应用这种换算？
-A: 用于平衡大型生产设备(MW级)与智能监控系统(mW级)的功率预算，优化整体系统能效。
-
-### Q8: 如何确保极大数值换算的准确性？
-A: 使用专业计算工具，保持足够的有效数字，采用标准化的单位制，并进行多重验证。
-
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file,index) in Power" :key="index">
     <n-button

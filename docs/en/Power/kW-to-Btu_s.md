@@ -1,196 +1,176 @@
 ---
-sidebar: false
-aside: false
-lastUpdated: false
-breadcrumb:
-  - - link: /
-      linkText: 首页
-  - - link: /Power/index
-      linkText: 功率换算
-  - - link: /Power/kW-to-Btu_s
-      linkText: 千瓦转英热单位每秒
-head:
-  - - meta
-    - name: description
-      content: "专业的千瓦(kW)到英热单位每秒(Btu/s)换算工具，提供精确的功率单位换算公式和实时计算功能。适用于制冷空调、暖通工程、工业设备功率匹配等专业应用场景，支持kW与Btu/s双向换算。"
-  - - meta
-    - name: keywords
-      content: "千瓦转英热单位每秒,kW到Btu/s换算,功率单位换算,千瓦单位,电力单位,功率计算公式,制冷功率换算,暖通工程单位,工业设备功率,Btu/s单位换算,功率单位换算工具,制冷与暖通行业单位"
+title: "Kilowatt (kW) to British Thermal Unit per Second (Btu/s) Conversion"
+description: "Professional kilowatt (kW) to British thermal unit per second (Btu/s) conversion tool, providing precise power unit conversion formulas and real-time calculation functions. Suitable for refrigeration and air conditioning, HVAC engineering, industrial equipment power matching, and other professional application scenarios, supporting bidirectional conversion between kW and Btu/s."
+keywords:
+  - Kilowatt to British thermal unit per second
+  - kW to Btu/s conversion
+  - Power unit conversion
+  - Kilowatt unit
+  - Power unit
+  - Power calculation formula
+  - Refrigeration power conversion
+  - HVAC engineering unit
+  - Industrial equipment power
+  - Btu/s unit conversion
+  - Power unit conversion tool
+  - Refrigeration and HVAC industry units
+breadcrumbs:
+  - name: Home
+    linkText: Home
+    linkUrl: /
+  - name: Power Conversion
+    linkText: Power Conversion
+    linkUrl: /zh/Power/
+  - name: Kilowatt to British Thermal Unit per Second Conversion
+    linkText: Kilowatt to British Thermal Unit per Second Conversion
+    linkUrl: /zh/Power/kW-to-Btu_s
+meta:
+  - name: description
+    content: "Professional kilowatt (kW) to British thermal unit per second (Btu/s) conversion tool, providing precise power unit conversion formulas and real-time calculation functions. Suitable for refrigeration and air conditioning, HVAC engineering, industrial equipment power matching, and other professional application scenarios, supporting bidirectional conversion between kW and Btu/s."
+  - name: keywords
+    content: "Kilowatt to British thermal unit per second,kW to Btu/s conversion,Power unit conversion,Kilowatt unit,Power unit,Power calculation formula,Refrigeration power conversion,HVAC engineering unit,Industrial equipment power,Btu/s unit conversion,Power unit conversion tool,Refrigeration and HVAC industry units"
 ---
-# 千瓦 (kW) 到英热单位每秒 (Btu/s) 换算
 
-千瓦(kW)到英热单位每秒(Btu/s)的换算是制冷空调和暖通工程中的重要计算。千瓦是国际标准的功率单位，而英热单位每秒(Btu/s)在北美制冷行业中广泛使用。本工具提供精确的kW与Btu/s换算功能，支持双向转换，适用于空调制冷量计算、工业设备功率匹配、暖通系统设计等专业应用场景。
+# Kilowatt (kW) to British Thermal Unit per Second (Btu/s) Conversion
+
+The conversion from kilowatt (kW) to British thermal unit per second (Btu/s) is an important calculation in refrigeration, air conditioning, and HVAC engineering. Kilowatt is the international standard power unit, while British thermal unit per second (Btu/s) is widely used in the North American refrigeration industry. This tool provides precise kW to Btu/s conversion functionality, supporting bidirectional conversion, suitable for air conditioning refrigeration capacity calculation, industrial equipment power matching, HVAC system design, and other professional application scenarios.
 
 <script setup>
-import { onMounted,reactive,inject ,ref  } from 'vue'
-import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage ,NGrid ,NGi } from 'naive-ui'
-import { defineClientComponent } from 'vitepress'
-import { Power } from '../files';
-const seoKey = [
-  '千瓦转英热单位每秒',
-  'kW到Btu/s换算',
-  '功率单位换算',
-  '千瓦单位',
-  '电力单位',
-  '功率计算公式',
-  '制冷功率换算',
-  '暖通工程单位',
-  '工业设备功率',
-  'Btu/s单位换算',
-  '功率单位换算工具',
-  '制冷与暖通行业单位'
-];
-const convert = inject('convert')
-const options =  [
-  { "label": "千瓦 (kW)","value": "kW" },
-  { "label": "英热单位每秒 (Btu/s)","value": "Btu/s" }
-];
-const formRef = ref(null);
+import { ref, computed } from 'vue'
+
+const form = ref({
+  number: 0,
+  to: 'Btu/s'
+})
+
+const options = [
+  { label: 'Kilowatt (kW)', value: 'kW' },
+  { label: 'kW to Btu/s conversion', value: 'Power unit conversion' },
+  { label: 'Kilowatt unit', value: 'Power unit' },
+  { label: 'Power calculation formula', value: 'Refrigeration power conversion' },
+  { label: 'HVAC engineering unit', value: 'Industrial equipment power' },
+  { label: 'Btu/s unit conversion', value: 'Power unit conversion tool' },
+  { label: 'Refrigeration and HVAC industry units', value: 'British thermal unit per second (Btu/s)' }
+]
+
 const rules = {
-  number:{
+  number: {
     required: true,
-    type: 'number',
-    trigger: "blur",
-    message: '请输入数字'
-  },
-  to:{
-    required: true,
-    trigger: "select",
-    message: '请选择转换单位'
-  },
-  from:{
-    required: true,
-    trigger: "select",
-    message: '请选择原始单位'
+    message: 'Please enter a number',
+    trigger: ['blur', 'input']
   }
 }
-const form = reactive({
-  number:null,
-  to:'',
-  from:'',
-  result:'',
-  title:'千瓦转英热单位每秒',
-})
-const convertHandler = (e) => {
-   e.preventDefault();
-  formRef.value?.validate((errors)=>{
-    if (!errors) {
-      form.result = `${form.number}${form.from} = ${convert(form.number).from(form.from).to(form.to)}${form.to}`
-    }
-  })
+
+const result = ref('')
+
+const convertHandler = () => {
+  if (form.value.to === 'Btu/s') {
+    result.value = (form.value.number * 0.9478).toFixed(4) + ' Btu/s'
+  } else {
+    result.value = (form.value.number / 0.9478).toFixed(4) + ' kW'
+  }
 }
 </script>
 
-<n-card  
-  title="千瓦(kW)到英热单位每秒(Btu/s)换算器"
-  :segmented="{
-    content: true,
-    footer: 'soft',
-  }"
+<n-card
+  title="Kilowatt (kW) to British Thermal Unit per Second (Btu/s) Converter"
+  embedded
+  :bordered="false"
+  hoverable
 >
-  <n-form size="large" :model="form" ref='formRef' :rules="rules">
-    <n-form-item label="数值"  path="number">
-      <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数值" />
-    </n-form-item>
-    <n-form-item label="从" path="from">
-      <n-select  size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
-    </n-form-item>
-    <n-form-item label="到" path="to">
-      <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
-    </n-form-item>
-    <n-form-item>
-      <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
-    </n-form-item>
-  </n-form>
-  <n-card  embedded :bordered="false" hoverable>
-    <div  style="text-align:center;font-size:20px;">
-      <strong>{{form.result}}</strong>
-    </div>
-  </n-card>
-  <template #footer>
-    <div>
-      <span v-for="item of seoKey">{{item}}，</span>
-    </div>
-  </template>
+<n-form :model="form" :rules="rules" ref="formRef">
+<n-form-item label="Value" path="number">
+<n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="Enter the value to convert" />
+</n-form-item>
+<n-form-item label="To" path="to">
+<n-select size="large" :options="options" v-model:value="form.to" placeholder="Select conversion unit" />
+</n-form-item>
+<n-form-item>
+<n-button type="info" style="width:100%" @click="convertHandler">Convert</n-button>
+</n-form-item>
+<n-form-item v-if="result">
+<n-text type="success" style="font-size: 18px; font-weight: bold;">{{ result }}</n-text>
+</n-form-item>
+</n-form>
 </n-card>
 
-## 换算公式详解
+## Detailed Conversion Formula
 
-**基础换算关系：**
-- 1 千瓦 (kW) = 0.9478 英热单位每秒 (Btu/s)
-- 1 英热单位每秒 (Btu/s) = 1.055 千瓦 (kW)
+**Basic conversion relationship:**
+- 1 kilowatt (kW) = 0.9478 British thermal unit per second (Btu/s)
+- 1 British thermal unit per second (Btu/s) = 1.055 kilowatts (kW)
 
-**精确换算公式：**
-- kW → Btu/s：Btu/s = kW × 0.947817
-- Btu/s → kW：kW = Btu/s × 1.055056
+**Precise conversion formula:**
+- **kW to Btu/s**: Btu/s = kW × 0.9478
+- **Btu/s to kW**: kW = Btu/s × 1.055
 
-**常用数值对照表：**
+**Common value reference table:**
+| Kilowatts (kW) | British Thermal Units per Second (Btu/s) |
+|----------------|-------------------------------------------|
+| 1 | 0.9478 |
+| 5 | 4.739 |
+| 10 | 9.478 |
+| 20 | 18.956 |
+| 50 | 47.39 |
+| 100 | 94.78 |
 
-| 千瓦 (kW) | 英热单位每秒 (Btu/s) | 应用场景 |
-|-----------|---------------------|----------|
-| 1 kW | 0.948 Btu/s | 小型空调制冷功率 |
-| 3.5 kW | 3.317 Btu/s | 1匹空调制冷功率 |
-| 7 kW | 6.635 Btu/s | 2匹空调制冷功率 |
-| 10 kW | 9.478 Btu/s | 商用小型制冷设备 |
-| 50 kW | 47.39 Btu/s | 中型工业制冷系统 |
-| 100 kW | 94.78 Btu/s | 大型商用空调系统 |
+## Application Examples
 
-## 工程应用场景
+### Refrigeration and Air Conditioning Systems
+- **Central air conditioning system**: Large commercial air conditioning power can reach 100-500kW, requiring precise Btu/s conversion for equipment selection
+- **Cold storage refrigeration equipment**: Industrial cold storage refrigeration power is usually marked in kW, but North American standards require Btu/s values
+- **Heat pump systems**: Heat pump heating and cooling capacity conversion between kW and Btu/s standards
 
-### 制冷空调工程
-- **家用空调制冷量**：1匹空调制冷功率约3.5kW ≈ 3.317Btu/s，2匹约7kW ≈ 6.635Btu/s
-- **中央空调系统**：大型商用空调功率可达100-500kW，需要精确的Btu/s换算进行设备选型
-- **冷库制冷设备**：工业冷库制冷功率通常用kW标注，但北美标准需要Btu/s数值
+### Industrial Heating Applications
+- **Heating system power calculation**: European standards use kW, North American standards use Btu/s, requiring accurate conversion for international projects
+- **Boiler equipment selection**: Boiler power marking (kW) and steam generation capacity (Btu/s) conversion
+- **Industrial heating equipment**: Heating furnaces, heaters, and other equipment power conversion between different standards
 
-### 暖通工程设计
-- **供热系统功率计算**：欧洲标准使用kW，北美标准使用Btu/s，跨国项目需要准确换算
-- **热泵系统选型**：地源热泵、空气源热泵功率匹配需要kW与Btu/s的精确转换
-- **工业加热设备**：锅炉、加热器等设备功率在不同标准间的换算
+### HVAC Engineering Design
+- **Ventilation system design**: Fan power (kW) and air heating capacity (Btu/s) conversion calculation
+- **Heat exchanger design**: Power calculation and unit unification and conversion in heat exchange equipment
 
-### 工业设备工程
-- **制冷压缩机功率**：工业制冷压缩机功率标注需要kW与Btu/s双重标准
-- **热交换器设计**：换热设备功率计算中的单位统一和换算
-- **能效评估**：设备能效比较需要统一功率单位进行分析
+## Usage Recommendations
 
-## 专业使用指南
+### Conversion Precision
+- **Engineering calculations**: Use precise conversion coefficient 0.9478, retain 4 decimal places
+- **Equipment selection**: Consider equipment efficiency, usually 80-95%
+- **Temperature conditions**: Btu/s values may be affected by ambient temperature, perform conversion under standard conditions
 
-### 工程设计建议
-- **标准选择**：国际项目优先使用kW，北美项目可能需要Btu/s标注
-- **精度要求**：制冷设备选型建议保留3位有效数字，确保功率匹配准确性
-- **单位统一**：同一项目中建议统一使用一种功率单位，避免混淆
+### Application Standards
+- **International projects**: Recommend using international units (kW) as intermediate conversion units
+- **Regional standards**: North America uses Btu/s, Europe and Asia use kW
+- **Technical documentation**: Recommend providing both kW and Btu/s values simultaneously
 
-### 计算注意事项
-- **温度条件**：Btu/s数值可能受环境温度影响，标准条件下进行换算
-- **效率因子**：实际应用中需考虑设备效率，理论功率与实际功率的差异
-- **安全系数**：工程设计中建议在计算结果基础上增加10-20%的安全余量
+### Design Considerations
+- **Safety margin**: Equipment selection should consider 15-25% power margin
+- **Efficiency factors**: Actual power conversion should consider equipment efficiency
+- **Environmental conditions**: Consider the impact of ambient temperature and humidity on equipment performance
 
-## 常见问题解答
+## FAQ
 
-**Q: kW和Btu/s哪个更常用？**
-A: kW是国际标准单位，在全球范围内更通用；Btu/s主要在北美制冷空调行业使用。
+**Q: Why is kW to Btu/s conversion needed?**
+A: In HVAC and industrial heating fields, equipment mechanical power is often expressed in hp, while thermal load is expressed in Btu/s. Conversion helps with power matching and system design.
 
-**Q: 为什么制冷行业要用Btu/s？**
-A: 英热单位(Btu)直接反映热量，在制冷空调行业中更直观地表示制冷/制热能力。
+**Q: Is the hp to Btu/s conversion accurate?**
+A: The conversion coefficient is a precise physical constant, but practical applications need to consider equipment efficiency. Theoretical conversion: 1 hp = 0.7068 Btu/s.
 
-**Q: 1匹空调等于多少kW和Btu/s？**
-A: 1匹 ≈ 735.5W ≈ 0.7355kW ≈ 0.697Btu/s（制冷功率约为3.5kW ≈ 3.317Btu/s）。
+**Q: What are the characteristics of Btu/s as a power unit?**
+A: Btu/s is a thermal power unit, mainly used in North American HVAC industry, suitable for describing heating and cooling capacity.
 
-**Q: 换算时需要考虑温度吗？**
-A: 标准换算不需要，但实际应用中制冷效果会受环境温度影响。
+**Q: How to use this conversion in refrigeration equipment?**
+A: Refrigeration equipment compressor power (kW) can be converted to refrigeration capacity (Btu/s), but actual refrigeration capacity also depends on refrigerant type and operating conditions.
 
-**Q: 工业设备功率换算有什么特殊要求？**
-A: 工业设备需要考虑负载率、效率等因素，建议在理论换算基础上增加安全系数。
+**Q: What special requirements do industrial heating furnaces have for power conversion?**
+A: Industrial heating furnaces need to consider heating efficiency, heat loss, and process requirements. It's recommended to add a 20-30% safety factor based on theoretical conversion.
 
-## 相关连接
-<n-grid x-gap="12" :cols="2">
-  <n-gi v-for="(file,index) in Power" :key="index">
-    <n-button
-      text
-      tag="a"
-      :href="file.path"
-      type="info"
-    >
-      {{file.name}}
-    </n-button>
-  </n-gi>
-</n-grid>
+**Q: What should be noted in international project applications?**
+A: International projects should consider different regional standards, recommend using kW as the primary unit and providing Btu/s conversion values, ensuring technical documentation clarity.
+
+**Q: Is conversion through kW intermediate more accurate?**
+A: Yes, using kW as intermediate conversion (hp→kW→Btu/s) can reduce cumulative errors and is suitable for high-precision engineering calculations.
+
+## Related Links
+- [Horsepower to Btu/s Conversion](/zh/Power/hp-to-Btu_s)
+- [Watt to Btu/s Conversion](/zh/Power/W-to-Btu_s)
+- [Power Unit Conversion](/zh/Power/)

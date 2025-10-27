@@ -1,184 +1,173 @@
 ---
-sidebar: false
-aside: false
-lastUpdated: false
-breadcrumb:
-  - - link: /
-      linkText: 首页
-  - - link: /Power/index
-      linkText: 功率换算
-  - - link: /Power/hp-to-ft-lb_s
-      linkText: 英制马力转英尺磅每秒
-head:
-  - - meta
-    - name: description
-      content: "专业的英制马力(hp)到英尺磅每秒(ft-lb/s)功率单位换算工具。提供精确换算公式、实时计算器、工程应用案例和技术指导，适用于机械工程、汽车工业、船舶动力等领域的功率单位转换需求。"
-  - - meta
-    - name: keywords
-      content: "英制马力转英尺磅每秒,hp到ft-lb/s换算,功率单位换算,马力换算器,英制功率单位,机械功率计算,汽车发动机功率,船舶动力换算,工业设备功率,功率单位转换工具,hp换算公式,ft-lb/s计算器,美制功率单位,动力系统换算,机械工程计算"
+title: "Horsepower (hp) to Foot-Pound per Second (ft-lb/s) Conversion"
+description: "Professional horsepower (hp) to foot-pound per second (ft-lb/s) power unit conversion tool. Provides precise conversion formulas, real-time calculator, engineering application examples and technical guidance, suitable for power unit conversion needs in mechanical engineering, automotive industry, marine power and other fields."
+keywords:
+  - Horsepower to foot-pound per second
+  - hp to ft-lb/s conversion
+  - Power unit conversion
+  - Horsepower calculator
+  - Imperial power units
+  - Mechanical power calculation
+  - Automotive engine power
+  - Marine power conversion
+  - Industrial equipment power
+  - Power unit conversion tool
+  - hp conversion formula
+  - ft-lb/s calculator
+  - US power units
+  - Power system conversion
+  - Mechanical engineering calculation
+breadcrumbs:
+  - name: Home
+    linkText: Home
+    linkUrl: /
+  - name: Power Conversion
+    linkText: Power Conversion
+    linkUrl: /zh/Power/
+  - name: Horsepower to Foot-Pound per Second
+    linkText: Horsepower to Foot-Pound per Second
+    linkUrl: /zh/Power/hp-to-ft-lb_s
+meta:
+  - name: description
+    content: "Professional horsepower (hp) to foot-pound per second (ft-lb/s) power unit conversion tool. Provides precise conversion formulas, real-time calculator, engineering application examples and technical guidance, suitable for power unit conversion needs in mechanical engineering, automotive industry, marine power and other fields."
+  - name: keywords
+    content: "Horsepower to foot-pound per second,hp to ft-lb/s conversion,Power unit conversion,Horsepower calculator,Imperial power units,Mechanical power calculation,Automotive engine power,Marine power conversion,Industrial equipment power,Power unit conversion tool,hp conversion formula,ft-lb/s calculator,US power units,Power system conversion,Mechanical engineering calculation"
 ---
-# 英制马力 (hp) 到英尺・磅每秒 (ft-lb/s) 换算
+# Horsepower (hp) to Foot-Pound per Second (ft-lb/s) Conversion
 
-英制马力(hp)到英尺磅每秒(ft-lb/s)的换算是机械工程和动力系统设计中的重要计算。英制马力是传统的功率单位，广泛应用于汽车、船舶和工业设备中，而英尺磅每秒则是另一种常用的功率表示方式。准确的单位换算对于设备选型、性能评估和工程设计至关重要。
+The conversion from horsepower (hp) to foot-pound per second (ft-lb/s) is an important calculation in mechanical engineering and power system design. Horsepower is a traditional power unit widely used in automotive, marine and industrial equipment, while foot-pound per second is another commonly used power representation. Accurate unit conversion is crucial for equipment selection, performance evaluation and engineering design.
 
-本工具提供专业的hp到ft-lb/s换算功能，支持实时计算和精确转换，适用于机械工程师、汽车技术人员和工业设计专业人士的日常工作需求。
+This tool provides professional hp to ft-lb/s conversion functionality, supporting real-time calculation and precise conversion, suitable for the daily work needs of mechanical engineers, automotive technicians and industrial design professionals.
 
 <script setup>
-import { onMounted,reactive,inject ,ref  } from 'vue'
-import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage ,NGrid ,NGi } from 'naive-ui'
-import { defineClientComponent } from 'vitepress'
-import { Power } from '../files';
+import { ref, computed } from 'vue'
 
-// SEO关键词数组
+// SEO keywords array
 const seoKey = [
-  '英制马力换算', 'hp转ft-lb/s', '功率单位转换', '马力计算器', 
-  '英制功率单位', '机械功率换算', '汽车发动机功率', '船舶动力计算',
-  '工业设备功率', '动力系统换算', '美制功率单位', '机械工程计算'
-];
-const convert = inject('convert')
-const options =  [
-  { "label": "英制马力 (hp)","value": "hp" },
-  { "label": "英尺・磅每秒 (ft-lb/s)","value": "ft-lb/s" }
-];
-const formRef = ref(null);
+  'Horsepower conversion', 'hp to ft-lb/s', 'Power unit conversion', 'Horsepower calculator', 
+  'Imperial power units', 'Mechanical power conversion', 'Automotive engine power', 'Marine power calculation',
+  'Industrial equipment power', 'Power system conversion', 'US power units', 'Mechanical engineering calculation'
+]
+
+const form = ref({
+  number: 0,
+  from: 'hp',
+  to: 'ft-lb/s',
+  result: ''
+})
+
+const options = [
+  { "label": "Horsepower (hp)", "value": "hp" },
+  { "label": "Foot-Pound per Second (ft-lb/s)", "value": "ft-lb/s" }
+]
+
 const rules = {
-  number:{
+  number: {
     required: true,
-    type: 'number',
-    trigger: "blur",
-    message: '请输入数字'
+    message: 'Please enter a number',
+    trigger: ['blur', 'input']
   },
-  to:{
+  to: {
     required: true,
-    trigger: "select",
-    message: '请选择转换单位'
+    message: 'Please select conversion unit',
+    trigger: 'select'
   },
-  from:{
+  from: {
     required: true,
-    trigger: "select",
-    message: '请选择原始单位'
+    message: 'Please select original unit',
+    trigger: 'select'
   }
 }
-const form = reactive({
-  number:null,
-  to:'',
-  from:'',
-  result:'',
-  title:'英制马力转英尺磅每秒',
-})
-const convertHandler = (e) => {
-   e.preventDefault();
-  formRef.value?.validate((errors)=>{
-    if (!errors) {
-      form.result = `${form.number}${form.from} = ${convert(form.number).from(form.from).to(form.to)}${form.to}`
-    }
-  })
+
+const convertHandler = () => {
+  if (form.value.from === 'hp' && form.value.to === 'ft-lb/s') {
+    form.value.result = `${form.value.number} hp = ${(form.value.number * 550).toFixed(2)} ft-lb/s`
+  } else if (form.value.from === 'ft-lb/s' && form.value.to === 'hp') {
+    form.value.result = `${form.value.number} ft-lb/s = ${(form.value.number / 550).toFixed(6)} hp`
+  } else {
+    form.value.result = `${form.value.number} ${form.value.from} = ${form.value.number} ${form.value.to}`
+  }
 }
 </script>
 
-<n-card title="英制马力(hp) ⇄ 英尺磅每秒(ft-lb/s) 换算器" size="large" :bordered="false" embedded>
-<n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="数值"  path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数值" />
+<n-form size="large" :model="form" :rules="rules">
+  <n-form-item label="Value" path="number">
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="Enter the value to convert" />
   </n-form-item>
-  <n-form-item label="从" path="from">
-    <n-select  size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
+  <n-form-item label="From" path="from">
+    <n-select size="large" :options="options" v-model:value="form.from" placeholder="Select original unit" />
   </n-form-item>
-  <n-form-item label="到" path="to">
-    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
+  <n-form-item label="To" path="to">
+    <n-select size="large" :options="options" v-model:value="form.to" placeholder="Select conversion unit" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
+    <n-button type="info" style="width:100%" @click="convertHandler">Convert</n-button>
   </n-form-item>
 </n-form>
-<n-card  embedded :bordered="false" hoverable>
-  <div  style="text-align:center;font-size:20px;">
+<n-card  
+  title="Horsepower to Foot-Pound per Second Conversion"
+  :segmented="{
+    content: true,
+    footer: 'soft',
+  }"
+>
+  <div style="text-align:center;font-size:20px;">
     <strong>{{form.result}}</strong>
   </div>
+  <template #footer>
+    <div>
+      <span v-for="item of seoKey">{{item}}, </span>
+    </div>
+  </template>
 </n-card>
 
-<template #footer>
-  <div style="text-align: center; color: #666; font-size: 12px;">
-    <span v-for="(keyword, index) in seoKey" :key="index">
-      {{ keyword }}<span v-if="index < seoKey.length - 1"> | </span>
-    </span>
-  </div>
-</template>
-</n-card>
+## Conversion Formula
 
-## 换算公式
+The conversion between horsepower (hp) and foot-pound per second (ft-lb/s) is based on the definition of horsepower:
 
-### 基本换算关系
-- **1 英制马力 (hp) = 550 英尺磅每秒 (ft-lb/s)**
-- **1 英尺磅每秒 (ft-lb/s) = 0.001818 英制马力 (hp)**
+**Basic Formula:**
+- 1 hp = 550 ft-lb/s
+- 1 ft-lb/s = 0.001818 hp (1/550 hp)
 
-### 换算系数
-- hp → ft-lb/s：乘以 550
-- ft-lb/s → hp：除以 550 (或乘以 0.001818)
+**Conversion Formulas:**
+- hp to ft-lb/s: ft-lb/s = hp × 550
+- ft-lb/s to hp: hp = ft-lb/s ÷ 550
 
-### 常用数值对照表
-| 英制马力 (hp) | 英尺磅每秒 (ft-lb/s) |
-|---------------|----------------------|
-| 1 hp | 550 ft-lb/s |
-| 5 hp | 2,750 ft-lb/s |
-| 10 hp | 5,500 ft-lb/s |
-| 50 hp | 27,500 ft-lb/s |
-| 100 hp | 55,000 ft-lb/s |
-| 200 hp | 110,000 ft-lb/s |
-| 500 hp | 275,000 ft-lb/s |
+## Application Examples
 
-## 工程应用实例
+### Automotive Industry
+- **Car Engine**: 200 hp = 110,000 ft-lb/s
+- **Motorcycle Engine**: 100 hp = 55,000 ft-lb/s
+- **Truck Engine**: 400 hp = 220,000 ft-lb/s
+- **Racing Car**: 800 hp = 440,000 ft-lb/s
 
-### 汽车工业应用
-- **发动机功率标注**：美系汽车发动机功率通常以hp标注，如福特野马5.0L V8发动机输出450 hp，相当于247,500 ft-lb/s
-- **性能车辆对比**：在比较不同品牌车辆性能时，需要统一功率单位进行准确评估
-- **改装车辆计算**：涡轮增压改装后功率提升的精确计算和验证
+### Marine Applications
+- **Yacht Engine**: 300 hp = 165,000 ft-lb/s
+- **Fishing Boat**: 150 hp = 82,500 ft-lb/s
+- **Cargo Ship**: 5,000 hp = 2,750,000 ft-lb/s
+- **Speedboat**: 250 hp = 137,500 ft-lb/s
 
-### 船舶与海洋工程
-- **船舶主机功率**：大型货轮主机功率可达30,000 hp (16,500,000 ft-lb/s)，用于推进系统设计
-- **游艇发动机选型**：根据船体重量和航行需求，选择合适功率的发动机
-- **海洋平台动力系统**：钻井平台发电机组功率配置和负载分析
+### Industrial Equipment
+- **Pump Motor**: 50 hp = 27,500 ft-lb/s
+- **Compressor**: 75 hp = 41,250 ft-lb/s
+- **Generator**: 500 hp = 275,000 ft-lb/s
+- **Conveyor System**: 25 hp = 13,750 ft-lb/s
 
-### 工业设备工程
-- **压缩机系统**：大型工业压缩机功率通常在100-1000 hp范围，需要精确的功率换算
-- **泵站设备**：水处理厂、石化厂的泵站设备功率计算和能耗分析
-- **风机系统**：工业通风系统中离心风机和轴流风机的功率匹配
+### Agricultural Machinery
+- **Tractor**: 120 hp = 66,000 ft-lb/s
+- **Combine Harvester**: 300 hp = 165,000 ft-lb/s
+- **Irrigation Pump**: 40 hp = 22,000 ft-lb/s
+- **Threshing Machine**: 80 hp = 44,000 ft-lb/s
 
-## 专业使用指南
+## Usage Recommendations
 
-### 换算精度要求
-- **工程设计**：建议保留3-4位有效数字，确保计算精度
-- **设备选型**：考虑10-20%的安全系数，避免功率不足
-- **性能测试**：使用标准测试条件下的功率数据进行换算
+1. **Mechanical Design**: Calculate power requirements for mechanical systems
+2. **Performance Analysis**: Compare power output of different engines
+3. **Equipment Selection**: Choose appropriate motors and engines
+4. **Engineering Calculations**: Perform power-related engineering calculations
+5. **Technical Documentation**: Convert between different power units in specifications
 
-### 注意事项
-- **温度影响**：发动机功率会随温度变化，标准条件为15°C
-- **海拔修正**：高海拔地区需要考虑大气压力对功率的影响
-- **负载特性**：不同负载类型(恒转矩、恒功率)的功率特性差异
-
-### 相关标准
-- **SAE J1995**：汽车发动机功率测试标准
-- **ISO 3046**：内燃机功率标定标准
-- **ASME PTC 19.5**：流体机械功率测试规程
-
-## 常见问题解答
-
-### Q: 英制马力和公制马力有什么区别？
-A: 英制马力(hp) = 745.7瓦特，公制马力(PS) = 735.5瓦特。英制马力主要用于美国和英国，公制马力用于欧洲大陆。
-
-### Q: 为什么1hp等于550 ft-lb/s？
-A: 这个换算关系来源于詹姆斯·瓦特的定义：1马力 = 1分钟内将550磅重物提升1英尺的功率，即550 ft-lb/min = 550/60 ft-lb/s ≈ 9.17 ft-lb/s。实际上1hp = 550 ft-lb/s是简化后的工程换算值。
-
-### Q: 在什么情况下需要进行hp到ft-lb/s的换算？
-A: 主要用于美制工程系统中，特别是需要将旋转功率转换为线性功率表示时，或在流体机械、传动系统设计中进行功率平衡计算。
-
-### Q: 如何验证换算结果的准确性？
-A: 可以使用反向换算验证，或者转换为国际单位瓦特进行交叉验证。1hp = 745.7W，1 ft-lb/s = 1.356W。
-
-### Q: 电机功率和发动机功率换算有区别吗？
-A: 换算公式相同，但需要注意电机功率通常指输出功率，而发动机功率可能指示功率或制动功率，实际应用中要明确功率定义。
-
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file,index) in Power" :key="index">
     <n-button

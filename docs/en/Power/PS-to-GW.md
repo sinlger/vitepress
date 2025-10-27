@@ -4,37 +4,37 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Power/index
-      linkText: 功率换算
+      linkText: Power Conversion
   - - link: /Power/PS-to-GW
-      linkText: 公制马力转吉瓦
+      linkText: Metric Horsepower to Gigawatt
 head:
   - - meta
     - name: description
-      content: "专业的公制马力(PS)到吉瓦(GW)换算工具，提供精确的功率单位转换公式和计算方法。适用于大型发电站、核电站、风电场等超大功率设施的功率换算，支持能源工程、电力系统和工业设计等领域的专业计算需求。"
+      content: "Professional metric horsepower (PS) to gigawatt (GW) conversion tool, providing precise power unit conversion formulas and practical application scenarios. Covers automotive engines, industrial power systems, large-scale power generation and other cross-field power conversion needs, supports PS to GW online calculation."
   - - meta
     - name: keywords
-      content: "公制马力转吉瓦,PS到GW换算,大型发电站功率,核电站功率换算,风电场功率计算,超大功率换算,能源工程计算,电力系统功率,工业级功率换算,发电机组功率,电站容量计算,能源设施功率"
+      content: "metric horsepower to gigawatt,PS to GW conversion,power unit conversion formula,horsepower conversion,large-scale power conversion,engine power,industrial power systems,PS conversion tool,GW calculation,power unit conversion,European horsepower standard,large power generation,power plant capacity,industrial power conversion,massive power systems"
 ---
-# 公制马力 (PS) 到吉瓦 (GW) 换算
+# Metric Horsepower (PS) to Gigawatt (GW) Conversion
 
-这是关于 **公制马力转吉瓦** 的详细介绍，并提供一个实用的 **功率单位换算工具**。公制马力(PS)是传统的功率单位，而吉瓦(GW)是超大功率的国际标准单位，主要用于描述大型发电站、核电站、风电场等能源设施的功率容量。两者之间的准确换算对于能源工程、电力系统规划、大型工业项目和国际能源合作具有重要意义，特别是在电站设计、电网规划和能源政策制定等领域。
+This is a detailed introduction to **metric horsepower to gigawatt** conversion, providing a practical **power unit conversion tool**. Metric horsepower (PS) is the standard power unit for European automotive industry and mechanical equipment, while gigawatt (GW) is used for measuring large-scale power generation and industrial power systems. Accurate conversion between these units is of great significance for power system analysis, industrial scale assessment, and large-scale energy project planning, particularly in power plant capacity evaluation, industrial power consumption analysis, and massive power system design.
 
 <script setup>
 import { onMounted,reactive,inject ,ref  } from 'vue'
 import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage ,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
-import { Power } from '../files';
+import { Power } from '../../files';
 const convert = inject('convert')
 const seoKey = [
-  '公制马力转吉瓦', 'PS到GW换算', '大型发电站功率', '核电站功率换算', '风电场功率计算',
-  '超大功率换算', '能源工程计算', '电力系统功率', '发电机组功率', '电站容量计算',
-  '能源设施功率', 'GW功率单位', '工业级功率换算', '电网规划功率', '能源政策计算'
+  'metric horsepower to gigawatt', 'PS to GW conversion', 'horsepower conversion', 'large-scale power conversion', 'engine power',
+  'industrial power systems', 'PS conversion tool', 'GW calculation', 'power unit conversion', 'European horsepower standard',
+  'large power generation', 'power plant capacity', 'industrial power conversion', 'massive power systems', 'power unit conversion formula'
 ];
 const options =  [
-  { "label": "公制马力 (PS)","value": "PS" },
-  { "label": "吉瓦 (GW)","value": "GW" }
+  { "label": "Metric Horsepower (PS)","value": "PS" },
+  { "label": "Gigawatt (GW)","value": "GW" }
 ];
 const formRef = ref(null);
 const rules = {
@@ -42,233 +42,170 @@ const rules = {
     required: true,
     type: 'number',
     trigger: "blur",
-    message: '请输入数字'
+    message: 'Please enter a number'
   },
   to:{
     required: true,
     trigger: "select",
-    message: '请选择转换单位'
+    message: 'Please select conversion unit'
   },
   from:{
     required: true,
     trigger: "select",
-    message: '请选择原始单位'
+    message: 'Please select source unit'
   }
 }
-const form = reactive({
-  number:null,
-  to:'',
-  from:'',
-  result:'',
-  title:'公制马力转吉瓦',
+const message = useMessage()
+const formValue = reactive({
+  number: 1,
+  from: 'PS',
+  to: 'GW'
 })
-const convertHandler = (e) => {
-   e.preventDefault();
-  formRef.value?.validate((errors)=>{
+const result = ref('')
+const handleValidateClick = (e) => {
+  e.preventDefault()
+  formRef.value?.validate((errors) => {
     if (!errors) {
-      form.result = `${form.number}${form.from} = ${convert(form.number).from(form.from).to(form.to)}${form.to}`
+      result.value = convert(formValue.number, formValue.from, formValue.to, Power)
+    } else {
+      console.log(errors)
+      message.error('Invalid')
     }
   })
 }
 </script>
 
-<n-card title="公制马力(PS)到吉瓦(GW)换算器" embedded :bordered="false" hoverable>
-  <n-form size="large" :model="form" ref='formRef' :rules="rules">
-    <n-form-item label="数值"  path="number">
-      <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数值" />
-    </n-form-item>
-    <n-form-item label="从" path="from">
-      <n-select  size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
-    </n-form-item>
-    <n-form-item label="到" path="to">
-      <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
-    </n-form-item>
-    <n-form-item>
-      <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
-    </n-form-item>
-  </n-form>
-  <n-card  embedded :bordered="false" hoverable>
-    <div  style="text-align:center;font-size:20px;">
-      <strong>{{form.result}}</strong>
-    </div>
-  </n-card>
-  <template #footer>
-    <div style="font-size:12px;color:#666;text-align:center;">
-      <span v-for="(key, index) in seoKey" :key="index">
-        {{ key }}<span v-if="index < seoKey.length - 1"> | </span>
-      </span>
-    </div>
-  </template>
-</n-card>
+<NCard title="Metric Horsepower to Gigawatt Converter">
+<NForm ref="formRef" :model="formValue" :rules="rules">
+<NGrid :cols="24" :x-gap="12">
+<NGi :span="24">
+<NFormItem path="number" label="Enter Value">
+<NInputNumber v-model:value="formValue.number" placeholder="Enter the value to convert" />
+</NFormItem>
+</NGi>
+<NGi :span="12">
+<NFormItem path="from" label="From">
+<NSelect v-model:value="formValue.from" placeholder="Select source unit" :options="options" />
+</NFormItem>
+</NGi>
+<NGi :span="12">
+<NFormItem path="to" label="To">
+<NSelect v-model:value="formValue.to" placeholder="Select target unit" :options="options" />
+</NFormItem>
+</NGi>
+<NGi :span="24">
+<NFormItem>
+<NButton type="primary" @click="handleValidateClick">
+Convert
+</NButton>
+</NFormItem>
+</NGi>
+</NGrid>
+</NForm>
+<div v-if="result" style="margin-top: 20px;">
+<h3>Conversion Result:</h3>
+<p>{{ result }}</p>
+</div>
+</NCard>
 
-## 换算公式
+## Conversion Formula
 
-**基本换算关系：**
-- 1 PS = 735.5 W（瓦特）
-- 1 GW = 1,000,000,000 W（十亿瓦特）
-- 1 GW ≈ 1,359,622 PS
+The conversion between metric horsepower (PS) and gigawatt (GW) is based on the following relationship:
 
-**公制马力 (PS) 到吉瓦 (GW) 的换算公式：**
+**1 PS = 0.0000007355 GW**
+**1 GW = 1,360,000 PS**
 
-```
-GW = PS ÷ 1,359,622
-```
+### Conversion Formula:
+- **PS to GW**: GW = PS × 0.0000007355
+- **GW to PS**: PS = GW × 1,360,000
 
-**吉瓦 (GW) 到公制马力 (PS) 的换算公式：**
+## Conversion Guide
 
-```
-PS = GW × 1,359,622
-```
+### Why Convert Between PS and GW?
 
-**详细计算过程：**
-```
-1 PS = 735.5 W
-1 GW = 1,000,000,000 W
-因此：1 GW = 1,000,000,000 ÷ 735.5 ≈ 1,359,622 PS
-```
+1. **Power System Analysis**: Converting small-scale power units to large-scale power system units
+2. **Industrial Scale Assessment**: Understanding power consumption in terms of large-scale generation
+3. **Energy Project Planning**: Comparing individual equipment power with total system capacity
+4. **Power Plant Evaluation**: Relating equipment specifications to power generation capacity
+5. **Grid Integration**: Understanding how distributed power sources contribute to the grid
 
-**常用数值对照表：**
+### Conversion Method
 
-| 吉瓦 (GW) | 公制马力 (PS) | 应用场景 |
-|-----------|---------------|----------|
-| 0.001 GW | 1,360 PS | 大型工业电机 |
-| 0.01 GW | 13,596 PS | 小型发电站 |
-| 0.1 GW | 135,962 PS | 中型发电站 |
-| 1 GW | 1,359,622 PS | 大型核电机组 |
-| 2 GW | 2,719,244 PS | 超大型核电站 |
-| 5 GW | 6,798,110 PS | 大型风电场 |
-| 10 GW | 13,596,220 PS | 特大型电站群 |
+1. **Identify the source unit** (PS or GW)
+2. **Apply the appropriate conversion factor**
+3. **Consider the scale difference** (PS is very small compared to GW)
+4. **Use scientific notation** for very small or very large numbers
 
-## 应用示例
+## Practical Examples
 
-### 核电站功率应用
+### Example 1: Automotive Fleet Power Assessment
+A fleet of 10,000 cars, each with 100 PS engines. Total power in GW:
+- **Calculation**: 10,000 × 100 PS = 1,000,000 PS
+- **Conversion**: 1,000,000 PS × 0.0000007355 = 0.7355 GW
+- **Application**: Comparing fleet power consumption with power plant capacity
 
-**大型核电机组：**
-- 第三代核电站单机组：1.25 GW = 1,699,528 PS
-- 双机组核电站总功率：2.5 GW = 3,399,055 PS
-- 用于核电站设计和安全评估
+### Example 2: Industrial Power Consumption
+A large industrial facility requires 2 GW of power. Express in PS:
+- **Calculation**: 2 GW × 1,360,000 = 2,720,000 PS
+- **Application**: Understanding the equivalent number of automotive engines needed
 
-**小型模块化反应堆：**
-- SMR单模块功率：0.3 GW = 407,887 PS
-- 多模块组合：1.2 GW = 1,631,546 PS
-- 便于模块化设计和功率配置
+### Example 3: Power Plant Comparison
+A small power plant generates 0.5 GW. Express in PS:
+- **Calculation**: 0.5 GW × 1,360,000 = 680,000 PS
+- **Application**: Relating power plant capacity to familiar automotive power units
 
-### 可再生能源应用
+### Example 4: Distributed Generation Assessment
+1 million small generators, each rated at 5 PS. Total capacity in GW:
+- **Calculation**: 1,000,000 × 5 PS = 5,000,000 PS
+- **Conversion**: 5,000,000 PS × 0.0000007355 = 3.678 GW
+- **Application**: Assessing distributed generation potential
 
-**大型风电场：**
-- 海上风电场：5 GW = 6,798,110 PS
-- 陆上风电场：2 GW = 2,719,244 PS
-- 用于风电场规划和电网接入设计
+## Applications in Different Fields
 
-**太阳能发电站：**
-- 大型光伏电站：1.5 GW = 2,039,433 PS
-- 分布式光伏：0.1 GW = 135,962 PS
-- 便于发电容量规划和投资分析
+### Power System Engineering
+- **Grid Planning**: Converting distributed power sources to grid-scale units
+- **Load Analysis**: Understanding power consumption in terms of generation capacity
+- **System Integration**: Comparing small-scale and large-scale power systems
 
-### 电力系统应用
+### Industrial Engineering
+- **Facility Planning**: Converting equipment power ratings to facility-wide consumption
+- **Energy Management**: Understanding industrial power needs in grid context
+- **Cost Analysis**: Relating equipment power to electricity generation costs
 
-**电网规划：**
-- 区域电网总装机：20 GW = 27,192,440 PS
-- 跨区域输电容量：8 GW = 10,876,976 PS
-- 用于电力系统规划和调度
+### Automotive Industry
+- **Fleet Analysis**: Converting vehicle power to equivalent power plant capacity
+- **Electric Vehicle Planning**: Understanding charging infrastructure requirements
+- **Transportation Energy**: Comparing transportation power needs with grid capacity
 
-**储能系统：**
-- 大型储能电站：0.5 GW = 679,811 PS
-- 抽水蓄能电站：3 GW = 4,078,866 PS
-- 便于储能容量配置和经济性分析
+## Power Scale Context
 
-## 使用建议
+### Understanding the Scale Difference
+- **Metric Horsepower (PS)**: Typical for individual engines and motors (1-1000 PS)
+- **Gigawatt (GW)**: Typical for power plants and large industrial facilities (0.1-10 GW)
+- **Scale Factor**: 1 GW equals approximately 1.36 million PS
 
-### 能源工程计算精度
+### Practical Scale References
+- **Small Car Engine**: ~75 PS = 0.000055 GW
+- **Large Truck Engine**: ~500 PS = 0.000368 GW
+- **Small Power Plant**: 100 MW = 0.1 GW = 136,000 PS
+- **Large Power Plant**: 1 GW = 1,360,000 PS
 
-**数值精度控制：**
-- 电站设计：保留6-8位有效数字
-- 电网规划：保留4-6位有效数字
-- 概念设计：保留3-4位有效数字
+## Summary
 
-**单位换算注意事项：**
-- 额定功率vs实际功率：区分设计容量和实际输出
-- 净功率vs毛功率：考虑厂用电消耗
-- 连续功率vs峰值功率：明确功率类型
+The conversion between metric horsepower and gigawatt bridges the gap between individual equipment power and large-scale power systems. This conversion is essential for:
 
-### 大型能源项目应用
+- **System Planning**: Understanding how individual components contribute to large systems
+- **Scale Analysis**: Comparing small-scale and large-scale power applications
+- **Energy Assessment**: Relating familiar power units to grid-scale power generation
+- **Industrial Planning**: Converting equipment specifications to facility-wide power needs
 
-**电站设计：**
-- 容量规划：基于GW级别进行总体设计
-- 设备选型：转换为PS便于设备功率匹配
-- 经济分析：统一功率单位进行成本计算
+Understanding this conversion helps engineers and planners work across different scales of power systems, from individual engines to power plants.
 
-**电网接入：**
-- 接入容量：GW级别的电网接入评估
-- 输电能力：跨区域输电线路容量规划
-- 调度运行：实时功率平衡和调度优化
+## Related Conversions
 
-### 国际合作项目
-
-**技术交流：**
-- 标准对接：国际标准(GW)与欧洲标准(PS)转换
-- 文档统一：确保技术文件单位一致性
-- 合同条款：明确功率指标的单位定义
-
-**投资分析：**
-- 项目评估：统一功率单位进行投资比较
-- 风险评估：功率规模对应的技术和经济风险
-- 融资决策：基于标准化功率指标的融资方案
-
-## 常见问题 (FAQ)
-
-### Q1: 为什么需要PS到GW的换算？
-**A:** 在大型能源项目中的应用需求：
-- **国际合作**：欧洲使用PS，国际项目使用GW
-- **技术交流**：不同标准体系的功率对比
-- **设备匹配**：大型设备功率与传统单位的对应
-- **投资分析**：统一功率单位便于经济比较
-
-### Q2: 1GW相当于多少个传统发电机组？
-**A:** 以传统发电机组为参考：
-- **燃煤机组**：1GW ≈ 1,359,622 PS ≈ 1,340 hp
-- **燃气机组**：通常单机300-800MW，1GW需要1.25-3.3台
-- **核电机组**：现代核电机组单机1-1.6GW
-- **风电机组**：单机3-15MW，1GW需要67-333台
-
-### Q3: 电站的额定功率和实际功率有什么区别？
-**A:** 功率类型的重要区别：
-- **额定功率**：设计最大输出功率
-- **净功率**：扣除厂用电后的输出功率
-- **毛功率**：发电机组总输出功率
-- **可用功率**：考虑设备可用率的实际功率
-
-### Q4: 如何验证大功率换算的准确性？
-**A:** 验证方法包括：
-- **分级验证**：先换算到MW，再换算到GW
-- **标准对照**：参考国际电力标准和规范
-- **工程手册**：使用权威的电力工程手册数据
-- **软件验证**：使用专业的电力计算软件
-
-### Q5: 不同类型电站的功率特性有何差异？
-**A:** 各类电站的功率特性：
-- **核电站**：连续稳定输出，容量因子85-95%
-- **火电站**：可调节输出，容量因子60-85%
-- **风电场**：间歇性输出，容量因子25-45%
-- **光伏电站**：日变化输出，容量因子15-25%
-
-### Q6: 电网规划中如何应用这些换算？
-**A:** 电网规划应用场景：
-- **装机容量**：统计区域总装机规模
-- **输电规划**：跨区域输电线路容量设计
-- **调峰能力**：系统调峰和备用容量计算
-- **新能源接入**：可再生能源接入容量评估
-
-## 相关连接
-<n-grid x-gap="12" :cols="2">
-  <n-gi v-for="(file,index) in Power" :key="index">
-    <n-button
-      text
-      tag="a"
-      :href="file.path"
-      type="info"
-    >
-      {{file.name}}
-    </n-button>
-  </n-gi>
-</n-grid>
+- [Metric Horsepower to Watt (PS to W)](/Power/PS-to-W)
+- [Metric Horsepower to Kilowatt (PS to kW)](/Power/PS-to-kW)
+- [Metric Horsepower to Megawatt (PS to MW)](/Power/PS-to-MW)
+- [Gigawatt to Watt (GW to W)](/Power/GW-to-W)
+- [Gigawatt to Kilowatt (GW to kW)](/Power/GW-to-kW)
+- [Gigawatt to Megawatt (GW to MW)](/Power/GW-to-MW)

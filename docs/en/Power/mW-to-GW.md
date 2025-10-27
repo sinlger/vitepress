@@ -4,36 +4,36 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Power/index
-      linkText: 功率换算
-  - - link: /Power/MW-to-GW
-      linkText: 兆瓦转吉瓦
+      linkText: Power Conversion
+  - - link: /Power/mW-to-GW
+      linkText: Milliwatt to Gigawatt
 head:
   - - meta
     - name: description
-      content: "提供毫瓦 (mW) 到吉瓦 (GW) 的单位换算公式及实际应用场景，适用于小功率设备到大型电力系统的功率对比分析。"
+      content: "Provides milliwatt (mW) to gigawatt (GW) unit conversion formulas and practical application scenarios, suitable for power comparison analysis from low-power devices to large-scale power systems."
   - - meta
     - name: keywords
-      content: "毫瓦转吉瓦,mW到GW换算,功率单位换算公式,小功率设备,电子设备功率,功率单位换算工具"
+      content: "milliwatt to gigawatt,mW to GW conversion,power unit conversion formula,low power devices,electronic device power,power unit conversion tool"
 ---
-# 毫瓦 (mW) 到吉瓦 (GW) 换算
+# Milliwatt (mW) to Gigawatt (GW) Conversion
 
-毫瓦 (mW) 和吉瓦 (GW) 分别代表功率测量的微观和宏观极端。毫瓦常用于小功率电子设备如传感器、芯片和移动设备，而吉瓦则用于描述大型发电站和国家级电力系统。这种跨越九个数量级的换算在电力系统分析、能源效率评估和技术对比中具有重要意义，帮助工程师理解从微电子到大型电力基础设施的功率关系。
+Milliwatt (mW) and gigawatt (GW) represent the microscopic and macroscopic extremes of power measurement respectively. Milliwatts are commonly used for low-power electronic devices such as sensors, chips and mobile devices, while gigawatts are used to describe large power plants and national-level power systems. This conversion spanning nine orders of magnitude is of great significance in power system analysis, energy efficiency assessment and technology comparison, helping engineers understand the power relationships from microelectronics to large-scale power infrastructure.
 
 <script setup>
 import { onMounted,reactive,inject ,ref  } from 'vue'
 import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage ,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
-import { Power } from '../files';
+import { Power } from '../../files';
 const convert = inject('convert')
 const seoKey = [
-  "毫瓦转吉瓦", "mW到GW换算", "小功率设备", "电子设备功率", "功率单位换算",
-  "微电子功率", "大型电力系统", "功率对比分析", "能源效率评估", "电力基础设施"
+  "milliwatt to gigawatt", "mW to GW conversion", "low power devices", "electronic device power", "power unit conversion",
+  "microelectronic power", "large power systems", "power comparison analysis", "energy efficiency assessment", "power infrastructure"
 ];
 const options =  [
-  { "label": "毫瓦 (mW)","value": "mW" },
-  { "label": "吉瓦 (GW)","value": "GW" }
+  { "label": "Milliwatt (mW)","value": "mW" },
+  { "label": "Gigawatt (GW)","value": "GW" }
 ];
 const formRef = ref(null);
 const rules = {
@@ -41,148 +41,133 @@ const rules = {
     required: true,
     type: 'number',
     trigger: "blur",
-    message: '请输入数字'
+    message: 'Please enter a number'
   },
   to:{
     required: true,
     trigger: "select",
-    message: '请选择转换单位'
+    message: 'Please select conversion unit'
   },
   from:{
     required: true,
     trigger: "select",
-    message: '请选择原始单位'
+    message: 'Please select source unit'
   }
 }
-const form = reactive({
-  number:null,
-  to:'',
-  from:'',
-  result:'',
-  title:'毫瓦转吉瓦',
+const message = useMessage()
+const formValue = reactive({
+  number: 1,
+  from: 'mW',
+  to: 'GW'
 })
-const convertHandler = (e) => {
-   e.preventDefault();
-  formRef.value?.validate((errors)=>{
+const result = ref('')
+const handleValidateClick = (e) => {
+  e.preventDefault()
+  formRef.value?.validate((errors) => {
     if (!errors) {
-      form.result = `${form.number}${form.from} = ${convert(form.number).from(form.from).to(form.to)}${form.to}`
+      result.value = convert(formValue.number, formValue.from, formValue.to, Power)
+    } else {
+      console.log(errors)
+      message.error('Invalid')
     }
   })
 }
 </script>
 
-<n-card title="毫瓦(mW)到吉瓦(GW)换算器" embedded :bordered="false" hoverable>
-  <n-form size="large" :model="form" ref='formRef' :rules="rules">
-    <n-form-item label="数值"  path="number">
-      <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数值" />
-    </n-form-item>
-    <n-form-item label="从" path="from">
-      <n-select  size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
-    </n-form-item>
-    <n-form-item label="到" path="to">
-      <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
-    </n-form-item>
-    <n-form-item>
-      <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
-    </n-form-item>
-  </n-form>
-  <n-card  embedded :bordered="false" hoverable>
-    <div  style="text-align:center;font-size:20px;">
-      <strong>{{form.result}}</strong>
-    </div>
-  </n-card>
-  <template #footer>
-    <div style="font-size:12px;color:#666;text-align:center;">
-      <span v-for="(key, index) in seoKey" :key="index">
-        {{ key }}<span v-if="index < seoKey.length - 1"> | </span>
-      </span>
-    </div>
-  </template>
-</n-card>
+<NCard title="Milliwatt to Gigawatt Converter">
+<NForm ref="formRef" :model="formValue" :rules="rules">
+<NGrid :cols="24" :x-gap="12">
+<NGi :span="24">
+<NFormItem path="number" label="Enter Value">
+<NInputNumber v-model:value="formValue.number" placeholder="Enter the value to convert" />
+</NFormItem>
+</NGi>
+<NGi :span="12">
+<NFormItem path="from" label="From">
+<NSelect v-model:value="formValue.from" placeholder="Select source unit" :options="options" />
+</NFormItem>
+</NGi>
+<NGi :span="12">
+<NFormItem path="to" label="To">
+<NSelect v-model:value="formValue.to" placeholder="Select target unit" :options="options" />
+</NFormItem>
+</NGi>
+<NGi :span="24">
+<NFormItem>
+<NButton type="primary" @click="handleValidateClick">
+Convert
+</NButton>
+</NFormItem>
+</NGi>
+</NGrid>
+</NForm>
+<div v-if="result" style="margin-top: 20px;">
+<h3>Conversion Result:</h3>
+<p>{{ result }}</p>
+</div>
+</NCard>
 
-## 换算公式
+## Conversion Formula
 
-### 基本换算关系
-- 1 mW = 0.001 W = 10⁻³ W
-- 1 GW = 1,000,000,000 W = 10⁹ W
-- 1 GW = 1,000,000,000,000 mW = 10¹² mW
-- 1 mW = 10⁻¹² GW
+The conversion between milliwatt (mW) and gigawatt (GW) is based on the following relationship:
 
-### 计算公式
-- **毫瓦转吉瓦**: GW = mW × 10⁻¹²
-- **吉瓦转毫瓦**: mW = GW × 10¹²
+**1 mW = 1 × 10⁻¹² GW**
 
-### 常用数值对照表
+### Conversion Formula:
+- **mW to GW**: GW = mW × 1 × 10⁻¹²
+- **GW to mW**: mW = GW × 1 × 10¹²
 
-| 毫瓦 (mW) | 吉瓦 (GW) | 应用场景 |
-|-----------|-----------|----------|
-| 1 mW | 10⁻¹² GW | LED指示灯 |
-| 1,000 mW (1W) | 10⁻⁹ GW | 手机充电器 |
-| 1,000,000 mW (1kW) | 10⁻⁶ GW | 家用电器 |
-| 1,000,000,000 mW (1MW) | 10⁻³ GW | 小型发电站 |
-| 1,000,000,000,000 mW (1GW) | 1 GW | 大型核电站 |
+## Conversion Guide
 
-## 应用示例
+### Why Convert Between mW and GW?
 
-### 微电子设备功率分析
-- **物联网传感器**: 1-100 mW，相当于 10⁻¹²-10⁻¹⁰ GW
-- **智能手表**: 50-500 mW，相当于 5×10⁻¹¹-5×10⁻¹⁰ GW
-- **蓝牙耳机**: 10-200 mW，相当于 10⁻¹¹-2×10⁻¹⁰ GW
+1. **Scale Comparison**: Understanding the vast difference between microelectronic and utility-scale power
+2. **Energy Efficiency Analysis**: Comparing device-level consumption with grid-scale generation
+3. **Technology Assessment**: Evaluating power density and efficiency across different scales
+4. **Educational Purposes**: Demonstrating the range of power scales in engineering
+5. **System Planning**: Understanding cumulative effects of small devices on large systems
 
-### 电力系统规模对比
-- **家庭用电**: 平均2-5 kW，相当于 2×10⁻⁶-5×10⁻⁶ GW
-- **工业园区**: 10-100 MW，相当于 0.01-0.1 GW
-- **核电站**: 1-1.6 GW，可为100万户家庭供电
+### Conversion Method
 
-### 能源效率评估
-- **数据中心**: 从服务器芯片的mW级功耗到整体GW级电力需求
-- **电动汽车**: 从传感器mW级到充电站MW级再到电网GW级的功率流动
-- **智慧城市**: 从单个设备mW级到城市电网GW级的能源管理
+1. **Identify the source unit** (mW or GW)
+2. **Apply the appropriate conversion factor**
+3. **Use scientific notation** for clarity with such large scale differences
+4. **Consider the practical context** of the conversion
 
-## 使用建议
+## Practical Examples
 
-### 跨尺度功率分析
-- **系统设计**: 从微电子器件到大型电力系统的功率预算和能效分析
-- **技术对比**: 理解不同技术层级的功率消耗差异，如芯片vs数据中心
-- **能源规划**: 评估从设备级到国家级的能源需求和供应能力
+### Example 1: Smartphone Power Consumption
+A smartphone consumes 2,000 mW (2W) during operation. Convert to GW:
+- **Calculation**: 2,000 mW × 1 × 10⁻¹² = 2 × 10⁻⁹ GW
+- **Application**: Understanding individual device impact on grid scale
 
-### 工程计算标准
-- **科学记数法**: 建议使用科学记数法表示极大的数量级差异
-- **单位统一**: 在复杂系统分析中保持单位一致性，避免计算错误
-- **精度控制**: 考虑到12个数量级的差异，注意计算精度和有效数字
+### Example 2: Data Center Comparison
+A data center consumes 50 MW. How many smartphones would equal this?
+- **Data center**: 50 MW = 50 × 10⁶ mW = 5 × 10⁻⁵ GW
+- **Smartphones needed**: 50 × 10⁶ mW ÷ 2,000 mW = 25,000 smartphones
+- **Application**: Scale comparison for energy planning
 
-### 实际应用场景
-- **能效评估**: 评估电子设备在整个电力系统中的相对功耗
-- **技术发展**: 追踪技术进步对功率密度和能效的影响
-- **政策制定**: 为能源政策提供从微观到宏观的功率数据支持
+### Example 3: IoT Device Network
+1 million IoT sensors each consuming 10 mW. Convert total to GW:
+- **Total consumption**: 1,000,000 × 10 mW = 10,000,000 mW = 1 × 10⁻⁵ GW
+- **Application**: Understanding cumulative impact of distributed devices
 
-## 常见问题解答
+## Summary
 
-### Q: 毫瓦和吉瓦之间的数量级差异有多大？
-A: 毫瓦和吉瓦之间相差12个数量级，即1 GW = 10¹² mW。这相当于1万亿倍的差异，体现了从微电子到大型电力系统的巨大功率跨度。
+The conversion between milliwatt and gigawatt illustrates the enormous range of power scales in modern technology. This conversion is essential for:
 
-### Q: 为什么需要进行mW到GW的换算？
-A: 这种换算主要用于跨尺度的能源分析，如评估数十亿个mW级设备对GW级电网的总体影响，或者理解单个芯片功耗与整个数据中心功耗的关系。
+- **Scale Understanding**: Appreciating the vast range of power applications
+- **Energy Planning**: Understanding how small devices aggregate to significant loads
+- **Technology Comparison**: Comparing efficiency across different scales
+- **Educational Value**: Demonstrating engineering scale concepts
 
-### Q: 在实际工程中如何处理如此大的数量级差异？
-A: 建议使用科学记数法表示，如1 mW = 10⁻¹² GW。在系统分析时，通常会选择中间单位如kW或MW作为桥梁，避免直接处理极大的数值。
+Understanding this conversion helps engineers and planners work effectively across the full spectrum of power applications, from microelectronics to utility-scale systems.
 
-### Q: 这种换算在能源管理中有什么意义？
-A: 有助于理解能源系统的层次结构，从设备级的mW功耗到国家级的GW电力需求，为智能电网、能效政策和技术发展提供量化基础。
+## Related Conversions
 
-### Q: 如何确保换算的准确性？
-A: 使用标准的换算系数10⁻¹²，注意保持有效数字的一致性，并在工程计算中考虑适当的安全余量和测量误差。
-
-## 相关连接
-<n-grid x-gap="12" :cols="2">
-  <n-gi v-for="(file,index) in Power" :key="index">
-    <n-button
-      text
-      tag="a"
-      :href="file.path"
-      type="info"
-    >
-      {{file.name}}
-    </n-button>
-  </n-gi>
-</n-grid>
+- [Milliwatt to Watt (mW to W)](/Power/mW-to-W)
+- [Milliwatt to Kilowatt (mW to kW)](/Power/mW-to-kW)
+- [Milliwatt to Megawatt (mW to MW)](/Power/mW-to-MW)
+- [Gigawatt to Watt (GW to W)](/Power/GW-to-W)
+- [Gigawatt to Kilowatt (GW to kW)](/Power/GW-to-kW)
+- [Gigawatt to Megawatt (GW to MW)](/Power/GW-to-mW)

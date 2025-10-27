@@ -4,44 +4,44 @@ aside: false
 lastUpdated: false
 breadcrumb: 
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Voltage/index
-      linkText: 电压换算
+      linkText: Voltage Conversion
   - - link: /Voltage/V-to-mV
-      linkText: 伏特转毫伏
+      linkText: Volt to Millivolt
 head:
   - - meta
     - name: description
-      content: 专业的伏特(V)到毫伏(mV)转换工具。提供精确的V转mV换算，详解伏特与毫伏的关系、换算公式、实际应用场景。适用于电子工程师、电工技师、学生和电压测量相关从业人员，涵盖电子电路、传感器、音频设备等领域的电压换算需求。
+      content: Professional volt (V) to millivolt (mV) conversion tool. Provides precise V to mV conversion, detailed explanation of the relationship between volts and millivolts, conversion formulas, and practical application scenarios. Suitable for electronic engineers, electrical technicians, students, and voltage measurement professionals, covering voltage conversion needs in electronic circuits, sensors, audio equipment, and other fields.
   - - meta
     - name: keywords
-      content: 伏特转毫伏,V转mV,伏特到毫伏,电压单位换算,V to mV,伏特换算毫伏,毫伏换算,电压转换,电子电路电压,传感器电压,音频信号电压,微弱信号测量,电压计算,伏特毫伏关系,电压单位转换
+      content: volt to millivolt,V to mV,volt to millivolt conversion,voltage unit conversion,V to mV converter,volt millivolt conversion,millivolt conversion,voltage conversion,electronic circuit voltage,sensor voltage,audio signal voltage,weak signal measurement,voltage calculation,volt millivolt relationship,voltage unit conversion
 seoKey:
-  - "伏特转毫伏"
-  - "V转mV"
-  - "伏特到毫伏"
-  - "电压单位换算"
+  - "volt to millivolt"
   - "V to mV"
-  - "伏特换算毫伏"
-  - "毫伏换算"
-  - "电压转换"
-  - "电子电路电压"
-  - "传感器电压"
-  - "音频信号电压"
-  - "微弱信号测量"
-  - "电压计算"
-  - "伏特毫伏关系"
-  - "电压单位转换"
-  - "1V等于多少mV"
-  - "伏特与毫伏换算"
-  - "电子设备电压"
-  - "信号电压测量"
-  - "电路分析电压"
+  - "volt to millivolt conversion"
+  - "voltage unit conversion"
+  - "V to mV converter"
+  - "volt millivolt conversion"
+  - "millivolt conversion"
+  - "voltage conversion"
+  - "electronic circuit voltage"
+  - "sensor voltage"
+  - "audio signal voltage"
+  - "weak signal measurement"
+  - "voltage calculation"
+  - "volt millivolt relationship"
+  - "voltage unit conversion"
+  - "1V equals how many mV"
+  - "volt and millivolt conversion"
+  - "electronic device voltage"
+  - "signal voltage measurement"
+  - "circuit analysis voltage"
 ---
 
-# 伏特(V)转毫伏(mV)换算器 - 精密电压转换工具
+# Volt (V) to Millivolt (mV) Converter - Precision Voltage Conversion Tool
 
-**伏特到毫伏转换**是电子工程和精密测量中的常用换算。本页面提供专业的V转mV计算工具，并详细介绍伏特与毫伏的关系、应用场景和技术要点，帮助您准确进行电压单位转换。
+**Volt to millivolt conversion** is a common calculation in electronic engineering and precision measurement. This page provides a professional V to mV calculation tool and detailed introduction to the relationship between volts and millivolts, application scenarios, and technical points to help you accurately perform voltage unit conversions.
 
 ---
 
@@ -53,10 +53,10 @@ import { Voltage } from '../files';
 
 const convert = inject('convert')
 const seoKey = [
-  '伏特转毫伏','V转mV','伏特到毫伏','电压单位换算','V to mV',
-  '伏特换算毫伏','毫伏换算','电压转换','电子电路电压','传感器电压',
-  '音频信号电压','微弱信号测量','电压计算','伏特毫伏关系','电压单位转换',
-  '1V等于多少mV','伏特与毫伏换算','电子设备电压','信号电压测量','电路分析电压'
+  'volt to millivolt','V to mV','volt to millivolt conversion','voltage unit conversion','V to mV converter',
+  'volt millivolt conversion','millivolt conversion','voltage conversion','electronic circuit voltage','sensor voltage',
+  'audio signal voltage','weak signal measurement','voltage calculation','volt millivolt relationship','voltage unit conversion',
+  '1V equals how many mV','volt and millivolt conversion','electronic device voltage','signal voltage measurement','circuit analysis voltage'
 ]
 
 const formRef = ref(null);
@@ -65,14 +65,14 @@ const rules = {
     required: true,
     type: 'number',
     trigger: "blur",
-    message: '请输入数字'
+    message: 'Please enter a number'
   }
 }
 
 const form = reactive({
   number: null,
   result: '',
-  title: '伏特(V)转毫伏(mV)',
+  title: 'Volt (V) to Millivolt (mV)',
 })
 
 const convertHandler = (e) => {
@@ -87,11 +87,11 @@ const convertHandler = (e) => {
 </script>
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="伏特(V)数值" path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="请输入伏特数值" />
+  <n-form-item label="Volt (V) Value" path="number">
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="Enter volt value" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" style="width:100%" @click="convertHandler">转换为毫伏(mV)</n-button>
+    <n-button type="info" style="width:100%" @click="convertHandler">Convert to Millivolt (mV)</n-button>
   </n-form-item>
 </n-form>
 <n-card embedded :bordered="false" hoverable style="margin-top: 16px;">
@@ -112,70 +112,70 @@ const convertHandler = (e) => {
   </template>
 </n-card>
 
-## 伏特转毫伏换算知识
+## Volt to Millivolt Conversion Knowledge
 
-### 换算公式
+### Conversion Formula
 
-**基本换算关系：**
+**Basic Conversion Relationship:**
 - **1V = 1000mV**
-- **换算公式：mV = V × 1000**
+- **Conversion Formula: mV = V × 1000**
 
-**计算示例：**
-| 伏特(V) | 毫伏(mV) | 应用场景 |
-|---------|----------|----------|
-| 0.001V | 1mV | 微弱信号检测 |
-| 0.1V | 100mV | 传感器输出 |
-| 1V | 1000mV | 标准参考电压 |
-| 3.3V | 3300mV | 数字电路供电 |
-| 5V | 5000mV | USB标准电压 |
-| 12V | 12000mV | 汽车电瓶电压 |
+**Calculation Examples:**
+| Volt (V) | Millivolt (mV) | Application Scenario |
+|----------|----------------|---------------------|
+| 0.001V | 1mV | Weak signal detection |
+| 0.1V | 100mV | Sensor output |
+| 1V | 1000mV | Standard reference voltage |
+| 3.3V | 3300mV | Digital circuit power supply |
+| 5V | 5000mV | USB standard voltage |
+| 12V | 12000mV | Car battery voltage |
 
-### 应用实例
+### Application Examples
 
-#### 电子电路设计
-- **运放电路**：输入信号通常为mV级别
-- **ADC转换**：参考电压3.3V = 3300mV
-- **信号调理**：将V级信号转换为mV显示
+#### Electronic Circuit Design
+- **Op-amp circuits**: Input signals typically at mV level
+- **ADC conversion**: Reference voltage 3.3V = 3300mV
+- **Signal conditioning**: Convert V-level signals to mV display
 
-#### 传感器应用
-- **温度传感器**：输出2.5V = 2500mV
-- **压力传感器**：满量程5V = 5000mV
-- **光电传感器**：信号范围0-1V = 0-1000mV
+#### Sensor Applications
+- **Temperature sensor**: Output 2.5V = 2500mV
+- **Pressure sensor**: Full scale 5V = 5000mV
+- **Photoelectric sensor**: Signal range 0-1V = 0-1000mV
 
-#### 音频设备
-- **线路电平**：标准1.23V = 1230mV
-- **话筒信号**：典型值几十mV
-- **耳机输出**：1-2V = 1000-2000mV
+#### Audio Equipment
+- **Line level**: Standard 1.23V = 1230mV
+- **Microphone signal**: Typical value tens of mV
+- **Headphone output**: 1-2V = 1000-2000mV
 
-### 使用建议
+### Usage Recommendations
 
-#### 精度要求
-- **高精度测量**：使用数字万用表，精度±0.1mV
-- **一般应用**：普通万用表即可满足需求
-- **校准标准**：定期校准测量设备
+#### Precision Requirements
+- **High precision measurement**: Use digital multimeter with ±0.1mV accuracy
+- **General applications**: Regular multimeter can meet requirements
+- **Calibration standards**: Regularly calibrate measurement equipment
 
-#### 测量注意事项
-- **接触电阻**：确保良好的电气连接
-- **环境干扰**：避免强电磁场影响
-- **温度影响**：注意温度对电压的影响
+#### Measurement Considerations
+- **Contact resistance**: Ensure good electrical connections
+- **Environmental interference**: Avoid strong electromagnetic field effects
+- **Temperature effects**: Pay attention to temperature impact on voltage
 
-#### 安全提醒
-- **低压安全**：V到mV转换通常涉及安全电压
-- **静电防护**：处理敏感电路时注意防静电
-- **设备保护**：避免超量程测量
+#### Safety Reminders
+- **Low voltage safety**: V to mV conversion typically involves safe voltages
+- **Static protection**: Pay attention to anti-static when handling sensitive circuits
+- **Equipment protection**: Avoid over-range measurements
 
-### 常见问题解答
+### Frequently Asked Questions
 
-**Q: 1V等于多少mV？**
-A: 1V = 1000mV，这是固定的换算关系。
+**Q: How many mV equals 1V?**
+A: 1V = 1000mV, this is a fixed conversion relationship.
 
-**Q: 为什么要用毫伏单位？**
-A: 毫伏更适合表示微弱信号，避免小数点，提高读数精度。
+**Q: Why use millivolt units?**
+A: Millivolts are more suitable for representing weak signals, avoiding decimal points and improving reading precision.
 
-**Q: 如何验证换算结果？**
-A: 使用万用表分别测量V和mV档位，验证换算准确性。
+**Q: How to verify conversion results?**
+A: Use a multimeter to measure V and mV ranges separately to verify conversion accuracy.
 
-### 相关链接
+### Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Voltage" :key="index">
     <n-button

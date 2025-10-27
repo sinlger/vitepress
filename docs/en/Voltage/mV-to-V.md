@@ -4,44 +4,44 @@ aside: false
 lastUpdated: false
 breadcrumb: 
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Voltage/index
-      linkText: 电压换算
+      linkText: Voltage Conversion
   - - link: /Voltage/mV-to-V
-      linkText: 毫伏转伏特
+      linkText: Millivolt to Volt
 head:
   - - meta
     - name: description
-      content: 专业的毫伏(mV)到伏特(V)转换工具。提供精确的mV转V换算，详解毫伏与伏特的关系、换算公式、微弱信号处理应用。适用于电子工程师、测量技术人员、传感器应用工程师和精密仪器相关从业人员，涵盖信号放大、传感器校准、精密测量等领域。
+      content: Professional millivolt (mV) to volt (V) conversion tool. Provides accurate mV to V conversion, detailed explanation of the relationship between millivolts and volts, conversion formulas, and weak signal processing applications. Suitable for electronic engineers, measurement technicians, sensor application engineers, and precision instrument professionals, covering signal amplification, sensor calibration, precision measurement, and other fields.
   - - meta
     - name: keywords
-      content: 毫伏转伏特,mV转V,毫伏到伏特,电压单位换算,mV to V,毫伏换算伏特,微弱信号,传感器信号,信号放大,精密测量,电压校准,信号处理,毫伏伏特关系,电压转换,微电压测量
+      content: millivolt to volt,mV to V,millivolt to volt conversion,voltage unit conversion,mV to V converter,millivolt volt conversion,weak signal,sensor signal,signal amplification,precision measurement,voltage calibration,signal processing,millivolt volt relationship,voltage conversion,micro voltage measurement
 seoKey:
-  - "毫伏转伏特"
-  - "mV转V"
-  - "毫伏到伏特"
-  - "电压单位换算"
+  - "millivolt to volt"
   - "mV to V"
-  - "毫伏换算伏特"
-  - "微弱信号"
-  - "传感器信号"
-  - "信号放大"
-  - "精密测量"
-  - "电压校准"
-  - "信号处理"
-  - "毫伏伏特关系"
-  - "电压转换"
-  - "微电压测量"
-  - "1mV等于多少V"
-  - "传感器电压转换"
-  - "信号调理电路"
-  - "微弱信号检测"
-  - "精密仪器电压"
+  - "millivolt to volt conversion"
+  - "voltage unit conversion"
+  - "mV to V converter"
+  - "millivolt volt conversion"
+  - "weak signal"
+  - "sensor signal"
+  - "signal amplification"
+  - "precision measurement"
+  - "voltage calibration"
+  - "signal processing"
+  - "millivolt volt relationship"
+  - "voltage conversion"
+  - "micro voltage measurement"
+  - "1mV equals how many V"
+  - "sensor voltage conversion"
+  - "signal conditioning circuit"
+  - "weak signal detection"
+  - "precision instrument voltage"
 ---
 
-# 毫伏(mV)转伏特(V)换算器 - 微弱信号转换工具
+# Millivolt (mV) to Volt (V) Converter - Weak Signal Conversion Tool
 
-**毫伏到伏特转换**是精密测量和信号处理中的关键换算。本页面提供专业的mV转V计算工具，并详细介绍毫伏与伏特的关系、信号处理应用和测量技术，帮助您准确进行微弱信号电压单位转换。
+**Millivolt to volt conversion** is a key calculation in precision measurement and signal processing. This page provides professional mV to V calculation tools and detailed introduction to the relationship between millivolts and volts, signal processing applications, and measurement techniques to help you accurately perform weak signal voltage unit conversions.
 
 ---
 
@@ -53,10 +53,10 @@ import { Voltage } from '../files';
 
 const convert = inject('convert')
 const seoKey = [
-  '毫伏转伏特','mV转V','毫伏到伏特','电压单位换算','mV to V',
-  '毫伏换算伏特','微弱信号','传感器信号','信号放大','精密测量',
-  '电压校准','信号处理','毫伏伏特关系','电压转换','微电压测量',
-  '1mV等于多少V','传感器电压转换','信号调理电路','微弱信号检测','精密仪器电压'
+  'millivolt to volt','mV to V','millivolt to volt conversion','voltage unit conversion','mV to V converter',
+  'millivolt volt conversion','weak signal','sensor signal','signal amplification','precision measurement',
+  'voltage calibration','signal processing','millivolt volt relationship','voltage conversion','micro voltage measurement',
+  '1mV equals how many V','sensor voltage conversion','signal conditioning circuit','weak signal detection','precision instrument voltage'
 ]
 
 const formRef = ref(null);
@@ -65,14 +65,14 @@ const rules = {
     required: true,
     type: 'number',
     trigger: "blur",
-    message: '请输入数字'
+    message: 'Please enter a number'
   }
 }
 
 const form = reactive({
   number: null,
   result: '',
-  title: '毫伏(mV)转伏特(V)',
+  title: 'Millivolt (mV) to Volt (V)',
 })
 
 const convertHandler = (e) => {
@@ -87,11 +87,11 @@ const convertHandler = (e) => {
 </script>
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="毫伏(mV)数值" path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="请输入毫伏数值" />
+  <n-form-item label="Millivolt (mV) Value" path="number">
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="Enter millivolt value" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" style="width:100%" @click="convertHandler">转换为伏特(V)</n-button>
+    <n-button type="info" style="width:100%" @click="convertHandler">Convert to Volt (V)</n-button>
   </n-form-item>
 </n-form>
 <n-card embedded :bordered="false" hoverable style="margin-top: 16px;">
@@ -112,108 +112,108 @@ const convertHandler = (e) => {
   </template>
 </n-card>
 
-## 毫伏转伏特换算知识
+## Millivolt to Volt Conversion Knowledge
 
-### 换算公式
+### Conversion Formula
 
-**基本换算关系：**
+**Basic conversion relationship:**
 - **1000mV = 1V**
-- **换算公式：V = mV ÷ 1000**
+- **Conversion formula: V = mV ÷ 1000**
 
-**计算示例：**
-| 毫伏(mV) | 伏特(V) | 应用场景 |
-|----------|---------|----------|
-| 1mV | 0.001V | 微弱信号检测 |
-| 10mV | 0.01V | 传感器输出 |
-| 100mV | 0.1V | 音频信号 |
-| 500mV | 0.5V | 参考电压 |
-| 1000mV | 1V | 标准电压 |
-| 3300mV | 3.3V | 数字电路供电 |
+**Calculation examples:**
+| Millivolt (mV) | Volt (V) | Application Scenario |
+|----------------|----------|---------------------|
+| 1mV | 0.001V | Weak signal detection |
+| 10mV | 0.01V | Sensor output |
+| 100mV | 0.1V | Audio signal |
+| 500mV | 0.5V | Reference voltage |
+| 1000mV | 1V | Standard voltage |
+| 3300mV | 3.3V | Digital circuit power supply |
 
-### 信号处理应用
+### Signal Processing Applications
 
-#### 传感器信号转换
-- **温度传感器**：热电偶输出通常为mV级
-- **压力传感器**：应变片输出几十mV
-- **pH传感器**：每pH单位约59mV变化
-- **称重传感器**：满量程输出1-10mV
+#### Sensor Signal Conversion
+- **Temperature sensors**: Thermocouple output is typically at mV level
+- **Pressure sensors**: Strain gauge output of tens of mV
+- **pH sensors**: Approximately 59mV change per pH unit
+- **Load cells**: Full-scale output of 1-10mV
 
-#### 信号调理电路
-- **信号放大**：将mV信号放大到V级
-- **滤波处理**：去除mV信号中的噪声
-- **线性化**：将非线性mV信号线性化
-- **隔离转换**：实现mV信号的电气隔离
+#### Signal Conditioning Circuits
+- **Signal amplification**: Amplify mV signals to V level
+- **Filtering**: Remove noise from mV signals
+- **Linearization**: Linearize non-linear mV signals
+- **Isolation conversion**: Achieve electrical isolation of mV signals
 
-#### 精密测量仪器
-- **数字万用表**：mV档位精度可达±0.01mV
-- **示波器**：可显示mV级波形
-- **数据采集器**：高精度ADC转换mV信号
-- **校准器**：提供标准mV参考信号
+#### Precision Measurement Instruments
+- **Digital multimeters**: mV range accuracy up to ±0.01mV
+- **Oscilloscopes**: Can display mV-level waveforms
+- **Data acquisition systems**: High-precision ADC conversion of mV signals
+- **Calibrators**: Provide standard mV reference signals
 
-### 测量技术要点
+### Measurement Technical Points
 
-#### 噪声控制
-- **屏蔽线缆**：使用屏蔽双绞线传输mV信号
-- **接地技术**：正确的接地减少干扰
-- **滤波电路**：硬件滤波去除高频噪声
-- **软件滤波**：数字滤波平滑信号
+#### Noise Control
+- **Shielded cables**: Use shielded twisted pair for mV signal transmission
+- **Grounding techniques**: Proper grounding reduces interference
+- **Filter circuits**: Hardware filtering removes high-frequency noise
+- **Software filtering**: Digital filtering smooths signals
 
-#### 精度保证
-- **温度补偿**：消除温度对mV信号的影响
-- **零点校准**：定期校准零点漂移
-- **满量程校准**：使用标准信号校准
-- **线性度检查**：验证转换的线性度
+#### Accuracy Assurance
+- **Temperature compensation**: Eliminate temperature effects on mV signals
+- **Zero point calibration**: Regular calibration of zero drift
+- **Full-scale calibration**: Calibrate using standard signals
+- **Linearity check**: Verify conversion linearity
 
-#### 信号完整性
-- **阻抗匹配**：避免信号反射
-- **传输距离**：控制mV信号传输距离
-- **电磁兼容**：防止电磁干扰
-- **信号隔离**：避免地环路干扰
+#### Signal Integrity
+- **Impedance matching**: Avoid signal reflection
+- **Transmission distance**: Control mV signal transmission distance
+- **Electromagnetic compatibility**: Prevent electromagnetic interference
+- **Signal isolation**: Avoid ground loop interference
 
-### 实际应用案例
+### Practical Application Cases
 
-#### 工业自动化
-- **过程控制**：4-20mA信号转换为1-5V
-- **数据采集**：现场传感器mV信号采集
-- **质量检测**：精密测量设备mV输出
-- **环境监测**：环境传感器mV信号处理
+#### Industrial Automation
+- **Process control**: 4-20mA signal conversion to 1-5V
+- **Data acquisition**: Field sensor mV signal collection
+- **Quality inspection**: Precision measurement equipment mV output
+- **Environmental monitoring**: Environmental sensor mV signal processing
 
-#### 医疗设备
-- **生物电信号**：心电图mV级信号
-- **医疗传感器**：血压、血氧传感器
-- **诊断设备**：精密医疗仪器信号
-- **监护设备**：患者监护参数采集
+#### Medical Equipment
+- **Bioelectric signals**: ECG mV-level signals
+- **Medical sensors**: Blood pressure, blood oxygen sensors
+- **Diagnostic equipment**: Precision medical instrument signals
+- **Monitoring equipment**: Patient monitoring parameter collection
 
-#### 科研实验
-- **物理实验**：微弱物理量测量
-- **化学分析**：电化学传感器
-- **材料测试**：材料特性测试
-- **环境研究**：环境参数监测
+#### Scientific Research
+- **Physics experiments**: Weak physical quantity measurement
+- **Chemical analysis**: Electrochemical sensors
+- **Material testing**: Material property testing
+- **Environmental research**: Environmental parameter monitoring
 
-### 使用建议
+### Usage Recommendations
 
-#### 选择合适的测量设备
-- **精度要求**：根据应用选择合适精度
-- **分辨率**：确保足够的测量分辨率
-- **稳定性**：长期稳定性要求
-- **响应时间**：动态信号测量要求
+#### Selecting Appropriate Measurement Equipment
+- **Accuracy requirements**: Choose appropriate accuracy based on application
+- **Resolution**: Ensure sufficient measurement resolution
+- **Stability**: Long-term stability requirements
+- **Response time**: Dynamic signal measurement requirements
 
-#### 信号处理注意事项
-- **放大倍数**：合理选择放大倍数
-- **带宽限制**：避免高频噪声影响
-- **共模抑制**：提高共模抑制比
-- **差分输入**：使用差分输入减少干扰
+#### Signal Processing Considerations
+- **Amplification factor**: Reasonably select amplification factor
+- **Bandwidth limitation**: Avoid high-frequency noise effects
+- **Common mode rejection**: Improve common mode rejection ratio
+- **Differential input**: Use differential input to reduce interference
 
-### 常见问题解答
+### Frequently Asked Questions
 
-**Q: 1mV等于多少V？**
-A: 1mV = 0.001V，即1000mV才等于1V。
+**Q: How many V does 1mV equal?**
+A: 1mV = 0.001V, meaning 1000mV equals 1V.
 
-**Q: 为什么mV信号容易受干扰？**
-A: mV信号幅度小，信噪比低，容易被环境噪声影响。
+**Q: Why are mV signals easily affected by interference?**
+A: mV signals have small amplitude and low signal-to-noise ratio, making them easily affected by environmental noise.
 
-**Q: 如何提高mV信号测量精度？**
-A: 使用高精度仪器、良好屏蔽、正确接地、温度补偿等方法。
+**Q: How to improve mV signal measurement accuracy?**
+A: Use high-precision instruments, good shielding, proper grounding, temperature compensation, and other methods.
 
 ### 相关链接
 <n-grid x-gap="12" :cols="2">

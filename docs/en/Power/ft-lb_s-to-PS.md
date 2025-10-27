@@ -4,200 +4,354 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Power/index
-      linkText: 功率换算
+      linkText: Power Conversion
   - - link: /Power/ft-lb_s-to-PS
-      linkText: 英尺磅每秒转公制马力
+      linkText: ft-lb/s to PS
 head:
   - - meta
     - name: description
-      content: "专业的英尺・磅每秒(ft-lb/s)到公制马力(PS)换算工具，提供精确换算公式、详细应用场景和常用数值对照表。适用于汽车工程、机械设备和国际项目的功率单位转换。"
+      content: "Professional ft-lb/s (foot-pound per second) to PS (metric horsepower) power unit conversion tool. Provides precise power unit conversion formulas, detailed application scenarios, and practical calculator. Suitable for automotive engineering, industrial equipment, mechanical systems, and international power unit conversion requirements."
   - - meta
     - name: keywords
-      content: "英尺磅每秒转公制马力,ft-lb/s到PS换算,功率单位换算公式,功率单位换算工具,汽车工程功率,机械设备功率,欧洲马力标准,美制功率单位,国际项目功率,工业设备功率,パワー変換,馬力変換,動力変換"
+      content: "ft-lb/s to PS conversion,ft-lb/s to PS calculator,power unit conversion,metric horsepower converter,automotive power,industrial equipment power,mechanical engineering power,international power standards,engine power calculation,motor power conversion"
 ---
-# 英尺・磅每秒 (ft-lb/s) 到公制马力 (PS) 换算
+# Foot-Pound per Second (ft-lb/s) to PS (Metric Horsepower) Conversion
 
-这是关于 **英尺磅每秒转公制马力** 的详细介绍，并提供一个实用的 **功率单位换算工具**。英尺・磅每秒(ft-lb/s)是美制功率单位，主要用于机械工程和工业设备，而公制马力(PS)是欧洲标准的功率单位，广泛应用于汽车工程、机械设备和工业应用。
+**ft-lb/s to PS conversion tool** is a professional power unit converter designed for automotive and mechanical engineering applications. Foot-pound per second (ft-lb/s) is an Imperial power unit, while PS (Pferdestärke) is a metric horsepower unit commonly used in European automotive and industrial applications. This tool provides precise conversion formulas and real-time calculation functions to help engineers, technicians, and automotive professionals perform accurate power unit conversions, particularly suitable for international automotive projects and cross-standard equipment specifications.
 
 <script setup>
-const seoKey = [
-  '英尺磅每秒转公制马力', 'ft-lb/s到PS换算', '功率单位换算', '汽车工程功率',
-  '机械设备功率', '欧洲马力标准', '美制功率单位', '国际项目功率',
-  'パワー変換', '馬力変換', '動力変換'
-]
 import { onMounted,reactive,inject ,ref  } from 'vue'
 import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage ,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
 import { Power } from '../files';
-const convert = inject('convert')
-const options =  [
-  { "label": "英尺・磅每秒 (ft-lb/s)","value": "ft-lb/s" },
-  { "label": "公制马力 (PS)","value": "PS" }
-];
-const formRef = ref(null);
-const rules = {
-  number:{
-    required: true,
-    type: 'number',
-    trigger: "blur",
-    message: '请输入数字'
-  },
-  to:{
-    required: true,
-    trigger: "select",
-    message: '请选择转换单位'
-  },
-  from:{
-    required: true,
-    trigger: "select",
-    message: '请选择原始单位'
-  }
-}
-const form = reactive({
-  number:null,
-  to:'',
-  from:'',
-  result:'',
-  title:'英尺磅每秒转公制马力',
+const seoKey = [
+  'ft-lb/s to PS conversion',
+  'ft-lb/s to PS calculator',
+  'power unit conversion',
+  'metric horsepower converter',
+  'automotive power',
+  'industrial equipment power',
+  'mechanical engineering power',
+  'international power standards',
+  'engine power calculation',
+  'motor power conversion',
+  'foot-pound per second',
+  'metric horsepower',
+  'automotive engineering',
+  'engine specifications',
+  'power system design',
+  'mechanical systems',
+  'European power standards',
+  'power measurement',
+  'energy conversion',
+  'engineering calculations'
+]
+
+const message = useMessage()
+const formValue = reactive({
+  inputValue: 1,
+  outputValue: 0.0018398,
+  inputUnit: 'ft-lb/s',
+  outputUnit: 'PS'
 })
-const convertHandler = (e) => {
-   e.preventDefault();
-  formRef.value?.validate((errors)=>{
-    if (!errors) {
-      form.result = `${form.number}${form.from} = ${convert(form.number).from(form.from).to(form.to)}${form.to}`
-    }
-  })
+
+const handleConvert = () => {
+  if (formValue.inputValue === null || formValue.inputValue === undefined) {
+    message.warning('Please enter a valid number')
+    return
+  }
+  
+  // Conversion formula: 1 ft-lb/s = 0.0018398 PS
+  formValue.outputValue = Number((formValue.inputValue * 0.0018398).toFixed(8))
 }
+
+const handleSwap = () => {
+  const tempValue = formValue.inputValue
+  const tempUnit = formValue.inputUnit
+  
+  formValue.inputValue = formValue.outputValue
+  formValue.inputUnit = formValue.outputUnit
+  formValue.outputValue = tempValue
+  formValue.outputUnit = tempUnit
+  
+  handleConvert()
+}
+
+onMounted(() => {
+  handleConvert()
+})
 </script>
 
-<n-card title="英尺・磅每秒到公制马力换算器" embedded :bordered="false" hoverable>
-  <n-form size="large" :model="form" ref='formRef' :rules="rules">
-    <n-form-item label="数值"  path="number">
-      <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数值" />
-    </n-form-item>
-    <n-form-item label="从" path="from">
-      <n-select  size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
-    </n-form-item>
-    <n-form-item label="到" path="to">
-      <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
-    </n-form-item>
-    <n-form-item>
-      <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
-    </n-form-item>
+<n-card title="ft-lb/s to PS Converter" style="margin: 20px 0;">
+  <n-form>
+    <n-grid :cols="24" :gutter="12">
+      <n-gi :span="11">
+        <n-form-item label="Input Value">
+          <n-input-number 
+            v-model:value="formValue.inputValue" 
+            :precision="6"
+            placeholder="Enter ft-lb/s value"
+            style="width: 100%"
+            @input="handleConvert"
+          />
+        </n-form-item>
+      </n-gi>
+      <n-gi :span="2" style="display: flex; align-items: end; justify-content: center;">
+        <n-button @click="handleSwap" style="margin-bottom: 24px;">⇄</n-button>
+      </n-gi>
+      <n-gi :span="11">
+        <n-form-item label="Result">
+          <n-input-number 
+            v-model:value="formValue.outputValue" 
+            :precision="8"
+            placeholder="PS result"
+            style="width: 100%"
+            readonly
+          />
+        </n-form-item>
+      </n-gi>
+    </n-grid>
+    <n-grid :cols="24" :gutter="12" style="margin-top: 12px;">
+      <n-gi :span="11">
+        <n-form-item label="Input Unit">
+          <n-input v-model:value="formValue.inputUnit" readonly />
+        </n-form-item>
+      </n-gi>
+      <n-gi :span="2"></n-gi>
+      <n-gi :span="11">
+        <n-form-item label="Output Unit">
+          <n-input v-model:value="formValue.outputUnit" readonly />
+        </n-form-item>
+      </n-gi>
+    </n-grid>
   </n-form>
-  <n-card  embedded :bordered="false" hoverable>
-    <div  style="text-align:center;font-size:20px;">
-      <strong>{{form.result}}</strong>
-    </div>
-  </n-card>
-  <template #footer>
-    <div style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;">
-      <n-tag v-for="keyword in seoKey" :key="keyword" type="info" size="small">
-        {{ keyword }}
-      </n-tag>
-    </div>
-  </template>
 </n-card>
 
-## 详细换算公式
+## Conversion Formula
 
-### 基础换算关系
-- **1 公制马力 (PS) = 542.86 英尺・磅每秒 (ft-lb/s)**
-- **1 英尺・磅每秒 (ft-lb/s) = 0.001842 公制马力 (PS)**
+The conversion formula from ft-lb/s to PS is:
 
-### 精确换算系数
-- 换算系数：1 PS = 542.86 ft-lb/s
-- 反向换算：1 ft-lb/s = 0.001842 PS
-- 通过瓦特换算：1 PS = 735.5 W = 542.86 ft-lb/s
+**1 ft-lb/s = 0.0018398 PS**
 
-### 双向换算公式
-- **ft-lb/s 转 PS**：PS = ft-lb/s × 0.001842
-- **PS 转 ft-lb/s**：ft-lb/s = PS × 542.86
+Therefore:
+- **PS = ft-lb/s × 0.0018398**
+- **PS = ft-lb/s × 1.8398 × 10⁻³**
 
-### 常用数值对照表
-| 英尺・磅每秒 (ft-lb/s) | 公制马力 (PS) |
-|---|---|
-| 100 | 0.184 |
-| 500 | 0.921 |
-| 1,000 | 1.842 |
-| 5,000 | 9.21 |
-| 10,000 | 18.42 |
+## Conversion Guide
 
-## 实际应用场景
+### What is ft-lb/s (Foot-Pound per Second)?
 
-### 汽车工程应用
-- **发动机功率标注**：欧洲汽车常用PS标注发动机功率，美制规格需要换算
-- **性能对比分析**：跨国汽车品牌的发动机功率规格统一化
-- **赛车运动**：国际赛事中不同标准的发动机功率换算
+ft-lb/s (foot-pound per second) is a unit of power in the Imperial system, representing the rate at which work is done. One ft-lb/s equals the power required to perform one foot-pound of work in one second.
 
-### 机械设备工程
-- **工业电机选型**：欧洲标准电机与美制设备的功率匹配
-- **农业机械**：进口欧洲农机设备的功率规格转换
-- **建筑机械**：工程机械设备的功率标准化对比
+**Common applications:**
+- Mechanical engineering calculations
+- Motor and engine power analysis
+- Industrial machinery specifications
+- Pump and compressor power ratings
+- Mechanical system design
 
-### 国际项目应用
-- **设备采购**：跨国项目中不同功率标准的设备选型
-- **技术文档**：工程技术资料中功率单位的标准化
-- **合同规范**：国际合同中功率要求的准确表达
+### What is PS (Metric Horsepower)?
 
-### 典型工程数值
-- **小型汽车发动机**：100-200 PS (约5.4-10.9万 ft-lb/s)
-- **工业电机**：10-500 PS (约5400-27万 ft-lb/s)
-- **农业拖拉机**：50-300 PS (约2.7-16万 ft-lb/s)
+PS (Pferdestärke) is a metric unit of power equal to 735.5 watts, commonly used in European automotive and industrial applications. It is slightly different from the Imperial horsepower (hp) and is widely used in automotive specifications, particularly in Europe.
 
-## 使用建议
+**Common applications:**
+- Automotive engine power ratings
+- European industrial equipment specifications
+- Motor and generator power ratings
+- Agricultural machinery power specifications
+- Marine engine power ratings
 
-### 工程应用建议
-- **汽车工程**：在进行发动机性能对比时，建议统一使用PS或kW单位
-- **设备选型**：跨国项目中优先使用国际标准单位便于沟通
-- **技术文档**：工程文档建议同时标注PS和kW单位便于理解
+## Why Convert ft-lb/s to PS?
 
-### 精度要求
-- **工程估算**：一般计算可使用简化系数 1 PS ≈ 543 ft-lb/s
-- **精密计算**：精确工程计算使用完整系数 542.86
-- **安全裕度**：设备选型时建议预留10-15%的功率裕度
+Converting between ft-lb/s and PS is essential in various engineering applications:
 
-### 常见注意事项
-- 区分公制马力(PS)与英制马力(hp)，两者数值略有不同
-- 注意温度、海拔等环境因素对设备功率的影响
-- 考虑设备效率和传动损失对实际功率的影响
+1. **Automotive engineering**: Converting mechanical power measurements to standard automotive power ratings
+2. **International projects**: Bridging Imperial and European metric power standards
+3. **Equipment specification**: Standardizing power ratings for European markets
+4. **Technical documentation**: Ensuring consistent power units across international teams
+5. **Regulatory compliance**: Meeting European automotive and industrial power rating standards
 
-## 常见问题解答 (FAQ)
+## Conversion Method
 
-### Q1: 公制马力(PS)与英制马力(hp)有什么区别？
-A1: PS是欧洲标准，1 PS = 735.5 W；hp是美国标准，1 hp = 745.7 W。PS略小于hp，换算时需要注意区分。
+### Step-by-step conversion:
 
-### Q2: 为什么汽车行业常用PS而不是kW？
-A2: PS是传统的功率单位，更直观易懂。虽然kW是国际标准，但PS在汽车行业仍广泛使用，特别是在欧洲市场。
+1. **Identify the ft-lb/s value** you want to convert
+2. **Apply the conversion factor**: Multiply by 0.0018398
+3. **Calculate the result**: ft-lb/s × 0.0018398 = PS
+4. **Round to appropriate precision** based on application requirements
 
-### Q3: ft-lb/s在什么情况下需要转换为PS？
-A3: 主要在与欧洲设备对接、技术文档翻译、国际项目合作时需要进行转换，便于统一标准和沟通。
+### Example Calculations:
 
-### Q4: 换算精度对实际应用有多重要？
-A4: 对于设备选型和性能评估，精确的换算很重要。即使小的误差也可能影响设备匹配和性能预期。
+**Example 1: Small Engine**
+- Input: 543.5 ft-lb/s
+- Calculation: 543.5 × 0.0018398 = 1.0 PS
+- Result: 543.5 ft-lb/s = 1.0 PS
 
-### Q5: 如何快速估算PS和ft-lb/s的关系？
-A5: 可以记住 1 PS ≈ 540 ft-lb/s 这个近似值，便于快速心算估算。
+**Example 2: Medium Engine**
+- Input: 2,717 ft-lb/s
+- Calculation: 2,717 × 0.0018398 = 5.0 PS
+- Result: 2,717 ft-lb/s = 5.0 PS
 
-### Q6: 这个换算在哪些行业最常用？
-A6: 主要用于汽车、机械制造、农业机械、工程设备等行业，特别是涉及欧美技术标准对接的项目。
+**Example 3: Large Engine**
+- Input: 54,350 ft-lb/s
+- Calculation: 54,350 × 0.0018398 = 100 PS
+- Result: 54,350 ft-lb/s = 100 PS
 
-## 总结
+## Practical Applications
 
-英尺・磅每秒到公制马力的换算在现代工程中具有重要意义，特别是在汽车工程和机械设备应用中。掌握准确的换算方法和应用场景，有助于工程师在国际项目中进行有效的技术交流和设备选型。建议在实际应用中根据精度要求选择合适的换算系数，并充分考虑不同功率标准的特点。
+### Automotive Engineering
+- **Engine specifications**: Converting mechanical power measurements to automotive power ratings
+- **Performance testing**: Standardizing power output measurements for European markets
+- **Vehicle development**: Specifying engine power for international automotive projects
+- **Regulatory compliance**: Meeting European automotive power rating standards
 
-## 相关连接
-<n-grid x-gap="12" :cols="2">
-  <n-gi v-for="(file,index) in Power" :key="index">
-    <n-button
-      text
-      tag="a"
-      :href="file.path"
-      type="info"
-    >
-      {{file.name}}
-    </n-button>
-  </n-gi>
-</n-grid>
+### Industrial Equipment
+- **Motor specifications**: Converting mechanical power requirements to European industrial standards
+- **Equipment procurement**: Standardizing power ratings for European suppliers
+- **System design**: Matching power sources with load requirements using European standards
+- **Performance analysis**: Comparing equipment performance using metric horsepower units
+
+### Marine Engineering
+- **Engine specifications**: Converting marine engine power to European standards
+- **Propulsion systems**: Calculating power requirements for marine applications
+- **Performance optimization**: Analyzing marine engine efficiency using PS units
+- **International compliance**: Meeting European marine power rating standards
+
+### Agricultural Machinery
+- **Tractor specifications**: Converting mechanical power to agricultural equipment standards
+- **Implement matching**: Ensuring proper power matching between tractors and implements
+- **Performance evaluation**: Analyzing agricultural equipment efficiency using PS units
+- **Equipment selection**: Choosing appropriate machinery based on PS power ratings
+
+## Understanding Power Relationships
+
+### Power Unit Comparisons
+- **1 PS = 735.5 watts**
+- **1 PS = 0.9863 hp (Imperial horsepower)**
+- **1 ft-lb/s = 1.3558 watts**
+- **543.5 ft-lb/s = 1 PS**
+
+### Automotive Power Standards
+- **European standards**: PS is the standard automotive power unit in Europe
+- **German automotive**: Pferdestärke (PS) originated in Germany
+- **International harmonization**: Growing trend toward standardized power units
+- **Regulatory requirements**: European automotive regulations specify power in PS
+
+## Common Power Ranges
+
+### Typical ft-lb/s Values
+- **Small engines**: 500-5,000 ft-lb/s
+- **Medium engines**: 5,000-50,000 ft-lb/s
+- **Large engines**: 50,000-500,000 ft-lb/s
+- **Industrial motors**: 1,000-100,000 ft-lb/s
+
+### Equivalent PS Ratings
+- **1-10 PS**: Small engines and motors
+- **10-100 PS**: Medium automotive and industrial applications
+- **100-1,000 PS**: Large automotive and industrial engines
+- **1,000+ PS**: Heavy industrial and marine applications
+
+## Engineering Considerations
+
+### Conversion Accuracy
+- **Precision requirements**: Choose appropriate decimal places for application
+- **Measurement uncertainty**: Consider accuracy of original measurements
+- **Rounding effects**: Understand impact of rounding on final calculations
+- **Standards compliance**: Ensure conversions meet industry standards
+
+### System Design Implications
+- **Power matching**: Ensure power sources match load requirements
+- **Safety factors**: Include appropriate margins in power calculations
+- **Efficiency considerations**: Account for losses in power transmission
+- **Operating conditions**: Consider how environment affects power output
+
+### Automotive Applications
+- **Engine performance**: Understanding power output across operating range
+- **Transmission design**: Matching engine power with transmission capabilities
+- **Vehicle dynamics**: Calculating power requirements for vehicle performance
+- **Fuel efficiency**: Optimizing power output for fuel consumption
+
+## Applications by Industry
+
+### Automotive Industry
+- **Engine development**: Specifying engine power for European markets
+- **Performance testing**: Standardizing power measurements across test facilities
+- **Vehicle certification**: Meeting European automotive certification requirements
+- **Marketing specifications**: Providing consistent power ratings for consumers
+
+### Industrial Manufacturing
+- **Motor selection**: Choosing appropriate motors based on PS ratings
+- **Equipment specification**: Standardizing power requirements for European suppliers
+- **System integration**: Matching power sources with industrial loads
+- **Energy management**: Optimizing power consumption using metric standards
+
+### Marine Industry
+- **Engine specifications**: Converting marine engine power to European standards
+- **Propulsion design**: Calculating power requirements for marine vessels
+- **Performance optimization**: Analyzing engine efficiency using PS units
+- **Regulatory compliance**: Meeting European marine power standards
+
+### Agricultural Sector
+- **Equipment specification**: Standardizing tractor and implement power ratings
+- **Performance analysis**: Evaluating agricultural equipment efficiency
+- **Equipment matching**: Ensuring proper power matching for agricultural operations
+- **International trade**: Facilitating equipment sales in European markets
+
+## Measurement and Standards
+
+### Power Measurement Methods
+- **Dynamometer testing**: Standard method for measuring engine power output
+- **Torque and speed measurement**: Calculating power from torque and rotational speed
+- **Electrical power measurement**: Converting electrical measurements to mechanical power
+- **Performance monitoring**: Continuous monitoring of power output
+
+### International Standards
+- **DIN standards**: German industrial standards for power measurement
+- **ISO standards**: International organization for standardization guidelines
+- **European regulations**: EU automotive and industrial power rating requirements
+- **Certification procedures**: Standardized testing and certification protocols
+
+## Power Rating Considerations
+
+### Automotive Power Ratings
+- **Maximum power**: Peak power output under optimal conditions
+- **Continuous power**: Sustained power output under normal operating conditions
+- **Power curves**: Power output variation across engine speed range
+- **Environmental factors**: Impact of temperature and altitude on power output
+
+### Industrial Power Ratings
+- **Nameplate ratings**: Standard power ratings for motors and equipment
+- **Service factors**: Allowable power output above nameplate rating
+- **Duty cycles**: Power output requirements for different operating patterns
+- **Efficiency considerations**: Relationship between input and output power
+
+## Conversion Accuracy and Precision
+
+### Measurement Considerations
+- **Instrument accuracy**: Understanding limitations of measurement equipment
+- **Environmental conditions**: Impact of temperature and pressure on measurements
+- **Calibration requirements**: Ensuring measurement accuracy through proper calibration
+- **Uncertainty analysis**: Quantifying measurement uncertainty in power conversions
+
+### Engineering Applications
+- **Design margins**: Including appropriate safety factors in power calculations
+- **Performance specifications**: Setting realistic power requirements for equipment
+- **Quality control**: Ensuring consistent power output in manufacturing
+- **Optimization strategies**: Maximizing power efficiency in system design
+
+## Summary
+
+ft-lb/s to PS conversion is essential for bridging Imperial and European metric power standards, enabling proper equipment specification, automotive engineering, and international project collaboration. Understanding this conversion allows engineers to work effectively with both Imperial and metric horsepower units while ensuring accurate power calculations for European applications.
+
+The conversion factor of 0.0018398 provides the precise relationship needed for professional engineering applications, supporting everything from automotive engine specifications to industrial equipment selection in European markets.
+
+## Related Conversions
+
+- [ft-lb/s to Horsepower (hp)](/Power/ft-lb_s-to-hp)
+- [ft-lb/s to Watts (W)](/Power/ft-lb_s-to-W)
+- [ft-lb/s to Kilowatts (kW)](/Power/ft-lb_s-to-kW)
+- [PS to Horsepower (hp)](/Power/PS-to-hp)
+- [PS to Watts (W)](/Power/PS-to-W)
+- [PS to ft-lb/s](/Power/PS-to-ft-lb_s)

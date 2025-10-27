@@ -4,32 +4,32 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Power/index
-      linkText: 功率换算
+      linkText: Power Conversion
   - - link: /Power/W-to-GW
-      linkText: 瓦特转吉瓦
+      linkText: Watts to Gigawatts
 head:
   - - meta
     - name: description
-      content: "提供瓦特 (W) 到吉瓦 (GW) 的单位换算公式及实际应用场景。"
+      content: "Provides unit conversion formulas and practical application scenarios for Watts (W) to Gigawatts (GW)."
   - - meta
     - name: keywords
-      content: "瓦特转吉瓦,W到GW换算,功率单位换算公式,功率单位换算工具,大型能源设施功率单位"
+      content: "watts to gigawatts,W to GW conversion,power unit conversion formula,power unit conversion tool,large energy facility power units"
 ---
-# 瓦特 (W) 到吉瓦 (GW) 换算
+# Watts (W) to Gigawatts (GW) Conversion
 
-这是关于 **瓦特转吉瓦** 的详细介绍，并提供一个实用的 **功率单位换算工具**。
+This is a detailed introduction to **Watts to Gigawatts conversion** and provides a practical **power unit conversion tool**.
 
 <script setup>
 import { onMounted,reactive,inject ,ref  } from 'vue'
 import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage ,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
-import { Power } from '../files';
+import { Power } from '../../files';
 const convert = inject('convert')
 const options =  [
-  { "label": "瓦特 (W)","value": "W" },
-  { "label": "吉瓦 (GW)","value": "GW" }
+  { "label": "Watts (W)","value": "W" },
+  { "label": "Gigawatts (GW)","value": "GW" }
 ];
 const formRef = ref(null);
 const rules = {
@@ -37,17 +37,17 @@ const rules = {
     required: true,
     type: 'number',
     trigger: "blur",
-    message: '请输入数字'
+    message: 'Please enter a number'
   },
   to:{
     required: true,
     trigger: "select",
-    message: '请选择转换单位'
+    message: 'Please select conversion unit'
   },
   from:{
     required: true,
     trigger: "select",
-    message: '请选择原始单位'
+    message: 'Please select source unit'
   }
 }
 const form = reactive({
@@ -55,7 +55,7 @@ const form = reactive({
   to:'',
   from:'',
   result:'',
-  title:'瓦特转吉瓦',
+  title:'Watts to Gigawatts',
 })
 const convertHandler = (e) => {
    e.preventDefault();
@@ -67,51 +67,67 @@ const convertHandler = (e) => {
 }
 </script>
 
-<n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="数值"  path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数值" />
-  </n-form-item>
-  <n-form-item label="从" path="from">
-    <n-select  size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
-  </n-form-item>
-  <n-form-item label="到" path="to">
-    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
-  </n-form-item>
-  <n-form-item>
-    <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
-  </n-form-item>
-</n-form>
-<n-card  embedded :bordered="false" hoverable>
-  <div  style="text-align:center;font-size:20px;">
-    <strong>{{form.result}}</strong>
-  </div>
+<n-card title="Watts (W) to Gigawatts (GW) Converter" embedded :bordered="false" hoverable>
+  <n-form size="large" :model="form" ref='formRef' :rules="rules">
+    <n-form-item label="Value"  path="number">
+      <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="Enter the value to convert" />
+    </n-form-item>
+    <n-form-item label="From" path="from">
+      <n-select  size="large" :options="options" v-model:value="form.from" placeholder="Select source unit" />
+    </n-form-item>
+    <n-form-item label="To" path="to">
+      <n-select  size="large" :options="options" v-model:value="form.to" placeholder="Select conversion unit" />
+    </n-form-item>
+    <n-form-item>
+      <n-button type="info" style="width:100%" @click="convertHandler">Convert</n-button>
+    </n-form-item>
+  </n-form>
+  <n-card  embedded :bordered="false" hoverable>
+    <div  style="text-align:center;font-size:20px;">
+      <strong>{{form.result}}</strong>
+    </div>
+  </n-card>
 </n-card>
 
-## 换算公式
+## Conversion Formula
 
-1 吉瓦 (GW) = 1,000,000,000 瓦特 (W) = 1000 兆瓦 (MW)
+### Basic Conversion Relationship
+- **1 Watt (W) = 1 × 10⁻⁹ GW**
+- **1 Gigawatt (GW) = 1,000,000,000 Watts (W)**
 
-## 生活中的应用示例
+### Detailed Calculation Process
+**W to GW:** GW = W ÷ 1,000,000,000
+**GW to W:** W = GW × 1,000,000,000
 
-- **核电站输出功率**：例如，单机组容量可达 1 GW，即 10 亿瓦特。
-- **大型光伏电站**：如 10 GW 电站年发电量可满足 400 万户家庭用电。
-- **超大型工业基地能耗**：如钢铁厂或化工厂的总用电负荷可能达到数 GW。
+### Common Value Reference Table
+| Watts (W) | Gigawatts (GW) | Application Scenario |
+|-----------|----------------|---------------------|
+| 1,000,000,000 W | 1 GW | Large power plant |
+| 2,000,000,000 W | 2 GW | Nuclear reactor |
+| 5,000,000,000 W | 5 GW | Major power station |
+| 10,000,000,000 W | 10 GW | Large energy complex |
 
-## 使用建议
+## Application Examples
 
-- **大型能源设施**：优先使用吉瓦 (GW)，例如核电站、大型太阳能电站等。
-- **科学计算**：使用国际单位制（瓦特 W），便于统一标准。
+### Power Generation Industry
+- **Nuclear power plants**: Typical reactor output ranges from 1-3 GW
+- **Coal power stations**: Large facilities can generate 2-4 GW
+- **Hydroelectric dams**: Major installations like Three Gorges Dam produce over 20 GW
 
-## 相关连接
+### Energy Infrastructure
+- **National grid capacity**: Country-level power generation measured in hundreds of GW
+- **Renewable energy projects**: Large solar and wind farms reaching GW scale
+- **Energy storage systems**: Grid-scale battery installations measured in GW
+
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file,index) in Power" :key="index">
-    <n-button
-      text
-      tag="a"
-      :href="file.path"
-      type="info"
-    >
-      {{file.name}}
-    </n-button>
+    <n-card size="small" hoverable>
+      <template #header>
+        <a :href="file.link" style="text-decoration: none; color: inherit;">
+          {{ file.title }}
+        </a>
+      </template>
+    </n-card>
   </n-gi>
 </n-grid>

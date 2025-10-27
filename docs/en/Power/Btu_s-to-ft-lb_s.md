@@ -4,22 +4,22 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Power/index
-      linkText: 功率换算
+      linkText: Power Conversion
   - - link: /Power/Btu_s-to-ft-lb_s
-      linkText: 英热单位每秒转英尺磅每秒
+      linkText: Btu/s to ft-lb/s
 head:
   - - meta
     - name: description
-      content: "专业的英热单位每秒(Btu/s)到英尺磅每秒(ft-lb/s)功率单位换算工具。提供精确的换算公式、实际应用场景和详细计算方法。适用于暖通空调、机械工程、小型发动机功率计算等领域，支持美制单位系统的功率换算需求。"
+      content: "Professional Btu/s (British thermal unit per second) to ft-lb/s (foot-pound per second) power unit conversion tool. Provides precise conversion formulas, practical applications, and detailed calculation methods. Suitable for HVAC, mechanical engineering, small engine power calculations, and other fields requiring US customary unit system power conversions."
   - - meta
     - name: keywords
-      content: "英热单位每秒转英尺磅每秒,Btu/s到ft-lb/s换算,功率单位换算公式,功率单位换算工具,暖通与机械工程功率单位,英热单位换算,ft-lb/s是什么单位,英尺磅每秒,美制功率单位,机械功率换算,小型发动机功率,扭矩功率换算,暖通空调功率,工程机械功率,液压泵功率,空气压缩机功率,割草机引擎功率,农业机械功率,功率计算公式,机械系统功率分析,美制单位换算,工程功率计算,机械工程单位,功率测量单位,扭矩输出功率,机械设备功率匹配,工业机械功率,功率单位对照表,机械功率公式"
+      content: "Btu/s to ft-lb/s conversion,Btu/s to ft-lb/s calculator,power unit conversion formula,power unit conversion tool,HVAC and mechanical engineering power units,British thermal unit conversion,what is ft-lb/s unit,foot-pound per second,US customary power units,mechanical power conversion,small engine power,torque power conversion,HVAC power,engineering machinery power,hydraulic pump power,air compressor power,lawn mower engine power,agricultural machinery power,power calculation formula,mechanical system power analysis,US unit conversion,engineering power calculation,mechanical engineering units,power measurement units,torque output power,mechanical equipment power matching,industrial machinery power,power unit conversion table,mechanical power formula"
 ---
-# 英热单位每秒 (Btu/s) 到英尺・磅每秒 (ft-lb/s) 换算
+# British Thermal Unit per Second (Btu/s) to Foot-Pound per Second (ft-lb/s) Conversion
 
-这是关于 **英热单位每秒转英尺磅每秒** 的详细介绍，并提供一个实用的 **功率单位换算工具**。
+This is a detailed introduction to **Btu/s to ft-lb/s conversion** and provides a practical **power unit conversion tool**.
 
 <script setup>
 import { onMounted,reactive,inject ,ref  } from 'vue'
@@ -27,205 +27,214 @@ import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage ,
 import { defineClientComponent } from 'vitepress'
 import { Power } from '../files';
 const seoKey = [
-  '英热单位每秒转英尺磅每秒',
-  'Btu/s到ft-lb/s换算',
-  '功率单位换算公式',
-  '功率单位换算工具',
-  '暖通与机械工程功率单位',
-  '英热单位换算',
-  'ft-lb/s是什么单位',
-  '英尺磅每秒',
-  '美制功率单位',
-  '机械功率换算',
-  '小型发动机功率',
-  '扭矩功率换算',
-  '暖通空调功率',
-  '工程机械功率',
-  '液压泵功率',
-  '空气压缩机功率',
-  '割草机引擎功率',
-  '农业机械功率',
-  '功率计算公式',
-  '机械系统功率分析',
-  '美制单位换算',
-  '工程功率计算',
-  '机械工程单位',
-  '功率测量单位',
-  '扭矩输出功率',
-  '机械设备功率匹配',
-  '工业机械功率',
-  '功率单位对照表',
-  '机械功率公式'
+  'Btu/s to ft-lb/s conversion',
+  'Btu/s to ft-lb/s calculator',
+  'power unit conversion formula',
+  'power unit conversion tool',
+  'HVAC and mechanical engineering power units',
+  'British thermal unit conversion',
+  'what is ft-lb/s unit',
+  'foot-pound per second',
+  'US customary power units',
+  'mechanical power conversion',
+  'small engine power',
+  'torque power conversion',
+  'HVAC power',
+  'engineering machinery power',
+  'hydraulic pump power',
+  'air compressor power',
+  'lawn mower engine power',
+  'agricultural machinery power',
+  'power calculation formula',
+  'mechanical system power analysis',
+  'US unit conversion',
+  'engineering power calculation',
+  'mechanical engineering units',
+  'power measurement units',
+  'torque output power',
+  'mechanical equipment power matching',
+  'industrial machinery power',
+  'power unit conversion table',
+  'mechanical power formula'
 ]
-const convert = inject('convert')
-const options =  [
-  { "label": "英热单位每秒 (Btu/s)","value": "Btu/s" },
-  { "label": "英尺・磅每秒 (ft-lb/s)","value": "ft-lb/s" }
-];
-const formRef = ref(null);
-const rules = {
-  number:{
-    required: true,
-    type: 'number',
-    trigger: "blur",
-    message: '请输入数字'
-  },
-  to:{
-    required: true,
-    trigger: "select",
-    message: '请选择转换单位'
-  },
-  from:{
-    required: true,
-    trigger: "select",
-    message: '请选择原始单位'
-  }
-}
-const form = reactive({
-  number:null,
-  to:'',
-  from:'',
-  result:'',
-  title:'英热单位每秒转英尺磅每秒',
+
+const message = useMessage()
+const formValue = reactive({
+  inputValue: 1,
+  outputValue: 778.169,
+  inputUnit: 'Btu/s',
+  outputUnit: 'ft-lb/s'
 })
-const convertHandler = (e) => {
-   e.preventDefault();
-  formRef.value?.validate((errors)=>{
-    if (!errors) {
-      form.result = `${form.number}${form.from} = ${convert(form.number).from(form.from).to(form.to)}${form.to}`
-    }
-  })
+
+const handleConvert = () => {
+  if (formValue.inputValue === null || formValue.inputValue === undefined) {
+    message.warning('Please enter a valid number')
+    return
+  }
+  
+  // Conversion formula: 1 Btu/s = 778.169 ft-lb/s
+  formValue.outputValue = Number((formValue.inputValue * 778.169).toFixed(6))
 }
+
+const handleSwap = () => {
+  const tempValue = formValue.inputValue
+  const tempUnit = formValue.inputUnit
+  
+  formValue.inputValue = formValue.outputValue
+  formValue.inputUnit = formValue.outputUnit
+  formValue.outputValue = tempValue
+  formValue.outputUnit = tempUnit
+  
+  handleConvert()
+}
+
+onMounted(() => {
+  handleConvert()
+})
 </script>
 
-<n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="数值"  path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数值" />
-  </n-form-item>
-  <n-form-item label="从" path="from">
-    <n-select  size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
-  </n-form-item>
-  <n-form-item label="到" path="to">
-    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
-  </n-form-item>
-  <n-form-item>
-    <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
-  </n-form-item>
-</n-form>
-<n-card  
-  title="功率单位换算"
-  :segmented="{
-    content: true,
-    footer: 'soft',
-  }"
->
-  <div  style="text-align:center;font-size:20px;">
-    <strong>{{form.result}}</strong>
-  </div>
-    <template #footer>
-    <div>
-      <span v-for="item of seoKey">{{item}}，</span>
-    </div>
-  </template>
+<n-card title="Btu/s to ft-lb/s Converter" style="margin: 20px 0;">
+  <n-form>
+    <n-grid :cols="24" :gutter="12">
+      <n-gi :span="11">
+        <n-form-item label="Input Value">
+          <n-input-number 
+            v-model:value="formValue.inputValue" 
+            :precision="6"
+            placeholder="Enter Btu/s value"
+            style="width: 100%"
+            @input="handleConvert"
+          />
+        </n-form-item>
+      </n-gi>
+      <n-gi :span="2" style="display: flex; align-items: end; justify-content: center;">
+        <n-button @click="handleSwap" style="margin-bottom: 24px;">⇄</n-button>
+      </n-gi>
+      <n-gi :span="11">
+        <n-form-item label="Result">
+          <n-input-number 
+            v-model:value="formValue.outputValue" 
+            :precision="6"
+            placeholder="ft-lb/s result"
+            style="width: 100%"
+            readonly
+          />
+        </n-form-item>
+      </n-gi>
+    </n-grid>
+    <n-grid :cols="24" :gutter="12" style="margin-top: 12px;">
+      <n-gi :span="11">
+        <n-form-item label="Input Unit">
+          <n-input v-model:value="formValue.inputUnit" readonly />
+        </n-form-item>
+      </n-gi>
+      <n-gi :span="2"></n-gi>
+      <n-gi :span="11">
+        <n-form-item label="Output Unit">
+          <n-input v-model:value="formValue.outputUnit" readonly />
+        </n-form-item>
+      </n-gi>
+    </n-grid>
+  </n-form>
 </n-card>
 
-## 换算公式
+## Conversion Formula
 
-1 英热单位每秒 (Btu/s) ≈ 778.17 英尺・磅每秒 (ft-lb/s)
+The conversion formula from Btu/s to ft-lb/s is:
 
-## 生活中的应用示例
+**1 Btu/s = 778.169 ft-lb/s**
 
-- **小型发动机扭矩输出评估**：如割草机引擎功率约为 5–10 ft-lb/s，对应约 6.78–13.56 W 或 0.0092–0.0184 PS。
-- **美制机械系统功率匹配**：用于将暖通设备以 Btu/s 表示的功率换算为 ft-lb/s 进行北美市场设备选型。
-- **农业与工程机械动力对比**：在设计液压泵或空气压缩机时，需进行 Btu/s 与 ft-lb/s 的互换计算。
+Therefore:
+- **ft-lb/s = Btu/s × 778.169**
 
-## 使用建议
+## Conversion Guide
 
-- **跨标准机械系统分析**：适用于从北美标准（Btu/s）到美制单位（ft-lb/s）的能量换算计算。
-- **科学计算**：使用国际单位制（瓦特 W 或千瓦 kW），便于统一标准。
+### What is Btu/s (British Thermal Unit per Second)?
 
-## 功率单位在机械工程中的应用场景
+Btu/s (British thermal unit per second) is a unit of power in the British Imperial system, representing the rate of energy transfer. One Btu/s equals the energy required to raise the temperature of one pound of water by one degree Fahrenheit in one second.
 
-了解Btu/s和ft-lb/s在机械工程中的实际应用有助于更好地理解功率换算的重要性：
+**Common applications:**
+- HVAC system power rating
+- Boiler and furnace capacity
+- Heat pump performance
+- Industrial heating equipment
+- Thermal energy calculations
 
-### 小型发动机和动力设备
+### What is ft-lb/s (Foot-Pound per Second)?
 
-**英尺磅每秒(ft-lb/s)在小型机械中的应用：**
-  * **割草机引擎功率**：家用割草机功率约5-10 ft-lb/s，对应6.78-13.56 W
-  * **链锯动力输出**：电动链锯功率约3-8 ft-lb/s，适合家庭园艺作业
-  * **小型空气压缩机**：便携式压缩机功率约15-30 ft-lb/s
-  * **农用小型机械**：如微耕机、播种机等设备功率测量
+ft-lb/s (foot-pound per second) is a unit of mechanical power in the US customary system, representing the rate of doing work. One ft-lb/s equals the power required to perform one foot-pound of work in one second.
 
-### 暖通空调系统功率换算
+**Common applications:**
+- Small engine power output
+- Mechanical equipment power
+- Hydraulic system power
+- Agricultural machinery
+- Power tool specifications
 
-**英热单位每秒(Btu/s)在HVAC领域的应用：**
-  * **家用中央空调**：制冷功率常用Btu/h标注，需换算为ft-lb/s进行机械分析
-  * **工业冷却系统**：大型冷水机组功率从Btu/s换算为机械功率单位
-  * **热泵系统**：地源热泵功率计算需要多单位换算
-  * **通风设备**：风机功率从热功率换算为机械功率
+## Why Convert Btu/s to ft-lb/s?
 
-### 液压和气动系统
+Converting between Btu/s and ft-lb/s is essential in various engineering applications:
 
-**机械功率在流体动力中的应用：**
-  * **液压泵功率计算**：从热功率Btu/s换算为机械输出ft-lb/s
-  * **气动工具功率**：压缩空气驱动工具的功率分析
-  * **工业机械手**：液压驱动机械手的功率需求计算
-  * **建筑机械**：挖掘机、装载机等设备的液压系统功率
+1. **Cross-system compatibility**: When working with equipment from different manufacturers using different unit systems
+2. **Engineering calculations**: Comparing thermal and mechanical power in integrated systems
+3. **Equipment selection**: Matching HVAC thermal capacity with mechanical power requirements
+4. **Performance analysis**: Evaluating overall system efficiency across different power types
+5. **International projects**: Working with specifications from different countries
 
-## 常见问题解答 (FAQ)
+## Conversion Method
 
-### 基础概念问题
+### Step-by-step conversion:
 
-**Q: ft-lb/s是什么单位？**
-A: ft-lb/s是英尺磅每秒的缩写，是美制单位系统中的功率单位。1 ft-lb/s表示每秒钟做1英尺磅的功，等于1.356瓦特。
+1. **Identify the Btu/s value** you want to convert
+2. **Apply the conversion factor**: Multiply by 778.169
+3. **Calculate the result**: Btu/s × 778.169 = ft-lb/s
+4. **Round appropriately** based on your precision requirements
 
-**Q: Btu/s是什么单位？**
-A: Btu/s是英热单位每秒的缩写，表示每秒钟产生或消耗的热能。1 Btu/s ≈ 1055瓦特，常用于暖通空调系统。
+### Example Calculations:
 
-**Q: 英热单位每秒转英尺磅每秒的换算公式是什么？**
-A: 1 Btu/s ≈ 778.17 ft-lb/s。换算公式：ft-lb/s = Btu/s × 778.17
+**Example 1: Small HVAC Unit**
+- Input: 5 Btu/s
+- Calculation: 5 × 778.169 = 3,890.845 ft-lb/s
+- Result: 5 Btu/s = 3,890.845 ft-lb/s
 
-### 实际应用问题
+**Example 2: Industrial Heater**
+- Input: 25 Btu/s
+- Calculation: 25 × 778.169 = 19,454.225 ft-lb/s
+- Result: 25 Btu/s = 19,454.225 ft-lb/s
 
-**Q: 为什么需要进行Btu/s到ft-lb/s的换算？**
-A: 在机械工程中，热功率(Btu/s)需要换算为机械功率(ft-lb/s)来分析设备的机械输出能力，特别是在暖通设备的机械部件设计中。
+**Example 3: Large Boiler**
+- Input: 100 Btu/s
+- Calculation: 100 × 778.169 = 77,816.9 ft-lb/s
+- Result: 100 Btu/s = 77,816.9 ft-lb/s
 
-**Q: 小型发动机功率如何从ft-lb/s换算为常用单位？**
-A: 可以换算为瓦特或马力：
-- 转瓦特：W = ft-lb/s × 1.356
-- 转马力：hp = ft-lb/s × 0.00182
+## Practical Applications
 
-**Q: 暖通设备功率换算有什么注意事项？**
-A: 需要区分制冷功率(通常用Btu/h)和机械功率(ft-lb/s)。注意1 Btu/s = 3600 Btu/h，换算时要考虑时间单位。
+### HVAC Engineering
+- **Heat pump sizing**: Converting thermal capacity to mechanical power equivalent
+- **System integration**: Matching heating capacity with fan motor power
+- **Energy audits**: Comparing thermal and mechanical energy consumption
 
-### 工程计算问题
+### Mechanical Engineering
+- **Equipment specification**: Converting between thermal and mechanical power ratings
+- **System design**: Balancing thermal loads with mechanical power requirements
+- **Performance testing**: Comparing actual vs. rated power across different measurement systems
 
-**Q: 液压泵功率如何从Btu/s换算为ft-lb/s？**
-A: 使用换算公式：ft-lb/s = Btu/s × 778.17。这个换算帮助工程师分析液压系统的机械输出能力。
+### Industrial Applications
+- **Process equipment**: Sizing motors for thermal processing equipment
+- **Energy management**: Converting between different power measurement systems
+- **Equipment procurement**: Comparing specifications from different suppliers
 
-**Q: 美制单位系统中还有哪些功率单位？**
-A: 主要包括：
-- 英制马力(hp)：1 hp = 550 ft-lb/s
-- 英热单位每小时(Btu/h)：1 Btu/h = 0.000293 W
-- 英尺磅每分钟(ft-lb/min)：1 ft-lb/min = ft-lb/s ÷ 60
+## Summary
 
-**Q: 如何选择合适的功率单位？**
-A: 
-- **机械设计**：优先使用ft-lb/s或hp
-- **热力计算**：使用Btu/s或Btu/h
-- **国际标准**：使用瓦特(W)或千瓦(kW)
-- **科学计算**：建议统一使用国际单位制
+Btu/s to ft-lb/s conversion is crucial for engineers working with both thermal and mechanical systems. The conversion factor of 778.169 allows for accurate translation between these power units, enabling proper system design, equipment selection, and performance analysis across different engineering disciplines.
 
-## 相关连接
-<n-grid x-gap="12" :cols="2">
-  <n-gi v-for="(file,index) in Power" :key="index">
-    <n-button
-      text
-      tag="a"
-      :href="file.path"
-      type="info"
-    >
-      {{file.name}}
-    </n-button>
-  </n-gi>
-</n-grid>
+Understanding this conversion helps ensure compatibility between HVAC thermal systems and mechanical power systems, facilitating integrated design approaches in modern engineering projects.
+
+## Related Conversions
+
+- [Btu/s to Watts (W)](/Power/Btu_s-to-W)
+- [Btu/s to Kilowatts (kW)](/Power/Btu_s-to-kW)
+- [Btu/s to Horsepower (hp)](/Power/Btu_s-to-hp)
+- [ft-lb/s to Btu/s](/Power/ft-lb_s-to-Btu_s)
+- [ft-lb/s to Watts (W)](/Power/ft-lb_s-to-W)
+- [ft-lb/s to Horsepower (hp)](/Power/ft-lb_s-to-hp)

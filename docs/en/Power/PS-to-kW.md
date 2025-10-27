@@ -4,38 +4,38 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Power/index
-      linkText: 功率换算
+      linkText: Power Conversion
   - - link: /Power/PS-to-kW
-      linkText: 公制马力转千瓦
+      linkText: PS to kW Conversion
 head:
   - - meta
     - name: description
-      content: "专业的公制马力(PS)到千瓦(kW)换算工具，适用于汽车工程、工业设备、电机功率等领域的精确功率单位转换，提供详细换算公式和实际应用指导。"
+      content: "Professional PS (metric horsepower) to kW (kilowatt) conversion tool, suitable for precise power unit conversion in automotive engineering, industrial equipment, motor power and other fields, providing detailed conversion formulas and practical application guidance."
   - - meta
     - name: keywords
-      content: "公制马力转千瓦,PS到kW换算,功率单位换算公式,汽车发动机功率,电机功率换算,工业设备功率,能源工程计算,国际标准功率单位"
+      content: "PS to kW conversion,metric horsepower to kilowatt,power unit conversion formula,automotive engine power,motor power conversion,industrial equipment power,energy engineering calculation,international standard power unit"
 ---
-# 公制马力 (PS) 到千瓦 (kW) 换算
+# PS (Metric Horsepower) to kW (Kilowatt) Conversion
 
-**公制马力(PS)到千瓦(kW)换算**是工程技术领域中最常用的功率单位转换之一。千瓦作为国际标准单位制(SI)中的功率单位，广泛应用于电机功率标注、能源工程计算、工业设备规格等领域。本工具提供精确的PS到kW换算功能，支持汽车工程、电力系统、工业机械等多个专业领域的功率单位转换需求。
+**PS (metric horsepower) to kW (kilowatt) conversion** is one of the most commonly used power unit conversions in engineering and technical fields. Kilowatt, as a power unit in the International System of Units (SI), is widely used in motor power labeling, energy engineering calculations, industrial equipment specifications, and other fields. This tool provides precise PS to kW conversion functionality, supporting power unit conversion needs in automotive engineering, power systems, industrial machinery, and other professional fields.
 
 <script setup>
 import { onMounted,reactive,inject ,ref  } from 'vue'
 import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage ,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
-import { Power } from '../files';
+import { Power } from '../../files';
 
 const seoKey = [
-  '公制马力转千瓦', 'PS到kW换算', '功率单位换算', '汽车发动机功率',
-  '电机功率换算', '工业设备功率', '能源工程计算', '国际标准功率单位',
-  '汽车工程功率', '电力系统功率', '机械设备功率', 'PS千瓦换算器'
+  'PS to kW conversion', 'metric horsepower to kilowatt', 'power unit conversion', 'automotive engine power',
+  'motor power conversion', 'industrial equipment power', 'energy engineering calculation', 'international standard power unit',
+  'automotive engineering power', 'power system power', 'mechanical equipment power', 'PS kilowatt converter'
 ];
 const convert = inject('convert')
 const options =  [
-  { "label": "公制马力 (PS)","value": "PS" },
-  { "label": "千瓦 (kW)","value": "kW" }
+  { "label": "Metric Horsepower (PS)","value": "PS" },
+  { "label": "Kilowatt (kW)","value": "kW" }
 ];
 const formRef = ref(null);
 const rules = {
@@ -43,17 +43,17 @@ const rules = {
     required: true,
     type: 'number',
     trigger: "blur",
-    message: '请输入数字'
+    message: 'Please enter a number'
   },
   to:{
     required: true,
     trigger: "select",
-    message: '请选择转换单位'
+    message: 'Please select target unit'
   },
   from:{
     required: true,
     trigger: "select",
-    message: '请选择原始单位'
+    message: 'Please select source unit'
   }
 }
 const form = reactive({
@@ -61,7 +61,7 @@ const form = reactive({
   to:'',
   from:'',
   result:'',
-  title:'公制马力转千瓦',
+  title:'PS to kW Conversion',
 })
 const convertHandler = (e) => {
    e.preventDefault();
@@ -73,19 +73,19 @@ const convertHandler = (e) => {
 }
 </script>
 
-<n-card title="公制马力(PS)到千瓦(kW)换算器" embedded :bordered="false" hoverable>
+<n-card title="PS (Metric Horsepower) to kW (Kilowatt) Converter" embedded :bordered="false" hoverable>
   <n-form size="large" :model="form" ref='formRef' :rules="rules">
-    <n-form-item label="数值"  path="number">
-      <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数值" />
+    <n-form-item label="Value"  path="number">
+      <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="Enter the value to convert" />
     </n-form-item>
-    <n-form-item label="从" path="from">
-      <n-select  size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
+    <n-form-item label="From" path="from">
+      <n-select  size="large" :options="options" v-model:value="form.from" placeholder="Select source unit" />
     </n-form-item>
-    <n-form-item label="到" path="to">
-      <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
+    <n-form-item label="To" path="to">
+      <n-select  size="large" :options="options" v-model:value="form.to" placeholder="Select target unit" />
     </n-form-item>
     <n-form-item>
-      <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
+      <n-button type="info" style="width:100%" @click="convertHandler">Convert</n-button>
     </n-form-item>
   </n-form>
   <n-card  embedded :bordered="false" hoverable>
@@ -100,162 +100,162 @@ const convertHandler = (e) => {
   </template>
 </n-card>
 
-## 换算公式
+## Conversion Formula
 
-### 基本换算关系
+### Basic Conversion Relationship
 
-**PS到kW换算：**
+**PS to kW Conversion:**
 - 1 PS = 0.7355 kW
 - kW = PS × 0.7355
 
-**kW到PS换算：**
+**kW to PS Conversion:**
 - 1 kW = 1.3596 PS
 - PS = kW × 1.3596
 
-### 详细计算过程
+### Detailed Calculation Process
 
-**物理定义：**
+**Physical Definition:**
 - 1 PS = 75 kg·m/s = 735.5 W = 0.7355 kW
 - 1 kW = 1000 W = 1000 ÷ 735.5 PS = 1.3596 PS
 
-**换算步骤：**
-1. PS → W：PS值 × 735.5
-2. W → kW：W值 ÷ 1000
-3. 直接换算：PS值 × 0.7355 = kW值
+**Conversion Steps:**
+1. PS → W: PS value × 735.5
+2. W → kW: W value ÷ 1000
+3. Direct conversion: PS value × 0.7355 = kW value
 
-### 常用数值对照表
+### Common Value Reference Table
 
-| PS值 | kW值 | 应用场景 |
-|------|------|----------|
-| 50 PS | 36.8 kW | 小型汽车发动机 |
-| 100 PS | 73.6 kW | 家用轿车发动机 |
-| 150 PS | 110.3 kW | 中型车发动机 |
-| 200 PS | 147.1 kW | 性能车发动机 |
-| 300 PS | 220.7 kW | 豪华车/跑车 |
-| 500 PS | 367.8 kW | 超级跑车 |
-| 1000 PS | 735.5 kW | 工业设备/赛车 |
+| PS Value | kW Value | Application Scenario |
+|----------|----------|---------------------|
+| 50 PS | 36.8 kW | Small car engine |
+| 100 PS | 73.6 kW | Family sedan engine |
+| 150 PS | 110.3 kW | Mid-size car engine |
+| 200 PS | 147.1 kW | Performance car engine |
+| 300 PS | 220.7 kW | Luxury car/sports car |
+| 500 PS | 367.8 kW | Supercar |
+| 1000 PS | 735.5 kW | Industrial equipment/racing car |
 
-## 应用示例
+## Application Examples
 
-### 汽车工程应用
+### Automotive Engineering Applications
 
-**发动机功率标注：**
-- 大众1.4T发动机：150 PS = 110.3 kW
-- 奔驰2.0T发动机：245 PS = 180.2 kW
-- 用于汽车技术规格对比和性能评估
+**Engine Power Rating:**
+- Volkswagen 1.4T engine: 150 PS = 110.3 kW
+- Mercedes 2.0T engine: 245 PS = 180.2 kW
+- Used for automotive technical specification comparison and performance evaluation
 
-**电动汽车功率：**
-- 特斯拉Model 3：283 PS = 208.1 kW
-- 比亚迪汉EV：272 PS = 200.0 kW
-- 便于传统燃油车与电动车功率对比
+**Electric Vehicle Power:**
+- Tesla Model 3: 283 PS = 208.1 kW
+- BYD Han EV: 272 PS = 200.0 kW
+- Facilitates power comparison between traditional fuel and electric vehicles
 
-### 工业设备应用
+### Industrial Equipment Applications
 
-**电机功率换算：**
-- 工业风机：75 PS = 55.2 kW
-- 压缩机电机：200 PS = 147.1 kW
-- 用于设备选型和能耗计算
+**Motor Power Conversion:**
+- Industrial fan: 75 PS = 55.2 kW
+- Compressor motor: 200 PS = 147.1 kW
+- Used for equipment selection and energy consumption calculation
 
-**发电设备：**
-- 柴油发电机：500 PS = 367.8 kW
-- 燃气轮机：10000 PS = 7355 kW
-- 便于发电容量规划和负载匹配
+**Power Generation Equipment:**
+- Diesel generator: 500 PS = 367.8 kW
+- Gas turbine: 10000 PS = 7355 kW
+- Facilitates power generation capacity planning and load matching
 
-### 农业机械应用
+### Agricultural Machinery Applications
 
-**拖拉机功率：**
-- 小型拖拉机：40 PS = 29.4 kW
-- 大型拖拉机：300 PS = 220.7 kW
-- 用于农机选型和作业效率评估
+**Tractor Power:**
+- Small tractor: 40 PS = 29.4 kW
+- Large tractor: 300 PS = 220.7 kW
+- Used for agricultural machinery selection and operational efficiency assessment
 
-**收割机设备：**
-- 联合收割机：180 PS = 132.4 kW
-- 玉米收割机：250 PS = 183.9 kW
-- 便于农业机械功率标准化管理
+**Harvesting Equipment:**
+- Combine harvester: 180 PS = 132.4 kW
+- Corn harvester: 250 PS = 183.9 kW
+- Facilitates standardized power management of agricultural machinery
 
-## 使用建议
+## Usage Recommendations
 
-### 工程计算精度控制
+### Engineering Calculation Precision Control
 
-**换算精度要求：**
-- 汽车工程：保留1位小数，如150.0 PS = 110.3 kW
-- 电力工程：保留2位小数，如100.00 PS = 73.55 kW
-- 工业设备：保留整数，如200 PS = 147 kW
+**Conversion Precision Requirements:**
+- Automotive engineering: Keep 1 decimal place, e.g., 150.0 PS = 110.3 kW
+- Electrical engineering: Keep 2 decimal places, e.g., 100.00 PS = 73.55 kW
+- Industrial equipment: Keep whole numbers, e.g., 200 PS = 147 kW
 
-**单位标准化：**
-- 国际标准：优先使用kW作为功率单位
-- 技术文档：统一使用SI单位制
-- 设备铭牌：同时标注PS和kW便于对比
+**Unit Standardization:**
+- International standard: Prioritize kW as the power unit
+- Technical documentation: Uniformly use SI unit system
+- Equipment nameplate: Label both PS and kW for easy comparison
 
-### 设备选型应用
+### Equipment Selection Applications
 
-**电机选型：**
-- 功率匹配：根据负载需求选择合适功率等级
-- 效率考虑：考虑电机效率对实际输出功率的影响
-- 安全系数：预留10-20%的功率余量
+**Motor Selection:**
+- Power matching: Select appropriate power rating based on load requirements
+- Efficiency consideration: Consider motor efficiency impact on actual output power
+- Safety factor: Reserve 10-20% power margin
 
-**系统设计：**
-- 负载计算：准确计算系统总功率需求
-- 配电设计：基于kW值进行电气系统设计
-- 散热设计：根据功率密度设计散热方案
+**System Design:**
+- Load calculation: Accurately calculate total system power requirements
+- Electrical design: Design electrical systems based on kW values
+- Thermal design: Design cooling solutions based on power density
 
-### 能源管理应用
+### Energy Management Applications
 
-**能耗分析：**
-- 设备功率统计：统一使用kW进行能耗计算
-- 成本核算：基于kW·h计算电力成本
-- 效率评估：对比不同设备的功率效率
+**Energy Consumption Analysis:**
+- Equipment power statistics: Uniformly use kW for energy consumption calculation
+- Cost accounting: Calculate electricity costs based on kW·h
+- Efficiency assessment: Compare power efficiency of different equipment
 
-**节能优化：**
-- 功率监控：实时监测设备功率消耗
-- 负载优化：合理分配设备负载提高效率
-- 设备更新：选择更高效率的设备替代
+**Energy Saving Optimization:**
+- Power monitoring: Real-time monitoring of equipment power consumption
+- Load optimization: Reasonably distribute equipment loads to improve efficiency
+- Equipment upgrade: Select more efficient equipment for replacement
 
-## 常见问题 (FAQ)
+## Frequently Asked Questions (FAQ)
 
-### Q1: 为什么kW是国际标准功率单位？
-**A:** kW作为国际标准的原因：
-- **SI单位制**：千瓦是国际单位制(SI)中的功率单位
-- **科学基础**：基于瓦特(W)，以物理学家詹姆斯·瓦特命名
-- **通用性强**：全球科学和工程领域广泛采用
-- **计算便利**：与电力系统、能源计算完美匹配
+### Q1: Why is kW the international standard power unit?
+**A:** Reasons why kW is the international standard:
+- **SI Unit System**: Kilowatt is the power unit in the International System of Units (SI)
+- **Scientific Foundation**: Based on watt (W), named after physicist James Watt
+- **Universal Applicability**: Widely adopted in global scientific and engineering fields
+- **Calculation Convenience**: Perfect match with power systems and energy calculations
 
-### Q2: PS和kW换算系数0.7355是如何得出的？
-**A:** 换算系数的物理推导：
-- **PS定义**：1 PS = 75 kg·m/s = 735.5 W
-- **kW定义**：1 kW = 1000 W
-- **换算关系**：735.5 ÷ 1000 = 0.7355
-- **精确值**：0.7355 kW/PS（国际标准值）
+### Q2: How is the PS to kW conversion factor 0.7355 derived?
+**A:** Physical derivation of the conversion factor:
+- **PS Definition**: 1 PS = 75 kg·m/s = 735.5 W
+- **kW Definition**: 1 kW = 1000 W
+- **Conversion Relationship**: 735.5 ÷ 1000 = 0.7355
+- **Precise Value**: 0.7355 kW/PS (international standard value)
 
-### Q3: 电动汽车为什么更多使用kW标注功率？
-**A:** 电动汽车使用kW的原因：
-- **电力系统**：电动汽车本质上是电力驱动系统
-- **充电功率**：充电桩功率也用kW标注，便于统一
-- **国际趋势**：全球电动汽车行业标准化趋势
-- **技术精确**：kW更适合电机功率的精确表达
+### Q3: Why do electric vehicles more commonly use kW for power rating?
+**A:** Reasons electric vehicles use kW:
+- **Electrical System**: Electric vehicles are essentially electric drive systems
+- **Charging Power**: Charging stations also use kW rating for consistency
+- **International Trend**: Global electric vehicle industry standardization trend
+- **Technical Precision**: kW is more suitable for precise expression of motor power
 
-### Q4: 如何验证PS到kW换算的准确性？
-**A:** 验证方法包括：
-- **反向计算**：kW × 1.3596 应等于原PS值
-- **瓦特验证**：PS × 735.5 = W，W ÷ 1000 = kW
-- **在线工具**：使用多个换算工具交叉验证
-- **官方数据**：对照设备制造商官方规格
+### Q4: How to verify the accuracy of PS to kW conversion?
+**A:** Verification methods include:
+- **Reverse Calculation**: kW × 1.3596 should equal the original PS value
+- **Watt Verification**: PS × 735.5 = W, W ÷ 1000 = kW
+- **Online Tools**: Use multiple conversion tools for cross-verification
+- **Official Data**: Compare with manufacturer's official specifications
 
-### Q5: 不同类型电机的功率标注有什么区别？
-**A:** 电机功率标注特点：
-- **额定功率**：电机在额定工况下的连续输出功率
-- **最大功率**：电机短时间内能达到的峰值功率
-- **输入功率**：电机从电网吸收的电功率
-- **输出功率**：电机轴端实际输出的机械功率
+### Q5: What are the differences in power rating for different types of motors?
+**A:** Motor power rating characteristics:
+- **Rated Power**: Continuous output power of motor under rated conditions
+- **Maximum Power**: Peak power the motor can achieve for short periods
+- **Input Power**: Electrical power absorbed by motor from the grid
+- **Output Power**: Actual mechanical power output at motor shaft
 
-### Q6: 工业设备选型时如何考虑功率余量？
-**A:** 功率余量设计原则：
-- **安全系数**：通常预留15-25%的功率余量
-- **启动冲击**：考虑设备启动时的功率峰值
-- **负载变化**：预留应对负载波动的功率储备
-- **效率衰减**：考虑设备老化导致的效率下降
+### Q6: How to consider power margin when selecting industrial equipment?
+**A:** Power margin design principles:
+- **Safety Factor**: Usually reserve 15-25% power margin
+- **Starting Impact**: Consider power peaks during equipment startup
+- **Load Variation**: Reserve power for load fluctuation response
+- **Efficiency Degradation**: Consider efficiency decline due to equipment aging
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file,index) in Power" :key="index">
     <n-button

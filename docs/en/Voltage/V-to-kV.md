@@ -4,44 +4,44 @@ aside: false
 lastUpdated: false
 breadcrumb: 
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Voltage/index
-      linkText: 电压换算
+      linkText: Voltage Conversion
   - - link: /Voltage/V-to-kV
-      linkText: 伏特转千伏
+      linkText: Volt to Kilovolt
 head:
   - - meta
     - name: description
-      content: 专业的伏特(V)到千伏(kV)转换工具。提供精确的V转kV换算，详解伏特与千伏的关系、换算公式、高压电力系统应用。适用于电力工程师、高压技术人员、电气设计师和电力系统相关从业人员，涵盖输电线路、变电站、工业高压设备等领域。
+      content: Professional volt (V) to kilovolt (kV) conversion tool. Provides accurate V to kV conversion, detailed explanation of the relationship between volts and kilovolts, conversion formulas, and high-voltage power system applications. Suitable for power engineers, high-voltage technicians, electrical designers, and power system professionals, covering transmission lines, substations, industrial high-voltage equipment, and other fields.
   - - meta
     - name: keywords
-      content: 伏特转千伏,V转kV,伏特到千伏,电压单位换算,V to kV,伏特换算千伏,千伏换算,高压电力,输电线路电压,变电站电压,工业高压,电力系统电压,高压设备,电压转换,伏特千伏关系
+      content: volt to kilovolt,V to kV,volt to kilovolt conversion,voltage unit conversion,V to kV converter,volt kilovolt conversion,kilovolt conversion,high voltage power,transmission line voltage,substation voltage,industrial high voltage,power system voltage,high voltage equipment,voltage conversion,volt kilovolt relationship
 seoKey:
-  - "伏特转千伏"
-  - "V转kV"
-  - "伏特到千伏"
-  - "电压单位换算"
+  - "volt to kilovolt"
   - "V to kV"
-  - "伏特换算千伏"
-  - "千伏换算"
-  - "高压电力"
-  - "输电线路电压"
-  - "变电站电压"
-  - "工业高压"
-  - "电力系统电压"
-  - "高压设备"
-  - "电压转换"
-  - "伏特千伏关系"
-  - "1V等于多少kV"
-  - "电力工程电压"
-  - "高压输电"
-  - "配电系统电压"
-  - "电网电压等级"
+  - "volt to kilovolt conversion"
+  - "voltage unit conversion"
+  - "V to kV converter"
+  - "volt kilovolt conversion"
+  - "kilovolt conversion"
+  - "high voltage power"
+  - "transmission line voltage"
+  - "substation voltage"
+  - "industrial high voltage"
+  - "power system voltage"
+  - "high voltage equipment"
+  - "voltage conversion"
+  - "volt kilovolt relationship"
+  - "1V equals how many kV"
+  - "power engineering voltage"
+  - "high voltage transmission"
+  - "distribution system voltage"
+  - "grid voltage level"
 ---
 
-# 伏特(V)转千伏(kV)换算器 - 高压电力转换工具
+# Volt (V) to Kilovolt (kV) Converter - High Voltage Power Conversion Tool
 
-**伏特到千伏转换**是电力工程和高压技术中的重要换算。本页面提供专业的V转kV计算工具，并详细介绍伏特与千伏的关系、电力系统应用和安全要点，帮助您准确进行高压电压单位转换。
+**Volt to kilovolt conversion** is an important calculation in power engineering and high-voltage technology. This page provides professional V to kV calculation tools and detailed introduction to the relationship between volts and kilovolts, power system applications, and safety points to help you accurately perform high-voltage voltage unit conversions.
 
 ---
 
@@ -53,10 +53,10 @@ import { Voltage } from '../files';
 
 const convert = inject('convert')
 const seoKey = [
-  '伏特转千伏','V转kV','伏特到千伏','电压单位换算','V to kV',
-  '伏特换算千伏','千伏换算','高压电力','输电线路电压','变电站电压',
-  '工业高压','电力系统电压','高压设备','电压转换','伏特千伏关系',
-  '1V等于多少kV','电力工程电压','高压输电','配电系统电压','电网电压等级'
+  'volt to kilovolt','V to kV','volt to kilovolt conversion','voltage unit conversion','V to kV converter',
+  'volt kilovolt conversion','kilovolt conversion','high voltage power','transmission line voltage','substation voltage',
+  'industrial high voltage','power system voltage','high voltage equipment','voltage conversion','volt kilovolt relationship',
+  '1V equals how many kV','power engineering voltage','high voltage transmission','distribution system voltage','grid voltage level'
 ]
 
 const formRef = ref(null);
@@ -65,14 +65,14 @@ const rules = {
     required: true,
     type: 'number',
     trigger: "blur",
-    message: '请输入数字'
+    message: 'Please enter a number'
   }
 }
 
 const form = reactive({
   number: null,
   result: '',
-  title: '伏特(V)转千伏(kV)',
+  title: 'Volt (V) to Kilovolt (kV)',
 })
 
 const convertHandler = (e) => {
@@ -87,11 +87,11 @@ const convertHandler = (e) => {
 </script>
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="伏特(V)数值" path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="请输入伏特数值" />
+  <n-form-item label="Volt (V) Value" path="number">
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="Enter volt value" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" style="width:100%" @click="convertHandler">转换为千伏(kV)</n-button>
+    <n-button type="info" style="width:100%" @click="convertHandler">Convert to Kilovolt (kV)</n-button>
   </n-form-item>
 </n-form>
 <n-card embedded :bordered="false" hoverable style="margin-top: 16px;">
@@ -112,87 +112,87 @@ const convertHandler = (e) => {
   </template>
 </n-card>
 
-## 伏特转千伏换算知识
+## Volt to Kilovolt Conversion Knowledge
 
-### 换算公式
+### Conversion Formula
 
-**基本换算关系：**
+**Basic conversion relationship:**
 - **1kV = 1000V**
-- **换算公式：kV = V ÷ 1000**
+- **Conversion formula: kV = V ÷ 1000**
 
-**计算示例：**
-| 伏特(V) | 千伏(kV) | 应用场景 |
-|---------|----------|----------|
-| 380V | 0.38kV | 工业三相电压 |
-| 6600V | 6.6kV | 中压配电 |
-| 10000V | 10kV | 配电线路 |
-| 35000V | 35kV | 高压配电 |
-| 110000V | 110kV | 高压输电 |
-| 500000V | 500kV | 超高压输电 |
+**Calculation examples:**
+| Volt (V) | Kilovolt (kV) | Application Scenario |
+|----------|---------------|---------------------|
+| 380V | 0.38kV | Industrial three-phase voltage |
+| 6600V | 6.6kV | Medium voltage distribution |
+| 10000V | 10kV | Distribution lines |
+| 35000V | 35kV | High voltage distribution |
+| 110000V | 110kV | High voltage transmission |
+| 500000V | 500kV | Extra high voltage transmission |
 
-### 电力系统应用
+### Power System Applications
 
-#### 电网电压等级
-- **低压系统**：220V/380V = 0.22kV/0.38kV
-- **中压配电**：6kV、10kV、20kV、35kV
-- **高压输电**：110kV、220kV
-- **超高压**：330kV、500kV、750kV
-- **特高压**：800kV、1000kV
+#### Grid Voltage Levels
+- **Low voltage systems**: 220V/380V = 0.22kV/0.38kV
+- **Medium voltage distribution**: 6kV, 10kV, 20kV, 35kV
+- **High voltage transmission**: 110kV, 220kV
+- **Extra high voltage**: 330kV, 500kV, 750kV
+- **Ultra high voltage**: 800kV, 1000kV
 
-#### 变电站应用
-- **升压变电站**：将发电机电压升至输电电压
-- **降压变电站**：将输电电压降至配电电压
-- **配电变电站**：将中压降至低压供用户使用
+#### Substation Applications
+- **Step-up substations**: Raise generator voltage to transmission voltage
+- **Step-down substations**: Reduce transmission voltage to distribution voltage
+- **Distribution substations**: Reduce medium voltage to low voltage for user supply
 
-#### 工业高压设备
-- **电机驱动**：高功率电机使用6kV-10kV
-- **电解设备**：大型电解槽使用高压直流
-- **感应加热**：工业感应炉使用中高压
+#### Industrial High Voltage Equipment
+- **Motor drives**: High-power motors use 6kV-10kV
+- **Electrolysis equipment**: Large electrolytic cells use high voltage DC
+- **Induction heating**: Industrial induction furnaces use medium-high voltage
 
-### 安全防护要求
+### Safety Protection Requirements
 
-#### 电压等级安全规定
-- **1kV以下**：低压，需基本防护
-- **1kV-35kV**：中压，需专业防护
-- **35kV以上**：高压，需严格防护措施
+#### Voltage Level Safety Regulations
+- **Below 1kV**: Low voltage, basic protection required
+- **1kV-35kV**: Medium voltage, professional protection required
+- **Above 35kV**: High voltage, strict protection measures required
 
-#### 安全距离要求
-| 电压等级 | 最小安全距离 | 防护要求 |
-|---------|-------------|----------|
-| 1kV以下 | 0.1m | 基本绝缘 |
-| 1-10kV | 0.7m | 专业防护 |
-| 35kV | 1.0m | 严格防护 |
-| 110kV | 1.5m | 专业操作 |
-| 220kV | 3.0m | 特殊防护 |
+#### Safety Distance Requirements
+| Voltage Level | Minimum Safety Distance | Protection Requirements |
+|---------------|-------------------------|------------------------|
+| Below 1kV | 0.1m | Basic insulation |
+| 1-10kV | 0.7m | Professional protection |
+| 35kV | 1.0m | Strict protection |
+| 110kV | 1.5m | Professional operation |
+| 220kV | 3.0m | Special protection |
 
-#### 操作安全要点
-- **停电验电**：确认设备无电后操作
-- **挂接地线**：防止意外来电
-- **设置围栏**：防止误入带电区域
-- **专业培训**：操作人员必须持证上岗
+#### Operation Safety Essentials
+- **Power off and verification**: Confirm equipment is de-energized before operation
+- **Install grounding wires**: Prevent accidental energization
+- **Set up barriers**: Prevent accidental entry into energized areas
+- **Professional training**: Operators must be certified
 
-### 使用建议
+### Usage Recommendations
 
-#### 测量注意事项
-- **选择合适设备**：高压测量需专用设备
-- **安全防护**：穿戴绝缘防护用品
-- **环境要求**：避免潮湿、污染环境
+#### Measurement Precautions
+- **Select appropriate equipment**: High voltage measurement requires specialized equipment
+- **Safety protection**: Wear insulating protective equipment
+- **Environmental requirements**: Avoid humid and contaminated environments
 
-#### 设计考虑因素
-- **绝缘等级**：根据电压等级选择绝缘
-- **安全裕度**：预留足够的安全系数
-- **环境影响**：考虑温度、湿度、海拔影响
+#### Design Considerations
+- **Insulation level**: Select insulation based on voltage level
+- **Safety margin**: Reserve sufficient safety factor
+- **Environmental impact**: Consider temperature, humidity, and altitude effects
 
-### 常见问题解答
+### Frequently Asked Questions
 
-**Q: 1V等于多少kV？**
-A: 1V = 0.001kV，即1000V才等于1kV。
+**Q: How many kV does 1V equal?**
+A: 1V = 0.001kV, meaning 1000V equals 1kV.
 
-**Q: 为什么高压输电要用千伏表示？**
-A: 千伏单位更简洁，避免大数字，便于工程计算和标识。
+**Q: Why use kilovolts for high voltage transmission?**
+A: Kilovolt units are more concise, avoiding large numbers, and convenient for engineering calculations and identification.
 
-**Q: 如何安全测量高压？**
-A: 必须使用专用高压测量设备，严格遵守安全操作规程。
+**Q: How to safely measure high voltage?**
+A: Must use specialized high voltage measurement equipment and strictly follow safety operating procedures.
 
 ### 相关链接
 <n-grid x-gap="12" :cols="2">

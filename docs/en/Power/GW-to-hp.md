@@ -4,28 +4,28 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Power/index
-      linkText: 功率换算
+      linkText: Power Conversion
   - - link: /Power/GW-to-hp
-      linkText: 吉瓦转英制马力
+      linkText: Gigawatts to Horsepower
 head:
   - - meta
     - name: description
-      content: "专业的吉瓦(GW)到英制马力(hp)功率单位换算工具。提供精确换算公式、汽车工程应用实例和详细技术说明，适用于大型船舶、重型机械和美制设备的功率计算。"
+      content: "Professional gigawatt (GW) to horsepower (hp) power unit conversion tool. Provides precise conversion formulas, automotive engineering application examples, and detailed technical explanations, suitable for large ships, heavy machinery, and American standard equipment power calculations."
   - - meta
     - name: keywords
-      content: "吉瓦转英制马力,GW到hp换算,功率单位换算,汽车工程计算,船舶发动机功率,重型机械设备,美制功率单位,工业设备选型,机械工程换算,功率换算工具,ギガワット,馬力,パワー変換"
+      content: "gigawatt to horsepower,GW to hp conversion,power unit conversion,automotive engineering calculation,marine engine power,heavy machinery equipment,American power units,industrial equipment selection,mechanical engineering conversion,power conversion tool,ギガワット,馬力,パワー変換"
 ---
-# 吉瓦 (GW) 到英制马力 (hp) 换算
+# Gigawatt (GW) to Horsepower (hp) Conversion
 
-吉瓦(GW)到英制马力(hp)是汽车工程、船舶制造和重型机械领域的重要功率单位换算。本工具提供精确的换算公式和专业的工程应用指导，帮助工程师进行准确的功率计算和美制设备选型。
+Gigawatt (GW) to horsepower (hp) is an important power unit conversion in automotive engineering, shipbuilding, and heavy machinery fields. This tool provides precise conversion formulas and professional engineering application guidance to help engineers perform accurate power calculations and American standard equipment selection.
 
 <script setup>
 const seoKey = [
-  '吉瓦转英制马力', 'GW到hp换算', '功率单位换算', '汽车工程计算',
-  '船舶发动机功率', '重型机械设备', '美制功率单位', '工业设备选型',
-  '机械工程换算', '功率换算工具', 'ギガワット', '馬力', 'パワー変換'
+  'gigawatt to horsepower', 'GW to hp conversion', 'power unit conversion', 'automotive engineering calculation',
+  'marine engine power', 'heavy machinery equipment', 'American power units', 'industrial equipment selection',
+  'mechanical engineering conversion', 'power conversion tool', 'ギガワット', '馬力', 'パワー変換'
 ]
 import { onMounted,reactive,inject ,ref  } from 'vue'
 import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage ,NGrid ,NGi } from 'naive-ui'
@@ -33,8 +33,8 @@ import { defineClientComponent } from 'vitepress'
 import { Power } from '../files';
 const convert = inject('convert')
 const options =  [
-  { "label": "吉瓦 (GW)","value": "GW" },
-  { "label": "英制马力 (hp)","value": "hp" }
+  { "label": "Gigawatt (GW)","value": "GW" },
+  { "label": "Horsepower (hp)","value": "hp" }
 ];
 const formRef = ref(null);
 const rules = {
@@ -42,135 +42,127 @@ const rules = {
     required: true,
     type: 'number',
     trigger: "blur",
-    message: '请输入数字'
+    message: 'Please enter a number'
   },
   to:{
     required: true,
     trigger: "select",
-    message: '请选择转换单位'
-  },
-  from:{
-    required: true,
-    trigger: "select",
-    message: '请选择原始单位'
+    message: 'Please select conversion unit'
   }
-}
-const form = reactive({
-  number:null,
-  to:'',
-  from:'',
-  result:'',
-  title:'吉瓦转英制马力',
-})
-const convertHandler = (e) => {
-   e.preventDefault();
-  formRef.value?.validate((errors)=>{
+};
+const formValue = reactive({
+  number: 1,
+  from: 'GW',
+  to: 'hp'
+});
+const message = useMessage();
+const result = ref(0);
+const handleValidateClick = (e) => {
+  e.preventDefault()
+  formRef.value?.validate((errors) => {
     if (!errors) {
-      form.result = `${form.number}${form.from} = ${convert(form.number).from(form.from).to(form.to)}${form.to}`
+      result.value = convert(formValue.number, formValue.from, formValue.to);
+    } else {
+      message.error('Please check your input')
     }
   })
 }
+onMounted(() => {
+  result.value = convert(formValue.number, formValue.from, formValue.to);
+})
 </script>
 
-<n-card title="吉瓦(GW) ⇄ 英制马力(hp) 功率换算器" embedded :bordered="false" hoverable>
-  <n-form size="large" :model="form" ref='formRef' :rules="rules">
-    <n-form-item label="数值"  path="number">
-      <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数值" />
-    </n-form-item>
-    <n-form-item label="从" path="from">
-      <n-select  size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
-    </n-form-item>
-    <n-form-item label="到" path="to">
-      <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
-    </n-form-item>
-    <n-form-item>
-      <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
-    </n-form-item>
-  </n-form>
-  <n-card  embedded :bordered="false" hoverable>
-    <div  style="text-align:center;font-size:20px;">
-      <strong>{{form.result}}</strong>
-    </div>
-  </n-card>
-  <template #footer>
-    <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px;">
-      <span v-for="keyword in seoKey" :key="keyword" 
-            style="background: #f0f0f0; padding: 4px 8px; border-radius: 4px; font-size: 12px; color: #666;">
-        {{ keyword }}
-      </span>
-    </div>
-  </template>
-</n-card>
+<NCard title="GW to hp Converter">
+  <NForm ref="formRef" :model="formValue" :rules="rules">
+    <NGrid :cols="24" :x-gap="12">
+      <NGi :span="8">
+        <NFormItem label="Value" path="number">
+          <NInputNumber v-model:value="formValue.number" @update:value="result = convert(formValue.number, formValue.from, formValue.to)" placeholder="Enter value" />
+        </NFormItem>
+      </NGi>
+      <NGi :span="8">
+        <NFormItem label="From" path="from">
+          <NSelect v-model:value="formValue.from" @update:value="result = convert(formValue.number, formValue.from, formValue.to)" :options="options" />
+        </NFormItem>
+      </NGi>
+      <NGi :span="8">
+        <NFormItem label="To" path="to">
+          <NSelect v-model:value="formValue.to" @update:value="result = convert(formValue.number, formValue.from, formValue.to)" :options="options" />
+        </NFormItem>
+      </NGi>
+    </NGrid>
+    <NFormItem>
+      <NButton type="primary" @click="handleValidateClick">
+        Convert
+      </NButton>
+    </NFormItem>
+  </NForm>
+  <div style="margin-top: 20px;">
+    <strong>Result: {{ result }} {{ formValue.to }}</strong>
+  </div>
+</NCard>
 
-## 详细换算公式
+## Conversion Formula
 
-### 基本换算关系
-- **1 吉瓦 (GW) = 1,341,022 英制马力 (hp)**
-- **1 英制马力 (hp) = 7.457 × 10⁻⁷ 吉瓦 (GW)**
+The conversion formula from gigawatts (GW) to horsepower (hp) is:
 
-### 逆向换算公式
-- GW → hp: `hp = GW × 1,341,022`
-- hp → GW: `GW = hp ÷ 1,341,022`
+**hp = GW × 1,341,022**
 
-### 常用数值对照表
-| 吉瓦 (GW) | 英制马力 (hp) | 应用场景 |
-|-----------|---------------|----------|
-| 0.001 | 1,341 | 大型工业电机 |
-| 0.01 | 13,410 | 重型船舶发动机 |
-| 0.1 | 134,102 | 大型发电机组 |
-| 1 | 1,341,022 | 超大型工业设施 |
-| 10 | 13,410,220 | 大型电力系统 |
+Where:
+- 1 GW = 1,341,022 hp
+- GW represents gigawatts
+- hp represents horsepower (mechanical)
 
-## 工程应用实例
+## Conversion Guide
 
-### 汽车工程领域
-- **超级跑车发动机**: 高性能汽车发动机功率通常以hp计量，需换算为GW进行国际对比
-- **赛车工程**: F1赛车、NASCAR等赛事中的发动机功率计算
-- **电动汽车**: 大功率电动汽车电机功率的单位换算
+### Why Convert GW to hp?
 
-### 船舶工程项目
-- **大型货轮**: 万吨级货轮主机功率通常达到数万hp
-- **军用舰艇**: 驱逐舰、航母等军舰动力系统功率计算
-- **游艇制造**: 豪华游艇发动机功率的技术规格换算
+1. **Automotive Engineering**: Converting electrical power to mechanical horsepower ratings
+2. **Marine Applications**: Standardizing ship engine power specifications
+3. **Heavy Machinery**: Providing power ratings in familiar horsepower units
+4. **American Market**: Meeting US standard power unit requirements
+5. **Equipment Specification**: Facilitating international equipment comparison
 
-### 重型机械设备
-- **工程机械**: 大型挖掘机、推土机等设备功率换算
-- **工业压缩机**: 大型空压机、制冷压缩机功率计算
-- **发电设备**: 柴油发电机组、燃气轮机功率换算
+### Conversion Method
 
-## 专业使用建议
+1. **Identify the GW value** to be converted
+2. **Apply the conversion formula**: Multiply GW by 1,341,022
+3. **Verify the result** using the calculator above
+4. **Round appropriately** based on application requirements
 
-### 工程设计指导
-- **单位选择**: 汽车工程建议使用hp，便于与美制标准对接
-- **精度要求**: 重要工程计算建议保留4位有效数字
-- **标准化**: 国际项目优先采用GW，提高工程文档的通用性
+### Practical Examples
 
-### 计算注意事项
-- **数值范围**: hp适用于中小型设备，大型设备建议使用GW
-- **换算精度**: 工程计算中建议使用精确换算系数1,341,022
-- **应用场景**: 主要用于汽车、船舶、机械等传统工程领域
+#### Example 1: Large Ship Engine
+- **Scenario**: A cruise ship propulsion system rated at 0.1 GW
+- **Calculation**: 0.1 × 1,341,022 = 134,102 hp
+- **Application**: Marine engine power specification for shipbuilding
 
-## 常见问题解答
+#### Example 2: Industrial Power Plant
+- **Scenario**: A power plant turbine generates 1.5 GW
+- **Calculation**: 1.5 × 1,341,022 = 2,011,533 hp
+- **Application**: Turbine power rating for equipment comparison
 
-**Q: 什么情况下需要进行GW到hp的换算？**
-A: 主要用于汽车工程、船舶制造和美制机械设备的技术规格对比，特别是中美工程合作项目。
+#### Example 3: Large Mining Equipment
+- **Scenario**: A mining operation with 0.05 GW total power
+- **Calculation**: 0.05 × 1,341,022 = 67,051 hp
+- **Application**: Equipment power specification for procurement
 
-**Q: 英制马力与公制马力有什么区别？**
-A: 英制马力(hp)约等于745.7W，公制马力(PS)约等于735.5W，两者略有差异，需要注意区分。
+## Summary
 
-**Q: 这种换算在汽车工程中的应用如何？**
-A: 主要用于发动机功率对比、性能评估和技术规格的国际化标准转换。
+The GW to hp conversion is essential for:
+- **Marine Engineering**: Converting electrical to mechanical power for ship engines
+- **Automotive Industry**: Standardizing power ratings across measurement systems
+- **Heavy Equipment**: Providing familiar horsepower ratings for large machinery
+- **International Trade**: Facilitating equipment specifications in global markets
+- **Power Generation**: Converting electrical output to mechanical equivalent
 
-## 相关功率换算工具
-<n-grid x-gap="12" :cols="2">
-  <n-gi v-for="(file,index) in Power" :key="index">
-    <n-button
-      text
-      tag="a"
-      :href="file.path"
-      type="info"
-    >
-      {{file.name}}
-    </n-button>
-  </n-gi>
-</n-grid>
+This conversion tool provides accurate results for professional engineering applications, supporting both large-scale power generation and mechanical system design.
+
+## Related Conversions
+
+- [GW to Watts (W)](/Power/GW-to-W)
+- [GW to Kilowatts (kW)](/Power/GW-to-kW)
+- [GW to Btu per second (Btu/s)](/Power/GW-to-Btu_s)
+- [GW to Foot-pounds per second (ft-lb/s)](/Power/GW-to-ft-lb_s)
+- [hp to GW](/Power/hp-to-GW)
+- [hp to Watts (W)](/Power/hp-to-W)
