@@ -4,20 +4,20 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Mass/index
-      linkText: 质量换算
+      linkText: Mass Conversion
   - - link: /Mass/kg-to-t
-      linkText: 千克到吨
+      linkText: Kilogram to Tonne
 head:
   - - meta
     - name: description
-      content: "质量单位换算指南，涵盖千克 (kg) 到吨 (t) 的详细换算公式与说明。"
+      content: "Mass unit conversion guide covering detailed conversion formulas and explanations from kilogram (kg) to tonne (t)."
   - - meta
     - name: keywords
-      content: "质量, 单位换算, 千克, 吨, kg, t, 千克到吨, 质量换算指南"
+      content: "mass, unit conversion, kilogram, tonne, kg, t, kilogram to tonne, mass conversion guide"
 ---
-# 千克 (kg) 到 吨 (t) 的换算
+# Kilogram (kg) to Tonne (t) Conversion
 ---
 <script setup>
 import { onMounted, reactive, inject, ref } from 'vue'
@@ -37,17 +37,17 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) / 1000
     form.result = `${form.number}kg = ${convertedValue.toFixed(3)}t`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="千克 (kg)">
-    <n-input-number v-model:value="form.number" placeholder="输入千克" style="width: 100%" />
+  <n-form-item label="Kilogram (kg)">
+    <n-input-number v-model:value="form.number" placeholder="Enter kilograms" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
@@ -57,38 +57,38 @@ const convertHandler = () => {
   </div>
 </n-card>
 
-## 公式
+## Formula
 
-从 **千克 (kg)** 换算到 **吨 (t)** 的公式为：
+The formula for converting from **kilogram (kg)** to **tonne (t)** is:
 $$ t = kg \div 1000 $$
 
-## 千克到吨换算指南
+## Kilogram to Tonne Conversion Guide
 
-在药物剂量计算和精细化学测量中，质量单位的换算是一个常见需求。本文专注于千克 (kg) 到吨 (t) 的换算，提供了详细的公式与实用示例。
+In large-scale industrial and commercial measurements, mass unit conversion is a common requirement. This article focuses on the conversion from kilogram (kg) to tonne (t), providing detailed formulas and practical examples.
 
-### 为什么需要 kg 到 t 的换算？
+### Why Do We Need kg to t Conversion?
 
-千克和吨是常见的质量单位，尤其在医学、药理学以及精细化学品行业中尤为重要。通过精确的换算，可以确保测量的一致性和准确性。
+Kilogram and tonne are common mass units, particularly important in industrial, commercial, and shipping applications. Through accurate conversion, we can ensure measurement consistency and precision.
 
-### kg 到 t 的换算方法
+### kg to t Conversion Method
 
-从千克到吨的换算公式为：
+The conversion formula from kilogram to tonne is:
 
-- **公式：** `t = kg ÷ 1000`
+- **Formula:** `t = kg ÷ 1000`
 
-### 实际应用示例
+### Practical Application Examples
 
-以下是一些常见的换算实例：
+Here are some common conversion examples:
 
 - 1 kg = 0.001 t
 - 1000 kg = 1 t
 - 500 kg = 0.5 t
 
-### 总结
+### Summary
 
-掌握千克到吨的换算可以帮助您更好地理解和使用这些质量单位。希望本指南能为您提供有价值的参考。
+Mastering kilogram to tonne conversion can help you better understand and use these mass units. We hope this guide provides valuable reference for you.
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Mass" :key="index">
     <n-button

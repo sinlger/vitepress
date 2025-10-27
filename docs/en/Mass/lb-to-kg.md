@@ -4,20 +4,20 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Mass/index
-      linkText: 质量换算
+      linkText: Mass Conversion
   - - link: /Mass/lb-to-kg
-      linkText: 磅到千克
+      linkText: Pound to Kilogram
 head:
   - - meta
     - name: description
-      content: "质量单位换算指南，涵盖磅 (lb) 到千克 (kg) 的详细换算公式与说明。"
+      content: "Mass unit conversion guide covering detailed conversion formulas and explanations from pounds (lb) to kilograms (kg)."
   - - meta
     - name: keywords
-      content: "质量, 单位换算, 磅, 千克, lb, kg, 磅到千克, 质量换算指南"
+      content: "mass, unit conversion, pound, kilogram, lb, kg, pound to kilogram, mass conversion guide"
 ---
-# 磅 (lb) 到 千克 (kg) 的换算
+# Pound (lb) to Kilogram (kg) Conversion
 ---
 <script setup>
 import { onMounted, reactive, inject, ref } from 'vue'
@@ -37,17 +37,17 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) * 0.45359237
     form.result = `${form.number}lb = ${convertedValue.toFixed(4)}kg`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="磅 (lb)">
-    <n-input-number v-model:value="form.number" placeholder="输入磅" style="width: 100%" />
+  <n-form-item label="Pound (lb)">
+    <n-input-number v-model:value="form.number" placeholder="Enter pounds" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
@@ -57,38 +57,38 @@ const convertHandler = () => {
   </div>
 </n-card>
 
-## 公式
+## Formula
 
-从 **磅 (lb)** 换算到 **千克 (kg)** 的公式为：
+The formula for converting from **pounds (lb)** to **kilograms (kg)** is:
 $$ kg = lb \times 0.45359237 $$
 
-## 磅到千克换算指南
+## Pound to Kilogram Conversion Guide
 
-在药物剂量计算和精细化学测量中，质量单位的换算是一个常见需求。本文专注于磅 (lb) 到千克 (kg) 的换算，提供了详细的公式与实用示例。
+In pharmaceutical dosage calculations and precision chemical measurements, mass unit conversion is a common requirement. This article focuses on the conversion from pounds (lb) to kilograms (kg), providing detailed formulas and practical examples.
 
-### 为什么需要 lb 到 kg 的换算？
+### Why Do We Need lb to kg Conversion?
 
-磅和千克是常见的质量单位，尤其在医学、药理学以及精细化学品行业中尤为重要。通过精确的换算，可以确保测量的一致性和准确性。
+Pounds and kilograms are common mass units, particularly important in medicine, pharmacology, and precision chemical industries. Through accurate conversion, we can ensure measurement consistency and precision.
 
-### lb 到 kg 的换算方法
+### lb to kg Conversion Method
 
-从磅到千克的换算公式为：
+The conversion formula from pounds to kilograms is:
 
-- **公式：** `kg = lb × 0.45359237`
+- **Formula:** `kg = lb × 0.45359237`
 
-### 实际应用示例
+### Practical Application Examples
 
-以下是一些常见的换算实例：
+Here are some common conversion examples:
 
 - 1 lb = 0.4536 kg
 - 2 lb = 0.9072 kg
 - 10 lb = 4.5359 kg
 
-### 总结
+### Summary
 
-掌握磅到千克的换算可以帮助您更好地理解和使用这些质量单位。希望本指南能为您提供有价值的参考。
+Mastering pound to kilogram conversion can help you better understand and use these mass units. We hope this guide provides valuable reference for you.
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Mass" :key="index">
     <n-button

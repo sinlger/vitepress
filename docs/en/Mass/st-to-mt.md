@@ -4,20 +4,20 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Mass/index
-      linkText: 质量换算
+      linkText: Mass Conversion
   - - link: /Mass/st-to-mt
-      linkText: 英石到公吨
+      linkText: Stone to Metric Ton
 head:
   - - meta
     - name: description
-      content: "质量单位换算指南，涵盖英石 (st) 到公吨 (mt) 的详细换算公式与说明。"
+      content: "Mass unit conversion guide covering detailed conversion formulas and explanations from stone (st) to metric ton (mt)."
   - - meta
     - name: keywords
-      content: "质量, 单位换算, 英石, 公吨, st, mt, 英石到公吨, 质量换算指南"
+      content: "mass, unit conversion, stone, metric ton, st, mt, stone to metric ton, mass conversion guide"
 ---
-# 英石 (st) 到 公吨 (mt) 的换算
+# Stone (st) to Metric Ton (mt) Conversion
 ---
 <script setup>
 import { onMounted, reactive, inject, ref } from 'vue'
@@ -35,69 +35,96 @@ const form = reactive({
 const convertHandler = () => {
   if (form.number !== null && !isNaN(form.number)) {
     const convertedValue = parseFloat(form.number) * 0.00635029318
-    form.result = `${form.number}st = ${convertedValue.toFixed(6)}mt`
+    form.result = `${form.number}st = ${convertedValue.toFixed(8)}mt`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="英石 (st)">
-    <n-input-number v-model:value="form.number" placeholder="输入英石" style="width: 100%" />
+  <n-form-item label="Stone (st)">
+    <n-input-number v-model:value="form.number" placeholder="Enter stones" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
+  </n-form-item>
+  <n-form-item>
+    <n-input v-model:value="form.result" readonly placeholder="Conversion result" />
   </n-form-item>
 </n-form>
 
-<n-card  embedded :bordered="false" hoverable>
-  <div  style="text-align:center;font-size:20px;">
-    <strong>{{form.result}}</strong>
-  </div>
-</n-card>
+## Conversion Formula
 
-## 公式
+**1 stone (st) = 0.00635029318 metric tons (mt)**
 
-从 **英石 (st)** 换算到 **公吨 (mt)** 的公式为：
-$$ mt = st \times 0.00635029318 $$
+The conversion formula is:
+```
+Metric Tons = Stones × 0.00635029318
+```
 
-## 英石到公吨换算指南
+## Conversion Guide
 
-在药物剂量计算和精细化学测量中，质量单位的换算是一个常见需求。本文专注于英石 (st) 到公吨 (mt) 的换算，提供了详细的公式与实用示例。
+### Why Convert Stones to Metric Tons?
 
-### 为什么需要 st 到 mt 的换算？
+1. **Industrial Applications**: Converting personal weight to industrial scale measurements
+2. **Shipping and Logistics**: Converting traditional measurements for cargo calculations
+3. **Engineering Projects**: Converting weight specifications for large-scale projects
+4. **Agricultural Applications**: Converting livestock weight to bulk measurements
 
-英石和公吨是常见的质量单位，尤其在医学、药理学以及精细化学品行业中尤为重要。通过精确的换算，可以确保测量的一致性和准确性。
+### Conversion Method
 
-### st 到 mt 的换算方法
+To convert stones to metric tons:
+1. Take the number of stones
+2. Multiply by 0.00635029318
+3. The result is the equivalent in metric tons
 
-从英石到公吨的换算公式为：
+### Practical Examples
 
-- **公式：** `mt = st × 0.00635029318`
+- **1 st** = 0.00635029 mt
+- **10 st** = 0.06350293 mt
+- **100 st** = 0.63502932 mt
+- **157 st** = 0.99699643 mt (approximately 1 metric ton)
+- **1000 st** = 6.35029318 mt
 
-### 实际应用示例
+## Summary
 
-以下是一些常见的换算实例：
+Converting stones to metric tons involves multiplying by 0.00635029318. This conversion is essential for industrial applications, shipping and logistics, engineering projects, and agricultural applications where traditional weight measurements need to be expressed in larger metric units.
 
-- 1 st = 0.006350 mt
-- 2 st = 0.012701 mt
-- 100 st = 0.635029 mt
+## Related Links
 
-### 总结
-
-掌握英石到公吨的换算可以帮助您更好地理解和使用这些质量单位。希望本指南能为您提供有价值的参考。
-
-## 相关连接
-<n-grid x-gap="12" :cols="2">
-  <n-gi v-for="(file, index) in Mass" :key="index">
-    <n-button
-      text
-      tag="a"
-      :href="file.path"
-      type="info"
-    >
-      {{file.name}}
-    </n-button>
+<n-grid :cols="2" :x-gap="12" :y-gap="8">
+  <n-gi>
+    <n-card title="Other Stone Conversions" size="small">
+      <template #header-extra>
+        <span style="font-size: 12px; color: #666;">st conversions</span>
+      </template>
+      <div style="font-size: 13px; line-height: 1.6;">
+        <div><a href="/Mass/st-to-g">Stone to Gram</a></div>
+        <div><a href="/Mass/st-to-kg">Stone to Kilogram</a></div>
+        <div><a href="/Mass/st-to-lb">Stone to Pound</a></div>
+        <div><a href="/Mass/st-to-mcg">Stone to Microgram</a></div>
+        <div><a href="/Mass/st-to-mg">Stone to Milligram</a></div>
+        <div><a href="/Mass/st-to-oz">Stone to Ounce</a></div>
+        <div><a href="/Mass/st-to-t">Stone to Ton</a></div>
+      </div>
+    </n-card>
+  </n-gi>
+  <n-gi>
+    <n-card title="Metric Ton Conversions" size="small">
+      <template #header-extra>
+        <span style="font-size: 12px; color: #666;">mt conversions</span>
+      </template>
+      <div style="font-size: 13px; line-height: 1.6;">
+        <div><a href="/Mass/mt-to-g">Metric Ton to Gram</a></div>
+        <div><a href="/Mass/mt-to-kg">Metric Ton to Kilogram</a></div>
+        <div><a href="/Mass/mt-to-lb">Metric Ton to Pound</a></div>
+        <div><a href="/Mass/mt-to-mcg">Metric Ton to Microgram</a></div>
+        <div><a href="/Mass/mt-to-mg">Metric Ton to Milligram</a></div>
+        <div><a href="/Mass/mt-to-oz">Metric Ton to Ounce</a></div>
+        <div><a href="/Mass/mt-to-st">Metric Ton to Stone</a></div>
+        <div><a href="/Mass/mt-to-t">Metric Ton to Ton</a></div>
+      </div>
+    </n-card>
   </n-gi>
 </n-grid>

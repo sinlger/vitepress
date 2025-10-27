@@ -4,20 +4,20 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Mass/index
-      linkText: 质量换算
+      linkText: Mass Conversion
   - - link: /Mass/mg-to-kg
-      linkText: 毫克到千克
+      linkText: Milligram to Kilogram
 head:
   - - meta
     - name: description
-      content: "质量单位换算指南，涵盖毫克 (mg) 到千克 (kg) 的详细换算公式与说明。"
+      content: "Mass unit conversion guide covering detailed conversion formulas and explanations from milligrams (mg) to kilograms (kg)."
   - - meta
     - name: keywords
-      content: "质量, 单位换算, 毫克, 千克, mg, kg, 毫克到千克, 质量换算指南"
+      content: "mass, unit conversion, milligram, kilogram, mg, kg, milligram to kilogram, mass conversion guide"
 ---
-# 毫克 (mg) 到 千克 (kg) 的换算
+# Milligram (mg) to Kilogram (kg) Conversion
 ---
 <script setup>
 import { onMounted, reactive, inject, ref } from 'vue'
@@ -37,17 +37,17 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) / 1000000
     form.result = `${form.number}mg = ${convertedValue.toFixed(6)}kg`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="毫克 (mg)">
-    <n-input-number v-model:value="form.number" placeholder="输入毫克" style="width: 100%" />
+  <n-form-item label="Milligram (mg)">
+    <n-input-number v-model:value="form.number" placeholder="Enter milligrams" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
@@ -57,38 +57,38 @@ const convertHandler = () => {
   </div>
 </n-card>
 
-## 公式
+## Formula
 
-从 **毫克 (mg)** 换算到 **千克 (kg)** 的公式为：
+The formula for converting from **milligrams (mg)** to **kilograms (kg)** is:
 $$ kg = mg \div 1000000 $$
 
-## 毫克到千克换算指南
+## Milligram to Kilogram Conversion Guide
 
-在药物剂量计算和精细化学测量中，质量单位的换算是一个常见需求。本文专注于毫克 (mg) 到千克 (kg) 的换算，提供了详细的公式与实用示例。
+In pharmaceutical dosage calculations and precision measurements, mass unit conversion is a common requirement. This article focuses on the conversion from milligrams (mg) to kilograms (kg), providing detailed formulas and practical examples.
 
-### 为什么需要 mg 到 kg 的换算？
+### Why Do We Need mg to kg Conversion?
 
-毫克和千克是常见的质量单位，尤其在医学、药理学以及精细化学品行业中尤为重要。通过精确的换算，可以确保测量的一致性和准确性。
+Milligrams and kilograms are common mass units, particularly important in medicine, pharmacology, and scientific measurements. Through accurate conversion, we can ensure measurement consistency and precision.
 
-### mg 到 kg 的换算方法
+### mg to kg Conversion Method
 
-从毫克到千克的换算公式为：
+The conversion formula from milligrams to kilograms is:
 
-- **公式：** `kg = mg ÷ 1000000`
+- **Formula:** `kg = mg ÷ 1000000`
 
-### 实际应用示例
+### Practical Application Examples
 
-以下是一些常见的换算实例：
+Here are some common conversion examples:
 
 - 1 mg = 0.000001 kg
 - 1000000 mg = 1 kg
-- 500000 mg = 0.5 kg
+- 2500000 mg = 2.5 kg
 
-### 总结
+### Summary
 
-掌握毫克到千克的换算可以帮助您更好地理解和使用这些质量单位。希望本指南能为您提供有价值的参考。
+Mastering milligram to kilogram conversion can help you better understand and use these mass units. We hope this guide provides valuable reference for you.
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Mass" :key="index">
     <n-button

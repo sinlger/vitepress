@@ -4,20 +4,20 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Mass/index
-      linkText: 质量换算
+      linkText: Mass Conversion
   - - link: /Mass/lb-to-t
-      linkText: 磅到吨
+      linkText: Pound to Ton
 head:
   - - meta
     - name: description
-      content: "质量单位换算指南，涵盖磅 (lb) 到吨 (t) 的详细换算公式与说明。"
+      content: "Mass unit conversion guide covering detailed conversion formulas and explanations from pounds (lb) to tons (t)."
   - - meta
     - name: keywords
-      content: "质量, 单位换算, 磅, 吨, lb, t, 磅到吨, 质量换算指南"
+      content: "mass, unit conversion, pound, ton, lb, t, pound to ton, mass conversion guide"
 ---
-# 磅 (lb) 到 吨 (t) 的换算
+# Pound (lb) to Ton (t) Conversion
 ---
 <script setup>
 import { onMounted, reactive, inject, ref } from 'vue'
@@ -37,17 +37,17 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) * 0.00045359237
     form.result = `${form.number}lb = ${convertedValue.toFixed(6)}t`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="磅 (lb)">
-    <n-input-number v-model:value="form.number" placeholder="输入磅" style="width: 100%" />
+  <n-form-item label="Pound (lb)">
+    <n-input-number v-model:value="form.number" placeholder="Enter pounds" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
@@ -57,38 +57,38 @@ const convertHandler = () => {
   </div>
 </n-card>
 
-## 公式
+## Formula
 
-从 **磅 (lb)** 换算到 **吨 (t)** 的公式为：
+The formula for converting from **pounds (lb)** to **tons (t)** is:
 $$ t = lb \times 0.00045359237 $$
 
-## 磅到吨换算指南
+## Pound to Ton Conversion Guide
 
-在药物剂量计算和精细化学测量中，质量单位的换算是一个常见需求。本文专注于磅 (lb) 到吨 (t) 的换算，提供了详细的公式与实用示例。
+In pharmaceutical dosage calculations and precision chemical measurements, mass unit conversion is a common requirement. This article focuses on the conversion from pounds (lb) to tons (t), providing detailed formulas and practical examples.
 
-### 为什么需要 lb 到 t 的换算？
+### Why Do We Need lb to t Conversion?
 
-磅和吨是常见的质量单位，尤其在医学、药理学以及精细化学品行业中尤为重要。通过精确的换算，可以确保测量的一致性和准确性。
+Pounds and tons are common mass units, particularly important in medicine, pharmacology, and precision chemical industries. Through accurate conversion, we can ensure measurement consistency and precision.
 
-### lb 到 t 的换算方法
+### lb to t Conversion Method
 
-从磅到吨的换算公式为：
+The conversion formula from pounds to tons is:
 
-- **公式：** `t = lb × 0.00045359237`
+- **Formula:** `t = lb × 0.00045359237`
 
-### 实际应用示例
+### Practical Application Examples
 
-以下是一些常见的换算实例：
+Here are some common conversion examples:
 
 - 1 lb = 0.000454 t
 - 2 lb = 0.000907 t
 - 1000 lb = 0.453592 t
 
-### 总结
+### Summary
 
-掌握磅到吨的换算可以帮助您更好地理解和使用这些质量单位。希望本指南能为您提供有价值的参考。
+Mastering pound to ton conversion can help you better understand and use these mass units. We hope this guide provides valuable reference for you.
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Mass" :key="index">
     <n-button

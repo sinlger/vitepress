@@ -4,22 +4,20 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Mass/index
-      linkText: 质量换算
-  - - link: /Mass/index
-      linkText: 质量换算
+      linkText: Mass Conversion
   - - link: /Mass/oz-to-mt
-      linkText: 盎司到公吨
+      linkText: Ounce to Metric Ton
 head:
   - - meta
     - name: description
-      content: "质量单位换算指南，涵盖盎司 (oz) 到公吨 (mt) 的详细换算公式与说明。"
+      content: "Mass unit conversion guide covering detailed conversion formulas and explanations from ounce (oz) to metric ton (mt)."
   - - meta
     - name: keywords
-      content: "质量, 单位换算, 盎司, 公吨, oz, mt, 盎司到公吨, 质量换算指南"
+      content: "mass, unit conversion, ounce, metric ton, oz, mt, ounce to metric ton, mass conversion guide"
 ---
-# 盎司 (oz) 到 公吨 (mt) 的换算
+# Ounce (oz) to Metric Ton (mt) Conversion
 ---
 <script setup>
 import { onMounted, reactive, inject, ref } from 'vue'
@@ -37,69 +35,96 @@ const form = reactive({
 const convertHandler = () => {
   if (form.number !== null && !isNaN(form.number)) {
     const convertedValue = parseFloat(form.number) * 0.000028349523125
-    form.result = `${form.number}oz = ${convertedValue.toFixed(6)}mt`
+    form.result = `${form.number}oz = ${convertedValue.toFixed(9)}mt`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="盎司 (oz)">
-    <n-input-number v-model:value="form.number" placeholder="输入盎司" style="width: 100%" />
+  <n-form-item label="Ounce (oz)">
+    <n-input-number v-model:value="form.number" placeholder="Enter ounces" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
+  </n-form-item>
+  <n-form-item>
+    <n-input v-model:value="form.result" readonly placeholder="Conversion result" />
   </n-form-item>
 </n-form>
 
-<n-card  embedded :bordered="false" hoverable>
-  <div  style="text-align:center;font-size:20px;">
-    <strong>{{form.result}}</strong>
-  </div>
-</n-card>
+## Conversion Formula
 
-## 公式
+**1 ounce (oz) = 0.000028349523125 metric tons (mt)**
 
-从 **盎司 (oz)** 换算到 **公吨 (mt)** 的公式为：
-$$ mt = oz \times 0.000028349523125 $$
+The conversion formula is:
+```
+Metric Tons = Ounces × 0.000028349523125
+```
 
-## 盎司到公吨换算指南
+## Conversion Guide
 
-在药物剂量计算和精细化学测量中，质量单位的换算是一个常见需求。本文专注于盎司 (oz) 到公吨 (mt) 的换算，提供了详细的公式与实用示例。
+### Why Convert Ounces to Metric Tons?
 
-### 为什么需要 oz 到 mt 的换算？
+1. **Industrial Applications**: Large-scale manufacturing and production calculations
+2. **International Trade**: Converting between imperial and metric systems for global commerce
+3. **Shipping and Logistics**: Cargo weight calculations for international freight
+4. **Scientific Research**: Large-scale measurements in engineering and research
 
-盎司和公吨是常见的质量单位，尤其在医学、药理学以及精细化学品行业中尤为重要。通过精确的换算，可以确保测量的一致性和准确性。
+### Conversion Method
 
-### oz 到 mt 的换算方法
+To convert ounces to metric tons:
+1. Take the number of ounces
+2. Multiply by 0.000028349523125
+3. The result is the equivalent in metric tons
 
-从盎司到公吨的换算公式为：
+### Practical Examples
 
-- **公式：** `mt = oz × 0.000028349523125`
+- **1 oz** = 0.000028350 mt
+- **1,000 oz** = 0.028350 mt
+- **10,000 oz** = 0.283495 mt
+- **35,274 oz** ≈ 1.000000 mt (approximately 1 metric ton)
+- **100,000 oz** = 2.834952 mt
 
-### 实际应用示例
+## Summary
 
-以下是一些常见的换算实例：
+Converting ounces to metric tons involves multiplying by 0.000028349523125. This conversion is essential in industrial applications, international trade, shipping and logistics, and scientific research where large-scale metric measurements are required.
 
-- 1 oz = 0.0000283495 mt
-- 2 oz = 0.000056699 mt
-- 100000 oz = 2.83495 mt
+## Related Links
 
-### 总结
-
-掌握盎司到公吨的换算可以帮助您更好地理解和使用这些质量单位。希望本指南能为您提供有价值的参考。
-
-## 相关连接
-<n-grid x-gap="12" :cols="2">
-  <n-gi v-for="(file, index) in Mass" :key="index">
-    <n-button
-      text
-      tag="a"
-      :href="file.path"
-      type="info"
-    >
-      {{file.name}}
-    </n-button>
+<n-grid :cols="2" :x-gap="12" :y-gap="8">
+  <n-gi>
+    <n-card title="Other Ounce Conversions" size="small">
+      <template #header-extra>
+        <span style="font-size: 12px; color: #666;">oz conversions</span>
+      </template>
+      <div style="font-size: 13px; line-height: 1.6;">
+        <div><a href="/Mass/oz-to-g">Ounce to Gram</a></div>
+        <div><a href="/Mass/oz-to-kg">Ounce to Kilogram</a></div>
+        <div><a href="/Mass/oz-to-lb">Ounce to Pound</a></div>
+        <div><a href="/Mass/oz-to-mcg">Ounce to Microgram</a></div>
+        <div><a href="/Mass/oz-to-mg">Ounce to Milligram</a></div>
+        <div><a href="/Mass/oz-to-st">Ounce to Stone</a></div>
+        <div><a href="/Mass/oz-to-t">Ounce to Ton</a></div>
+      </div>
+    </n-card>
+  </n-gi>
+  <n-gi>
+    <n-card title="Metric Ton Conversions" size="small">
+      <template #header-extra>
+        <span style="font-size: 12px; color: #666;">mt conversions</span>
+      </template>
+      <div style="font-size: 13px; line-height: 1.6;">
+        <div><a href="/Mass/mt-to-g">Metric Ton to Gram</a></div>
+        <div><a href="/Mass/mt-to-kg">Metric Ton to Kilogram</a></div>
+        <div><a href="/Mass/mt-to-lb">Metric Ton to Pound</a></div>
+        <div><a href="/Mass/mt-to-mcg">Metric Ton to Microgram</a></div>
+        <div><a href="/Mass/mt-to-mg">Metric Ton to Milligram</a></div>
+        <div><a href="/Mass/mt-to-oz">Metric Ton to Ounce</a></div>
+        <div><a href="/Mass/mt-to-st">Metric Ton to Stone</a></div>
+        <div><a href="/Mass/mt-to-t">Metric Ton to Ton</a></div>
+      </div>
+    </n-card>
   </n-gi>
 </n-grid>

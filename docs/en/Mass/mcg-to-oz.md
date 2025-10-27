@@ -4,20 +4,20 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Mass/index
-      linkText: 质量换算
+      linkText: Mass Conversion
   - - link: /Mass/mcg-to-oz
-      linkText: 微克到盎司
+      linkText: Microgram to Ounce
 head:
   - - meta
     - name: description
-      content: "质量单位换算指南，涵盖微克 (mcg) 到盎司 (oz) 的详细换算公式与说明。"
+      content: "Mass unit conversion guide covering detailed conversion formulas and explanations from micrograms (mcg) to ounces (oz)."
   - - meta
     - name: keywords
-      content: "质量, 单位换算, 微克, 盎司, mcg, oz, 微克到盎司, 质量换算指南"
+      content: "mass, unit conversion, microgram, ounce, mcg, oz, microgram to ounce, mass conversion guide"
 ---
-# 微克 (mcg) 到 盎司 (oz) 的换算
+# Microgram (mcg) to Ounce (oz) Conversion
 ---
 <script setup>
 import { onMounted, reactive, inject, ref } from 'vue'
@@ -34,20 +34,20 @@ const form = reactive({
 
 const convertHandler = () => {
   if (form.number !== null && !isNaN(form.number)) {
-    const convertedValue = parseFloat(form.number) * 0.000035274
-    form.result = `${form.number}mcg = ${convertedValue.toFixed(7)}oz`
+    const convertedValue = parseFloat(form.number) / 28349523.125
+    form.result = `${form.number}mcg = ${convertedValue.toFixed(12)}oz`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="微克 (mcg)">
-    <n-input-number v-model:value="form.number" placeholder="输入微克" style="width: 100%" />
+  <n-form-item label="Microgram (mcg)">
+    <n-input-number v-model:value="form.number" placeholder="Enter micrograms" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
@@ -57,38 +57,38 @@ const convertHandler = () => {
   </div>
 </n-card>
 
-## 公式
+## Formula
 
-从 **微克 (mcg)** 换算到 **盎司 (oz)** 的公式为：
-$$ oz = mcg \times 0.000035274 $$
+The formula for converting from **micrograms (mcg)** to **ounces (oz)** is:
+$$ oz = mcg \div 28349523.125 $$
 
-## 微克到盎司换算指南
+## Microgram to Ounce Conversion Guide
 
-在药物剂量计算和精细化学测量中，质量单位的换算是一个常见需求。本文专注于微克 (mcg) 到盎司 (oz) 的换算，提供了详细的公式与实用示例。
+In pharmaceutical dosage calculations and precision measurements, mass unit conversion is a common requirement. This article focuses on the conversion from micrograms (mcg) to ounces (oz), providing detailed formulas and practical examples.
 
-### 为什么需要 mcg 到 oz 的换算？
+### Why Do We Need mcg to oz Conversion?
 
-微克和盎司是常见的质量单位，尤其在医学、药理学以及精细化学品行业中尤为重要。通过精确的换算，可以确保测量的一致性和准确性。
+Micrograms and ounces are common mass units, particularly important in medicine, pharmacology, and everyday measurements. Through accurate conversion, we can ensure measurement consistency and precision.
 
-### mcg 到 oz 的换算方法
+### mcg to oz Conversion Method
 
-从微克到盎司的换算公式为：
+The conversion formula from micrograms to ounces is:
 
-- **公式：** `oz = mcg × 0.000035274`
+- **Formula:** `oz = mcg ÷ 28349523.125`
 
-### 实际应用示例
+### Practical Application Examples
 
-以下是一些常见的换算实例：
+Here are some common conversion examples:
 
-- 1 mcg = 0.000035274 oz
-- 100000 mcg = 3.5274 oz
-- 500000 mcg = 17.637 oz
+- 1 mcg = 0.000000035274 oz
+- 28349523 mcg = 1 oz
+- 56699046 mcg = 2 oz
 
-### 总结
+### Summary
 
-掌握微克到盎司的换算可以帮助您更好地理解和使用这些质量单位。希望本指南能为您提供有价值的参考。
+Mastering microgram to ounce conversion can help you better understand and use these mass units. We hope this guide provides valuable reference for you.
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Mass" :key="index">
     <n-button

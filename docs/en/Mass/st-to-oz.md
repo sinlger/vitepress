@@ -4,20 +4,20 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Mass/index
-      linkText: 质量换算
+      linkText: Mass Conversion
   - - link: /Mass/st-to-oz
-      linkText: 英石到盎司
+      linkText: Stone to Ounce
 head:
   - - meta
     - name: description
-      content: "质量单位换算指南，涵盖英石 (st) 到盎司 (oz) 的详细换算公式与说明。"
+      content: "Mass unit conversion guide covering detailed conversion formulas and explanations from stone (st) to ounce (oz)."
   - - meta
     - name: keywords
-      content: "质量, 单位换算, 英石, 盎司, st, oz, 英石到盎司, 质量换算指南"
+      content: "mass, unit conversion, stone, ounce, st, oz, stone to ounce, mass conversion guide"
 ---
-# 英石 (st) 到 盎司 (oz) 的换算
+# Stone (st) to Ounce (oz) Conversion
 ---
 <script setup>
 import { onMounted, reactive, inject, ref } from 'vue'
@@ -37,67 +37,94 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) * 224
     form.result = `${form.number}st = ${convertedValue.toFixed(0)}oz`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="英石 (st)">
-    <n-input-number v-model:value="form.number" placeholder="输入英石" style="width: 100%" />
+  <n-form-item label="Stone (st)">
+    <n-input-number v-model:value="form.number" placeholder="Enter stones" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
+  </n-form-item>
+  <n-form-item>
+    <n-input v-model:value="form.result" readonly placeholder="Conversion result" />
   </n-form-item>
 </n-form>
 
-<n-card  embedded :bordered="false" hoverable>
-  <div  style="text-align:center;font-size:20px;">
-    <strong>{{form.result}}</strong>
-  </div>
-</n-card>
+## Conversion Formula
 
-## 公式
+**1 stone (st) = 224 ounces (oz)**
 
-从 **英石 (st)** 换算到 **盎司 (oz)** 的公式为：
-$$ oz = st \times 224 $$
+The conversion formula is:
+```
+Ounces = Stones × 224
+```
 
-## 英石到盎司换算指南
+## Conversion Guide
 
-在药物剂量计算和精细化学测量中，质量单位的换算是一个常见需求。本文专注于英石 (st) 到盎司 (oz) 的换算，提供了详细的公式与实用示例。
+### Why Convert Stones to Ounces?
 
-### 为什么需要 st 到 oz 的换算？
+1. **Cooking and Baking**: Converting body weight references to ingredient measurements
+2. **Postal Services**: Converting traditional measurements for shipping calculations
+3. **Retail Applications**: Converting weight specifications for product descriptions
+4. **Sports and Fitness**: Converting body weight to smaller units for precise tracking
 
-英石和盎司是常见的质量单位，尤其在医学、药理学以及精细化学品行业中尤为重要。通过精确的换算，可以确保测量的一致性和准确性。
+### Conversion Method
 
-### st 到 oz 的换算方法
+To convert stones to ounces:
+1. Take the number of stones
+2. Multiply by 224
+3. The result is the equivalent in ounces
 
-从英石到盎司的换算公式为：
+### Practical Examples
 
-- **公式：** `oz = st × 224`
+- **1 st** = 224 oz
+- **0.5 st** = 112 oz
+- **2 st** = 448 oz
+- **10 st** = 2,240 oz
+- **14 st** = 3,136 oz (average adult weight)
 
-### 实际应用示例
+## Summary
 
-以下是一些常见的换算实例：
+Converting stones to ounces involves multiplying by 224. This conversion is essential for cooking and baking, postal services, retail applications, and sports and fitness where traditional weight measurements need to be expressed in smaller imperial units.
 
-- 1 st = 224 oz
-- 2 st = 448 oz
-- 0.5 st = 112 oz
+## Related Links
 
-### 总结
-
-掌握英石到盎司的换算可以帮助您更好地理解和使用这些质量单位。希望本指南能为您提供有价值的参考。
-
-## 相关连接
-<n-grid x-gap="12" :cols="2">
-  <n-gi v-for="(file, index) in Mass" :key="index">
-    <n-button
-      text
-      tag="a"
-      :href="file.path"
-      type="info"
-    >
-      {{file.name}}
-    </n-button>
+<n-grid :cols="2" :x-gap="12" :y-gap="8">
+  <n-gi>
+    <n-card title="Other Stone Conversions" size="small">
+      <template #header-extra>
+        <span style="font-size: 12px; color: #666;">st conversions</span>
+      </template>
+      <div style="font-size: 13px; line-height: 1.6;">
+        <div><a href="/Mass/st-to-g">Stone to Gram</a></div>
+        <div><a href="/Mass/st-to-kg">Stone to Kilogram</a></div>
+        <div><a href="/Mass/st-to-lb">Stone to Pound</a></div>
+        <div><a href="/Mass/st-to-mcg">Stone to Microgram</a></div>
+        <div><a href="/Mass/st-to-mg">Stone to Milligram</a></div>
+        <div><a href="/Mass/st-to-mt">Stone to Metric Ton</a></div>
+        <div><a href="/Mass/st-to-t">Stone to Ton</a></div>
+      </div>
+    </n-card>
+  </n-gi>
+  <n-gi>
+    <n-card title="Ounce Conversions" size="small">
+      <template #header-extra>
+        <span style="font-size: 12px; color: #666;">oz conversions</span>
+      </template>
+      <div style="font-size: 13px; line-height: 1.6;">
+        <div><a href="/Mass/oz-to-g">Ounce to Gram</a></div>
+        <div><a href="/Mass/oz-to-kg">Ounce to Kilogram</a></div>
+        <div><a href="/Mass/oz-to-lb">Ounce to Pound</a></div>
+        <div><a href="/Mass/oz-to-mcg">Ounce to Microgram</a></div>
+        <div><a href="/Mass/oz-to-mg">Ounce to Milligram</a></div>
+        <div><a href="/Mass/oz-to-mt">Ounce to Metric Ton</a></div>
+        <div><a href="/Mass/oz-to-st">Ounce to Stone</a></div>
+        <div><a href="/Mass/oz-to-t">Ounce to Ton</a></div>
+      </div>
+    </n-card>
   </n-gi>
 </n-grid>

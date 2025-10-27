@@ -4,20 +4,20 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Mass/index
-      linkText: 质量换算
+      linkText: Mass Conversion
   - - link: /Mass/t-to-kg
-      linkText: 吨到千克
+      linkText: Ton to Kilogram
 head:
   - - meta
     - name: description
-      content: "质量单位换算指南，涵盖吨 (t) 到千克 (kg) 的详细换算公式与说明。"
+      content: "Mass unit conversion guide covering detailed conversion formulas and explanations from ton (t) to kilogram (kg)."
   - - meta
     - name: keywords
-      content: "质量, 单位换算, 吨, 千克, t, kg, 吨到千克, 质量换算指南"
+      content: "mass, unit conversion, ton, kilogram, t, kg, ton to kilogram, mass conversion guide"
 ---
-# 吨 (t) 到 千克 (kg) 的换算
+# Ton (t) to Kilogram (kg) Conversion
 ---
 <script setup>
 import { onMounted, reactive, inject, ref } from 'vue'
@@ -37,67 +37,94 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) * 1000
     form.result = `${form.number}t = ${convertedValue.toFixed(0)}kg`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="吨 (t)">
-    <n-input-number v-model:value="form.number" placeholder="输入吨" style="width: 100%" />
+  <n-form-item label="Ton (t)">
+    <n-input-number v-model:value="form.number" placeholder="Enter tons" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
+  </n-form-item>
+  <n-form-item>
+    <n-input v-model:value="form.result" readonly placeholder="Conversion result" />
   </n-form-item>
 </n-form>
 
-<n-card  embedded :bordered="false" hoverable>
-  <div  style="text-align:center;font-size:20px;">
-    <strong>{{form.result}}</strong>
-  </div>
-</n-card>
+## Conversion Formula
 
-## 公式
+**1 ton (t) = 1,000 kilograms (kg)**
 
-从 **吨 (t)** 换算到 **千克 (kg)** 的公式为：
-$$ kg = t \times 1000 $$
+The conversion formula is:
+```
+Kilograms = Tons × 1,000
+```
 
-## 吨到千克换算指南
+## Conversion Guide
 
-在药物剂量计算和精细化学测量中，质量单位的换算是一个常见需求。本文专注于吨 (t) 到千克 (kg) 的换算，提供了详细的公式与实用示例。
+### Why Convert Tons to Kilograms?
 
-### 为什么需要 t 到 kg 的换算？
+1. **Industrial Applications**: Converting large-scale measurements to standard metric units
+2. **Shipping and Logistics**: Converting cargo weights to standard shipping units
+3. **Engineering Projects**: Converting structural weights to design specifications
+4. **Agricultural Applications**: Converting bulk commodity weights to market standards
 
-吨和千克是常见的质量单位，尤其在医学、药理学以及精细化学品行业中尤为重要。通过精确的换算，可以确保测量的一致性和准确性。
+### Conversion Method
 
-### t 到 kg 的换算方法
+To convert tons to kilograms:
+1. Take the number of tons
+2. Multiply by 1,000
+3. The result is the equivalent in kilograms
 
-从吨到千克的换算公式为：
+### Practical Examples
 
-- **公式：** `kg = t × 1000`
+- **1 t** = 1,000 kg
+- **0.5 t** = 500 kg
+- **2.5 t** = 2,500 kg
+- **10 t** = 10,000 kg
+- **0.1 t** = 100 kg
 
-### 实际应用示例
+## Summary
 
-以下是一些常见的换算实例：
+Converting tons to kilograms involves multiplying by 1,000. This conversion is essential for industrial applications, shipping and logistics, engineering projects, and agricultural applications where large-scale measurements need to be expressed in standard metric units.
 
-- 1 t = 1000 kg
-- 2 t = 2000 kg
-- 0.5 t = 500 kg
+## Related Links
 
-### 总结
-
-掌握吨到千克的换算可以帮助您更好地理解和使用这些质量单位。希望本指南能为您提供有价值的参考。
-
-## 相关连接
-<n-grid x-gap="12" :cols="2">
-  <n-gi v-for="(file, index) in Mass" :key="index">
-    <n-button
-      text
-      tag="a"
-      :href="file.path"
-      type="info"
-    >
-      {{file.name}}
-    </n-button>
+<n-grid :cols="2" :x-gap="12" :y-gap="8">
+  <n-gi>
+    <n-card title="Other Ton Conversions" size="small">
+      <template #header-extra>
+        <span style="font-size: 12px; color: #666;">t conversions</span>
+      </template>
+      <div style="font-size: 13px; line-height: 1.6;">
+        <div><a href="/Mass/t-to-g">Ton to Gram</a></div>
+        <div><a href="/Mass/t-to-lb">Ton to Pound</a></div>
+        <div><a href="/Mass/t-to-mcg">Ton to Microgram</a></div>
+        <div><a href="/Mass/t-to-mg">Ton to Milligram</a></div>
+        <div><a href="/Mass/t-to-mt">Ton to Metric Ton</a></div>
+        <div><a href="/Mass/t-to-oz">Ton to Ounce</a></div>
+        <div><a href="/Mass/t-to-st">Ton to Stone</a></div>
+      </div>
+    </n-card>
+  </n-gi>
+  <n-gi>
+    <n-card title="Kilogram Conversions" size="small">
+      <template #header-extra>
+        <span style="font-size: 12px; color: #666;">kg conversions</span>
+      </template>
+      <div style="font-size: 13px; line-height: 1.6;">
+        <div><a href="/Mass/kg-to-g">Kilogram to Gram</a></div>
+        <div><a href="/Mass/kg-to-lb">Kilogram to Pound</a></div>
+        <div><a href="/Mass/kg-to-mcg">Kilogram to Microgram</a></div>
+        <div><a href="/Mass/kg-to-mg">Kilogram to Milligram</a></div>
+        <div><a href="/Mass/kg-to-mt">Kilogram to Metric Ton</a></div>
+        <div><a href="/Mass/kg-to-oz">Kilogram to Ounce</a></div>
+        <div><a href="/Mass/kg-to-st">Kilogram to Stone</a></div>
+        <div><a href="/Mass/kg-to-t">Kilogram to Ton</a></div>
+      </div>
+    </n-card>
   </n-gi>
 </n-grid>

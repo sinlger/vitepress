@@ -4,20 +4,20 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Mass/index
-      linkText: 质量换算
+      linkText: Mass Conversion
   - - link: /Mass/mg-to-t
-      linkText: 毫克到吨
+      linkText: Milligram to Ton
 head:
   - - meta
     - name: description
-      content: "质量单位换算指南，涵盖毫克 (mg) 到吨 (t) 的详细换算公式与说明。"
+      content: "Mass unit conversion guide covering detailed conversion formulas and explanations from milligrams (mg) to tons (t)."
   - - meta
     - name: keywords
-      content: "质量, 单位换算, 毫克, 吨, mg, t, 毫克到吨, 质量换算指南"
+      content: "mass, unit conversion, milligram, ton, mg, t, milligram to ton, mass conversion guide"
 ---
-# 毫克 (mg) 到 吨 (t) 的换算
+# Milligram (mg) to Ton (t) Conversion
 ---
 <script setup>
 import { onMounted, reactive, inject, ref } from 'vue'
@@ -37,17 +37,17 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) / 1000000000
     form.result = `${form.number}mg = ${convertedValue.toFixed(9)}t`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="毫克 (mg)">
-    <n-input-number v-model:value="form.number" placeholder="输入毫克" style="width: 100%" />
+  <n-form-item label="Milligram (mg)">
+    <n-input-number v-model:value="form.number" placeholder="Enter milligrams" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
@@ -57,38 +57,38 @@ const convertHandler = () => {
   </div>
 </n-card>
 
-## 公式
+## Formula
 
-从 **毫克 (mg)** 换算到 **吨 (t)** 的公式为：
-$$ t = mg \div 1000000000 $$
+The formula for converting from **milligrams (mg)** to **tons (t)** is:
+$$ t = mg \div 1,000,000,000 $$
 
-## 毫克到吨换算指南
+## Milligram to Ton Conversion Guide
 
-在药物剂量计算和精细化学测量中，质量单位的换算是一个常见需求。本文专注于毫克 (mg) 到吨 (t) 的换算，提供了详细的公式与实用示例。
+In pharmaceutical dosage calculations and large-scale industrial measurements, mass unit conversion is a common requirement. This article focuses on the conversion from milligrams (mg) to tons (t), providing detailed formulas and practical examples.
 
-### 为什么需要 mg 到 t 的换算？
+### Why Do We Need mg to t Conversion?
 
-毫克和吨是常见的质量单位，尤其在医学、药理学以及精细化学品行业中尤为重要。通过精确的换算，可以确保测量的一致性和准确性。
+Milligrams and tons are common mass units, particularly important in medicine, pharmacology, and industrial applications. Through accurate conversion, we can ensure measurement consistency and precision.
 
-### mg 到 t 的换算方法
+### mg to t Conversion Method
 
-从毫克到吨的换算公式为：
+The conversion formula from milligrams to tons is:
 
-- **公式：** `t = mg ÷ 1000000000`
+- **Formula:** `t = mg ÷ 1,000,000,000`
 
-### 实际应用示例
+### Practical Application Examples
 
-以下是一些常见的换算实例：
+Here are some common conversion examples:
 
 - 1 mg = 0.000000001 t
-- 1000000000 mg = 1 t
-- 500000000 mg = 0.5 t
+- 1,000,000,000 mg = 1 t
+- 500,000,000 mg = 0.5 t
 
-### 总结
+### Summary
 
-掌握毫克到吨的换算可以帮助您更好地理解和使用这些质量单位。希望本指南能为您提供有价值的参考。
+Mastering milligram to ton conversion can help you better understand and use these mass units. We hope this guide provides valuable reference for you.
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Mass" :key="index">
     <n-button

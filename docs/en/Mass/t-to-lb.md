@@ -4,20 +4,20 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Mass/index
-      linkText: 质量换算
+      linkText: Mass Conversion
   - - link: /Mass/t-to-lb
-      linkText: 吨到磅
+      linkText: Ton to Pound
 head:
   - - meta
     - name: description
-      content: "质量单位换算指南，涵盖吨 (t) 到磅 (lb) 的详细换算公式与说明。"
+      content: "Mass unit conversion guide covering detailed conversion formulas and explanations from ton (t) to pound (lb)."
   - - meta
     - name: keywords
-      content: "质量, 单位换算, 吨, 磅, t, lb, 吨到磅, 质量换算指南"
+      content: "mass, unit conversion, ton, pound, t, lb, ton to pound, mass conversion guide"
 ---
-# 吨 (t) 到 磅 (lb) 的换算
+# Ton (t) to Pound (lb) Conversion
 ---
 <script setup>
 import { onMounted, reactive, inject, ref } from 'vue'
@@ -34,70 +34,97 @@ const form = reactive({
 
 const convertHandler = () => {
   if (form.number !== null && !isNaN(form.number)) {
-    const convertedValue = parseFloat(form.number) * 2204.62
+    const convertedValue = parseFloat(form.number) * 2204.62262
     form.result = `${form.number}t = ${convertedValue.toFixed(2)}lb`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="吨 (t)">
-    <n-input-number v-model:value="form.number" placeholder="输入吨" style="width: 100%" />
+  <n-form-item label="Ton (t)">
+    <n-input-number v-model:value="form.number" placeholder="Enter tons" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
+  </n-form-item>
+  <n-form-item>
+    <n-input v-model:value="form.result" readonly placeholder="Conversion result" />
   </n-form-item>
 </n-form>
 
-<n-card  embedded :bordered="false" hoverable>
-  <div  style="text-align:center;font-size:20px;">
-    <strong>{{form.result}}</strong>
-  </div>
-</n-card>
+## Conversion Formula
 
-## 公式
+**1 ton (t) = 2,204.62262 pounds (lb)**
 
-从 **吨 (t)** 换算到 **磅 (lb)** 的公式为：
-$$ lb = t \times 2204.62 $$
+The conversion formula is:
+```
+Pounds = Tons × 2,204.62262
+```
 
-## 吨到磅换算指南
+## Conversion Guide
 
-在药物剂量计算和精细化学测量中，质量单位的换算是一个常见需求。本文专注于吨 (t) 到磅 (lb) 的换算，提供了详细的公式与实用示例。
+### Why Convert Tons to Pounds?
 
-### 为什么需要 t 到 lb 的换算？
+1. **International Trade**: Converting metric measurements to imperial units for US markets
+2. **Shipping and Logistics**: Converting cargo weights for US-based operations
+3. **Engineering Projects**: Converting specifications between metric and imperial systems
+4. **Agricultural Applications**: Converting bulk commodity weights for US agricultural markets
 
-吨和磅是常见的质量单位，尤其在医学、药理学以及精细化学品行业中尤为重要。通过精确的换算，可以确保测量的一致性和准确性。
+### Conversion Method
 
-### t 到 lb 的换算方法
+To convert tons to pounds:
+1. Take the number of tons
+2. Multiply by 2,204.62262
+3. The result is the equivalent in pounds
 
-从吨到磅的换算公式为：
+### Practical Examples
 
-- **公式：** `lb = t × 2204.62`
+- **1 t** = 2,204.62 lb
+- **0.5 t** = 1,102.31 lb
+- **2 t** = 4,409.25 lb
+- **5 t** = 11,023.11 lb
+- **0.1 t** = 220.46 lb
 
-### 实际应用示例
+## Summary
 
-以下是一些常见的换算实例：
+Converting tons to pounds involves multiplying by 2,204.62262. This conversion is essential for international trade, shipping and logistics, engineering projects, and agricultural applications where metric measurements need to be expressed in imperial units for US markets.
 
-- 1 t = 2204.62 lb
-- 2 t = 4409.24 lb
-- 0.5 t = 1102.31 lb
+## Related Links
 
-### 总结
-
-掌握吨到磅的换算可以帮助您更好地理解和使用这些质量单位。希望本指南能为您提供有价值的参考。
-
-## 相关连接
-<n-grid x-gap="12" :cols="2">
-  <n-gi v-for="(file, index) in Mass" :key="index">
-    <n-button
-      text
-      tag="a"
-      :href="file.path"
-      type="info"
-    >
-      {{file.name}}
-    </n-button>
+<n-grid :cols="2" :x-gap="12" :y-gap="8">
+  <n-gi>
+    <n-card title="Other Ton Conversions" size="small">
+      <template #header-extra>
+        <span style="font-size: 12px; color: #666;">t conversions</span>
+      </template>
+      <div style="font-size: 13px; line-height: 1.6;">
+        <div><a href="/Mass/t-to-g">Ton to Gram</a></div>
+        <div><a href="/Mass/t-to-kg">Ton to Kilogram</a></div>
+        <div><a href="/Mass/t-to-mcg">Ton to Microgram</a></div>
+        <div><a href="/Mass/t-to-mg">Ton to Milligram</a></div>
+        <div><a href="/Mass/t-to-mt">Ton to Metric Ton</a></div>
+        <div><a href="/Mass/t-to-oz">Ton to Ounce</a></div>
+        <div><a href="/Mass/t-to-st">Ton to Stone</a></div>
+      </div>
+    </n-card>
+  </n-gi>
+  <n-gi>
+    <n-card title="Pound Conversions" size="small">
+      <template #header-extra>
+        <span style="font-size: 12px; color: #666;">lb conversions</span>
+      </template>
+      <div style="font-size: 13px; line-height: 1.6;">
+        <div><a href="/Mass/lb-to-g">Pound to Gram</a></div>
+        <div><a href="/Mass/lb-to-kg">Pound to Kilogram</a></div>
+        <div><a href="/Mass/lb-to-mcg">Pound to Microgram</a></div>
+        <div><a href="/Mass/lb-to-mg">Pound to Milligram</a></div>
+        <div><a href="/Mass/lb-to-mt">Pound to Metric Ton</a></div>
+        <div><a href="/Mass/lb-to-oz">Pound to Ounce</a></div>
+        <div><a href="/Mass/lb-to-st">Pound to Stone</a></div>
+        <div><a href="/Mass/lb-to-t">Pound to Ton</a></div>
+      </div>
+    </n-card>
   </n-gi>
 </n-grid>

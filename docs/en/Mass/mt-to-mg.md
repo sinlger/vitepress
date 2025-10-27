@@ -4,20 +4,20 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Mass/index
-      linkText: 质量换算
+      linkText: Mass Conversion
   - - link: /Mass/mt-to-mg
-      linkText: 公吨到毫克
+      linkText: Metric Ton to Milligram
 head:
   - - meta
     - name: description
-      content: "质量单位换算指南，涵盖公吨 (mt) 到毫克 (mg) 的详细换算公式与说明。"
+      content: "Mass unit conversion guide covering detailed conversion formulas and explanations from metric ton (mt) to milligram (mg)."
   - - meta
     - name: keywords
-      content: "质量, 单位换算, 公吨, 毫克, mt, mg, 公吨到毫克, 质量换算指南"
+      content: "mass, unit conversion, metric ton, milligram, mt, mg, metric ton to milligram, mass conversion guide"
 ---
-# 公吨 (mt) 到 毫克 (mg) 的换算
+# Metric Ton (mt) to Milligram (mg) Conversion
 ---
 <script setup>
 import { onMounted, reactive, inject, ref } from 'vue'
@@ -37,58 +37,96 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) * 1000000000
     form.result = `${form.number}mt = ${convertedValue.toFixed(0)}mg`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="公吨 (mt)">
-    <n-input-number v-model:value="form.number" placeholder="输入公吨" style="width: 100%" />
+  <n-form-item label="Metric Ton (mt)">
+    <n-input-number v-model:value="form.number" placeholder="Enter metric tons" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
+  </n-form-item>
+  <n-form-item>
+    <n-input v-model:value="form.result" readonly placeholder="Conversion result" />
   </n-form-item>
 </n-form>
 
-<n-card  embedded :bordered="false" hoverable>
-  <div  style="text-align:center;font-size:20px;">
-    <strong>{{form.result}}</strong>
-  </div>
-</n-card>
+## Conversion Formula
 
-## 公式
+**1 metric ton (mt) = 1,000,000,000 milligrams (mg)**
 
-从 **公吨 (mt)** 换算到 **毫克 (mg)** 的公式为：
-$$ mg = mt \times 1000000000 $$
+The conversion formula is:
+```
+Milligrams = Metric Tons × 1,000,000,000
+```
 
-## 公吨到毫克换算指南
+## Conversion Guide
 
-在药物剂量计算和精细化学测量中，质量单位的换算是一个常见需求。本文专注于公吨 (mt) 到毫克 (mg) 的换算，提供了详细的公式与实用示例。
+### Why Convert Metric Tons to Milligrams?
 
-### 为什么需要 mt 到 mg 的换算？
+1. **Pharmaceutical Industry**: Drug manufacturing often requires converting bulk quantities to precise dosage amounts
+2. **Chemical Analysis**: Laboratory work frequently involves scaling between large production quantities and small test samples
+3. **Quality Control**: Manufacturing processes need to track both bulk materials and trace components
+4. **Scientific Research**: Research applications often require precise measurements across different scales
 
-公吨和毫克是常见的质量单位，尤其在医学、药理学以及精细化学品行业中尤为重要。通过精确的换算，可以确保测量的一致性和准确性。
+### Conversion Method
 
-### mt 到 mg 的换算方法
+To convert metric tons to milligrams:
+1. Take the number of metric tons
+2. Multiply by 1,000,000,000 (1 billion)
+3. The result is the equivalent in milligrams
 
-从公吨到毫克的换算公式为：
+### Practical Examples
 
-- **公式：** `mg = mt × 1000000000`
+- **0.000001 mt** = 1,000 mg (1 kilogram worth)
+- **0.000005 mt** = 5,000 mg (5 kilograms worth)
+- **0.00001 mt** = 10,000 mg (10 kilograms worth)
+- **0.001 mt** = 1,000,000 mg (1 metric ton worth)
 
-### 实际应用示例
+## Summary
 
-以下是一些常见的换算实例：
+Converting metric tons to milligrams involves multiplying by 1 billion (1,000,000,000). This conversion is particularly useful in pharmaceutical manufacturing, chemical analysis, and scientific research where precise measurements across different scales are essential.
 
-- 1 mt = 1000000000 mg
-- 2 mt = 2000000000 mg
-- 0.5 mt = 500000000 mg
+## Related Links
 
-### 总结
-
-掌握公吨到毫克的换算可以帮助您更好地理解和使用这些质量单位。希望本指南能为您提供有价值的参考。
-
-## 相关连接
+<n-grid :cols="2" :x-gap="12" :y-gap="8">
+  <n-gi>
+    <n-card title="Other Metric Ton Conversions" size="small">
+      <template #header-extra>
+        <span style="font-size: 12px; color: #666;">mt conversions</span>
+      </template>
+      <div style="font-size: 13px; line-height: 1.6;">
+        <div><a href="/Mass/mt-to-g">Metric Ton to Gram</a></div>
+        <div><a href="/Mass/mt-to-kg">Metric Ton to Kilogram</a></div>
+        <div><a href="/Mass/mt-to-lb">Metric Ton to Pound</a></div>
+        <div><a href="/Mass/mt-to-mcg">Metric Ton to Microgram</a></div>
+        <div><a href="/Mass/mt-to-oz">Metric Ton to Ounce</a></div>
+        <div><a href="/Mass/mt-to-st">Metric Ton to Stone</a></div>
+        <div><a href="/Mass/mt-to-t">Metric Ton to Ton</a></div>
+      </div>
+    </n-card>
+  </n-gi>
+  <n-gi>
+    <n-card title="Milligram Conversions" size="small">
+      <template #header-extra>
+        <span style="font-size: 12px; color: #666;">mg conversions</span>
+      </template>
+      <div style="font-size: 13px; line-height: 1.6;">
+        <div><a href="/Mass/mg-to-g">Milligram to Gram</a></div>
+        <div><a href="/Mass/mg-to-kg">Milligram to Kilogram</a></div>
+        <div><a href="/Mass/mg-to-lb">Milligram to Pound</a></div>
+        <div><a href="/Mass/mg-to-mcg">Milligram to Microgram</a></div>
+        <div><a href="/Mass/mg-to-mt">Milligram to Metric Ton</a></div>
+        <div><a href="/Mass/mg-to-oz">Milligram to Ounce</a></div>
+        <div><a href="/Mass/mg-to-st">Milligram to Stone</a></div>
+        <div><a href="/Mass/mg-to-t">Milligram to Ton</a></div>
+      </div>
+    </n-card>
+  </n-gi>
+</n-grid>
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Mass" :key="index">
     <n-button

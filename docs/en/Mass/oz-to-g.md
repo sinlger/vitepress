@@ -4,20 +4,20 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Mass/index
-      linkText: 质量换算
+      linkText: Mass Conversion
   - - link: /Mass/oz-to-g
-      linkText: 盎司到克
+      linkText: Ounce to Gram
 head:
   - - meta
     - name: description
-      content: "质量单位换算指南，涵盖盎司 (oz) 到克 (g) 的详细换算公式与说明。"
+      content: "Mass unit conversion guide covering detailed conversion formulas and explanations from ounce (oz) to gram (g)."
   - - meta
     - name: keywords
-      content: "质量, 单位换算, 盎司, 克, oz, g, 盎司到克, 质量换算指南"
+      content: "mass, unit conversion, ounce, gram, oz, g, ounce to gram, mass conversion guide"
 ---
-# 盎司 (oz) 到 克 (g) 的换算
+# Ounce (oz) to Gram (g) Conversion
 ---
 <script setup>
 import { onMounted, reactive, inject, ref } from 'vue'
@@ -37,67 +37,94 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) * 28.349523125
     form.result = `${form.number}oz = ${convertedValue.toFixed(3)}g`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="盎司 (oz)">
-    <n-input-number v-model:value="form.number" placeholder="输入盎司" style="width: 100%" />
+  <n-form-item label="Ounce (oz)">
+    <n-input-number v-model:value="form.number" placeholder="Enter ounces" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
+  </n-form-item>
+  <n-form-item>
+    <n-input v-model:value="form.result" readonly placeholder="Conversion result" />
   </n-form-item>
 </n-form>
 
-<n-card  embedded :bordered="false" hoverable>
-  <div  style="text-align:center;font-size:20px;">
-    <strong>{{form.result}}</strong>
-  </div>
-</n-card>
+## Conversion Formula
 
-## 公式
+**1 ounce (oz) = 28.349523125 grams (g)**
 
-从 **盎司 (oz)** 换算到 **克 (g)** 的公式为：
-$$ g = oz \times 28.349523125 $$
+The conversion formula is:
+```
+Grams = Ounces × 28.349523125
+```
 
-## 盎司到克换算指南
+## Conversion Guide
 
-在药物剂量计算和精细化学测量中，质量单位的换算是一个常见需求。本文专注于盎司 (oz) 到克 (g) 的换算，提供了详细的公式与实用示例。
+### Why Convert Ounces to Grams?
 
-### 为什么需要 oz 到 g 的换算？
+1. **Cooking and Baking**: Converting recipe measurements between imperial and metric systems
+2. **International Trade**: Standardizing measurements for global commerce
+3. **Scientific Applications**: Laboratory work often requires metric measurements
+4. **Nutrition and Health**: Food labeling and dietary calculations often use grams
 
-盎司和克是常见的质量单位，尤其在医学、药理学以及精细化学品行业中尤为重要。通过精确的换算，可以确保测量的一致性和准确性。
+### Conversion Method
 
-### oz 到 g 的换算方法
+To convert ounces to grams:
+1. Take the number of ounces
+2. Multiply by 28.349523125
+3. The result is the equivalent in grams
 
-从盎司到克的换算公式为：
+### Practical Examples
 
-- **公式：** `g = oz × 28.349523125`
+- **1 oz** = 28.350 g
+- **2 oz** = 56.699 g
+- **4 oz** = 113.398 g (quarter pound)
+- **8 oz** = 226.796 g (half pound)
+- **16 oz** = 453.592 g (one pound)
 
-### 实际应用示例
+## Summary
 
-以下是一些常见的换算实例：
+Converting ounces to grams involves multiplying by 28.349523125. This conversion is essential in cooking, international trade, scientific applications, and nutrition where precise metric measurements are required.
 
-- 1 oz = 28.3495 g
-- 2 oz = 56.699 g
-- 0.5 oz = 14.17475 g
+## Related Links
 
-### 总结
-
-掌握盎司到克的换算可以帮助您更好地理解和使用这些质量单位。希望本指南能为您提供有价值的参考。
-
-## 相关连接
-<n-grid x-gap="12" :cols="2">
-  <n-gi v-for="(file, index) in Mass" :key="index">
-    <n-button
-      text
-      tag="a"
-      :href="file.path"
-      type="info"
-    >
-      {{file.name}}
-    </n-button>
+<n-grid :cols="2" :x-gap="12" :y-gap="8">
+  <n-gi>
+    <n-card title="Other Ounce Conversions" size="small">
+      <template #header-extra>
+        <span style="font-size: 12px; color: #666;">oz conversions</span>
+      </template>
+      <div style="font-size: 13px; line-height: 1.6;">
+        <div><a href="/Mass/oz-to-kg">Ounce to Kilogram</a></div>
+        <div><a href="/Mass/oz-to-lb">Ounce to Pound</a></div>
+        <div><a href="/Mass/oz-to-mcg">Ounce to Microgram</a></div>
+        <div><a href="/Mass/oz-to-mg">Ounce to Milligram</a></div>
+        <div><a href="/Mass/oz-to-mt">Ounce to Metric Ton</a></div>
+        <div><a href="/Mass/oz-to-st">Ounce to Stone</a></div>
+        <div><a href="/Mass/oz-to-t">Ounce to Ton</a></div>
+      </div>
+    </n-card>
+  </n-gi>
+  <n-gi>
+    <n-card title="Gram Conversions" size="small">
+      <template #header-extra>
+        <span style="font-size: 12px; color: #666;">g conversions</span>
+      </template>
+      <div style="font-size: 13px; line-height: 1.6;">
+        <div><a href="/Mass/g-to-kg">Gram to Kilogram</a></div>
+        <div><a href="/Mass/g-to-lb">Gram to Pound</a></div>
+        <div><a href="/Mass/g-to-mcg">Gram to Microgram</a></div>
+        <div><a href="/Mass/g-to-mg">Gram to Milligram</a></div>
+        <div><a href="/Mass/g-to-mt">Gram to Metric Ton</a></div>
+        <div><a href="/Mass/g-to-oz">Gram to Ounce</a></div>
+        <div><a href="/Mass/g-to-st">Gram to Stone</a></div>
+        <div><a href="/Mass/g-to-t">Gram to Ton</a></div>
+      </div>
+    </n-card>
   </n-gi>
 </n-grid>

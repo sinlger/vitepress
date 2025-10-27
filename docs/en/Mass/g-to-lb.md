@@ -4,20 +4,20 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Mass/index
-      linkText: 质量换算
+      linkText: Mass Conversion
   - - link: /Mass/g-to-lb
-      linkText: 克到磅
+      linkText: Grams to Pounds
 head:
   - - meta
     - name: description
-      content: "质量单位换算指南，涵盖克 (g) 到磅 (lb) 的详细换算公式与说明。"
+      content: "Mass unit conversion guide covering detailed conversion formulas and explanations from grams (g) to pounds (lb)."
   - - meta
     - name: keywords
-      content: "质量, 单位换算, 克, 磅, g, lb, 克到磅, 质量换算指南"
+      content: "mass, unit conversion, grams, pounds, g, lb, grams to pounds, mass conversion guide"
 ---
-# 克 (g) 到 磅 (lb) 的换算
+# Grams (g) to Pounds (lb) Conversion
 ---
 <script setup>
 import { onMounted, reactive, inject, ref } from 'vue'
@@ -37,17 +37,17 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) * 0.00220462
     form.result = `${form.number}g = ${convertedValue.toFixed(4)}lb`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="克 (g)">
-    <n-input-number v-model:value="form.number" placeholder="输入克" style="width: 100%" />
+  <n-form-item label="Grams (g)">
+    <n-input-number v-model:value="form.number" placeholder="Enter grams" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
@@ -57,38 +57,38 @@ const convertHandler = () => {
   </div>
 </n-card>
 
-## 公式
+## Formula
 
-从 **克 (g)** 换算到 **磅 (lb)** 的公式为：
+The formula for converting from **grams (g)** to **pounds (lb)** is:
 $$ lb = g \times 0.00220462 $$
 
-## 克到磅换算指南
+## Grams to Pounds Conversion Guide
 
-在药物剂量计算和精细化学测量中，质量单位的换算是一个常见需求。本文专注于克 (g) 到磅 (lb) 的换算，提供了详细的公式与实用示例。
+In pharmaceutical dosage calculations and precision chemical measurements, mass unit conversion is a common requirement. This article focuses on converting grams (g) to pounds (lb), providing detailed formulas and practical examples.
 
-### 为什么需要 g 到 lb 的换算？
+### Why Do We Need g to lb Conversion?
 
-克和磅是常见的质量单位，尤其在医学、药理学以及精细化学品行业中尤为重要。通过精确的换算，可以确保测量的一致性和准确性。
+Grams and pounds are common mass units, particularly important in medicine, pharmacology, and fine chemical industries. Through precise conversion, we can ensure measurement consistency and accuracy.
 
-### g 到 lb 的换算方法
+### g to lb Conversion Method
 
-从克到磅的换算公式为：
+The conversion formula from grams to pounds is:
 
-- **公式：** `lb = g × 0.00220462`
+- **Formula:** `lb = g × 0.00220462`
 
-### 实际应用示例
+### Practical Application Examples
 
-以下是一些常见的换算实例：
+Here are some common conversion examples:
 
 - 1 g = 0.00220462 lb
 - 1000 g = 2.20462 lb
 - 500 g = 1.10231 lb
 
-### 总结
+### Summary
 
-掌握克到磅的换算可以帮助您更好地理解和使用这些质量单位。希望本指南能为您提供有价值的参考。
+Mastering grams to pounds conversion can help you better understand and use these mass units. We hope this guide provides valuable reference for you.
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Mass" :key="index">
     <n-button

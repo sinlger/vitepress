@@ -4,20 +4,20 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Mass/index
-      linkText: 质量换算
+      linkText: Mass Conversion
   - - link: /Mass/st-to-kg
-      linkText: 英石到千克
+      linkText: Stone to Kilogram
 head:
   - - meta
     - name: description
-      content: "质量单位换算指南，涵盖英石 (st) 到千克 (kg) 的详细换算公式与说明。"
+      content: "Mass unit conversion guide covering detailed conversion formulas and explanations from stone (st) to kilogram (kg)."
   - - meta
     - name: keywords
-      content: "质量, 单位换算, 英石, 千克, st, kg, 英石到千克, 质量换算指南"
+      content: "mass, unit conversion, stone, kilogram, st, kg, stone to kilogram, mass conversion guide"
 ---
-# 英石 (st) 到 千克 (kg) 的换算
+# Stone (st) to Kilogram (kg) Conversion
 ---
 <script setup>
 import { onMounted, reactive, inject, ref } from 'vue'
@@ -37,67 +37,94 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) * 6.35029318
     form.result = `${form.number}st = ${convertedValue.toFixed(4)}kg`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="英石 (st)">
-    <n-input-number v-model:value="form.number" placeholder="输入英石" style="width: 100%" />
+  <n-form-item label="Stone (st)">
+    <n-input-number v-model:value="form.number" placeholder="Enter stones" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
+  </n-form-item>
+  <n-form-item>
+    <n-input v-model:value="form.result" readonly placeholder="Conversion result" />
   </n-form-item>
 </n-form>
 
-<n-card  embedded :bordered="false" hoverable>
-  <div  style="text-align:center;font-size:20px;">
-    <strong>{{form.result}}</strong>
-  </div>
-</n-card>
+## Conversion Formula
 
-## 公式
+**1 stone (st) = 6.35029318 kilograms (kg)**
 
-从 **英石 (st)** 换算到 **千克 (kg)** 的公式为：
-$$ kg = st \times 6.35029318 $$
+The conversion formula is:
+```
+Kilograms = Stones × 6.35029318
+```
 
-## 英石到千克换算指南
+## Conversion Guide
 
-在药物剂量计算和精细化学测量中，质量单位的换算是一个常见需求。本文专注于英石 (st) 到千克 (kg) 的换算，提供了详细的公式与实用示例。
+### Why Convert Stones to Kilograms?
 
-### 为什么需要 st 到 kg 的换算？
+1. **Medical Records**: Converting British body weight measurements to metric for international medical standards
+2. **Fitness and Health**: Converting traditional weight measurements for modern fitness tracking
+3. **Scientific Applications**: Converting to metric system for scientific calculations and research
+4. **International Standards**: Converting British measurements to globally recognized metric units
 
-英石和千克是常见的质量单位，尤其在医学、药理学以及精细化学品行业中尤为重要。通过精确的换算，可以确保测量的一致性和准确性。
+### Conversion Method
 
-### st 到 kg 的换算方法
+To convert stones to kilograms:
+1. Take the number of stones
+2. Multiply by 6.35029318
+3. The result is the equivalent in kilograms
 
-从英石到千克的换算公式为：
+### Practical Examples
 
-- **公式：** `kg = st × 6.35029318`
+- **1 st** = 6.3503 kg
+- **2 st** = 12.7006 kg
+- **5 st** = 31.7515 kg
+- **10 st** = 63.5029 kg
+- **14 st** = 88.9041 kg (average adult weight)
 
-### 实际应用示例
+## Summary
 
-以下是一些常见的换算实例：
+Converting stones to kilograms involves multiplying by 6.35029318. This conversion is essential for medical records, fitness tracking, scientific applications, and international communication where British weight measurements need to be expressed in metric units.
 
-- 1 st = 6.3503 kg
-- 2 st = 12.7006 kg
-- 0.5 st = 3.1751 kg
+## Related Links
 
-### 总结
-
-掌握英石到千克的换算可以帮助您更好地理解和使用这些质量单位。希望本指南能为您提供有价值的参考。
-
-## 相关连接
-<n-grid x-gap="12" :cols="2">
-  <n-gi v-for="(file, index) in Mass" :key="index">
-    <n-button
-      text
-      tag="a"
-      :href="file.path"
-      type="info"
-    >
-      {{file.name}}
-    </n-button>
+<n-grid :cols="2" :x-gap="12" :y-gap="8">
+  <n-gi>
+    <n-card title="Other Stone Conversions" size="small">
+      <template #header-extra>
+        <span style="font-size: 12px; color: #666;">st conversions</span>
+      </template>
+      <div style="font-size: 13px; line-height: 1.6;">
+        <div><a href="/Mass/st-to-g">Stone to Gram</a></div>
+        <div><a href="/Mass/st-to-lb">Stone to Pound</a></div>
+        <div><a href="/Mass/st-to-mcg">Stone to Microgram</a></div>
+        <div><a href="/Mass/st-to-mg">Stone to Milligram</a></div>
+        <div><a href="/Mass/st-to-mt">Stone to Metric Ton</a></div>
+        <div><a href="/Mass/st-to-oz">Stone to Ounce</a></div>
+        <div><a href="/Mass/st-to-t">Stone to Ton</a></div>
+      </div>
+    </n-card>
+  </n-gi>
+  <n-gi>
+    <n-card title="Kilogram Conversions" size="small">
+      <template #header-extra>
+        <span style="font-size: 12px; color: #666;">kg conversions</span>
+      </template>
+      <div style="font-size: 13px; line-height: 1.6;">
+        <div><a href="/Mass/kg-to-g">Kilogram to Gram</a></div>
+        <div><a href="/Mass/kg-to-lb">Kilogram to Pound</a></div>
+        <div><a href="/Mass/kg-to-mcg">Kilogram to Microgram</a></div>
+        <div><a href="/Mass/kg-to-mg">Kilogram to Milligram</a></div>
+        <div><a href="/Mass/kg-to-mt">Kilogram to Metric Ton</a></div>
+        <div><a href="/Mass/kg-to-oz">Kilogram to Ounce</a></div>
+        <div><a href="/Mass/kg-to-st">Kilogram to Stone</a></div>
+        <div><a href="/Mass/kg-to-t">Kilogram to Ton</a></div>
+      </div>
+    </n-card>
   </n-gi>
 </n-grid>

@@ -4,20 +4,20 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Mass/index
-      linkText: 质量换算
+      linkText: Mass Conversion
   - - link: /Mass/st-to-lb
-      linkText: 英石到磅
+      linkText: Stone to Pound
 head:
   - - meta
     - name: description
-      content: "质量单位换算指南，涵盖英石 (st) 到磅 (lb) 的详细换算公式与说明。"
+      content: "Mass unit conversion guide covering detailed conversion formulas and explanations from stone (st) to pound (lb)."
   - - meta
     - name: keywords
-      content: "质量, 单位换算, 英石, 磅, st, lb, 英石到磅, 质量换算指南"
+      content: "mass, unit conversion, stone, pound, st, lb, stone to pound, mass conversion guide"
 ---
-# 英石 (st) 到 磅 (lb) 的换算
+# Stone (st) to Pound (lb) Conversion
 ---
 <script setup>
 import { onMounted, reactive, inject, ref } from 'vue'
@@ -37,67 +37,94 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) * 14
     form.result = `${form.number}st = ${convertedValue.toFixed(0)}lb`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="英石 (st)">
-    <n-input-number v-model:value="form.number" placeholder="输入英石" style="width: 100%" />
+  <n-form-item label="Stone (st)">
+    <n-input-number v-model:value="form.number" placeholder="Enter stones" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
+  </n-form-item>
+  <n-form-item>
+    <n-input v-model:value="form.result" readonly placeholder="Conversion result" />
   </n-form-item>
 </n-form>
 
-<n-card  embedded :bordered="false" hoverable>
-  <div  style="text-align:center;font-size:20px;">
-    <strong>{{form.result}}</strong>
-  </div>
-</n-card>
+## Conversion Formula
 
-## 公式
+**1 stone (st) = 14 pounds (lb)**
 
-从 **英石 (st)** 换算到 **磅 (lb)** 的公式为：
-$$ lb = st \times 14 $$
+The conversion formula is:
+```
+Pounds = Stones × 14
+```
 
-## 英石到磅换算指南
+## Conversion Guide
 
-在药物剂量计算和精细化学测量中，质量单位的换算是一个常见需求。本文专注于英石 (st) 到磅 (lb) 的换算，提供了详细的公式与实用示例。
+### Why Convert Stones to Pounds?
 
-### 为什么需要 st 到 lb 的换算？
+1. **Body Weight Measurement**: Converting between traditional British weight units
+2. **Medical Applications**: Converting weight measurements for healthcare records
+3. **Sports and Fitness**: Converting weight categories and measurements
+4. **Historical Context**: Understanding traditional British weight relationships
 
-英石和磅是常见的质量单位，尤其在医学、药理学以及精细化学品行业中尤为重要。通过精确的换算，可以确保测量的一致性和准确性。
+### Conversion Method
 
-### st 到 lb 的换算方法
+To convert stones to pounds:
+1. Take the number of stones
+2. Multiply by 14 (since there are exactly 14 pounds in 1 stone)
+3. The result is the equivalent in pounds
 
-从英石到磅的换算公式为：
+### Practical Examples
 
-- **公式：** `lb = st × 14`
+- **1 st** = 14 lb
+- **2 st** = 28 lb
+- **5 st** = 70 lb
+- **10 st** = 140 lb
+- **14 st** = 196 lb (average adult weight)
 
-### 实际应用示例
+## Summary
 
-以下是一些常见的换算实例：
+Converting stones to pounds involves multiplying by 14. This is a simple conversion within the British imperial system, commonly used for body weight measurements, medical applications, sports, and understanding traditional weight relationships.
 
-- 1 st = 14 lb
-- 2 st = 28 lb
-- 0.5 st = 7 lb
+## Related Links
 
-### 总结
-
-掌握英石到磅的换算可以帮助您更好地理解和使用这些质量单位。希望本指南能为您提供有价值的参考。
-
-## 相关连接
-<n-grid x-gap="12" :cols="2">
-  <n-gi v-for="(file, index) in Mass" :key="index">
-    <n-button
-      text
-      tag="a"
-      :href="file.path"
-      type="info"
-    >
-      {{file.name}}
-    </n-button>
+<n-grid :cols="2" :x-gap="12" :y-gap="8">
+  <n-gi>
+    <n-card title="Other Stone Conversions" size="small">
+      <template #header-extra>
+        <span style="font-size: 12px; color: #666;">st conversions</span>
+      </template>
+      <div style="font-size: 13px; line-height: 1.6;">
+        <div><a href="/Mass/st-to-g">Stone to Gram</a></div>
+        <div><a href="/Mass/st-to-kg">Stone to Kilogram</a></div>
+        <div><a href="/Mass/st-to-mcg">Stone to Microgram</a></div>
+        <div><a href="/Mass/st-to-mg">Stone to Milligram</a></div>
+        <div><a href="/Mass/st-to-mt">Stone to Metric Ton</a></div>
+        <div><a href="/Mass/st-to-oz">Stone to Ounce</a></div>
+        <div><a href="/Mass/st-to-t">Stone to Ton</a></div>
+      </div>
+    </n-card>
+  </n-gi>
+  <n-gi>
+    <n-card title="Pound Conversions" size="small">
+      <template #header-extra>
+        <span style="font-size: 12px; color: #666;">lb conversions</span>
+      </template>
+      <div style="font-size: 13px; line-height: 1.6;">
+        <div><a href="/Mass/lb-to-g">Pound to Gram</a></div>
+        <div><a href="/Mass/lb-to-kg">Pound to Kilogram</a></div>
+        <div><a href="/Mass/lb-to-mcg">Pound to Microgram</a></div>
+        <div><a href="/Mass/lb-to-mg">Pound to Milligram</a></div>
+        <div><a href="/Mass/lb-to-mt">Pound to Metric Ton</a></div>
+        <div><a href="/Mass/lb-to-oz">Pound to Ounce</a></div>
+        <div><a href="/Mass/lb-to-st">Pound to Stone</a></div>
+        <div><a href="/Mass/lb-to-t">Pound to Ton</a></div>
+      </div>
+    </n-card>
   </n-gi>
 </n-grid>

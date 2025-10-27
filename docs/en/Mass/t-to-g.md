@@ -4,20 +4,20 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Mass/index
-      linkText: 质量换算
+      linkText: Mass Conversion
   - - link: /Mass/t-to-g
-      linkText: 吨到克
+      linkText: Ton to Gram
 head:
   - - meta
     - name: description
-      content: "质量单位换算指南，涵盖吨 (t) 到克 (g) 的详细换算公式与说明。"
+      content: "Mass unit conversion guide covering detailed conversion formulas and explanations from ton (t) to gram (g)."
   - - meta
     - name: keywords
-      content: "质量, 单位换算, 吨, 克, t, g, 吨到克, 质量换算指南"
+      content: "mass, unit conversion, ton, gram, t, g, ton to gram, mass conversion guide"
 ---
-# 吨 (t) 到 克 (g) 的换算
+# Ton (t) to Gram (g) Conversion
 ---
 <script setup>
 import { onMounted, reactive, inject, ref } from 'vue'
@@ -37,67 +37,94 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) * 1000000
     form.result = `${form.number}t = ${convertedValue.toFixed(0)}g`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="吨 (t)">
-    <n-input-number v-model:value="form.number" placeholder="输入吨" style="width: 100%" />
+  <n-form-item label="Ton (t)">
+    <n-input-number v-model:value="form.number" placeholder="Enter tons" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
+  </n-form-item>
+  <n-form-item>
+    <n-input v-model:value="form.result" readonly placeholder="Conversion result" />
   </n-form-item>
 </n-form>
 
-<n-card  embedded :bordered="false" hoverable>
-  <div  style="text-align:center;font-size:20px;">
-    <strong>{{form.result}}</strong>
-  </div>
-</n-card>
+## Conversion Formula
 
-## 公式
+**1 ton (t) = 1,000,000 grams (g)**
 
-从 **吨 (t)** 换算到 **克 (g)** 的公式为：
-$$ g = t \times 1000000 $$
+The conversion formula is:
+```
+Grams = Tons × 1,000,000
+```
 
-## 吨到克换算指南
+## Conversion Guide
 
-在药物剂量计算和精细化学测量中，质量单位的换算是一个常见需求。本文专注于吨 (t) 到克 (g) 的换算，提供了详细的公式与实用示例。
+### Why Convert Tons to Grams?
 
-### 为什么需要 t 到 g 的换算？
+1. **Scientific Research**: Converting large-scale measurements to laboratory precision units
+2. **Industrial Applications**: Converting bulk measurements to precise manufacturing specifications
+3. **Chemical Analysis**: Converting industrial quantities to analytical measurement units
+4. **Quality Control**: Converting production quantities to testing sample sizes
 
-吨和克是常见的质量单位，尤其在医学、药理学以及精细化学品行业中尤为重要。通过精确的换算，可以确保测量的一致性和准确性。
+### Conversion Method
 
-### t 到 g 的换算方法
+To convert tons to grams:
+1. Take the number of tons
+2. Multiply by 1,000,000
+3. The result is the equivalent in grams
 
-从吨到克的换算公式为：
+### Practical Examples
 
-- **公式：** `g = t × 1000000`
+- **1 t** = 1,000,000 g
+- **0.1 t** = 100,000 g
+- **0.01 t** = 10,000 g
+- **0.001 t** = 1,000 g
+- **2.5 t** = 2,500,000 g
 
-### 实际应用示例
+## Summary
 
-以下是一些常见的换算实例：
+Converting tons to grams involves multiplying by 1,000,000. This conversion is essential for scientific research, industrial applications, chemical analysis, and quality control where large-scale measurements need to be expressed in precise metric units.
 
-- 1 t = 1000000 g
-- 2 t = 2000000 g
-- 0.5 t = 500000 g
+## Related Links
 
-### 总结
-
-掌握吨到克的换算可以帮助您更好地理解和使用这些质量单位。希望本指南能为您提供有价值的参考。
-
-## 相关连接
-<n-grid x-gap="12" :cols="2">
-  <n-gi v-for="(file, index) in Mass" :key="index">
-    <n-button
-      text
-      tag="a"
-      :href="file.path"
-      type="info"
-    >
-      {{file.name}}
-    </n-button>
+<n-grid :cols="2" :x-gap="12" :y-gap="8">
+  <n-gi>
+    <n-card title="Other Ton Conversions" size="small">
+      <template #header-extra>
+        <span style="font-size: 12px; color: #666;">t conversions</span>
+      </template>
+      <div style="font-size: 13px; line-height: 1.6;">
+        <div><a href="/Mass/t-to-kg">Ton to Kilogram</a></div>
+        <div><a href="/Mass/t-to-lb">Ton to Pound</a></div>
+        <div><a href="/Mass/t-to-mcg">Ton to Microgram</a></div>
+        <div><a href="/Mass/t-to-mg">Ton to Milligram</a></div>
+        <div><a href="/Mass/t-to-mt">Ton to Metric Ton</a></div>
+        <div><a href="/Mass/t-to-oz">Ton to Ounce</a></div>
+        <div><a href="/Mass/t-to-st">Ton to Stone</a></div>
+      </div>
+    </n-card>
+  </n-gi>
+  <n-gi>
+    <n-card title="Gram Conversions" size="small">
+      <template #header-extra>
+        <span style="font-size: 12px; color: #666;">g conversions</span>
+      </template>
+      <div style="font-size: 13px; line-height: 1.6;">
+        <div><a href="/Mass/g-to-kg">Gram to Kilogram</a></div>
+        <div><a href="/Mass/g-to-lb">Gram to Pound</a></div>
+        <div><a href="/Mass/g-to-mcg">Gram to Microgram</a></div>
+        <div><a href="/Mass/g-to-mg">Gram to Milligram</a></div>
+        <div><a href="/Mass/g-to-mt">Gram to Metric Ton</a></div>
+        <div><a href="/Mass/g-to-oz">Gram to Ounce</a></div>
+        <div><a href="/Mass/g-to-st">Gram to Stone</a></div>
+        <div><a href="/Mass/g-to-t">Gram to Ton</a></div>
+      </div>
+    </n-card>
   </n-gi>
 </n-grid>

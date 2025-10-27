@@ -4,20 +4,20 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Mass/index
-      linkText: 质量换算
+      linkText: Mass Conversion
   - - link: /Mass/mcg-to-t
-      linkText: 微克到吨
+      linkText: Microgram to Ton
 head:
   - - meta
     - name: description
-      content: "质量单位换算指南，涵盖微克 (mcg) 到吨 (t) 的详细换算公式与说明。"
+      content: "Mass unit conversion guide covering detailed conversion formulas and explanations from micrograms (mcg) to tons (t)."
   - - meta
     - name: keywords
-      content: "质量, 单位换算, 微克, 吨, mcg, t, 微克到吨, 质量换算指南"
+      content: "mass, unit conversion, microgram, ton, mcg, t, microgram to ton, mass conversion guide"
 ---
-# 微克 (mcg) 到 吨 (t) 的换算
+# Microgram (mcg) to Ton (t) Conversion
 ---
 <script setup>
 import { onMounted, reactive, inject, ref } from 'vue'
@@ -37,17 +37,17 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) / 1000000000000
     form.result = `${form.number}mcg = ${convertedValue.toFixed(12)}t`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="微克 (mcg)">
-    <n-input-number v-model:value="form.number" placeholder="输入微克" style="width: 100%" />
+  <n-form-item label="Microgram (mcg)">
+    <n-input-number v-model:value="form.number" placeholder="Enter micrograms" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
@@ -57,38 +57,38 @@ const convertHandler = () => {
   </div>
 </n-card>
 
-## 公式
+## Formula
 
-从 **微克 (mcg)** 换算到 **吨 (t)** 的公式为：
+The formula for converting from **micrograms (mcg)** to **tons (t)** is:
 $$ t = mcg \div 1000000000000 $$
 
-## 微克到吨换算指南
+## Microgram to Ton Conversion Guide
 
-在药物剂量计算和精细化学测量中，质量单位的换算是一个常见需求。本文专注于微克 (mcg) 到吨 (t) 的换算，提供了详细的公式与实用示例。
+In pharmaceutical dosage calculations and precision chemical measurements, mass unit conversion is a common requirement. This article focuses on the conversion from micrograms (mcg) to tons (t), providing detailed formulas and practical examples.
 
-### 为什么需要 mcg 到 t 的换算？
+### Why Do We Need mcg to t Conversion?
 
-微克和吨是常见的质量单位，尤其在医学、药理学以及精细化学品行业中尤为重要。通过精确的换算，可以确保测量的一致性和准确性。
+Micrograms and tons are common mass units, particularly important in medicine, pharmacology, and industrial applications. Through accurate conversion, we can ensure measurement consistency and precision.
 
-### mcg 到 t 的换算方法
+### mcg to t Conversion Method
 
-从微克到吨的换算公式为：
+The conversion formula from micrograms to tons is:
 
-- **公式：** `t = mcg ÷ 1000000000000`
+- **Formula:** `t = mcg ÷ 1000000000000`
 
-### 实际应用示例
+### Practical Application Examples
 
-以下是一些常见的换算实例：
+Here are some common conversion examples:
 
 - 1 mcg = 0.000000000001 t
+- 1000000000 mcg = 0.001 t
 - 1000000000000 mcg = 1 t
-- 500000000000 mcg = 0.5 t
 
-### 总结
+### Summary
 
-掌握微克到吨的换算可以帮助您更好地理解和使用这些质量单位。希望本指南能为您提供有价值的参考。
+Mastering microgram to ton conversion can help you better understand and use these mass units. We hope this guide provides valuable reference for you.
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Mass" :key="index">
     <n-button

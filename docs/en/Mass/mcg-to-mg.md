@@ -4,20 +4,20 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Mass/index
-      linkText: 质量换算
+      linkText: Mass Conversion
   - - link: /Mass/mcg-to-mg
-      linkText: 微克到毫克
+      linkText: Microgram to Milligram
 head:
   - - meta
     - name: description
-      content: "质量单位换算指南，涵盖微克 (mcg) 到毫克 (mg) 的详细换算公式与说明。"
+      content: "Mass unit conversion guide covering detailed conversion formulas and explanations from micrograms (mcg) to milligrams (mg)."
   - - meta
     - name: keywords
-      content: "质量, 单位换算, 微克, 毫克, mcg, mg, 微克到毫克, 质量换算指南"
+      content: "mass, unit conversion, microgram, milligram, mcg, mg, microgram to milligram, mass conversion guide"
 ---
-# 微克 (mcg) 到 毫克 (mg) 的换算
+# Microgram (mcg) to Milligram (mg) Conversion
 ---
 <script setup>
 import { onMounted, reactive, inject, ref } from 'vue'
@@ -37,17 +37,17 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) / 1000
     form.result = `${form.number}mcg = ${convertedValue.toFixed(4)}mg`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="微克 (mcg)">
-    <n-input-number v-model:value="form.number" placeholder="输入微克" style="width: 100%" />
+  <n-form-item label="Microgram (mcg)">
+    <n-input-number v-model:value="form.number" placeholder="Enter micrograms" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
@@ -57,38 +57,38 @@ const convertHandler = () => {
   </div>
 </n-card>
 
-## 公式
+## Formula
 
-从 **微克 (mcg)** 换算到 **毫克 (mg)** 的公式为：
+The formula for converting from **micrograms (mcg)** to **milligrams (mg)** is:
 $$ mg = mcg \div 1000 $$
 
-## 微克到毫克换算指南
+## Microgram to Milligram Conversion Guide
 
-在药物剂量计算和精细化学测量中，质量单位的换算是一个常见需求。本文专注于微克 (mcg) 到毫克 (mg) 的换算，提供了详细的公式与实用示例。
+In pharmaceutical dosage calculations and precision chemical measurements, mass unit conversion is a common requirement. This article focuses on the conversion from micrograms (mcg) to milligrams (mg), providing detailed formulas and practical examples.
 
-### 为什么需要 mcg 到 mg 的换算？
+### Why Do We Need mcg to mg Conversion?
 
-微克和毫克是常见的质量单位，尤其在医学、药理学以及精细化学品行业中尤为重要。通过精确的换算，可以确保测量的一致性和准确性。
+Micrograms and milligrams are common mass units, particularly important in medicine, pharmacology, and precision chemical industries. Through accurate conversion, we can ensure measurement consistency and precision.
 
-### mcg 到 mg 的换算方法
+### mcg to mg Conversion Method
 
-从微克到毫克的换算公式为：
+The conversion formula from micrograms to milligrams is:
 
-- **公式：** `mg = mcg ÷ 1000`
+- **Formula:** `mg = mcg ÷ 1000`
 
-### 实际应用示例
+### Practical Application Examples
 
-以下是一些常见的换算实例：
+Here are some common conversion examples:
 
 - 1 mcg = 0.001 mg
 - 1000 mcg = 1 mg
-- 500 mcg = 0.5 mg
+- 5000 mcg = 5 mg
 
-### 总结
+### Summary
 
-掌握微克到毫克的换算可以帮助您更好地理解和使用这些质量单位。希望本指南能为您提供有价值的参考。
+Mastering microgram to milligram conversion can help you better understand and use these mass units. We hope this guide provides valuable reference for you.
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Mass" :key="index">
     <n-button

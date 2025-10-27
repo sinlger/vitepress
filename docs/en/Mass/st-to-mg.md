@@ -4,20 +4,20 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Mass/index
-      linkText: 质量换算
+      linkText: Mass Conversion
   - - link: /Mass/st-to-mg
-      linkText: 英石到毫克
+      linkText: Stone to Milligram
 head:
   - - meta
     - name: description
-      content: "质量单位换算指南，涵盖英石 (st) 到毫克 (mg) 的详细换算公式与说明。"
+      content: "Mass unit conversion guide covering detailed conversion formulas and explanations from stone (st) to milligram (mg)."
   - - meta
     - name: keywords
-      content: "质量, 单位换算, 英石, 毫克, st, mg, 英石到毫克, 质量换算指南"
+      content: "mass, unit conversion, stone, milligram, st, mg, stone to milligram, mass conversion guide"
 ---
-# 英石 (st) 到 毫克 (mg) 的换算
+# Stone (st) to Milligram (mg) Conversion
 ---
 <script setup>
 import { onMounted, reactive, inject, ref } from 'vue'
@@ -37,67 +37,94 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) * 6350293.18
     form.result = `${form.number}st = ${convertedValue.toFixed(2)}mg`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="英石 (st)">
-    <n-input-number v-model:value="form.number" placeholder="输入英石" style="width: 100%" />
+  <n-form-item label="Stone (st)">
+    <n-input-number v-model:value="form.number" placeholder="Enter stones" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
+  </n-form-item>
+  <n-form-item>
+    <n-input v-model:value="form.result" readonly placeholder="Conversion result" />
   </n-form-item>
 </n-form>
 
-<n-card  embedded :bordered="false" hoverable>
-  <div  style="text-align:center;font-size:20px;">
-    <strong>{{form.result}}</strong>
-  </div>
-</n-card>
+## Conversion Formula
 
-## 公式
+**1 stone (st) = 6,350,293.18 milligrams (mg)**
 
-从 **英石 (st)** 换算到 **毫克 (mg)** 的公式为：
-$$ mg = st \times 6350293.18 $$
+The conversion formula is:
+```
+Milligrams = Stones × 6,350,293.18
+```
 
-## 英石到毫克换算指南
+## Conversion Guide
 
-在药物剂量计算和精细化学测量中，质量单位的换算是一个常见需求。本文专注于英石 (st) 到毫克 (mg) 的换算，提供了详细的公式与实用示例。
+### Why Convert Stones to Milligrams?
 
-### 为什么需要 st 到 mg 的换算？
+1. **Medical Applications**: Converting body weight for precise medication dosing
+2. **Pharmaceutical Research**: Converting traditional measurements for drug development
+3. **Laboratory Work**: Converting weight measurements for chemical analysis
+4. **Nutritional Science**: Converting body weight for supplement calculations
 
-英石和毫克是常见的质量单位，尤其在医学、药理学以及精细化学品行业中尤为重要。通过精确的换算，可以确保测量的一致性和准确性。
+### Conversion Method
 
-### st 到 mg 的换算方法
+To convert stones to milligrams:
+1. Take the number of stones
+2. Multiply by 6,350,293.18
+3. The result is the equivalent in milligrams
 
-从英石到毫克的换算公式为：
+### Practical Examples
 
-- **公式：** `mg = st × 6350293.18`
+- **1 st** = 6,350,293.18 mg
+- **0.1 st** = 635,029.32 mg
+- **0.01 st** = 63,502.93 mg
+- **14 st** = 88,904,104.52 mg (average adult weight)
+- **10 st** = 63,502,931.8 mg
 
-### 实际应用示例
+## Summary
 
-以下是一些常见的换算实例：
+Converting stones to milligrams involves multiplying by 6,350,293.18. This conversion is essential for medical applications, pharmaceutical research, laboratory work, and nutritional science where traditional weight measurements need to be expressed in smaller metric units.
 
-- 1 st = 6350293.18 mg
-- 2 st = 12700586.36 mg
-- 0.5 st = 3175146.59 mg
+## Related Links
 
-### 总结
-
-掌握英石到毫克的换算可以帮助您更好地理解和使用这些质量单位。希望本指南能为您提供有价值的参考。
-
-## 相关连接
-<n-grid x-gap="12" :cols="2">
-  <n-gi v-for="(file, index) in Mass" :key="index">
-    <n-button
-      text
-      tag="a"
-      :href="file.path"
-      type="info"
-    >
-      {{file.name}}
-    </n-button>
+<n-grid :cols="2" :x-gap="12" :y-gap="8">
+  <n-gi>
+    <n-card title="Other Stone Conversions" size="small">
+      <template #header-extra>
+        <span style="font-size: 12px; color: #666;">st conversions</span>
+      </template>
+      <div style="font-size: 13px; line-height: 1.6;">
+        <div><a href="/Mass/st-to-g">Stone to Gram</a></div>
+        <div><a href="/Mass/st-to-kg">Stone to Kilogram</a></div>
+        <div><a href="/Mass/st-to-lb">Stone to Pound</a></div>
+        <div><a href="/Mass/st-to-mcg">Stone to Microgram</a></div>
+        <div><a href="/Mass/st-to-mt">Stone to Metric Ton</a></div>
+        <div><a href="/Mass/st-to-oz">Stone to Ounce</a></div>
+        <div><a href="/Mass/st-to-t">Stone to Ton</a></div>
+      </div>
+    </n-card>
+  </n-gi>
+  <n-gi>
+    <n-card title="Milligram Conversions" size="small">
+      <template #header-extra>
+        <span style="font-size: 12px; color: #666;">mg conversions</span>
+      </template>
+      <div style="font-size: 13px; line-height: 1.6;">
+        <div><a href="/Mass/mg-to-g">Milligram to Gram</a></div>
+        <div><a href="/Mass/mg-to-kg">Milligram to Kilogram</a></div>
+        <div><a href="/Mass/mg-to-lb">Milligram to Pound</a></div>
+        <div><a href="/Mass/mg-to-mcg">Milligram to Microgram</a></div>
+        <div><a href="/Mass/mg-to-mt">Milligram to Metric Ton</a></div>
+        <div><a href="/Mass/mg-to-oz">Milligram to Ounce</a></div>
+        <div><a href="/Mass/mg-to-st">Milligram to Stone</a></div>
+        <div><a href="/Mass/mg-to-t">Milligram to Ton</a></div>
+      </div>
+    </n-card>
   </n-gi>
 </n-grid>

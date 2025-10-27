@@ -4,20 +4,20 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Mass/index
-      linkText: 质量换算
+      linkText: Mass Conversion
   - - link: /Mass/mt-to-g
-      linkText: 公吨到克
+      linkText: Metric Ton to Gram
 head:
   - - meta
     - name: description
-      content: "质量单位换算指南，涵盖公吨 (mt) 到克 (g) 的详细换算公式与说明。"
+      content: "Mass unit conversion guide covering detailed conversion formulas and explanations from metric tons (mt) to grams (g)."
   - - meta
     - name: keywords
-      content: "质量, 单位换算, 公吨, 克, mt, g, 公吨到克, 质量换算指南"
+      content: "mass, unit conversion, metric ton, gram, mt, g, metric ton to gram, mass conversion guide"
 ---
-# 公吨 (mt) 到 克 (g) 的换算
+# Metric Ton (mt) to Gram (g) Conversion
 ---
 <script setup>
 import { onMounted, reactive, inject, ref } from 'vue'
@@ -37,17 +37,17 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) * 1000000
     form.result = `${form.number}mt = ${convertedValue.toFixed(0)}g`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="公吨 (mt)">
-    <n-input-number v-model:value="form.number" placeholder="输入公吨" style="width: 100%" />
+  <n-form-item label="Metric Ton (mt)">
+    <n-input-number v-model:value="form.number" placeholder="Enter metric tons" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
@@ -57,38 +57,38 @@ const convertHandler = () => {
   </div>
 </n-card>
 
-## 公式
+## Formula
 
-从 **公吨 (mt)** 换算到 **克 (g)** 的公式为：
-$$ g = mt \times 1000000 $$
+The formula for converting from **metric tons (mt)** to **grams (g)** is:
+$$ g = mt \times 1,000,000 $$
 
-## 公吨到克换算指南
+## Metric Ton to Gram Conversion Guide
 
-在药物剂量计算和精细化学测量中，质量单位的换算是一个常见需求。本文专注于公吨 (mt) 到克 (g) 的换算，提供了详细的公式与实用示例。
+In industrial production and large-scale measurements, mass unit conversion is a common requirement. This article focuses on the conversion from metric tons (mt) to grams (g), providing detailed formulas and practical examples.
 
-### 为什么需要 mt 到 g 的换算？
+### Why Do We Need mt to g Conversion?
 
-公吨和克是常见的质量单位，尤其在医学、药理学以及精细化学品行业中尤为重要。通过精确的换算，可以确保测量的一致性和准确性。
+Metric tons and grams are common mass units, particularly important in industrial production, logistics, and scientific research. Through accurate conversion, we can ensure measurement consistency and precision.
 
-### mt 到 g 的换算方法
+### mt to g Conversion Method
 
-从公吨到克的换算公式为：
+The conversion formula from metric tons to grams is:
 
-- **公式：** `g = mt × 1000000`
+- **Formula:** `g = mt × 1,000,000`
 
-### 实际应用示例
+### Practical Application Examples
 
-以下是一些常见的换算实例：
+Here are some common conversion examples:
 
-- 1 mt = 1000000 g
-- 2 mt = 2000000 g
-- 0.5 mt = 500000 g
+- 1 mt = 1,000,000 g
+- 0.5 mt = 500,000 g
+- 2.5 mt = 2,500,000 g
 
-### 总结
+### Summary
 
-掌握公吨到克的换算可以帮助您更好地理解和使用这些质量单位。希望本指南能为您提供有价值的参考。
+Mastering metric ton to gram conversion can help you better understand and use these mass units. We hope this guide provides valuable reference for you.
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Mass" :key="index">
     <n-button

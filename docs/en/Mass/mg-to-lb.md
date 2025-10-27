@@ -4,20 +4,20 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Mass/index
-      linkText: 质量换算
+      linkText: Mass Conversion
   - - link: /Mass/mg-to-lb
-      linkText: 毫克到磅
+      linkText: Milligram to Pound
 head:
   - - meta
     - name: description
-      content: "质量单位换算指南，涵盖毫克 (mg) 到磅 (lb) 的详细换算公式与说明。"
+      content: "Mass unit conversion guide covering detailed conversion formulas and explanations from milligrams (mg) to pounds (lb)."
   - - meta
     - name: keywords
-      content: "质量, 单位换算, 毫克, 磅, mg, lb, 毫克到磅, 质量换算指南"
+      content: "mass, unit conversion, milligram, pound, mg, lb, milligram to pound, mass conversion guide"
 ---
-# 毫克 (mg) 到 磅 (lb) 的换算
+# Milligram (mg) to Pound (lb) Conversion
 ---
 <script setup>
 import { onMounted, reactive, inject, ref } from 'vue'
@@ -34,20 +34,20 @@ const form = reactive({
 
 const convertHandler = () => {
   if (form.number !== null && !isNaN(form.number)) {
-    const convertedValue = parseFloat(form.number) * 0.00000220462
+    const convertedValue = parseFloat(form.number) / 453592.37
     form.result = `${form.number}mg = ${convertedValue.toFixed(9)}lb`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="毫克 (mg)">
-    <n-input-number v-model:value="form.number" placeholder="输入毫克" style="width: 100%" />
+  <n-form-item label="Milligram (mg)">
+    <n-input-number v-model:value="form.number" placeholder="Enter milligrams" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
@@ -57,38 +57,38 @@ const convertHandler = () => {
   </div>
 </n-card>
 
-## 公式
+## Formula
 
-从 **毫克 (mg)** 换算到 **磅 (lb)** 的公式为：
-$$ lb = mg \times 0.00000220462 $$
+The formula for converting from **milligrams (mg)** to **pounds (lb)** is:
+$$ lb = mg \div 453592.37 $$
 
-## 毫克到磅换算指南
+## Milligram to Pound Conversion Guide
 
-在药物剂量计算和精细化学测量中，质量单位的换算是一个常见需求。本文专注于毫克 (mg) 到磅 (lb) 的换算，提供了详细的公式与实用示例。
+In pharmaceutical dosage calculations and precision measurements, mass unit conversion is a common requirement. This article focuses on the conversion from milligrams (mg) to pounds (lb), providing detailed formulas and practical examples.
 
-### 为什么需要 mg 到 lb 的换算？
+### Why Do We Need mg to lb Conversion?
 
-毫克和磅是常见的质量单位，尤其在医学、药理学以及精细化学品行业中尤为重要。通过精确的换算，可以确保测量的一致性和准确性。
+Milligrams and pounds are common mass units, particularly important in medicine, pharmacology, and everyday measurements. Through accurate conversion, we can ensure measurement consistency and precision.
 
-### mg 到 lb 的换算方法
+### mg to lb Conversion Method
 
-从毫克到磅的换算公式为：
+The conversion formula from milligrams to pounds is:
 
-- **公式：** `lb = mg × 0.00000220462`
+- **Formula:** `lb = mg ÷ 453592.37`
 
-### 实际应用示例
+### Practical Application Examples
 
-以下是一些常见的换算实例：
+Here are some common conversion examples:
 
-- 1 mg = 0.00000220462 lb
-- 1000000 mg = 2.20462 lb
-- 500000 mg = 1.10231 lb
+- 1 mg = 0.000002205 lb
+- 453592 mg = 1 lb
+- 907185 mg = 2 lb
 
-### 总结
+### Summary
 
-掌握毫克到磅的换算可以帮助您更好地理解和使用这些质量单位。希望本指南能为您提供有价值的参考。
+Mastering milligram to pound conversion can help you better understand and use these mass units. We hope this guide provides valuable reference for you.
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Mass" :key="index">
     <n-button
