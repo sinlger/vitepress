@@ -4,20 +4,20 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Speed/
-      linkText: 速度单位换算
+      linkText: Speed Unit Conversion
   - - link: /Speed/index
-      linkText: 速度单位单位换算
+      linkText: Speed Unit Conversion
 head:
   - - meta
     - name: description
-      content: 英寸每小时换算千米每小时工具，in/h和km/h换算公式详解。一英寸每小时是多少千米每小时？英寸每小时等于多少km/h？英寸每小时和千米每小时怎么换算？提供in/h、km/h、mph等速度单位换算，支持精密测量速度单位转换。
+      content: Inches per hour to kilometers per hour conversion tool, detailed explanation of in/h and km/h conversion formulas. How many kilometers per hour is one inch per hour? How to convert between inches per hour and kilometers per hour? Provides conversion between speed units including in/h, km/h, mph, supporting precision measurement speed unit conversion.
   - - meta
     - name: keywords
-      content: 速度单位换算, 英寸每小时换算千米每小时, in/h换算km/h, 一英寸每小时是多少千米每小时, 英寸每小时等于多少km/h, 速度单位, 英寸每小时, 千米每小时, in/h to km/h, inch per hour, 速度换算, 速度单位转换, 速度单位换算工具, 精密测量, 地质监测
+      content: speed unit conversion, inches per hour to kilometers per hour, in/h to km/h, how many kilometers per hour is one inch per hour, inches per hour equals how many km/h, speed units, inches per hour, kilometers per hour, in/h to km/h, inch per hour, speed conversion, speed unit conversion, speed unit conversion tool, precision measurement, geological monitoring
 ---
-# 英寸每小时换算千米每小时 | in/h和km/h速度单位换算工具
+# Inches per Hour to Kilometers per Hour | in/h and km/h Speed Unit Conversion Tool
 ---
 <script setup>
 import { onMounted, reactive, inject ,ref  } from 'vue'
@@ -26,32 +26,32 @@ import { defineClientComponent } from 'vitepress'
 import { Speed } from '../files';
 const convert = inject('convert')
 const options =  [
-  { "label": "千米每小时 (km/h)", "value": "km/h" },
-  { "label": "英寸每小时 (in/h)", "value": "in/h" },
-  { "label": "米每秒 (m/s)", "value": "m/s" },
-  { "label": "英尺每秒 (ft/s)", "value": "ft/s" },
-  { "label": "英里每小时 (mph)", "value": "mph" },
-  { "label": "节 (knot)", "value": "knot" },
-  { "label": "毫米每小时 (mm/h)", "value": "mm/h" }
+  { "label": "Kilometers per Hour (km/h)", "value": "km/h" },
+  { "label": "Inches per Hour (in/h)", "value": "in/h" },
+  { "label": "Meters per Second (m/s)", "value": "m/s" },
+  { "label": "Feet per Second (ft/s)", "value": "ft/s" },
+  { "label": "Miles per Hour (mph)", "value": "mph" },
+  { "label": "Knots (knot)", "value": "knot" },
+  { "label": "Millimeters per Hour (mm/h)", "value": "mm/h" }
 ];
-const seoKey = ['速度单位换算','英寸每小时换算千米每小时','in/h换算km/h','速度单位换算工具','速度换算','速度单位转换','一英寸每小时是多少千米每小时','英寸每小时等于多少km/h','速度单位','英寸每小时','千米每小时','in/h to km/h','inch per hour','精密测量','地质监测']
+const seoKey = ['speed unit conversion','inches per hour to kilometers per hour','in/h to km/h','speed unit conversion tool','speed conversion','speed unit converter','how many kilometers per hour is one inch per hour','inches per hour equals how many km/h','speed units','inches per hour','kilometers per hour','in/h to km/h','inch per hour','precision measurement','geological monitoring']
 const formRef = ref(null);
 const rules = {
   number:{
     required: true,
     type: 'number',
     trigger: "blur",
-    message: '请输入数字'
+    message: 'Please enter a number'
   },
   to:{
     required: true,
     trigger: "select",
-    message: '请选择转换单位'
+    message: 'Please select conversion unit'
   },
   from:{
     required: true,
     trigger: "select",
-    message: '请选择原始单位'
+    message: 'Please select original unit'
   }
 }
 const form = reactive({
@@ -59,7 +59,7 @@ const form = reactive({
   to:'km/h',
   from:'in/h',
   result:'',
-  title:'英寸每小时换算千米每小时',
+  title:'Inches per Hour to Kilometers per Hour',
 })
 const convertHandler = (e) => {
    e.preventDefault();
@@ -104,99 +104,99 @@ const convertHandler = (e) => {
 </n-card>
 
 
-## 一、速度单位换算表（以 1 in/h 为基准）
+## I. Speed Unit Conversion Table (Based on 1 in/h)
 
-| 单位       | 符号   | 换算值      | 典型应用场景             |
-|------------|--------|-------------|-------------------------|
-| 英寸每小时 | in/h   | 1           | 地质监测、精密测量（1 in/h = 基准单位） |
-| 千米每小时 | km/h   | 0.0000254   | 汽车限速、天气预报（1 in/h = 2.54×10⁻⁵ km/h） |
-| 米每秒     | m/s    | 0.00000705556 | 物理学、工程计算（1 in/h ≈ 7.06×10⁻⁶ m/s） |
-| 英尺每秒   | ft/s   | 0.0000231481 | 美国工程流体力学（1 in/h ≈ 2.31×10⁻⁵ ft/s） |
-| 英里每小时 | mph    | 0.0000157828 | 英美国家车速（1 in/h ≈ 1.58×10⁻⁵ mph） |
-| 节        | knot   | 0.0000137149 | 航海、航空（1 in/h ≈ 1.37×10⁻⁵ knot） |
-| 毫米每小时 | mm/h   | 25.4        | 材料腐蚀速率、超精密测量（1 in/h = 25.4 mm/h） |
+| Unit | Symbol | Conversion Value | Typical Application Scenarios |
+|------|--------|------------------|------------------------------|
+| Inches per Hour | in/h | 1 | Geological monitoring, precision measurement (1 in/h = base unit) |
+| Kilometers per Hour | km/h | 0.0000254 | Car speed limits, weather forecasts (1 in/h = 2.54×10⁻⁵ km/h) |
+| Meters per Second | m/s | 0.00000705556 | Physics, engineering calculations (1 in/h ≈ 7.06×10⁻⁶ m/s) |
+| Feet per Second | ft/s | 0.0000231481 | US engineering fluid mechanics (1 in/h ≈ 2.31×10⁻⁵ ft/s) |
+| Miles per Hour | mph | 0.0000157828 | UK/US vehicle speeds (1 in/h ≈ 1.58×10⁻⁵ mph) |
+| Knot | knot | 0.0000137149 | Maritime, aviation (1 in/h ≈ 1.37×10⁻⁵ knot) |
+| Millimeters per Hour | mm/h | 25.4 | Material corrosion rates, ultra-precision measurement (1 in/h = 25.4 mm/h) |
 
-注：换算公式示例 → in/h 转 km/h: ( km/h = in/h × 0.0000254 ) ；km/h 转 in/h: ( in/h = km/h ÷ 0.0000254 ) 。
+Note: Conversion formula examples → in/h to km/h: (km/h = in/h × 0.0000254); km/h to in/h: (in/h = km/h ÷ 0.0000254).
 
-## 二、in/h和km/h换算公式详解
+## II. Detailed Conversion Formulas for in/h and km/h
 
-### 英寸每小时和千米每小时怎么换算？
+### How to Convert Between Inches per Hour and Kilometers per Hour?
 
-**基础换算公式：**
-- **in/h 转 km/h：** km/h = in/h × 0.0000254
-- **km/h 转 in/h：** in/h = km/h ÷ 0.0000254
+**Basic Conversion Formulas:**
+- **in/h to km/h:** km/h = in/h × 0.0000254
+- **km/h to in/h:** in/h = km/h ÷ 0.0000254
 
-**公式推导过程：**
-1. 1 英寸 = 0.0254 米（国际标准）
-2. 1 千米 = 1000 米
+**Formula Derivation Process:**
+1. 1 inch = 0.0254 meters (international standard)
+2. 1 kilometer = 1000 meters
 3. 1 in/h = 0.0254 m/h = 0.0254 ÷ 1000 km/h = 0.0000254 km/h
 
-### 一英寸每小时等于多少千米每小时？
+### How Many Kilometers per Hour is One Inch per Hour?
 
-**精确答案：** 1 in/h = 0.0000254 km/h
+**Precise Answer:** 1 in/h = 0.0000254 km/h
 
-**常见速度换算示例：**
+**Common Speed Conversion Examples:**
 - 1,000 in/h = 0.0254 km/h
 - 10,000 in/h = 0.254 km/h
 - 100,000 in/h = 2.54 km/h
 - 1,000,000 in/h = 25.4 km/h
 
-### 一英寸每小时是多少千米每小时？
+### How Many Kilometers per Hour is One Inch per Hour?
 
-**英寸每小时的速度定义：**
+**Speed Definition of Inches per Hour:**
 - **1 in/h = 0.0000254 km/h**
-- **精密测量：** 在地质监测中，地面沉降常用in/h表示
-- **国际换算：** 与国际通用的km/h单位的换算关系
+- **Precision Measurement:** In geological monitoring, ground subsidence is often expressed in in/h
+- **International Conversion:** Relationship with the internationally used km/h unit
 
-### 快速心算技巧
+### Quick Mental Calculation Tips
 
-**in/h 转 km/h 心算法：**
-1. **精确计算：** in/h × 0.0000254 = km/h
-2. **近似计算：** in/h × 0.000025 ≈ km/h（误差约1.6%）
-3. **记忆点：** 1,000,000 in/h = 25.4 km/h
+**in/h to km/h Mental Calculation Method:**
+1. **Precise Calculation:** in/h × 0.0000254 = km/h
+2. **Approximate Calculation:** in/h × 0.000025 ≈ km/h (error about 1.6%)
+3. **Memory Point:** 1,000,000 in/h = 25.4 km/h
 
-**km/h 转 in/h 心算法：**
-1. **精确计算：** km/h ÷ 0.0000254 = in/h
-2. **近似计算：** km/h × 40,000 ≈ in/h（快速估算）
-3. **记忆点：** 1 km/h ≈ 39,370 in/h
+**km/h to in/h Mental Calculation Method:**
+1. **Precise Calculation:** km/h ÷ 0.0000254 = in/h
+2. **Approximate Calculation:** km/h × 40,000 ≈ in/h (quick estimation)
+3. **Memory Point:** 1 km/h ≈ 39,370 in/h
 
-## 三、英寸每小时单位科普：从地质监测到国际换算
+## III. Inches per Hour Unit Overview: From Geological Monitoring to International Conversion
 
-### 英寸每小时的历史起源
+### Historical Origin of Inches per Hour
 
-**in/h（inches per hour）的由来：**
-- **历史背景：** 英制单位系统的重要组成部分，起源于英国
-- **精密测量：** 地质学、建筑工程中广泛采用的微小速度单位
-- **标准化：** 1959年国际英寸定义为25.4毫米
+**Origin of in/h (inches per hour):**
+- **Historical Background:** Important part of the Imperial unit system, originating in Britain
+- **Precision Measurement:** Widely used small velocity unit in geology and construction engineering
+- **Standardization:** In 1959, the international inch was defined as 25.4 millimeters
 
-### 为什么需要in/h和km/h的换算？
+### Why is Conversion Between in/h and km/h Necessary?
 
-**国际合作需求：**
-- **跨国项目：** 美国工程师与国际团队的数据交换
-- **标准统一：** 地质监测数据的国际比较
-- **科学研究：** 国际期刊发表需要标准单位
+**International Cooperation Needs:**
+- **Multinational Projects:** Data exchange between US engineers and international teams
+- **Standard Unification:** International comparison of geological monitoring data
+- **Scientific Research:** Standard units required for international journal publications
 
-**换算优势：**
-- **数据对比：** 便于与国际标准数据比较
-- **精度保持：** 保持原始测量精度
-- **通用性：** 适应不同国家的单位习惯
+**Conversion Advantages:**
+- **Data Comparison:** Facilitates comparison with international standard data
+- **Precision Maintenance:** Maintains original measurement precision
+- **Universality:** Adapts to unit conventions of different countries
 
-### in/h在现代的应用场景
+### Modern Applications of in/h
 
-**地质监测：**
-- 地面沉降速率测量
-- 地质构造运动监测
-- 地震前兆观测
+**Geological Monitoring:**
+- Ground subsidence rate measurement
+- Geological structure movement monitoring
+- Earthquake precursor observation
 
-**建筑工程：**
-- 建筑物沉降监测
-- 桥梁变形测量
-- 大坝位移监控
+**Construction Engineering:**
+- Building settlement monitoring
+- Bridge deformation measurement
+- Dam displacement monitoring
 
-**精密制造：**
-- 机械加工进给速度
-- 精密仪器校准
-- 自动化设备控制
+**Precision Manufacturing:**
+- Mechanical processing feed rate
+- Precision instrument calibration
+- Automated equipment control
 
 ### 冷知识：in/h在不同领域的速度
 

@@ -4,20 +4,20 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Speed/
-      linkText: 速度单位换算
+      linkText: Speed Unit Conversion
   - - link: /Speed/index
-      linkText: 速度单位单位换算
+      linkText: Speed Unit Conversion
 head:
   - - meta
     - name: description
-      content: 英寸每小时换算英尺每秒工具，in/h和ft/s换算公式详解。一英寸每小时是多少英尺每秒？英寸每小时等于多少ft/s？英寸每小时和英尺每秒怎么换算？提供in/h、ft/s、mph等速度单位换算，支持精密测量速度单位转换。
+      content: Inches per hour to feet per second conversion tool, detailed explanation of in/h and ft/s conversion formulas. How many feet per second is one inch per hour? How to convert between inches per hour and feet per second? Provides conversion between speed units including in/h, ft/s, mph, supporting precision measurement speed unit conversion.
   - - meta
     - name: keywords
-      content: 速度单位换算, 英寸每小时换算英尺每秒, in/h换算ft/s, 一英寸每小时是多少英尺每秒, 英寸每小时等于多少ft/s, 速度单位, 英寸每小时, 英尺每秒, in/h to ft/s, inch per hour, 速度换算, 速度单位转换, 速度单位换算工具, 精密测量, 地质监测
+      content: speed unit conversion, inches per hour to feet per second, in/h to ft/s, how many feet per second is one inch per hour, inches per hour equals how many ft/s, speed units, inches per hour, feet per second, in/h to ft/s, inch per hour, speed conversion, speed unit conversion, speed unit conversion tool, precision measurement, geological monitoring
 ---
-# 英寸每小时换算英尺每秒 | in/h和ft/s速度单位换算工具
+# Inches per Hour to Feet per Second | in/h and ft/s Speed Unit Conversion Tool
 ---
 <script setup>
 import { onMounted, reactive, inject ,ref  } from 'vue'
@@ -26,32 +26,32 @@ import { defineClientComponent } from 'vitepress'
 import { Speed } from '../files';
 const convert = inject('convert')
 const options =  [
-  { "label": "英尺每秒 (ft/s)", "value": "ft/s" },
-  { "label": "英寸每小时 (in/h)", "value": "in/h" },
-  { "label": "千米每小时 (km/h)", "value": "km/h" },
-  { "label": "米每秒 (m/s)", "value": "m/s" },
-  { "label": "英里每小时 (mph)", "value": "mph" },
-  { "label": "节 (knot)", "value": "knot" },
-  { "label": "毫米每小时 (mm/h)", "value": "mm/h" }
+  { "label": "Feet per Second (ft/s)", "value": "ft/s" },
+  { "label": "Inches per Hour (in/h)", "value": "in/h" },
+  { "label": "Kilometers per Hour (km/h)", "value": "km/h" },
+  { "label": "Meters per Second (m/s)", "value": "m/s" },
+  { "label": "Miles per Hour (mph)", "value": "mph" },
+  { "label": "Knot (knot)", "value": "knot" },
+  { "label": "Millimeters per Hour (mm/h)", "value": "mm/h" }
 ];
-const seoKey = ['速度单位换算','英寸每小时换算英尺每秒','in/h换算ft/s','速度单位换算工具','速度换算','速度单位转换','一英寸每小时是多少英尺每秒','英寸每小时等于多少ft/s','速度单位','英寸每小时','英尺每秒','in/h to ft/s','inch per hour','精密测量','地质监测']
+const seoKey = ['Speed unit conversion','Inches per hour to feet per second','in/h to ft/s','Speed unit conversion tool','Speed conversion','Speed unit converter','How many feet per second is one inch per hour','Inches per hour equals how many ft/s','Speed units','Inches per hour','Feet per second','in/h to ft/s','Inch per hour','Precision measurement','Geological monitoring']
 const formRef = ref(null);
 const rules = {
   number:{
     required: true,
     type: 'number',
     trigger: "blur",
-    message: '请输入数字'
+    message: 'Please enter a number'
   },
   to:{
     required: true,
     trigger: "select",
-    message: '请选择转换单位'
+    message: 'Please select conversion unit'
   },
   from:{
     required: true,
     trigger: "select",
-    message: '请选择原始单位'
+    message: 'Please select original unit'
   }
 }
 const form = reactive({
@@ -59,7 +59,7 @@ const form = reactive({
   to:'ft/s',
   from:'in/h',
   result:'',
-  title:'英寸每小时换算英尺每秒',
+  title:'Inches per Hour to Feet per Second',
 })
 const convertHandler = (e) => {
    e.preventDefault();
@@ -72,17 +72,17 @@ const convertHandler = (e) => {
 </script>
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="数值"  path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数值" />
+  <n-form-item label="Value"  path="number">
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="Enter the value to convert" />
   </n-form-item>
-  <n-form-item label="从" path="from">
-    <n-select  size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
+  <n-form-item label="From" path="from">
+    <n-select  size="large" :options="options" v-model:value="form.from" placeholder="Select original unit" />
   </n-form-item>
-  <n-form-item label="到" path="to">
-    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
+  <n-form-item label="To" path="to">
+    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="Select conversion unit" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
+    <n-button type="info" style="width:100%" @click="convertHandler">Convert</n-button>
   </n-form-item>
 </n-form>
 <n-card embedded :bordered="false" hoverable style="margin-top: 16px;">
@@ -104,100 +104,100 @@ const convertHandler = (e) => {
 </n-card>
 
 
-## 一、速度单位换算表（以 1 in/h 为基准）
+## I. Speed Unit Conversion Table (Based on 1 in/h)
 
-| 单位       | 符号   | 换算值      | 典型应用场景             |
-|------------|--------|-------------|-------------------------|
-| 英寸每小时 | in/h   | 1           | 地质监测、精密测量（1 in/h = 基准单位） |
-| 英尺每秒   | ft/s   | 0.0000231481 | 美国工程流体力学（1 in/h ≈ 2.31×10⁻⁵ ft/s） |
-| 千米每小时 | km/h   | 0.0000254   | 汽车限速、天气预报（1 in/h = 2.54×10⁻⁵ km/h） |
-| 米每秒     | m/s    | 0.00000705556 | 物理学、工程计算（1 in/h ≈ 7.06×10⁻⁶ m/s） |
-| 英里每小时 | mph    | 0.0000157828 | 英美国家车速（1 in/h ≈ 1.58×10⁻⁵ mph） |
-| 节        | knot   | 0.0000137149 | 航海、航空（1 in/h ≈ 1.37×10⁻⁵ knot） |
-| 毫米每小时 | mm/h   | 25.4        | 材料腐蚀速率、超精密测量（1 in/h = 25.4 mm/h） |
+| Unit | Symbol | Conversion Value | Typical Application Scenarios |
+|------|--------|------------------|------------------------------|
+| Inches per hour | in/h | 1 | Geological monitoring, precision measurement (1 in/h = base unit) |
+| Feet per second | ft/s | 0.0000231481 | US engineering fluid dynamics (1 in/h ≈ 2.31×10⁻⁵ ft/s) |
+| Kilometers per hour | km/h | 0.0000254 | Vehicle speed limits, weather forecasts (1 in/h = 2.54×10⁻⁵ km/h) |
+| Meters per second | m/s | 0.00000705556 | Physics, engineering calculations (1 in/h ≈ 7.06×10⁻⁶ m/s) |
+| Miles per hour | mph | 0.0000157828 | UK/US vehicle speeds (1 in/h ≈ 1.58×10⁻⁵ mph) |
+| Knot | knot | 0.0000137149 | Maritime, aviation (1 in/h ≈ 1.37×10⁻⁵ knot) |
+| Millimeters per hour | mm/h | 25.4 | Material corrosion rate, ultra-precision measurement (1 in/h = 25.4 mm/h) |
 
-注：换算公式示例 → in/h 转 ft/s: ( ft/s = in/h × 0.0000231481 ) ；ft/s 转 in/h: ( in/h = ft/s ÷ 0.0000231481 ) 。
+Note: Conversion formula examples → in/h to ft/s: (ft/s = in/h × 0.0000231481); ft/s to in/h: (in/h = ft/s ÷ 0.0000231481).
 
-## 二、in/h和ft/s换算公式详解
+## II. Detailed Conversion Formula between in/h and ft/s
 
-### 英寸每小时和英尺每秒怎么换算？
+### How to Convert between Inches per Hour and Feet per Second?
 
-**基础换算公式：**
-- **in/h 转 ft/s：** ft/s = in/h × 0.0000231481
-- **ft/s 转 in/h：** in/h = ft/s ÷ 0.0000231481
+**Basic Conversion Formulas:**
+- **in/h to ft/s:** ft/s = in/h × 0.0000231481
+- **ft/s to in/h:** in/h = ft/s ÷ 0.0000231481
 
-**公式推导过程：**
-1. 1 英尺 = 12 英寸（英制标准）
-2. 1 小时 = 3600 秒
-3. 1 in/h = 1英寸/小时 ÷ 12英寸/英尺 ÷ 3600秒/小时
+**Formula Derivation Process:**
+1. 1 foot = 12 inches (Imperial standard)
+2. 1 hour = 3600 seconds
+3. 1 in/h = 1 inch/hour ÷ 12 inches/foot ÷ 3600 seconds/hour
 4. 1 in/h = 1 ÷ (12 × 3600) ft/s = 1 ÷ 43,200 ft/s ≈ 0.0000231481 ft/s
 
-### 一英寸每小时等于多少英尺每秒？
+### How Many Feet per Second is One Inch per Hour?
 
-**精确答案：** 1 in/h = 0.0000231481 ft/s
+**Precise Answer:** 1 in/h = 0.0000231481 ft/s
 
-**常见速度换算示例：**
+**Common Speed Conversion Examples:**
 - 1,000 in/h = 0.0231481 ft/s
 - 10,000 in/h = 0.231481 ft/s
 - 100,000 in/h = 2.31481 ft/s
 - 1,000,000 in/h = 23.1481 ft/s
 
-### 一英寸每小时是多少英尺每秒？
+### How Many Feet per Second is One Inch per Hour?
 
-**英寸每小时的速度定义：**
+**Definition of Inches per Hour Speed:**
 - **1 in/h = 0.0000231481 ft/s**
-- **精密测量：** 在地质监测中，地面沉降常用in/h表示
-- **工程换算：** 与美国工程常用的ft/s单位的换算关系
+- **Precision Measurement:** In geological monitoring, ground settlement is commonly expressed in in/h
+- **Engineering Conversion:** Conversion relationship with ft/s units commonly used in US engineering
 
-### 快速心算技巧
+### Quick Mental Calculation Tips
 
-**in/h 转 ft/s 心算法：**
-1. **精确计算：** in/h × 0.0000231481 = ft/s
-2. **近似计算：** in/h × 0.000023 ≈ ft/s（误差约0.6%）
-3. **记忆点：** 43,200 in/h = 1 ft/s
+**in/h to ft/s Mental Calculation:**
+1. **Precise Calculation:** in/h × 0.0000231481 = ft/s
+2. **Approximate Calculation:** in/h × 0.000023 ≈ ft/s (error about 0.6%)
+3. **Memory Point:** 43,200 in/h = 1 ft/s
 
-**ft/s 转 in/h 心算法：**
-1. **精确计算：** ft/s ÷ 0.0000231481 = in/h
-2. **近似计算：** ft/s × 43,000 ≈ in/h（快速估算）
-3. **记忆点：** 1 ft/s = 43,200 in/h
+**ft/s to in/h Mental Calculation:**
+1. **Precise Calculation:** ft/s ÷ 0.0000231481 = in/h
+2. **Approximate Calculation:** ft/s × 43,000 ≈ in/h (quick estimation)
+3. **Memory Point:** 1 ft/s = 43,200 in/h
 
-## 三、英寸每小时单位科普：从地质监测到工程换算
+## III. Inches per Hour Unit Overview: From Geological Monitoring to Engineering Conversion
 
-### 英寸每小时的历史起源
+### Historical Origin of Inches per Hour
 
-**in/h（inches per hour）的由来：**
-- **历史背景：** 英制单位系统的重要组成部分，起源于英国
-- **精密测量：** 地质学、建筑工程中广泛采用的微小速度单位
-- **标准化：** 1959年国际英寸定义为25.4毫米
+**Origin of in/h (inches per hour):**
+- **Historical Background:** An important component of the Imperial unit system, originating in Britain
+- **Precision Measurement:** Widely used tiny velocity unit in geology and construction engineering
+- **Standardization:** In 1959, the international inch was defined as 25.4 millimeters
 
-### 为什么需要in/h和ft/s的换算？
+### Why is Conversion between in/h and ft/s Needed?
 
-**美国工程需求：**
-- **跨领域应用：** 地质监测与流体工程的数据对比
-- **工程设计：** 建筑工程与机械工程的协调
-- **标准统一：** 美国不同工程领域间的单位换算
+**US Engineering Requirements:**
+- **Cross-domain Applications:** Data comparison between geological monitoring and fluid engineering
+- **Engineering Design:** Coordination between construction engineering and mechanical engineering
+- **Standard Unification:** Unit conversion between different engineering fields in the US
 
-**换算优势：**
-- **数据对比：** 便于与流体速度数据比较
-- **工程协调：** 不同专业间的数据交换
-- **直观理解：** ft/s在工程中更容易理解
+**Conversion Advantages:**
+- **Data Comparison:** Facilitates comparison with fluid velocity data
+- **Engineering Coordination:** Data exchange between different specialties
+- **Intuitive Understanding:** ft/s is easier to understand in engineering
 
-### in/h在现代的应用场景
+### Modern Application Scenarios of in/h
 
-**地质监测：**
-- 地面沉降速率测量
-- 地质构造运动监测
-- 地震前兆观测
+**Geological Monitoring:**
+- Ground settlement rate measurement
+- Geological structure movement monitoring
+- Earthquake precursor observation
 
-**建筑工程：**
-- 建筑物沉降监测
-- 桥梁变形测量
-- 大坝位移监控
+**Construction Engineering:**
+- Building settlement monitoring
+- Bridge deformation measurement
+- Dam displacement monitoring
 
-**精密制造：**
-- 机械加工进给速度
-- 精密仪器校准
-- 自动化设备控制
+**Precision Manufacturing:**
+- Mechanical processing feed rate
+- Precision instrument calibration
+- Automated equipment control
 
 ### 冷知识：in/h在不同领域的速度
 

@@ -4,20 +4,20 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Speed/
-      linkText: 速度单位换算
+      linkText: Speed Unit Conversion
   - - link: /Speed/index
-      linkText: 速度单位单位换算
+      linkText: Speed Unit Conversion
 head:
   - - meta
     - name: description
-      content: 速度单位换算指南，涵盖米每秒 (m/s)、千米每小时 (km/h)、英里每小时 (mph)、节 (knot)、英尺每秒 (ft/s)、英寸每小时 (in/h)、毫米每小时 (mm/h) 的详细换算公式与说明。
+      content: Speed unit conversion guide, covering detailed conversion formulas and explanations for meters per second (m/s), kilometers per hour (km/h), miles per hour (mph), knots, feet per second (ft/s), inches per hour (in/h), and millimeters per hour (mm/h).
   - - meta
     - name: keywords
-      content: 速度, 单位换算, 米每秒, 千米每小时, 英里每小时, 节, 英尺每秒, 英寸每小时, 毫米每小时, 换算公式, 速度单位换算指南
+      content: speed, unit conversion, meters per second, kilometers per hour, miles per hour, knots, feet per second, inches per hour, millimeters per hour, conversion formula, speed unit conversion guide
 ---
-# 速度单位换算
+# Speed Unit Conversion
 ---
 <script setup>
 import { onMounted, reactive, inject ,ref  } from 'vue'

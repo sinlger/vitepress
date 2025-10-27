@@ -4,20 +4,20 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Speed/
-      linkText: 速度单位换算
+      linkText: Speed Unit Conversion
   - - link: /Speed/index
-      linkText: 速度单位单位换算
+      linkText: Speed Unit Conversion
 head:
   - - meta
     - name: description
-      content: 英寸每小时换算毫米每小时工具，in/h和mm/h换算公式详解。一英寸每小时是多少毫米每小时？英寸每小时等于多少mm/h？英寸每小时和毫米每小时怎么换算？提供in/h、mm/h、km/h等速度单位换算，支持精密测量速度单位转换。
+      content: Inches per hour to millimeters per hour conversion tool, detailed explanation of in/h and mm/h conversion formulas. How many millimeters per hour is one inch per hour? How many mm/h equals inches per hour? How to convert between inches per hour and millimeters per hour? Provides conversion between in/h, mm/h, km/h and other speed units, supporting precision measurement speed unit conversion.
   - - meta
     - name: keywords
-      content: 速度单位换算, 英寸每小时换算毫米每小时, in/h换算mm/h, 一英寸每小时是多少毫米每小时, 英寸每小时等于多少mm/h, 速度单位, 英寸每小时, 毫米每小时, in/h to mm/h, inch per hour, 速度换算, 速度单位转换, 速度单位换算工具, 精密测量, 地质监测
+      content: speed unit conversion, inches per hour to millimeters per hour, in/h to mm/h, how many millimeters per hour is one inch per hour, inches per hour equals how many mm/h, speed units, inches per hour, millimeters per hour, in/h to mm/h, inch per hour, speed conversion, speed unit converter, speed unit conversion tool, precision measurement, geological monitoring
 ---
-# 英寸每小时换算毫米每小时 | in/h和mm/h速度单位换算工具
+# Inches per Hour to Millimeters per Hour Conversion | in/h and mm/h Speed Unit Conversion Tool
 ---
 <script setup>
 import { onMounted, reactive, inject ,ref  } from 'vue'
@@ -104,99 +104,99 @@ const convertHandler = (e) => {
 </n-card>
 
 
-## 一、速度单位换算表（以 1 in/h 为基准）
+## I. Speed Unit Conversion Table (Based on 1 in/h)
 
-| 单位       | 符号   | 换算值      | 典型应用场景             |
-|------------|--------|-------------|-------------------------|
-| 英寸每小时 | in/h   | 1           | 地质监测、精密测量（1 in/h = 基准单位） |
-| 毫米每小时 | mm/h   | 25.4        | 材料腐蚀速率、超精密测量（1 in/h = 25.4 mm/h） |
-| 千米每小时 | km/h   | 0.0000254   | 汽车限速、天气预报（1 in/h = 2.54×10⁻⁵ km/h） |
-| 米每秒     | m/s    | 0.00000705556 | 物理学、工程计算（1 in/h ≈ 7.06×10⁻⁶ m/s） |
-| 英尺每秒   | ft/s   | 0.0000231481 | 美国工程流体力学（1 in/h ≈ 2.31×10⁻⁵ ft/s） |
-| 英里每小时 | mph    | 0.0000157828 | 英美国家车速（1 in/h ≈ 1.58×10⁻⁵ mph） |
-| 节        | knot   | 0.0000137149 | 航海、航空（1 in/h ≈ 1.37×10⁻⁵ knot） |
+| Unit | Symbol | Conversion Value | Typical Application Scenarios |
+|------|--------|------------------|------------------------------|
+| Inches per Hour | in/h | 1 | Geological monitoring, precision measurement (1 in/h = base unit) |
+| Millimeters per Hour | mm/h | 25.4 | Material corrosion rate, ultra-precision measurement (1 in/h = 25.4 mm/h) |
+| Kilometers per Hour | km/h | 0.0000254 | Car speed limits, weather forecasts (1 in/h = 2.54×10⁻⁵ km/h) |
+| Meters per Second | m/s | 0.00000705556 | Physics, engineering calculations (1 in/h ≈ 7.06×10⁻⁶ m/s) |
+| Feet per Second | ft/s | 0.0000231481 | US engineering fluid mechanics (1 in/h ≈ 2.31×10⁻⁵ ft/s) |
+| Miles per Hour | mph | 0.0000157828 | UK/US vehicle speeds (1 in/h ≈ 1.58×10⁻⁵ mph) |
+| Knot | knot | 0.0000137149 | Maritime, aviation (1 in/h ≈ 1.37×10⁻⁵ knot) |
 
-注：换算公式示例 → in/h 转 mm/h: ( mm/h = in/h × 25.4 ) ；mm/h 转 in/h: ( in/h = mm/h ÷ 25.4 ) 。
+Note: Conversion formula examples → in/h to mm/h: (mm/h = in/h × 25.4); mm/h to in/h: (in/h = mm/h ÷ 25.4).
 
-## 二、in/h和mm/h换算公式详解
+## II. Detailed Explanation of in/h and mm/h Conversion Formulas
 
-### 英寸每小时和毫米每小时怎么换算？
+### How to Convert Between Inches per Hour and Millimeters per Hour?
 
-**基础换算公式：**
-- **in/h 转 mm/h：** mm/h = in/h × 25.4
-- **mm/h 转 in/h：** in/h = mm/h ÷ 25.4
+**Basic Conversion Formulas:**
+- **in/h to mm/h:** mm/h = in/h × 25.4
+- **mm/h to in/h:** in/h = mm/h ÷ 25.4
 
-**公式推导过程：**
-1. 1 英寸 = 25.4 毫米（国际标准定义）
-2. 时间单位相同（小时）
-3. 1 in/h = 25.4 mm/h（直接换算）
+**Formula Derivation Process:**
+1. 1 inch = 25.4 millimeters (international standard definition)
+2. Time units are the same (hour)
+3. 1 in/h = 25.4 mm/h (direct conversion)
 
-### 一英寸每小时等于多少毫米每小时？
+### How Many Millimeters per Hour Equals One Inch per Hour?
 
-**精确答案：** 1 in/h = 25.4 mm/h
+**Precise Answer:** 1 in/h = 25.4 mm/h
 
-**常见速度换算示例：**
+**Common Speed Conversion Examples:**
 - 1 in/h = 25.4 mm/h
 - 2 in/h = 50.8 mm/h
 - 5 in/h = 127 mm/h
 - 10 in/h = 254 mm/h
 
-### 一英寸每小时是多少毫米每小时？
+### How Many Millimeters per Hour is One Inch per Hour?
 
-**英寸每小时的速度定义：**
+**Speed Definition of Inches per Hour:**
 - **1 in/h = 25.4 mm/h**
-- **精密测量：** 在地质监测中，地面沉降常用in/h表示
-- **国际换算：** 与国际通用的毫米单位的换算关系
+- **Precision Measurement:** In geological monitoring, ground subsidence is often expressed in in/h
+- **International Conversion:** Relationship with internationally used millimeter units
 
-### 快速心算技巧
+### Quick Mental Calculation Tips
 
-**in/h 转 mm/h 心算法：**
-1. **精确计算：** in/h × 25.4 = mm/h
-2. **近似计算：** in/h × 25 ≈ mm/h（误差约1.6%）
-3. **记忆点：** 1 in/h = 25.4 mm/h
+**in/h to mm/h Mental Calculation Method:**
+1. **Precise Calculation:** in/h × 25.4 = mm/h
+2. **Approximate Calculation:** in/h × 25 ≈ mm/h (error about 1.6%)
+3. **Memory Point:** 1 in/h = 25.4 mm/h
 
-**mm/h 转 in/h 心算法：**
-1. **精确计算：** mm/h ÷ 25.4 = in/h
-2. **近似计算：** mm/h ÷ 25 ≈ in/h（快速估算）
-3. **记忆点：** 25.4 mm/h = 1 in/h
+**mm/h to in/h Mental Calculation Method:**
+1. **Precise Calculation:** mm/h ÷ 25.4 = in/h
+2. **Approximate Calculation:** mm/h ÷ 25 ≈ in/h (quick estimation)
+3. **Memory Point:** 25.4 mm/h = 1 in/h
 
-## 三、英寸每小时单位科普：从地质监测到精密测量
+## III. Inches per Hour Unit Overview: From Geological Monitoring to Precision Measurement
 
-### 英寸每小时的历史起源
+### Historical Origin of Inches per Hour
 
-**in/h（inches per hour）的由来：**
-- **历史背景：** 英制单位系统的重要组成部分，起源于英国
-- **精密测量：** 地质学、建筑工程中广泛采用的微小速度单位
-- **标准化：** 1959年国际英寸定义为25.4毫米
+**Origin of in/h (inches per hour):**
+- **Historical Background:** Important component of the Imperial unit system, originating in Britain
+- **Precision Measurement:** Widely used small velocity unit in geology and construction engineering
+- **Standardization:** In 1959, the international inch was defined as 25.4 millimeters
 
-### 为什么需要in/h和mm/h的换算？
+### Why is Conversion Between in/h and mm/h Necessary?
 
-**国际标准需求：**
-- **跨国合作：** 地质监测与国际标准的数据对比
-- **工程设计：** 英制工程与公制工程的协调
-- **标准统一：** 不同计量体系间的单位换算
+**International Standard Requirements:**
+- **International Cooperation:** Comparison of geological monitoring data with international standards
+- **Engineering Design:** Coordination between Imperial and metric engineering systems
+- **Standard Unification:** Unit conversion between different measurement systems
 
-**换算优势：**
-- **数据对比：** 便于与国际标准数据比较
-- **工程协调：** 不同计量体系间的数据交换
-- **精度保持：** mm/h提供更高的数值精度
+**Conversion Advantages:**
+- **Data Comparison:** Facilitates comparison with international standard data
+- **Engineering Coordination:** Data exchange between different measurement systems
+- **Precision Maintenance:** mm/h provides higher numerical precision
 
-### in/h在现代的应用场景
+### Modern Applications of in/h
 
-**地质监测：**
-- 地面沉降速率测量
-- 地质构造运动监测
-- 地震前兆观测
+**Geological Monitoring:**
+- Ground subsidence rate measurement
+- Geological structure movement monitoring
+- Earthquake precursor observation
 
-**建筑工程：**
-- 建筑物沉降监测
-- 桥梁变形测量
-- 大坝位移监控
+**Construction Engineering:**
+- Building settlement monitoring
+- Bridge deformation measurement
+- Dam displacement monitoring
 
-**精密制造：**
-- 机械加工进给速度
-- 精密仪器校准
-- 自动化设备控制
+**Precision Manufacturing:**
+- Mechanical processing feed rate
+- Precision instrument calibration
+- Automated equipment control
 
 ### 冷知识：in/h在不同领域的速度
 

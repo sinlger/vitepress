@@ -4,20 +4,20 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Speed/
-      linkText: 速度单位换算
+      linkText: Speed Unit Conversion
   - - link: /Speed/index
-      linkText: 速度单位单位换算
+      linkText: Speed Unit Conversion
 head:
   - - meta
     - name: description
-      content: 英寸每小时换算节工具，in/h和knot换算公式详解。一英寸每小时是多少节？英寸每小时等于多少knot？英寸每小时和节怎么换算？提供in/h、knot、mph等速度单位换算，支持精密测量速度单位转换。
+      content: Inches per hour to knot conversion tool, detailed explanation of in/h and knot conversion formulas. How many knots is one inch per hour? How many knots equals inches per hour? How to convert between inches per hour and knots? Provides conversion between in/h, knot, mph and other speed units, supporting precision measurement speed unit conversion.
   - - meta
     - name: keywords
-      content: 速度单位换算, 英寸每小时换算节, in/h换算knot, 一英寸每小时是多少节, 英寸每小时等于多少knot, 速度单位, 英寸每小时, 节, in/h to knot, inch per hour, 速度换算, 速度单位转换, 速度单位换算工具, 精密测量, 地质监测
+      content: speed unit conversion, inches per hour to knot, in/h to knot, how many knots is one inch per hour, inches per hour equals how many knots, speed units, inches per hour, knot, in/h to knot, inch per hour, speed conversion, speed unit converter, speed unit conversion tool, precision measurement, geological monitoring
 ---
-# 英寸每小时换算节 | in/h和knot速度单位换算工具
+# Inches per Hour to Knot Conversion | in/h and knot Speed Unit Conversion Tool
 ---
 <script setup>
 import { onMounted, reactive, inject ,ref  } from 'vue'
@@ -26,43 +26,43 @@ import { defineClientComponent } from 'vitepress'
 import { Speed } from '../files';
 const convert = inject('convert')
 const options =  [
-  { "label": "节 (knot)", "value": "knot" },
-  { "label": "英寸每小时 (in/h)", "value": "in/h" },
-  { "label": "千米每小时 (km/h)", "value": "km/h" },
-  { "label": "米每秒 (m/s)", "value": "m/s" },
-  { "label": "英尺每秒 (ft/s)", "value": "ft/s" },
-  { "label": "英里每小时 (mph)", "value": "mph" },
-  { "label": "毫米每小时 (mm/h)", "value": "mm/h" }
+  { "label": "Knot (knot)", "value": "knot" },
+  { "label": "Inches per Hour (in/h)", "value": "in/h" },
+  { "label": "Kilometers per Hour (km/h)", "value": "km/h" },
+  { "label": "Meters per Second (m/s)", "value": "m/s" },
+  { "label": "Feet per Second (ft/s)", "value": "ft/s" },
+  { "label": "Miles per Hour (mph)", "value": "mph" },
+  { "label": "Millimeters per Hour (mm/h)", "value": "mm/h" }
 ];
-const seoKey = ['速度单位换算','英寸每小时换算节','in/h换算knot','速度单位换算工具','速度换算','速度单位转换','一英寸每小时是多少节','英寸每小时等于多少knot','速度单位','英寸每小时','节','in/h to knot','inch per hour','精密测量','地质监测']
+const seoKey = ['speed unit conversion','inches per hour to knot','in/h to knot','speed unit conversion tool','speed conversion','speed unit converter','how many knots is one inch per hour','inches per hour equals how many knots','speed units','inches per hour','knot','in/h to knot','inch per hour','precision measurement','geological monitoring']
 const formRef = ref(null);
 const rules = {
   number:{
     required: true,
     type: 'number',
     trigger: "blur",
-    message: '请输入数字'
+    message: 'Please enter a number'
   },
   to:{
     required: true,
     trigger: "select",
-    message: '请选择转换单位'
+    message: 'Please select conversion unit'
   },
   from:{
     required: true,
     trigger: "select",
-    message: '请选择原始单位'
+    message: 'Please select original unit'
   }
 }
 const form = reactive({
-  number:null,
+  number:1,
   to:'knot',
   from:'in/h',
   result:'',
-  title:'英寸每小时换算节',
+  title:'Inches per Hour to Knot Conversion',
 })
 const convertHandler = (e) => {
-   e.preventDefault();
+  e.preventDefault();
   formRef.value?.validate((errors)=>{
     if (!errors) {
       form.result = `${form.number}${form.from} = ${convert(form.number).from(form.from).to(form.to)}${form.to}`
@@ -72,17 +72,17 @@ const convertHandler = (e) => {
 </script>
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="数值"  path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数值" />
+  <n-form-item label="Value"  path="number">
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="Enter the value to convert" />
   </n-form-item>
-  <n-form-item label="从" path="from">
-    <n-select  size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
+  <n-form-item label="From" path="from">
+    <n-select  size="large" :options="options" v-model:value="form.from" placeholder="Select original unit" />
   </n-form-item>
-  <n-form-item label="到" path="to">
-    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
+  <n-form-item label="To" path="to">
+    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="Select conversion unit" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
+    <n-button type="info" style="width:100%" @click="convertHandler">Convert</n-button>
   </n-form-item>
 </n-form>
 <n-card embedded :bordered="false" hoverable style="margin-top: 16px;">
@@ -104,100 +104,100 @@ const convertHandler = (e) => {
 </n-card>
 
 
-## 一、速度单位换算表（以 1 in/h 为基准）
+## I. Speed Unit Conversion Table (Based on 1 in/h)
 
-| 单位       | 符号   | 换算值      | 典型应用场景             |
-|------------|--------|-------------|-------------------------|
-| 英寸每小时 | in/h   | 1           | 地质监测、精密测量（1 in/h = 基准单位） |
-| 节        | knot   | 0.0000137149 | 航海、航空（1 in/h ≈ 1.37×10⁻⁵ knot） |
-| 千米每小时 | km/h   | 0.0000254   | 汽车限速、天气预报（1 in/h = 2.54×10⁻⁵ km/h） |
-| 米每秒     | m/s    | 0.00000705556 | 物理学、工程计算（1 in/h ≈ 7.06×10⁻⁶ m/s） |
-| 英尺每秒   | ft/s   | 0.0000231481 | 美国工程流体力学（1 in/h ≈ 2.31×10⁻⁵ ft/s） |
-| 英里每小时 | mph    | 0.0000157828 | 英美国家车速（1 in/h ≈ 1.58×10⁻⁵ mph） |
-| 毫米每小时 | mm/h   | 25.4        | 材料腐蚀速率、超精密测量（1 in/h = 25.4 mm/h） |
+| Unit | Symbol | Conversion Value | Typical Application Scenarios |
+|------|--------|------------------|------------------------------|
+| Inches per Hour | in/h | 1 | Geological monitoring, precision measurement (1 in/h = base unit) |
+| Knot | knot | 0.0000137149 | Maritime, aviation (1 in/h ≈ 1.37×10⁻⁵ knot) |
+| Kilometers per Hour | km/h | 0.0000254 | Car speed limits, weather forecasts (1 in/h = 2.54×10⁻⁵ km/h) |
+| Meters per Second | m/s | 0.00000705556 | Physics, engineering calculations (1 in/h ≈ 7.06×10⁻⁶ m/s) |
+| Feet per Second | ft/s | 0.0000231481 | US engineering fluid mechanics (1 in/h ≈ 2.31×10⁻⁵ ft/s) |
+| Miles per Hour | mph | 0.0000157828 | UK/US vehicle speeds (1 in/h ≈ 1.58×10⁻⁵ mph) |
+| Millimeters per Hour | mm/h | 25.4 | Material corrosion rates, ultra-precision measurement (1 in/h = 25.4 mm/h) |
 
-注：换算公式示例 → in/h 转 knot: ( knot = in/h × 0.0000137149 ) ；knot 转 in/h: ( in/h = knot ÷ 0.0000137149 ) 。
+Note: Conversion formula examples → in/h to knot: (knot = in/h × 0.0000137149); knot to in/h: (in/h = knot ÷ 0.0000137149).
 
-## 二、in/h和knot换算公式详解
+## II. Detailed Conversion Formulas for in/h and knot
 
-### 英寸每小时和节怎么换算？
+### How to Convert Between Inches per Hour and Knots?
 
-**基础换算公式：**
-- **in/h 转 knot：** knot = in/h × 0.0000137149
-- **knot 转 in/h：** in/h = knot ÷ 0.0000137149
+**Basic Conversion Formulas:**
+- **in/h to knot:** knot = in/h × 0.0000137149
+- **knot to in/h:** in/h = knot ÷ 0.0000137149
 
-**公式推导过程：**
-1. 1 节 = 1 海里/小时
-2. 1 海里 = 1852 米（国际标准）
-3. 1 英寸 = 25.4 毫米 = 0.0254 米
+**Formula Derivation Process:**
+1. 1 knot = 1 nautical mile/hour
+2. 1 nautical mile = 1852 meters (international standard)
+3. 1 inch = 25.4 millimeters = 0.0254 meters
 4. 1 in/h = 0.0254 m/h
 5. 1 in/h = 0.0254 ÷ 1852 knot ≈ 0.0000137149 knot
 
-### 一英寸每小时等于多少节？
+### How Many Knots is One Inch per Hour?
 
-**精确答案：** 1 in/h = 0.0000137149 knot
+**Precise Answer:** 1 in/h = 0.0000137149 knot
 
-**常见速度换算示例：**
+**Common Speed Conversion Examples:**
 - 1,000 in/h = 0.0137149 knot
 - 10,000 in/h = 0.137149 knot
 - 100,000 in/h = 1.37149 knot
 - 1,000,000 in/h = 13.7149 knot
 
-### 一英寸每小时是多少节？
+### How Many Knots is One Inch per Hour?
 
-**英寸每小时的速度定义：**
+**Speed Definition of Inches per Hour:**
 - **1 in/h = 0.0000137149 knot**
-- **精密测量：** 在地质监测中，地面沉降常用in/h表示
-- **航海换算：** 与国际航海通用的knot单位的换算关系
+- **Precision Measurement:** In geological monitoring, ground subsidence is often expressed in in/h
+- **Maritime Conversion:** Relationship with the internationally used knot unit in navigation
 
-### 快速心算技巧
+### Quick Mental Calculation Tips
 
-**in/h 转 knot 心算法：**
-1. **精确计算：** in/h × 0.0000137149 = knot
-2. **近似计算：** in/h × 0.0000137 ≈ knot（误差约0.1%）
-3. **记忆点：** 72,913 in/h ≈ 1 knot
+**in/h to knot Mental Calculation Method:**
+1. **Precise Calculation:** in/h × 0.0000137149 = knot
+2. **Approximate Calculation:** in/h × 0.0000137 ≈ knot (error about 0.1%)
+3. **Memory Point:** 72,913 in/h ≈ 1 knot
 
-**knot 转 in/h 心算法：**
-1. **精确计算：** knot ÷ 0.0000137149 = in/h
-2. **近似计算：** knot × 73,000 ≈ in/h（快速估算）
-3. **记忆点：** 1 knot ≈ 72,913 in/h
+**knot to in/h Mental Calculation Method:**
+1. **Precise Calculation:** knot ÷ 0.0000137149 = in/h
+2. **Approximate Calculation:** knot × 73,000 ≈ in/h (quick estimation)
+3. **Memory Point:** 1 knot ≈ 72,913 in/h
 
-## 三、英寸每小时单位科普：从地质监测到航海换算
+## III. Inches per Hour Unit Overview: From Geological Monitoring to Maritime Conversion
 
-### 英寸每小时的历史起源
+### Historical Origin of Inches per Hour
 
-**in/h（inches per hour）的由来：**
-- **历史背景：** 英制单位系统的重要组成部分，起源于英国
-- **精密测量：** 地质学、建筑工程中广泛采用的微小速度单位
-- **标准化：** 1959年国际英寸定义为25.4毫米
+**Origin of in/h (inches per hour):**
+- **Historical Background:** Important part of the Imperial unit system, originating in Britain
+- **Precision Measurement:** Widely used small velocity unit in geology and construction engineering
+- **Standardization:** In 1959, the international inch was defined as 25.4 millimeters
 
-### 为什么需要in/h和knot的换算？
+### Why is Conversion Between in/h and knot Necessary?
 
-**海洋工程需求：**
-- **跨领域应用：** 地质监测与海洋工程的数据对比
-- **工程设计：** 海岸工程与地质工程的协调
-- **标准统一：** 不同行业间的单位换算
+**Marine Engineering Needs:**
+- **Cross-domain Applications:** Comparison of data between geological monitoring and marine engineering
+- **Engineering Design:** Coordination between coastal engineering and geological engineering
+- **Standard Unification:** Unit conversion between different industries
 
-**换算优势：**
-- **数据对比：** 便于与航海速度数据比较
-- **工程协调：** 不同专业间的数据交换
-- **国际标准：** knot是国际航海通用单位
+**Conversion Advantages:**
+- **Data Comparison:** Facilitates comparison with maritime speed data
+- **Engineering Coordination:** Data exchange between different specialties
+- **International Standards:** Knot is an internationally used unit in navigation
 
-### in/h在现代的应用场景
+### Modern Applications of in/h
 
-**地质监测：**
-- 地面沉降速率测量
-- 地质构造运动监测
-- 地震前兆观测
+**Geological Monitoring:**
+- Ground subsidence rate measurement
+- Geological structure movement monitoring
+- Earthquake precursor observation
 
-**建筑工程：**
-- 建筑物沉降监测
-- 桥梁变形测量
-- 大坝位移监控
+**Construction Engineering:**
+- Building settlement monitoring
+- Bridge deformation measurement
+- Dam displacement monitoring
 
-**精密制造：**
-- 机械加工进给速度
-- 精密仪器校准
+**Precision Manufacturing:**
+- Mechanical processing feed rate
+- Precision instrument calibration
 - 自动化设备控制
 
 ### 冷知识：in/h在不同领域的速度
