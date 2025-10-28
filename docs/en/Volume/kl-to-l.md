@@ -4,23 +4,23 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Volume/index
-      linkText: 体积单位换算
+      linkText: Volume Unit Conversion
   - - link: /Volume/kl-to-l
-      linkText: 千升到升换算
+      linkText: Kiloliter to Liter Conversion
 head:
   - - meta
     - charset: utf-8
   - - meta
     - name: description
-      content: 千升(kl)与升(l)单位换算工具，1千升等于1,000升。
+      content: Kiloliter (kl) to Liter (l) unit conversion tool. 1 kiloliter equals 1,000 liters.
   - - meta
     - name: keywords
-      content: 千升,升,单位换算,kl,l
+      content: kiloliter,liter,unit conversion,kl,l
 ---
 
-# 千升(kl) 到 升(l) 换算
+# Kiloliter (kl) to Liter (l) Conversion
 
 <script setup>
 import { onMounted, reactive, inject ,ref  } from 'vue'
@@ -40,7 +40,7 @@ const rules = {
 const form = reactive({
   number:null,
   result:'',
-  title:'千升(kl)到升(l)换算'
+  title:'Kiloliter (kl) to Liter (l) Conversion'
 })
 
 const convertHandler = (e) => {
@@ -54,11 +54,11 @@ const convertHandler = (e) => {
 </script>
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="数值" path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="请输入千升数值" />
+  <n-form-item label="Value" path="number">
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="Enter kiloliter value" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
+    <n-button type="info" style="width:100%" @click="convertHandler">Convert</n-button>
   </n-form-item>
 </n-form>
 <n-card embedded :bordered="false" hoverable>
@@ -67,55 +67,55 @@ const convertHandler = (e) => {
   </div>
 </n-card>
 
-## 换算公式
-1 千升(kl) = 1,000 升(l)
+## Conversion Formula
+1 Kiloliter (kl) = 1,000 Liters (l)
 
-### 换算原理
-千升(kl)和升(l)都是体积单位，1升等于0.001千升。
+### Conversion Principle
+Kiloliter (kl) and Liter (l) are both volume units. 1 kiloliter equals 1,000 liters.
 
-## 常见换算值
-| 千升(kl) | 升(l) | 实物参考                 |
-|---------|------|--------------------------|
-| 1       | 1,000 | 标准油罐车容量            |
-| 0.5     | 500  | 中型储油罐容量            |
-| 0.1     | 100  | 小型储油罐容量            |
-| 0.01    | 10   | 大型水桶容量              |
-| 0.001   | 1    | 标准水桶容量              |
+## Common Conversion Values
+| Kiloliter (kl) | Liter (l) | Real-world Reference                 |
+|-----------------|-----------|--------------------------------------|
+| 1               | 1,000     | Standard kiloliter capacity          |
+| 0.5             | 500       | Half kiloliter capacity              |
+| 0.25            | 250       | Quarter kiloliter capacity           |
+| 2               | 2,000     | Two kiloliter capacity               |
+| 5               | 5,000     | Five kiloliter capacity              |
 
-## 应用场景
-### 工业生产
-- 液体原料储存规划
-- 化工产品批量生产
-- 储油罐容量计算
+## Application Scenarios
+### Industrial
+- Large tank capacity measurement
+- Chemical processing
+- Water treatment facilities
 
-### 商业领域
-- 液体商品批量交易
-- 饮料生产批量控制
-- 储水设施容量评估
+### Agriculture
+- Irrigation system design
+- Water storage calculation
+- Fertilizer tank capacity
 
-### 农业应用
-- 灌溉用水量计算
-- 农药配比批量处理
-- 储粮设施容量规划
+### Daily Life
+- Swimming pool volume
+- Large water tank capacity
+- Fuel storage measurement
 
-## 单位换算技巧
-1. **快速心算法**：
-   - 千升转升 → 数值乘以1,000
-   - 升转千升 → 数值除以1,000
+## Unit Conversion Tips
+1. **Quick Mental Calculation**:
+   - Kiloliter to Liter → Multiply by 1,000
+   - Liter to Kiloliter → Divide by 1,000
 
-2. **科学记数法**：
-   - 1 kl = 1×10³ l
-   - 1 l = 1×10⁻³ kl
+2. **Approximate Memory**:
+   - 1 kiloliter = 1,000 liters
+   - 1 liter = 0.001 kiloliters
 
-3. **记忆口诀**：
-   "千升转升很简单，千倍关系记心间"
+3. **Memory Aid**:
+   "Kiloliter to liter, multiply by one thousand"
 
-## 注意事项
-- 大规模测量需使用专业设备
-- 温度变化对液体体积影响较大
-- 容器形状影响实际容量计算
+## Precautions
+- Ensure unit consistency in calculations
+- Consider temperature effects on liquid volumes
+- Different measurement standards may apply
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Volume" :key="index">
     <n-button

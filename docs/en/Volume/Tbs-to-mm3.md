@@ -4,23 +4,23 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Volume/index
-      linkText: 体积单位换算
+      linkText: Volume Unit Conversion
   - - link: /Volume/Tbs-to-mm3
-      linkText: 汤匙到立方毫米换算
+      linkText: Tablespoon to Cubic Millimeter Conversion
 head:
   - - meta
     - charset: utf-8
   - - meta
     - name: description
-      content: 汤匙(Tbs)与立方毫米(mm³)单位换算工具，1汤匙等于14,786.76立方毫米。
+      content: Tablespoon (Tbs) to Cubic Millimeter (mm³) unit conversion tool. 1 tablespoon equals 14786.76 cubic millimeters.
   - - meta
     - name: keywords
-      content: 汤匙,立方毫米,单位换算,Tbs,mm3
+      content: tablespoon,cubic millimeter,unit conversion,Tbs,mm³
 ---
 
-# 汤匙(Tbs) 到 立方毫米(mm³) 换算
+# Tablespoon (Tbs) to Cubic Millimeter (mm³) Conversion
 
 <script setup>
 import { onMounted, reactive, inject ,ref  } from 'vue'
@@ -40,7 +40,7 @@ const rules = {
 const form = reactive({
   number:null,
   result:'',
-  title:'汤匙(Tbs)到立方毫米(mm³)换算'
+  title:'Tablespoon (Tbs) to Cubic Millimeter (mm³) Conversion'
 })
 
 const convertHandler = (e) => {
@@ -54,11 +54,11 @@ const convertHandler = (e) => {
 </script>
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="数值" path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="请输入汤匙数值" />
+  <n-form-item label="Value" path="number">
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="Enter tablespoon value" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
+    <n-button type="info" style="width:100%" @click="convertHandler">Convert</n-button>
   </n-form-item>
 </n-form>
 <n-card embedded :bordered="false" hoverable>
@@ -67,55 +67,55 @@ const convertHandler = (e) => {
   </div>
 </n-card>
 
-## 换算公式
-1 汤匙(Tbs) = 14,786.76 立方毫米(mm³)
+## Conversion Formula
+1 Tablespoon (Tbs) = 14786.76 Cubic Millimeter (mm³)
 
-### 换算原理
-汤匙(Tbs)和立方毫米(mm³)都是体积单位，1汤匙等于约14,787立方毫米。
+### Conversion Principle
+Tablespoon (Tbs) and Cubic Millimeter (mm³) are both volume units. 1 tablespoon equals approximately 14,787 cubic millimeters.
 
-## 常见换算值
-| 汤匙(Tbs) | 立方毫米(mm³) | 实物参考                 |
-|-----------|-------------|--------------------------|
-| 1         | 14,786.76   | 标准汤匙容量              |
-| 0.5       | 7,393.38    | 半汤匙容量                |
-| 0.25      | 3,696.69    | 四分之一汤匙容量          |
-| 2         | 29,573.52   | 两汤匙容量                |
-| 3         | 44,360.28   | 三汤匙容量                |
+## Common Conversion Values
+| Tablespoon (Tbs) | Cubic Millimeter (mm³) | Real-world Reference                |
+|-------------------|------------------------|-------------------------------------|
+| 1                 | 14786.76               | Standard tablespoon capacity        |
+| 0.5               | 7393.38                | Half tablespoon capacity            |
+| 0.25              | 3696.69                | Quarter tablespoon capacity         |
+| 2                 | 29573.52               | Two tablespoons capacity            |
+| 3                 | 44360.28               | Three tablespoons capacity          |
 
-## 应用场景
-### 烹饪
-- 精确测量液体配料
-- 食谱配方换算
-- 厨房计量工具校准
+## Application Scenarios
+### Precision Engineering
+- Micro-component volume calculations
+- Precision manufacturing measurements
+- Quality control in micro-scale production
 
-### 医药
-- 药品剂量测量
-- 实验室液体测量
-- 医疗器具校准
+### Scientific Research
+- Laboratory micro-volume measurements
+- Chemical reaction volume calculations
+- Biological sample volume analysis
 
-### 日常生活
-- 饮料调配
-- 手工制作
-- 小型容器容量测量
+### Industrial Applications
+- Precision injection molding
+- Micro-fluid system design
+- Quality control in precision manufacturing
 
-## 单位换算技巧
-1. **快速心算法**：
-   - 汤匙转立方毫米 → 数值乘以14,787
-   - 立方毫米转汤匙 → 数值除以14,787
+## Unit Conversion Tips
+1. **Quick Mental Calculation**:
+   - Tablespoon to Cubic Millimeter → Multiply by 14,787
+   - Cubic Millimeter to Tablespoon → Divide by 14,787
 
-2. **近似记忆**：
-   - 1汤匙 ≈ 15,000立方毫米
-   - 1立方毫米 ≈ 0.000067汤匙
+2. **Scientific Notation**:
+   - 1 Tbs = 1.4787 × 10⁴ mm³
+   - 1 mm³ = 6.76 × 10⁻⁵ Tbs
 
-3. **记忆口诀**：
-   "汤匙转立方毫米，一万五千倍要记清"
+3. **Memory Aid**:
+   "Tablespoon to cubic millimeter, nearly fifteen thousand to remember"
 
-## 注意事项
-- 不同国家汤匙标准略有差异
-- 精确测量需使用标准量具
-- 液体表面张力影响测量精度
+## Precautions
+- Extremely precise measurements require specialized equipment
+- Accuracy is crucial in micro-scale applications
+- Temperature effects may influence measurement precision
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Volume" :key="index">
     <n-button

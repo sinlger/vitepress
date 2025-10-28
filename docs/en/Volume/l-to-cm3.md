@@ -4,23 +4,23 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Volume/index
-      linkText: 体积单位换算
+      linkText: Volume Unit Conversion
   - - link: /Volume/l-to-cm3
-      linkText: 升到立方厘米换算
+      linkText: Liter to Cubic Centimeter Conversion
 head:
   - - meta
     - charset: utf-8
   - - meta
     - name: description
-      content: 升(l)与立方厘米(cm³)单位换算工具，1升等于1,000立方厘米。
+      content: Liter (l) to Cubic Centimeter (cm³) unit conversion tool. 1 liter equals 1,000 cubic centimeters.
   - - meta
     - name: keywords
-      content: 升,立方厘米,单位换算,l,cm3
+      content: liter,cubic centimeter,unit conversion,l,cm3
 ---
 
-# 升(l) 到 立方厘米(cm³) 换算
+# Liter (l) to Cubic Centimeter (cm³) Conversion
 
 <script setup>
 import { onMounted, reactive, inject ,ref  } from 'vue'
@@ -40,7 +40,7 @@ const rules = {
 const form = reactive({
   number:null,
   result:'',
-  title:'升(l)到立方厘米(cm³)换算'
+  title:'Liter (l) to Cubic Centimeter (cm³) Conversion'
 })
 
 const convertHandler = (e) => {
@@ -54,11 +54,11 @@ const convertHandler = (e) => {
 </script>
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="数值" path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="请输入升数值" />
+  <n-form-item label="Value" path="number">
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="Enter liter value" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
+    <n-button type="info" style="width:100%" @click="convertHandler">Convert</n-button>
   </n-form-item>
 </n-form>
 <n-card embedded :bordered="false" hoverable>
@@ -67,55 +67,55 @@ const convertHandler = (e) => {
   </div>
 </n-card>
 
-## 换算公式
-1 升(l) = 1,000 立方厘米(cm³)
+## Conversion Formula
+1 Liter (l) = 1,000 Cubic Centimeter (cm³)
 
-### 换算原理
-升(l)和立方厘米(cm³)都是体积单位，1立方厘米等于0.001升。
+### Conversion Principle
+Liter (l) and Cubic Centimeter (cm³) are both volume units. 1 liter equals 1,000 cubic centimeters.
 
-## 常见换算值
-| 升(l) | 立方厘米(cm³) | 实物参考                 |
-|-------|--------------|--------------------------|
-| 1     | 1,000        | 标准矿泉水瓶容量          |
-| 0.5   | 500          | 小瓶装饮料容量            |
-| 0.1   | 100          | 口服液瓶容量              |
-| 0.01  | 10           | 眼药水瓶容量              |
-| 0.001 | 1            | 注射器容量                |
+## Common Conversion Values
+| Liter (l) | Cubic Centimeter (cm³) | Real-world Reference                 |
+|-----------|------------------------|--------------------------------------|
+| 1         | 1,000                  | Standard water bottle capacity       |
+| 2         | 2,000                  | Large water bottle capacity          |
+| 5         | 5,000                  | Small bucket capacity                |
+| 10        | 10,000                 | Medium bucket capacity               |
+| 20        | 20,000                 | Large bucket capacity                |
 
-## 应用场景
-### 日常生活
-- 饮料容量计算
-- 厨房用量测量
-- 化妆品容量比较
+## Application Scenarios
+### Industrial
+- Chemical solution preparation
+- Liquid material measurement
+- Production process control
 
-### 医疗领域
-- 药品剂量测量
-- 医疗器械容量校准
-- 实验室液体分配
+### Laboratory
+- Experimental reagent preparation
+- Sample volume measurement
+- Analytical chemistry applications
 
-### 工业生产
-- 液体包装容量设计
-- 容器体积计算
-- 产品规格标注
+### Daily Life
+- Cooking ingredient measurement
+- Beverage volume calculation
+- Household liquid storage
 
-## 单位换算技巧
-1. **快速心算法**：
-   - 升转立方厘米 → 数值乘以1,000
-   - 立方厘米转升 → 数值除以1,000
+## Unit Conversion Tips
+1. **Quick Mental Calculation**:
+   - Liter to Cubic Centimeter → Multiply by 1,000
+   - Cubic Centimeter to Liter → Divide by 1,000
 
-2. **科学记数法**：
-   - 1 l = 1×10³ cm³
-   - 1 cm³ = 1×10⁻³ l
+2. **Approximation**:
+   - 1 l ≈ 1,000 cm³
+   - 0.5 l ≈ 500 cm³
 
-3. **记忆口诀**：
-   "升转立方厘米，千倍关系记心里"
+3. **Memory Aid**:
+   "One liter equals one thousand cubic centimeters"
 
-## 注意事项
-- 测量时注意单位统一
-- 温度变化对液体体积有影响
-- 容器形状影响实际容量计算
+## Precautions
+- Ensure unit consistency in calculations
+- Consider temperature effects on liquid volume
+- Use appropriate measuring equipment for accuracy
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Volume" :key="index">
     <n-button

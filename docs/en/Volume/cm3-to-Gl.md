@@ -4,23 +4,23 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Volume/index
-      linkText: 体积单位换算
+      linkText: Volume Unit Conversion
   - - link: /Volume/cm3-to-Gl
-      linkText: 立方厘米到吉升换算
+      linkText: Cubic Centimeter to Gigaliter Conversion
 head:
   - - meta
     - charset: utf-8
   - - meta
     - name: description
-      content: 立方厘米(cm³)与吉升(Gl)单位换算工具，1立方厘米等于0.000000001吉升。
+      content: Cubic centimeter (cm³) to gigaliter (Gl) unit conversion tool, 1 cubic centimeter equals 0.000000001 gigaliter.
   - - meta
     - name: keywords
-      content: 立方厘米,吉升,单位换算,cm³,Gl
+      content: cubic centimeter,gigaliter,unit conversion,cm³,Gl
 ---
 
-# 立方厘米(cm³) 到 吉升(Gl) 换算
+# Cubic Centimeter (cm³) to Gigaliter (Gl) Conversion
 
 <script setup>
 import { onMounted, reactive, inject ,ref  } from 'vue'
@@ -40,7 +40,7 @@ const rules = {
 const form = reactive({
   number:null,
   result:'',
-  title:'立方厘米(cm³)到吉升(Gl)换算'
+  title:'Cubic Centimeter (cm³) to Gigaliter (Gl) Conversion'
 })
 
 const convertHandler = (e) => {
@@ -54,11 +54,11 @@ const convertHandler = (e) => {
 </script>
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="数值" path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="请输入立方厘米数值" />
+  <n-form-item label="Value" path="number">
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="Enter cubic centimeter value" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
+    <n-button type="info" style="width:100%" @click="convertHandler">Convert</n-button>
   </n-form-item>
 </n-form>
 <n-card embedded :bordered="false" hoverable>
@@ -67,55 +67,55 @@ const convertHandler = (e) => {
   </div>
 </n-card>
 
-## 换算公式
-1 立方厘米(cm³) = 0.000000001 吉升(Gl)
+## Conversion Formula
+1 cubic centimeter (cm³) = 0.000000001 gigaliter (Gl)
 
-### 换算原理
-立方厘米(cm³)和吉升(Gl)都是体积单位，1吉升等于1,000,000,000立方厘米。
+### Conversion Principle
+Cubic centimeter (cm³) and gigaliter (Gl) are both volume units. 1 gigaliter equals 1,000,000,000 cubic centimeters.
 
-## 常见换算值
-| 立方厘米(cm³) | 吉升(Gl) | 实物参考                 |
-|--------------|----------|--------------------------|
-| 1,000,000,000 | 1        | 大型水库的储水量          |
-| 500,000,000  | 0.5      | 中型水库的储水量          |
-| 100,000,000  | 0.1      | 小型水库的储水量         |
-| 10,000,000   | 0.01     | 大型游泳池的水量         |
-| 1,000,000    | 0.001    | 中型游泳池的水量         |
+## Common Conversion Values
+| Cubic Centimeter (cm³) | Gigaliter (Gl) | Real-world Reference                |
+|------------------------|----------------|-------------------------------------|
+| 1,000,000,000         | 1              | Large reservoir water storage       |
+| 500,000,000           | 0.5            | Medium reservoir water storage      |
+| 100,000,000           | 0.1            | Small reservoir water storage       |
+| 10,000,000            | 0.01           | Large swimming pool water volume    |
+| 1,000,000             | 0.001          | Medium swimming pool water volume   |
 
-## 应用场景
-### 水资源管理
-- 水库储水量计算
-- 流域水资源评估
-- 大型水利工程规划
+## Application Scenarios
+### Water Resource Management
+- Reservoir water storage calculation
+- Watershed water resource assessment
+- Large-scale water conservancy project planning
 
-### 工业应用
-- 大型液体储罐容量计算
-- 石油化工产品批量生产
-- 液体原料储存规划
+### Industrial Applications
+- Large liquid storage tank capacity calculation
+- Petrochemical product bulk production
+- Liquid raw material storage planning
 
-### 环境科学
-- 水体污染总量评估
-- 水资源可持续利用研究
-- 生态需水量计算
+### Environmental Science
+- Water body pollution total assessment
+- Water resource sustainable utilization research
+- Ecological water demand calculation
 
-## 单位换算技巧
-1. **快速心算法**：
-   - 立方厘米转吉升 → 数值除以1,000,000,000
-   - 吉升转立方厘米 → 数值乘以1,000,000,000
+## Unit Conversion Tips
+1. **Quick Mental Calculation**:
+   - Cubic centimeter to gigaliter → Divide value by 1,000,000,000
+   - Gigaliter to cubic centimeter → Multiply value by 1,000,000,000
 
-2. **科学记数法**：
+2. **Scientific Notation**:
    - 1 cm³ = 1×10⁻⁹ Gl
    - 1 Gl = 1×10⁹ cm³
 
-3. **记忆口诀**：
-   "立方厘米转吉升，十亿分一记分明"
+3. **Memory Mnemonic**:
+   "Cubic centimeter to gigaliter, one billionth to remember clear"
 
-## 注意事项
-- 超大规模测量需使用专业设备
-- 温度变化对液体体积影响显著
-- 容器形状和测量方法影响精度
+## Important Notes
+- Ultra-large scale measurements require professional equipment
+- Temperature changes significantly affect liquid volume
+- Container shape and measurement methods affect accuracy
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Volume" :key="index">
     <n-button

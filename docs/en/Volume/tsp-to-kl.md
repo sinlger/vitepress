@@ -4,23 +4,23 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Volume/index
-      linkText: 体积单位换算
+      linkText: Volume Unit Conversion
   - - link: /Volume/tsp-to-kl
-      linkText: 茶匙到千升换算
+      linkText: Teaspoon to Kiloliter Conversion
 head:
   - - meta
     - charset: utf-8
   - - meta
     - name: description
-      content: 茶匙(tsp)与千升(kl)单位换算工具，1茶匙等于0.00000492892千升。
+      content: Teaspoon (tsp) to Kiloliter (kl) unit conversion tool. 1 teaspoon equals 0.00000492892 kiloliters.
   - - meta
     - name: keywords
-      content: 茶匙,千升,单位换算,tsp,kl
+      content: teaspoon,kiloliter,unit conversion,tsp,kl
 ---
 
-# 茶匙(tsp) 到 千升(kl) 换算
+# Teaspoon (tsp) to Kiloliter (kl) Conversion
 
 <script setup>
 import { onMounted, reactive, inject ,ref  } from 'vue'
@@ -40,7 +40,7 @@ const rules = {
 const form = reactive({
   number:null,
   result:'',
-  title:'茶匙(tsp)到千升(kl)换算'
+  title:'Teaspoon (tsp) to Kiloliter (kl) Conversion'
 })
 
 const convertHandler = (e) => {
@@ -54,68 +54,68 @@ const convertHandler = (e) => {
 </script>
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="数值" path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="请输入茶匙数值" />
+  <n-form-item label="Value" path="number">
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="Enter teaspoon value" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
+    <n-button type="info" style="width:100%" @click="convertHandler">Convert</n-button>
   </n-form-item>
 </n-form>
 <n-card embedded :bordered="false" hoverable>
-   <div style="text-align:center">
+  <div style="text-align:center">
     <h1>{{form.result}}</h1>
   </div>
 </n-card>
 
-## 换算公式
-1 茶匙(tsp) = 0.00000492892 千升(kl)
+## Conversion Formula
+1 Teaspoon (tsp) = 0.00000492892 Kiloliter (kl)
 
-### 换算原理
-茶匙(tsp)和千升(kl)都是体积单位，1茶匙等于约0.00000493千升。
+### Conversion Principle
+Teaspoon (tsp) and Kiloliter (kl) are both volume units. 1 teaspoon equals approximately 0.00000493 kiloliters.
 
-## 常见换算值
-| 茶匙(tsp) | 千升(kl) | 实物参考                 |
-|-----------|---------|--------------------------|
-| 1         | 0.00000492892 | 标准茶匙容量              |
-| 0.5       | 0.00000246446 | 半茶匙容量                |
-| 0.25      | 0.00000123223 | 四分之一茶匙容量          |
-| 2         | 0.00000985784 | 两茶匙容量                |
-| 3         | 0.00001478676 | 三茶匙容量                |
+## Common Conversion Values
+| Teaspoon (tsp) | Kiloliter (kl)    | Real-world Reference                |
+|----------------|-------------------|-------------------------------------|
+| 1              | 0.00000492892     | Standard teaspoon capacity          |
+| 1,000          | 0.00492892        | 1,000 teaspoons                     |
+| 10,000         | 0.0492892         | 10,000 teaspoons                    |
+| 100,000        | 0.492892          | 100,000 teaspoons                   |
+| 1,000,000      | 4.92892           | 1 million teaspoons                 |
 
-## 应用场景
-### 烹饪
-- 精确测量小份量液体
-- 食谱配方换算
-- 厨房计量工具校准
+## Application Scenarios
+### Industrial Applications
+- Large-scale liquid storage calculations
+- Chemical processing volume measurements
+- Industrial tank capacity planning
 
-### 医药
-- 药品剂量测量
-- 实验室小容量液体测量
-- 医疗器具校准
+### Water Management
+- Municipal water supply calculations
+- Irrigation system planning
+- Water treatment facility design
 
-### 日常生活
-- 饮料调配
-- 手工制作
-- 小型容器容量测量
+### Daily Life
+- Swimming pool volume calculations
+- Large container capacity measurements
+- Household water usage tracking
 
-## 单位换算技巧
-1. **快速心算法**：
-   - 茶匙转千升 → 数值乘以0.00000493
-   - 千升转茶匙 → 数值除以0.00000493
+## Unit Conversion Tips
+1. **Quick Mental Calculation**:
+   - Teaspoon to Kiloliter → Multiply by 0.00000493
+   - Kiloliter to Teaspoon → Divide by 0.00000493
 
-2. **科学记数法**：
-   - 1 tsp = 4.92892×10⁻⁶ kl
-   - 1 kl = 202,884.136 tsp
+2. **Scientific Notation**:
+   - Use scientific notation for small values
+   - 1 tsp = 4.93 × 10⁻⁶ kl
 
-3. **记忆口诀**：
-   "茶匙转千升，百万分之五要记清"
+3. **Memory Aid**:
+   "Teaspoon to kiloliter, six decimal places to move"
 
-## 注意事项
-- 不同国家茶匙标准略有差异
-- 精确测量需使用标准量具
-- 液体表面张力影响测量精度
+## Precautions
+- Unit consistency is crucial for accurate calculations
+- Temperature changes can affect liquid volume
+- Use appropriate measuring equipment for different scales
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Volume" :key="index">
     <n-button

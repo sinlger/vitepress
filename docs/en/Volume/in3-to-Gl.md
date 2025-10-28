@@ -4,23 +4,23 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Volume/index
-      linkText: 体积单位换算
+      linkText: Volume Unit Conversion
   - - link: /Volume/in3-to-Gl
-      linkText: 立方英寸到吉升换算
+      linkText: Cubic Inch to Gigaliter Conversion
 head:
   - - meta
     - charset: utf-8
   - - meta
     - name: description
-      content: 立方英寸(in³)与吉升(Gl)单位换算工具，1立方英寸等于0.000000000016387064吉升。
+      content: Cubic Inch (in³) to Gigaliter (Gl) unit conversion tool. 1 cubic inch equals 0.000000000016387064 gigaliters.
   - - meta
     - name: keywords
-      content: 立方英寸,吉升,单位换算,in3,Gl
+      content: cubic inch,gigaliter,unit conversion,in3,Gl
 ---
 
-# 立方英寸(in³) 到 吉升(Gl) 换算
+# Cubic Inch (in³) to Gigaliter (Gl) Conversion
 
 <script setup>
 import { onMounted, reactive, inject ,ref  } from 'vue'
@@ -40,7 +40,7 @@ const rules = {
 const form = reactive({
   number:null,
   result:'',
-  title:'立方英寸(in³)到吉升(Gl)换算'
+  title:'Cubic Inch (in³) to Gigaliter (Gl) Conversion'
 })
 
 const convertHandler = (e) => {
@@ -54,11 +54,11 @@ const convertHandler = (e) => {
 </script>
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="数值" path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="请输入立方英寸数值" />
+  <n-form-item label="Value" path="number">
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="Enter cubic inch value" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
+    <n-button type="info" style="width:100%" @click="convertHandler">Convert</n-button>
   </n-form-item>
 </n-form>
 <n-card embedded :bordered="false" hoverable>
@@ -67,55 +67,55 @@ const convertHandler = (e) => {
   </div>
 </n-card>
 
-## 换算公式
-1 立方英寸(in³) = 0.000000000016387064 吉升(Gl)
+## Conversion Formula
+1 Cubic Inch (in³) = 0.000000000016387064 Gigaliters (Gl)
 
-### 换算原理
-立方英寸(in³)和吉升(Gl)都是体积单位，1立方英寸等于0.000000000016387064吉升。
+### Conversion Principle
+Cubic Inch (in³) and Gigaliter (Gl) are both volume units. 1 cubic inch equals 0.000000000016387064 gigaliters.
 
-## 常见换算值
-| 立方英寸(in³) | 吉升(Gl)          | 实物参考                 |
-|--------------|------------------|--------------------------|
-| 1            | 0.000000000016387| 标准立方英寸容量          |
-| 0.5          | 0.0000000000081935| 半立方英寸容量            |
-| 0.25         | 0.0000000000040968| 四分之一立方英寸容量      |
-| 2            | 0.0000000000327741| 两立方英寸容量            |
-| 3            | 0.0000000000491612| 三立方英寸容量            |
+## Common Conversion Values
+| Cubic Inch (in³) | Gigaliter (Gl)          | Real-world Reference                 |
+|-------------------|-------------------------|--------------------------------------|
+| 1                 | 0.000000000016387       | Standard cubic inch capacity         |
+| 0.5               | 0.0000000000081935      | Half cubic inch capacity             |
+| 0.25              | 0.0000000000040968      | Quarter cubic inch capacity          |
+| 2                 | 0.0000000000327741      | Two cubic inch capacity              |
+| 3                 | 0.0000000000491612      | Three cubic inch capacity            |
 
-## 应用场景
-### 工程
-- 机械零件体积计算
-- 材料用量估算
-- 容器容量测量
+## Application Scenarios
+### Engineering
+- Mechanical component volume calculation
+- Material usage estimation
+- Container capacity measurement
 
-### 制造业
-- 产品设计
-- 模具制造
-- 材料采购
+### Manufacturing
+- Product design
+- Mold manufacturing
+- Material procurement
 
-### 日常生活
-- DIY项目
-- 家居装修
-- 小型容器容量测量
+### Daily Life
+- DIY projects
+- Home renovation
+- Small container capacity measurement
 
-## 单位换算技巧
-1. **快速心算法**：
-   - 立方英寸转吉升 → 数值乘以0.0000000000164
-   - 吉升转立方英寸 → 数值除以0.0000000000164
+## Unit Conversion Tips
+1. **Quick Mental Calculation**:
+   - Cubic Inch to Gigaliter → Multiply by 0.0000000000164
+   - Gigaliter to Cubic Inch → Divide by 0.0000000000164
 
-2. **近似记忆**：
-   - 1立方英寸 ≈ 0.0000000000164吉升
-   - 1吉升 ≈ 61,024,000,000立方英寸
+2. **Approximate Memory**:
+   - 1 cubic inch ≈ 0.0000000000164 gigaliters
+   - 1 gigaliter ≈ 61,024,000,000 cubic inches
 
-3. **记忆口诀**：
-   "立方英寸转吉升，千亿分之一六要记清"
+3. **Memory Aid**:
+   "Cubic inch to gigaliter, remember one point six in trillionths"
 
-## 注意事项
-- 精确测量需使用标准量具
-- 不同行业可能有不同的标准
-- 温度变化会影响实际体积
+## Precautions
+- Precise measurements require standard measuring tools
+- Different industries may have different standards
+- Temperature changes can affect actual volume
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Volume" :key="index">
     <n-button

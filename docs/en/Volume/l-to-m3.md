@@ -4,23 +4,23 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Volume/index
-      linkText: 体积单位换算
+      linkText: Volume Unit Conversion
   - - link: /Volume/l-to-m3
-      linkText: 升到立方米换算
+      linkText: Liter to Cubic Meter Conversion
 head:
   - - meta
     - charset: utf-8
   - - meta
     - name: description
-      content: 升(l)与立方米(m³)单位换算工具，1升等于0.001立方米。
+      content: Liter (l) to Cubic Meter (m³) unit conversion tool. 1 liter equals 0.001 cubic meters.
   - - meta
     - name: keywords
-      content: 升,立方米,单位换算,l,m3
+      content: liter,cubic meter,unit conversion,l,m3
 ---
 
-# 升(l) 到 立方米(m³) 换算
+# Liter (l) to Cubic Meter (m³) Conversion
 
 <script setup>
 import { onMounted, reactive, inject ,ref  } from 'vue'
@@ -40,7 +40,7 @@ const rules = {
 const form = reactive({
   number:null,
   result:'',
-  title:'升(l)到立方米(m³)换算'
+  title:'Liter (l) to Cubic Meter (m³) Conversion'
 })
 
 const convertHandler = (e) => {
@@ -54,11 +54,11 @@ const convertHandler = (e) => {
 </script>
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="数值" path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="请输入升数值" />
+  <n-form-item label="Value" path="number">
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="Enter liter value" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
+    <n-button type="info" style="width:100%" @click="convertHandler">Convert</n-button>
   </n-form-item>
 </n-form>
 <n-card embedded :bordered="false" hoverable>
@@ -67,55 +67,55 @@ const convertHandler = (e) => {
   </div>
 </n-card>
 
-## 换算公式
-1 升(l) = 0.001 立方米(m³)
+## Conversion Formula
+1 Liter (l) = 0.001 Cubic Meter (m³)
 
-### 换算原理
-升(l)和立方米(m³)都是体积单位，1立方米等于1,000升。
+### Conversion Principle
+Liter (l) and Cubic Meter (m³) are both volume units. 1 cubic meter equals 1,000 liters.
 
-## 常见换算值
-| 升(l) | 立方米(m³) | 实物参考                 |
-|-------|-----------|--------------------------|
-| 1,000 | 1         | 标准游泳池的水量          |
-| 500   | 0.5       | 中型鱼缸的水量            |
-| 100   | 0.1       | 大型浴缸的水量            |
-| 10    | 0.01      | 小型浴缸的水量            |
-| 1     | 0.001     | 标准浴缸的水量            |
+## Common Conversion Values
+| Liter (l) | Cubic Meter (m³) | Real-world Reference                |
+|-----------|------------------|-------------------------------------|
+| 1,000     | 1                | One cubic meter of water            |
+| 500       | 0.5              | Half cubic meter of water           |
+| 100       | 0.1              | Large bathtub capacity              |
+| 50        | 0.05             | Small bathtub capacity              |
+| 10        | 0.01             | Large bucket capacity               |
 
-## 应用场景
-### 建筑工程
-- 混凝土用量计算
-- 建筑材料体积测量
-- 室内空间容积评估
+## Application Scenarios
+### Construction Industry
+- Concrete volume calculations
+- Building material measurements
+- Storage space planning
 
-### 工业生产
-- 液体原料储存规划
-- 容器容量设计
-- 产品包装体积计算
+### Industrial Applications
+- Tank capacity calculations
+- Chemical storage planning
+- Manufacturing volume control
 
-### 日常生活
-- 家具尺寸测量
-- 储物空间规划
-- 家电容量比较
+### Daily Life
+- Swimming pool volume
+- Water tank capacity
+- Garden pond measurements
 
-## 单位换算技巧
-1. **快速心算法**：
-   - 升转立方米 → 数值除以1,000
-   - 立方米转升 → 数值乘以1,000
+## Unit Conversion Tips
+1. **Quick Mental Calculation**:
+   - Liter to Cubic Meter → Divide by 1,000
+   - Cubic Meter to Liter → Multiply by 1,000
 
-2. **科学记数法**：
-   - 1 l = 1×10⁻³ m³
-   - 1 m³ = 1×10³ l
+2. **Approximation Method**:
+   - 1 m³ = 1,000 l (exact conversion)
+   - Easy to remember and calculate
 
-3. **记忆口诀**：
-   "升转立方，千分一值记心上"
+3. **Memory Aid**:
+   "One cubic meter equals one thousand liters"
 
-## 注意事项
-- 测量时注意单位统一
-- 不规则物体体积需特殊测量
-- 温度变化对液体体积有影响
+## Precautions
+- Ensure unit consistency in calculations
+- Consider temperature effects on liquid volume
+- Use appropriate measuring equipment for accuracy
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Volume" :key="index">
     <n-button

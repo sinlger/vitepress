@@ -4,23 +4,23 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Volume/index
-      linkText: 体积单位换算
+      linkText: Volume Unit Conversion
   - - link: /Volume/ml-to-m_l
-      linkText: 毫升到兆升换算
+      linkText: Milliliter to Megaliter Conversion
 head:
   - - meta
     - charset: utf-8
   - - meta
     - name: description
-      content: 毫升(ml)与兆升(Ml)单位换算工具，1毫升等于0.000001兆升。
+      content: Milliliter (ml) to Megaliter (Ml) unit conversion tool. 1 milliliter equals 0.000001 megaliters.
   - - meta
     - name: keywords
-      content: 毫升,兆升,单位换算,ml,Ml
+      content: milliliter,megaliter,unit conversion,ml,Ml
 ---
 
-# 毫升(ml) 到 兆升(Ml) 换算
+# Milliliter (ml) to Megaliter (Ml) Conversion
 
 <script setup>
 import { onMounted, reactive, inject ,ref  } from 'vue'
@@ -40,7 +40,7 @@ const rules = {
 const form = reactive({
   number:null,
   result:'',
-  title:'毫升(ml)到兆升(Ml)换算'
+  title:'Milliliter (ml) to Megaliter (Ml) Conversion'
 })
 
 const convertHandler = (e) => {
@@ -54,11 +54,11 @@ const convertHandler = (e) => {
 </script>
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="数值" path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="请输入毫升数值" />
+  <n-form-item label="Value" path="number">
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="Enter milliliter value" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
+    <n-button type="info" style="width:100%" @click="convertHandler">Convert</n-button>
   </n-form-item>
 </n-form>
 <n-card embedded :bordered="false" hoverable>
@@ -67,55 +67,55 @@ const convertHandler = (e) => {
   </div>
 </n-card>
 
-## 换算公式
-1 毫升(ml) = 0.000001 兆升(Ml)
+## Conversion Formula
+1 Milliliter (ml) = 0.000001 Megaliter (Ml)
 
-### 换算原理
-毫升(ml)和兆升(Ml)都是体积单位，1兆升等于1,000,000毫升。
+### Conversion Principle
+Milliliter (ml) and Megaliter (Ml) are both volume units. 1 megaliter equals 1 million liters, while 1 milliliter equals 0.001 liters.
 
-## 常见换算值
-| 毫升(ml) | 兆升(Ml) | 实物参考                 |
-|---------|---------|--------------------------|
-| 1,000,000 | 1       | 小型游泳池的水量          |
-| 500,000  | 0.5     | 中型鱼缸的水量            |
-| 100,000  | 0.1     | 大型浴缸的水量            |
-| 10,000   | 0.01    | 小型浴缸的水量            |
-| 1,000    | 0.001   | 标准浴缸的水量            |
+## Common Conversion Values
+| Milliliter (ml) | Megaliter (Ml) | Real-world Reference                |
+|-----------------|----------------|-------------------------------------|
+| 1,000,000,000   | 1              | Large reservoir volume              |
+| 500,000,000     | 0.5            | Medium reservoir volume             |
+| 100,000,000     | 0.1            | Small reservoir volume              |
+| 50,000,000      | 0.05           | Large water treatment plant         |
+| 10,000,000      | 0.01           | Municipal water storage             |
 
-## 应用场景
-### 工业应用
-- 大型液体储罐容量计算
-- 石油化工产品批量生产
-- 液体原料储存规划
+## Application Scenarios
+### Water Management
+- Large reservoir capacity calculations
+- Municipal water supply planning
+- Flood control volume assessments
 
-### 水资源管理
-- 水库储水量计算
-- 流域水资源评估
-- 大型水利工程规划
+### Environmental Science
+- Lake and river volume studies
+- Watershed capacity analysis
+- Climate change impact assessments
 
-### 商业领域
-- 液体商品批量交易
-- 储油罐容量计算
-- 饮料生产批量控制
+### Engineering Projects
+- Large-scale hydraulic projects
+- Dam capacity calculations
+- Water infrastructure planning
 
-## 单位换算技巧
-1. **快速心算法**：
-   - 毫升转兆升 → 数值除以1,000,000
-   - 兆升转毫升 → 数值乘以1,000,000
+## Unit Conversion Tips
+1. **Quick Mental Calculation**:
+   - Milliliter to Megaliter → Divide by 1,000,000,000
+   - Megaliter to Milliliter → Multiply by 1,000,000,000
 
-2. **科学记数法**：
-   - 1 ml = 1×10⁻⁶ Ml
-   - 1 Ml = 1×10⁶ ml
+2. **Scientific Notation**:
+   - 1 ml = 1 × 10⁻⁹ Ml
+   - 1 Ml = 1 × 10⁹ ml
 
-3. **记忆口诀**：
-   "毫升转兆升，百万分一记分明"
+3. **Memory Aid**:
+   "One megaliter equals one billion milliliters"
 
-## 注意事项
-- 大规模测量需使用专业设备
-- 温度变化对液体体积影响较大
-- 容器形状影响实际容量计算
+## Precautions
+- Large-scale measurements require specialized equipment
+- Environmental factors can affect calculations
+- Different measurement standards may apply
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Volume" :key="index">
     <n-button

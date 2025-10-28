@@ -4,23 +4,23 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Volume/index
-      linkText: 体积单位换算
+      linkText: Volume Unit Conversion
   - - link: /Volume/kl-to-m3
-      linkText: 千升到立方米换算
+      linkText: Kiloliter to Cubic Meter Conversion
 head:
   - - meta
     - charset: utf-8
   - - meta
     - name: description
-      content: 千升(kl)与立方米(m³)单位换算工具，1千升等于1立方米。
+      content: Kiloliter (kl) to Cubic Meter (m³) unit conversion tool. 1 kiloliter equals 1 cubic meter.
   - - meta
     - name: keywords
-      content: 千升,立方米,单位换算,kl,m3
+      content: kiloliter,cubic meter,unit conversion,kl,m3
 ---
 
-# 千升(kl) 到 立方米(m³) 换算
+# Kiloliter (kl) to Cubic Meter (m³) Conversion
 
 <script setup>
 import { onMounted, reactive, inject ,ref  } from 'vue'
@@ -40,7 +40,7 @@ const rules = {
 const form = reactive({
   number:null,
   result:'',
-  title:'千升(kl)到立方米(m³)换算'
+  title:'Kiloliter (kl) to Cubic Meter (m³) Conversion'
 })
 
 const convertHandler = (e) => {
@@ -54,11 +54,11 @@ const convertHandler = (e) => {
 </script>
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="数值" path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="请输入千升数值" />
+  <n-form-item label="Value" path="number">
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="Enter kiloliter value" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
+    <n-button type="info" style="width:100%" @click="convertHandler">Convert</n-button>
   </n-form-item>
 </n-form>
 <n-card embedded :bordered="false" hoverable>
@@ -67,51 +67,55 @@ const convertHandler = (e) => {
   </div>
 </n-card>
 
-## 换算公式
-1 千升(kl) = 1 立方米(m³)
+## Conversion Formula
+1 Kiloliter (kl) = 1 Cubic Meter (m³)
 
-### 换算原理
-千升(kl)和立方米(m³)是等价的体积单位，1千升等于1立方米。
+### Conversion Principle
+Kiloliter (kl) and Cubic Meter (m³) are both volume units. 1 kiloliter equals 1 cubic meter.
 
-## 常见换算值
-| 千升(kl) | 立方米(m³) | 实物参考                 |
-|---------|-----------|--------------------------|
-| 1       | 1         | 标准浴缸的水量            |
-| 10      | 10        | 小型游泳池的水量          |
-| 100     | 100       | 中型鱼缸的水量            |
-| 1,000   | 1,000     | 大型储水罐的容量          |
-| 10,000  | 10,000    | 小型游泳池的水量          |
+## Common Conversion Values
+| Kiloliter (kl) | Cubic Meter (m³) | Real-world Reference                 |
+|-----------------|------------------|--------------------------------------|
+| 1               | 1                | Standard kiloliter capacity          |
+| 0.5             | 0.5              | Half kiloliter capacity              |
+| 2               | 2                | Two kiloliter capacity               |
+| 5               | 5                | Five kiloliter capacity              |
+| 10              | 10               | Ten kiloliter capacity               |
 
-## 应用场景
-### 建筑工程
-- 混凝土用量计算
-- 土方工程体积测量
-- 建筑材料体积估算
+## Application Scenarios
+### Industrial
+- Large tank capacity measurement
+- Chemical processing
+- Water treatment facilities
 
-### 工业制造
-- 液体原料储存规划
-- 容器容量设计
-- 生产流程体积控制
+### Construction
+- Concrete volume calculation
+- Building material estimation
+- Foundation excavation
 
-### 日常生活
-- 家居储水设备容量
-- 鱼缸水体计算
-- 游泳池水量估算
+### Daily Life
+- Swimming pool volume
+- Large water tank capacity
+- Storage container measurement
 
-## 单位换算技巧
-1. **直接等价法**：
-   - 千升转立方米 → 数值不变
-   - 立方米转千升 → 数值不变
+## Unit Conversion Tips
+1. **Quick Mental Calculation**:
+   - Kiloliter to Cubic Meter → Direct conversion (1:1 ratio)
+   - Cubic Meter to Kiloliter → Direct conversion (1:1 ratio)
 
-2. **记忆口诀**：
-   "千升立方等量换，数值不变最简便"
+2. **Approximate Memory**:
+   - 1 kiloliter = 1 cubic meter
+   - 1 cubic meter = 1 kiloliter
 
-## 注意事项
-- 测量时注意温度对水密度的影响
-- 不规则容器需使用专业测量方法
-- 精确计算需考虑容器壁厚度
+3. **Memory Aid**:
+   "Kiloliter and cubic meter are equivalent"
 
-## 相关连接
+## Precautions
+- Both units represent the same volume
+- Ensure measurement accuracy with proper tools
+- Consider temperature effects for liquid measurements
+
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Volume" :key="index">
     <n-button

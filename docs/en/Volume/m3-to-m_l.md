@@ -4,23 +4,23 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Volume/index
-      linkText: 体积单位换算
+      linkText: Volume Unit Conversion
   - - link: /Volume/m3-to-m_l
-      linkText: 立方米到兆升换算
+      linkText: Cubic Meter to Megaliter Conversion
 head:
   - - meta
     - charset: utf-8
   - - meta
     - name: description
-      content: 立方米(m³)与兆升(Ml)单位换算工具，1立方米等于0.001兆升。
+      content: Cubic Meter (m³) to Megaliter (Ml) unit conversion tool. 1 cubic meter equals 0.001 megaliters.
   - - meta
     - name: keywords
-      content: 立方米,兆升,单位换算,m3,Ml
+      content: cubic meter,megaliter,unit conversion,m3,Ml
 ---
 
-# 立方米(m³) 到 兆升(Ml) 换算
+# Cubic Meter (m³) to Megaliter (Ml) Conversion
 
 <script setup>
 import { onMounted, reactive, inject ,ref  } from 'vue'
@@ -40,7 +40,7 @@ const rules = {
 const form = reactive({
   number:null,
   result:'',
-  title:'立方米(m³)到兆升(Ml)换算'
+  title:'Cubic Meter (m³) to Megaliter (Ml) Conversion'
 })
 
 const convertHandler = (e) => {
@@ -54,11 +54,11 @@ const convertHandler = (e) => {
 </script>
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="数值" path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="请输入立方米数值" />
+  <n-form-item label="Value" path="number">
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="Enter cubic meter value" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
+    <n-button type="info" style="width:100%" @click="convertHandler">Convert</n-button>
   </n-form-item>
 </n-form>
 <n-card embedded :bordered="false" hoverable>
@@ -67,55 +67,55 @@ const convertHandler = (e) => {
   </div>
 </n-card>
 
-## 换算公式
-1 立方米(m³) = 0.001 兆升(Ml)
+## Conversion Formula
+1 Cubic Meter (m³) = 0.001 Megaliter (Ml)
 
-### 换算原理
-立方米(m³)和兆升(Ml)都是体积单位，1立方米等于千分之一兆升。
+### Conversion Principle
+Cubic Meter (m³) and Megaliter (Ml) are both volume units. 1 cubic meter equals 0.001 megaliters.
 
-## 常见换算值
-| 立方米(m³) | 兆升(Ml) | 实物参考                 |
-|-----------|---------|--------------------------|
-| 1         | 0.001   | 标准游泳池体积            |
-| 0.5       | 0.0005  | 中型水箱体积              |
-| 0.1       | 0.0001  | 小型水箱体积              |
-| 0.01      | 0.00001 | 大型鱼缸体积              |
-| 0.001     | 0.000001| 中型鱼缸体积              |
+## Common Conversion Values
+| Cubic Meter (m³) | Megaliter (Ml) | Real-world Reference                |
+|------------------|----------------|-------------------------------------|
+| 1,000            | 1              | One megaliter capacity              |
+| 500              | 0.5            | Half megaliter capacity             |
+| 100              | 0.1            | One-tenth megaliter capacity        |
+| 50               | 0.05           | Large swimming pool volume          |
+| 10               | 0.01           | Medium water tank capacity          |
 
-## 应用场景
-### 建筑工程
-- 混凝土用量计算
-- 建筑材料体积测量
-- 空间容积规划
+## Application Scenarios
+### Water Management
+- Large reservoir capacity calculation
+- River flow volume measurement
+- Water supply system planning
 
-### 工业制造
-- 容器容量设计
-- 液体存储计算
-- 产品包装规划
+### Environmental Science
+- Lake and ocean volume studies
+- Climate change water cycle research
+- Large-scale hydrological modeling
 
-### 科学研究
-- 实验室容器容量
-- 液体体积测量
-- 仪器校准
+### Engineering Projects
+- Dam construction planning
+- Large-scale water treatment facilities
+- Irrigation system design
 
-## 单位换算技巧
-1. **快速心算法**：
-   - 立方米转兆升 → 数值除以1,000
-   - 兆升转立方米 → 数值乘以1,000
+## Unit Conversion Tips
+1. **Quick Mental Calculation**:
+   - Cubic Meter to Megaliter → Divide by 1,000
+   - Megaliter to Cubic Meter → Multiply by 1,000
 
-2. **科学记数法**：
-   - 1 m³ = 1×10⁻³ Ml
-   - 1 Ml = 1×10³ m³
+2. **Scientific Notation**:
+   - 1 m³ = 1 × 10⁻³ Ml
+   - 1 Ml = 1 × 10³ m³
 
-3. **记忆口诀**：
-   "立方米转兆升，除以一千要记清"
+3. **Memory Aid**:
+   "One thousand cubic meters equals one megaliter"
 
-## 注意事项
-- 精确测量需使用专业工具
-- 考虑温度对体积的影响
-- 不规则形状需使用积分计算
+## Precautions
+- Large-scale measurements require specialized equipment
+- Consider environmental factors affecting volume
+- Different measurement standards may apply
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Volume" :key="index">
     <n-button

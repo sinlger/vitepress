@@ -4,23 +4,23 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Volume/index
-      linkText: 体积单位换算
+      linkText: Volume Unit Conversion
   - - link: /Volume/ml-to-l
-      linkText: 毫升到升换算
+      linkText: Milliliter to Liter Conversion
 head:
   - - meta
     - charset: utf-8
   - - meta
     - name: description
-      content: 毫升(ml)与升(l)单位换算工具，1毫升等于0.001升。
+      content: Milliliter (ml) to Liter (l) unit conversion tool. 1 milliliter equals 0.001 liters.
   - - meta
     - name: keywords
-      content: 毫升,升,单位换算,ml,l
+      content: milliliter,liter,unit conversion,ml,l
 ---
 
-# 毫升(ml) 到 升(l) 换算
+# Milliliter (ml) to Liter (l) Conversion
 
 <script setup>
 import { onMounted, reactive, inject ,ref  } from 'vue'
@@ -40,7 +40,7 @@ const rules = {
 const form = reactive({
   number:null,
   result:'',
-  title:'毫升(ml)到升(l)换算'
+  title:'Milliliter (ml) to Liter (l) Conversion'
 })
 
 const convertHandler = (e) => {
@@ -54,11 +54,11 @@ const convertHandler = (e) => {
 </script>
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="数值" path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="请输入毫升数值" />
+  <n-form-item label="Value" path="number">
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="Enter milliliter value" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
+    <n-button type="info" style="width:100%" @click="convertHandler">Convert</n-button>
   </n-form-item>
 </n-form>
 <n-card embedded :bordered="false" hoverable>
@@ -67,60 +67,60 @@ const convertHandler = (e) => {
   </div>
 </n-card>
 
-## 换算公式
-1 毫升(ml) = 0.001 升(l)
+## Conversion Formula
+1 Milliliter (ml) = 0.001 Liter (l)
 
-### 换算原理
-毫升(ml)和升(l)都是体积单位，1升等于1000毫升。
+### Conversion Principle
+Milliliter (ml) and Liter (l) are both volume units. 1 liter equals 1,000 milliliters, making milliliter a smaller unit than liter.
 
-## 常见换算值
-| 毫升(ml) | 升(l) | 实物参考                 |
-|---------|-------|--------------------------|
-| 1000    | 1     | 1升瓶装水的体积           |
-| 500     | 0.5   | 标准矿泉水瓶体积          |
-| 250     | 0.25  | 小杯饮料的体积            |
-| 100     | 0.1   | 小药瓶的体积              |
-| 50      | 0.05  | 小酒杯的体积              |
+## Common Conversion Values
+| Milliliter (ml) | Liter (l) | Real-world Reference                |
+|-----------------|-----------|-------------------------------------|
+| 1,000           | 1         | Standard water bottle               |
+| 500             | 0.5       | Small water bottle                  |
+| 250             | 0.25      | Standard cup volume                 |
+| 100             | 0.1       | Small glass volume                  |
+| 50              | 0.05      | Shot glass volume                   |
 
-## 应用场景
-### 实验室应用
-- 化学试剂配比
-- 标准溶液配制
-- 实验液体体积测量
+## Application Scenarios
+### Medical Field
+- Medicine dosage calculations
+- IV fluid volume measurements
+- Laboratory sample preparations
 
-### 医疗领域
-- 药物剂量测量
-- 输液量计算
-- 医疗液体体积测量
+### Food Industry
+- Recipe ingredient measurements
+- Beverage production calculations
+- Food packaging specifications
 
-### 日常生活
-- 饮料容量测量
-- 烹饪调料计量
-- 化妆品用量计算
+### Daily Life
+- Cooking and baking measurements
+- Beverage serving sizes
+- Cosmetic product volumes
 
-### 工业制造
-- 小型容器容积测量
-- 液体产品容量计算
-- 包装容量规划
+### Scientific Research
+- Laboratory experiment volumes
+- Chemical solution preparations
+- Biological sample measurements
 
-## 单位换算技巧
-1. **快速心算法**：
-   - 毫升转升 → 数值除以1000
-   - 升转毫升 → 数值乘以1000
+## Unit Conversion Tips
+1. **Quick Mental Calculation**:
+   - Milliliter to Liter → Divide by 1,000
+   - Liter to Milliliter → Multiply by 1,000
 
-2. **科学记数法**：
-   - 1 ml = 1×10⁻³ l
-   - 1 l = 1×10³ ml
+2. **Decimal Point Method**:
+   - Move decimal point 3 places left (ml to l)
+   - Move decimal point 3 places right (l to ml)
 
-3. **记忆口诀**：
-   "毫升转升算，除以一千很简单"
+3. **Memory Aid**:
+   "One thousand milliliters make one liter"
 
-## 注意事项
-- 测量时需使用标准量具
-- 高精度测量需考虑温度影响
-- 液体表面张力可能影响测量精度
+## Precautions
+- Ensure unit consistency in calculations
+- Consider temperature effects on liquid volume
+- Use appropriate measuring equipment for accuracy
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Volume" :key="index">
     <n-button

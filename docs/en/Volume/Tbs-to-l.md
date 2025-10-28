@@ -4,23 +4,23 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Volume/index
-      linkText: 体积单位换算
+      linkText: Volume Unit Conversion
   - - link: /Volume/Tbs-to-l
-      linkText: 汤匙到升换算
+      linkText: Tablespoon to Liter Conversion
 head:
   - - meta
     - charset: utf-8
   - - meta
     - name: description
-      content: 汤匙(Tbs)与升(l)单位换算工具，1汤匙等于0.01478676升。
+      content: Tablespoon (Tbs) to Liter (l) unit conversion tool. 1 tablespoon equals 0.01478676 liters.
   - - meta
     - name: keywords
-      content: 汤匙,升,单位换算,Tbs,l
+      content: tablespoon,liter,unit conversion,Tbs,l
 ---
 
-# 汤匙(Tbs) 到 升(l) 换算
+# Tablespoon (Tbs) to Liter (l) Conversion
 
 <script setup>
 import { onMounted, reactive, inject ,ref  } from 'vue'
@@ -40,7 +40,7 @@ const rules = {
 const form = reactive({
   number:null,
   result:'',
-  title:'汤匙(Tbs)到升(l)换算'
+  title:'Tablespoon (Tbs) to Liter (l) Conversion'
 })
 
 const convertHandler = (e) => {
@@ -54,11 +54,11 @@ const convertHandler = (e) => {
 </script>
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="数值" path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="请输入汤匙数值" />
+  <n-form-item label="Value" path="number">
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="Enter tablespoon value" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
+    <n-button type="info" style="width:100%" @click="convertHandler">Convert</n-button>
   </n-form-item>
 </n-form>
 <n-card embedded :bordered="false" hoverable>
@@ -67,55 +67,60 @@ const convertHandler = (e) => {
   </div>
 </n-card>
 
-## 换算公式
-1 汤匙(Tbs) = 0.01478676 升(l)
+## Conversion Formula
+1 Tablespoon (Tbs) = 0.01478676 Liter (l)
 
-### 换算原理
-汤匙(Tbs)和升(l)都是体积单位，1汤匙等于约0.0148升。
+### Conversion Principle
+Tablespoon (Tbs) and Liter (l) are both volume units. 1 tablespoon equals approximately 0.0148 liters.
 
-## 常见换算值
-| 汤匙(Tbs) | 升(l)    | 实物参考                 |
-|-----------|---------|--------------------------|
-| 1         | 0.014786| 标准汤匙容量              |
-| 0.5       | 0.007393| 半汤匙容量                |
-| 0.25      | 0.003696| 四分之一汤匙容量          |
-| 2         | 0.029573| 两汤匙容量                |
-| 3         | 0.044360| 三汤匙容量                |
+## Common Conversion Values
+| Tablespoon (Tbs) | Liter (l)    | Real-world Reference                |
+|-------------------|--------------|-------------------------------------|
+| 1                 | 0.01478676   | Standard tablespoon capacity        |
+| 2                 | 0.02957352   | Two tablespoons capacity            |
+| 3                 | 0.04436028   | Three tablespoons capacity          |
+| 4                 | 0.05914704   | Quarter cup capacity                |
+| 67.628            | 1.0          | Approximately 1 liter               |
 
-## 应用场景
-### 烹饪
-- 精确测量液体配料
-- 食谱配方换算
-- 厨房计量工具校准
+## Application Scenarios
+### Medical Field
+- Pharmaceutical dosage calculations
+- Medical equipment calibration
+- Patient fluid intake monitoring
 
-### 医药
-- 药品剂量测量
-- 实验室液体测量
-- 医疗器具校准
+### Food Industry
+- Recipe scaling and conversion
+- Food production measurements
+- Quality control in manufacturing
 
-### 日常生活
-- 饮料调配
-- 手工制作
-- 小型容器容量测量
+### Daily Life
+- Cooking and baking measurements
+- Beverage preparation
+- Household liquid measurements
 
-## 单位换算技巧
-1. **快速心算法**：
-   - 汤匙转升 → 数值乘以0.0148
-   - 升转汤匙 → 数值除以0.0148
+### Scientific Research
+- Laboratory experiment measurements
+- Chemical solution preparation
+- Research data collection
 
-2. **近似记忆**：
-   - 1汤匙 ≈ 0.015升
-   - 1升 ≈ 67.63汤匙
+## Unit Conversion Tips
+1. **Quick Mental Calculation**:
+   - Tablespoon to Liter → Multiply by 0.0148
+   - Liter to Tablespoon → Divide by 0.0148
 
-3. **记忆口诀**：
-   "汤匙转升，百分之一五要记清"
+2. **Decimal Point Method**:
+   - Move decimal point 2 places left and multiply by 1.48
+   - 1 Tbs = 0.0148 l
 
-## 注意事项
-- 不同国家汤匙标准略有差异
-- 精确测量需使用标准量具
-- 液体表面张力影响测量精度
+3. **Memory Aid**:
+   "Tablespoon to liter, about sixty-eight to one"
 
-## 相关连接
+## Precautions
+- Unit consistency is crucial for accurate calculations
+- Temperature effects can influence liquid volume measurements
+- Use appropriate measuring equipment for different applications
+
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Volume" :key="index">
     <n-button

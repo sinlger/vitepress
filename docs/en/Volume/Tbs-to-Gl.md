@@ -4,23 +4,23 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Volume/index
-      linkText: 体积单位换算
+      linkText: Volume Unit Conversion
   - - link: /Volume/Tbs-to-Gl
-      linkText: 汤匙到吉升换算
+      linkText: Tablespoon to Gigaliter Conversion
 head:
   - - meta
     - charset: utf-8
   - - meta
     - name: description
-      content: 汤匙(Tbs)与吉升(Gl)单位换算工具，1汤匙等于0.00000000001478676吉升。
+      content: Tablespoon (Tbs) to Gigaliter (Gl) unit conversion tool. 1 tablespoon equals 0.00000000001478676 gigaliters.
   - - meta
     - name: keywords
-      content: 汤匙,吉升,单位换算,Tbs,Gl
+      content: tablespoon,gigaliter,unit conversion,Tbs,Gl
 ---
 
-# 汤匙(Tbs) 到 吉升(Gl) 换算
+# Tablespoon (Tbs) to Gigaliter (Gl) Conversion
 
 <script setup>
 import { onMounted, reactive, inject ,ref  } from 'vue'
@@ -40,7 +40,7 @@ const rules = {
 const form = reactive({
   number:null,
   result:'',
-  title:'汤匙(Tbs)到吉升(Gl)换算'
+  title:'Tablespoon (Tbs) to Gigaliter (Gl) Conversion'
 })
 
 const convertHandler = (e) => {
@@ -54,11 +54,11 @@ const convertHandler = (e) => {
 </script>
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="数值" path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="请输入汤匙数值" />
+  <n-form-item label="Value" path="number">
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="Enter tablespoon value" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
+    <n-button type="info" style="width:100%" @click="convertHandler">Convert</n-button>
   </n-form-item>
 </n-form>
 <n-card embedded :bordered="false" hoverable>
@@ -67,55 +67,55 @@ const convertHandler = (e) => {
   </div>
 </n-card>
 
-## 换算公式
-1 汤匙(Tbs) = 0.00000000001478676 吉升(Gl)
+## Conversion Formula
+1 Tablespoon (Tbs) = 0.00000000001478676 Gigaliter (Gl)
 
-### 换算原理
-汤匙(Tbs)和吉升(Gl)都是体积单位，1汤匙等于约0.0000000000148吉升。
+### Conversion Principle
+Tablespoon (Tbs) and Gigaliter (Gl) are both volume units. 1 tablespoon equals approximately 0.0000000000148 gigaliters.
 
-## 常见换算值
-| 汤匙(Tbs) | 吉升(Gl)        | 实物参考                 |
-|-----------|----------------|--------------------------|
-| 1         | 0.000000000014786| 标准汤匙容量              |
-| 0.5       | 0.000000000007393| 半汤匙容量                |
-| 0.25      | 0.000000000003696| 四分之一汤匙容量          |
-| 2         | 0.000000000029573| 两汤匙容量                |
-| 3         | 0.000000000044360| 三汤匙容量                |
+## Common Conversion Values
+| Tablespoon (Tbs) | Gigaliter (Gl)        | Real-world Reference                |
+|-------------------|-----------------------|-------------------------------------|
+| 1                 | 0.00000000001478676   | Standard tablespoon capacity        |
+| 1000              | 0.00000001478676      | 1000 tablespoons capacity           |
+| 10000             | 0.0000001478676       | 10000 tablespoons capacity          |
+| 100000            | 0.000001478676        | 100000 tablespoons capacity         |
+| 1000000           | 0.00001478676         | 1 million tablespoons capacity      |
 
-## 应用场景
-### 烹饪
-- 精确测量液体配料
-- 食谱配方换算
-- 厨房计量工具校准
+## Application Scenarios
+### Earth Science
+- Ocean volume calculations
+- Atmospheric water vapor measurements
+- Large-scale hydrological studies
 
-### 医药
-- 药品剂量测量
-- 实验室液体测量
-- 医疗器具校准
+### Astronomy
+- Planetary atmosphere volume calculations
+- Interstellar medium density studies
+- Cosmic fluid dynamics research
 
-### 日常生活
-- 饮料调配
-- 手工制作
-- 小型容器容量测量
+### Environmental Science
+- Global water cycle modeling
+- Climate change impact assessments
+- Large-scale ecosystem studies
 
-## 单位换算技巧
-1. **快速心算法**：
-   - 汤匙转吉升 → 数值乘以0.0000000000148
-   - 吉升转汤匙 → 数值除以0.0000000000148
+## Unit Conversion Tips
+1. **Quick Mental Calculation**:
+   - Tablespoon to Gigaliter → Multiply by 1.479 × 10⁻¹¹
+   - Gigaliter to Tablespoon → Divide by 1.479 × 10⁻¹¹
 
-2. **近似记忆**：
-   - 1汤匙 ≈ 0.000000000015吉升
-   - 1吉升 ≈ 67,628,045,000汤匙
+2. **Scientific Notation**:
+   - Use scientific notation for extremely small values
+   - 1 Tbs = 1.479 × 10⁻¹¹ Gl
 
-3. **记忆口诀**：
-   "汤匙转吉升，万亿分之一五要记清"
+3. **Memory Aid**:
+   "Tablespoon to gigaliter, extremely small scale to remember"
 
-## 注意事项
-- 不同国家汤匙标准略有差异
-- 精确测量需使用标准量具
-- 液体表面张力影响测量精度
+## Precautions
+- Extremely large-scale measurements require specialized equipment
+- Different measurement standards may apply
+- Environmental factors can affect large-scale volume calculations
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Volume" :key="index">
     <n-button

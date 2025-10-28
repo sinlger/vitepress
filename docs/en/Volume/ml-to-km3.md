@@ -4,23 +4,23 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Volume/index
-      linkText: 体积单位换算
+      linkText: Volume Unit Conversion
   - - link: /Volume/ml-to-km3
-      linkText: 毫升到立方公里换算
+      linkText: Milliliter to Cubic Kilometer Conversion
 head:
   - - meta
     - charset: utf-8
   - - meta
     - name: description
-      content: 毫升(ml)与立方公里(km³)单位换算工具，1毫升等于0.000000000000001立方公里。
+      content: Milliliter (ml) to Cubic Kilometer (km³) unit conversion tool. 1 milliliter equals 0.000000000000001 cubic kilometers.
   - - meta
     - name: keywords
-      content: 毫升,立方公里,单位换算,ml,km3
+      content: milliliter,cubic kilometer,unit conversion,ml,km3
 ---
 
-# 毫升(ml) 到 立方公里(km³) 换算
+# Milliliter (ml) to Cubic Kilometer (km³) Conversion
 
 <script setup>
 import { onMounted, reactive, inject ,ref  } from 'vue'
@@ -40,7 +40,7 @@ const rules = {
 const form = reactive({
   number:null,
   result:'',
-  title:'毫升(ml)到立方公里(km³)换算'
+  title:'Milliliter (ml) to Cubic Kilometer (km³) Conversion'
 })
 
 const convertHandler = (e) => {
@@ -54,11 +54,11 @@ const convertHandler = (e) => {
 </script>
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="数值" path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="请输入毫升数值" />
+  <n-form-item label="Value" path="number">
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="Enter milliliter value" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
+    <n-button type="info" style="width:100%" @click="convertHandler">Convert</n-button>
   </n-form-item>
 </n-form>
 <n-card embedded :bordered="false" hoverable>
@@ -67,55 +67,55 @@ const convertHandler = (e) => {
   </div>
 </n-card>
 
-## 换算公式
-1 毫升(ml) = 0.000000000000001 立方公里(km³)
+## Conversion Formula
+1 Milliliter (ml) = 0.000000000000001 Cubic Kilometer (km³)
 
-### 换算原理
-毫升(ml)和立方公里(km³)都是体积单位，1立方公里等于1,000,000,000,000,000毫升。
+### Conversion Principle
+Milliliter (ml) and Cubic Kilometer (km³) are both volume units. 1 cubic kilometer equals 1 trillion cubic meters, while 1 milliliter equals 0.000001 cubic meters.
 
-## 常见换算值
-| 毫升(ml) | 立方公里(km³) | 实物参考                 |
-|---------|--------------|--------------------------|
-| 1,000,000,000,000,000 | 1       | 大型海洋的水量            |
-| 500,000,000,000,000  | 0.5     | 中型海洋的水量            |
-| 100,000,000,000,000  | 0.1     | 小型海洋的水量            |
-| 10,000,000,000,000   | 0.01    | 大型湖泊的水量            |
-| 1,000,000,000,000    | 0.001   | 中型湖泊的水量            |
+## Common Conversion Values
+| Milliliter (ml) | Cubic Kilometer (km³) | Real-world Reference                |
+|-----------------|----------------------|-------------------------------------|
+| 1,000,000,000,000,000 | 1                | Large mountain volume               |
+| 100,000,000,000,000   | 0.1              | Medium mountain volume              |
+| 10,000,000,000,000    | 0.01             | Small mountain volume               |
+| 1,000,000,000,000     | 0.001            | Large lake volume                   |
+| 100,000,000,000       | 0.0001           | Medium lake volume                  |
 
-## 应用场景
-### 地球科学
-- 海洋水体总量计算
-- 冰川体积测量
-- 大气水汽含量评估
+## Application Scenarios
+### Earth Science
+- Geological formation volume calculations
+- Mountain and valley volume studies
+- Continental shelf volume assessments
 
-### 天文学
-- 行星水体总量估算
-- 彗星冰核体积计算
-- 星际物质密度测量
+### Astronomy
+- Planetary volume comparisons
+- Asteroid and comet volume calculations
+- Space object volume measurements
 
-### 环境科学
-- 全球水资源总量统计
-- 极地冰盖融化量评估
-- 海平面上升预测
+### Environmental Science
+- Large-scale ecosystem volume studies
+- Climate change impact assessments
+- Global water cycle calculations
 
-## 单位换算技巧
-1. **快速心算法**：
-   - 毫升转立方公里 → 数值除以1,000,000,000,000,000
-   - 立方公里转毫升 → 数值乘以1,000,000,000,000,000
+## Unit Conversion Tips
+1. **Quick Mental Calculation**:
+   - Milliliter to Cubic Kilometer → Divide by 1,000,000,000,000,000
+   - Cubic Kilometer to Milliliter → Multiply by 1,000,000,000,000,000
 
-2. **科学记数法**：
-   - 1 ml = 1×10⁻¹⁵ km³
-   - 1 km³ = 1×10¹⁵ ml
+2. **Scientific Notation**:
+   - 1 ml = 1 × 10⁻¹⁵ km³
+   - 1 km³ = 1 × 10¹⁵ ml
 
-3. **记忆口诀**：
-   "毫升转立方公里，千万亿分一记心里"
+3. **Memory Aid**:
+   "One cubic kilometer equals one quadrillion milliliters"
 
-## 注意事项
-- 超大规模测量需使用卫星遥感技术
-- 地形测量精度影响总量计算结果
-- 温度变化对水体体积影响可忽略不计
+## Precautions
+- Extremely large-scale measurements
+- Earth's curvature affects volume calculations
+- Different measurement standards may apply
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Volume" :key="index">
     <n-button

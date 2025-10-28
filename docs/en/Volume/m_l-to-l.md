@@ -4,23 +4,23 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Volume/index
-      linkText: 体积单位换算
+      linkText: Volume Unit Conversion
   - - link: /Volume/m_l-to-l
-      linkText: 兆升到升换算
+      linkText: Megaliter to Liter Conversion
 head:
   - - meta
     - charset: utf-8
   - - meta
     - name: description
-      content: 兆升(Ml)与升(l)单位换算工具，1兆升等于1,000,000升。
+      content: Megaliter (Ml) to Liter (l) unit conversion tool. 1 megaliter equals 1,000,000 liters.
   - - meta
     - name: keywords
-      content: 兆升,升,单位换算,Ml,l
+      content: megaliter,liter,unit conversion,Ml,l
 ---
 
-# 兆升(Ml) 到 升(l) 换算
+# Megaliter (Ml) to Liter (l) Conversion
 
 <script setup>
 import { onMounted, reactive, inject ,ref  } from 'vue'
@@ -40,7 +40,7 @@ const rules = {
 const form = reactive({
   number:null,
   result:'',
-  title:'兆升(Ml)到升(l)换算'
+  title:'Megaliter (Ml) to Liter (l) Conversion'
 })
 
 const convertHandler = (e) => {
@@ -54,11 +54,11 @@ const convertHandler = (e) => {
 </script>
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="数值" path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="请输入兆升数值" />
+  <n-form-item label="Value" path="number">
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="Enter megaliter value" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
+    <n-button type="info" style="width:100%" @click="convertHandler">Convert</n-button>
   </n-form-item>
 </n-form>
 <n-card embedded :bordered="false" hoverable>
@@ -67,55 +67,55 @@ const convertHandler = (e) => {
   </div>
 </n-card>
 
-## 换算公式
-1 兆升(Ml) = 1,000,000 升(l)
+## Conversion Formula
+1 Megaliter (Ml) = 1,000,000 Liter (l)
 
-### 换算原理
-兆升(Ml)和升(l)都是体积单位，1兆升等于100万升。
+### Conversion Principle
+Megaliter (Ml) and Liter (l) are both volume units. 1 megaliter equals 1 million liters.
 
-## 常见换算值
-| 兆升(Ml) | 升(l) | 实物参考                 |
-|---------|-------|--------------------------|
-| 1       | 1,000,000 | 大型储油罐的容量          |
-| 0.5     | 500,000 | 中型储油罐的容量          |
-| 0.1     | 100,000 | 小型储油罐的容量          |
-| 0.01    | 10,000  | 大型水箱的容量            |
-| 0.001   | 1,000   | 中型水箱的容量            |
+## Common Conversion Values
+| Megaliter (Ml) | Liter (l)   | Real-world Reference                |
+|----------------|-------------|-------------------------------------|
+| 1              | 1,000,000   | One megaliter capacity              |
+| 0.5            | 500,000     | Half megaliter capacity             |
+| 0.1            | 100,000     | One-tenth megaliter capacity        |
+| 0.05           | 50,000      | Large swimming pool volume          |
+| 0.01           | 10,000      | Medium water tank capacity          |
 
-## 应用场景
-### 石油工业
-- 原油储量计算
-- 成品油储存
-- 油轮容量规划
+## Application Scenarios
+### Water Management
+- Municipal water supply systems
+- Large reservoir capacity planning
+- Industrial water usage monitoring
 
-### 化工领域
-- 液体原料储存
-- 化工产品生产
-- 反应容器设计
+### Environmental Science
+- Lake volume measurements
+- River flow calculations
+- Watershed analysis
 
-### 水资源管理
-- 水库储水量计算
-- 城市供水系统
-- 工业用水规划
+### Engineering Projects
+- Large-scale water treatment plants
+- Irrigation system design
+- Hydroelectric dam planning
 
-## 单位换算技巧
-1. **快速心算法**：
-   - 兆升转升 → 数值乘以1,000,000
-   - 升转兆升 → 数值除以1,000,000
+## Unit Conversion Tips
+1. **Quick Mental Calculation**:
+   - Megaliter to Liter → Multiply by 1,000,000
+   - Liter to Megaliter → Divide by 1,000,000
 
-2. **科学记数法**：
-   - 1 Ml = 1×10⁶ l
-   - 1 l = 1×10⁻⁶ Ml
+2. **Scientific Notation**:
+   - 1 Ml = 1 × 10⁶ l
+   - 1 l = 1 × 10⁻⁶ Ml
 
-3. **记忆口诀**：
-   "兆升转升，百万倍要记清"
+3. **Memory Aid**:
+   "One megaliter equals one million liters"
 
-## 注意事项
-- 大规模测量需使用专业设备
-- 温度变化对液体体积影响较大
-- 容器形状影响实际容量计算
+## Precautions
+- Large-scale measurements require specialized equipment
+- Consider environmental factors for outdoor measurements
+- Different measurement standards may apply in various industries
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Volume" :key="index">
     <n-button

@@ -4,168 +4,184 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
-  - - link: /Force/
-      linkText: 体积单位换算
-  - - link: /Force/index
-      linkText: 体积单位单位换算
+      linkText: Home
+  - - link: /Volume/index
+      linkText: Volume Unit Conversion
+  - - link: /Volume/index
+      linkText: Volume Unit Conversion
 head:
   - - meta
     - charset: utf-8
   - - meta
     - name: description
-      content: 体积单位换算指南，涵盖公制与英制系统，包含立方毫米、升、加仑等常见单位对照表及科学实践应用解析，帮助您快速掌握单位之间的换算方法。
+      content: Volume unit conversion guide covering metric and imperial systems, including conversion tables for cubic millimeters, liters, gallons and other common units, with scientific practical application analysis to help you quickly master conversion methods between units.
   - - meta
     - name: keywords
-      content: 体积单位换算, 立方毫米, 升, 加仑, 公制系统, 英制系统, 单位换算表, 科学应用
+      content: volume unit conversion, cubic millimeter, liter, gallon, metric system, imperial system, unit conversion table, scientific applications
 ---
 
-# 体积单位换算
----
+# Volume Unit Conversion
+
 <script setup>
 import { onMounted, reactive, inject ,ref  } from 'vue'
 import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage ,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
 import { Volume } from '../files';
+
 const convert = inject('convert')
-const options =  [
-  { "label": "立方毫米 (mm³)", "value": "mm3" },
-  { "label": "立方厘米 (cm³)", "value": "cm3" },
-  { "label": "毫升 (ml)", "value": "ml" },
-  { "label": "升 (l)", "value": "l" },
-  { "label": "千升 (kl)", "value": "kl" },
-  { "label": "兆升 (Ml)", "value": "Ml" },
-  { "label": "吉升 (Gl)", "value": "Gl" },
-  { "label": "立方米 (m³)", "value": "m3" },
-  { "label": "立方千米 (km³)", "value": "km3" },
-  { "label": "茶匙 (tsp)", "value": "tsp" },
-  { "label": "汤匙 (Tbs)", "value": "Tbs" },
-  { "label": "立方英寸 (in³)", "value": "in3" },
-  { "label": "液量盎司 (fl-oz)", "value": "fl-oz" },
-  { "label": "杯 (cup)", "value": "cup" },
-  { "label": "品脱 (pnt)", "value": "pnt" },
-  { "label": "夸脱 (qt)", "value": "qt" },
-  { "label": "加仑 (gal)", "value": "gal" },
-  { "label": "立方英尺 (ft³)", "value": "ft3" },
-  { "label": "立方码 (yd³)", "value": "yd3" }
-];
 const formRef = ref(null);
+const options = [
+  { "label": "Cubic Millimeter (mm³)", "value": "mm3" },
+  { "label": "Cubic Centimeter (cm³)", "value": "cm3" },
+  { "label": "Milliliter (ml)", "value": "ml" },
+  { "label": "Liter (l)", "value": "l" },
+  { "label": "Kiloliter (kl)", "value": "kl" },
+  { "label": "Megaliter (Ml)", "value": "Ml" },
+  { "label": "Gigaliter (Gl)", "value": "Gl" },
+  { "label": "Cubic Meter (m³)", "value": "m3" },
+  { "label": "Cubic Kilometer (km³)", "value": "km3" },
+  { "label": "Teaspoon (tsp)", "value": "tsp" },
+  { "label": "Tablespoon (Tbs)", "value": "Tbs" },
+  { "label": "Cubic Inch (in³)", "value": "in3" },
+  { "label": "Fluid Ounce (fl-oz)", "value": "fl-oz" },
+  { "label": "Cup (cup)", "value": "cup" },
+  { "label": "Pint (pnt)", "value": "pnt" },
+  { "label": "Quart (qt)", "value": "qt" },
+  { "label": "Gallon (gal)", "value": "gal" },
+  { "label": "Cubic Foot (ft³)", "value": "ft3" },
+  { "label": "Cubic Yard (yd³)", "value": "yd3" }
+]
+
 const rules = {
   number:{
     required: true,
     type: 'number',
     trigger: "blur",
-    message: '请输入数字'
+    message: 'Please enter a number'
   },
   to:{
     required: true,
-    trigger: "select",
-    message: '请选择转换单位'
+    trigger: "blur",
+    message: 'Please select conversion unit'
   },
   from:{
     required: true,
-    trigger: "select",
-    message: '请选择原始单位'
+    trigger: "blur",
+    message: 'Please select original unit'
   }
 }
 const form = reactive({
   number:null,
-  to:'',
-  from:'',
   result:'',
-  title:'体积单位换算',
+  from:'',
+  to:'',
+  title:'Volume Unit Conversion',
 })
+
 const convertHandler = (e) => {
-   e.preventDefault();
+  e.preventDefault();
   formRef.value?.validate((errors)=>{
     if (!errors) {
-      form.result = `${form.number}${form.from} = ${convert(form.number).from(form.from).to(form.to)}${form.to}`
+      form.result = `${form.number} ${form.from} = ${convert(form.number).from(form.from).to(form.to)} ${form.to}`
     }
   })
 }
 </script>
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="数值"  path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数值" />
+  <n-form-item label="Value" path="number">
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="Enter the value to convert" />
   </n-form-item>
-  <n-form-item label="从" path="from">
-    <n-select  size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
+  <n-form-item label="From" path="from">
+    <n-select size="large" :options="options" v-model:value="form.from" placeholder="Select original unit" />
   </n-form-item>
-  <n-form-item label="到" path="to">
-    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
+  <n-form-item label="To" path="to">
+    <n-select size="large" :options="options" v-model:value="form.to" placeholder="Select conversion unit" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
+    <n-button type="info" style="width:100%" @click="convertHandler">Convert</n-button>
   </n-form-item>
 </n-form>
-<n-card  embedded :bordered="false" hoverable>
-  <div  style="text-align:center;font-size:20px;">
-    <strong>{{form.result}}</strong>
+<n-card embedded :bordered="false" hoverable>
+  <div style="text-align:center">
+    <h1>{{form.result}}</h1>
   </div>
 </n-card>
 
+### Volume Unit Conversion Table (Common Unit Reference)
 
-### 体积单位换算表（常用单位对照）
+| Unit Symbol | Unit Name | Conversion to Liter (L) | Common Application Scenarios |
+|-------------|-----------|--------------------------|------------------------------|
+| mm³ | Cubic Millimeter | 1 mm³ = 10⁻⁶ L | Tiny objects (pills, electronic components) |
+| cm³ | Cubic Centimeter | 1 cm³ = 0.001 L (=1 mL) | Laboratory reagents, small container capacity |
+| mL | Milliliter | 1 mL = 0.001 L | Beverage bottles, pharmaceutical dosage |
+| L | Liter | Base unit | Daily liquid measurement (bottled water, fuel tank) |
+| kL | Kiloliter | 1 kL = 1000 L | Industrial tanks, swimming pool water volume |
+| ML | Megaliter | 1 ML = 1,000,000 L | Reservoir capacity, large water projects |
+| GL | Gigaliter | 1 GL = 10⁹ L | Oceanography, regional water resource statistics |
+| m³ | Cubic Meter | 1 m³ = 1000 L | Building materials, shipping containers |
+| km³ | Cubic Kilometer | 1 km³ = 10¹² L | Crustal water reserves, volcanic magma volume |
+| tsp | Teaspoon (US) | 1 tsp ≈ 4.9289 mL | Cooking seasonings, baking recipes |
+| Tbsp | Tablespoon (US) | 1 Tbsp ≈ 14.7868 mL | Recipe measurements, sauce additions |
+| in³ | Cubic Inch | 1 in³ ≈ 16.387 mL | Engine displacement, mechanical parts |
+| fl-oz | Fluid Ounce (US) | 1 fl-oz ≈ 29.5735 mL | Beverage packaging, cosmetic capacity |
+| cup | Cup (US) | 1 cup ≈ 236.588 mL | Kitchen measuring cups, coffee making |
+| pnt | Pint (US) | 1 pnt ≈ 473.176 mL | Beer, milk packaging |
+| qt | Quart (US) | 1 qt ≈ 0.946 L | Paint cans, ice cream containers |
+| gal | Gallon (US) | 1 gal ≈ 3.785 L | Car fuel tanks, agricultural irrigation |
+| ft³ | Cubic Foot | 1 ft³ ≈ 28.3168 L | Air conditioning cooling capacity, lumber volume |
+| yd³ | Cubic Yard | 1 yd³ ≈ 764.555 L | Earthwork engineering, sand and gravel transport |
 
-| 单位符号 | 单位名称     | 换算为升（L）          | 常见应用场景               |
-| -------- | ------------ | ---------------------- | -------------------------- |
-| mm³      | 立方毫米     | 1 mm³ = 10⁻⁶ L         | 微小物体（如药丸、电子元件） |
-| cm³      | 立方厘米     | 1 cm³ = 0.001 L（=1 mL）| 实验室试剂、小容器容积     |
-| mL       | 毫升         | 1 mL = 0.001 L          | 饮料瓶装、药剂剂量         |
-| L        | 升           | 基准单位               | 日常液体计量（桶装水、油箱） |
-| kL       | 千升         | 1 kL = 1000 L           | 工业储罐、游泳池水量       |
-| ML       | 兆升         | 1 ML = 1,000,000 L      | 水库容量、大型水利工程     |
-| GL       | 吉升         | 1 GL = 10⁹ L            | 海洋学、区域水资源统计     |
-| m³       | 立方米       | 1 m³ = 1000 L           | 建筑材料、货运集装箱       |
-| km³      | 立方千米     | 1 km³ = 10¹² L          | 地壳水储量、火山岩浆体积   |
-| tsp      | 茶匙（美制） | 1 tsp ≈ 4.9289 mL       | 烹饪调料、烘焙配方         |
-| Tbsp     | 汤匙（美制） | 1 Tbsp ≈ 14.7868 mL     | 食谱计量、酱料添加         |
-| in³      | 立方英寸     | 1 in³ ≈ 16.387 mL       | 发动机排量、机械零件       |
-| fl-oz    | 液量盎司（美制）| 1 fl-oz ≈ 29.5735 mL   | 饮料包装、化妆品容量       |
-| cup      | 杯（美制）   | 1 cup ≈ 236.588 mL      | 厨房量杯、咖啡制作         |
-| pnt      | 品脱（美制） | 1 pnt ≈ 473.176 mL      | 啤酒、牛奶包装             |
-| qt       | 夸脱（美制） | 1 qt ≈ 0.946 L          | 油漆桶、冰淇淋容器         |
-| gal      | 加仑（美制） | 1 gal ≈ 3.785 L         | 汽车油箱、农业灌溉         |
-| ft³      | 立方英尺     | 1 ft³ ≈ 28.3168 L       | 空调制冷量、木材体积       |
-| yd³      | 立方码       | 1 yd³ ≈ 764.555 L       | 土方工程、砂石运输         |
+**Note:**
 
-**注：**
+- Imperial and US units differ (e.g., Imperial gallon ≈ 4.546 L).
+- Metric units use decimal progression (1 L = 1000 mL), while Imperial is based on historical container standards.
 
-- 英制与美制单位存在差异（如英制加仑 ≈ 4.546 L）。
-- 公制单位采用十进制进阶（1 L = 1000 mL），而英制基于历史容器标准 。
+### Scientific Article: The Scientific Logic and Practice of Volume Units
 
-### 科普文章：体积单位的科学逻辑与实践
+#### I. Metric Units: Decimal Expression of Natural Laws
 
-#### 一、公制单位：自然规律的十进制表达
+Metric volume units (such as mL→L→m³) are based on the physical properties of water:
 
-公制体积单位（如 mL→L→m³）以水的物理性质为基准：
+- 1 cubic centimeter (cm³) holds exactly 1 milliliter of water (density 1 g/mL at 4℃), becoming the gold standard for scientific measurement.
+- Cubic meter (m³) is used for macroscopic fields: global annual freshwater consumption is about 4,000 km³ (4×10¹⁵ L), highlighting the quantification needs for massive resources.
 
-- 1 立方厘米（cm³）恰好容纳 1 毫升水（4℃时密度为 1 g/mL），成为科学测量的黄金标准 。
-- 立方米（m³）则用于宏观领域：全球年淡水消耗量约 4,000 km³（4×10¹⁵ L），凸显对巨型资源的量化需求 。
+#### II. Imperial Units: From Daily Containers to Industrial Standards
 
-#### 二、英制单位：从生活容器到工业标准
+The birth of Imperial units stems from practical daily use:
 
-英制单位的诞生源于日常实用：
+- Teaspoon (tsp) and tablespoon (Tbsp) originate from utensil sizes and remain core to Western recipes today.
+- The gallon (gal) controversy: US (3.785 L) used in petroleum trade, Imperial (4.546 L) influences EU beverage standards, reflecting geopolitical cultural differences.
 
-- 茶匙（tsp）和汤匙（Tbsp）源自餐具尺寸，至今仍是西式食谱的核心 。
-- 加仑（gal）的争议：美制（3.785 L）用于石油贸易，英制（4.546 L）影响欧盟饮料标准，反映地缘文化差异 。
+#### III. Scientific Significance of Unit Conversion
 
-#### 三、单位换算的科学意义
+- **Medical Field**: Injectable solutions are precisely measured in mL, 1 mL error could lead to dosage overdose (pediatric medications require 0.1 mL precision).
+- **Environmental Science**: Rainfall 1 mm = 1 L/m², converting two-dimensional data into volume resource assessment.
+- **Engineering Challenges**: Three Gorges Reservoir capacity 39.3 GL (3.93×10¹⁰ m³), unit standardization prevents construction calculation disasters.
 
-- **医药领域**：注射液以 mL 精确计量，1 mL 误差可能导致剂量超标（如儿童用药需 0.1 mL 精度）。
-- **环境科学**：降雨量 1 mm = 1 L/m²，将二维数据转化为体积资源评估 。
-- **工程挑战**：三峡水库库容 39.3 GL（3.93×10¹⁰ m³），单位统一避免施工计算灾难 。
+#### IV. Future Trends: Comprehensive International System of Units
 
-#### 四、未来趋势：国际单位制的全面化
+With advancing globalization:
 
-随着全球化推进：
+- Scientific fields have popularized m³ and L, but US units still dominate in American manufacturing and agriculture.
+- Artificial intelligence is developing real-time unit conversion tools to solve cross-national collaboration barriers (such as 3D printing files needing to synchronize in³ and mm³).
 
-- 科学领域已普及 m³ 和 L，但美制单位仍在美国制造业、农业中主导 。
-- 人工智能正开发实时单位换算工具，解决跨国协作障碍（如 3D 打印文件需同步 in³ 与 mm³）。
+### Practical Recommendations
 
-### 实用建议
+- **Daily Scenarios**: Prioritize mL/cup for cooking, avoid confusion between teaspoons and tablespoons.
+- **Professional Fields**: Scientific experiments stick to metric, international trade needs to confirm US/Imperial versions.
+- **Extension Tools**: Recommend using NIST Unit Converter (National Institute of Standards and Technology) for dynamic calculations.
 
-- **日常场景**：烹饪优先使用 mL/cup，避免茶匙与汤匙混淆。
-- **专业领域**：科学实验坚持公制，国际贸易需确认美制 / 英制版本 。
-- **扩展工具**：推荐使用 NIST 单位换算器（美国国家标准技术研究院）动态计算。
+## Related Links
+<n-grid x-gap="12" :cols="2">
+  <n-gi v-for="(file, index) in Volume" :key="index">
+    <n-button
+      text
+      tag="a"
+      :href="file.path"
+      type="info"
+    >
+      {{file.name}}
+    </n-button>
+  </n-gi>
+</n-grid>

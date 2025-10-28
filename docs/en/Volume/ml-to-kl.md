@@ -4,23 +4,23 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Volume/index
-      linkText: 体积单位换算
+      linkText: Volume Unit Conversion
   - - link: /Volume/ml-to-kl
-      linkText: 毫升到千升换算
+      linkText: Milliliter to Kiloliter Conversion
 head:
   - - meta
     - charset: utf-8
   - - meta
     - name: description
-      content: 毫升(ml)与千升(kl)单位换算工具，1毫升等于0.000001千升。
+      content: Milliliter (ml) to Kiloliter (kl) unit conversion tool. 1 milliliter equals 0.000001 kiloliters.
   - - meta
     - name: keywords
-      content: 毫升,千升,单位换算,ml,kl
+      content: milliliter,kiloliter,unit conversion,ml,kl
 ---
 
-# 毫升(ml) 到 千升(kl) 换算
+# Milliliter (ml) to Kiloliter (kl) Conversion
 
 <script setup>
 import { onMounted, reactive, inject ,ref  } from 'vue'
@@ -40,7 +40,7 @@ const rules = {
 const form = reactive({
   number:null,
   result:'',
-  title:'毫升(ml)到千升(kl)换算'
+  title:'Milliliter (ml) to Kiloliter (kl) Conversion'
 })
 
 const convertHandler = (e) => {
@@ -54,11 +54,11 @@ const convertHandler = (e) => {
 </script>
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="数值" path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="请输入毫升数值" />
+  <n-form-item label="Value" path="number">
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="Enter milliliter value" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
+    <n-button type="info" style="width:100%" @click="convertHandler">Convert</n-button>
   </n-form-item>
 </n-form>
 <n-card embedded :bordered="false" hoverable>
@@ -67,60 +67,55 @@ const convertHandler = (e) => {
   </div>
 </n-card>
 
-## 换算公式
-1 毫升(ml) = 0.000001 千升(kl)
+## Conversion Formula
+1 Milliliter (ml) = 0.000001 Kiloliter (kl)
 
-### 换算原理
-毫升(ml)和千升(kl)都是体积单位，1千升等于1,000,000毫升。
+### Conversion Principle
+Milliliter (ml) and Kiloliter (kl) are both volume units. 1 kiloliter equals 1,000 liters, while 1 milliliter equals 0.001 liters.
 
-## 常见换算值
-| 毫升(ml) | 千升(kl) | 实物参考                 |
-|---------|----------|--------------------------|
-| 1,000,000 | 1        | 1立方米水的体积           |
-| 500,000  | 0.5      | 中型水箱的体积            |
-| 100,000  | 0.1      | 浴缸的水量               |
-| 10,000   | 0.01     | 小型水桶的体积           |
-| 1,000    | 0.001    | 1升瓶装水的体积          |
+## Common Conversion Values
+| Milliliter (ml) | Kiloliter (kl) | Real-world Reference                |
+|-----------------|----------------|-------------------------------------|
+| 1,000,000       | 1              | Swimming pool volume                |
+| 500,000         | 0.5            | Large water tank                    |
+| 100,000         | 0.1            | Small water tank                    |
+| 50,000          | 0.05           | Hot tub volume                      |
+| 10,000          | 0.01           | Large bathtub volume                |
 
-## 应用场景
-### 工业应用
-- 大型容器容积计算
-- 液体产品批量生产
-- 储罐容量规划
+## Application Scenarios
+### Industrial Applications
+- Large tank capacity calculations
+- Chemical storage volume measurements
+- Industrial process fluid volumes
 
-### 农业领域
-- 灌溉水量计算
-- 储水池容量测量
-- 液体肥料用量
+### Water Management
+- Municipal water storage
+- Swimming pool capacity planning
+- Water treatment facility volumes
 
-### 商业领域
-- 液体商品批量交易
-- 储油罐容量计算
-- 饮料生产批量控制
+### Daily Life
+- Large container measurements
+- Home water storage systems
+- Pool and spa calculations
 
-### 科研领域
-- 大规模实验液体测量
-- 环境样本体积计算
-- 水资源管理
+## Unit Conversion Tips
+1. **Quick Mental Calculation**:
+   - Milliliter to Kiloliter → Divide by 1,000,000
+   - Kiloliter to Milliliter → Multiply by 1,000,000
 
-## 单位换算技巧
-1. **快速心算法**：
-   - 毫升转千升 → 数值除以1,000,000
-   - 千升转毫升 → 数值乘以1,000,000
+2. **Approximation Method**:
+   - 1 million ml ≈ 1 kl
+   - 500,000 ml ≈ 0.5 kl
 
-2. **科学记数法**：
-   - 1 ml = 1×10⁻⁶ kl
-   - 1 kl = 1×10⁶ ml
+3. **Memory Aid**:
+   "One kiloliter equals one million milliliters"
 
-3. **记忆口诀**：
-   "毫升转千升，百万分一记分明"
+## Precautions
+- Ensure unit consistency in calculations
+- Consider temperature effects on liquid volume
+- Use appropriate measuring equipment
 
-## 注意事项
-- 大规模测量需使用专业设备
-- 温度变化对液体体积影响较大
-- 容器形状影响实际容量计算
-
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Volume" :key="index">
     <n-button

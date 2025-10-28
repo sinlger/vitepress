@@ -4,23 +4,23 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Volume/index
-      linkText: 体积单位换算
+      linkText: Volume Unit Conversion
   - - link: /Volume/tsp-to-mm3
-      linkText: 茶匙到立方毫米换算
+      linkText: Teaspoon to Cubic Millimeter Conversion
 head:
   - - meta
     - charset: utf-8
   - - meta
     - name: description
-      content: 茶匙(tsp)与立方毫米(mm³)单位换算工具，1茶匙等于4,928.92立方毫米。
+      content: Teaspoon (tsp) to Cubic Millimeter (mm³) unit conversion tool. 1 teaspoon equals 4928.92 cubic millimeters.
   - - meta
     - name: keywords
-      content: 茶匙,立方毫米,单位换算,tsp,mm3
+      content: teaspoon,cubic millimeter,unit conversion,tsp,mm3
 ---
 
-# 茶匙(tsp) 到 立方毫米(mm³) 换算
+# Teaspoon (tsp) to Cubic Millimeter (mm³) Conversion
 
 <script setup>
 import { onMounted, reactive, inject ,ref  } from 'vue'
@@ -40,7 +40,7 @@ const rules = {
 const form = reactive({
   number:null,
   result:'',
-  title:'茶匙(tsp)到立方毫米(mm³)换算'
+  title:'Teaspoon (tsp) to Cubic Millimeter (mm³) Conversion'
 })
 
 const convertHandler = (e) => {
@@ -54,11 +54,11 @@ const convertHandler = (e) => {
 </script>
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="数值" path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="请输入茶匙数值" />
+  <n-form-item label="Value" path="number">
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="Enter teaspoon value" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
+    <n-button type="info" style="width:100%" @click="convertHandler">Convert</n-button>
   </n-form-item>
 </n-form>
 <n-card embedded :bordered="false" hoverable>
@@ -67,55 +67,55 @@ const convertHandler = (e) => {
   </div>
 </n-card>
 
-## 换算公式
-1 茶匙(tsp) = 4,928.92 立方毫米(mm³)
+## Conversion Formula
+1 Teaspoon (tsp) = 4928.92 Cubic Millimeter (mm³)
 
-### 换算原理
-茶匙(tsp)和立方毫米(mm³)都是体积单位，1茶匙等于约4929立方毫米。
+### Conversion Principle
+Teaspoon (tsp) and Cubic Millimeter (mm³) are both volume units. 1 teaspoon equals approximately 4929 cubic millimeters.
 
-## 常见换算值
-| 茶匙(tsp) | 立方毫米(mm³) | 实物参考                 |
-|-----------|-------------|--------------------------|
-| 1         | 4,928.92    | 标准茶匙容量              |
-| 0.5       | 2,464.46    | 半茶匙容量                |
-| 0.25      | 1,232.23    | 四分之一茶匙容量          |
-| 2         | 9,857.84    | 两茶匙容量                |
-| 3         | 14,786.76   | 三茶匙容量                |
+## Common Conversion Values
+| Teaspoon (tsp) | Cubic Millimeter (mm³) | Real-world Reference                |
+|----------------|------------------------|-------------------------------------|
+| 1              | 4928.92                | Standard teaspoon capacity          |
+| 0.5            | 2464.46                | Half teaspoon capacity              |
+| 0.25           | 1232.23                | Quarter teaspoon capacity           |
+| 2              | 9857.84                | Two teaspoons capacity              |
+| 3              | 14786.76               | Three teaspoons capacity            |
 
-## 应用场景
-### 烹饪
-- 精确测量小份量液体
-- 食谱配方换算
-- 厨房计量工具校准
+## Application Scenarios
+### Precision Engineering
+- Micro-component volume calculations
+- Precision manufacturing measurements
+- Quality control in small-scale production
 
-### 医药
-- 药品剂量测量
-- 实验室小容量液体测量
-- 医疗器具校准
+### Scientific Research
+- Laboratory micro-volume measurements
+- Chemical reaction volume calculations
+- Biological sample volume analysis
 
-### 日常生活
-- 饮料调配
-- 手工制作
-- 小型容器容量测量
+### Industrial Applications
+- Pharmaceutical dosage calculations
+- Precision coating applications
+- Micro-fluid system design
 
-## 单位换算技巧
-1. **快速心算法**：
-   - 茶匙转立方毫米 → 数值乘以4,928.92
-   - 立方毫米转茶匙 → 数值除以4,928.92
+## Unit Conversion Tips
+1. **Quick Mental Calculation**:
+   - Teaspoon to Cubic Millimeter → Multiply by 4929
+   - Cubic Millimeter to Teaspoon → Divide by 4929
 
-2. **近似记忆**：
-   - 1茶匙 ≈ 5,000立方毫米
-   - 1立方毫米 ≈ 0.0002茶匙
+2. **Scientific Notation**:
+   - Use scientific notation for large values
+   - 1 tsp = 4.929 × 10³ mm³
 
-3. **记忆口诀**：
-   "茶匙转立方毫米，五千倍要记清"
+3. **Memory Aid**:
+   "Teaspoon to cubic millimeter, nearly five thousand to remember"
 
-## 注意事项
-- 不同国家茶匙标准略有差异
-- 精确测量需使用标准量具
-- 液体表面张力影响测量精度
+## Precautions
+- Extremely precise measurements require specialized equipment
+- Accuracy is crucial for small volumes
+- Temperature effects can influence measurement precision
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Volume" :key="index">
     <n-button

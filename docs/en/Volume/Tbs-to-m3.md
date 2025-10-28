@@ -4,23 +4,23 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Volume/index
-      linkText: 体积单位换算
+      linkText: Volume Unit Conversion
   - - link: /Volume/Tbs-to-m3
-      linkText: 汤匙到立方米换算
+      linkText: Tablespoon to Cubic Meter Conversion
 head:
   - - meta
     - charset: utf-8
   - - meta
     - name: description
-      content: 汤匙(Tbs)与立方米(m³)单位换算工具，1汤匙等于0.00001478676立方米。
+      content: Tablespoon (Tbs) to Cubic Meter (m³) unit conversion tool. 1 tablespoon equals 0.00001478676 cubic meters.
   - - meta
     - name: keywords
-      content: 汤匙,立方米,单位换算,Tbs,m3
+      content: tablespoon,cubic meter,unit conversion,Tbs,m3
 ---
 
-# 汤匙(Tbs) 到 立方米(m³) 换算
+# Tablespoon (Tbs) to Cubic Meter (m³) Conversion
 
 <script setup>
 import { onMounted, reactive, inject ,ref  } from 'vue'
@@ -40,7 +40,7 @@ const rules = {
 const form = reactive({
   number:null,
   result:'',
-  title:'汤匙(Tbs)到立方米(m³)换算'
+  title:'Tablespoon (Tbs) to Cubic Meter (m³) Conversion'
 })
 
 const convertHandler = (e) => {
@@ -54,11 +54,11 @@ const convertHandler = (e) => {
 </script>
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="数值" path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="请输入汤匙数值" />
+  <n-form-item label="Value" path="number">
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="Enter tablespoon value" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
+    <n-button type="info" style="width:100%" @click="convertHandler">Convert</n-button>
   </n-form-item>
 </n-form>
 <n-card embedded :bordered="false" hoverable>
@@ -67,55 +67,55 @@ const convertHandler = (e) => {
   </div>
 </n-card>
 
-## 换算公式
-1 汤匙(Tbs) = 0.00001478676 立方米(m³)
+## Conversion Formula
+1 Tablespoon (Tbs) = 0.00001478676 Cubic Meter (m³)
 
-### 换算原理
-汤匙(Tbs)和立方米(m³)都是体积单位，1汤匙等于约0.0000148立方米。
+### Conversion Principle
+Tablespoon (Tbs) and Cubic Meter (m³) are both volume units. 1 tablespoon equals approximately 0.0000148 cubic meters.
 
-## 常见换算值
-| 汤匙(Tbs) | 立方米(m³)    | 实物参考                 |
-|-----------|--------------|--------------------------|
-| 1         | 0.00001478676| 标准汤匙容量              |
-| 0.5       | 0.00000739338| 半汤匙容量                |
-| 0.25      | 0.00000369669| 四分之一汤匙容量          |
-| 2         | 0.00002957352| 两汤匙容量                |
-| 3         | 0.00004436028| 三汤匙容量                |
+## Common Conversion Values
+| Tablespoon (Tbs) | Cubic Meter (m³)    | Real-world Reference                |
+|-------------------|---------------------|-------------------------------------|
+| 1                 | 0.00001478676       | Standard tablespoon capacity        |
+| 100               | 0.001478676         | 100 tablespoons capacity            |
+| 1000              | 0.01478676          | 1000 tablespoons capacity           |
+| 10000             | 0.1478676           | 10000 tablespoons capacity          |
+| 67628             | 1.0                 | Approximately 1 cubic meter         |
 
-## 应用场景
-### 烹饪
-- 精确测量液体配料
-- 食谱配方换算
-- 厨房计量工具校准
+## Application Scenarios
+### Water Management
+- Municipal water supply calculations
+- Irrigation system design
+- Water treatment facility planning
 
-### 医药
-- 药品剂量测量
-- 实验室液体测量
-- 医疗器具校准
+### Environmental Science
+- Ecosystem volume measurements
+- Pollution dispersion modeling
+- Environmental impact assessments
 
-### 日常生活
-- 饮料调配
-- 手工制作
-- 小型容器容量测量
+### Engineering Projects
+- Construction material calculations
+- Structural design considerations
+- Industrial process planning
 
-## 单位换算技巧
-1. **快速心算法**：
-   - 汤匙转立方米 → 数值乘以0.0000148
-   - 立方米转汤匙 → 数值除以0.0000148
+## Unit Conversion Tips
+1. **Quick Mental Calculation**:
+   - Tablespoon to Cubic Meter → Multiply by 0.0000148
+   - Cubic Meter to Tablespoon → Divide by 0.0000148
 
-2. **近似记忆**：
-   - 1汤匙 ≈ 0.000015立方米
-   - 1立方米 ≈ 67,628汤匙
+2. **Scientific Notation**:
+   - Use scientific notation for small values
+   - 1 Tbs = 1.479 × 10⁻⁵ m³
 
-3. **记忆口诀**：
-   "汤匙转立方，十万分之一五要记清"
+3. **Memory Aid**:
+   "Tablespoon to cubic meter, divide by sixty-seven thousand"
 
-## 注意事项
-- 不同国家汤匙标准略有差异
-- 精确测量需使用标准量具
-- 液体表面张力影响测量精度
+## Precautions
+- Large-scale measurements require appropriate equipment
+- Temperature effects can influence liquid volume measurements
+- Container shape affects measurement accuracy
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Volume" :key="index">
     <n-button

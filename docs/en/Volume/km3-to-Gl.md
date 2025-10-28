@@ -4,23 +4,23 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Volume/index
-      linkText: 体积单位换算
+      linkText: Volume Unit Conversion
   - - link: /Volume/km3-to-Gl
-      linkText: 立方公里到吉升换算
+      linkText: Cubic Kilometer to Gigaliter Conversion
 head:
   - - meta
     - charset: utf-8
   - - meta
     - name: description
-      content: 立方公里(km³)与吉升(Gl)单位换算工具，1立方公里等于1,000吉升。
+      content: Cubic Kilometer (km³) to Gigaliter (Gl) unit conversion tool. 1 cubic kilometer equals 1,000 gigaliters.
   - - meta
     - name: keywords
-      content: 立方公里,吉升,单位换算,km3,Gl
+      content: cubic kilometer,gigaliter,unit conversion,km3,Gl
 ---
 
-# 立方公里(km³) 到 吉升(Gl) 换算
+# Cubic Kilometer (km³) to Gigaliter (Gl) Conversion
 
 <script setup>
 import { onMounted, reactive, inject ,ref  } from 'vue'
@@ -40,7 +40,7 @@ const rules = {
 const form = reactive({
   number:null,
   result:'',
-  title:'立方公里(km³)到吉升(Gl)换算'
+  title:'Cubic Kilometer (km³) to Gigaliter (Gl) Conversion'
 })
 
 const convertHandler = (e) => {
@@ -54,11 +54,11 @@ const convertHandler = (e) => {
 </script>
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="数值" path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="请输入立方公里数值" />
+  <n-form-item label="Value" path="number">
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="Enter cubic kilometer value" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
+    <n-button type="info" style="width:100%" @click="convertHandler">Convert</n-button>
   </n-form-item>
 </n-form>
 <n-card embedded :bordered="false" hoverable>
@@ -67,55 +67,55 @@ const convertHandler = (e) => {
   </div>
 </n-card>
 
-## 换算公式
-1 立方公里(km³) = 1,000 吉升(Gl)
+## Conversion Formula
+1 Cubic Kilometer (km³) = 1,000 Gigaliter (Gl)
 
-### 换算原理
-立方公里(km³)和吉升(Gl)都是体积单位，1立方公里等于1000吉升。
+### Conversion Principle
+Cubic Kilometer (km³) and Gigaliter (Gl) are both volume units. 1 cubic kilometer equals 1,000 gigaliters.
 
-## 常见换算值
-| 立方公里(km³) | 吉升(Gl) | 实物参考                 |
-|-------------|---------|--------------------------|
-| 1           | 1,000 | 大型海洋水体体积          |
-| 0.5         | 500 | 中型海洋水体体积          |
-| 0.1         | 100 | 小型海洋水体体积          |
-| 0.01        | 10 | 大型湖泊水体体积          |
-| 0.001       | 1 | 中型湖泊水体体积          |
+## Common Conversion Values
+| Cubic Kilometer (km³) | Gigaliter (Gl) | Real-world Reference                 |
+|-----------------------|----------------|--------------------------------------|
+| 1                     | 1,000          | Standard cubic kilometer capacity     |
+| 0.5                   | 500            | Half cubic kilometer capacity         |
+| 0.1                   | 100            | One-tenth cubic kilometer capacity    |
+| 0.01                  | 10             | One-hundredth cubic kilometer capacity|
+| 0.001                 | 1              | One-thousandth cubic kilometer capacity|
 
-## 应用场景
-### 地球科学
-- 海洋水体总量计算
-- 冰川体积测量
-- 大气水汽含量估算
+## Application Scenarios
+### Water Management
+- Large reservoir capacity
+- River basin volume assessment
+- National water resource planning
 
-### 天文领域
-- 行星水体储量评估
-- 彗星冰核体积计算
-- 星际云团物质总量
+### Environmental Science
+- Ocean volume measurements
+- Climate change impact studies
+- Hydrological cycle analysis
 
-### 超大规模工程
-- 全球水资源统计
-- 跨大陆调水工程
-- 超大型水库设计
+### Engineering Projects
+- Mega-scale water projects
+- Dam and reservoir design
+- Large-scale irrigation systems
 
-## 单位换算技巧
-1. **快速心算法**：
-   - 立方公里转吉升 → 数值乘以1,000
-   - 吉升转立方公里 → 数值除以1,000
+## Unit Conversion Tips
+1. **Quick Mental Calculation**:
+   - Cubic Kilometer to Gigaliter → Multiply by 1,000
+   - Gigaliter to Cubic Kilometer → Divide by 1,000
 
-2. **科学记数法**：
-   - 1 km³ = 1×10³ Gl
-   - 1 Gl = 1×10⁻³ km³
+2. **Scientific Notation**:
+   - 1 km³ = 1 × 10³ Gl
+   - 1 Gl = 1 × 10⁻³ km³
 
-3. **记忆口诀**：
-   "立方公里转吉升，千倍关系要记清"
+3. **Memory Aid**:
+   "Cubic kilometer is 1,000 times larger than gigaliter"
 
-## 注意事项
-- 超大规模测量需使用卫星遥感技术
-- 地球曲率影响大范围体积计算
-- 精确测量需考虑地形变化
+## Precautions
+- Large-scale measurements require specialized equipment
+- Consider environmental factors for outdoor measurements
+- Different measurement standards may apply in various industries
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Volume" :key="index">
     <n-button

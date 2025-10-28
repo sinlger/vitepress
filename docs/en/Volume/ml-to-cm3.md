@@ -4,23 +4,23 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Volume/index
-      linkText: 体积单位换算
+      linkText: Volume Unit Conversion
   - - link: /Volume/ml-to-cm3
-      linkText: 毫升到立方厘米换算
+      linkText: Milliliter to Cubic Centimeter Conversion
 head:
   - - meta
     - charset: utf-8
   - - meta
     - name: description
-      content: 毫升(ml)与立方厘米(cm³)单位换算工具，1毫升等于1立方厘米。
+      content: Milliliter (ml) to Cubic Centimeter (cm³) unit conversion tool. 1 milliliter equals 1 cubic centimeter.
   - - meta
     - name: keywords
-      content: 毫升,立方厘米,单位换算,ml,cm³
+      content: milliliter,cubic centimeter,unit conversion,ml,cm³
 ---
 
-# 毫升(ml) 到 立方厘米(cm³) 换算
+# Milliliter (ml) to Cubic Centimeter (cm³) Conversion
 
 <script setup>
 import { onMounted, reactive, inject ,ref  } from 'vue'
@@ -40,7 +40,7 @@ const rules = {
 const form = reactive({
   number:null,
   result:'',
-  title:'毫升(ml)到立方厘米(cm³)换算'
+  title:'Milliliter (ml) to Cubic Centimeter (cm³) Conversion'
 })
 
 const convertHandler = (e) => {
@@ -54,11 +54,11 @@ const convertHandler = (e) => {
 </script>
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="数值" path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="请输入毫升数值" />
+  <n-form-item label="Value" path="number">
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="Enter milliliter value" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
+    <n-button type="info" style="width:100%" @click="convertHandler">Convert</n-button>
   </n-form-item>
 </n-form>
 <n-card embedded :bordered="false" hoverable>
@@ -67,55 +67,55 @@ const convertHandler = (e) => {
   </div>
 </n-card>
 
-## 换算公式
-1 毫升(ml) = 1 立方厘米(cm³)
+## Conversion Formula
+1 Milliliter (ml) = 1 Cubic Centimeter (cm³)
 
-### 换算原理
-毫升(ml)和立方厘米(cm³)是等价的体积单位，1毫升等于1立方厘米。
+### Conversion Principle
+Milliliter (ml) and Cubic Centimeter (cm³) are both volume units. They are equivalent units, with 1 milliliter exactly equal to 1 cubic centimeter.
 
-## 常见换算值
-| 毫升(ml) | 立方厘米(cm³) | 实物参考                 |
-|---------|--------------|--------------------------|
-| 1       | 1            | 标准骰子的体积            |
-| 5       | 5            | 一茶匙液体的体积          |
-| 10      | 10           | 一汤匙液体的体积          |
-| 15      | 15           | 标准药瓶的体积            |
-| 30      | 30           | 小酒杯的体积              |
+## Common Conversion Values
+| Milliliter (ml) | Cubic Centimeter (cm³) | Real-world Reference                |
+|-----------------|------------------------|-------------------------------------|
+| 1               | 1                      | Small medicine dose                 |
+| 5               | 5                      | Teaspoon volume                     |
+| 15              | 15                     | Tablespoon volume                   |
+| 250             | 250                    | Standard cup volume                 |
+| 500             | 500                    | Water bottle volume                 |
 
-## 应用场景
-### 实验室应用
-- 化学试剂配比
-- 实验液体体积测量
-- 标准溶液配制
+## Application Scenarios
+### Medical Field
+- Medicine dosage calculations
+- Injection volume measurements
+- Laboratory sample volumes
 
-### 医疗领域
-- 药物剂量测量
-- 注射器容量计算
-- 医疗液体体积测量
+### Food Industry
+- Recipe ingredient measurements
+- Beverage production
+- Food packaging specifications
 
-### 日常生活
-- 烹饪调料计量
-- 饮料容量测量
-- 化妆品用量计算
+### Daily Life
+- Cooking measurements
+- Cosmetic product volumes
+- Small container capacities
 
-### 工业制造
-- 小型容器容积测量
-- 精密液体体积控制
-- 微型产品容量计算
+## Unit Conversion Tips
+1. **Quick Mental Calculation**:
+   - Milliliter to Cubic Centimeter → Same value (1:1 ratio)
+   - Cubic Centimeter to Milliliter → Same value (1:1 ratio)
 
-## 单位换算技巧
-1. **直接等价**：
-   - 毫升和立方厘米数值相同
+2. **Scientific Notation**:
+   - 1 ml = 1 cm³
+   - 1 cm³ = 1 ml
 
-2. **记忆口诀**：
-   "毫升立方厘米，数值相同好记忆"
+3. **Memory Aid**:
+   "Milliliter and cubic centimeter are identical units"
 
-## 注意事项
-- 测量时需使用标准量具
-- 高精度测量需考虑温度影响
-- 液体表面张力可能影响测量精度
+## Precautions
+- These units are exactly equivalent
+- No conversion calculation needed
+- Commonly used interchangeably in practice
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Volume" :key="index">
     <n-button

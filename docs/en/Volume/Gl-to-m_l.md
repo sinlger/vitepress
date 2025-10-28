@@ -4,23 +4,23 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Volume/index
-      linkText: 体积单位换算
+      linkText: Volume Unit Conversion
   - - link: /Volume/Gl-to-m_l
-      linkText: 吉升到兆升换算
+      linkText: Gigaliter to Megaliter Conversion
 head:
   - - meta
     - charset: utf-8
   - - meta
     - name: description
-      content: 吉升(Gl)与兆升(Ml)单位换算工具，1吉升等于1,000兆升。
+      content: Gigaliter (Gl) to Megaliter (Ml) unit conversion tool. 1 gigaliter equals 1,000 megaliters.
   - - meta
     - name: keywords
-      content: 吉升,兆升,单位换算,Gl,Ml
+      content: gigaliter,megaliter,unit conversion,Gl,Ml
 ---
 
-# 吉升(Gl) 到 兆升(Ml) 换算
+# Gigaliter (Gl) to Megaliter (Ml) Conversion
 
 <script setup>
 import { onMounted, reactive, inject ,ref  } from 'vue'
@@ -40,7 +40,7 @@ const rules = {
 const form = reactive({
   number:null,
   result:'',
-  title:'吉升(Gl)到兆升(Ml)换算'
+  title:'Gigaliter (Gl) to Megaliter (Ml) Conversion'
 })
 
 const convertHandler = (e) => {
@@ -54,11 +54,11 @@ const convertHandler = (e) => {
 </script>
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="数值" path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="请输入吉升数值" />
+  <n-form-item label="Value" path="number">
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="Enter gigaliter value" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
+    <n-button type="info" style="width:100%" @click="convertHandler">Convert</n-button>
   </n-form-item>
 </n-form>
 <n-card embedded :bordered="false" hoverable>
@@ -67,55 +67,55 @@ const convertHandler = (e) => {
   </div>
 </n-card>
 
-## 换算公式
-1 吉升(Gl) = 1,000 兆升(Ml)
+## Conversion Formula
+1 Gigaliter (Gl) = 1,000 Megaliters (Ml)
 
-### 换算原理
-吉升(Gl)和兆升(Ml)都是体积单位，1吉升等于1,000兆升。
+### Conversion Principle
+Gigaliter (Gl) and Megaliter (Ml) are both volume units. 1 gigaliter equals 1,000 megaliters.
 
-## 常见换算值
-| 吉升(Gl) | 兆升(Ml) | 实物参考                 |
-|---------|---------|--------------------------|
-| 1       | 1,000 | 大型海洋水体体积          |
-| 0.5     | 500 | 中型海洋水体体积          |
-| 0.1     | 100 | 小型海洋水体体积          |
-| 0.01    | 10 | 大型湖泊水体体积          |
-| 0.001   | 1 | 中型湖泊水体体积          |
+## Common Conversion Values
+| Gigaliter (Gl) | Megaliter (Ml) | Real-world Reference                 |
+|----------------|----------------|--------------------------------------|
+| 1              | 1,000          | Large oceanic water body volume      |
+| 0.5            | 500            | Medium oceanic water body volume     |
+| 0.1            | 100            | Small oceanic water body volume      |
+| 0.01           | 10             | Large lake water body volume         |
+| 0.001          | 1              | Medium lake water body volume        |
 
-## 应用场景
-### 地球科学
-- 海洋水体总量计算
-- 冰川体积测量
-- 大气水汽含量估算
+## Application Scenarios
+### Earth Science
+- Ocean water body total volume calculation
+- Glacier volume measurement
+- Atmospheric water vapor content estimation
 
-### 天文领域
-- 行星水体储量评估
-- 彗星冰核体积计算
-- 星际云团物质总量
+### Astronomy
+- Planetary water reserve assessment
+- Comet ice core volume calculation
+- Interstellar cloud material total volume
 
-### 超大规模工程
-- 全球水资源统计
-- 跨大陆调水工程
-- 超大型水库设计
+### Ultra-large Scale Engineering
+- Global water resource statistics
+- Transcontinental water transfer projects
+- Super-large reservoir design
 
-## 单位换算技巧
-1. **快速心算法**：
-   - 吉升转兆升 → 数值乘以1,000
-   - 兆升转吉升 → 数值除以1,000
+## Unit Conversion Tips
+1. **Quick Mental Calculation**:
+   - Gigaliter to Megaliter → Multiply by 1,000
+   - Megaliter to Gigaliter → Divide by 1,000
 
-2. **科学记数法**：
+2. **Scientific Notation**:
    - 1 Gl = 1×10³ Ml
    - 1 Ml = 1×10⁻³ Gl
 
-3. **记忆口诀**：
-   "吉升转兆升，千倍要记清"
+3. **Memory Aid**:
+   "Gigaliter to megaliter, remember the thousand multiplier"
 
-## 注意事项
-- 超大规模测量需使用卫星遥感技术
-- 地球曲率影响大范围体积计算
-- 精确测量需考虑地形变化
+## Precautions
+- Ultra-large scale measurements require satellite remote sensing technology
+- Earth's curvature affects large-scale volume calculations
+- Precise measurements need to consider topographic variations
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Volume" :key="index">
     <n-button

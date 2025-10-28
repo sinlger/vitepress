@@ -4,23 +4,23 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Volume/index
-      linkText: 体积单位换算
+      linkText: Volume Unit Conversion
   - - link: /Volume/kl-to-km3
-      linkText: 千升到立方公里换算
+      linkText: Kiloliter to Cubic Kilometer Conversion
 head:
   - - meta
     - charset: utf-8
   - - meta
     - name: description
-      content: 千升(kl)与立方公里(km³)单位换算工具，1千升等于0.000000001立方公里。
+      content: Kiloliter (kl) to Cubic Kilometer (km³) unit conversion tool. 1 kiloliter equals 0.000000001 cubic kilometers.
   - - meta
     - name: keywords
-      content: 千升,立方公里,单位换算,kl,km3
+      content: kiloliter,cubic kilometer,unit conversion,kl,km3
 ---
 
-# 千升(kl) 到 立方公里(km³) 换算
+# Kiloliter (kl) to Cubic Kilometer (km³) Conversion
 
 <script setup>
 import { onMounted, reactive, inject ,ref  } from 'vue'
@@ -40,7 +40,7 @@ const rules = {
 const form = reactive({
   number:null,
   result:'',
-  title:'千升(kl)到立方公里(km³)换算'
+  title:'Kiloliter (kl) to Cubic Kilometer (km³) Conversion'
 })
 
 const convertHandler = (e) => {
@@ -54,11 +54,11 @@ const convertHandler = (e) => {
 </script>
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="数值" path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="请输入千升数值" />
+  <n-form-item label="Value" path="number">
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="Enter kiloliter value" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
+    <n-button type="info" style="width:100%" @click="convertHandler">Convert</n-button>
   </n-form-item>
 </n-form>
 <n-card embedded :bordered="false" hoverable>
@@ -67,55 +67,55 @@ const convertHandler = (e) => {
   </div>
 </n-card>
 
-## 换算公式
-1 千升(kl) = 0.000000001 立方公里(km³)
+## Conversion Formula
+1 Kiloliter (kl) = 0.000000001 Cubic Kilometers (km³)
 
-### 换算原理
-千升(kl)和立方公里(km³)都是体积单位，1立方公里等于1,000,000,000千升。
+### Conversion Principle
+Kiloliter (kl) and Cubic Kilometer (km³) are both volume units. 1 kiloliter equals 0.000000001 cubic kilometers.
 
-## 常见换算值
-| 千升(kl) | 立方公里(km³) | 实物参考                 |
-|---------|-------------|--------------------------|
-| 1,000,000,000 | 1           | 小型湖泊的水量            |
-| 500,000,000  | 0.5         | 中型水库的水量            |
-| 100,000,000  | 0.1         | 大型水库的水量            |
-| 10,000,000   | 0.01        | 超大型水库的水量          |
-| 1,000,000    | 0.001       | 小型海湾的水量            |
+## Common Conversion Values
+| Kiloliter (kl) | Cubic Kilometer (km³) | Real-world Reference                 |
+|-----------------|----------------------|--------------------------------------|
+| 1,000,000,000   | 1                    | Large mountain lake                  |
+| 100,000,000     | 0.1                  | Medium-sized lake                    |
+| 10,000,000      | 0.01                 | Small lake                           |
+| 1,000,000       | 0.001                | Large reservoir                      |
+| 100,000         | 0.0001               | Medium reservoir                     |
 
-## 应用场景
-### 地球科学
-- 海洋水体总量计算
-- 冰川体积测量
-- 大气水汽含量估算
+## Application Scenarios
+### Earth Science
+- Ocean volume calculations
+- Atmospheric water vapor studies
+- Geological formation analysis
 
-### 天文领域
-- 行星水体储量评估
-- 彗星冰核体积计算
-- 星际云团物质总量
+### Astronomy
+- Planetary water volume estimation
+- Comet composition studies
+- Interstellar medium analysis
 
-### 大型工程
-- 跨流域调水工程规划
-- 全球水资源管理
-- 超大型水库设计
+### Ultra-large Scale Engineering
+- Continental water management
+- Global climate modeling
+- Planetary terraforming calculations
 
-## 单位换算技巧
-1. **快速心算法**：
-   - 千升转立方公里 → 数值除以1,000,000,000
-   - 立方公里转千升 → 数值乘以1,000,000,000
+## Unit Conversion Tips
+1. **Quick Mental Calculation**:
+   - Kiloliter to Cubic Kilometer → Multiply by 0.000000001
+   - Cubic Kilometer to Kiloliter → Multiply by 1,000,000,000
 
-2. **科学记数法**：
+2. **Scientific Notation**:
    - 1 kl = 1×10⁻⁹ km³
    - 1 km³ = 1×10⁹ kl
 
-3. **记忆口诀**：
-   "千升转立方公里，十亿分一记仔细"
+3. **Memory Aid**:
+   "Kiloliter to cubic kilometer, divide by one billion"
 
-## 注意事项
-- 超大规模测量需使用卫星遥感技术
-- 地球曲率影响大范围体积计算
-- 精确测量需考虑地形变化
+## Precautions
+- Satellite remote sensing required for large-scale measurements
+- Earth's curvature affects volume calculations
+- Topographic variations must be considered
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Volume" :key="index">
     <n-button

@@ -4,23 +4,23 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Volume/index
-      linkText: 体积单位换算
+      linkText: Volume Unit Conversion
   - - link: /Volume/l-to-mm3
-      linkText: 升到立方毫米换算
+      linkText: Liter to Cubic Millimeter Conversion
 head:
   - - meta
     - charset: utf-8
   - - meta
     - name: description
-      content: 升(l)与立方毫米(mm³)单位换算工具，1升等于1,000,000立方毫米。
+      content: Liter (l) to Cubic Millimeter (mm³) unit conversion tool. 1 liter equals 1,000,000 cubic millimeters.
   - - meta
     - name: keywords
-      content: 升,立方毫米,单位换算,l,mm3
+      content: liter,cubic millimeter,unit conversion,l,mm3
 ---
 
-# 升(l) 到 立方毫米(mm³) 换算
+# Liter (l) to Cubic Millimeter (mm³) Conversion
 
 <script setup>
 import { onMounted, reactive, inject ,ref  } from 'vue'
@@ -40,7 +40,7 @@ const rules = {
 const form = reactive({
   number:null,
   result:'',
-  title:'升(l)到立方毫米(mm³)换算'
+  title:'Liter (l) to Cubic Millimeter (mm³) Conversion'
 })
 
 const convertHandler = (e) => {
@@ -54,11 +54,11 @@ const convertHandler = (e) => {
 </script>
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="数值" path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="请输入升数值" />
+  <n-form-item label="Value" path="number">
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="Enter liter value" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
+    <n-button type="info" style="width:100%" @click="convertHandler">Convert</n-button>
   </n-form-item>
 </n-form>
 <n-card embedded :bordered="false" hoverable>
@@ -67,55 +67,55 @@ const convertHandler = (e) => {
   </div>
 </n-card>
 
-## 换算公式
-1 升(l) = 1,000,000 立方毫米(mm³)
+## Conversion Formula
+1 Liter (l) = 1,000,000 Cubic Millimeter (mm³)
 
-### 换算原理
-升(l)和立方毫米(mm³)都是体积单位，1立方毫米等于0.000001升。
+### Conversion Principle
+Liter (l) and Cubic Millimeter (mm³) are both volume units. 1 liter equals 1,000,000 cubic millimeters.
 
-## 常见换算值
-| 升(l) | 立方毫米(mm³) | 实物参考                 |
-|-------|--------------|--------------------------|
-| 1     | 1,000,000    | 标准矿泉水瓶容量          |
-| 0.5   | 500,000      | 小瓶装饮料容量            |
-| 0.1   | 100,000      | 口服液瓶容量              |
-| 0.01  | 10,000       | 眼药水瓶容量              |
-| 0.001 | 1,000        | 注射器容量                |
+## Common Conversion Values
+| Liter (l) | Cubic Millimeter (mm³) | Real-world Reference                |
+|-----------|------------------------|-------------------------------------|
+| 1         | 1,000,000              | One liter bottle                    |
+| 0.5       | 500,000                | Standard water bottle               |
+| 0.1       | 100,000                | Small medicine bottle               |
+| 0.01      | 10,000                 | Large spoon capacity                |
+| 0.001     | 1,000                  | Small spoon capacity                |
 
-## 应用场景
-### 医疗领域
-- 药品剂量精确测量
-- 医疗器械容量校准
-- 实验室微量液体分配
+## Application Scenarios
+### Precision Engineering
+- Micro-component volume calculations
+- Precision manufacturing measurements
+- Quality control testing
 
-### 工业制造
-- 精密零件体积计算
-- 微型容器容量设计
-- 3D打印材料用量
+### Scientific Research
+- Laboratory sample measurements
+- Chemical reaction volumes
+- Biological specimen analysis
 
-### 科学研究
-- 微量化学反应控制
-- 纳米材料体积测量
-- 生物样本容量分析
+### Industrial Applications
+- Micro-dosing systems
+- Precision injection molding
+- Small-scale manufacturing
 
-## 单位换算技巧
-1. **快速心算法**：
-   - 升转立方毫米 → 数值乘以1,000,000
-   - 立方毫米转升 → 数值除以1,000,000
+## Unit Conversion Tips
+1. **Quick Mental Calculation**:
+   - Liter to Cubic Millimeter → Multiply by 1,000,000
+   - Cubic Millimeter to Liter → Divide by 1,000,000
 
-2. **科学记数法**：
-   - 1 l = 1×10⁶ mm³
-   - 1 mm³ = 1×10⁻⁶ l
+2. **Scientific Notation**:
+   - 1 l = 1 × 10⁶ mm³
+   - 1 mm³ = 1 × 10⁻⁶ l
 
-3. **记忆口诀**：
-   "升转立方毫米，百万倍来记心里"
+3. **Memory Aid**:
+   "One liter equals one million cubic millimeters"
 
-## 注意事项
-- 微量测量需使用精密仪器
-- 温度变化对液体体积影响较大
-- 容器形状影响实际容量计算
+## Precautions
+- Extremely precise measurements require specialized equipment
+- Ensure measurement accuracy for small volumes
+- Consider temperature effects on material expansion
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Volume" :key="index">
     <n-button

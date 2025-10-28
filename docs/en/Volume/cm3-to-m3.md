@@ -4,23 +4,23 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Volume/index
-      linkText: 体积单位换算
+      linkText: Volume Unit Conversion
   - - link: /Volume/cm3-to-m3
-      linkText: 立方厘米到立方米换算
+      linkText: Cubic Centimeter to Cubic Meter Conversion
 head:
   - - meta
     - charset: utf-8
   - - meta
     - name: description
-      content: 立方厘米(cm³)与立方米(m³)单位换算工具，1立方厘米等于0.000001立方米。
+      content: Cubic centimeter (cm³) to cubic meter (m³) unit conversion tool, 1 cubic centimeter equals 0.000001 cubic meter.
   - - meta
     - name: keywords
-      content: 立方厘米,立方米,单位换算,cm³,m³
+      content: cubic centimeter,cubic meter,unit conversion,cm³,m³
 ---
 
-# 立方厘米(cm³) 到 立方米(m³) 换算
+# Cubic Centimeter (cm³) to Cubic Meter (m³) Conversion
 
 <script setup>
 import { onMounted, reactive, inject ,ref  } from 'vue'
@@ -40,7 +40,7 @@ const rules = {
 const form = reactive({
   number:null,
   result:'',
-  title:'立方厘米(cm³)到立方米(m³)换算'
+  title:'Cubic Centimeter (cm³) to Cubic Meter (m³) Conversion'
 })
 
 const convertHandler = (e) => {
@@ -54,11 +54,11 @@ const convertHandler = (e) => {
 </script>
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="数值" path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="请输入立方厘米数值" />
+  <n-form-item label="Value" path="number">
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="Enter cubic centimeter value" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
+    <n-button type="info" style="width:100%" @click="convertHandler">Convert</n-button>
   </n-form-item>
 </n-form>
 <n-card embedded :bordered="false" hoverable>
@@ -67,60 +67,60 @@ const convertHandler = (e) => {
   </div>
 </n-card>
 
-## 换算公式
-1 立方厘米(cm³) = 0.000001 立方米(m³)
+## Conversion Formula
+1 cubic centimeter (cm³) = 0.000001 cubic meter (m³)
 
-### 换算原理
-立方厘米(cm³)和立方米(m³)都是体积单位，1立方米等于1,000,000立方厘米。
+### Conversion Principle
+Cubic centimeter (cm³) and cubic meter (m³) are both volume units. 1 cubic meter equals 1,000,000 cubic centimeters.
 
-## 常见换算值
-| 立方厘米(cm³) | 立方米(m³) | 实物参考                 |
-|--------------|-----------|--------------------------|
-| 1,000,000    | 1         | 1立方米标准箱的体积       |
-| 500,000      | 0.5       | 中型家具的体积           |
-| 100,000      | 0.1       | 小型冰箱的体积           |
-| 10,000       | 0.01      | 微波炉的体积             |
-| 1,000        | 0.001     | 鞋盒的体积               |
+## Common Conversion Values
+| Cubic Centimeter (cm³) | Cubic Meter (m³) | Real-world Reference                |
+|------------------------|------------------|-------------------------------------|
+| 1,000,000             | 1                | 1 cubic meter standard box volume   |
+| 500,000               | 0.5              | Medium furniture volume             |
+| 100,000               | 0.1              | Small refrigerator volume           |
+| 10,000                | 0.01             | Microwave oven volume               |
+| 1,000                 | 0.001            | Shoe box volume                     |
 
-## 应用场景
-### 建筑领域
-- 建筑材料用量计算
-- 房间容积测量
-- 建筑空间规划
+## Application Scenarios
+### Construction Field
+- Building material usage calculation
+- Room capacity measurement
+- Architectural space planning
 
-### 物流运输
-- 货物体积计算
-- 集装箱容量规划
-- 运输空间优化
+### Logistics and Transportation
+- Cargo volume calculation
+- Container capacity planning
+- Transportation space optimization
 
-### 工业生产
-- 产品体积测量
-- 原材料用量计算
-- 包装设计
+### Industrial Production
+- Product volume measurement
+- Raw material usage calculation
+- Packaging design
 
-### 日常生活
-- 家具尺寸测量
-- 储物空间规划
-- 家电体积比较
+### Daily Life
+- Furniture size measurement
+- Storage space planning
+- Home appliance volume comparison
 
-## 单位换算技巧
-1. **快速心算法**：
-   - 立方厘米转立方米 → 数值除以1,000,000
-   - 立方米转立方厘米 → 数值乘以1,000,000
+## Unit Conversion Tips
+1. **Quick Mental Calculation**:
+   - Cubic centimeter to cubic meter → Divide value by 1,000,000
+   - Cubic meter to cubic centimeter → Multiply value by 1,000,000
 
-2. **科学记数法**：
+2. **Scientific Notation**:
    - 1 cm³ = 1×10⁻⁶ m³
    - 1 m³ = 1×10⁶ cm³
 
-3. **记忆口诀**：
-   "立方厘米转立方，百万分一记心上"
+3. **Memory Mnemonic**:
+   "Cubic centimeter to cubic meter, one millionth to remember better"
 
-## 注意事项
-- 大体积测量需使用专业工具
-- 测量时考虑物体形状不规则性
-- 温度变化可能影响测量精度
+## Important Notes
+- Large volume measurements require professional tools
+- Consider object shape irregularities when measuring
+- Temperature changes may affect measurement accuracy
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Volume" :key="index">
     <n-button

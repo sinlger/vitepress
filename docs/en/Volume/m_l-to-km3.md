@@ -4,23 +4,23 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Volume/index
-      linkText: 体积单位换算
+      linkText: Volume Unit Conversion
   - - link: /Volume/m_l-to-km3
-      linkText: 兆升到立方公里换算
+      linkText: Megaliter to Cubic Kilometer Conversion
 head:
   - - meta
     - charset: utf-8
   - - meta
     - name: description
-      content: 兆升(Ml)与立方公里(km³)单位换算工具，1兆升等于0.000001立方公里。
+      content: Megaliter (Ml) to Cubic Kilometer (km³) unit conversion tool. 1 megaliter equals 0.000001 cubic kilometers.
   - - meta
     - name: keywords
-      content: 兆升,立方公里,单位换算,Ml,km3
+      content: megaliter,cubic kilometer,unit conversion,Ml,km3
 ---
 
-# 兆升(Ml) 到 立方公里(km³) 换算
+# Megaliter (Ml) to Cubic Kilometer (km³) Conversion
 
 <script setup>
 import { onMounted, reactive, inject ,ref  } from 'vue'
@@ -40,7 +40,7 @@ const rules = {
 const form = reactive({
   number:null,
   result:'',
-  title:'兆升(Ml)到立方公里(km³)换算'
+  title:'Megaliter (Ml) to Cubic Kilometer (km³) Conversion'
 })
 
 const convertHandler = (e) => {
@@ -54,11 +54,11 @@ const convertHandler = (e) => {
 </script>
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="数值" path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="请输入兆升数值" />
+  <n-form-item label="Value" path="number">
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="Enter megaliter value" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
+    <n-button type="info" style="width:100%" @click="convertHandler">Convert</n-button>
   </n-form-item>
 </n-form>
 <n-card embedded :bordered="false" hoverable>
@@ -67,55 +67,55 @@ const convertHandler = (e) => {
   </div>
 </n-card>
 
-## 换算公式
-1 兆升(Ml) = 0.000001 立方公里(km³)
+## Conversion Formula
+1 Megaliter (Ml) = 0.000001 Cubic Kilometer (km³)
 
-### 换算原理
-兆升(Ml)和立方公里(km³)都是体积单位，1立方公里等于1,000,000兆升。
+### Conversion Principle
+Megaliter (Ml) and Cubic Kilometer (km³) are both volume units. 1 cubic kilometer equals 1,000,000 megaliters.
 
-## 常见换算值
-| 兆升(Ml) | 立方公里(km³) | 实物参考                 |
-|---------|-------------|--------------------------|
-| 1,000,000 | 1           | 小型湖泊的水量            |
-| 500,000  | 0.5         | 中型水库的水量            |
-| 100,000  | 0.1         | 大型水库的水量            |
-| 10,000   | 0.01        | 超大型水库的水量          |
-| 1,000    | 0.001       | 小型海湾的水量            |
+## Common Conversion Values
+| Megaliter (Ml) | Cubic Kilometer (km³) | Real-world Reference                |
+|----------------|-----------------------|-------------------------------------|
+| 1,000,000      | 1                     | One cubic kilometer volume          |
+| 500,000        | 0.5                   | Half cubic kilometer volume         |
+| 100,000        | 0.1                   | One-tenth cubic kilometer volume    |
+| 50,000         | 0.05                  | Large lake volume                   |
+| 10,000         | 0.01                  | Medium lake volume                  |
 
-## 应用场景
-### 地球科学
-- 海洋水体总量计算
-- 冰川体积测量
-- 大气水汽含量估算
+## Application Scenarios
+### Earth Science
+- Ocean volume calculations
+- Large lake capacity measurements
+- Groundwater reservoir studies
 
-### 天文领域
-- 行星水体储量评估
-- 彗星冰核体积计算
-- 星际云团物质总量
+### Astronomy
+- Planetary water volume estimates
+- Asteroid composition analysis
+- Comet ice volume calculations
 
-### 大型工程
-- 跨流域调水工程规划
-- 全球水资源管理
-- 超大型水库设计
+### Environmental Science
+- Continental ice sheet volume
+- Large river basin water content
+- Global water cycle studies
 
-## 单位换算技巧
-1. **快速心算法**：
-   - 兆升转立方公里 → 数值除以1,000,000
-   - 立方公里转兆升 → 数值乘以1,000,000
+## Unit Conversion Tips
+1. **Quick Mental Calculation**:
+   - Megaliter to Cubic Kilometer → Divide by 1,000,000
+   - Cubic Kilometer to Megaliter → Multiply by 1,000,000
 
-2. **科学记数法**：
-   - 1 Ml = 1×10⁻⁶ km³
-   - 1 km³ = 1×10⁶ Ml
+2. **Scientific Notation**:
+   - 1 Ml = 1 × 10⁻⁶ km³
+   - 1 km³ = 1 × 10⁶ Ml
 
-3. **记忆口诀**：
-   "兆升转立方公里，百万分一记仔细"
+3. **Memory Aid**:
+   "One million megaliters make one cubic kilometer"
 
-## 注意事项
-- 超大规模测量需使用卫星遥感技术
-- 地球曲率影响大范围体积计算
-- 精确测量需考虑地形变化
+## Precautions
+- Extremely large-scale measurements require specialized equipment
+- Consider Earth's curvature for continental-scale measurements
+- Different measurement standards may apply internationally
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Volume" :key="index">
     <n-button

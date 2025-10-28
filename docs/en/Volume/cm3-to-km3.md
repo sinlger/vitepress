@@ -4,23 +4,23 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Volume/index
-      linkText: 体积单位换算
+      linkText: Volume Unit Conversion
   - - link: /Volume/cm3-to-km3
-      linkText: 立方厘米到立方公里换算
+      linkText: Cubic Centimeter to Cubic Kilometer Conversion
 head:
   - - meta
     - charset: utf-8
   - - meta
     - name: description
-      content: 立方厘米(cm³)与立方公里(km³)单位换算工具，1立方厘米等于0.000000000000001立方公里。
+      content: Cubic centimeter (cm³) to cubic kilometer (km³) unit conversion tool, 1 cubic centimeter equals 0.000000000000001 cubic kilometer.
   - - meta
     - name: keywords
-      content: 立方厘米,立方公里,单位换算,cm³,km³
+      content: cubic centimeter,cubic kilometer,unit conversion,cm³,km³
 ---
 
-# 立方厘米(cm³) 到 立方公里(km³) 换算
+# Cubic Centimeter (cm³) to Cubic Kilometer (km³) Conversion
 
 <script setup>
 import { onMounted, reactive, inject ,ref  } from 'vue'
@@ -40,7 +40,7 @@ const rules = {
 const form = reactive({
   number:null,
   result:'',
-  title:'立方厘米(cm³)到立方公里(km³)换算'
+  title:'Cubic Centimeter (cm³) to Cubic Kilometer (km³) Conversion'
 })
 
 const convertHandler = (e) => {
@@ -54,11 +54,11 @@ const convertHandler = (e) => {
 </script>
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="数值" path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="请输入立方厘米数值" />
+  <n-form-item label="Value" path="number">
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="Enter cubic centimeter value" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
+    <n-button type="info" style="width:100%" @click="convertHandler">Convert</n-button>
   </n-form-item>
 </n-form>
 <n-card embedded :bordered="false" hoverable>
@@ -67,60 +67,60 @@ const convertHandler = (e) => {
   </div>
 </n-card>
 
-## 换算公式
-1 立方厘米(cm³) = 0.000000000000001 立方公里(km³)
+## Conversion Formula
+1 cubic centimeter (cm³) = 0.000000000000001 cubic kilometer (km³)
 
-### 换算原理
-立方厘米(cm³)和立方公里(km³)都是体积单位，1立方公里等于1,000,000,000,000,000立方厘米。
+### Conversion Principle
+Cubic centimeter (cm³) and cubic kilometer (km³) are both volume units. 1 cubic kilometer equals 1,000,000,000,000,000 cubic centimeters.
 
-## 常见换算值
-| 立方厘米(cm³) | 立方公里(km³) | 实物参考                 |
-|--------------|--------------|--------------------------|
-| 1,000,000,000,000,000 | 1            | 大型湖泊的体积            |
-| 500,000,000,000,000  | 0.5          | 中型湖泊的体积            |
-| 100,000,000,000,000  | 0.1          | 小型湖泊的体积            |
-| 10,000,000,000,000   | 0.01         | 大型水库的体积            |
-| 1,000,000,000,000    | 0.001        | 中型水库的体积            |
+## Common Conversion Values
+| Cubic Centimeter (cm³) | Cubic Kilometer (km³) | Real-world Reference                |
+|------------------------|----------------------|-------------------------------------|
+| 1,000,000,000,000,000 | 1                    | Large lake volume                   |
+| 500,000,000,000,000   | 0.5                  | Medium lake volume                  |
+| 100,000,000,000,000   | 0.1                  | Small lake volume                   |
+| 10,000,000,000,000    | 0.01                 | Large reservoir volume              |
+| 1,000,000,000,000     | 0.001                | Medium reservoir volume             |
 
-## 应用场景
-### 地理学
-- 湖泊储水量计算
-- 冰川体积测量
-- 地质构造体积评估
+## Application Scenarios
+### Geography
+- Lake water storage calculation
+- Glacier volume measurement
+- Geological structure volume assessment
 
-### 气象学
-- 云团体积计算
-- 降水总量评估
-- 大气水汽含量测量
+### Meteorology
+- Cloud mass volume calculation
+- Total precipitation assessment
+- Atmospheric water vapor content measurement
 
-### 海洋学
-- 海洋水体体积测量
-- 洋流体积计算
-- 海洋资源评估
+### Oceanography
+- Ocean water body volume measurement
+- Ocean current volume calculation
+- Marine resource assessment
 
-### 环境科学
-- 污染物扩散体积评估
-- 生态保护区体积规划
-- 水资源总量计算
+### Environmental Science
+- Pollutant dispersion volume assessment
+- Ecological protection area volume planning
+- Total water resource calculation
 
-## 单位换算技巧
-1. **快速心算法**：
-   - 立方厘米转立方公里 → 数值除以1,000,000,000,000,000
-   - 立方公里转立方厘米 → 数值乘以1,000,000,000,000,000
+## Unit Conversion Tips
+1. **Quick Mental Calculation**:
+   - Cubic centimeter to cubic kilometer → Divide value by 1,000,000,000,000,000
+   - Cubic kilometer to cubic centimeter → Multiply value by 1,000,000,000,000,000
 
-2. **科学记数法**：
+2. **Scientific Notation**:
    - 1 cm³ = 1×10⁻¹⁵ km³
    - 1 km³ = 1×10¹⁵ cm³
 
-3. **记忆口诀**：
-   "立方厘米转公里，千万亿分一记清"
+3. **Memory Mnemonic**:
+   "Cubic centimeter to kilometer, one quadrillionth to remember clear"
 
-## 注意事项
-- 超大体积测量需使用专业方法
-- 测量误差可能较大
-- 实际应用中多用于理论计算
+## Important Notes
+- Ultra-large volume measurements require professional methods
+- Measurement errors may be significant
+- Mainly used for theoretical calculations in practical applications
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Volume" :key="index">
     <n-button

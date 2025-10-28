@@ -4,23 +4,23 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Volume/index
-      linkText: 体积单位换算
+      linkText: Volume Unit Conversion
   - - link: /Volume/tsp-to-ml
-      linkText: 茶匙到毫升换算
+      linkText: Teaspoon to Milliliter Conversion
 head:
   - - meta
     - charset: utf-8
   - - meta
     - name: description
-      content: 茶匙(tsp)与毫升(ml)单位换算工具，1茶匙等于4.92892毫升。
+      content: Teaspoon (tsp) to Milliliter (ml) unit conversion tool. 1 teaspoon equals 4.92892 milliliters.
   - - meta
     - name: keywords
-      content: 茶匙,毫升,单位换算,tsp,ml
+      content: teaspoon,milliliter,unit conversion,tsp,ml
 ---
 
-# 茶匙(tsp) 到 毫升(ml) 换算
+# Teaspoon (tsp) to Milliliter (ml) Conversion
 
 <script setup>
 import { onMounted, reactive, inject ,ref  } from 'vue'
@@ -40,7 +40,7 @@ const rules = {
 const form = reactive({
   number:null,
   result:'',
-  title:'茶匙(tsp)到毫升(ml)换算'
+  title:'Teaspoon (tsp) to Milliliter (ml) Conversion'
 })
 
 const convertHandler = (e) => {
@@ -54,11 +54,11 @@ const convertHandler = (e) => {
 </script>
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="数值" path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="请输入茶匙数值" />
+  <n-form-item label="Value" path="number">
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="Enter teaspoon value" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
+    <n-button type="info" style="width:100%" @click="convertHandler">Convert</n-button>
   </n-form-item>
 </n-form>
 <n-card embedded :bordered="false" hoverable>
@@ -67,55 +67,55 @@ const convertHandler = (e) => {
   </div>
 </n-card>
 
-## 换算公式
-1 茶匙(tsp) = 4.92892 毫升(ml)
+## Conversion Formula
+1 Teaspoon (tsp) = 4.92892 Milliliter (ml)
 
-### 换算原理
-茶匙(tsp)和毫升(ml)都是体积单位，1茶匙等于约4.93毫升。
+### Conversion Principle
+Teaspoon (tsp) and Milliliter (ml) are both volume units. 1 teaspoon equals approximately 4.93 milliliters.
 
-## 常见换算值
-| 茶匙(tsp) | 毫升(ml) | 实物参考                 |
-|-----------|---------|--------------------------|
-| 1         | 4.92892 | 标准茶匙容量              |
-| 0.5       | 2.46446 | 半茶匙容量                |
-| 0.25      | 1.23223 | 四分之一茶匙容量          |
-| 2         | 9.85784 | 两茶匙容量                |
-| 3         | 14.78676| 三茶匙容量                |
+## Common Conversion Values
+| Teaspoon (tsp) | Milliliter (ml) | Real-world Reference                |
+|----------------|-----------------|-------------------------------------|
+| 1              | 4.92892         | Standard teaspoon capacity          |
+| 0.5            | 2.46446         | Half teaspoon capacity              |
+| 0.25           | 1.23223         | Quarter teaspoon capacity           |
+| 2              | 9.85784         | Two teaspoons capacity              |
+| 3              | 14.78676        | Three teaspoons capacity            |
 
-## 应用场景
-### 烹饪
-- 精确测量小份量液体
-- 食谱配方换算
-- 厨房计量工具校准
+## Application Scenarios
+### Medical Field
+- Medication dosage measurements
+- Liquid medicine administration
+- Medical equipment calibration
 
-### 医药
-- 药品剂量测量
-- 实验室小容量液体测量
-- 医疗器具校准
+### Food Industry
+- Recipe ingredient measurements
+- Food production quality control
+- Nutritional content calculations
 
-### 日常生活
-- 饮料调配
-- 手工制作
-- 小型容器容量测量
+### Daily Life
+- Cooking and baking
+- Beverage preparation
+- Household liquid measurements
 
-## 单位换算技巧
-1. **快速心算法**：
-   - 茶匙转毫升 → 数值乘以4.93
-   - 毫升转茶匙 → 数值除以4.93
+## Unit Conversion Tips
+1. **Quick Mental Calculation**:
+   - Teaspoon to Milliliter → Multiply by 4.93
+   - Milliliter to Teaspoon → Divide by 4.93
 
-2. **近似记忆**：
-   - 1茶匙 ≈ 5毫升
-   - 1毫升 ≈ 0.2茶匙
+2. **Approximation Memory**:
+   - 1 teaspoon ≈ 5 milliliters
+   - 1 milliliter ≈ 0.2 teaspoon
 
-3. **记忆口诀**：
-   "茶匙转毫升，五倍关系要记清"
+3. **Memory Aid**:
+   "Teaspoon to milliliter, five times relationship to remember clearly"
 
-## 注意事项
-- 不同国家茶匙标准略有差异
-- 精确测量需使用标准量具
-- 液体表面张力影响测量精度
+## Precautions
+- Different countries have slightly different teaspoon standards
+- Precise measurements require standard measuring tools
+- Liquid surface tension affects measurement accuracy
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Volume" :key="index">
     <n-button

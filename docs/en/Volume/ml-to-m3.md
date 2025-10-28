@@ -4,23 +4,23 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Volume/index
-      linkText: 体积单位换算
+      linkText: Volume Unit Conversion
   - - link: /Volume/ml-to-m3
-      linkText: 毫升到立方米换算
+      linkText: Milliliter to Cubic Meter Conversion
 head:
   - - meta
     - charset: utf-8
   - - meta
     - name: description
-      content: 毫升(ml)与立方米(m³)单位换算工具，1毫升等于0.000001立方米。
+      content: Milliliter (ml) to Cubic Meter (m³) unit conversion tool. 1 milliliter equals 0.000001 cubic meters.
   - - meta
     - name: keywords
-      content: 毫升,立方米,单位换算,ml,m3
+      content: milliliter,cubic meter,unit conversion,ml,m3
 ---
 
-# 毫升(ml) 到 立方米(m³) 换算
+# Milliliter (ml) to Cubic Meter (m³) Conversion
 
 <script setup>
 import { onMounted, reactive, inject ,ref  } from 'vue'
@@ -40,7 +40,7 @@ const rules = {
 const form = reactive({
   number:null,
   result:'',
-  title:'毫升(ml)到立方米(m³)换算'
+  title:'Milliliter (ml) to Cubic Meter (m³) Conversion'
 })
 
 const convertHandler = (e) => {
@@ -54,11 +54,11 @@ const convertHandler = (e) => {
 </script>
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="数值" path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="请输入毫升数值" />
+  <n-form-item label="Value" path="number">
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number" placeholder="Enter milliliter value" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
+    <n-button type="info" style="width:100%" @click="convertHandler">Convert</n-button>
   </n-form-item>
 </n-form>
 <n-card embedded :bordered="false" hoverable>
@@ -67,55 +67,55 @@ const convertHandler = (e) => {
   </div>
 </n-card>
 
-## 换算公式
-1 毫升(ml) = 0.000001 立方米(m³)
+## Conversion Formula
+1 Milliliter (ml) = 0.000001 Cubic Meter (m³)
 
-### 换算原理
-毫升(ml)和立方米(m³)都是体积单位，1立方米等于1,000,000毫升。
+### Conversion Principle
+Milliliter (ml) and Cubic Meter (m³) are both volume units. 1 cubic meter equals 1,000,000 milliliters.
 
-## 常见换算值
-| 毫升(ml) | 立方米(m³) | 实物参考                 |
-|---------|-----------|--------------------------|
-| 1,000,000 | 1         | 标准游泳池的水量          |
-| 500,000  | 0.5       | 中型鱼缸的水量            |
-| 100,000  | 0.1       | 大型浴缸的水量            |
-| 10,000   | 0.01      | 小型浴缸的水量            |
-| 1,000    | 0.001     | 标准浴缸的水量            |
+## Common Conversion Values
+| Milliliter (ml) | Cubic Meter (m³) | Real-world Reference                |
+|-----------------|------------------|-------------------------------------|
+| 1,000,000       | 1                | Small room volume                   |
+| 500,000         | 0.5              | Large refrigerator volume           |
+| 100,000         | 0.1              | Large bathtub volume                |
+| 50,000          | 0.05             | Medium fish tank volume             |
+| 10,000          | 0.01             | Small fish tank volume              |
 
-## 应用场景
-### 建筑工程
-- 混凝土用量计算
-- 建筑材料体积测量
-- 室内空间容积评估
+## Application Scenarios
+### Water Management
+- Water tank capacity calculations
+- Swimming pool volume planning
+- Irrigation system design
 
-### 工业生产
-- 液体原料储存规划
-- 容器容量设计
-- 产品包装体积计算
+### Environmental Science
+- Air quality monitoring
+- Greenhouse gas measurements
+- Laboratory sample analysis
 
-### 日常生活
-- 家具尺寸测量
-- 储物空间规划
-- 家电容量比较
+### Engineering Projects
+- HVAC system design
+- Storage tank calculations
+- Fluid dynamics studies
 
-## 单位换算技巧
-1. **快速心算法**：
-   - 毫升转立方米 → 数值除以1,000,000
-   - 立方米转毫升 → 数值乘以1,000,000
+## Unit Conversion Tips
+1. **Quick Mental Calculation**:
+   - Milliliter to Cubic Meter → Divide by 1,000,000
+   - Cubic Meter to Milliliter → Multiply by 1,000,000
 
-2. **科学记数法**：
-   - 1 ml = 1×10⁻⁶ m³
-   - 1 m³ = 1×10⁶ ml
+2. **Scientific Notation**:
+   - 1 ml = 1 × 10⁻⁶ m³
+   - 1 m³ = 1 × 10⁶ ml
 
-3. **记忆口诀**：
-   "毫升转立方，百万分一记心上"
+3. **Memory Aid**:
+   "One cubic meter equals one million milliliters"
 
-## 注意事项
-- 测量时注意单位统一
-- 不规则物体体积需特殊测量
-- 温度变化对液体体积有影响
+## Precautions
+- Large-scale measurements require specialized equipment
+- Temperature effects on liquid volume
+- Container shape affects actual capacity calculations
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Volume" :key="index">
     <n-button
