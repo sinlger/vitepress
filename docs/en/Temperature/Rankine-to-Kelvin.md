@@ -5,30 +5,30 @@ lastUpdated: false
 
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Temperature/index
-      linkText: 温度换算
+      linkText: Temperature Conversion
   - - link: /Temperature/Rankine-to-Kelvin
-      linkText: 兰金度转开尔文
+      linkText: Rankine to Kelvin
 
 head:
   - - meta
     - name: description
-      content: "专业的兰金度转开尔文在线工具，支持摄氏度到兰金度（°R）的转换、兰金度（°R）到开尔文转换等。提供详细的开氏温度换算公式和单位转换说明，是您进行温度换算的最佳选择。"
+      content: "Professional online Rankine to Kelvin conversion tool, supporting Celsius to Rankine (°R) conversion, Rankine (°R) to Kelvin conversion, etc. Provides detailed Kelvin temperature conversion formulas and unit conversion explanations, making it your best choice for temperature conversion."
   - - meta
     - name: keywords
-      content: "摄氏度到兰金度（°R）的转换, 兰金度（°R）到华氏度 (°F), 兰金度（°R）到开尔文 (K), 开氏温度, 温度转换, 温度换算, 单位转换"
+      content: "celsius to rankine conversion, rankine to fahrenheit conversion, rankine to kelvin conversion, kelvin temperature, temperature conversion, temperature conversion, unit conversion"
 ---
-# 兰金度 (R) 到 开尔文 (K) 的换算
+# Rankine (R) to Kelvin (K) Conversion
 
-需要进行**兰金度（°R）到开尔文 (K)**转换吗？这个页面提供了专业的**温度转换**工具，支持**摄氏度到兰金度（°R）的转换**、**兰金度（°R）到华氏度 (°F)**等各种**温度换算**。我们提供详细的**开氏温度**换算公式和示例，让您轻松掌握各种**单位转换**的方法。
+Need to perform **Rankine (°R) to Kelvin (K)** conversion? This page provides professional **temperature conversion** tools, supporting **Celsius to Rankine (°R) conversion**, **Rankine (°R) to Fahrenheit (°F)** and various **temperature conversions**. We provide detailed **Kelvin temperature** conversion formulas and examples to help you easily master various **unit conversion** methods.
 ---
 <script setup>
 import { onMounted, reactive, inject, ref } from 'vue'
 import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage,NGrid ,NGi  } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
 import { Temperature } from '../files';
-const seoKey = ['摄氏度到兰金度（°R）的转换', '兰金度（°R）到华氏度 (°F)', '兰金度（°R）到开尔文 (K)','开氏温度', '温度转换', '温度换算','单位转换']
+const seoKey = ['celsius to rankine conversion', 'rankine to fahrenheit conversion', 'rankine to kelvin conversion','kelvin temperature', 'temperature conversion', 'temperature conversion','unit conversion']
 
 const convert = inject('convert')
 
@@ -42,22 +42,22 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) / 1.8
     form.result = `${form.number}R = ${convertedValue.toFixed(2)}K`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="兰金度 (R)">
-    <n-input-number v-model:value="form.number" placeholder="输入兰金度" style="width: 100%" />
+  <n-form-item label="Rankine (R)">
+    <n-input-number v-model:value="form.number" placeholder="Enter Rankine value" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
 <n-card
-  title="兰金度 (R)转开尔文 (K)的换算结果"
+  title="Rankine (R) to Kelvin (K) Conversion Result"
   :segmented="{
     content: true,
     footer: 'soft',
@@ -68,53 +68,53 @@ const convertHandler = () => {
   </div>
   <template #footer>
     <div>
-      <span v-for="item of seoKey">{{item}}，</span>
+      <span v-for="item of seoKey">{{item}}, </span>
     </div>
   </template>
 </n-card>
 
 
-## 换算公式
+## Conversion Formula
 
-### 兰金度转开尔文公式
-从 **兰金度 (R)** 换算到 **开尔文 (K)** 的公式为：
+### Rankine to Kelvin Formula
+The formula for converting from **Rankine (R)** to **Kelvin (K)** is:
 $$ K = \frac{R}{1.8} $$
 
-### 相关换算公式
-**摄氏度到兰金度（°R）的转换**公式：
+### Related Conversion Formulas
+**Celsius to Rankine (°R) conversion** formula:
 $$ R = (°C + 273.15) \times 1.8 $$
 
-**兰金度（°R）到华氏度 (°F)**转换公式：
+**Rankine (°R) to Fahrenheit (°F)** conversion formula:
 $$ °F = R - 459.67 $$
 
-开尔文到兰金度的转换公式：
+Kelvin to Rankine conversion formula:
 $$ R = K \times 1.8 $$
 
-### 换算示例
-以下是一些常见的**兰金度（°R）到开尔文 (K)**转换示例：
-- **491.67R (水的冰点)** = 273.15K
-- **536.67R (室温)** = 298.15K
-- **671.67R (水的沸点)** = 373.15K
+### Conversion Examples
+Here are some common **Rankine (°R) to Kelvin (K)** conversion examples:
+- **491.67R (water freezing point)** = 273.15K
+- **536.67R (room temperature)** = 298.15K
+- **671.67R (water boiling point)** = 373.15K
 
-## 常见问题
+## Frequently Asked Questions
 
-### 什么是兰金度？
-兰金度（°R）是一种绝对温度标度，以华氏度为基础，但从绝对零度开始计算。它在工程和科学计算中有重要应用。
+### What is Rankine?
+Rankine (°R) is an absolute temperature scale based on Fahrenheit degrees, but starting from absolute zero. It has important applications in engineering and scientific calculations.
 
-### 什么是开氏温度？
-**开氏温度**是指开尔文温度，是国际单位制中的基本温度单位。在**温度转换**中，开氏温度经常作为中间转换单位使用。
+### What is Kelvin temperature?
+**Kelvin temperature** refers to the Kelvin temperature scale, which is the base temperature unit in the International System of Units. In **temperature conversion**, Kelvin temperature is often used as an intermediate conversion unit.
 
-### 兰金度到开尔文的转换有什么应用？
-**兰金度（°R）到开尔文 (K)**转换广泛应用于：
-- 热力学计算
-- 工程设计
-- 科学研究
-- 能源系统分析
+### What are the applications of Rankine to Kelvin conversion?
+**Rankine (°R) to Kelvin (K)** conversion is widely used in:
+- Thermodynamic calculations
+- Engineering design
+- Scientific research
+- Energy system analysis
 
-### 为什么需要进行温度换算？
-**温度换算**在不同的科学和工程领域中都有重要意义，**单位转换**帮助我们在不同的温度标度之间进行准确的**温度转换**。
+### Why do we need temperature conversion?
+**Temperature conversion** has important significance in different scientific and engineering fields. **Unit conversion** helps us perform accurate **temperature conversion** between different temperature scales.
 
-## 相关链接
+## Related Links
 <n-grid x-gap="12" cols="1 s:2 m:3 l:3 xl:4 2xl:5" responsive="screen">
   <n-gi v-for="(file, index) in Temperature" :key="index">
     <n-button

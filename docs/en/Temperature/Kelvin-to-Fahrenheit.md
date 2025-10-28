@@ -5,30 +5,30 @@ lastUpdated: false
 
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Temperature/index
-      linkText: 温度换算
+      linkText: Temperature Conversion
   - - link: /Temperature/Kelvin-to-Fahrenheit
-      linkText: 开尔文转华氏度
+      linkText: Kelvin to Fahrenheit
 
 head:
   - - meta
     - name: description
-      content: "专业的开尔文转华氏度在线工具，支持摄氏度与开尔文换算、K和摄氏度换算等。提供详细的开尔文温度换算公式、开氏温度说明，是您进行K to C转换的最佳选择。"
+      content: "Professional online Kelvin to Fahrenheit conversion tool, supporting Celsius and Kelvin conversion, K and Celsius conversion, etc. Provides detailed Kelvin temperature conversion formulas and Kelvin temperature explanations, making it your best choice for K to F conversion."
   - - meta
     - name: keywords
-      content: "摄氏度与开尔文换算, 开氏温度, k是什么单位, k和摄氏度换算, 开尔文温度, k to c, 摄氏度和开尔文的换算, 开尔文和摄氏度的换算, kelvin, 摄氏度"
+      content: "celsius kelvin conversion, kelvin temperature, what is k unit, k celsius conversion, kelvin temperature, k to f, celsius kelvin conversion, kelvin celsius conversion, kelvin, fahrenheit"
 ---
-# 开尔文 (K) 到 华氏度 (°F) 的换算
+# Kelvin (K) to Fahrenheit (°F) Conversion
 
-需要进行**开尔文和摄氏度的换算**吗？这个页面提供了专业的**开尔文温度**转换工具，支持**摄氏度与开尔文换算**、**K和摄氏度换算**等多种温度转换。我们提供详细的**开氏温度**换算公式和示例，让您轻松掌握**K to C**的转换方法。
+Need to perform **Kelvin and Fahrenheit conversion**? This page provides professional **Kelvin temperature** conversion tools, supporting **Celsius and Kelvin conversion**, **K and Celsius conversion**, and other temperature conversions. We provide detailed **Kelvin temperature** conversion formulas and examples to help you easily master **K to F** conversion methods.
 ---
 <script setup>
 import { onMounted, reactive, inject, ref } from 'vue'
 import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage,NGrid ,NGi  } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
 import { Temperature } from '../files';
-const seoKey = ['摄氏度与开尔文换算', '开氏温度', 'k是什么单位', 'k和摄氏度换算', '开尔文温度', 'k to c', '摄氏度和开尔文的换算', '开尔文和摄氏度的换算', 'kelvin', '摄氏度']
+const seoKey = ['celsius kelvin conversion', 'kelvin temperature', 'what is k unit', 'k celsius conversion', 'kelvin temperature', 'k to f', 'celsius kelvin conversion', 'kelvin celsius conversion', 'kelvin', 'fahrenheit']
 const convert = inject('convert')
 
 const form = reactive({
@@ -41,23 +41,23 @@ const convertHandler = () => {
     const convertedValue = (parseFloat(form.number) - 273.15) * 1.8 + 32
     form.result = `${form.number}K = ${convertedValue.toFixed(2)}°F`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="开尔文 (K)">
-    <n-input-number v-model:value="form.number" placeholder="输入开尔文" style="width: 100%" />
+  <n-form-item label="Kelvin (K)">
+    <n-input-number v-model:value="form.number" placeholder="Enter Kelvin value" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
 
 <n-card
-  title="开尔文 (K)转华氏度 (°F)的换算结果"
+  title="Kelvin (K) to Fahrenheit (°F) Conversion Result"
   :segmented="{
     content: true,
     footer: 'soft',
@@ -68,52 +68,52 @@ const convertHandler = () => {
   </div>
   <template #footer>
     <div>
-      <span v-for="item of seoKey">{{item}}，</span>
+      <span v-for="item of seoKey">{{item}}, </span>
     </div>
   </template>
 </n-card>
 
-## 换算公式
+## Conversion Formula
 
-### 开尔文转华氏度公式
-从 **开尔文 (K)** 换算到 **华氏度 (°F)** 的公式为：
+### Kelvin to Fahrenheit Formula
+The formula for converting from **Kelvin (K)** to **Fahrenheit (°F)** is:
 $$ °F = (K - 273.15) \times 1.8 + 32 $$
 
-这个公式结合了**摄氏度与开尔文换算**和华氏度转换的原理。
+This formula combines the principles of **Celsius and Kelvin conversion** and Fahrenheit conversion.
 
-### 相关换算公式
-**开尔文和摄氏度的换算**公式：
+### Related Conversion Formulas
+**Kelvin and Celsius conversion** formula:
 $$ °C = K - 273.15 $$
 
-**摄氏度和开尔文的换算**公式：
+**Celsius and Kelvin conversion** formula:
 $$ K = °C + 273.15 $$
 
-### 换算示例
-以下是一些常见的**开尔文温度**换算示例：
-- **273.15K (水的冰点)** = 32°F
-- **298.15K (室温)** = 77°F
-- **373.15K (水的沸点)** = 212°F
+### Conversion Examples
+Here are some common **Kelvin temperature** conversion examples:
+- **273.15K (water freezing point)** = 32°F
+- **298.15K (room temperature)** = 77°F
+- **373.15K (water boiling point)** = 212°F
 
-## 常见问题
+## Frequently Asked Questions
 
-### K是什么单位？
-**K是什么单位**？K代表**开尔文温度**，是国际单位制中的基本温度单位。**开尔文**（**Kelvin**）是绝对温度标度，以绝对零度为起点。
+### What is the K unit?
+**What is the K unit**? K represents **Kelvin temperature**, which is the base temperature unit in the International System of Units. **Kelvin** is an absolute temperature scale that starts from absolute zero.
 
-### 什么是开氏温度？
-**开氏温度**就是**开尔文温度**的另一种称呼，它是热力学温度的标准单位。**开氏温度**在科学研究和工程计算中广泛应用。
+### What is Kelvin temperature?
+**Kelvin temperature** is another name for **Kelvin temperature**, which is the standard unit of thermodynamic temperature. **Kelvin temperature** is widely used in scientific research and engineering calculations.
 
-### K to C的转换方法是什么？
-**K to C**的转换非常简单：°C = K - 273.15。这个公式是所有**开尔文和摄氏度的换算**的基础。
+### What is the K to C conversion method?
+**K to C** conversion is very simple: °C = K - 273.15. This formula is the foundation for all **Kelvin and Celsius conversions**.
 
-### 摄氏度和开尔文的换算有什么应用？
-**摄氏度和开尔文的换算**广泛应用于：
-- 物理学研究
-- 化学实验
-- 工程计算
-- 气象学
-- 天文学
+### What are the applications of Celsius and Kelvin conversion?
+**Celsius and Kelvin conversion** is widely used in:
+- Physics research
+- Chemistry experiments
+- Engineering calculations
+- Meteorology
+- Astronomy
 
-## 相关链接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Temperature" :key="index">
     <n-button

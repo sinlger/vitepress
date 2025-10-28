@@ -5,23 +5,23 @@ lastUpdated: false
 
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Temperature/index
-      linkText: 温度换算
+      linkText: Temperature Conversion
   - - link: /Temperature/Fahrenheit-to-Rankine
-      linkText: 华氏度转兰金度
+      linkText: Fahrenheit to Rankine
 
 head:
   - - meta
     - name: description
-      content: "专业的华氏度转兰金度在线工具，支持华氏度换算兰金度、°F转R等温度换算。提供详细的华氏度转兰金度公式、在线温度转换功能，是您进行单位换算的最佳选择。"
+      content: "Professional Fahrenheit to Rankine online tool supporting Fahrenheit to Rankine conversion, °F to R temperature conversion, and more. Provides detailed Fahrenheit to Rankine formulas and online temperature conversion functionality, making it your best choice for unit conversions."
   - - meta
     - name: keywords
-      content: "华氏度转兰金度, 华氏度换算兰金度, °F转R, 华氏度与兰金度换算, 温度换算, 单位换算, 在线温度转换, 华氏度, 兰金度, 华氏度转兰金度公式"
+      content: "fahrenheit to rankine, fahrenheit rankine conversion, °F to R, fahrenheit and rankine conversion, temperature conversion, unit conversion, online temperature converter, fahrenheit, rankine, fahrenheit to rankine formula"
 ---
-# 华氏度 (°F) 到 兰金度 (R) 的换算
+# Fahrenheit (°F) to Rankine (R) Conversion
 
-需要进行**华氏度转兰金度**吗？这个页面提供了专业的**在线温度转换**工具，支持**华氏度换算兰金度**、**°F转R**等多种**温度换算**。我们提供详细的**华氏度转兰金度公式**和示例，让您轻松掌握**华氏度与兰金度换算**的方法。
+Need to perform **Fahrenheit to Rankine** conversion? This page provides a professional **online temperature converter** tool supporting **Fahrenheit to Rankine conversion**, **°F to R**, and various other **temperature conversions**. We provide detailed **Fahrenheit to Rankine formulas** and examples to help you easily master the **Fahrenheit and Rankine conversion** methods.
 ---
 <script setup>
 import { onMounted, reactive, inject, ref } from 'vue'
@@ -29,16 +29,16 @@ import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage,N
 import { defineClientComponent } from 'vitepress'
 import { Temperature } from '../files';
 const seoKey = [
-  '华氏度转兰金度',
-  '华氏度换算兰金度',
-  '°F转R',
-  '华氏度与兰金度换算',
-  '温度换算',
-  '单位换算',
-  '在线温度转换',
-  '华氏度',
-  '兰金度',
-  '华氏度转兰金度公式'
+  'fahrenheit to rankine',
+  'fahrenheit rankine conversion',
+  '°F to R',
+  'fahrenheit and rankine conversion',
+  'temperature conversion',
+  'unit conversion',
+  'online temperature converter',
+  'fahrenheit',
+  'rankine',
+  'fahrenheit to rankine formula'
 ]
 const convert = inject('convert')
 
@@ -52,22 +52,22 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) + 459.67
     form.result = `${form.number}°F = ${convertedValue.toFixed(2)}R`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="华氏度 (°F)">
-    <n-input-number v-model:value="form.number" placeholder="输入华氏度" style="width: 100%" />
+  <n-form-item label="Fahrenheit (°F)">
+    <n-input-number v-model:value="form.number" placeholder="Enter Fahrenheit temperature" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
 <n-card
-  title="华氏度转兰金度换算结果"
+  title="Fahrenheit to Rankine Conversion Result"
   :segmented="{
     content: true,
     footer: 'soft',
@@ -78,48 +78,48 @@ const convertHandler = () => {
   </div>
   <template #footer>
     <div>
-      <span v-for="item of seoKey">{{item}}，</span>
+      <span v-for="item of seoKey">{{item}}, </span>
     </div>
   </template>
 </n-card>
 
-## 如何将华氏度转换为兰金度
+## How to Convert Fahrenheit to Rankine
 
-**华氏度转兰金度**的换算在工程和科学领域中非常有用。本页面的**在线温度转换**工具可以帮助您轻松完成**华氏度换算兰金度**的操作。输入**华氏度**温度，即可立即获得对应的**兰金度**值。此外，还提供了**华氏度转兰金度公式**和实际示例，让您完全掌握**华氏度与兰金度换算**的方法。
+**Fahrenheit to Rankine** conversion is very useful in engineering and scientific fields. This page's **online temperature converter** tool can help you easily perform **Fahrenheit to Rankine conversion** operations. Enter the **Fahrenheit** temperature and instantly get the corresponding **Rankine** value. Additionally, we provide **Fahrenheit to Rankine formulas** and practical examples to help you completely master the **Fahrenheit and Rankine conversion** methods.
 
-## 换算公式
+## Conversion Formulas
 
-### 华氏度转兰金度公式
-从 **华氏度 (°F)** 换算到 **兰金度 (R)** 的公式为：
+### Fahrenheit to Rankine Formula
+The formula to convert from **Fahrenheit (°F)** to **Rankine (R)** is:
 $$ R = °F + 459.67 $$
 
-这个**华氏度转兰金度公式**非常简单，只需要在华氏度数值上加上459.67即可得到兰金度。
+This **Fahrenheit to Rankine formula** is very simple - just add 459.67 to the Fahrenheit value to get the Rankine temperature.
 
-### 换算示例
-以下是一些常见的**华氏度转兰金度**换算示例：
-- **32°F (水的冰点)** = 491.67R
-- **77°F (室温)** = 536.67R
-- **212°F (水的沸点)** = 671.67R
+### Conversion Examples
+Here are some common **Fahrenheit to Rankine** conversion examples:
+- **32°F (water freezing point)** = 491.67R
+- **77°F (room temperature)** = 536.67R
+- **212°F (water boiling point)** = 671.67R
 
-## 常见问题
+## Frequently Asked Questions
 
-### 什么是兰金度？
-**兰金度**是一个绝对温度标度，以华氏度为基础。它是热力学中常用的**单位换算**标准，特别在工程计算中应用广泛。
+### What is Rankine?
+**Rankine** is an absolute temperature scale based on Fahrenheit degrees. It is a commonly used **unit conversion** standard in thermodynamics, particularly widely applied in engineering calculations.
 
-### 华氏度与兰金度换算有什么应用？
-**华氏度与兰金度换算**主要应用于：
-- 热力学计算
-- 工程设计
-- 科学研究
-- **温度换算**需求
+### What are the applications of Fahrenheit and Rankine conversion?
+**Fahrenheit and Rankine conversion** is mainly applied in:
+- Thermodynamic calculations
+- Engineering design
+- Scientific research
+- **Temperature conversion** requirements
 
-### 为什么要进行华氏度换算兰金度？
-在某些工程和科学计算中，需要使用绝对温度标度。**华氏度换算兰金度**可以将相对温度转换为绝对温度，这在热力学计算中非常重要。
+### Why do we need to convert Fahrenheit to Rankine?
+In certain engineering and scientific calculations, absolute temperature scales are required. **Fahrenheit to Rankine conversion** can convert relative temperature to absolute temperature, which is very important in thermodynamic calculations.
 
-### °F转R的计算方法是什么？
-**°F转R**的计算非常简单：R = °F + 459.67。这个公式是所有**华氏度转兰金度**计算的基础。
+### What is the calculation method for °F to R?
+**°F to R** calculation is very simple: R = °F + 459.67. This formula is the foundation for all **Fahrenheit to Rankine** calculations.
 
-## 相关链接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Temperature" :key="index">
     <n-button

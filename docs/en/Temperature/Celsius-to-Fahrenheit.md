@@ -4,27 +4,27 @@ aside: false
 lastUpdated: false
 breadcrumb: 
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Temperature/index
-      linkText: 温度换算
+      linkText: Temperature Conversion
   - - link: /Temperature/Celsius-to-Fahrenheit
-      linkText: 摄氏度转华氏度
+      linkText: Celsius to Fahrenheit
 head:
   - - meta
     - name: description
-      content: "在线摄氏度(°C)到华氏度(°F)转换工具。轻松进行温度单位换算，提供详细的换算公式、示例和常见问题解答，帮助您快速完成摄氏度与华氏度的转换。"
+      content: "Online Celsius (°C) to Fahrenheit (°F) conversion tool. Easily perform temperature unit conversions with detailed formulas, examples, and FAQs to help you quickly complete Celsius to Fahrenheit conversions."
   - - meta
     - name: keywords
-      content: "摄氏度转华氏度, 摄氏度与华氏度的换算, 温度转换, 温度换算, 华氏摄氏度与摄氏度转换, 摄氏度的符号, k和摄氏度换算, 华氏温度和摄氏温度换算"
+      content: "celsius to fahrenheit, celsius fahrenheit conversion, temperature conversion, temperature calculator, celsius fahrenheit formula, temperature units, celsius symbol, fahrenheit symbol, temperature converter"
 
 ---
-# 摄氏度 (°C) 到 华氏度 (°F) 的换算
+# Celsius (°C) to Fahrenheit (°F) Conversion
 
-需要快速将**摄氏度 (°C)** 转换为**华氏度 (°F)** 吗？这个页面提供了简单易用的在线**温度转换**工具，以及详细的**摄氏度与华氏度的换算**公式和示例，让您轻松掌握**华氏摄氏度与摄氏度转换**。
+Need to quickly convert **Celsius (°C)** to **Fahrenheit (°F)**? This page provides an easy-to-use online **temperature conversion** tool, along with detailed **Celsius to Fahrenheit conversion** formulas and examples to help you master **temperature unit conversions**.
 
 ---
 <script setup>
-const seoKey =["温度的单位","开尔文温度与摄氏温度的换算","开氏温度和摄氏温度换算公式","华氏摄氏度与摄氏度转换","摄氏度与开尔文换算","摄氏度的符号","摄氏度转华氏度","温度转换","k和摄氏度换算","华氏温度和摄氏温度换算","摄氏度英文","温度换算","温度单位","摄氏度符号 °C怎么打","摄氏度和开尔文的换算","摄氏度符号","华氏度和摄氏度的换算","温度符号","开尔文和摄氏度的换算","摄氏度和华氏度的换算","华氏度转摄氏度","摄氏度符号 °C"]
+const seoKey =["temperature units","kelvin celsius conversion","temperature conversion formula","celsius fahrenheit conversion","celsius kelvin conversion","celsius symbol","celsius to fahrenheit","temperature conversion","kelvin celsius calculator","fahrenheit celsius conversion","celsius english","temperature calculator","temperature units","celsius symbol °C","celsius kelvin conversion","celsius symbol","fahrenheit celsius conversion","temperature symbols","kelvin celsius conversion","celsius fahrenheit conversion","fahrenheit to celsius","celsius symbol °C"]
 import { onMounted, reactive, inject, ref } from 'vue'
 import { NButton, NForm, NFormItem, NInput, NInputNumber, NSelect, NCard, useMessage ,NGrid ,NGi } from 'naive-ui'
 import { defineClientComponent } from 'vitepress'
@@ -34,7 +34,7 @@ const convert = inject('convert')
 
 const form = reactive({
   number: null,
-  result: '暂无结果',
+  result: 'No result yet',
 })
 
 const convertHandler = () => {
@@ -42,21 +42,21 @@ const convertHandler = () => {
     const convertedValue = (parseFloat(form.number) * 1.8) + 32
     form.result = `${form.number}°C = ${convertedValue.toFixed(2)}°F`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="摄氏度 (°C)">
-    <n-input-number v-model:value="form.number" placeholder="输入摄氏度" style="width: 100%" />
+  <n-form-item label="Celsius (°C)">
+    <n-input-number v-model:value="form.number" placeholder="Enter Celsius temperature" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 <n-card
-  title="摄氏度 (°C) 到 华氏度 (°F) 的换算结果"
+  title="Celsius (°C) to Fahrenheit (°F) Conversion Result"
   :segmented="{
     content: true,
     footer: 'soft',
@@ -67,34 +67,34 @@ const convertHandler = () => {
   </div>
   <template #footer>
     <div>
-      <span>使用我们的工具，快速进行摄氏度到华氏度的转换！</span>
+      <span>Use our tool for quick Celsius to Fahrenheit conversions!</span>
     </div>
   </template>
 </n-card>
 
-## 换算公式
+## Conversion Formula
 
-从**摄氏度 (°C)** 换算到**华氏度 (°F)** 的公式非常简单：
+The formula to convert from **Celsius (°C)** to **Fahrenheit (°F)** is simple:
 $$ °F = °C \times 1.8 + 32 $$
-这个公式是所有**华氏温度和摄氏温度换算**的基础。
+This formula is the foundation for all **Celsius to Fahrenheit temperature conversions**.
 
-### 换算示例
-- **0°C 等于多少华氏度？**
+### Conversion Examples
+- **What is 0°C in Fahrenheit?**
   - `32°F`
-- **25°C (室温) 等于多少华氏度？**
+- **What is 25°C (room temperature) in Fahrenheit?**
   - `77°F`
-- **100°C (水的沸点) 等于多少华氏度？**
+- **What is 100°C (water boiling point) in Fahrenheit?**
   - `212°F`
 
-## 常见问题
+## Frequently Asked Questions
 
-### 摄氏度的符号是什么？
-**摄氏度的符号**是 **°C**。在书写时，请确保使用正确的符号。
+### What is the symbol for Celsius?
+The **Celsius symbol** is **°C**. Please ensure you use the correct symbol when writing.
 
-### 如何进行 k 和摄氏度换算？
-虽然本页主要关注摄氏度到华氏度的转换，但了解**k和摄氏度换算**也很有用。开尔文 (K) 和摄氏度的关系是：`K = °C + 273.15`。
+### How to convert between Kelvin and Celsius?
+While this page focuses on Celsius to Fahrenheit conversion, understanding **Kelvin and Celsius conversion** is also useful. The relationship between Kelvin (K) and Celsius is: `K = °C + 273.15`.
 
-## 相关链接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Temperature" :key="index">
     <n-button
