@@ -4,20 +4,20 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Speed/
-      linkText: 速度单位换算
+      linkText: Speed Unit Conversion
   - - link: /Speed/index
-      linkText: 速度单位单位换算
+      linkText: Speed Unit Conversion
 head:
   - - meta
     - name: description
-      content: 英里每小时换算毫米每小时工具，mph和mm/h换算公式详解。一英里每小时等于多少毫米每小时？mph和mm/h换算关系是什么？提供mph、mm/h、材料腐蚀速率单位换算，支持极慢速过程监测。
+      content: Miles per hour to millimeters per hour conversion tool, detailed explanation of mph and mm/h conversion formulas. How many millimeters per hour equals one mile per hour? What is the conversion relationship between mph and mm/h? Provides mph, mm/h, material corrosion rate unit conversion, supports ultra-slow process monitoring.
   - - meta
     - name: keywords
-      content: 速度单位换算, mph to mm/h, 英里每小时换算毫米每小时, 一英里每小时等于多少毫米每小时, mph是什么单位, mm/h是什么单位, 毫米每小时, 速度换算, 材料腐蚀速率, 极慢速过程, 英里每小时和毫米每小时怎么换算, 速度转换, mph mm/h, 微速度测量, 腐蚀监测
+      content: speed unit conversion, mph to mm/h, miles per hour to millimeters per hour, how many millimeters per hour equals one mile per hour, what is mph unit, what is mm/h unit, millimeters per hour, speed conversion, material corrosion rate, ultra-slow process, how to convert miles per hour and millimeters per hour, speed transformation, mph mm/h, micro-velocity measurement, corrosion monitoring
 ---
-# 英里每小时换算毫米每小时 | mph和mm/h速度单位换算工具
+# Miles per Hour to Millimeters per Hour | mph and mm/h Speed Unit Conversion Tool
 ---
 <script setup>
 import { onMounted, reactive, inject ,ref  } from 'vue'
@@ -26,32 +26,32 @@ import { defineClientComponent } from 'vitepress'
 import { Speed } from '../files';
 const convert = inject('convert')
 const options =  [
-  { "label": "千米每小时 (km/h)", "value": "km/h" },
-  { "label": "英尺每秒 (ft/s)", "value": "ft/s" },
-  { "label": "米每秒 (m/s)", "value": "m/s" },
-  { "label": "英里每小时 (mph)", "value": "mph" },
-  { "label": "节 (knot)", "value": "knot" },
-  { "label": "英寸每小时 (in/h)", "value": "in/h" },
-  { "label": "毫米每小时 (mm/h)", "value": "mm/h" }
+  { "label": "Kilometers per hour (km/h)", "value": "km/h" },
+  { "label": "Feet per second (ft/s)", "value": "ft/s" },
+  { "label": "Meters per second (m/s)", "value": "m/s" },
+  { "label": "Miles per hour (mph)", "value": "mph" },
+  { "label": "Knots (knot)", "value": "knot" },
+  { "label": "Inches per hour (in/h)", "value": "in/h" },
+  { "label": "Millimeters per hour (mm/h)", "value": "mm/h" }
 ];
-const seoKey = ['速度单位换算','mph to mm/h','英里每小时换算毫米每小时','mph是什么单位','mm/h是什么单位','毫米每小时','速度换算','材料腐蚀速率']
+const seoKey = ['speed unit conversion','mph to mm/h','miles per hour to millimeters per hour','what is mph unit','what is mm/h unit','millimeters per hour','speed conversion','material corrosion rate']
 const formRef = ref(null);
 const rules = {
   number:{
     required: true,
     type: 'number',
     trigger: "blur",
-    message: '请输入数字'
+    message: 'Please enter a number'
   },
   to:{
     required: true,
     trigger: "select",
-    message: '请选择转换单位'
+    message: 'Please select conversion unit'
   },
   from:{
     required: true,
     trigger: "select",
-    message: '请选择原始单位'
+    message: 'Please select original unit'
   }
 }
 const form = reactive({
@@ -59,7 +59,7 @@ const form = reactive({
   to:'mm/h',
   from:'mph',
   result:'',
-  title:'速度单位单位换算',
+  title:'Speed Unit Conversion',
 })
 const convertHandler = (e) => {
    e.preventDefault();
@@ -72,17 +72,17 @@ const convertHandler = (e) => {
 </script>
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="数值"  path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数值" />
+  <n-form-item label="Value"  path="number">
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="Please enter a value to convert" />
   </n-form-item>
-  <n-form-item label="从" path="from">
-    <n-select  size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
+  <n-form-item label="From" path="from">
+    <n-select  size="large" :options="options" v-model:value="form.from" placeholder="Please select original unit" />
   </n-form-item>
-  <n-form-item label="到" path="to">
-    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
+  <n-form-item label="To" path="to">
+    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="Please select conversion unit" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
+    <n-button type="info" style="width:100%" @click="convertHandler">Convert</n-button>
   </n-form-item>
 </n-form>
 <n-card embedded :bordered="false" hoverable style="margin-top: 16px;">
@@ -104,209 +104,209 @@ const convertHandler = (e) => {
 </n-card>
 
 
-## 一、速度单位换算表（以 1 mph 为基准）
+## I. Speed Unit Conversion Table (Based on 1 mph)
 
-| 单位       | 符号   | 换算值      | 典型应用场景             |
-|------------|--------|-------------|-------------------------|
-| 英里每小时 | mph    | 1           | 英美国家车速、航空速度   |
-| 毫米每小时 | mm/h   | 1,609,344   | 材料腐蚀速率、极慢速过程 |
-| 千米每小时 | km/h   | ≈1.609344   | 汽车限速、天气预报       |
-| 米每秒     | m/s    | ≈0.44704    | 物理学、工程计算         |
-| 英尺每秒   | ft/s   | ≈1.466667   | 美国工程、流体力学       |
-| 节        | knot   | ≈0.868976   | 航海、航空（1 节=1 海里/小时） |
-| 英寸每小时 | in/h   | 63,360      | 地质沉降监测、精密测量   |
+| Unit                | Symbol | Conversion Value | Typical Applications                    |
+|---------------------|--------|------------------|-----------------------------------------|
+| Miles per hour      | mph    | 1                | Vehicle speed in UK/US, aviation speed |
+| Millimeters per hour| mm/h   | 1,609,344        | Material corrosion rate, ultra-slow processes |
+| Kilometers per hour | km/h   | ≈1.609344        | Vehicle speed limits, weather forecasts |
+| Meters per second   | m/s    | ≈0.44704         | Physics, engineering calculations       |
+| Feet per second     | ft/s   | ≈1.466667        | US engineering, fluid mechanics         |
+| Knots              | knot   | ≈0.868976        | Maritime, aviation (1 knot = 1 nautical mile/hour) |
+| Inches per hour    | in/h   | 63,360           | Geological settlement monitoring, precision measurement |
 
-注：换算公式示例 → mph 转 mm/h: ( mm/h = mph × 1,609,344 ) ；mm/h 转 mph: ( mph = mm/h ÷ 1,609,344 ) 。
+Note: Conversion formula example → mph to mm/h: ( mm/h = mph × 1,609,344 ) ; mm/h to mph: ( mph = mm/h ÷ 1,609,344 ) .
 
-## 二、mph和mm/h换算公式详解
+## II. Detailed mph and mm/h Conversion Formula
 
-### 英里每小时和毫米每小时怎么换算？
+### How to convert between miles per hour and millimeters per hour?
 
-**基础换算公式：**
-- **mph 转 mm/h：** mm/h = mph × 1,609,344
-- **mm/h 转 mph：** mph = mm/h ÷ 1,609,344
+**Basic conversion formulas:**
+- **mph to mm/h:** mm/h = mph × 1,609,344
+- **mm/h to mph:** mph = mm/h ÷ 1,609,344
 
-**公式推导过程：**
-1. 1 英里 = 1609.344 米（国际英里标准）
-2. 1 米 = 1000 毫米（公制长度标准）
-3. 1 英里 = 1609.344 × 1000 = 1,609,344 毫米
-4. 1 mph = 1,609,344 毫米/小时 = 1,609,344 mm/h
+**Formula derivation process:**
+1. 1 mile = 1609.344 meters (international mile standard)
+2. 1 meter = 1000 millimeters (metric length standard)
+3. 1 mile = 1609.344 × 1000 = 1,609,344 millimeters
+4. 1 mph = 1,609,344 millimeters/hour = 1,609,344 mm/h
 
-### 一英里每小时等于多少毫米每小时？
+### How many millimeters per hour equals one mile per hour?
 
-**精确答案：** 1 mph = 1,609,344 mm/h
+**Exact answer:** 1 mph = 1,609,344 mm/h
 
-**常见速度换算示例：**
-- 1 mph = 1,609,344 mm/h（基准换算）
-- 0.1 mph = 160,934.4 mm/h（慢速过程）
-- 0.01 mph = 16,093.44 mm/h（极慢速过程）
-- 0.001 mph = 1,609.344 mm/h（微速度过程）
+**Common speed conversion examples:**
+- 1 mph = 1,609,344 mm/h (reference conversion)
+- 0.1 mph = 160,934.4 mm/h (slow process)
+- 0.01 mph = 16,093.44 mm/h (ultra-slow process)
+- 0.001 mph = 1,609.344 mm/h (micro-velocity process)
 
-### 快速心算技巧
+### Quick Mental Calculation Tips
 
-**mph 转 mm/h 心算法：**
-1. **精确计算：** mph × 1,609,344 = mm/h
-2. **科学记数法：** mph × 1.609344 × 10⁶ = mm/h
-3. **记忆点：** 1 mph ≈ 160万 mm/h
+**mph to mm/h mental calculation:**
+1. **Exact calculation:** mph × 1,609,344 = mm/h
+2. **Scientific notation:** mph × 1.609344 × 10⁶ = mm/h
+3. **Memory point:** 1 mph ≈ 1.6 million mm/h
 
-**mm/h 转 mph 心算法：**
-1. **精确计算：** mm/h ÷ 1,609,344 = mph
-2. **科学记数法：** mm/h × 6.214 × 10⁻⁷ = mph
-3. **记忆技巧：** 160万 mm/h ≈ 1 mph
+**mm/h to mph mental calculation:**
+1. **Exact calculation:** mm/h ÷ 1,609,344 = mph
+2. **Scientific notation:** mm/h × 6.214 × 10⁻⁷ = mph
+3. **Memory trick:** 1.6 million mm/h ≈ 1 mph
 
-## 三、速度单位科普：从宏观到微观的极限
+## III. Speed Unit Science: From Macro to Micro Extremes
 
-### 为什么需要mm/h这样的极微速度单位？
+### Why do we need ultra-micro speed units like mm/h?
 
-材料科学和极慢过程监测的特殊需求：
+Special requirements for material science and ultra-slow process monitoring:
 
-- **mm/h（毫米每小时）**：材料科学专用单位，适合极慢速过程监测。
-- **mph（英里每小时）**：日常交通和航空常用单位。
-- **in/h（英寸每小时）**：精密测量中等速度单位。
+- **mm/h (millimeters per hour)**: Specialized unit for material science, suitable for ultra-slow process monitoring.
+- **mph (miles per hour)**: Common unit for daily transportation and aviation.
+- **in/h (inches per hour)**: Precision measurement medium-speed unit.
 
-### 单位选择的科学意义
+### Scientific Significance of Unit Selection
 
-案例：材料腐蚀速率监测中，年腐蚀深度1毫米相当于约0.114 mm/h，若使用mph单位（约7×10⁻⁸ mph）会导致数据难以理解和处理。
+Case study: In material corrosion rate monitoring, an annual corrosion depth of 1 millimeter equals approximately 0.114 mm/h. Using mph units (approximately 7×10⁻⁸ mph) would make data difficult to understand and process.
 
-科学建议：极慢过程监测必须选择合适的时间和长度尺度，确保数据的科学性和实用性。
+Scientific recommendation: Ultra-slow process monitoring must select appropriate time and length scales to ensure data scientific validity and practicality.
 
-### 毫米的精度和现代应用
+### Millimeter Precision and Modern Applications
 
-- **毫米起源**：公制系统基本单位，1毫米 = 0.001米
-- **现代标准**：1毫米 = 0.03937英寸（精确换算）
-- **应用范围**：材料科学、腐蚀监测、生物医学
-- **测量精度**：现代设备可达0.001毫米精度
+- **Millimeter origin**: Basic unit of the metric system, 1 millimeter = 0.001 meters
+- **Modern standard**: 1 millimeter = 0.03937 inches (exact conversion)
+- **Application scope**: Material science, corrosion monitoring, biomedical
+- **Measurement precision**: Modern equipment can achieve 0.001 millimeter precision
 
-### 冷知识：极慢速度的科学世界
+### Fun Facts: The Scientific World of Ultra-Slow Speeds
 
-- 钢铁腐蚀：大气环境约0.01-0.1 mm/年 ≈ 0.001-0.01 mm/h
-- 混凝土碳化：约1-5 mm/年 ≈ 0.1-0.6 mm/h
-- 植物细胞壁生长：约0.1-1 mm/h
-- 地质风化：岩石风化约0.001-0.01 mm/年
+- Steel corrosion: Atmospheric environment approximately 0.01-0.1 mm/year ≈ 0.001-0.01 mm/h
+- Concrete carbonation: Approximately 1-5 mm/year ≈ 0.1-0.6 mm/h
+- Plant cell wall growth: Approximately 0.1-1 mm/h
+- Geological weathering: Rock weathering approximately 0.001-0.01 mm/year
 
-## 四、速度单位详解：mm/h等材料科学单位
+## IV. Detailed Speed Unit Explanation: mm/h and Other Material Science Units
 
-### 常见微速度单位说明
+### Common Micro-Speed Unit Descriptions
 
-**mm/h 相关说明：**
-- **mm/h：** 毫米每小时，材料科学专用速度单位
-- **mm/hr：** millimeters per hour的缩写，与mm/h同义
-- **mmph：** 另一种简写形式
-- **mm/h是什么单位：** 极慢速度单位，1 mm/h = 0.001 m/h
+**mm/h related explanations:**
+- **mm/h:** Millimeters per hour, specialized speed unit for material science
+- **mm/hr:** Abbreviation for millimeters per hour, synonymous with mm/h
+- **mmph:** Another abbreviated form
+- **What is mm/h unit:** Ultra-slow speed unit, 1 mm/h = 0.001 m/h
 
-**相关微观单位：**
-- **毫米(millimeter)：** 1毫米 = 0.001米 = 0.1厘米
-- **mm：** millimeter的标准缩写
-- **μm/h：** 微米每小时，更精密的速度单位
+**Related microscopic units:**
+- **Millimeter:** 1 millimeter = 0.001 meters = 0.1 centimeters
+- **mm:** Standard abbreviation for millimeter
+- **μm/h:** Micrometers per hour, more precise speed unit
 
-### mm/h在材料科学中的重要性
+### Importance of mm/h in Material Science
 
-**腐蚀监测应用：**
-- **金属腐蚀：** 监测金属材料腐蚀速率
-- **混凝土劣化：** 监测混凝土碳化和氯离子渗透
-- **涂层失效：** 监测防护涂层的失效速率
-- **环境腐蚀：** 监测不同环境下的腐蚀行为
+**Corrosion monitoring applications:**
+- **Metal corrosion:** Monitor corrosion rates of metallic materials
+- **Concrete deterioration:** Monitor concrete carbonation and chloride ion penetration
+- **Coating failure:** Monitor failure rates of protective coatings
+- **Environmental corrosion:** Monitor corrosion behavior in different environments
 
-**生物医学应用：**
-- **药物释放：** 缓释制剂的释放速率
-- **组织生长：** 细胞和组织的生长速度
-- **伤口愈合：** 伤口愈合过程的速率监测
-- **生物降解：** 生物材料的降解速率
+**Biomedical applications:**
+- **Drug release:** Release rates of sustained-release formulations
+- **Tissue growth:** Growth rates of cells and tissues
+- **Wound healing:** Rate monitoring of wound healing processes
+- **Biodegradation:** Degradation rates of biomaterials
 
-### 为什么材料科学偏爱mm/h？
+### Why does material science favor mm/h?
 
-**科学原因：**
-- 时间尺度匹配：材料过程通常以小时为时间单位
-- 长度尺度适中：毫米是材料厚度的常用单位
-- 数据可读性：避免使用过小或过大的数值
+**Scientific reasons:**
+- Time scale matching: Material processes typically use hours as time units
+- Appropriate length scale: Millimeters are commonly used units for material thickness
+- Data readability: Avoids using excessively small or large numerical values
 
-**实用优势：**
-- **测量便利：** 与常用测量设备精度匹配
-- **数据处理：** 便于数据记录和分析
-- **标准兼容：** 符合国际材料科学标准
+**Practical advantages:**
+- **Measurement convenience:** Matches precision of commonly used measuring equipment
+- **Data processing:** Facilitates data recording and analysis
+- **Standard compatibility:** Complies with international material science standards
 
-## 五、实际应用中的速度换算场景
+## V. Practical Speed Conversion Scenarios
 
-### 材料腐蚀监测
-- **大气腐蚀：** 钢铁0.01-0.1 mm/年 = 0.001-0.01 mm/h
-- **海洋腐蚀：** 加速腐蚀0.1-1 mm/年 = 0.01-0.1 mm/h
-- **工业腐蚀：** 化工环境1-10 mm/年 = 0.1-1 mm/h
+### Material Corrosion Monitoring
+- **Atmospheric corrosion:** Steel 0.01-0.1 mm/year = 0.001-0.01 mm/h
+- **Marine corrosion:** Accelerated corrosion 0.1-1 mm/year = 0.01-0.1 mm/h
+- **Industrial corrosion:** Chemical environment 1-10 mm/year = 0.1-1 mm/h
 
-### 生物医学研究
-- **细胞迁移：** 细胞移动0.01-0.1 mm/h
-- **组织再生：** 组织生长0.1-1 mm/h
-- **药物扩散：** 药物渗透0.001-0.01 mm/h
+### Biomedical Research
+- **Cell migration:** Cell movement 0.01-0.1 mm/h
+- **Tissue regeneration:** Tissue growth 0.1-1 mm/h
+- **Drug diffusion:** Drug penetration 0.001-0.01 mm/h
 
-### 地质过程
-- **岩石风化：** 表面风化0.001-0.01 mm/年
-- **土壤侵蚀：** 表土流失0.1-1 mm/年
-- **化学溶解：** 石灰岩溶解0.01-0.1 mm/年
+### Geological Processes
+- **Rock weathering:** Surface weathering 0.001-0.01 mm/year
+- **Soil erosion:** Topsoil loss 0.1-1 mm/year
+- **Chemical dissolution:** Limestone dissolution 0.01-0.1 mm/year
 
-### 工程材料
-- **混凝土碳化：** 碳化深度1-5 mm/年 = 0.1-0.6 mm/h
-- **涂层老化：** 涂层厚度损失0.01-0.1 mm/年
-- **磨损监测：** 机械磨损0.001-0.01 mm/h
+### Engineering Materials
+- **Concrete carbonation:** Carbonation depth 1-5 mm/year = 0.1-0.6 mm/h
+- **Coating aging:** Coating thickness loss 0.01-0.1 mm/year
+- **Wear monitoring:** Mechanical wear 0.001-0.01 mm/h
 
-## 六、常见问题 FAQ
+## VI. Frequently Asked Questions (FAQ)
 
-### Q1: mph和mm/h换算公式是什么？
-**A1**: mph和mm/h换算公式：mm/h = mph × 1,609,344，mph = mm/h ÷ 1,609,344。例如：1 mph = 1,609,344 mm/h。
+### Q1: What is the conversion formula between mph and mm/h?
+**A1**: The conversion formula between mph and mm/h: mm/h = mph × 1,609,344, mph = mm/h ÷ 1,609,344. For example: 1 mph = 1,609,344 mm/h.
 
-### Q2: 一英里每小时等于多少毫米每小时？
-**A2**: 1英里每小时 = 1,609,344毫米每小时。这是基于1英里=1609.344米，1米=1000毫米的精确换算。
+### Q2: How many millimeters per hour equals one mile per hour?
+**A2**: 1 mile per hour = 1,609,344 millimeters per hour. This is based on the exact conversion of 1 mile = 1609.344 meters, 1 meter = 1000 millimeters.
 
-### Q3: mm/h是什么单位？
-**A3**: mm/h（毫米每小时）是极慢速度单位，主要用于材料腐蚀监测、生物医学研究等需要测量极慢过程的场合。
+### Q3: What is the mm/h unit?
+**A3**: mm/h (millimeters per hour) is an ultra-slow speed unit, mainly used for material corrosion monitoring, biomedical research, and other applications requiring measurement of extremely slow processes.
 
-### Q4: 为什么材料科学要用mm/h而不是mph？
-**A4**: 科学测量需求：
-- 速度尺度：材料过程速度极慢，mph太大
-- 测量精度：mm/h提供合适的精度范围
-- 数据可读性：避免使用极小的科学记数法
-- 行业标准：材料科学行业传统
+### Q4: Why does material science use mm/h instead of mph?
+**A4**: Scientific measurement requirements:
+- Speed scale: Material processes are extremely slow, mph is too large
+- Measurement precision: mm/h provides appropriate precision range
+- Data readability: Avoids using extremely small scientific notation
+- Industry standards: Traditional practice in material science industry
 
-### Q5: mph to mm/h怎么快速换算？
-**A5**: mph to mm/h快速换算技巧：
-- 精确计算：mph × 1,609,344 = mm/h
-- 科学记数法：mph × 1.609344 × 10⁶ = mm/h
-- 记忆要点：1 mph ≈ 160万 mm/h
+### Q5: How to quickly convert mph to mm/h?
+**A5**: Quick conversion tips for mph to mm/h:
+- Exact calculation: mph × 1,609,344 = mm/h
+- Scientific notation: mph × 1.609344 × 10⁶ = mm/h
+- Memory point: 1 mph ≈ 1.6 million mm/h
 
-### Q6: 材料腐蚀监测为什么用mm/h？
-**A6**: 材料腐蚀监测使用mm/h的原因：
-- **时间尺度：** 腐蚀过程通常以小时为观测单位
-- **厚度尺度：** 毫米是材料厚度的常用单位
-- **数据处理：** 便于腐蚀速率的计算和比较
-- **标准规范：** 符合材料科学测试标准
+### Q6: Why is mm/h used in material corrosion monitoring?
+**A6**: Reasons for using mm/h in material corrosion monitoring:
+- **Time scale:** Corrosion processes are typically observed in hourly units
+- **Thickness scale:** Millimeters are commonly used units for material thickness
+- **Data processing:** Facilitates calculation and comparison of corrosion rates
+- **Standard specifications:** Complies with material science testing standards
 
-### Q7: 1 mm/h相当于什么概念？
-**A7**: 1 mm/h的直观理解：
-- 物理概念：每小时增长或减少1毫米
-- 日常对比：约等于指甲生长速度
-- 科学意义：较快的材料变化速度
-- 时间尺度：一天变化24毫米（2.4厘米）
+### Q7: What does 1 mm/h represent conceptually?
+**A7**: Intuitive understanding of 1 mm/h:
+- Physical concept: Growth or reduction of 1 millimeter per hour
+- Daily comparison: Approximately equal to nail growth rate
+- Scientific significance: Relatively fast material change rate
+- Time scale: 24 millimeters (2.4 centimeters) change per day
 
-### Q8: 如何在材料试验中选择合适的速度单位？
-**A8**: 速度单位选择原则：
-- **过程时间：** 根据试验或监测的时间尺度
-- **变化幅度：** 选择使数值在合理范围内的单位
-- **测量精度：** 单位精度应匹配测量设备
-- **标准要求：** 遵循相关测试标准和规范
+### Q8: How to choose appropriate speed units in material testing?
+**A8**: Principles for speed unit selection:
+- **Process time:** Based on the time scale of testing or monitoring
+- **Change magnitude:** Choose units that keep values within reasonable ranges
+- **Measurement precision:** Unit precision should match measuring equipment
+- **Standard requirements:** Follow relevant testing standards and specifications
 
-### Q9: 生物医学研究中mph和mm/h如何应用？
-**A9**: 生物医学中的速度应用：
-- **细胞水平：** 细胞迁移通常用mm/h或μm/h
-- **组织水平：** 组织生长用mm/h
-- **器官水平：** 器官发育可能用更大单位
-- **药物动力学：** 药物扩散用mm/h或更小单位
+### Q9: How are mph and mm/h applied in biomedical research?
+**A9**: Speed applications in biomedicine:
+- **Cellular level:** Cell migration typically uses mm/h or μm/h
+- **Tissue level:** Tissue growth uses mm/h
+- **Organ level:** Organ development may use larger units
+- **Pharmacokinetics:** Drug diffusion uses mm/h or smaller units
 
-### Q10: 现代材料测试设备如何处理mph和mm/h？
-**A10**: 现代测试设备的单位处理：
-- **自动换算：** 设备内置多种单位换算功能
-- **数据记录：** 可同时记录多种单位的数据
-- **精度控制：** 保持测量和换算的精度
-- **标准兼容：** 符合国际材料测试标准
+### Q10: How do modern material testing equipment handle mph and mm/h?
+**A10**: Unit handling in modern testing equipment:
+- **Automatic conversion:** Equipment has built-in multiple unit conversion functions
+- **Data recording:** Can simultaneously record data in multiple units
+- **Precision control:** Maintains measurement and conversion precision
+- **Standard compatibility:** Complies with international material testing standards
 
-## 七、相关连接
+## VII. Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Speed" :key="index">
     <n-button

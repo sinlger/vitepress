@@ -1,12 +1,12 @@
 ---
-title: 毫米每小时转英尺每秒 - 速度单位转换器
-description: 在线毫米每小时(mm/h)转英尺每秒(ft/s)转换器，提供精确的速度单位转换。了解mm/h和ft/s的定义、应用场景和转换公式。
-keywords: 毫米每小时转英尺每秒, mm/h转ft/s, 速度转换, 单位转换器, 毫米每小时, 英尺每秒
-author: 速度转换专家
-seoKey: 毫米每小时转英尺每秒, mm/h转ft/s, 速度单位转换, 毫米每小时转换器, 英尺每秒转换器
+title: Millimeters per Hour to Feet per Second - Speed Unit Converter
+description: Online millimeters per hour (mm/h) to feet per second (ft/s) converter, providing precise speed unit conversion. Learn about mm/h and ft/s definitions, application scenarios, and conversion formulas.
+keywords: millimeters per hour to feet per second, mm/h to ft/s, speed conversion, unit converter, millimeters per hour, feet per second
+author: Speed Conversion Expert
+seoKey: millimeters per hour to feet per second, mm/h to ft/s, speed unit conversion, millimeters per hour converter, feet per second converter
 ---
 
-# 毫米每小时转英尺每秒 (mm/h to ft/s)
+# Millimeters per Hour to Feet per Second (mm/h to ft/s)
 
 <script setup>
 import { onMounted, reactive, inject ,ref  } from 'vue'
@@ -15,32 +15,32 @@ import { defineClientComponent } from 'vitepress'
 import { Speed } from '../files';
 const convert = inject('convert')
 const options =  [
-  { "label": "毫米每小时 (mm/h)", "value": "mm/h" },
-  { "label": "千米每小时 (km/h)", "value": "km/h" },
-  { "label": "米每秒 (m/s)", "value": "m/s" },
-  { "label": "英里每小时 (mph)", "value": "mph" },
-  { "label": "节 (knot)", "value": "knot" },
-  { "label": "英尺每秒 (ft/s)", "value": "ft/s" },
-  { "label": "英寸每小时 (in/h)", "value": "in/h" }
+  { "label": "Millimeters per Hour (mm/h)", "value": "mm/h" },
+  { "label": "Kilometers per Hour (km/h)", "value": "km/h" },
+  { "label": "Meters per Second (m/s)", "value": "m/s" },
+  { "label": "Miles per Hour (mph)", "value": "mph" },
+  { "label": "Knots (knot)", "value": "knot" },
+  { "label": "Feet per Second (ft/s)", "value": "ft/s" },
+  { "label": "Inches per Hour (in/h)", "value": "in/h" }
 ];
-const seoKey = ['速度单位换算','毫米每小时换算','千米每小时换算','mm/h','毫米是什么单位','一毫米等于多少千米','毫米换算千米','速度的单位','mm/h km/h','千米每小时','毫米每小时和千米每小时怎么换算','一毫米每小时等于多少千米每小时','mm/h和km/h换算','千米每小时换算毫米每小时','一千米每小时等于多少毫米每小时','速度转换','毫米每小时换算千米每小时','速度单位','极慢速度单位','千米每小时和毫米每小时的换算','mm/h换算km/h','微速度测量','毫米每小时换算千米每小时']
+const seoKey = ['speed unit conversion','millimeters per hour conversion','feet per second conversion','mm/h','what is millimeter unit','millimeter to feet conversion','speed units','mm/h ft/s','feet per second','millimeters per hour to feet per second conversion','mm/h and ft/s conversion','feet per second to millimeters per hour','speed conversion','millimeters per hour converter','speed units','ultra-slow speed units','millimeters per hour and feet per second conversion','mm/h to ft/s conversion','micro-speed measurement','millimeters per hour to feet per second']
 const formRef = ref(null);
 const rules = {
   number:{
     required: true,
     type: 'number',
     trigger: "blur",
-    message: '请输入数字'
+    message: 'Please enter a number'
   },
   to:{
     required: true,
     trigger: "select",
-    message: '请选择转换单位'
+    message: 'Please select conversion unit'
   },
   from:{
     required: true,
     trigger: "select",
-    message: '请选择原始单位'
+    message: 'Please select original unit'
   }
 }
 const form = reactive({
@@ -48,7 +48,7 @@ const form = reactive({
   to:'ft/s',
   from:'mm/h',
   result:'',
-  title:'速度单位单位换算',
+  title:'Speed Unit Conversion',
 })
 const convertHandler = (e) => {
    e.preventDefault();
@@ -61,17 +61,17 @@ const convertHandler = (e) => {
 </script>
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="数值"  path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数值" />
+  <n-form-item label="Value"  path="number">
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="Enter the value to convert" />
   </n-form-item>
-  <n-form-item label="从" path="from">
-    <n-select  size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
+  <n-form-item label="From" path="from">
+    <n-select  size="large" :options="options" v-model:value="form.from" placeholder="Select original unit" />
   </n-form-item>
-  <n-form-item label="到" path="to">
-    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
+  <n-form-item label="To" path="to">
+    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="Select conversion unit" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
+    <n-button type="info" style="width:100%" @click="convertHandler">Convert</n-button>
   </n-form-item>
 </n-form>
 <n-card embedded :bordered="false" hoverable style="margin-top: 16px;">
@@ -91,10 +91,10 @@ const convertHandler = (e) => {
     </div>
   </template>
 </n-card>
-## 毫米每小时转英尺每秒转换表
+## Millimeters per Hour to Feet per Second Conversion Table
 
-| 毫米每小时 (mm/h) | 英尺每秒 (ft/s) |
-|------------------|----------------|
+| Millimeters per Hour (mm/h) | Feet per Second (ft/s) |
+|------------------------------|------------------------|
 | 1 mm/h | 8.47 × 10⁻⁷ ft/s |
 | 10 mm/h | 8.47 × 10⁻⁶ ft/s |
 | 100 mm/h | 8.47 × 10⁻⁵ ft/s |
@@ -103,237 +103,237 @@ const convertHandler = (e) => {
 | 100,000 mm/h | 8.47 × 10⁻² ft/s |
 | 1,000,000 mm/h | 8.47 × 10⁻¹ ft/s |
 
-## 转换公式详解
+## Detailed Conversion Formula
 
-### 基本转换公式
+### Basic Conversion Formula
 
-**毫米每小时转英尺每秒的公式：**
+**Formula for converting millimeters per hour to feet per second:**
 ```
 ft/s = mm/h × 8.466666666666667 × 10⁻⁷
 ```
 
-### 公式推导过程
+### Formula Derivation Process
 
-1. **毫米转英尺：**
-   - 1 英尺 = 304.8 毫米
-   - 1 毫米 = 1/304.8 英尺 ≈ 0.003280839895 英尺
+1. **Millimeters to feet:**
+   - 1 foot = 304.8 millimeters
+   - 1 millimeter = 1/304.8 feet ≈ 0.003280839895 feet
 
-2. **小时转秒：**
-   - 1 小时 = 3600 秒
+2. **Hours to seconds:**
+   - 1 hour = 3600 seconds
 
-3. **完整转换：**
+3. **Complete conversion:**
    ```
-   1 mm/h = (1 毫米/1 小时) × (1 英尺/304.8 毫米) × (1 小时/3600 秒)
+   1 mm/h = (1 millimeter/1 hour) × (1 foot/304.8 millimeters) × (1 hour/3600 seconds)
    1 mm/h = 1/(304.8 × 3600) ft/s
    1 mm/h = 1/1,097,280 ft/s
    1 mm/h ≈ 8.466666666666667 × 10⁻⁷ ft/s
    ```
 
-### 快速心算技巧
+### Quick Mental Calculation Tips
 
-对于毫米每小时转英尺每秒的转换：
-- **记住系数：** 约 8.47 × 10⁻⁷
-- **快速估算：** mm/h 值除以 1,100,000 得到近似的 ft/s 值
-- **精确计算：** 使用完整的转换系数 8.466666666666667 × 10⁻⁷
+For millimeters per hour to feet per second conversion:
+- **Remember the coefficient:** approximately 8.47 × 10⁻⁷
+- **Quick estimation:** Divide mm/h value by 1,100,000 to get approximate ft/s value
+- **Precise calculation:** Use the complete conversion coefficient 8.466666666666667 × 10⁻⁷
 
-## 科普知识：为什么需要不同的速度单位？
+## Scientific Knowledge: Why Do We Need Different Speed Units?
 
-### 毫米每小时 (mm/h) 的应用
+### Applications of Millimeters per Hour (mm/h)
 
-毫米每小时是一个极小的速度单位，主要用于：
+Millimeters per hour is an extremely small speed unit, mainly used for:
 
-1. **材料腐蚀速率测量**
-   - 金属腐蚀速度监测
-   - 化学反应速率研究
-   - 材料老化过程分析
+1. **Material Corrosion Rate Measurement**
+   - Metal corrosion speed monitoring
+   - Chemical reaction rate research
+   - Material aging process analysis
 
-2. **地质沉降监测**
-   - 建筑物沉降速度
-   - 地面下沉监测
-   - 地质变化研究
+2. **Geological Settlement Monitoring**
+   - Building settlement speed
+   - Ground subsidence monitoring
+   - Geological change research
 
-3. **精密制造过程**
-   - 薄膜生长速率
-   - 表面处理过程
-   - 微观加工速度
+3. **Precision Manufacturing Processes**
+   - Thin film growth rate
+   - Surface treatment processes
+   - Microscopic machining speed
 
-### 英尺每秒 (ft/s) 的应用
+### Applications of Feet per Second (ft/s)
 
-英尺每秒在美国工程领域广泛使用：
+Feet per second is widely used in American engineering fields:
 
-1. **流体力学**
-   - 管道流速测量
-   - 风速监测
-   - 水流速度计算
+1. **Fluid Mechanics**
+   - Pipeline flow velocity measurement
+   - Wind speed monitoring
+   - Water flow velocity calculation
 
-2. **建筑工程**
-   - 结构振动分析
-   - 材料测试
-   - 安全标准制定
+2. **Civil Engineering**
+   - Structural vibration analysis
+   - Material testing
+   - Safety standard development
 
-3. **体育运动**
-   - 球类运动速度
-   - 运动员速度测量
-   - 设备性能评估
+3. **Sports**
+   - Ball sports speed
+   - Athlete speed measurement
+   - Equipment performance evaluation
 
-### 单位混淆的潜在问题
+### Potential Problems from Unit Confusion
 
-在工程和科学研究中，速度单位的错误使用可能导致：
+In engineering and scientific research, incorrect use of speed units may lead to:
 
-- **测量误差：** 数据记录和分析错误
-- **设计缺陷：** 工程计算失误
-- **安全隐患：** 速度限制理解错误
-- **成本损失：** 材料和时间浪费
+- **Measurement errors:** Data recording and analysis mistakes
+- **Design flaws:** Engineering calculation errors
+- **Safety hazards:** Misunderstanding of speed limits
+- **Cost losses:** Material and time waste
 
-## 英尺的历史与应用
+## History and Applications of Feet
 
-### 英尺的定义
+### Definition of Foot
 
-英尺（foot，复数 feet）是英制长度单位：
-- **现代定义：** 1 英尺 = 0.3048 米（精确值）
-- **历史起源：** 基于人类脚的长度
-- **标准化：** 1959年国际英尺标准确立
+The foot (plural: feet) is an imperial unit of length:
+- **Modern definition:** 1 foot = 0.3048 meters (exact value)
+- **Historical origin:** Based on the length of a human foot
+- **Standardization:** International foot standard established in 1959
 
-### 英尺每秒 (ft/s) 的工程应用
+### Engineering Applications of Feet per Second (ft/s)
 
-1. **美国工程标准**
-   - 建筑规范中的速度要求
-   - 机械设备运行速度
-   - 安全标准制定
+1. **American Engineering Standards**
+   - Speed requirements in building codes
+   - Mechanical equipment operating speeds
+   - Safety standard development
 
-2. **流体工程**
-   - 管道设计中的流速计算
-   - 泵和风机性能参数
-   - 通风系统设计
+2. **Fluid Engineering**
+   - Flow velocity calculations in pipeline design
+   - Pump and fan performance parameters
+   - Ventilation system design
 
-3. **结构工程**
-   - 振动分析
-   - 动态载荷计算
-   - 抗震设计
+3. **Structural Engineering**
+   - Vibration analysis
+   - Dynamic load calculations
+   - Seismic design
 
-### 常见速度单位缩写
+### Common Speed Unit Abbreviations
 
-- **ft/s：** 英尺每秒（标准缩写）
-- **fps：** 英尺每秒（常用缩写）
-- **ft/sec：** 英尺每秒（完整缩写）
+- **ft/s:** Feet per second (standard abbreviation)
+- **fps:** Feet per second (common abbreviation)
+- **ft/sec:** Feet per second (full abbreviation)
 
-## 实际应用场景
+## Practical Application Scenarios
 
-### 工程领域的速度转换
+### Speed Conversion in Engineering Fields
 
-1. **材料科学研究**
+1. **Materials Science Research**
    ```
-   腐蚀速率：0.1 mm/h
-   转换为 ft/s：0.1 × 8.47 × 10⁻⁷ = 8.47 × 10⁻⁸ ft/s
-   ```
-
-2. **地质监测**
-   ```
-   地面沉降：5 mm/h
-   转换为 ft/s：5 × 8.47 × 10⁻⁷ = 4.23 × 10⁻⁶ ft/s
+   Corrosion rate: 0.1 mm/h
+   Convert to ft/s: 0.1 × 8.47 × 10⁻⁷ = 8.47 × 10⁻⁸ ft/s
    ```
 
-3. **精密制造**
+2. **Geological Monitoring**
    ```
-   薄膜生长：50 mm/h
-   转换为 ft/s：50 × 8.47 × 10⁻⁷ = 4.23 × 10⁻⁵ ft/s
-   ```
-
-### 体育运动中的速度
-
-1. **高尔夫球速度**
-   ```
-   球速：150 ft/s
-   转换为 mm/h：150 ÷ (8.47 × 10⁻⁷) ≈ 177,000,000 mm/h
+   Ground subsidence: 5 mm/h
+   Convert to ft/s: 5 × 8.47 × 10⁻⁷ = 4.23 × 10⁻⁶ ft/s
    ```
 
-2. **棒球投球速度**
+3. **Precision Manufacturing**
    ```
-   投球速度：130 ft/s
-   转换为 mm/h：130 ÷ (8.47 × 10⁻⁷) ≈ 153,500,000 mm/h
-   ```
-
-### 自然现象中的速度
-
-1. **植物生长速度**
-   ```
-   竹子生长：1000 mm/h（极快生长）
-   转换为 ft/s：1000 × 8.47 × 10⁻⁷ = 8.47 × 10⁻⁴ ft/s
+   Thin film growth: 50 mm/h
+   Convert to ft/s: 50 × 8.47 × 10⁻⁷ = 4.23 × 10⁻⁵ ft/s
    ```
 
-2. **冰川移动速度**
+### Speed in Sports
+
+1. **Golf Ball Speed**
    ```
-   冰川流动：0.01 mm/h
-   转换为 ft/s：0.01 × 8.47 × 10⁻⁷ = 8.47 × 10⁻⁹ ft/s
+   Ball speed: 150 ft/s
+   Convert to mm/h: 150 ÷ (8.47 × 10⁻⁷) ≈ 177,000,000 mm/h
    ```
 
-## 常见问题解答 (FAQ)
+2. **Baseball Pitching Speed**
+   ```
+   Pitching speed: 130 ft/s
+   Convert to mm/h: 130 ÷ (8.47 × 10⁻⁷) ≈ 153,500,000 mm/h
+   ```
 
-### Q1: 毫米每小时转英尺每秒的精确转换公式是什么？
+### Speed in Natural Phenomena
 
-**A:** 精确的转换公式是：ft/s = mm/h × 8.466666666666667 × 10⁻⁷
+1. **Plant Growth Speed**
+   ```
+   Bamboo growth: 1000 mm/h (extremely fast growth)
+   Convert to ft/s: 1000 × 8.47 × 10⁻⁷ = 8.47 × 10⁻⁴ ft/s
+   ```
 
-这个系数来源于：
-- 1 英尺 = 304.8 毫米
-- 1 小时 = 3600 秒
-- 转换系数 = 1/(304.8 × 3600) = 8.466666666666667 × 10⁻⁷
+2. **Glacier Movement Speed**
+   ```
+   Glacier flow: 0.01 mm/h
+   Convert to ft/s: 0.01 × 8.47 × 10⁻⁷ = 8.47 × 10⁻⁹ ft/s
+   ```
 
-### Q2: 为什么美国工程中常用英尺每秒？
+## Frequently Asked Questions (FAQ)
 
-**A:** 美国工程领域使用英尺每秒的原因：
-- **历史传统：** 美国采用英制单位系统
-- **工程标准：** 建筑规范和工程标准基于英制
-- **行业习惯：** 工程师熟悉英制单位的数值范围
-- **设备兼容：** 测量设备和工具基于英制设计
+### Q1: What is the precise conversion formula for millimeters per hour to feet per second?
 
-### Q3: 如何快速估算毫米每小时转英尺每秒？
+**A:** The precise conversion formula is: ft/s = mm/h × 8.466666666666667 × 10⁻⁷
 
-**A:** 快速估算方法：
-- **简化系数：** 使用 8.5 × 10⁻⁷ 作为近似值
-- **心算技巧：** mm/h 值除以 1,200,000 得到近似的 ft/s 值
-- **数量级判断：** mm/h 转 ft/s 会减少约 6-7 个数量级
+This coefficient comes from:
+- 1 foot = 304.8 millimeters
+- 1 hour = 3600 seconds
+- Conversion coefficient = 1/(304.8 × 3600) = 8.466666666666667 × 10⁻⁷
 
-### Q4: 毫米每小时主要用于测量什么？
+### Q2: Why is feet per second commonly used in American engineering?
 
-**A:** 毫米每小时主要用于：
-- **材料腐蚀速率：** 金属腐蚀、化学反应速度
-- **地质变化：** 地面沉降、地质移动
-- **精密制造：** 薄膜生长、表面处理
-- **生物过程：** 植物生长、细胞分裂速度
+**A:** Reasons for using feet per second in American engineering:
+- **Historical tradition:** The United States uses the imperial unit system
+- **Engineering standards:** Building codes and engineering standards are based on imperial units
+- **Industry practice:** Engineers are familiar with the numerical ranges of imperial units
+- **Equipment compatibility:** Measuring equipment and tools are designed based on imperial units
 
-### Q5: ft/s 和 fps 有什么区别？
+### Q3: How to quickly estimate millimeters per hour to feet per second conversion?
 
-**A:** ft/s 和 fps 的区别：
-- **ft/s：** 标准的科学记号，更正式
-- **fps：** 常用的工程缩写，更简洁
-- **含义相同：** 两者都表示英尺每秒
-- **使用场合：** ft/s 用于正式文档，fps 用于日常交流
+**A:** Quick estimation methods:
+- **Simplified coefficient:** Use 8.5 × 10⁻⁷ as an approximate value
+- **Mental calculation trick:** Divide mm/h value by 1,200,000 to get approximate ft/s value
+- **Order of magnitude judgment:** Converting mm/h to ft/s reduces by about 6-7 orders of magnitude
 
-### Q6: 在材料科学中，为什么要将腐蚀速率转换为不同单位？
+### Q4: What is millimeters per hour mainly used to measure?
 
-**A:** 转换腐蚀速率单位的原因：
-- **国际合作：** 不同国家使用不同单位制
-- **标准对比：** 工业标准可能使用不同单位
-- **设备兼容：** 测量设备显示单位不同
-- **数据分析：** 便于与其他研究数据比较
+**A:** Millimeters per hour is mainly used for:
+- **Material corrosion rates:** Metal corrosion, chemical reaction speeds
+- **Geological changes:** Ground subsidence, geological movement
+- **Precision manufacturing:** Thin film growth, surface treatment
+- **Biological processes:** Plant growth, cell division speed
 
-### Q7: 如何验证毫米每小时转英尺每秒的计算结果？
+### Q5: What is the difference between ft/s and fps?
 
-**A:** 验证计算结果的方法：
-- **反向计算：** 将结果转换回原单位验证
-- **在线工具：** 使用多个转换工具对比结果
-- **单位分析：** 检查单位消除是否正确
-- **数量级检查：** 确认结果的数量级合理
+**A:** Differences between ft/s and fps:
+- **ft/s:** Standard scientific notation, more formal
+- **fps:** Common engineering abbreviation, more concise
+- **Same meaning:** Both represent feet per second
+- **Usage occasions:** ft/s for formal documents, fps for daily communication
 
-### Q8: 在精密测量中，转换精度有多重要？
+### Q6: In materials science, why convert corrosion rates to different units?
 
-**A:** 转换精度在精密测量中极其重要：
-- **误差累积：** 转换误差会在计算中累积
-- **质量控制：** 影响产品质量和安全性
-- **科学研究：** 影响实验结果的可靠性
-- **工程设计：** 影响设计的准确性和安全性
+**A:** Reasons for converting corrosion rate units:
+- **International cooperation:** Different countries use different unit systems
+- **Standard comparison:** Industrial standards may use different units
+- **Equipment compatibility:** Measuring equipment displays different units
+- **Data analysis:** Facilitates comparison with other research data
 
-## 相关链接
+### Q7: How to verify the calculation results of millimeters per hour to feet per second conversion?
+
+**A:** Methods to verify calculation results:
+- **Reverse calculation:** Convert results back to original units for verification
+- **Online tools:** Use multiple conversion tools to compare results
+- **Unit analysis:** Check if unit cancellation is correct
+- **Order of magnitude check:** Confirm the order of magnitude is reasonable
+
+### Q8: How important is conversion precision in precision measurement?
+
+**A:** Conversion precision is extremely important in precision measurement:
+- **Error accumulation:** Conversion errors accumulate in calculations
+- **Quality control:** Affects product quality and safety
+- **Scientific research:** Affects reliability of experimental results
+- **Engineering design:** Affects accuracy and safety of designs
+
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Speed" :key="index">
     <n-button

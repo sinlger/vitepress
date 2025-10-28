@@ -4,20 +4,20 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Speed/
-      linkText: 速度单位换算
+      linkText: Speed Unit Conversion
   - - link: /Speed/index
-      linkText: 速度单位单位换算
+      linkText: Speed Unit Conversion
 head:
   - - meta
     - name: description
-      content: 节换算英尺每秒工具，knot和ft/s换算公式详解。一节是多少英尺每秒？一节等于多少ft/s？节和英尺每秒怎么换算？提供knot、ft/s、m/s等速度单位换算，支持航海航空速度单位转换。
+      content: Knot to feet per second conversion tool with detailed knot and ft/s conversion formulas. How many feet per second is one knot? How to convert knots to ft/s? Provides knot, ft/s, m/s speed unit conversions, supporting maritime and aviation speed unit conversions.
   - - meta
     - name: keywords
-      content: 速度单位换算, 节换算英尺每秒, knot换算ft/s, 一节是多少英尺每秒, 一节等于多少ft/s, 速度单位, 一节, 节换算英尺, 英尺每秒, knots to ft/s, knot, 速度换算, 速度单位转换, 速度单位换算工具, 节的速度, 海里每小时, 航海速度单位, 航空速度单位
+      content: speed unit conversion, knot to feet per second, knot to ft/s conversion, how many feet per second in one knot, one knot equals how many ft/s, speed units, one knot, knot to feet conversion, feet per second, knots to ft/s, knot, speed conversion, speed unit conversion, speed conversion tool, knot speed, nautical miles per hour, maritime speed units, aviation speed units
 ---
-# 节换算英尺每秒 | knot和ft/s速度单位换算工具
+# Knot to Feet per Second | knot and ft/s Speed Unit Conversion Tool
 ---
 <script setup>
 import { onMounted, reactive, inject ,ref  } from 'vue'
@@ -26,32 +26,32 @@ import { defineClientComponent } from 'vitepress'
 import { Speed } from '../files';
 const convert = inject('convert')
 const options =  [
-  { "label": "千米每小时 (km/h)", "value": "km/h" },
-  { "label": "英尺每秒 (ft/s)", "value": "ft/s" },
-  { "label": "米每秒 (m/s)", "value": "m/s" },
-  { "label": "英里每小时 (mph)", "value": "mph" },
-  { "label": "节 (knot)", "value": "knot" },
-  { "label": "英寸每小时 (in/h)", "value": "in/h" },
-  { "label": "毫米每小时 (mm/h)", "value": "mm/h" }
+  { "label": "Kilometers per hour (km/h)", "value": "km/h" },
+  { "label": "Feet per second (ft/s)", "value": "ft/s" },
+  { "label": "Meters per second (m/s)", "value": "m/s" },
+  { "label": "Miles per hour (mph)", "value": "mph" },
+  { "label": "Knots (knot)", "value": "knot" },
+  { "label": "Inches per hour (in/h)", "value": "in/h" },
+  { "label": "Millimeters per hour (mm/h)", "value": "mm/h" }
 ];
-const seoKey = ['速度单位换算','节换算英尺每秒','knot换算ft/s','速度单位换算工具','速度换算','速度单位转换','一节是多少英尺每秒','一节等于多少ft/s','速度单位','一节','节换算英尺','英尺每秒','knots to ft/s','knot']
+const seoKey = ['speed unit conversion','knot to feet per second','knot to ft/s conversion','speed conversion tool','speed conversion','speed unit conversion','how many feet per second in one knot','one knot equals how many ft/s','speed units','one knot','knot to feet conversion','feet per second','knots to ft/s','knot']
 const formRef = ref(null);
 const rules = {
   number:{
     required: true,
     type: 'number',
     trigger: "blur",
-    message: '请输入数字'
+    message: 'Please enter a number'
   },
   to:{
     required: true,
     trigger: "select",
-    message: '请选择转换单位'
+    message: 'Please select conversion unit'
   },
   from:{
     required: true,
     trigger: "select",
-    message: '请选择原始单位'
+    message: 'Please select original unit'
   }
 }
 const form = reactive({
@@ -59,7 +59,7 @@ const form = reactive({
   to:'ft/s',
   from:'knot',
   result:'',
-  title:'速度单位单位换算',
+  title:'Speed Unit Conversion',
 })
 const convertHandler = (e) => {
    e.preventDefault();
@@ -72,17 +72,17 @@ const convertHandler = (e) => {
 </script>
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="数值"  path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数值" />
+  <n-form-item label="Value"  path="number">
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="Enter the value to convert" />
   </n-form-item>
-  <n-form-item label="从" path="from">
-    <n-select  size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
+  <n-form-item label="From" path="from">
+    <n-select  size="large" :options="options" v-model:value="form.from" placeholder="Select original unit" />
   </n-form-item>
-  <n-form-item label="到" path="to">
-    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
+  <n-form-item label="To" path="to">
+    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="Select conversion unit" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
+    <n-button type="info" style="width:100%" @click="convertHandler">Convert</n-button>
   </n-form-item>
 </n-form>
 <n-card embedded :bordered="false" hoverable style="margin-top: 16px;">
@@ -104,237 +104,237 @@ const convertHandler = (e) => {
 </n-card>
 
 
-## 一、速度单位换算表（以 1 节 为基准）
+## I. Speed Unit Conversion Table (Based on 1 Knot)
 
-| 单位       | 符号   | 换算值      | 典型应用场景             |
-|------------|--------|-------------|-------------------------|
-| 节        | knot   | 1           | 航海、航空（1 节=1 海里/小时） |
-| 英尺每秒   | ft/s   | 1.68781     | 美国工程流体力学（1 节=1.68781 ft/s） |
-| 米每秒     | m/s    | ≈0.514444   | 物理学、工程计算（1 节≈0.514 m/s） |
-| 千米每小时 | km/h   | ≈1.852      | 汽车限速、天气预报（1 节=1.852 km/h） |
-| 英里每小时 | mph    | ≈1.15078    | 英美国家车速（1 节≈1.151 mph） |
-| 英寸每小时 | in/h   | 72,913.4    | 地质沉降监测             |
-| 毫米每小时 | mm/h   | 1,852,000   | 材料腐蚀速率、极慢速过程 |
+| Unit       | Symbol | Conversion Value | Typical Applications             |
+|------------|--------|------------------|----------------------------------|
+| Knot       | knot   | 1                | Maritime, Aviation (1 knot = 1 nautical mile/hour) |
+| Feet per second | ft/s | 1.68781         | US Engineering Fluid Mechanics (1 knot = 1.68781 ft/s) |
+| Meters per second | m/s | ≈0.514444       | Physics, Engineering Calculations (1 knot ≈ 0.514 m/s) |
+| Kilometers per hour | km/h | ≈1.852         | Vehicle Speed Limits, Weather Forecasts (1 knot = 1.852 km/h) |
+| Miles per hour | mph | ≈1.15078         | Vehicle Speed in US/UK (1 knot ≈ 1.151 mph) |
+| Inches per hour | in/h | 72,913.4        | Geological Settlement Monitoring |
+| Millimeters per hour | mm/h | 1,852,000      | Material Corrosion Rate, Ultra-slow Processes |
 
-注：换算公式示例 → knot 转 ft/s: ( ft/s = knot × 1.68781 ) ；ft/s 转 knot: ( knot = ft/s ÷ 1.68781 ) 。
+Note: Conversion formula examples → knot to ft/s: ( ft/s = knot × 1.68781 ) ; ft/s to knot: ( knot = ft/s ÷ 1.68781 ) .
 
-## 二、knot和ft/s换算公式详解
+## II. Detailed Explanation of knot and ft/s Conversion Formula
 
-### 节和英尺每秒怎么换算？
+### How to Convert Between Knots and Feet per Second?
 
-**基础换算公式：**
-- **knot 转 ft/s：** ft/s = knot × 1.68781
-- **ft/s 转 knot：** knot = ft/s ÷ 1.68781
+**Basic Conversion Formulas:**
+- **knot to ft/s:** ft/s = knot × 1.68781
+- **ft/s to knot:** knot = ft/s ÷ 1.68781
 
-**公式推导过程：**
-1. 1 节 = 1 海里/小时
-2. 1 海里 = 1852 米（国际标准）
-3. 1 英尺 = 0.3048 米（国际标准）
-4. 1 小时 = 3600 秒
+**Formula Derivation Process:**
+1. 1 knot = 1 nautical mile/hour
+2. 1 nautical mile = 1852 meters (international standard)
+3. 1 foot = 0.3048 meters (international standard)
+4. 1 hour = 3600 seconds
 5. 1 knot = 1852 m/h = 1852 m ÷ 3600 s = 0.514444 m/s
 6. 0.514444 m/s ÷ 0.3048 m/ft ≈ 1.68781 ft/s
 
-### 一节等于多少英尺每秒？
+### How Many Feet per Second is One Knot?
 
-**精确答案：** 1 节 = 1.68781 英尺每秒
+**Precise Answer:** 1 knot = 1.68781 feet per second
 
-**常见速度换算示例：**
-- 10 节 = 16.88 ft/s（约16.9 ft/s）
-- 20 节 = 33.76 ft/s（约33.8 ft/s）
-- 30 节 = 50.63 ft/s（约50.6 ft/s）
-- 50 节 = 84.39 ft/s
+**Common Speed Conversion Examples:**
+- 10 knots = 16.88 ft/s (approximately 16.9 ft/s)
+- 20 knots = 33.76 ft/s (approximately 33.8 ft/s)
+- 30 knots = 50.63 ft/s (approximately 50.6 ft/s)
+- 50 knots = 84.39 ft/s
 
-### 一节是多少英尺每秒？
+### What is One Knot in Feet per Second?
 
-**一节的速度定义：**
-- **1 节 = 1 海里/小时 = 1.68781 英尺/秒**
-- **航海中的标准：** 船舶以1节速度航行，每秒前进约1.69英尺
-- **工程应用：** 在美国工程计算中，常需要将节转换为英尺每秒
+**Definition of One Knot Speed:**
+- **1 knot = 1 nautical mile/hour = 1.68781 feet/second**
+- **Maritime Standard:** A vessel traveling at 1 knot advances approximately 1.69 feet per second
+- **Engineering Applications:** In US engineering calculations, knots are often converted to feet per second
 
-### 快速心算技巧
+### Quick Mental Calculation Tips
 
-**knot 转 ft/s 心算法：**
-1. **近似计算：** knot × 1.7 ≈ ft/s（误差约1%）
-2. **简单技巧：** knot + knot × 0.7 ≈ ft/s（快速估算）
-3. **记忆点：** 20 节 ≈ 34 ft/s
+**knot to ft/s Mental Calculation:**
+1. **Approximate calculation:** knot × 1.7 ≈ ft/s (error about 1%)
+2. **Simple trick:** knot + knot × 0.7 ≈ ft/s (quick estimation)
+3. **Memory point:** 20 knots ≈ 34 ft/s
 
-**ft/s 转 knot 心算法：**
-1. **近似计算：** ft/s ÷ 1.7 ≈ knot
-2. **简单技巧：** ft/s × 0.6 ≈ knot（快速估算）
+**ft/s to knot Mental Calculation:**
+1. **Approximate calculation:** ft/s ÷ 1.7 ≈ knot
+2. **Simple trick:** ft/s × 0.6 ≈ knot (quick estimation)
 
-## 三、节单位科普：从航海到航空
+## III. Knot Unit Science: From Maritime to Aviation
 
-### 为什么航海航空要使用节？
+### Why Do Maritime and Aviation Use Knots?
 
-不同领域的历史沿革和实用需求催生了节这个特殊单位：
+Different fields' historical evolution and practical needs gave birth to this special unit:
 
-- **knot（节）**：航海航空领域专用，基于海里和小时的自然组合。便于海上和空中导航计算。
-- **ft/s（英尺每秒）**：美国工程领域常用，特别是流体力学和机械工程。
-- **m/s（米每秒）**：国际标准单位，科学计算和工程应用的基础。
+- **knot**: Specialized for maritime and aviation fields, based on the natural combination of nautical miles and hours. Convenient for maritime and aerial navigation calculations.
+- **ft/s (feet per second)**: Commonly used in US engineering fields, especially fluid mechanics and mechanical engineering.
+- **m/s (meters per second)**: International standard unit, the foundation for scientific calculations and engineering applications.
 
-### 一节等于多少英尺？
+### How Many Feet is One Knot?
 
-**精确换算关系：**
-- **1 节 = 1.68781 英尺/秒**
-- **1 节 = 1 海里/小时 = 6076.12 英尺/小时**
-- **1 海里 = 6076.12 英尺**
+**Precise Conversion Relationships:**
+- **1 knot = 1.68781 feet/second**
+- **1 knot = 1 nautical mile/hour = 6076.12 feet/hour**
+- **1 nautical mile = 6076.12 feet**
 
-**为什么是1.68781？**
-- 1 海里 = 1852 米 = 6076.12 英尺
-- 1 小时 = 3600 秒
+**Why is it 1.68781?**
+- 1 nautical mile = 1852 meters = 6076.12 feet
+- 1 hour = 3600 seconds
 - 6076.12 ft/h ÷ 3600 s/h ≈ 1.68781 ft/s
 
-### 节的历史与应用
+### History and Applications of Knots
 
-- **节的起源**：古代船员用绳结测速，每个绳结间距约14.4米，28秒内数绳结数
-- **现代标准**：1节 = 1海里/小时 = 1.68781英尺/秒（精确值）
-- **应用范围**：全球航海、航空、气象等领域广泛使用
+- **Origin of knots**: Ancient sailors used rope knots to measure speed, with each knot spaced about 14.4 meters apart, counting knots in 28 seconds
+- **Modern standard**: 1 knot = 1 nautical mile/hour = 1.68781 feet/second (precise value)
+- **Application scope**: Widely used in global maritime, aviation, meteorology and other fields
 
-### 冷知识：节在不同领域的速度
+### Fun Facts: Knot Speeds in Different Fields
 
-- **游轮航行速度**：一般20-25节（约34-42 ft/s）
-- **帆船比赛速度**：最快可达40-50节（约67-84 ft/s）
-- **商用客机巡航**：约450-500节（约759-844 ft/s）
-- **台风风速**：超强台风中心可达150节以上（约253 ft/s）
+- **Cruise ship speed**: Generally 20-25 knots (about 34-42 ft/s)
+- **Sailing race speed**: Can reach up to 40-50 knots (about 67-84 ft/s)
+- **Commercial aircraft cruise**: About 450-500 knots (about 759-844 ft/s)
+- **Typhoon wind speed**: Super typhoon centers can exceed 150 knots (about 253 ft/s)
 
-## 四、速度单位详解：knot、节等缩写含义
+## IV. Speed Unit Details: Abbreviations and Meanings of knot, etc.
 
-### 常见速度单位缩写说明
+### Common Speed Unit Abbreviation Explanations
 
-**knot 相关说明：**
-- **knot：** 节的英文标准表示，复数为knots
-- **kt：** 常用简化缩写，特别在航空中
-- **kn：** 另一种简化缩写形式
-- **节：** 中文标准表示
+**knot Related Explanations:**
+- **knot:** Standard English representation of knots, plural is knots
+- **kt:** Commonly used simplified abbreviation, especially in aviation
+- **kn:** Another simplified abbreviation form
+- **节:** Chinese standard representation
 
-**英尺每秒相关概念：**
-- **英尺每秒(ft/s)：** feet per second的标准缩写
-- **fps：** 另一种常用缩写形式
-- **foot：** 1英尺 = 0.3048米 = 12英寸
+**Feet per Second Related Concepts:**
+- **Feet per second (ft/s):** Standard abbreviation for feet per second
+- **fps:** Another commonly used abbreviation form
+- **foot:** 1 foot = 0.3048 meters = 12 inches
 
-### 节是什么单位？一节等于多少英尺每秒？
+### What Unit is a Knot? How Many Feet per Second is One Knot?
 
-**节(knot)详解：**
-- **1节 = 1海里/小时 = 1.68781英尺/秒**
-- **节是什么单位：** 航海航空速度单位，全球通用
-- **一节等于多少英尺每秒：** 1节 = 1.68781英尺/秒
-- **节换算英尺每秒：** 英尺/秒 = 节 × 1.68781
+**Knot Detailed Explanation:**
+- **1 knot = 1 nautical mile/hour = 1.68781 feet/second**
+- **What unit is a knot:** Maritime and aviation speed unit, globally used
+- **How many feet per second is one knot:** 1 knot = 1.68781 feet/second
+- **Knot to feet per second conversion:** feet/second = knot × 1.68781
 
-**实际应用：**
-- 航海领域：船舶航行速度、海流速度
-- 航空领域：飞机空速、风速测量
-- 工程计算：流体力学、机械设计
-- 气象预报：风速、台风强度
+**Practical Applications:**
+- Maritime field: Ship navigation speed, ocean current speed
+- Aviation field: Aircraft airspeed, wind speed measurement
+- Engineering calculations: Fluid mechanics, mechanical design
+- Weather forecasting: Wind speed, typhoon intensity
 
-### 节在航海航空中的应用
+### Applications of Knots in Maritime and Aviation
 
-**使用knot的领域：**
-- **航海导航：** 船舶速度、航行计划
-- **航空飞行：** 飞机空速、风速修正
-- **气象预报：** 风速预报、台风预警
-- **海洋研究：** 洋流测量、海洋环流
+**Fields Using knots:**
+- **Maritime navigation:** Ship speed, voyage planning
+- **Aviation flight:** Aircraft airspeed, wind speed correction
+- **Weather forecasting:** Wind speed forecasts, typhoon warnings
+- **Ocean research:** Ocean current measurement, ocean circulation
 
-## 五、实际应用中的节速度换算场景
+## V. Practical Knot Speed Conversion Scenarios
 
-### 航海领域
-- **货轮航行：** 大型货轮巡航速度20节 = 33.76 ft/s
-- **游艇航行：** 高速游艇最高50节 = 84.39 ft/s
-- **帆船比赛：** 帆船竞速可达35节 = 59.07 ft/s
+### Maritime Field
+- **Cargo ship navigation:** Large cargo ship cruise speed 20 knots = 33.76 ft/s
+- **Yacht navigation:** High-speed yacht maximum 50 knots = 84.39 ft/s
+- **Sailing races:** Sailing competition speeds can reach 35 knots = 59.07 ft/s
 
-### 航空领域
-- **客机巡航：** 波音737巡航450节 = 759.51 ft/s
-- **直升机飞行：** 民用直升机120节 = 202.54 ft/s
-- **无人机飞行：** 专业无人机80节 = 135.02 ft/s
+### Aviation Field
+- **Airliner cruise:** Boeing 737 cruise 450 knots = 759.51 ft/s
+- **Helicopter flight:** Civil helicopter 120 knots = 202.54 ft/s
+- **Drone flight:** Professional drone 80 knots = 135.02 ft/s
 
-### 工程应用
-- **流体力学：** 管道流速10节 = 16.88 ft/s
-- **风洞试验：** 测试风速100节 = 168.78 ft/s
-- **机械设计：** 传送带速度5节 = 8.44 ft/s
+### Engineering Applications
+- **Fluid mechanics:** Pipeline flow rate 10 knots = 16.88 ft/s
+- **Wind tunnel testing:** Test wind speed 100 knots = 168.78 ft/s
+- **Mechanical design:** Conveyor belt speed 5 knots = 8.44 ft/s
 
-### 气象预报
-- **台风风速：** 强台风中心120节 = 202.54 ft/s
-- **海上风速：** 大风警报30节 = 50.63 ft/s
-- **阵风速度：** 突发阵风60节 = 101.27 ft/s
+### Weather Forecasting
+- **Typhoon wind speed:** Strong typhoon center 120 knots = 202.54 ft/s
+- **Marine wind speed:** Gale warning 30 knots = 50.63 ft/s
+- **Gust speed:** Sudden gusts 60 knots = 101.27 ft/s
 
-## 六、常见问题 FAQ
+## VI. Frequently Asked Questions (FAQ)
 
-### Q1: 一节是多少英尺每秒？
-**A1**: 一节等于1.68781英尺每秒。这是因为1节 = 1海里/小时，1海里 = 6076.12英尺，1小时 = 3600秒，所以1节 = 6076.12 ÷ 3600 ≈ 1.68781 ft/s。
+### Q1: How many feet per second is one knot?
+**A1**: One knot equals 1.68781 feet per second. This is because 1 knot = 1 nautical mile/hour, 1 nautical mile = 6076.12 feet, 1 hour = 3600 seconds, so 1 knot = 6076.12 ÷ 3600 ≈ 1.68781 ft/s.
 
-### Q2: 一节等于多少ft/s？
-**A2**: 1节等于1.68781 ft/s。这个换算基于海里和英尺的长度关系以及时间单位的转换。
+### Q2: How many ft/s is one knot equal to?
+**A2**: 1 knot equals 1.68781 ft/s. This conversion is based on the length relationship between nautical miles and feet, as well as time unit conversion.
 
-### Q3: 节换算英尺每秒的公式是什么？
-**A3**: 节转英尺每秒的公式是：ft/s = knot × 1.68781。例如：20节 = 20 × 1.68781 = 33.76 ft/s。
+### Q3: What is the formula for converting knots to feet per second?
+**A3**: The formula for converting knots to feet per second is: ft/s = knot × 1.68781. For example: 20 knots = 20 × 1.68781 = 33.76 ft/s.
 
-### Q4: knots to ft/s怎么换算？
-**A4**: knots转ft/s的换算方法：
-- **公式：** ft/s = knot × 1.68781
-- **示例：** 25 knots = 25 × 1.68781 = 42.20 ft/s
-- **记忆技巧：** knot × 1.7 ≈ ft/s（近似值）
+### Q4: How to convert knots to ft/s?
+**A4**: Methods for converting knots to ft/s:
+- **Formula:** ft/s = knot × 1.68781
+- **Example:** 25 knots = 25 × 1.68781 = 42.20 ft/s
+- **Memory trick:** knot × 1.7 ≈ ft/s (approximate value)
 
-### Q5: 如何快速进行节换算英尺每秒？
-**A5**: 快速换算技巧：
-- 精确计算：knot × 1.68781 = ft/s
-- 近似计算：knot × 1.7 ≈ ft/s（误差约1%）
-- 心算技巧：knot + knot × 0.7 ≈ ft/s（快速估算）
+### Q5: How to quickly convert knots to feet per second?
+**A5**: Quick conversion techniques:
+- Precise calculation: knot × 1.68781 = ft/s
+- Approximate calculation: knot × 1.7 ≈ ft/s (error about 1%)
+- Mental calculation trick: knot + knot × 0.7 ≈ ft/s (quick estimation)
 
-### Q6: 节换算时需要注意什么？
-**A6**: 注意事项包括：
-- 确认使用的是国际海里（1852米）和国际英尺（0.3048米）
-- 区分节和英尺每秒的应用场景
-- 工程计算通常保留2-3位小数
-- 注意单位一致性，避免混用不同长度单位
+### Q6: What should be noted when converting knots?
+**A6**: Considerations include:
+- Confirm using international nautical mile (1852 meters) and international foot (0.3048 meters)
+- Distinguish application scenarios for knots and feet per second
+- Engineering calculations usually retain 2-3 decimal places
+- Pay attention to unit consistency, avoid mixing different length units
 
-### Q7: 为什么1节等于1.68781英尺每秒？
-**A7**: 因为：
-- 1节 = 1海里/小时
-- 1海里 = 1852米 = 6076.12英尺
-- 1小时 = 3600秒
+### Q7: Why does 1 knot equal 1.68781 feet per second?
+**A7**: Because:
+- 1 knot = 1 nautical mile/hour
+- 1 nautical mile = 1852 meters = 6076.12 feet
+- 1 hour = 3600 seconds
 - 6076.12 ft ÷ 3600 s ≈ 1.68781 ft/s
 
-### Q8: 英尺每秒转节怎么算？
-**A8**: 英尺每秒转节的换算方法：
-- **公式：** knot = ft/s ÷ 1.68781
-- **示例：** 50 ft/s = 50 ÷ 1.68781 ≈ 29.63 knots
-- **记忆技巧：** ft/s ÷ 1.7 ≈ knot
+### Q8: How to convert feet per second to knots?
+**A8**: Methods for converting feet per second to knots:
+- **Formula:** knot = ft/s ÷ 1.68781
+- **Example:** 50 ft/s = 50 ÷ 1.68781 ≈ 29.63 knots
+- **Memory trick:** ft/s ÷ 1.7 ≈ knot
 
-### Q9: 节和英尺每秒的换算关系是什么？
-**A9**: 节和英尺每秒的换算关系：
-- **knot → ft/s：** 乘以1.68781
-- **ft/s → knot：** 除以1.68781
-- **换算系数来源：** 1海里 = 6076.12英尺，1小时 = 3600秒
+### Q9: What is the conversion relationship between knots and feet per second?
+**A9**: Conversion relationship between knots and feet per second:
+- **knot → ft/s:** Multiply by 1.68781
+- **ft/s → knot:** Divide by 1.68781
+- **Source of conversion factor:** 1 nautical mile = 6076.12 feet, 1 hour = 3600 seconds
 
-### Q10: 速度单位有哪些？
-**A10**: 常见速度单位包括：
-- **节(knot)：** 航海航空专用，1节 = 1.68781 ft/s
-- **英尺每秒(ft/s)：** 美国工程常用
-- **米每秒(m/s)：** 国际标准单位
-- **千米每小时(km/h)：** 陆地交通常用
+### Q10: What are the speed units?
+**A10**: Common speed units include:
+- **Knot:** Specialized for maritime and aviation, 1 knot = 1.68781 ft/s
+- **Feet per second (ft/s):** Commonly used in US engineering
+- **Meters per second (m/s):** International standard unit
+- **Kilometers per hour (km/h):** Commonly used for land transportation
 
-### Q11: knot和kt有什么区别？
-**A11**: knot和kt的区别：
-- **knot：** 完整英文表示，复数为knots
-- **kt：** 简化缩写，航空中常用
-- **使用场景：** knot用于正式文档，kt用于简化表示
-- **等价关系：** 1 knot = 1 kt = 1.68781 ft/s
+### Q11: What is the difference between knot and kt?
+**A11**: Differences between knot and kt:
+- **knot:** Complete English representation, plural is knots
+- **kt:** Simplified abbreviation, commonly used in aviation
+- **Usage scenarios:** knot for formal documents, kt for simplified representation
+- **Equivalent relationship:** 1 knot = 1 kt = 1.68781 ft/s
 
-### Q12: 为什么航海要使用节这个单位？
-**A12**: 使用节的原因：
-- **历史传统：** 古代船员用绳结测速的传统
-- **导航便利：** 与海里配合，便于航海计算
-- **国际标准：** 全球航海航空统一使用
-- **精确性：** 基于地球子午线，科学准确
+### Q12: Why does maritime use the knot unit?
+**A12**: Reasons for using knots:
+- **Historical tradition:** Ancient sailors' tradition of using rope knots to measure speed
+- **Navigation convenience:** Works with nautical miles, convenient for maritime calculations
+- **International standard:** Unified use globally in maritime and aviation
+- **Precision:** Based on Earth's meridian, scientifically accurate
 
-### Q13: 节在哪些场景下使用？
-**A13**: 节的使用场景：
-- **航海导航：** 船舶航行速度、航线规划
-- **航空飞行：** 飞机空速、风速测量
-- **工程计算：** 流体力学、机械设计
-- **气象预报：** 海上风速、台风强度
-- **体育竞技：** 帆船比赛、游艇竞速
+### Q13: In what scenarios are knots used?
+**A13**: Usage scenarios for knots:
+- **Maritime navigation:** Ship navigation speed, route planning
+- **Aviation flight:** Aircraft airspeed, wind speed measurement
+- **Engineering calculations:** Fluid mechanics, mechanical design
+- **Weather forecasting:** Marine wind speed, typhoon intensity
+- **Sports competition:** Sailing races, yacht racing
 
-## 七、相关连接
+## VII. Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Speed" :key="index">
     <n-button

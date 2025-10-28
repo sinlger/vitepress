@@ -4,20 +4,20 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Speed/
-      linkText: 速度单位换算
+      linkText: Speed Unit Conversion
   - - link: /Speed/index
-      linkText: 速度单位单位换算
+      linkText: Speed Unit Conversion
 head:
   - - meta
     - name: description
-      content: 英里每小时换算节工具，mph和knot换算公式详解。一英里每小时等于多少节？mph和节换算关系是什么？提供mph、knot、海里等速度单位换算，支持航海航空速度单位转换。
+      content: Miles per hour to knots conversion tool, detailed explanation of mph and knot conversion formulas. How many knots equals one mile per hour? What is the conversion relationship between mph and knots? Provides mph, knot, nautical mile speed unit conversion, supports maritime and aviation speed unit conversion.
   - - meta
     - name: keywords
-      content: 速度单位换算, mph to knot, 英里每小时换算节, 一英里每小时等于多少节, mph是什么单位, knot是什么单位, 节, 海里, 速度换算, 航海速度单位, 航空速度单位, 英里每小时和节怎么换算, 速度转换, mph knot, 英制速度单位, 海里每小时
+      content: speed unit conversion, mph to knot, miles per hour to knots conversion, how many knots equals one mile per hour, what unit is mph, what unit is knot, knots, nautical mile, speed conversion, maritime speed unit, aviation speed unit, how to convert miles per hour and knots, speed conversion, mph knot, imperial speed unit, nautical miles per hour
 ---
-# 英里每小时换算节 | mph和knot速度单位换算工具
+# Miles per Hour to Knots Conversion | mph and knot Speed Unit Conversion Tool
 ---
 <script setup>
 import { onMounted, reactive, inject ,ref  } from 'vue'
@@ -26,32 +26,32 @@ import { defineClientComponent } from 'vitepress'
 import { Speed } from '../files';
 const convert = inject('convert')
 const options =  [
-  { "label": "千米每小时 (km/h)", "value": "km/h" },
-  { "label": "英尺每秒 (ft/s)", "value": "ft/s" },
-  { "label": "米每秒 (m/s)", "value": "m/s" },
-  { "label": "英里每小时 (mph)", "value": "mph" },
-  { "label": "节 (knot)", "value": "knot" },
-  { "label": "英寸每小时 (in/h)", "value": "in/h" },
-  { "label": "毫米每小时 (mm/h)", "value": "mm/h" }
+  { "label": "Kilometers per hour (km/h)", "value": "km/h" },
+  { "label": "Feet per second (ft/s)", "value": "ft/s" },
+  { "label": "Meters per second (m/s)", "value": "m/s" },
+  { "label": "Miles per hour (mph)", "value": "mph" },
+  { "label": "Knots (knot)", "value": "knot" },
+  { "label": "Inches per hour (in/h)", "value": "in/h" },
+  { "label": "Millimeters per hour (mm/h)", "value": "mm/h" }
 ];
-const seoKey = ['速度单位换算','mph to knot','英里每小时换算节','mph是什么单位','knot是什么单位','节','海里','速度换算','航海速度单位']
+const seoKey = ['speed unit conversion','mph to knot','miles per hour to knots conversion','what unit is mph','what unit is knot','knots','nautical mile','speed conversion','maritime speed unit']
 const formRef = ref(null);
 const rules = {
   number:{
     required: true,
     type: 'number',
     trigger: "blur",
-    message: '请输入数字'
+    message: 'Please enter a number'
   },
   to:{
     required: true,
     trigger: "select",
-    message: '请选择转换单位'
+    message: 'Please select conversion unit'
   },
   from:{
     required: true,
     trigger: "select",
-    message: '请选择原始单位'
+    message: 'Please select original unit'
   }
 }
 const form = reactive({
@@ -59,7 +59,7 @@ const form = reactive({
   to:'knot',
   from:'mph',
   result:'',
-  title:'速度单位单位换算',
+  title:'Speed Unit Conversion',
 })
 const convertHandler = (e) => {
    e.preventDefault();
@@ -72,17 +72,17 @@ const convertHandler = (e) => {
 </script>
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="数值"  path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数值" />
+  <n-form-item label="Value"  path="number">
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="Please enter a value to convert" />
   </n-form-item>
-  <n-form-item label="从" path="from">
-    <n-select  size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
+  <n-form-item label="From" path="from">
+    <n-select  size="large" :options="options" v-model:value="form.from" placeholder="Please select original unit" />
   </n-form-item>
-  <n-form-item label="到" path="to">
-    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
+  <n-form-item label="To" path="to">
+    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="Please select conversion unit" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
+    <n-button type="info" style="width:100%" @click="convertHandler">Convert</n-button>
   </n-form-item>
 </n-form>
 <n-card embedded :bordered="false" hoverable style="margin-top: 16px;">
@@ -104,208 +104,208 @@ const convertHandler = (e) => {
 </n-card>
 
 
-## 一、速度单位换算表（以 1 mph 为基准）
+## I. Speed Unit Conversion Table (Based on 1 mph)
 
-| 单位       | 符号   | 换算值      | 典型应用场景             |
-|------------|--------|-------------|-------------------------|
-| 英里每小时 | mph    | 1           | 英美国家车速、航空速度   |
-| 节        | knot   | ≈0.868976   | 航海、航空（1 节=1 海里/小时=1.852km/h） |
-| 千米每小时 | km/h   | ≈1.609344   | 汽车限速、天气预报       |
-| 米每秒     | m/s    | ≈0.44704    | 物理学、工程计算         |
-| 英尺每秒   | ft/s   | ≈1.466667   | 美国工程流体力学         |
-| 英寸每小时 | in/h   | 63,360      | 地质沉降监测、精密测量   |
-| 毫米每小时 | mm/h   | 1,609,344   | 材料腐蚀速率、极慢速过程 |
+| Unit              | Symbol | Conversion Value | Typical Application Scenarios        |
+|-------------------|--------|------------------|-------------------------------------|
+| Miles per hour    | mph    | 1                | Vehicle speed in US/UK, aviation speed |
+| Knots            | knot   | ≈0.868976        | Maritime, aviation (1 knot = 1 nautical mile/hour = 1.852km/h) |
+| Kilometers per hour | km/h | ≈1.609344        | Vehicle speed limits, weather forecasts |
+| Meters per second | m/s    | ≈0.44704         | Physics, engineering calculations    |
+| Feet per second   | ft/s   | ≈1.466667        | US engineering fluid mechanics      |
+| Inches per hour   | in/h   | 63,360           | Geological settlement monitoring, precision measurement |
+| Millimeters per hour | mm/h | 1,609,344        | Material corrosion rate, extremely slow processes |
 
-注：换算公式示例 → mph 转 knot: ( knot = mph × 0.868976 ) ；knot 转 mph: ( mph = knot × 1.150779 ) 。
+Note: Conversion formula examples → mph to knot: ( knot = mph × 0.868976 ) ; knot to mph: ( mph = knot × 1.150779 ) .
 
-## 二、mph和knot换算公式详解
+## II. Detailed mph and knot Conversion Formula
 
-### 英里每小时和节怎么换算？
+### How to Convert Miles per Hour and Knots?
 
-**基础换算公式：**
-- **mph 转 knot：** knot = mph × 0.868976
-- **knot 转 mph：** mph = knot × 1.150779
+**Basic Conversion Formulas:**
+- **mph to knot:** knot = mph × 0.868976
+- **knot to mph:** mph = knot × 1.150779
 
-**公式推导过程：**
-1. 1 海里 = 1852 米（国际海里标准）
-2. 1 英里 = 1609.344 米（国际英里标准）
-3. 1 knot = 1 海里/小时 = 1852 m/h
+**Formula Derivation Process:**
+1. 1 nautical mile = 1852 meters (international nautical mile standard)
+2. 1 mile = 1609.344 meters (international mile standard)
+3. 1 knot = 1 nautical mile/hour = 1852 m/h
 4. 1 mph = 1609.344 m/h
 5. 1 mph = 1609.344 ÷ 1852 ≈ 0.868976 knot
 
-### 一英里每小时等于多少节？
+### How Many Knots Equals One Mile per Hour?
 
-**精确答案：** 1 mph = 0.868976 knot
+**Precise Answer:** 1 mph = 0.868976 knot
 
-**常见速度换算示例：**
-- 10 mph ≈ 8.69 knot（慢速航行）
-- 25 mph ≈ 21.72 knot（快艇速度）
-- 60 mph ≈ 52.14 knot（高速船只）
-- 100 mph ≈ 86.90 knot（赛艇速度）
+**Common Speed Conversion Examples:**
+- 10 mph ≈ 8.69 knot (slow sailing)
+- 25 mph ≈ 21.72 knot (speedboat speed)
+- 60 mph ≈ 52.14 knot (high-speed vessels)
+- 100 mph ≈ 86.90 knot (racing boat speed)
 
-### 快速心算技巧
+### Quick Mental Calculation Tips
 
-**mph 转 knot 心算法：**
-1. **近似计算：** mph × 0.87 ≈ knot（误差约0.1%）
-2. **简单技巧：** mph - mph × 0.13 ≈ knot
-3. **记忆点：** 100 mph ≈ 87 knot
+**mph to knot Mental Calculation:**
+1. **Approximate calculation:** mph × 0.87 ≈ knot (error about 0.1%)
+2. **Simple trick:** mph - mph × 0.13 ≈ knot
+3. **Memory point:** 100 mph ≈ 87 knot
 
-**knot 转 mph 心算法：**
-1. **近似计算：** knot × 1.15 ≈ mph（误差约0.1%）
-2. **精确计算：** knot × 1.150779 = mph
+**knot to mph Mental Calculation:**
+1. **Approximate calculation:** knot × 1.15 ≈ mph (error about 0.1%)
+2. **Precise calculation:** knot × 1.150779 = mph
 
-## 三、速度单位科普：从航海到航空
+## III. Speed Unit Science: From Maritime to Aviation
 
-### 为什么我们需要节这个单位？
+### Why Do We Need the Knot Unit?
 
-航海和航空领域的特殊需求催生了节这个单位：
+The special requirements of maritime and aviation fields gave birth to the knot unit:
 
-- **knot（节）**：航海航空专用单位，基于海里，便于海图和航图计算。
-- **mph（英里每小时）**：英美国家传统单位，陆地交通常用。
-- **km/h（千米每小时）**：国际通用单位，便于日常理解。
+- **knot:** Specialized unit for maritime and aviation, based on nautical miles, convenient for chart and navigation calculations.
+- **mph (miles per hour):** Traditional unit in US and UK, commonly used for land transportation.
+- **km/h (kilometers per hour):** International universal unit, easy for daily understanding.
 
-### 单位混淆可能引发问题
+### Problems That Unit Confusion May Cause
 
-案例：若将船速20 knot误算为20 mph（实际≈23 mph），在航海导航中会导致到达时间计算错误，影响航行安全。
+Case: If a ship speed of 20 knots is miscalculated as 20 mph (actually ≈23 mph), it will lead to arrival time calculation errors in maritime navigation, affecting sailing safety.
 
-科学建议：航海航空从业者必须熟悉knot和mph换算，避免导航计算错误。
+Scientific recommendation: Maritime and aviation professionals must be familiar with knot and mph conversion to avoid navigation calculation errors.
 
-### 海里和英里的历史对比
+### Historical Comparison of Nautical Miles and Miles
 
-- **海里起源**：基于地球子午线，1海里=地球子午线1/21600
-- **英里起源**：古罗马时期的"mille passus"（千步）
-- **现代标准**：1海里 = 1852米，1英里 = 1609.344米
-- **应用范围**：海里用于航海航空，英里用于陆地交通
+- **Nautical mile origin:** Based on Earth's meridian, 1 nautical mile = 1/21600 of Earth's meridian
+- **Mile origin:** Ancient Roman "mille passus" (thousand paces)
+- **Modern standards:** 1 nautical mile = 1852 meters, 1 mile = 1609.344 meters
+- **Application scope:** Nautical miles for maritime and aviation, miles for land transportation
 
-### 冷知识：速度的极限与日常
+### Fun Facts: Speed Limits and Daily Life
 
-- 商用客机巡航：约450-500 knot = 518-575 mph
-- 军用战斗机：超音速可达1000+ knot = 1150+ mph
-- 大型货轮：经济航速约15-20 knot = 17-23 mph
-- 帆船比赛：最快可达40+ knot = 46+ mph
+- Commercial aircraft cruising: approximately 450-500 knots = 518-575 mph
+- Military fighter jets: supersonic can reach 1000+ knots = 1150+ mph
+- Large cargo ships: economic speed approximately 15-20 knots = 17-23 mph
+- Sailing competitions: fastest can reach 40+ knots = 46+ mph
 
-## 四、速度单位详解：knot、海里等航海术语
+## IV. Detailed Speed Unit Explanation: knot, Nautical Mile and Other Maritime Terms
 
-### 常见航海速度单位说明
+### Common Maritime Speed Unit Descriptions
 
-**knot 相关说明：**
-- **knot：** 节，航海航空标准速度单位
-- **kt：** knot的简写形式
-- **kn：** 另一种简写形式
-- **knot是什么单位：** 海里每小时，1 knot = 1 海里/小时
+**knot Related Descriptions:**
+- **knot:** Knots, standard speed unit for maritime and aviation
+- **kt:** Abbreviated form of knot
+- **kn:** Another abbreviated form
+- **What unit is knot:** Nautical miles per hour, 1 knot = 1 nautical mile/hour
 
-**海里相关概念：**
-- **海里(nautical mile)：** 1海里 = 1852米
-- **nm：** nautical mile的标准缩写
-- **M：** 海里的符号表示（航海图上常用）
+**Nautical Mile Related Concepts:**
+- **nautical mile:** 1 nautical mile = 1852 meters
+- **nm:** Standard abbreviation for nautical mile
+- **M:** Symbol representation of nautical mile (commonly used on nautical charts)
 
-### knot在航海航空中的重要性
+### Importance of knot in Maritime and Aviation
 
-**航海应用：**
-- **船舶速度：** 所有船只速度都用knot表示
-- **海流速度：** 洋流和潮流速度用knot
-- **风速：** 海上风速预报使用knot
-- **航行计划：** 基于knot计算航行时间
+**Maritime Applications:**
+- **Ship Speed:** All vessel speeds are expressed in knots
+- **Current Speed:** Ocean and tidal current speeds use knots
+- **Wind Speed:** Maritime wind forecasts use knots
+- **Navigation Planning:** Sailing time calculations based on knots
 
-**航空应用：**
-- **飞机速度：** 国际航空使用knot作为标准
-- **风速：** 机场风速报告使用knot
-- **导航：** 航空导航计算基于knot
-- **空中交通管制：** 管制员使用knot指令
+**Aviation Applications:**
+- **Aircraft Speed:** International aviation uses knots as standard
+- **Wind Speed:** Airport wind reports use knots
+- **Navigation:** Aviation navigation calculations based on knots
+- **Air Traffic Control:** Controllers use knot instructions
 
-### 为什么航海航空不使用mph？
+### Why Don't Maritime and Aviation Use mph?
 
-**历史原因：**
-- 航海传统：几个世纪的航海传统使用海里
-- 国际标准：国际海事组织(IMO)规定使用knot
-- 计算便利：海图上1分纬度=1海里，便于导航
+**Historical Reasons:**
+- Maritime tradition: Centuries of maritime tradition using nautical miles
+- International standards: International Maritime Organization (IMO) mandates knot usage
+- Calculation convenience: 1 minute of latitude = 1 nautical mile on charts, convenient for navigation
 
-**实用优势：**
-- **精确导航：** 基于地球几何的精确单位
-- **国际通用：** 全球航海航空统一标准
-- **图表匹配：** 与海图、航图刻度一致
+**Practical Advantages:**
+- **Precise Navigation:** Precise unit based on Earth's geometry
+- **International Universal:** Unified global standard for maritime and aviation
+- **Chart Matching:** Consistent with nautical and aviation chart scales
 
-## 五、实际应用中的速度换算场景
+## V. Practical Speed Conversion Scenarios
 
-### 航海领域
-- **游艇巡航：** 经济航速8-12 knot = 9.2-13.8 mph
-- **货轮运输：** 标准航速15-20 knot = 17.3-23.0 mph
-- **快艇竞速：** 最高速度50+ knot = 57.5+ mph
+### Maritime Field
+- **Yacht Cruising:** Economic speed 8-12 knots = 9.2-13.8 mph
+- **Cargo Ship Transport:** Standard speed 15-20 knots = 17.3-23.0 mph
+- **Speedboat Racing:** Maximum speed 50+ knots = 57.5+ mph
 
-### 航空领域
-- **商用客机：** 巡航速度450-500 knot = 518-575 mph
-- **私人飞机：** 一般速度150-250 knot = 173-288 mph
-- **直升机：** 最大速度120-150 knot = 138-173 mph
+### Aviation Field
+- **Commercial Aircraft:** Cruising speed 450-500 knots = 518-575 mph
+- **Private Aircraft:** General speed 150-250 knots = 173-288 mph
+- **Helicopters:** Maximum speed 120-150 knots = 138-173 mph
 
-### 气象预报
-- **台风强度：** 超强台风100+ knot = 115+ mph
-- **海上风速：** 大风警报25+ knot = 29+ mph
-- **机场风速：** 起降限制通常35+ knot = 40+ mph
+### Weather Forecasting
+- **Typhoon Intensity:** Super typhoon 100+ knots = 115+ mph
+- **Maritime Wind Speed:** Gale warning 25+ knots = 29+ mph
+- **Airport Wind Speed:** Takeoff/landing restrictions usually 35+ knots = 40+ mph
 
-### 体育赛事
-- **帆船比赛：** 最快帆船40+ knot = 46+ mph
-- **赛艇比赛：** 动力艇竞速80+ knot = 92+ mph
-- **水上摩托：** 最高速度60+ knot = 69+ mph
+### Sports Events
+- **Sailing Competitions:** Fastest sailboats 40+ knots = 46+ mph
+- **Boat Racing:** Powerboat racing 80+ knots = 92+ mph
+- **Jet Skis:** Maximum speed 60+ knots = 69+ mph
 
-## 六、常见问题 FAQ
+## VI. Frequently Asked Questions (FAQ)
 
-### Q1: mph和knot换算公式是什么？
-**A1**: mph和knot换算公式：knot = mph × 0.868976，mph = knot × 1.150779。例如：50 mph = 50 × 0.868976 = 43.4 knot。
+### Q1: What is the conversion formula between mph and knot?
+**A1**: The conversion formula between mph and knot: knot = mph × 0.868976, mph = knot × 1.150779. For example: 50 mph = 50 × 0.868976 = 43.4 knots.
 
-### Q2: 一英里每小时等于多少节？
-**A2**: 1英里每小时 = 0.868976节。这是基于1英里=1609.344米，1海里=1852米的精确换算。
+### Q2: How many knots equals one mile per hour?
+**A2**: 1 mile per hour = 0.868976 knots. This is based on the precise conversion of 1 mile = 1609.344 meters, 1 nautical mile = 1852 meters.
 
-### Q3: knot是什么单位？
-**A3**: knot（节）是航海航空专用速度单位，表示海里每小时。1 knot = 1 海里/小时 = 1.852 km/h。
+### Q3: What unit is knot?
+**A3**: knot is a specialized speed unit for maritime and aviation, representing nautical miles per hour. 1 knot = 1 nautical mile/hour = 1.852 km/h.
 
-### Q4: 为什么航海要用节而不用mph？
-**A4**: 历史和实用原因：
-- 航海传统：几个世纪的航海传统
-- 国际标准：国际海事组织规定
-- 计算便利：海图上1分纬度=1海里
-- 精确导航：基于地球几何的精确单位
+### Q4: Why does maritime use knots instead of mph?
+**A4**: Historical and practical reasons:
+- Maritime tradition: Centuries of maritime tradition
+- International standards: International Maritime Organization regulations
+- Calculation convenience: 1 minute of latitude = 1 nautical mile on charts
+- Precise navigation: Precise unit based on Earth's geometry
 
-### Q5: mph to knot怎么快速换算？
-**A5**: mph to knot快速换算技巧：
-- 精确计算：mph × 0.868976 = knot
-- 近似计算：mph × 0.87 ≈ knot（误差约0.1%）
-- 心算技巧：mph - mph × 0.13
+### Q5: How to quickly convert mph to knot?
+**A5**: Quick conversion tips for mph to knot:
+- Precise calculation: mph × 0.868976 = knot
+- Approximate calculation: mph × 0.87 ≈ knot (error about 0.1%)
+- Mental calculation trick: mph - mph × 0.13
 
-### Q6: 海里和英里有什么区别？
-**A6**: 海里和英里的主要区别：
-- **海里：** 1海里 = 1852米，基于地球子午线
-- **英里：** 1英里 = 1609.344米，基于历史传统
-- **用途：** 海里用于航海航空，英里用于陆地
+### Q6: What is the difference between nautical miles and miles?
+**A6**: Main differences between nautical miles and miles:
+- **Nautical mile:** 1 nautical mile = 1852 meters, based on Earth's meridian
+- **Mile:** 1 mile = 1609.344 meters, based on historical tradition
+- **Usage:** Nautical miles for maritime and aviation, miles for land
 
-### Q7: 飞机速度为什么用knot而不是mph？
-**A7**: 航空使用knot的原因：
-- **国际标准：** 国际民航组织(ICAO)规定
-- **导航精确：** 与航图刻度匹配
-- **全球统一：** 避免不同国家单位混乱
-- **安全考虑：** 统一标准减少误解
+### Q7: Why do aircraft use knots instead of mph?
+**A7**: Reasons aviation uses knots:
+- **International standard:** International Civil Aviation Organization (ICAO) regulations
+- **Navigation precision:** Matches aviation chart scales
+- **Global uniformity:** Avoids confusion between different countries' units
+- **Safety considerations:** Unified standards reduce misunderstandings
 
-### Q8: 如何在航海中快速换算mph和knot？
-**A8**: 航海换算实用技巧：
-- **mph转knot：** mph × 0.87 ≈ knot
-- **knot转mph：** knot × 1.15 ≈ mph
-- **记忆要点：** 10 mph ≈ 8.7 knot，20 knot ≈ 23 mph
+### Q8: How to quickly convert mph and knot in maritime navigation?
+**A8**: Practical maritime conversion tips:
+- **mph to knot:** mph × 0.87 ≈ knot
+- **knot to mph:** knot × 1.15 ≈ mph
+- **Memory points:** 10 mph ≈ 8.7 knots, 20 knots ≈ 23 mph
 
-### Q9: 风速预报中的knot和mph如何对应？
-**A9**: 风速等级对应关系：
-- **轻风：** 1-3 knot = 1-3 mph
-- **微风：** 4-6 knot = 5-7 mph
-- **和风：** 7-10 knot = 8-12 mph
-- **强风：** 22-27 knot = 25-31 mph
-- **烈风：** 28-33 knot = 32-38 mph
+### Q9: How do knots and mph correspond in wind speed forecasts?
+**A9**: Wind speed level correspondences:
+- **Light air:** 1-3 knots = 1-3 mph
+- **Light breeze:** 4-6 knots = 5-7 mph
+- **Gentle breeze:** 7-10 knots = 8-12 mph
+- **Strong breeze:** 22-27 knots = 25-31 mph
+- **Near gale:** 28-33 knots = 32-38 mph
 
-### Q10: 现代GPS导航如何处理mph和knot的显示？
-**A10**: GPS导航的单位处理：
-- **自动识别：** 根据使用环境自动选择单位
-- **用户设置：** 可在设置中切换显示单位
-- **双单位显示：** 高端设备同时显示两种单位
-- **精确换算：** 内置精确换算算法确保准确性
+### Q10: How do modern GPS navigation systems handle mph and knot display?
+**A10**: GPS navigation unit handling:
+- **Automatic recognition:** Automatically selects units based on usage environment
+- **User settings:** Can switch display units in settings
+- **Dual unit display:** High-end devices display both units simultaneously
+- **Precise conversion:** Built-in precise conversion algorithms ensure accuracy
 
-## 七、相关连接
+## VII. Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Speed" :key="index">
     <n-button

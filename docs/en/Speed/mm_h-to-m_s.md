@@ -4,20 +4,20 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Speed/
-      linkText: 速度单位换算
+      linkText: Speed Unit Conversion
   - - link: /Speed/index
-      linkText: 速度单位单位换算
+      linkText: Speed Unit Conversion
 head:
   - - meta
     - name: description
-      content: 毫米每小时换算米每秒工具，mm/h和m/s换算公式详解。一毫米每小时等于多少米每秒？毫米每小时和米每秒怎么换算？提供mm/h、m/s等速度单位换算，支持极慢速度单位转换。
+      content: Millimeters per hour to meters per second conversion tool, detailed explanation of mm/h and m/s conversion formulas. How many meters per second equal one millimeter per hour? How to convert between millimeters per hour and meters per second? Provides mm/h, m/s and other speed unit conversions, supports extremely slow speed unit conversion.
   - - meta
     - name: keywords
-      content: 速度单位换算, 毫米每小时换算米每秒, mm/h和m/s换算, 一毫米每小时等于多少米每秒, 毫米每小时和米每秒怎么换算, 速度换算, mm/h, m/s, 米每秒, 速度的单位, 毫米是什么单位, 一毫米等于多少米, 毫米换算米, 速度转换, 毫米每小时换算米每秒, 米每秒换算毫米每小时, 一米每秒等于多少毫米每小时, 米每秒和毫米每小时的换算, mm/h m/s, 极慢速度单位, 微速度测量
+      content: speed unit conversion, millimeters per hour to meters per second conversion, mm/h and m/s conversion, how many meters per second equal one millimeter per hour, how to convert millimeters per hour and meters per second, speed conversion, mm/h, m/s, meters per second, speed units, what unit is millimeter, how many meters equal one millimeter, millimeter to meter conversion, speed conversion, millimeters per hour to meters per second conversion, meters per second to millimeters per hour conversion, how many millimeters per hour equal one meter per second, conversion between meters per second and millimeters per hour, mm/h m/s, extremely slow speed units, micro-speed measurement
 ---
-# 毫米每小时换算米每秒 | mm/h和m/s速度单位换算工具
+# Millimeters per Hour to Meters per Second Conversion | mm/h and m/s Speed Unit Conversion Tool
 ---
 <script setup>
 import { onMounted, reactive, inject ,ref  } from 'vue'
@@ -26,32 +26,32 @@ import { defineClientComponent } from 'vitepress'
 import { Speed } from '../files';
 const convert = inject('convert')
 const options =  [
-  { "label": "毫米每小时 (mm/h)", "value": "mm/h" },
-  { "label": "米每秒 (m/s)", "value": "m/s" },
-  { "label": "千米每小时 (km/h)", "value": "km/h" },
-  { "label": "英里每小时 (mph)", "value": "mph" },
-  { "label": "节 (knot)", "value": "knot" },
-  { "label": "英尺每秒 (ft/s)", "value": "ft/s" },
-  { "label": "英寸每小时 (in/h)", "value": "in/h" }
+  { "label": "Millimeters per hour (mm/h)", "value": "mm/h" },
+  { "label": "Meters per second (m/s)", "value": "m/s" },
+  { "label": "Kilometers per hour (km/h)", "value": "km/h" },
+  { "label": "Miles per hour (mph)", "value": "mph" },
+  { "label": "Knots (knot)", "value": "knot" },
+  { "label": "Feet per second (ft/s)", "value": "ft/s" },
+  { "label": "Inches per hour (in/h)", "value": "in/h" }
 ];
-const seoKey = ['速度单位换算','毫米每小时换算','米每秒换算','mm/h','毫米是什么单位','一毫米等于多少米','毫米换算米','速度的单位','mm/h m/s','米每秒','毫米每小时和米每秒怎么换算','一毫米每小时等于多少米每秒','mm/h和m/s换算','米每秒换算毫米每小时','一米每秒等于多少毫米每小时','速度转换','毫米每小时换算米每秒','速度单位','极慢速度单位','米每秒和毫米每小时的换算','mm/h换算m/s','微速度测量','毫米每小时换算米每秒']
+const seoKey = ['speed unit conversion','millimeters per hour conversion','meters per second conversion','mm/h','what unit is millimeter','how many meters equal one millimeter','millimeter to meter conversion','speed units','mm/h m/s','meters per second','how to convert millimeters per hour and meters per second','how many meters per second equal one millimeter per hour','mm/h and m/s conversion','meters per second to millimeters per hour conversion','how many millimeters per hour equal one meter per second','speed conversion','millimeters per hour to meters per second conversion','speed units','extremely slow speed units','conversion between meters per second and millimeters per hour','mm/h to m/s conversion','micro-speed measurement','millimeters per hour to meters per second conversion']
 const formRef = ref(null);
 const rules = {
   number:{
     required: true,
     type: 'number',
     trigger: "blur",
-    message: '请输入数字'
+    message: 'Please enter a number'
   },
   to:{
     required: true,
     trigger: "select",
-    message: '请选择转换单位'
+    message: 'Please select conversion unit'
   },
   from:{
     required: true,
     trigger: "select",
-    message: '请选择原始单位'
+    message: 'Please select original unit'
   }
 }
 const form = reactive({
@@ -59,7 +59,7 @@ const form = reactive({
   to:'m/s',
   from:'mm/h',
   result:'',
-  title:'速度单位单位换算',
+  title:'Speed Unit Conversion',
 })
 const convertHandler = (e) => {
    e.preventDefault();
@@ -72,17 +72,17 @@ const convertHandler = (e) => {
 </script>
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="数值"  path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数值" />
+  <n-form-item label="Value"  path="number">
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="Please enter a value to convert" />
   </n-form-item>
-  <n-form-item label="从" path="from">
-    <n-select  size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
+  <n-form-item label="From" path="from">
+    <n-select  size="large" :options="options" v-model:value="form.from" placeholder="Please select original unit" />
   </n-form-item>
-  <n-form-item label="到" path="to">
-    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
+  <n-form-item label="To" path="to">
+    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="Please select conversion unit" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
+    <n-button type="info" style="width:100%" @click="convertHandler">Convert</n-button>
   </n-form-item>
 </n-form>
 <n-card embedded :bordered="false" hoverable style="margin-top: 16px;">
@@ -104,212 +104,212 @@ const convertHandler = (e) => {
 </n-card>
 
 
-## 一、速度单位换算表（以 1 mm/h 为基准）
+## I. Speed Unit Conversion Table (Based on 1 mm/h)
 
-| 单位       | 符号   | 换算值      | 典型应用场景             |
-|------------|--------|-------------|-------------------------|
-| 毫米每小时 | mm/h   | 1           | 材料腐蚀速率、地质沉降   |
-| 米每秒     | m/s    | 2.778×10⁻⁷  | 物理学、工程计算         |
-| 千米每小时 | km/h   | 1×10⁻⁶      | 汽车限速、天气预报       |
-| 英尺每秒   | ft/s   | 9.114×10⁻⁷  | 美国工程流体力学         |
-| 英里每小时 | mph    | 6.214×10⁻⁷  | 英美国家车速             |
-| 节        | knot   | 5.400×10⁻⁷  | 航海、航空               |
-| 英寸每小时 | in/h   | 0.0393701   | 地质沉降监测             |
+| Unit                | Symbol | Conversion Value | Typical Applications        |
+|---------------------|--------|------------------|-----------------------------|
+| Millimeters per hour| mm/h   | 1                | Material corrosion, geological settlement |
+| Meters per second   | m/s    | 2.778×10⁻⁷       | Physics, engineering calculations |
+| Kilometers per hour | km/h   | 1×10⁻⁶           | Vehicle speed limits, weather forecasts |
+| Feet per second     | ft/s   | 9.114×10⁻⁷       | US engineering fluid mechanics |
+| Miles per hour      | mph    | 6.214×10⁻⁷       | Vehicle speeds in UK/US |
+| Knots              | knot   | 5.400×10⁻⁷       | Maritime, aviation |
+| Inches per hour     | in/h   | 0.0393701        | Geological settlement monitoring |
 
-注：换算公式示例 → mm/h 转 m/s: ( m/s = mm/h × 2.778×10⁻⁷ ) ；m/s 转 mm/h: ( mm/h = m/s × 3,600,000 ) 。
+Note: Conversion formula examples → mm/h to m/s: ( m/s = mm/h × 2.778×10⁻⁷ ) ; m/s to mm/h: ( mm/h = m/s × 3,600,000 ) .
 
-## 二、mm/h和m/s换算公式详解
+## II. Detailed Conversion Formula for mm/h and m/s
 
-### 毫米每小时和米每秒怎么换算？
+### How to Convert Between Millimeters per Hour and Meters per Second?
 
-**基础换算公式：**
-- **mm/h 转 m/s：** m/s = mm/h × 2.778×10⁻⁷
-- **m/s 转 mm/h：** mm/h = m/s × 3,600,000
+**Basic Conversion Formulas:**
+- **mm/h to m/s:** m/s = mm/h × 2.778×10⁻⁷
+- **m/s to mm/h:** mm/h = m/s × 3,600,000
 
-**公式推导过程：**
-1. 1 毫米 = 0.001 米
-2. 1 小时 = 3600 秒
+**Formula Derivation Process:**
+1. 1 millimeter = 0.001 meters
+2. 1 hour = 3600 seconds
 3. 1 mm/h = 0.001 m ÷ 3600 s = 2.778×10⁻⁷ m/s
 
-### 一毫米每小时等于多少米每秒？
+### How Many Meters per Second Equal One Millimeter per Hour?
 
-**精确答案：** 1 mm/h = 2.778×10⁻⁷ m/s
+**Precise Answer:** 1 mm/h = 2.778×10⁻⁷ m/s
 
-**常见速度换算示例：**
-- 1 mm/h = 2.778×10⁻⁷ m/s（极慢速度）
+**Common Speed Conversion Examples:**
+- 1 mm/h = 2.778×10⁻⁷ m/s (extremely slow speed)
 - 10 mm/h = 2.778×10⁻⁶ m/s
 - 100 mm/h = 2.778×10⁻⁵ m/s
 - 1000 mm/h = 2.778×10⁻⁴ m/s
 
-### 快速心算技巧
+### Quick Mental Calculation Tips
 
-**mm/h 转 m/s 心算法：**
-1. **科学计数法：** mm/h ÷ 3,600,000 = m/s
-2. **简化记忆：** mm/h × 2.78×10⁻⁷ ≈ m/s
-3. **实用技巧：** 毫米数除以360万
+**mm/h to m/s Mental Calculation:**
+1. **Scientific notation:** mm/h ÷ 3,600,000 = m/s
+2. **Simplified memory:** mm/h × 2.78×10⁻⁷ ≈ m/s
+3. **Practical tip:** Divide millimeter value by 3.6 million
 
-**m/s 转 mm/h 心算法：**
-1. **直接计算：** m/s × 3,600,000 = mm/h
-2. **科学计数法：** m/s × 3.6×10⁶ = mm/h
+**m/s to mm/h Mental Calculation:**
+1. **Direct calculation:** m/s × 3,600,000 = mm/h
+2. **Scientific notation:** m/s × 3.6×10⁶ = mm/h
 
-## 三、速度单位科普：从极慢到日常
+## III. Scientific Knowledge: From Extremely Slow to Everyday Speeds
 
-### 为什么我们需要毫米每小时这种单位？
+### Why Do We Need Units Like Millimeters per Hour?
 
-不同领域的精密测量需求催生了极小速度单位：
+Precision measurement requirements in different fields have led to extremely small speed units:
 
-- **mm/h（毫米每小时）**：用于测量极慢速度过程，如材料腐蚀、地质变化、植物生长等。
-- **m/s（米每秒）**：国际标准单位，便于科学计算和工程应用。
+- **mm/h (millimeters per hour)**: Used to measure extremely slow processes such as material corrosion, geological changes, plant growth, etc.
+- **m/s (meters per second)**: International standard unit, convenient for scientific calculations and engineering applications.
 
-### 单位混淆可能引发问题
+### Problems That May Arise from Unit Confusion
 
-案例：若将腐蚀速度0.1 mm/h误算为0.1 m/s，实际速度相差360万倍，会导致材料寿命预测严重错误。
+Case study: If a corrosion rate of 0.1 mm/h is mistakenly calculated as 0.1 m/s, the actual speed differs by 3.6 million times, leading to serious errors in material lifespan predictions.
 
-科学建议：精密测量必须准确使用单位，避免数量级错误。
+Scientific recommendation: Precision measurements must use units accurately to avoid order-of-magnitude errors.
 
-### 毫米的历史与应用
+### History and Applications of Millimeters
 
-- **毫米起源**：公制单位系统的一部分，1毫米 = 1/1000米
-- **现代毫米**：1毫米 = 0.001米 = 0.1厘米（精确值）
-- **应用范围**：精密制造、医学测量、材料科学等领域
+- **Millimeter origin**: Part of the metric system, 1 millimeter = 1/1000 meter
+- **Modern millimeter**: 1 millimeter = 0.001 meters = 0.1 centimeters (exact value)
+- **Application scope**: Precision manufacturing, medical measurements, materials science, and other fields
 
-### 冷知识：极慢速度的世界
+### Fun Facts: The World of Extremely Slow Speeds
 
-- 人类头发生长速度：约4 mm/h
-- 钟乳石形成速度：约0.1-1 mm/h
-- 钢铁腐蚀速度：约0.01-0.1 mm/h
-- 冰川移动速度：约1-10 mm/h
+- Human hair growth rate: approximately 4 mm/h
+- Stalactite formation rate: approximately 0.1-1 mm/h
+- Steel corrosion rate: approximately 0.01-0.1 mm/h
+- Glacier movement speed: approximately 1-10 mm/h
 
-## 四、速度单位详解：mm/h、m/s等缩写含义
+## IV. Detailed Speed Unit Explanation: Abbreviations for mm/h, m/s, etc.
 
-### 常见速度单位缩写说明
+### Common Speed Unit Abbreviation Explanations
 
-**mm/h 相关说明：**
-- **mm/h：** millimeters per hour的标准缩写，毫米每小时
-- **mm/hr：** 完整形式缩写
-- **mmph：** 简化缩写形式
+**mm/h Related Explanations:**
+- **mm/h:** Standard abbreviation for millimeters per hour
+- **mm/hr:** Complete form abbreviation
+- **mmph:** Simplified abbreviation form
 
-**毫米相关概念：**
-- **毫米(millimeter)：** 1毫米 = 0.001米 = 0.1厘米
-- **mm：** millimeter的标准缩写
-- **公制单位：** 国际单位制的基础长度单位
+**Millimeter Related Concepts:**
+- **Millimeter:** 1 millimeter = 0.001 meters = 0.1 centimeters
+- **mm:** Standard abbreviation for millimeter
+- **Metric unit:** Basic length unit in the International System of Units
 
-### 毫米是什么单位？一毫米等于多少米？
+### What Unit is a Millimeter? How Many Meters Equal One Millimeter?
 
-**毫米(millimeter)详解：**
-- **1毫米 = 0.001米 = 0.1厘米 = 1000微米**
-- **毫米是什么单位：** 公制长度单位，千分之一米
-- **一毫米等于多少米：** 1毫米 = 0.001米
-- **毫米换算米：** 米 = 毫米 × 0.001
+**Millimeter Detailed Explanation:**
+- **1 millimeter = 0.001 meters = 0.1 centimeters = 1000 micrometers**
+- **What unit is a millimeter:** Metric length unit, one thousandth of a meter
+- **How many meters equal one millimeter:** 1 millimeter = 0.001 meters
+- **Millimeter to meter conversion:** meters = millimeters × 0.001
 
-**实际应用：**
-- 精密制造：零件尺寸、公差测量
-- 医学领域：细胞大小、病变测量
-- 材料科学：薄膜厚度、腐蚀深度
-- 地质学：岩层移动、沉降监测
+**Practical Applications:**
+- Precision manufacturing: Component dimensions, tolerance measurements
+- Medical field: Cell size, lesion measurements
+- Materials science: Film thickness, corrosion depth
+- Geology: Rock layer movement, settlement monitoring
 
-### 毫米每小时在科学中的应用
+### Applications of Millimeters per Hour in Science
 
-**使用mm/h的领域：**
-- **材料科学：** 腐蚀速率、磨损测量
-- **地质学：** 地壳运动、沉降监测
-- **生物学：** 植物生长、细胞迁移
-- **环境科学：** 污染扩散、侵蚀速率
+**Fields Using mm/h:**
+- **Materials science:** Corrosion rates, wear measurements
+- **Geology:** Crustal movement, settlement monitoring
+- **Biology:** Plant growth, cell migration
+- **Environmental science:** Pollution diffusion, erosion rates
 
-## 五、实际应用中的速度换算场景
+## V. Practical Speed Conversion Scenarios
 
-### 材料科学领域
-- **金属腐蚀：** 海水中钢铁腐蚀0.1 mm/h = 2.78×10⁻⁸ m/s
-- **磨损测试：** 轴承磨损0.05 mm/h = 1.39×10⁻⁸ m/s
-- **薄膜生长：** 化学气相沉积10 mm/h = 2.78×10⁻⁶ m/s
+### Materials Science Field
+- **Metal corrosion:** Steel corrosion in seawater 0.1 mm/h = 2.78×10⁻⁸ m/s
+- **Wear testing:** Bearing wear 0.05 mm/h = 1.39×10⁻⁸ m/s
+- **Film growth:** Chemical vapor deposition 10 mm/h = 2.78×10⁻⁶ m/s
 
-### 地质监测
-- **地面沉降：** 城市沉降1 mm/h = 2.78×10⁻⁷ m/s
-- **冰川移动：** 冰川前进5 mm/h = 1.39×10⁻⁶ m/s
-- **岩层位移：** 地震后位移0.1 mm/h = 2.78×10⁻⁸ m/s
+### Geological Monitoring
+- **Ground subsidence:** Urban subsidence 1 mm/h = 2.78×10⁻⁷ m/s
+- **Glacier movement:** Glacier advance 5 mm/h = 1.39×10⁻⁶ m/s
+- **Rock layer displacement:** Post-earthquake displacement 0.1 mm/h = 2.78×10⁻⁸ m/s
 
-### 生物过程
-- **植物生长：** 竹子生长20 mm/h = 5.56×10⁻⁶ m/s
-- **细胞迁移：** 癌细胞迁移0.01 mm/h = 2.78×10⁻⁹ m/s
-- **伤口愈合：** 皮肤愈合0.5 mm/h = 1.39×10⁻⁷ m/s
+### Biological Processes
+- **Plant growth:** Bamboo growth 20 mm/h = 5.56×10⁻⁶ m/s
+- **Cell migration:** Cancer cell migration 0.01 mm/h = 2.78×10⁻⁹ m/s
+- **Wound healing:** Skin healing 0.5 mm/h = 1.39×10⁻⁷ m/s
 
-## 六、常见问题 FAQ
+## VI. Frequently Asked Questions (FAQ)
 
-### Q1: 毫米每小时和米每秒怎么换算？
-**A1**: 毫米每小时转米每秒的公式是：m/s = mm/h × 2.778×10⁻⁷。例如：100 mm/h = 100 × 2.778×10⁻⁷ = 2.778×10⁻⁵ m/s。
+### Q1: How to convert between millimeters per hour and meters per second?
+**A1**: The formula for converting millimeters per hour to meters per second is: m/s = mm/h × 2.778×10⁻⁷. For example: 100 mm/h = 100 × 2.778×10⁻⁷ = 2.778×10⁻⁵ m/s.
 
-### Q2: 一毫米每小时等于多少米每秒？
-**A2**: 1毫米每小时等于2.778×10⁻⁷米每秒。这是因为1毫米=0.001米，1小时=3600秒。
+### Q2: How many meters per second equal one millimeter per hour?
+**A2**: 1 millimeter per hour equals 2.778×10⁻⁷ meters per second. This is because 1 millimeter = 0.001 meters and 1 hour = 3600 seconds.
 
-### Q3: mm/h换算m/s的公式是什么？
-**A3**: mm/h转m/s的公式是：m/s = mm/h × 2.778×10⁻⁷。例如：1000 mm/h = 1000 × 2.778×10⁻⁷ = 2.778×10⁻⁴ m/s。
+### Q3: What is the formula for converting mm/h to m/s?
+**A3**: The formula for converting mm/h to m/s is: m/s = mm/h × 2.778×10⁻⁷. For example: 1000 mm/h = 1000 × 2.778×10⁻⁷ = 2.778×10⁻⁴ m/s.
 
-### Q4: 为什么要使用毫米每小时这种单位？
-**A4**: 使用原因：
-- 测量极慢速度过程（腐蚀、生长、沉降）
-- 避免使用过小的小数
-- 便于理解和记录
-- 符合测量精度要求
+### Q4: Why use units like millimeters per hour?
+**A4**: Reasons for use:
+- Measuring extremely slow processes (corrosion, growth, settlement)
+- Avoiding the use of very small decimals
+- Easy to understand and record
+- Meeting measurement precision requirements
 
-### Q5: 如何快速进行毫米每小时换算米每秒？
-**A5**: 快速换算技巧：
-- 精确计算：mm/h ÷ 3,600,000 = m/s
-- 科学计数法：mm/h × 2.78×10⁻⁷ = m/s
-- 记忆技巧：毫米数除以360万
+### Q5: How to quickly convert millimeters per hour to meters per second?
+**A5**: Quick conversion tips:
+- Precise calculation: mm/h ÷ 3,600,000 = m/s
+- Scientific notation: mm/h × 2.78×10⁻⁷ = m/s
+- Memory trick: Divide millimeter value by 3.6 million
 
-### Q6: 毫米每小时换算时需要注意什么？
-**A6**: 注意事项包括：
-- 注意科学计数法的使用
-- 确认小数点位置正确
-- 避免数量级错误
-- 保持足够的有效数字
+### Q6: What should be noted when converting millimeters per hour?
+**A6**: Important considerations include:
+- Pay attention to the use of scientific notation
+- Confirm correct decimal point placement
+- Avoid order-of-magnitude errors
+- Maintain sufficient significant figures
 
-### Q7: 一米每秒等于多少毫米每小时？
-**A7**: 1米每秒 = 3,600,000毫米每小时。计算方法：1 m/s × 3,600,000 = 3,600,000 mm/h。
+### Q7: How many millimeters per hour equal one meter per second?
+**A7**: 1 meter per second = 3,600,000 millimeters per hour. Calculation method: 1 m/s × 3,600,000 = 3,600,000 mm/h.
 
-### Q8: 米每秒换算毫米每小时怎么算？
-**A8**: 米每秒换算毫米每小时的方法：
-- **公式：** mm/h = m/s × 3,600,000
-- **示例：** 0.001 m/s = 0.001 × 3,600,000 = 3,600 mm/h
-- **记忆技巧：** m/s × 360万 = mm/h
+### Q8: How to convert meters per second to millimeters per hour?
+**A8**: Method for converting meters per second to millimeters per hour:
+- **Formula:** mm/h = m/s × 3,600,000
+- **Example:** 0.001 m/s = 0.001 × 3,600,000 = 3,600 mm/h
+- **Memory trick:** m/s × 3.6 million = mm/h
 
-### Q9: 毫米每小时和米每秒的换算关系是什么？
-**A9**: 毫米每小时和米每秒的换算关系：
-- **mm/h → m/s：** 除以3,600,000
-- **m/s → mm/h：** 乘以3,600,000
-- **换算系数来源：** 1毫米 = 0.001米，1小时 = 3600秒
+### Q9: What is the conversion relationship between millimeters per hour and meters per second?
+**A9**: Conversion relationship between millimeters per hour and meters per second:
+- **mm/h → m/s:** Divide by 3,600,000
+- **m/s → mm/h:** Multiply by 3,600,000
+- **Source of conversion factor:** 1 millimeter = 0.001 meters, 1 hour = 3600 seconds
 
-### Q10: 毫米是什么单位？一毫米等于多少米？
-**A10**: 毫米的详细信息：
-- **毫米定义：** 公制长度单位，等于千分之一米
-- **一毫米等于多少米：** 1毫米 = 0.001米
-- **毫米换算米：** 米数 = 毫米数 × 0.001
-- **应用领域：** 精密测量、制造业、医学等
+### Q10: What unit is a millimeter? How many meters equal one millimeter?
+**A10**: Detailed information about millimeters:
+- **Millimeter definition:** Metric length unit, equal to one thousandth of a meter
+- **How many meters equal one millimeter:** 1 millimeter = 0.001 meters
+- **Millimeter to meter conversion:** meters = millimeters × 0.001
+- **Application fields:** Precision measurement, manufacturing, medicine, etc.
 
-### Q11: mm/h在哪些场景下使用？
-**A11**: mm/h的使用场景：
-- **材料科学：** 腐蚀速率、磨损测量
-- **地质监测：** 地面沉降、岩层移动
-- **生物研究：** 植物生长、细胞迁移
-- **环境科学：** 污染扩散、侵蚀监测
-- **工程测量：** 结构变形、设备磨损
+### Q11: In what scenarios is mm/h used?
+**A11**: Usage scenarios for mm/h:
+- **Materials science:** Corrosion rates, wear measurements
+- **Geological monitoring:** Ground subsidence, rock layer movement
+- **Biological research:** Plant growth, cell migration
+- **Environmental science:** Pollution diffusion, erosion monitoring
+- **Engineering measurement:** Structural deformation, equipment wear
 
-### Q12: 为什么要进行毫米和米的换算？
-**A12**: 换算的重要性：
-- **单位统一：** 科学计算需要标准单位
-- **精度要求：** 不同测量精度需要合适单位
-- **数据处理：** 便于数据分析和比较
-- **国际交流：** 遵循国际单位制标准
+### Q12: Why is it important to convert between millimeters and meters?
+**A12**: Importance of conversion:
+- **Unit unification:** Scientific calculations require standard units
+- **Precision requirements:** Different measurement precisions require appropriate units
+- **Data processing:** Facilitates data analysis and comparison
+- **International communication:** Follows International System of Units standards
 
-### Q13: 极慢速度测量有什么意义？
-**A13**: 极慢速度测量的意义：
-- **材料寿命：** 预测设备使用寿命
-- **地质安全：** 监测地质灾害风险
-- **环境保护：** 评估污染扩散速度
-- **科学研究：** 理解自然过程机理
-- **工程安全：** 确保结构长期稳定
+### Q13: What is the significance of measuring extremely slow speeds?
+**A13**: Significance of extremely slow speed measurements:
+- **Material lifespan:** Predicting equipment service life
+- **Geological safety:** Monitoring geological disaster risks
+- **Environmental protection:** Assessing pollution diffusion rates
+- **Scientific research:** Understanding natural process mechanisms
+- **Engineering safety:** Ensuring long-term structural stability
 
-## 七、相关连接
+## VII. Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Speed" :key="index">
     <n-button

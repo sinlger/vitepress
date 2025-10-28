@@ -4,20 +4,20 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Speed/
-      linkText: 速度单位换算
+      linkText: Speed Unit Conversion
   - - link: /Speed/index
-      linkText: 速度单位单位换算
+      linkText: Speed Unit Conversion
 head:
   - - meta
     - name: description
-      content: 节换算千米每小时工具，knot和km/h换算公式详解。一节是多少千米每小时？一节等于多少公里？节和千米每小时怎么换算？提供knot、km/h、m/s等速度单位换算，支持航海航空速度单位转换。
+      content: Knot to kilometers per hour conversion tool, detailed knot and km/h conversion formulas. How many kilometers per hour is one knot? How many kilometers does one knot equal? How to convert knots to kilometers per hour? Provides knot, km/h, m/s and other speed unit conversions, supports maritime and aviation speed unit conversion.
   - - meta
     - name: keywords
-      content: 速度单位换算, 节换算千米每小时, knot换算km/h, 一节是多少千米每小时, 一节等于多少公里, 速度单位, 一节, 节换算公里, 千米每小时, knots to km/h, knot, 速度换算, 速度单位转换, 速度单位换算工具, 节的速度, 海里每小时, 航海速度单位, 航空速度单位
+      content: speed unit conversion, knot to kilometers per hour, knot to km/h conversion, how many kilometers per hour is one knot, how many kilometers does one knot equal, speed units, one knot, knot to kilometers conversion, kilometers per hour, knots to km/h, knot, speed conversion, speed unit conversion, speed unit conversion tool, knot speed, nautical miles per hour, maritime speed units, aviation speed units
 ---
-# 节换算千米每小时 | knot和km/h速度单位换算工具
+# Knot to Kilometers per Hour | knot and km/h Speed Unit Conversion Tool
 ---
 <script setup>
 import { onMounted, reactive, inject ,ref  } from 'vue'
@@ -26,32 +26,32 @@ import { defineClientComponent } from 'vitepress'
 import { Speed } from '../files';
 const convert = inject('convert')
 const options =  [
-  { "label": "千米每小时 (km/h)", "value": "km/h" },
-  { "label": "英尺每秒 (ft/s)", "value": "ft/s" },
-  { "label": "米每秒 (m/s)", "value": "m/s" },
-  { "label": "英里每小时 (mph)", "value": "mph" },
-  { "label": "节 (knot)", "value": "knot" },
-  { "label": "英寸每小时 (in/h)", "value": "in/h" },
-  { "label": "毫米每小时 (mm/h)", "value": "mm/h" }
+  { "label": "Kilometers per Hour (km/h)", "value": "km/h" },
+  { "label": "Feet per Second (ft/s)", "value": "ft/s" },
+  { "label": "Meters per Second (m/s)", "value": "m/s" },
+  { "label": "Miles per Hour (mph)", "value": "mph" },
+  { "label": "Knot (knot)", "value": "knot" },
+  { "label": "Inches per Hour (in/h)", "value": "in/h" },
+  { "label": "Millimeters per Hour (mm/h)", "value": "mm/h" }
 ];
-const seoKey = ['速度单位换算','节换算千米每小时','knot换算km/h','速度单位换算工具','速度换算','速度单位转换','一节是多少千米每小时','一节等于多少公里','速度单位','一节','节换算公里','千米每小时','knots to km/h','knot']
+const seoKey = ['speed unit conversion','knot to kilometers per hour','knot to km/h conversion','speed unit conversion tool','speed conversion','speed unit conversion','how many kilometers per hour is one knot','how many kilometers does one knot equal','speed units','one knot','knot to kilometers conversion','kilometers per hour','knots to km/h','knot']
 const formRef = ref(null);
 const rules = {
   number:{
     required: true,
     type: 'number',
     trigger: "blur",
-    message: '请输入数字'
+    message: 'Please enter a number'
   },
   to:{
     required: true,
     trigger: "select",
-    message: '请选择转换单位'
+    message: 'Please select conversion unit'
   },
   from:{
     required: true,
     trigger: "select",
-    message: '请选择原始单位'
+    message: 'Please select original unit'
   }
 }
 const form = reactive({
@@ -59,7 +59,7 @@ const form = reactive({
   to:'km/h',
   from:'knot',
   result:'',
-  title:'速度单位单位换算',
+  title:'Speed Unit Conversion',
 })
 const convertHandler = (e) => {
    e.preventDefault();
@@ -72,17 +72,17 @@ const convertHandler = (e) => {
 </script>
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="数值"  path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数值" />
+  <n-form-item label="Value"  path="number">
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="Please enter the value to convert" />
   </n-form-item>
-  <n-form-item label="从" path="from">
-    <n-select  size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
+  <n-form-item label="From" path="from">
+    <n-select  size="large" :options="options" v-model:value="form.from" placeholder="Please select original unit" />
   </n-form-item>
-  <n-form-item label="到" path="to">
-    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
+  <n-form-item label="To" path="to">
+    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="Please select conversion unit" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
+    <n-button type="info" style="width:100%" @click="convertHandler">Convert</n-button>
   </n-form-item>
 </n-form>
 <n-card embedded :bordered="false" hoverable style="margin-top: 16px;">
@@ -104,234 +104,234 @@ const convertHandler = (e) => {
 </n-card>
 
 
-## 一、速度单位换算表（以 1 节 为基准）
+## I. Speed Unit Conversion Table (Based on 1 knot)
 
-| 单位       | 符号   | 换算值      | 典型应用场景             |
-|------------|--------|-------------|-------------------------|
-| 节        | knot   | 1           | 航海、航空（1 节=1 海里/小时） |
-| 千米每小时 | km/h   | 1.852       | 汽车限速、天气预报（1 节=1.852 km/h） |
-| 米每秒     | m/s    | ≈0.514444   | 物理学、工程计算（1 节≈0.514 m/s） |
-| 英里每小时 | mph    | ≈1.15078    | 英美国家车速（1 节≈1.151 mph） |
-| 英尺每秒   | ft/s   | ≈1.68781    | 美国工程流体力学（1 节≈1.688 ft/s） |
-| 英寸每小时 | in/h   | 72,913.4    | 地质沉降监测             |
-| 毫米每小时 | mm/h   | 1,852,000   | 材料腐蚀速率、极慢速过程 |
+| Unit                | Symbol | Conversion Value | Typical Application Scenarios                    |
+|---------------------|--------|------------------|--------------------------------------------------|
+| Knot               | knot   | 1                | Maritime, Aviation (1 knot = 1 nautical mile/hour) |
+| Kilometers per Hour | km/h   | 1.852            | Vehicle speed limits, Weather forecasts (1 knot = 1.852 km/h) |
+| Meters per Second   | m/s    | ≈0.514444        | Physics, Engineering calculations (1 knot ≈ 0.514 m/s) |
+| Miles per Hour      | mph    | ≈1.15078         | Vehicle speeds in UK/US (1 knot ≈ 1.151 mph) |
+| Feet per Second     | ft/s   | ≈1.68781         | US engineering fluid mechanics (1 knot ≈ 1.688 ft/s) |
+| Inches per Hour     | in/h   | 72,913.4         | Geological subsidence monitoring |
+| Millimeters per Hour| mm/h   | 1,852,000        | Material corrosion rates, extremely slow processes |
 
-注：换算公式示例 → knot 转 km/h: ( km/h = knot × 1.852 ) ；km/h 转 knot: ( knot = km/h ÷ 1.852 ) 。
+Note: Conversion formula examples → knot to km/h: ( km/h = knot × 1.852 ) ; km/h to knot: ( knot = km/h ÷ 1.852 ) .
 
-## 二、knot和km/h换算公式详解
+## II. Detailed Conversion Formula for knot and km/h
 
-### 节和千米每小时怎么换算？
+### How to Convert Between Knots and Kilometers per Hour?
 
-**基础换算公式：**
-- **knot 转 km/h：** km/h = knot × 1.852
-- **km/h 转 knot：** knot = km/h ÷ 1.852
+**Basic Conversion Formulas:**
+- **knot to km/h:** km/h = knot × 1.852
+- **km/h to knot:** knot = km/h ÷ 1.852
 
-**公式推导过程：**
-1. 1 节 = 1 海里/小时
-2. 1 海里 = 1852 米（国际标准）
-3. 1 千米 = 1000 米
+**Formula Derivation Process:**
+1. 1 knot = 1 nautical mile/hour
+2. 1 nautical mile = 1852 meters (international standard)
+3. 1 kilometer = 1000 meters
 4. 1 knot = 1852 m/h = 1.852 km/h
 
-### 一节等于多少千米每小时？
+### How Many Kilometers per Hour Does One Knot Equal?
 
-**精确答案：** 1 节 = 1.852 千米每小时
+**Precise Answer:** 1 knot = 1.852 kilometers per hour
 
-**常见速度换算示例：**
-- 10 节 = 18.52 km/h（约18.5 km/h）
-- 20 节 = 37.04 km/h（约37 km/h）
-- 30 节 = 55.56 km/h（约55.6 km/h）
-- 50 节 = 92.6 km/h
+**Common Speed Conversion Examples:**
+- 10 knots = 18.52 km/h (approximately 18.5 km/h)
+- 20 knots = 37.04 km/h (approximately 37 km/h)
+- 30 knots = 55.56 km/h (approximately 55.6 km/h)
+- 50 knots = 92.6 km/h
 
-### 一节是多少千米每小时？
+### What is One Knot in Kilometers per Hour?
 
-**一节的速度定义：**
-- **1 节 = 1 海里/小时 = 1.852 千米/小时**
-- **航海中的标准：** 船舶以1节速度航行，1小时可行驶1海里（1.852千米）
-- **航空中的应用：** 飞机空速和风速常用节表示
+**Definition of One Knot Speed:**
+- **1 knot = 1 nautical mile/hour = 1.852 kilometers/hour**
+- **Maritime Standard:** A vessel traveling at 1 knot can cover 1 nautical mile (1.852 kilometers) in 1 hour
+- **Aviation Application:** Aircraft airspeed and wind speed are commonly expressed in knots
 
-### 快速心算技巧
+### Quick Mental Calculation Tips
 
-**knot 转 km/h 心算法：**
-1. **近似计算：** knot × 1.85 ≈ km/h（误差极小）
-2. **简单技巧：** knot × 2 ≈ km/h（误差约8%，快速估算）
-3. **记忆点：** 20 节 ≈ 37 km/h
+**knot to km/h Mental Calculation:**
+1. **Approximate calculation:** knot × 1.85 ≈ km/h (minimal error)
+2. **Simple trick:** knot × 2 ≈ km/h (about 8% error, quick estimation)
+3. **Memory point:** 20 knots ≈ 37 km/h
 
-**km/h 转 knot 心算法：**
-1. **近似计算：** km/h ÷ 1.85 ≈ knot
-2. **简单技巧：** km/h ÷ 2 ≈ knot（快速估算）
+**km/h to knot Mental Calculation:**
+1. **Approximate calculation:** km/h ÷ 1.85 ≈ knot
+2. **Simple trick:** km/h ÷ 2 ≈ knot (quick estimation)
 
-## 三、节单位科普：从航海到航空
+## III. Knot Unit Science: From Navigation to Aviation
 
-### 为什么航海航空要使用节？
+### Why Do Maritime and Aviation Use Knots?
 
-不同领域的历史沿革和实用需求催生了节这个特殊单位：
+Different fields' historical evolution and practical needs gave birth to this special unit:
 
-- **knot（节）**：航海航空领域专用，基于海里和小时的自然组合。便于海上和空中导航计算。
-- **km/h（千米每小时）**：陆地交通通用，便于日常理解。
-- **m/s（米每秒）**：国际标准单位，科学计算和工程应用的基础。
+- **knot**: Specialized for maritime and aviation fields, based on the natural combination of nautical miles and hours. Convenient for maritime and aerial navigation calculations.
+- **km/h (kilometers per hour)**: Universal for land transportation, easy for daily understanding.
+- **m/s (meters per second)**: International standard unit, foundation for scientific calculations and engineering applications.
 
-### 一节等于多少公里？
+### How Many Kilometers Does One Knot Equal?
 
-**精确换算关系：**
-- **1 节 = 1.852 公里/小时**
-- **1 节 = 1852 米/小时**
-- **1 节 = 0.514444 米/秒**
+**Precise Conversion Relationships:**
+- **1 knot = 1.852 kilometers/hour**
+- **1 knot = 1852 meters/hour**
+- **1 knot = 0.514444 meters/second**
 
-**为什么是1.852？**
-- 1 海里 = 1852 米（国际标准）
-- 海里基于地球子午线，1海里 = 地球子午线的1/21600
+**Why 1.852?**
+- 1 nautical mile = 1852 meters (international standard)
+- Nautical mile is based on Earth's meridian, 1 nautical mile = 1/21600 of Earth's meridian
 
-### 节的历史与应用
+### History and Applications of Knots
 
-- **节的起源**：古代船员用绳结测速，每个绳结间距约14.4米，28秒内数绳结数
-- **现代标准**：1节 = 1海里/小时 = 1.852千米/小时（精确值）
-- **应用范围**：全球航海、航空、气象等领域广泛使用
+- **Origin of knots**: Ancient sailors used rope knots to measure speed, with each knot spaced about 14.4 meters apart, counting knots in 28 seconds
+- **Modern standard**: 1 knot = 1 nautical mile/hour = 1.852 kilometers/hour (precise value)
+- **Application scope**: Widely used globally in maritime, aviation, meteorology and other fields
 
-### 冷知识：节在不同领域的速度
+### Trivia: Knot Speeds in Different Fields
 
-- **游轮航行速度**：一般20-25节（约37-46 km/h）
-- **帆船比赛速度**：最快可达40-50节（约74-93 km/h）
-- **商用客机巡航**：约450-500节（约833-926 km/h）
-- **台风风速**：超强台风中心可达150节以上（约278 km/h）
+- **Cruise ship speeds**: Generally 20-25 knots (approximately 37-46 km/h)
+- **Sailing race speeds**: Can reach up to 40-50 knots (approximately 74-93 km/h)
+- **Commercial aircraft cruise**: About 450-500 knots (approximately 833-926 km/h)
+- **Typhoon wind speeds**: Super typhoon centers can exceed 150 knots (approximately 278 km/h)
 
-## 四、速度单位详解：knot、节等缩写含义
+## IV. Speed Unit Details: Meanings of knot, km/h, etc. Abbreviations
 
-### 常见速度单位缩写说明
+### Common Speed Unit Abbreviation Explanations
 
-**knot 相关说明：**
-- **knot：** 节的英文标准表示，复数为knots
-- **kt：** 常用简化缩写，特别在航空中
-- **kn：** 另一种简化缩写形式
-- **节：** 中文标准表示
+**knot Related Explanations:**
+- **knot:** Standard English representation of knot, plural is knots
+- **kt:** Commonly used simplified abbreviation, especially in aviation
+- **kn:** Another simplified abbreviation form
+- **节:** Chinese standard representation
 
-**千米每小时相关概念：**
-- **千米每小时(km/h)：** 1千米 = 1000米
-- **km/h：** kilometers per hour的标准缩写
-- **kph：** 另一种常用缩写形式
+**Kilometers per Hour Related Concepts:**
+- **Kilometers per hour (km/h):** 1 kilometer = 1000 meters
+- **km/h:** Standard abbreviation for kilometers per hour
+- **kph:** Another commonly used abbreviation form
 
-### 节是什么单位？一节等于多少千米每小时？
+### What Unit is a Knot? How Many Kilometers per Hour Does One Knot Equal?
 
-**节(knot)详解：**
-- **1节 = 1海里/小时 = 1.852千米/小时**
-- **节是什么单位：** 航海航空速度单位，全球通用
-- **一节等于多少千米每小时：** 1节 = 1.852千米/小时
-- **节换算千米每小时：** 千米/小时 = 节 × 1.852
+**Knot Detailed Explanation:**
+- **1 knot = 1 nautical mile/hour = 1.852 kilometers/hour**
+- **What unit is a knot:** Maritime and aviation speed unit, universally used globally
+- **How many kilometers per hour does one knot equal:** 1 knot = 1.852 kilometers/hour
+- **Knot to kilometers per hour conversion:** kilometers/hour = knot × 1.852
 
-**实际应用：**
-- 航海领域：船舶航行速度、海流速度
-- 航空领域：飞机空速、风速测量
-- 气象预报：风速、台风强度
-- 海洋科学：洋流速度、潮汐流速
+**Practical Applications:**
+- Maritime field: Ship navigation speed, ocean current speed
+- Aviation field: Aircraft airspeed, wind speed measurement
+- Weather forecasting: Wind speed, typhoon intensity
+- Marine science: Ocean current speed, tidal current speed
 
-### 节在航海航空中的应用
+### Applications of Knots in Maritime and Aviation
 
-**使用knot的领域：**
-- **航海导航：** 船舶速度、航行计划
-- **航空飞行：** 飞机空速、风速修正
-- **气象预报：** 风速预报、台风预警
-- **海洋研究：** 洋流测量、海洋环流
+**Fields Using knot:**
+- **Maritime navigation:** Ship speed, voyage planning
+- **Aviation flight:** Aircraft airspeed, wind speed correction
+- **Weather forecasting:** Wind speed forecasting, typhoon warnings
+- **Marine research:** Ocean current measurement, ocean circulation
 
-## 五、实际应用中的节速度换算场景
+## V. Practical Knot Speed Conversion Scenarios
 
-### 航海领域
-- **货轮航行：** 大型货轮巡航速度20节 = 37.04 km/h
-- **游艇航行：** 高速游艇最高50节 = 92.6 km/h
-- **帆船比赛：** 帆船竞速可达35节 = 64.82 km/h
+### Maritime Field
+- **Cargo ship navigation:** Large cargo ship cruise speed 20 knots = 37.04 km/h
+- **Yacht navigation:** High-speed yacht maximum 50 knots = 92.6 km/h
+- **Sailing races:** Sailing competition speeds can reach 35 knots = 64.82 km/h
 
-### 航空领域
-- **客机巡航：** 波音737巡航450节 = 833.4 km/h
-- **直升机飞行：** 民用直升机120节 = 222.24 km/h
-- **无人机飞行：** 专业无人机80节 = 148.16 km/h
+### Aviation Field
+- **Airliner cruise:** Boeing 737 cruise 450 knots = 833.4 km/h
+- **Helicopter flight:** Civil helicopter 120 knots = 222.24 km/h
+- **Drone flight:** Professional drone 80 knots = 148.16 km/h
 
-### 气象预报
-- **台风风速：** 强台风中心120节 = 222.24 km/h
-- **海上风速：** 大风警报30节 = 55.56 km/h
-- **阵风速度：** 突发阵风60节 = 111.12 km/h
+### Weather Forecasting
+- **Typhoon wind speed:** Strong typhoon center 120 knots = 222.24 km/h
+- **Maritime wind speed:** Gale warning 30 knots = 55.56 km/h
+- **Gust speed:** Sudden gusts 60 knots = 111.12 km/h
 
-### 海洋科学
-- **洋流速度：** 墨西哥湾流3节 = 5.556 km/h
-- **潮汐流速：** 强潮汐区8节 = 14.816 km/h
-- **海底流速：** 深海洋流1节 = 1.852 km/h
+### Marine Science
+- **Ocean current speed:** Gulf Stream 3 knots = 5.556 km/h
+- **Tidal current speed:** Strong tidal zone 8 knots = 14.816 km/h
+- **Deep sea current speed:** Deep ocean current 1 knot = 1.852 km/h
 
-## 六、常见问题 FAQ
+## VI. Frequently Asked Questions (FAQ)
 
-### Q1: 一节是多少千米每小时？
-**A1**: 一节等于1.852千米每小时。这是因为1节 = 1海里/小时，而1海里 = 1852米 = 1.852千米，所以1节 = 1.852 km/h。
+### Q1: How many kilometers per hour is one knot?
+**A1**: One knot equals 1.852 kilometers per hour. This is because 1 knot = 1 nautical mile/hour, and 1 nautical mile = 1852 meters = 1.852 kilometers, so 1 knot = 1.852 km/h.
 
-### Q2: 一节等于多少公里？
-**A2**: 1节等于1.852公里每小时。注意这里说的是速度单位，1节表示1小时内行驶1.852公里的速度。
+### Q2: How many kilometers does one knot equal?
+**A2**: 1 knot equals 1.852 kilometers per hour. Note that this refers to a speed unit, 1 knot represents the speed of traveling 1.852 kilometers in 1 hour.
 
-### Q3: 节换算千米每小时的公式是什么？
-**A3**: 节转千米每小时的公式是：km/h = knot × 1.852。例如：20节 = 20 × 1.852 = 37.04 km/h。
+### Q3: What is the formula for converting knots to kilometers per hour?
+**A3**: The formula for converting knots to kilometers per hour is: km/h = knot × 1.852. For example: 20 knots = 20 × 1.852 = 37.04 km/h.
 
-### Q4: knots to km/h怎么换算？
-**A4**: knots转km/h的换算方法：
-- **公式：** km/h = knot × 1.852
-- **示例：** 25 knots = 25 × 1.852 = 46.3 km/h
-- **记忆技巧：** knot × 1.85 ≈ km/h（近似值）
+### Q4: How to convert knots to km/h?
+**A4**: Method for converting knots to km/h:
+- **Formula:** km/h = knot × 1.852
+- **Example:** 25 knots = 25 × 1.852 = 46.3 km/h
+- **Memory trick:** knot × 1.85 ≈ km/h (approximate value)
 
-### Q5: 如何快速进行节换算千米每小时？
-**A5**: 快速换算技巧：
-- 精确计算：knot × 1.852 = km/h
-- 近似计算：knot × 1.85 ≈ km/h（误差极小）
-- 心算技巧：knot × 2 ≈ km/h（误差约8%，快速估算）
+### Q5: How to quickly convert knots to kilometers per hour?
+**A5**: Quick conversion tips:
+- Precise calculation: knot × 1.852 = km/h
+- Approximate calculation: knot × 1.85 ≈ km/h (minimal error)
+- Mental calculation trick: knot × 2 ≈ km/h (about 8% error, quick estimation)
 
-### Q6: 节换算时需要注意什么？
-**A6**: 注意事项包括：
-- 确认使用的是国际海里（1852米）
-- 区分节和千米每小时的应用场景
-- 航海计算通常保留1-2位小数
-- 注意单位一致性，避免混用陆地和海上单位
+### Q6: What should be noted when converting knots?
+**A6**: Important considerations include:
+- Confirm using international nautical miles (1852 meters)
+- Distinguish between knot and kilometer per hour application scenarios
+- Maritime calculations usually retain 1-2 decimal places
+- Pay attention to unit consistency, avoid mixing land and maritime units
 
-### Q7: 为什么1节等于1.852千米每小时？
-**A7**: 因为：
-- 1节 = 1海里/小时
-- 1海里 = 1852米（国际标准）
-- 1852米 = 1.852千米
-- 所以1节 = 1.852千米/小时
+### Q7: Why does 1 knot equal 1.852 kilometers per hour?
+**A7**: Because:
+- 1 knot = 1 nautical mile/hour
+- 1 nautical mile = 1852 meters (international standard)
+- 1852 meters = 1.852 kilometers
+- Therefore 1 knot = 1.852 kilometers/hour
 
-### Q8: 千米每小时转节怎么算？
-**A8**: 千米每小时转节的换算方法：
-- **公式：** knot = km/h ÷ 1.852
-- **示例：** 100 km/h = 100 ÷ 1.852 ≈ 53.996 knots
-- **记忆技巧：** km/h ÷ 1.85 ≈ knot
+### Q8: How to convert kilometers per hour to knots?
+**A8**: Method for converting kilometers per hour to knots:
+- **Formula:** knot = km/h ÷ 1.852
+- **Example:** 100 km/h = 100 ÷ 1.852 ≈ 53.996 knots
+- **Memory trick:** km/h ÷ 1.85 ≈ knot
 
-### Q9: 节和千米每小时的换算关系是什么？
-**A9**: 节和千米每小时的换算关系：
-- **knot → km/h：** 乘以1.852
-- **km/h → knot：** 除以1.852
-- **换算系数来源：** 1海里 = 1852米 = 1.852千米
+### Q9: What is the conversion relationship between knots and kilometers per hour?
+**A9**: The conversion relationship between knots and kilometers per hour:
+- **knot → km/h:** Multiply by 1.852
+- **km/h → knot:** Divide by 1.852
+- **Conversion factor source:** 1 nautical mile = 1852 meters = 1.852 kilometers
 
-### Q10: 速度单位有哪些？
-**A10**: 常见速度单位包括：
-- **节(knot)：** 航海航空专用，1节 = 1.852 km/h
-- **千米每小时(km/h)：** 陆地交通常用
-- **米每秒(m/s)：** 国际标准单位
-- **英里每小时(mph)：** 英美国家使用
+### Q10: What are the speed units?
+**A10**: Common speed units include:
+- **Knot:** Specialized for maritime and aviation, 1 knot = 1.852 km/h
+- **Kilometers per hour (km/h):** Commonly used for land transportation
+- **Meters per second (m/s):** International standard unit
+- **Miles per hour (mph):** Used in UK and US
 
-### Q11: knot和kt有什么区别？
-**A11**: knot和kt的区别：
-- **knot：** 完整英文表示，复数为knots
-- **kt：** 简化缩写，航空中常用
-- **使用场景：** knot用于正式文档，kt用于简化表示
-- **等价关系：** 1 knot = 1 kt = 1.852 km/h
+### Q11: What's the difference between knot and kt?
+**A11**: The difference between knot and kt:
+- **knot:** Complete English representation, plural is knots
+- **kt:** Simplified abbreviation, commonly used in aviation
+- **Usage scenarios:** knot for formal documents, kt for simplified representation
+- **Equivalent relationship:** 1 knot = 1 kt = 1.852 km/h
 
-### Q12: 为什么航海要使用节这个单位？
-**A12**: 使用节的原因：
-- **历史传统：** 古代船员用绳结测速的传统
-- **导航便利：** 与海里配合，便于航海计算
-- **国际标准：** 全球航海航空统一使用
-- **精确性：** 基于地球子午线，科学准确
+### Q12: Why does maritime use the knot unit?
+**A12**: Reasons for using knots:
+- **Historical tradition:** Ancient sailors' tradition of using rope knots to measure speed
+- **Navigation convenience:** Works with nautical miles, convenient for maritime calculations
+- **International standard:** Unified global use in maritime and aviation
+- **Precision:** Based on Earth's meridian, scientifically accurate
 
-### Q13: 节在哪些场景下使用？
-**A13**: 节的使用场景：
-- **航海导航：** 船舶航行速度、航线规划
-- **航空飞行：** 飞机空速、风速测量
-- **气象预报：** 海上风速、台风强度
-- **海洋科学：** 洋流速度、潮汐流速
-- **体育竞技：** 帆船比赛、游艇竞速
+### Q13: In what scenarios are knots used?
+**A13**: Knot usage scenarios:
+- **Maritime navigation:** Ship navigation speed, route planning
+- **Aviation flight:** Aircraft airspeed, wind speed measurement
+- **Weather forecasting:** Maritime wind speed, typhoon intensity
+- **Marine science:** Ocean current speed, tidal current speed
+- **Sports competition:** Sailing races, yacht racing
 
-## 七、相关连接
+## VII. Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Speed" :key="index">
     <n-button
