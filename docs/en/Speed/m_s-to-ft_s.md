@@ -4,20 +4,20 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Speed/
-      linkText: 速度单位换算
+      linkText: Speed Unit Conversion
   - - link: /Speed/index
-      linkText: 速度单位单位换算
+      linkText: Speed Unit Conversion
 head:
   - - meta
     - name: description
-      content: 专业的m/s到ft/s速度单位换算工具。一米每秒等于多少英尺每秒？提供米每秒转换英尺每秒的精确公式、换算表和实用技巧。支持m/s、ft/s、km/h、mph等多种速度单位互转。
+      content: Professional m/s to ft/s speed unit conversion tool. How many feet per second is one meter per second? Provides precise formulas, conversion tables and practical tips for converting meters per second to feet per second. Supports multiple speed unit conversions including m/s, ft/s, km/h, mph, etc.
   - - meta
     - name: keywords
-      content: 速度单位换算, 米每秒转换, m/s to ft/s, 一米每秒等于多少英尺每秒, ft/s和m/s换算, 米每秒换算英尺每秒, 速度转换, 速度单位, 米每秒和英尺每秒的换算, ft/s换算m/s, 英尺每秒换算米每秒, m/s ft/s, 米每秒, 英尺每秒
+      content: speed unit conversion, meters per second conversion, m/s to ft/s, how many feet per second is one meter per second, ft/s and m/s conversion, meters per second to feet per second conversion, speed conversion, speed units, meters per second and feet per second conversion, ft/s to m/s conversion, feet per second to meters per second conversion, m/s ft/s, meters per second, feet per second
 ---
-# 米每秒转换英尺每秒 | m/s到ft/s速度单位换算工具
+# Meters Per Second to Feet Per Second | m/s to ft/s Speed Unit Conversion Tool
 ---
 <script setup>
 import { onMounted, reactive, inject ,ref  } from 'vue'
@@ -26,32 +26,32 @@ import { defineClientComponent } from 'vitepress'
 import { Speed } from '../files';
 const convert = inject('convert')
 const options =  [
-  { "label": "米每秒 (m/s)", "value": "m/s" },
-  { "label": "千米每小时 (km/h)", "value": "km/h" },
-  { "label": "英里每小时 (mph)", "value": "mph" },
-  { "label": "节 (knot)", "value": "knot" },
-  { "label": "英尺每秒 (ft/s)", "value": "ft/s" },
-  { "label": "英寸每小时 (in/h)", "value": "in/h" },
-  { "label": "毫米每小时 (mm/h)", "value": "mm/h" }
+  { "label": "Meters per second (m/s)", "value": "m/s" },
+  { "label": "Kilometers per hour (km/h)", "value": "km/h" },
+  { "label": "Miles per hour (mph)", "value": "mph" },
+  { "label": "Knots (knot)", "value": "knot" },
+  { "label": "Feet per second (ft/s)", "value": "ft/s" },
+  { "label": "Inches per hour (in/h)", "value": "in/h" },
+  { "label": "Millimeters per hour (mm/h)", "value": "mm/h" }
 ];
-const seoKey = ['速度单位换算','米每秒转换','m/s to ft/s','一米每秒等于多少英尺每秒','ft/s和m/s换算','米每秒换算英尺每秒','速度转换','速度单位','米每秒和英尺每秒的换算','ft/s换算m/s','英尺每秒换算米每秒','m/s ft/s','米每秒','英尺每秒']
+const seoKey = ['speed unit conversion','meters per second conversion','m/s to ft/s','how many feet per second is one meter per second','ft/s and m/s conversion','meters per second to feet per second conversion','speed conversion','speed units','meters per second and feet per second conversion','ft/s to m/s conversion','feet per second to meters per second conversion','m/s ft/s','meters per second','feet per second']
 const formRef = ref(null);
 const rules = {
   number:{
     required: true,
     type: 'number',
     trigger: "blur",
-    message: '请输入数字'
+    message: 'Please enter a number'
   },
   to:{
     required: true,
     trigger: "change",
-    message: '请选择转换单位'
+    message: 'Please select conversion unit'
   },
   from:{
     required: true,
     trigger: "change",
-    message: '请选择原始单位'
+    message: 'Please select original unit'
   }
 }
 const form = reactive({
@@ -59,7 +59,7 @@ const form = reactive({
   to:'ft/s',
   from:'m/s',
   result:'',
-  title:'速度单位单位换算',
+  title:'Speed Unit Conversion',
 })
 const convertHandler = (e) => {
    e.preventDefault();
@@ -72,17 +72,17 @@ const convertHandler = (e) => {
 </script>
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="数值"  path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数值" />
+  <n-form-item label="Value"  path="number">
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="Please enter the value to convert" />
   </n-form-item>
-  <n-form-item label="从" path="from">
-    <n-select size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
+  <n-form-item label="From" path="from">
+    <n-select size="large" :options="options" v-model:value="form.from" placeholder="Please select original unit" />
   </n-form-item>
-  <n-form-item label="到" path="to">
-    <n-select size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
+  <n-form-item label="To" path="to">
+    <n-select size="large" :options="options" v-model:value="form.to" placeholder="Please select conversion unit" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
+    <n-button type="info" style="width:100%" @click="convertHandler">Convert</n-button>
   </n-form-item>
 </n-form>
 <n-card embedded :bordered="false" hoverable style="margin-top: 16px;">
@@ -104,179 +104,179 @@ const convertHandler = (e) => {
 </n-card>
 
 
-## 一、m/s到ft/s换算公式详解
+## 1. Detailed Explanation of m/s to ft/s Conversion Formula
 
-### 一米每秒等于多少英尺每秒？
+### How many feet per second is one meter per second?
 
-**核心公式：1 m/s ≈ 3.281 ft/s**
+**Core Formula: 1 m/s ≈ 3.281 ft/s**
 
-**推导过程：**
-- 1米 = 3.28084英尺（国际标准）
-- 时间单位相同（秒）
-- 因此：1 m/s = 1米/1秒 × 3.28084英尺/1米 ≈ 3.281 ft/s
+**Derivation Process:**
+- 1 meter = 3.28084 feet (international standard)
+- Time unit is the same (seconds)
+- Therefore: 1 m/s = 1 meter/1 second × 3.28084 feet/1 meter ≈ 3.281 ft/s
 
-### 快速换算技巧
+### Quick Conversion Tips
 
-**m/s转ft/s：** 数值 × 3.281
-- 例：5 m/s = 5 × 3.281 ≈ 16.4 ft/s
+**m/s to ft/s:** Value × 3.281
+- Example: 5 m/s = 5 × 3.281 ≈ 16.4 ft/s
 
-**ft/s转m/s：** 数值 ÷ 3.281
-- 例：10 ft/s = 10 ÷ 3.281 ≈ 3.05 m/s
+**ft/s to m/s:** Value ÷ 3.281
+- Example: 10 ft/s = 10 ÷ 3.281 ≈ 3.05 m/s
 
-### 常用速度对照表
+### Common Speed Reference Table
 
-| m/s | ft/s | 实际应用场景 |
-|-----|------|-------------|
-| 1   | 3.3  | 慢走速度 |
-| 3   | 9.8  | 快走速度 |
-| 5   | 16.4 | 跑步速度 |
-| 10  | 32.8 | 自行车速度 |
-| 20  | 65.6 | 汽车速度 |
+| m/s | ft/s | Practical Application |
+|-----|------|---------------------|
+| 1   | 3.3  | Slow walking speed |
+| 3   | 9.8  | Fast walking speed |
+| 5   | 16.4 | Running speed |
+| 10  | 32.8 | Bicycle speed |
+| 20  | 65.6 | Vehicle speed |
 
-## 二、速度单位换算表（以 1 m/s 为基准）
+## 2. Speed Unit Conversion Table (Based on 1 m/s)
 
-| 单位       | 符号   | 换算值      | 典型应用场景             |
-|------------|--------|-------------|-------------------------|
-| 米每秒     | m/s    | 1           | 物理学、工程计算         |
-| 英尺每秒   | ft/s   | ≈3.281      | 美国工程流体力学         |
-| 千米每小时 | km/h   | 3.6         | 汽车限速、天气预报       |
-| 英里每小时 | mph    | ≈2.237      | 英美国家车速、体育记录   |
-| 节        | knot   | ≈1.944      | 航海、航空               |
-| 英寸每小时 | in/h   | 141,732     | 地质沉降监测             |
-| 毫米每小时 | mm/h   | 3,600,000   | 材料腐蚀速率、极慢速过程 |
+| Unit | Symbol | Conversion Value | Typical Application Scenarios |
+|------|--------|------------------|------------------------------|
+| Meters per second | m/s | 1 | Physics, engineering calculations |
+| Feet per second | ft/s | ≈3.281 | US engineering fluid mechanics |
+| Kilometers per hour | km/h | 3.6 | Vehicle speed limits, weather forecasts |
+| Miles per hour | mph | ≈2.237 | UK/US vehicle speeds, sports records |
+| Knots | knot | ≈1.944 | Maritime, aviation |
+| Inches per hour | in/h | 141,732 | Geological subsidence monitoring |
+| Millimeters per hour | mm/h | 3,600,000 | Material corrosion rates, extremely slow processes |
 
-注：换算公式示例 → ft/s 转 mph: ( ft/s × 0.682 = mph ) ；m/s 转 ft/s: ( m/s × 3.281 = ft/s ) 。
+Note: Conversion formula examples → ft/s to mph: (ft/s × 0.682 = mph); m/s to ft/s: (m/s × 3.281 = ft/s).
 
-## 三、英尺每秒(ft/s)单位科普
+## 3. Feet Per Second (ft/s) Unit Science
 
-### 英尺每秒的历史背景
+### Historical Background of Feet Per Second
 
-**ft/s（Feet Per Second）**是美国工程领域常用的速度单位：
+**ft/s (Feet Per Second)** is a commonly used speed unit in American engineering:
 
-- **英尺定义**：1英尺 = 0.3048米，源于人体尺度
-- **应用范围**：主要用于美国工程和科学计算
-- **标准化**：1959年国际英尺标准确立
-- **精度特点**：适合中等尺度的速度测量
+- **Foot Definition**: 1 foot = 0.3048 meters, derived from human body scale
+- **Application Range**: Mainly used in US engineering and scientific calculations
+- **Standardization**: International foot standard established in 1959
+- **Precision Characteristics**: Suitable for medium-scale speed measurements
 
-### 为什么美国工程使用ft/s？
+### Why does American engineering use ft/s?
 
-美国工程领域偏好ft/s的原因：
+Reasons why the US engineering field prefers ft/s:
 
-- **工程传统**：美国工程教育体系沿用
-- **计算便利**：与英制单位体系匹配
-- **行业标准**：建筑、机械工程规范
-- **测量习惯**：现场测量工具配套
+- **Engineering Tradition**: Continued use in American engineering education system
+- **Calculation Convenience**: Matches with imperial unit system
+- **Industry Standards**: Building and mechanical engineering specifications
+- **Measurement Habits**: Supporting field measurement tools
 
-### ft/s在不同领域的应用
+### Applications of ft/s in Different Fields
 
-**流体力学：**
-- 管道流速计算
-- 泵站设计参数
-- 水利工程流量
-- 通风系统风速
+**Fluid Mechanics:**
+- Pipeline flow velocity calculations
+- Pump station design parameters
+- Hydraulic engineering flow rates
+- Ventilation system wind speeds
 
-**建筑工程：**
-- 电梯运行速度
-- 起重机械速度
-- 施工设备参数
-- 安全标准制定
+**Construction Engineering:**
+- Elevator operating speeds
+- Crane machinery speeds
+- Construction equipment parameters
+- Safety standard development
 
-**机械工程：**
-- 传送带速度
-- 机床进给速度
-- 生产线节拍
-- 设备性能指标
+**Mechanical Engineering:**
+- Conveyor belt speeds
+- Machine tool feed rates
+- Production line cycle times
+- Equipment performance indicators
 
-**体育运动：**
-- 棒球投球速度
-- 田径项目记录
-- 球类运动分析
-- 运动生物力学
+**Sports:**
+- Baseball pitching speeds
+- Track and field records
+- Ball sports analysis
+- Sports biomechanics
 
-### 实际应用场景中的m/s和ft/s换算
+### m/s and ft/s Conversion in Practical Application Scenarios
 
-在国际工程合作和技术交流中，**米每秒和英尺每秒的换算**应用广泛：
+In international engineering cooperation and technical exchanges, **conversion between meters per second and feet per second** is widely applied:
 
-**国际工程项目：**
-- 设备技术规格转换
-- 工程图纸标准统一
-- 施工参数对接
-- 质量控制标准
+**International Engineering Projects:**
+- Equipment technical specification conversion
+- Engineering drawing standard unification
+- Construction parameter coordination
+- Quality control standards
 
-**科学研究：**
-- 实验数据国际发表
-- 研究成果交流
-- 设备性能比较
-- 标准制定参与
+**Scientific Research:**
+- International publication of experimental data
+- Research achievement exchange
+- Equipment performance comparison
+- Standard development participation
 
-**制造业：**
-- 生产设备进出口
-- 技术转让项目
-- 产品性能标注
-- 质量检测标准
+**Manufacturing Industry:**
+- Production equipment import and export
+- Technology transfer projects
+- Product performance labeling
+- Quality inspection standards
 
-**教育培训：**
-- 工程教育国际化
-- 技术培训材料
-- 学术交流活动
-- 专业认证考试
+**Education and Training:**
+- Internationalization of engineering education
+- Technical training materials
+- Academic exchange activities
+- Professional certification exams
 
-## 四、速度单位换算常见问题 FAQ
+## 4. Speed Unit Conversion FAQ
 
-### Q1: 米每秒和英尺每秒怎么换算？
-**A1**: 米每秒转英尺每秒的公式是：ft/s = m/s × 3.281。例如：5 m/s = 5 × 3.281 ≈ 16.4 ft/s。
+### Q1: How to convert meters per second to feet per second?
+**A1**: The formula for converting meters per second to feet per second is: ft/s = m/s × 3.281. For example: 5 m/s = 5 × 3.281 ≈ 16.4 ft/s.
 
-### Q2: 一米每秒等于多少英尺每秒？
-**A2**: 1米每秒约等于3.281英尺每秒。这是因为1米=3.28084英尺，时间单位相同，所以转换系数为3.281。
+### Q2: How many feet per second is one meter per second?
+**A2**: 1 meter per second equals approximately 3.281 feet per second. This is because 1 meter = 3.28084 feet, and the time unit is the same, so the conversion factor is 3.281.
 
-### Q3: ft/s换算m/s的公式是什么？
-**A3**: ft/s转m/s的公式是：m/s = ft/s ÷ 3.281。例如：10 ft/s = 10 ÷ 3.281 ≈ 3.05 m/s。
+### Q3: What is the formula for converting ft/s to m/s?
+**A3**: The formula for converting ft/s to m/s is: m/s = ft/s ÷ 3.281. For example: 10 ft/s = 10 ÷ 3.281 ≈ 3.05 m/s.
 
-### Q4: 为什么美国工程使用ft/s？
-**A4**: 主要原因包括：
-- 工程传统：美国工程教育体系沿用
-- 计算便利：与英制单位体系匹配
-- 行业标准：建筑、机械工程规范
-- 测量习惯：现场测量工具配套
+### Q4: Why does American engineering use ft/s?
+**A4**: Main reasons include:
+- Engineering tradition: Continued use in American engineering education system
+- Calculation convenience: Matches with imperial unit system
+- Industry standards: Building and mechanical engineering specifications
+- Measurement habits: Supporting field measurement tools
 
-### Q5: ft/s在哪些场景下使用？
-**A5**: ft/s主要应用于：
-- 美国工程设计计算
-- 流体力学分析
-- 建筑工程参数
-- 机械设备规格
-- 体育运动分析
-- 科学实验测量
+### Q5: In which scenarios is ft/s used?
+**A5**: ft/s is mainly applied in:
+- US engineering design calculations
+- Fluid mechanics analysis
+- Construction engineering parameters
+- Mechanical equipment specifications
+- Sports analysis
+- Scientific experimental measurements
 
-### Q6: 如何快速进行米每秒换算英尺每秒？
-**A6**: 快速换算技巧：
-- 精确计算：m/s × 3.281 = ft/s
-- 近似计算：m/s × 3.3 ≈ ft/s（误差约0.6%）
-- 心算技巧：先乘以3，再加上8%
+### Q6: How to quickly convert meters per second to feet per second?
+**A6**: Quick conversion tips:
+- Precise calculation: m/s × 3.281 = ft/s
+- Approximate calculation: m/s × 3.3 ≈ ft/s (error about 0.6%)
+- Mental calculation trick: multiply by 3 first, then add 8%
 
-### Q7: m/s和ft/s换算时需要注意什么？
-**A7**: 注意事项包括：
-- 确认使用国际英尺（0.3048米）
-- 保留适当的小数位数
-- 区分英尺和其他长度单位
-- 考虑应用场景的精度要求
-- 注意工程图纸的单位标注
+### Q7: What should be noted when converting between m/s and ft/s?
+**A7**: Important considerations include:
+- Confirm using international foot (0.3048 meters)
+- Retain appropriate decimal places
+- Distinguish feet from other length units
+- Consider precision requirements for application scenarios
+- Pay attention to unit notation on engineering drawings
 
-### Q8: ft/s和其他速度单位的关系？
-**A8**: 常用换算关系：
+### Q8: What is the relationship between ft/s and other speed units?
+**A8**: Common conversion relationships:
 - 1 ft/s ≈ 0.305 m/s
 - 1 ft/s ≈ 1.097 km/h
 - 1 ft/s ≈ 0.682 mph
 - 1 ft/s ≈ 0.593 knot
 
-### Q9: 工程计算中ft/s的精度要求？
-**A9**: 不同应用的精度要求：
-- 概念设计：保留1位小数
-- 详细设计：保留2-3位小数
-- 精密计算：保留4位以上小数
-- 现场测量：根据仪器精度确定
+### Q9: What are the precision requirements for ft/s in engineering calculations?
+**A9**: Precision requirements for different applications:
+- Conceptual design: retain 1 decimal place
+- Detailed design: retain 2-3 decimal places
+- Precision calculations: retain 4 or more decimal places
+- Field measurements: determined by instrument precision
 
-## 五、更多速度单位换算工具
+## 5. More Speed Unit Conversion Tools
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Speed" :key="index">
     <n-button

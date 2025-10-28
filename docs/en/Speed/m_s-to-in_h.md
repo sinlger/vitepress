@@ -4,20 +4,20 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Speed/
-      linkText: 速度单位换算
+      linkText: Speed Unit Conversion
   - - link: /Speed/index
-      linkText: 速度单位单位换算
+      linkText: Speed Unit Conversion
 head:
   - - meta
     - name: description
-      content: 专业的m/s到in/h速度单位换算工具。一米每秒等于多少英寸每小时？提供米每秒转换英寸每小时的精确公式、换算表和实用技巧。支持m/s、in/h、mm/h、ft/s等多种速度单位互转。
+      content: Professional m/s to in/h speed unit conversion tool. How many inches per hour is one meter per second? Provides precise formulas, conversion tables and practical tips for converting meters per second to inches per hour. Supports conversion between m/s, in/h, mm/h, ft/s and other speed units.
   - - meta
     - name: keywords
-      content: 速度单位换算, 米每秒转换, m/s to in/h, 一米每秒等于多少英寸每小时, in/h和m/s换算, 米每秒换算英寸每小时, 速度转换, 速度单位, 米每秒和英寸每小时的换算, in/h换算m/s, 英寸每小时换算米每秒, m/s in/h, 米每秒, 英寸每小时, 微速度测量
+      content: speed unit conversion, meters per second conversion, m/s to in/h, how many inches per hour is one meter per second, in/h and m/s conversion, meters per second to inches per hour conversion, speed conversion, speed units, meters per second and inches per hour conversion, in/h to m/s conversion, inches per hour to meters per second conversion, m/s in/h, meters per second, inches per hour, micro speed measurement
 ---
-# 米每秒转换英寸每小时 | m/s到in/h速度单位换算工具
+# Meters per Second to Inches per Hour | m/s to in/h Speed Unit Conversion Tool
 ---
 <script setup>
 import { onMounted, reactive, inject ,ref  } from 'vue'
@@ -26,32 +26,32 @@ import { defineClientComponent } from 'vitepress'
 import { Speed } from '../files';
 const convert = inject('convert')
 const options =  [
-  { "label": "米每秒 (m/s)", "value": "m/s" },
-  { "label": "千米每小时 (km/h)", "value": "km/h" },
-  { "label": "英里每小时 (mph)", "value": "mph" },
-  { "label": "节 (knot)", "value": "knot" },
-  { "label": "英尺每秒 (ft/s)", "value": "ft/s" },
-  { "label": "英寸每小时 (in/h)", "value": "in/h" },
-  { "label": "毫米每小时 (mm/h)", "value": "mm/h" }
+  { "label": "Meters per second (m/s)", "value": "m/s" },
+  { "label": "Kilometers per hour (km/h)", "value": "km/h" },
+  { "label": "Miles per hour (mph)", "value": "mph" },
+  { "label": "Knots (knot)", "value": "knot" },
+  { "label": "Feet per second (ft/s)", "value": "ft/s" },
+  { "label": "Inches per hour (in/h)", "value": "in/h" },
+  { "label": "Millimeters per hour (mm/h)", "value": "mm/h" }
 ];
-const seoKey = ['速度单位换算','米每秒转换','m/s to in/h','一米每秒等于多少英寸每小时','in/h和m/s换算','米每秒换算英寸每小时','速度转换','速度单位','米每秒和英寸每小时的换算','in/h换算m/s','英寸每小时换算米每秒','m/s in/h','米每秒','英寸每小时','微速度测量']
+const seoKey = ['speed unit conversion','meters per second conversion','m/s to in/h','how many inches per hour is one meter per second','in/h and m/s conversion','meters per second to inches per hour conversion','speed conversion','speed units','meters per second and inches per hour conversion','in/h to m/s conversion','inches per hour to meters per second conversion','m/s in/h','meters per second','inches per hour','micro speed measurement']
 const formRef = ref(null);
 const rules = {
   number:{
     required: true,
     type: 'number',
     trigger: "blur",
-    message: '请输入数字'
+    message: 'Please enter a number'
   },
   to:{
     required: true,
     trigger: "change",
-    message: '请选择转换单位'
+    message: 'Please select conversion unit'
   },
   from:{
     required: true,
     trigger: "change",
-    message: '请选择原始单位'
+    message: 'Please select original unit'
   }
 }
 const form = reactive({
@@ -59,7 +59,7 @@ const form = reactive({
   to:'in/h',
   from:'m/s',
   result:'',
-  title:'速度单位单位换算',
+  title:'Speed Unit Conversion',
 })
 const convertHandler = (e) => {
    e.preventDefault();
@@ -72,17 +72,17 @@ const convertHandler = (e) => {
 </script>
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="数值"  path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数值" />
+  <n-form-item label="Value"  path="number">
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="Please enter the value to convert" />
   </n-form-item>
-  <n-form-item label="从" path="from">
-    <n-select size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
+  <n-form-item label="From" path="from">
+    <n-select size="large" :options="options" v-model:value="form.from" placeholder="Please select original unit" />
   </n-form-item>
-  <n-form-item label="到" path="to">
-    <n-select size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
+  <n-form-item label="To" path="to">
+    <n-select size="large" :options="options" v-model:value="form.to" placeholder="Please select conversion unit" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
+    <n-button type="info" style="width:100%" @click="convertHandler">Convert</n-button>
   </n-form-item>
 </n-form>
 <n-card embedded :bordered="false" hoverable style="margin-top: 16px;">
@@ -104,186 +104,186 @@ const convertHandler = (e) => {
 </n-card>
 
 
-## 一、m/s到in/h换算公式详解
+## 1. Detailed Explanation of m/s to in/h Conversion Formula
 
-### 一米每秒等于多少英寸每小时？
+### How many inches per hour is one meter per second?
 
-**核心公式：1 m/s = 141,732 in/h**
+**Core Formula: 1 m/s = 141,732 in/h**
 
-**推导过程：**
-- 1米 = 39.3701英寸（国际标准）
-- 1秒 = 1/3600小时
-- 因此：1 m/s = (1米/1秒) × (39.3701英寸/1米) × (3600秒/1小时) = 141,732 in/h
+**Derivation Process:**
+- 1 meter = 39.3701 inches (international standard)
+- 1 second = 1/3600 hour
+- Therefore: 1 m/s = (1 meter/1 second) × (39.3701 inches/1 meter) × (3600 seconds/1 hour) = 141,732 in/h
 
-### 快速换算技巧
+### Quick Conversion Tips
 
-**m/s转in/h：** 数值 × 141,732
-- 例：0.001 m/s = 0.001 × 141,732 ≈ 141.7 in/h
+**m/s to in/h:** Value × 141,732
+- Example: 0.001 m/s = 0.001 × 141,732 ≈ 141.7 in/h
 
-**in/h转m/s：** 数值 ÷ 141,732
-- 例：1000 in/h = 1000 ÷ 141,732 ≈ 0.00705 m/s
+**in/h to m/s:** Value ÷ 141,732
+- Example: 1000 in/h = 1000 ÷ 141,732 ≈ 0.00705 m/s
 
-### 常用微速度对照表
+### Common Micro-Speed Reference Table
 
-| m/s | in/h | 实际应用场景 |
-|-----|------|-------------|
-| 0.0001 | 14.2 | 地质沉降监测 |
-| 0.001  | 141.7| 材料蠕变测试 |
-| 0.01   | 1,417| 植物生长速度 |
-| 0.1    | 14,173| 冰川移动速度 |
-| 1      | 141,732| 极慢机械运动 |
+| m/s | in/h | Practical Application Scenarios |
+|-----|------|--------------------------------|
+| 0.0001 | 14.2 | Geological subsidence monitoring |
+| 0.001  | 141.7| Material creep testing |
+| 0.01   | 1,417| Plant growth rate |
+| 0.1    | 14,173| Glacier movement speed |
+| 1      | 141,732| Extremely slow mechanical motion |
 
-## 二、速度单位换算表（以 1 m/s 为基准）
+## 2. Speed Unit Conversion Table (Based on 1 m/s)
 
-| 单位       | 符号   | 换算值      | 典型应用场景             |
-|------------|--------|-------------|-------------------------|
-| 米每秒     | m/s    | 1           | 物理学、工程计算         |
-| 英寸每小时 | in/h   | 141,732     | 地质沉降监测             |
-| 毫米每小时 | mm/h   | 3,600,000   | 材料腐蚀速率、极慢速过程 |
-| 英尺每秒   | ft/s   | ≈3.281      | 美国工程流体力学         |
-| 千米每小时 | km/h   | 3.6         | 汽车限速、天气预报       |
-| 英里每小时 | mph    | ≈2.237      | 英美国家车速、体育记录   |
-| 节        | knot   | ≈1.944      | 航海、航空               |
+| Unit | Symbol | Conversion Value | Typical Application Scenarios |
+|------|--------|------------------|------------------------------|
+| Meters per second | m/s | 1 | Physics, engineering calculations |
+| Inches per hour | in/h | 141,732 | Geological subsidence monitoring |
+| Millimeters per hour | mm/h | 3,600,000 | Material corrosion rates, extremely slow processes |
+| Feet per second | ft/s | ≈3.281 | US engineering fluid mechanics |
+| Kilometers per hour | km/h | 3.6 | Vehicle speed limits, weather forecasts |
+| Miles per hour | mph | ≈2.237 | UK/US vehicle speeds, sports records |
+| Knots | knot | ≈1.944 | Maritime, aviation |
 
-注：换算公式示例 → in/h 转 mm/h: ( in/h × 25.4 = mm/h ) ；m/s 转 in/h: ( m/s × 141,732 = in/h ) 。
+Note: Conversion formula examples → in/h to mm/h: (in/h × 25.4 = mm/h); m/s to in/h: (m/s × 141,732 = in/h).
 
-## 三、英寸每小时(in/h)单位科普
+## 3. Inches Per Hour (in/h) Unit Science
 
-### 英寸每小时的特殊用途
+### Special Applications of Inches Per Hour
 
-**in/h（Inches Per Hour）**是专门用于测量极慢速度的单位：
+**in/h (Inches Per Hour)** is a unit specifically designed for measuring extremely slow speeds:
 
-- **精度特点**：适合微小位移的长期监测
-- **应用范围**：主要用于科学研究和工程监测
-- **测量优势**：直观反映缓慢变化过程
-- **数值特点**：将极小速度转换为可读数值
+- **Precision Characteristics**: Suitable for long-term monitoring of minute displacements
+- **Application Range**: Mainly used in scientific research and engineering monitoring
+- **Measurement Advantages**: Intuitively reflects slow change processes
+- **Numerical Characteristics**: Converts extremely small speeds into readable values
 
-### 为什么需要in/h单位？
+### Why is the in/h unit needed?
 
-使用in/h而非其他单位的原因：
+Reasons for using in/h instead of other units:
 
-- **数值可读性**：避免科学计数法表示
-- **监测便利**：与测量仪器精度匹配
-- **工程习惯**：美国工程领域传统
-- **标准兼容**：与英制测量体系一致
+- **Numerical Readability**: Avoids scientific notation representation
+- **Monitoring Convenience**: Matches measurement instrument precision
+- **Engineering Tradition**: Traditional in American engineering fields
+- **Standard Compatibility**: Consistent with imperial measurement system
 
-### in/h在不同领域的应用
+### Applications of in/h in Different Fields
 
-**地质监测：**
-- 地面沉降监测
-- 滑坡位移观测
-- 地震断层活动
-- 地基变形测量
+**Geological Monitoring:**
+- Ground subsidence monitoring
+- Landslide displacement observation
+- Seismic fault activity
+- Foundation deformation measurement
 
-**材料科学：**
-- 材料蠕变测试
-- 腐蚀速率测量
-- 疲劳试验监测
-- 老化过程研究
+**Materials Science:**
+- Material creep testing
+- Corrosion rate measurement
+- Fatigue test monitoring
+- Aging process research
 
-**建筑工程：**
-- 建筑物沉降监测
-- 桥梁变形观测
-- 大坝位移测量
-- 隧道收敛监测
+**Construction Engineering:**
+- Building settlement monitoring
+- Bridge deformation observation
+- Dam displacement measurement
+- Tunnel convergence monitoring
 
-**环境科学：**
-- 冰川移动速度
-- 海平面变化
-- 土壤侵蚀速率
-- 植物生长监测
+**Environmental Science:**
+- Glacier movement speed
+- Sea level changes
+- Soil erosion rates
+- Plant growth monitoring
 
-### 实际应用场景中的m/s和in/h换算
+### m/s and in/h Conversion in Practical Application Scenarios
 
-在精密测量和长期监测中，**米每秒和英寸每小时的换算**应用广泛：
+In precision measurement and long-term monitoring, **conversion between meters per second and inches per hour** is widely applied:
 
-**科学研究：**
-- 地球物理学研究
-- 材料科学实验
-- 环境变化监测
-- 生物学生长研究
+**Scientific Research:**
+- Geophysical research
+- Materials science experiments
+- Environmental change monitoring
+- Biological growth studies
 
-**工程监测：**
-- 基础设施健康监测
-- 工程安全评估
-- 质量控制检测
-- 长期稳定性分析
+**Engineering Monitoring:**
+- Infrastructure health monitoring
+- Engineering safety assessment
+- Quality control testing
+- Long-term stability analysis
 
-**精密制造：**
-- 精密机械调试
-- 微位移控制系统
-- 精密测量仪器
-- 纳米技术应用
+**Precision Manufacturing:**
+- Precision machinery debugging
+- Micro-displacement control systems
+- Precision measuring instruments
+- Nanotechnology applications
 
-**环境监测：**
-- 气候变化研究
-- 地质灾害预警
-- 生态系统监测
-- 污染扩散分析
+**Environmental Monitoring:**
+- Climate change research
+- Geological disaster early warning
+- Ecosystem monitoring
+- Pollution dispersion analysis
 
-## 四、速度单位换算常见问题 FAQ
+## 4. Speed Unit Conversion FAQ
 
-### Q1: 米每秒和英寸每小时怎么换算？
-**A1**: 米每秒转英寸每小时的公式是：in/h = m/s × 141,732。例如：0.001 m/s = 0.001 × 141,732 ≈ 141.7 in/h。
+### Q1: How to convert meters per second to inches per hour?
+**A1**: The formula for converting meters per second to inches per hour is: in/h = m/s × 141,732. For example: 0.001 m/s = 0.001 × 141,732 ≈ 141.7 in/h.
 
-### Q2: 一米每秒等于多少英寸每小时？
-**A2**: 1米每秒等于141,732英寸每小时。这是因为1米=39.3701英寸，1小时=3600秒，所以转换系数为141,732。
+### Q2: How many inches per hour is one meter per second?
+**A2**: 1 meter per second equals 141,732 inches per hour. This is because 1 meter = 39.3701 inches, 1 hour = 3600 seconds, so the conversion factor is 141,732.
 
-### Q3: in/h换算m/s的公式是什么？
-**A3**: in/h转m/s的公式是：m/s = in/h ÷ 141,732。例如：1000 in/h = 1000 ÷ 141,732 ≈ 0.00705 m/s。
+### Q3: What is the formula for converting in/h to m/s?
+**A3**: The formula for converting in/h to m/s is: m/s = in/h ÷ 141,732. For example: 1000 in/h = 1000 ÷ 141,732 ≈ 0.00705 m/s.
 
-### Q4: 为什么要使用in/h这个单位？
-**A4**: 主要原因包括：
-- 数值可读性：避免科学计数法表示极小数值
-- 监测便利：与测量仪器精度匹配
-- 工程习惯：美国工程领域传统单位
-- 直观性：便于理解缓慢变化过程
+### Q4: Why use the in/h unit?
+**A4**: Main reasons include:
+- Numerical readability: Avoids scientific notation for extremely small values
+- Monitoring convenience: Matches measurement instrument precision
+- Engineering tradition: Traditional unit in American engineering fields
+- Intuitiveness: Easy to understand slow change processes
 
-### Q5: in/h在哪些场景下使用？
-**A5**: in/h主要应用于：
-- 地质沉降监测
-- 材料蠕变测试
-- 建筑物变形观测
-- 环境变化监测
-- 精密制造调试
-- 科学研究实验
+### Q5: In which scenarios is in/h used?
+**A5**: in/h is mainly applied in:
+- Geological subsidence monitoring
+- Material creep testing
+- Building deformation observation
+- Environmental change monitoring
+- Precision manufacturing debugging
+- Scientific research experiments
 
-### Q6: 如何快速进行米每秒换算英寸每小时？
-**A6**: 快速换算技巧：
-- 精确计算：m/s × 141,732 = in/h
-- 近似计算：m/s × 142,000 ≈ in/h（误差约0.2%）
-- 科学计数法：m/s × 1.417 × 10⁵ = in/h
+### Q6: How to quickly convert meters per second to inches per hour?
+**A6**: Quick conversion tips:
+- Precise calculation: m/s × 141,732 = in/h
+- Approximate calculation: m/s × 142,000 ≈ in/h (error about 0.2%)
+- Scientific notation: m/s × 1.417 × 10⁵ = in/h
 
-### Q7: m/s和in/h换算时需要注意什么？
-**A7**: 注意事项包括：
-- 确认使用国际英寸（25.4毫米）
-- 注意数值的量级差异
-- 保留适当的有效数字
-- 考虑测量精度要求
-- 避免计算溢出错误
+### Q7: What should be noted when converting between m/s and in/h?
+**A7**: Important considerations include:
+- Confirm using international inch (25.4 millimeters)
+- Pay attention to order of magnitude differences
+- Retain appropriate significant figures
+- Consider measurement precision requirements
+- Avoid calculation overflow errors
 
-### Q8: in/h和其他微速度单位的关系？
-**A8**: 常用换算关系：
+### Q8: What is the relationship between in/h and other micro-speed units?
+**A8**: Common conversion relationships:
 - 1 in/h ≈ 7.056 × 10⁻⁶ m/s
 - 1 in/h = 25.4 mm/h
 - 1 in/h ≈ 0.0254 m/h
 - 1 in/h ≈ 2.117 × 10⁻⁵ ft/s
 
-### Q9: 测量精度对in/h换算的影响？
-**A9**: 精度考虑因素：
-- 测量仪器精度：通常为±0.1-1 in/h
-- 环境因素影响：温度、湿度变化
-- 时间基准：确保时间测量准确性
-- 数据处理：合理的数据平滑和滤波
+### Q9: How does measurement precision affect in/h conversion?
+**A9**: Precision considerations:
+- Measurement instrument precision: typically ±0.1-1 in/h
+- Environmental factor effects: temperature and humidity changes
+- Time reference: ensure accurate time measurement
+- Data processing: reasonable data smoothing and filtering
 
-### Q10: in/h在国际单位制中的地位？
-**A10**: 单位制考虑：
-- 非SI单位：不属于国际单位制
-- 工程应用：在特定领域有实用价值
-- 转换需求：国际交流需要单位转换
-- 标准化趋势：逐步向SI单位靠拢
+### Q10: What is the status of in/h in the international system of units?
+**A10**: Unit system considerations:
+- Non-SI unit: not part of the international system of units
+- Engineering applications: has practical value in specific fields
+- Conversion needs: international communication requires unit conversion
+- Standardization trend: gradually moving towards SI units
 
-## 五、更多速度单位换算工具
+## 5. More Speed Unit Conversion Tools
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Speed" :key="index">
     <n-button

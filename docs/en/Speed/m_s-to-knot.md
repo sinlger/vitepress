@@ -4,20 +4,20 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Speed/
-      linkText: 速度单位换算
+      linkText: Speed Unit Conversion
   - - link: /Speed/index
-      linkText: 速度单位单位换算
+      linkText: Speed Unit Conversion
 head:
   - - meta
     - name: description
-      content: 专业的m/s到knot速度单位换算工具。一米每秒等于多少节？提供米每秒转换节的精确公式、换算表和实用技巧。支持m/s、knot、km/h、mph等多种速度单位互转。
+      content: Professional m/s to knot speed unit conversion tool. How many knots is one meter per second? Provides precise formulas, conversion tables and practical tips for converting meters per second to knots. Supports mutual conversion between m/s, knot, km/h, mph and other speed units.
   - - meta
     - name: keywords
-      content: 速度单位换算, 米每秒转换, m/s to knot, 一米每秒等于多少节, knot和m/s换算, 米每秒换算节, 速度转换, 速度单位, 米每秒和节的换算, knot换算m/s, 节换算米每秒, m/s knot, 米每秒, 节, 海里每小时
+      content: speed unit conversion, meters per second conversion, m/s to knot, how many knots is one meter per second, knot and m/s conversion, meters per second to knots conversion, speed conversion, speed units, meters per second and knot conversion, knot to m/s conversion, knot to meters per second, m/s knot, meters per second, knot, nautical miles per hour
 ---
-# 米每秒转换节 | m/s到knot速度单位换算工具
+# Meters per Second to Knots | m/s to knot Speed Unit Conversion Tool
 ---
 <script setup>
 import { onMounted, reactive, inject ,ref  } from 'vue'
@@ -26,32 +26,32 @@ import { defineClientComponent } from 'vitepress'
 import { Speed } from '../files';
 const convert = inject('convert')
 const options =  [
-  { "label": "米每秒 (m/s)", "value": "m/s" },
-  { "label": "千米每小时 (km/h)", "value": "km/h" },
-  { "label": "英里每小时 (mph)", "value": "mph" },
-  { "label": "节 (knot)", "value": "knot" },
-  { "label": "英尺每秒 (ft/s)", "value": "ft/s" },
-  { "label": "英寸每小时 (in/h)", "value": "in/h" },
-  { "label": "毫米每小时 (mm/h)", "value": "mm/h" }
+  { "label": "Meters per second (m/s)", "value": "m/s" },
+  { "label": "Kilometers per hour (km/h)", "value": "km/h" },
+  { "label": "Miles per hour (mph)", "value": "mph" },
+  { "label": "Knots (knot)", "value": "knot" },
+  { "label": "Feet per second (ft/s)", "value": "ft/s" },
+  { "label": "Inches per hour (in/h)", "value": "in/h" },
+  { "label": "Millimeters per hour (mm/h)", "value": "mm/h" }
 ];
-const seoKey = ['速度单位换算','米每秒转换','m/s to knot','一米每秒等于多少节','knot和m/s换算','米每秒换算节','速度转换','速度单位','米每秒和节的换算','knot换算m/s','节换算米每秒','m/s knot','米每秒','节','海里每小时']
+const seoKey = ['speed unit conversion','meters per second conversion','m/s to knot','how many knots is one meter per second','knot and m/s conversion','meters per second to knots conversion','speed conversion','speed units','meters per second and knot conversion','knot to m/s conversion','knot to meters per second','m/s knot','meters per second','knot','nautical miles per hour']
 const formRef = ref(null);
 const rules = {
   number:{
     required: true,
     type: 'number',
     trigger: "blur",
-    message: '请输入数字'
+    message: 'Please enter a number'
   },
   to:{
     required: true,
     trigger: "change",
-    message: '请选择转换单位'
+    message: 'Please select conversion unit'
   },
   from:{
     required: true,
     trigger: "change",
-    message: '请选择原始单位'
+    message: 'Please select original unit'
   }
 }
 const form = reactive({
@@ -59,7 +59,7 @@ const form = reactive({
   to:'knot',
   from:'m/s',
   result:'',
-  title:'速度单位单位换算',
+  title:'Speed Unit Conversion',
 })
 const convertHandler = (e) => {
    e.preventDefault();
@@ -72,17 +72,17 @@ const convertHandler = (e) => {
 </script>
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="数值"  path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数值" />
+  <n-form-item label="Value"  path="number">
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="Please enter the value to convert" />
   </n-form-item>
-  <n-form-item label="从" path="from">
-    <n-select size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
+  <n-form-item label="From" path="from">
+    <n-select size="large" :options="options" v-model:value="form.from" placeholder="Please select original unit" />
   </n-form-item>
-  <n-form-item label="到" path="to">
-    <n-select size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
+  <n-form-item label="To" path="to">
+    <n-select size="large" :options="options" v-model:value="form.to" placeholder="Please select conversion unit" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
+    <n-button type="info" style="width:100%" @click="convertHandler">Convert</n-button>
   </n-form-item>
 </n-form>
 <n-card embedded :bordered="false" hoverable style="margin-top: 16px;">
@@ -104,166 +104,166 @@ const convertHandler = (e) => {
 </n-card>
 
 
-## 一、m/s到knot换算公式详解
+## I. Detailed Explanation of m/s to knot Conversion Formula
 
-### 一米每秒等于多少节？
+### How many knots is one meter per second?
 
-**核心公式：1 m/s ≈ 1.944 knot**
+**Core Formula: 1 m/s ≈ 1.944 knot**
 
-**推导过程：**
-- 1海里 = 1852米（国际标准）
-- 1小时 = 3600秒
-- 因此：1 m/s = (1米/1秒) × (1海里/1852米) × (3600秒/1小时) ≈ 1.944 knot
+**Derivation Process:**
+- 1 nautical mile = 1852 meters (international standard)
+- 1 hour = 3600 seconds
+- Therefore: 1 m/s = (1 meter/1 second) × (1 nautical mile/1852 meters) × (3600 seconds/1 hour) ≈ 1.944 knot
 
-### 快速换算技巧
+### Quick Conversion Tips
 
-**m/s转knot：** 数值 × 1.944
-- 例：10 m/s = 10 × 1.944 ≈ 19.4 knot
+**m/s to knot:** Value × 1.944
+- Example: 10 m/s = 10 × 1.944 ≈ 19.4 knot
 
-**knot转m/s：** 数值 ÷ 1.944
-- 例：20 knot = 20 ÷ 1.944 ≈ 10.3 m/s
+**knot to m/s:** Value ÷ 1.944
+- Example: 20 knot = 20 ÷ 1.944 ≈ 10.3 m/s
 
-### 常用速度对照表
+### Common Speed Reference Table
 
-| m/s | knot | 实际应用场景 |
-|-----|------|-------------|
-| 1   | 1.9  | 慢速航行 |
-| 5   | 9.7  | 小型帆船 |
-| 10  | 19.4 | 快艇速度 |
-| 15  | 29.2 | 客轮速度 |
-| 25  | 48.6 | 高速船舶 |
+| m/s | knot | Practical Application Scenarios |
+|-----|------|--------------------------------|
+| 1   | 1.9  | Slow navigation |
+| 5   | 9.7  | Small sailboat |
+| 10  | 19.4 | Speedboat speed |
+| 15  | 29.2 | Passenger ship speed |
+| 25  | 48.6 | High-speed vessel |
 
-## 二、速度单位换算表（以 1 m/s 为基准）
+## II. Speed Unit Conversion Table (Based on 1 m/s)
 
-| 单位       | 符号   | 换算值      | 典型应用场景             |
-|------------|--------|-------------|-------------------------|
-| 米每秒     | m/s    | 1           | 物理学、工程计算         |
-| 节        | knot   | ≈1.944      | 航海、航空               |
-| 千米每小时 | km/h   | 3.6         | 汽车限速、天气预报       |
-| 英里每小时 | mph    | ≈2.237      | 英美国家车速、体育记录   |
-| 英尺每秒   | ft/s   | ≈3.281      | 美国工程流体力学         |
-| 英寸每小时 | in/h   | 141,732     | 地质沉降监测             |
-| 毫米每小时 | mm/h   | 3,600,000   | 材料腐蚀速率、极慢速过程 |
+| Unit | Symbol | Conversion Value | Typical Application Scenarios |
+|------|--------|------------------|-------------------------------|
+| Meters per second | m/s | 1 | Physics, engineering calculations |
+| Knots | knot | ≈1.944 | Navigation, aviation |
+| Kilometers per hour | km/h | 3.6 | Vehicle speed limits, weather forecasts |
+| Miles per hour | mph | ≈2.237 | Vehicle speeds in UK/US, sports records |
+| Feet per second | ft/s | ≈3.281 | US engineering fluid mechanics |
+| Inches per hour | in/h | 141,732 | Geological subsidence monitoring |
+| Millimeters per hour | mm/h | 3,600,000 | Material corrosion rates, extremely slow processes |
 
-注：换算公式示例 → knot 转 km/h: ( knot × 1.852 = km/h ) ；m/s 转 knot: ( m/s × 1.944 = knot ) 。
+Note: Conversion formula examples → knot to km/h: (knot × 1.852 = km/h); m/s to knot: (m/s × 1.944 = knot).
 
-## 三、节(knot)单位科普
+## III. Knot Unit Science
 
-### 节的历史起源
+### Historical Origin of Knots
 
-**knot（节）**是航海领域最古老的速度单位之一：
+**Knot** is one of the oldest speed units in the maritime field:
 
-- **历史起源**：源于16世纪航海测速方法
-- **测量方法**：船员投掷测程仪（log line），计算绳索上的结数
-- **标准化**：1929年国际海道测量组织确立标准
-- **定义**：1节 = 1海里/小时 = 1852米/小时
+- **Historical Origin**: Originated from 16th-century maritime speed measurement methods
+- **Measurement Method**: Sailors threw a log line and counted the knots on the rope
+- **Standardization**: International Hydrographic Organization established the standard in 1929
+- **Definition**: 1 knot = 1 nautical mile/hour = 1852 meters/hour
 
-### 为什么航海使用节？
+### Why Does Navigation Use Knots?
 
-节成为航海标准速度单位的原因：
+Reasons why knots became the standard speed unit for navigation:
 
-- **地球几何**：基于地球经纬度系统
-- **导航便利**：1海里 = 地球表面1分弧长
-- **国际统一**：全球航海通用标准
-- **精度要求**：适合长距离航行计算
+- **Earth Geometry**: Based on the Earth's latitude and longitude system
+- **Navigation Convenience**: 1 nautical mile = 1 minute of arc on Earth's surface
+- **International Uniformity**: Global maritime standard
+- **Precision Requirements**: Suitable for long-distance navigation calculations
 
-### 节在不同领域的应用
+### Applications of Knots in Different Fields
 
-**航海领域：**
-- 船舶航行速度标准单位
-- 海流速度测量
-- 港口限速规定
-- 航海图标注
+**Maritime Field:**
+- Standard unit for ship navigation speed
+- Ocean current speed measurement
+- Port speed limit regulations
+- Nautical chart annotations
 
-**航空领域：**
-- 飞机空速表示
-- 风速测量报告
-- 航空管制通信
-- 飞行计划制定
+**Aviation Field:**
+- Aircraft airspeed indication
+- Wind speed measurement reports
+- Air traffic control communications
+- Flight plan development
 
-**气象预报：**
-- 海上风速预报
-- 台风强度等级
-- 洋流速度监测
-- 海洋气象观测
+**Weather Forecasting:**
+- Maritime wind speed forecasts
+- Typhoon intensity levels
+- Ocean current speed monitoring
+- Marine meteorological observations
 
-### 实际应用场景中的m/s和knot换算
+### m/s and knot Conversion in Practical Application Scenarios
 
-在海洋科学和航海领域中，**米每秒和节的换算**应用广泛：
+In marine science and navigation fields, **meters per second and knot conversion** is widely applied:
 
-**海洋科学：**
-- 洋流速度研究（通常用m/s）
-- 国际论文发表需要单位转换
-- 海洋模型数据处理
-- 海洋工程设计计算
+**Marine Science:**
+- Ocean current velocity research (usually using m/s)
+- Unit conversion needed for international paper publication
+- Marine model data processing
+- Marine engineering design calculations
 
-**航海导航：**
-- GPS速度显示转换
-- 航海仪器校准
-- 船舶性能测试
-- 港口作业速度控制
+**Maritime Navigation:**
+- GPS speed display conversion
+- Navigation instrument calibration
+- Ship performance testing
+- Port operation speed control
 
-**海上作业：**
-- 海上风电场建设
-- 海洋石油平台作业
-- 海底电缆铺设
-- 海洋救援行动
+**Marine Operations:**
+- Offshore wind farm construction
+- Marine oil platform operations
+- Submarine cable laying
+- Marine rescue operations
 
-**渔业生产：**
-- 渔船航行速度
-- 拖网作业速度
-- 渔场流速分析
-- 渔业资源调查
+**Fishery Production:**
+- Fishing vessel navigation speed
+- Trawling operation speed
+- Fishing ground current analysis
+- Fishery resource surveys
 
-## 四、速度单位换算常见问题 FAQ
+## IV. Frequently Asked Questions about Speed Unit Conversion
 
-### Q1: 米每秒和节怎么换算？
-**A1**: 米每秒转节的公式是：knot = m/s × 1.944。例如：10 m/s = 10 × 1.944 ≈ 19.4 knot。
+### Q1: How to convert meters per second to knots?
+**A1**: The formula for converting meters per second to knots is: knot = m/s × 1.944. For example: 10 m/s = 10 × 1.944 ≈ 19.4 knot.
 
-### Q2: 一米每秒等于多少节？
-**A2**: 1米每秒约等于1.944节。这是因为1海里=1852米，1小时=3600秒，所以转换系数为1.944。
+### Q2: How many knots is one meter per second?
+**A2**: 1 meter per second equals approximately 1.944 knots. This is because 1 nautical mile = 1852 meters, 1 hour = 3600 seconds, so the conversion factor is 1.944.
 
-### Q3: knot换算m/s的公式是什么？
-**A3**: knot转m/s的公式是：m/s = knot ÷ 1.944。例如：20 knot = 20 ÷ 1.944 ≈ 10.3 m/s。
+### Q3: What is the formula for converting knots to m/s?
+**A3**: The formula for converting knots to m/s is: m/s = knot ÷ 1.944. For example: 20 knot = 20 ÷ 1.944 ≈ 10.3 m/s.
 
-### Q4: 为什么航海使用节而不是km/h？
-**A4**: 主要原因包括：
-- 地球几何：基于地球经纬度系统
-- 导航便利：1海里等于地球表面1分弧长
-- 国际统一：全球航海通用标准
-- 历史传统：航海领域沿用数百年
+### Q4: Why does navigation use knots instead of km/h?
+**A4**: Main reasons include:
+- Earth geometry: Based on Earth's latitude and longitude system
+- Navigation convenience: 1 nautical mile equals 1 minute of arc on Earth's surface
+- International uniformity: Global maritime standard
+- Historical tradition: Used in maritime field for hundreds of years
 
-### Q5: 节在哪些场景下使用？
-**A5**: 节主要应用于：
-- 船舶航行速度测量
-- 飞机空速表示
-- 海上风速预报
-- 洋流速度监测
-- 航海导航计算
-- 海洋工程作业
+### Q5: In which scenarios are knots used?
+**A5**: Knots are mainly used in:
+- Ship navigation speed measurement
+- Aircraft airspeed indication
+- Maritime wind speed forecasting
+- Ocean current velocity monitoring
+- Maritime navigation calculations
+- Marine engineering operations
 
-### Q6: 如何快速进行米每秒换算节？
-**A6**: 快速换算技巧：
-- 精确计算：m/s × 1.944 = knot
-- 近似计算：m/s × 2 ≈ knot（误差约3%）
-- 心算技巧：先乘以2，再减去6%
+### Q6: How to quickly convert meters per second to knots?
+**A6**: Quick conversion tips:
+- Precise calculation: m/s × 1.944 = knot
+- Approximate calculation: m/s × 2 ≈ knot (error about 3%)
+- Mental math trick: multiply by 2 first, then subtract 6%
 
-### Q7: m/s和knot换算时需要注意什么？
-**A7**: 注意事项包括：
-- 确认使用国际海里（1852米）
-- 区分海里和陆地英里
-- 保留适当的小数位数
-- 考虑应用场景的精度要求
-- 注意风速和水流的方向性
+### Q7: What should be noted when converting m/s and knots?
+**A7**: Considerations include:
+- Confirm using international nautical miles (1852 meters)
+- Distinguish between nautical miles and land miles
+- Retain appropriate decimal places
+- Consider precision requirements of application scenarios
+- Note the directionality of wind speed and water flow
 
-### Q8: 节和其他速度单位的关系？
-**A8**: 常用换算关系：
+### Q8: What is the relationship between knots and other speed units?
+**A8**: Common conversion relationships:
 - 1 knot = 1.852 km/h
 - 1 knot ≈ 1.151 mph
 - 1 knot ≈ 0.514 m/s
 - 1 knot ≈ 1.688 ft/s
 
-## 五、更多速度单位换算工具
+## V. More Speed Unit Conversion Tools
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Speed" :key="index">
     <n-button

@@ -4,20 +4,20 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Speed/
-      linkText: 速度单位换算
+      linkText: Speed Unit Conversion
   - - link: /Speed/index
-      linkText: 速度单位单位换算
+      linkText: Speed Unit Conversion
 head:
   - - meta
     - name: description
-      content: 千米每小时换算毫米每小时工具，km/h和mm/h换算公式详解。一千米每小时等于多少毫米每小时？千米每小时和毫米每小时怎么换算？提供kmh、kph、mm/h等速度单位换算，支持超精密测量速度单位转换。
+      content: Kilometers per hour to millimeters per hour conversion tool, detailed explanation of km/h and mm/h conversion formulas. How many millimeters per hour in one kilometer per hour? How to convert between km/h and mm/h? Provides speed unit conversions for kmh, kph, mm/h, etc., supporting ultra-precision measurement speed unit conversion.
   - - meta
     - name: keywords
-      content: 速度单位换算, 千米每小时换算毫米每小时, km/h和mm/h换算, 一千米每小时等于多少毫米每小时, 千米每小时和毫米每小时怎么换算, 速度换算, kmh, kph, mm/h, 毫米每小时, 速度的单位, 毫米是什么单位, 一毫米等于多少米, 毫米换算米, 速度转换, 公里每小时换算毫米每小时, 毫米每小时换算千米每小时, 一毫米每小时等于多少千米每小时, 毫米每小时和千米每小时的换算, mm/h km/h, 超精密测量, 微速度单位, 极慢速度
+      content: speed unit conversion, kilometers per hour to millimeters per hour, km/h and mm/h conversion, how many millimeters per hour in one kilometer per hour, how to convert between km/h and mm/h, speed conversion, kmh, kph, mm/h, millimeters per hour, speed units, what is a millimeter unit, how many meters in one millimeter, millimeter to meter conversion, speed conversion, kilometers per hour to millimeters per hour, millimeters per hour to kilometers per hour, how many kilometers per hour in one millimeter per hour, conversion between mm/h and km/h, mm/h km/h, ultra-precision measurement, micro-speed units, extremely slow speeds
 ---
-# 千米每小时换算毫米每小时 | km/h和mm/h速度单位换算工具
+# Kilometers per Hour to Millimeters per Hour | km/h and mm/h Speed Unit Conversion Tool
 ---
 <script setup>
 import { onMounted, reactive, inject ,ref  } from 'vue'
@@ -26,32 +26,32 @@ import { defineClientComponent } from 'vitepress'
 import { Speed } from '../files';
 const convert = inject('convert')
 const options =  [
-  { "label": "千米每小时 (km/h)", "value": "km/h" },
-  { "label": "毫米每小时 (mm/h)", "value": "mm/h" },
-  { "label": "英寸每小时 (in/h)", "value": "in/h" },
-  { "label": "米每秒 (m/s)", "value": "m/s" },
-  { "label": "英里每小时 (mph)", "value": "mph" },
-  { "label": "节 (knot)", "value": "knot" },
-  { "label": "英尺每秒 (ft/s)", "value": "ft/s" }
+  { "label": "Kilometers per Hour (km/h)", "value": "km/h" },
+  { "label": "Millimeters per Hour (mm/h)", "value": "mm/h" },
+  { "label": "Inches per Hour (in/h)", "value": "in/h" },
+  { "label": "Meters per Second (m/s)", "value": "m/s" },
+  { "label": "Miles per Hour (mph)", "value": "mph" },
+  { "label": "Knots (knot)", "value": "knot" },
+  { "label": "Feet per Second (ft/s)", "value": "ft/s" }
 ];
-const seoKey = ['速度单位换算','毫米每小时换算','千米每小时换算','mm/h','毫米是什么单位','一毫米等于多少米','毫米换算米','速度的单位','mm/h km/h','毫米每小时','千米每小时和毫米每小时怎么换算','一千米每小时等于多少毫米每小时','km/h和mm/h换算','毫米每小时换算千米每小时','一毫米每小时等于多少千米每小时','速度转换','公里每小时换算毫米每小时','速度单位','超精密测量','毫米每小时和千米每小时的换算','km/h换算mm/h','微速度单位','极慢速度','千米每小时换算毫米每小时']
+const seoKey = ['speed unit conversion','millimeters per hour conversion','kilometers per hour conversion','mm/h','what is a millimeter unit','how many meters in one millimeter','millimeter to meter conversion','speed units','mm/h km/h','millimeters per hour','how to convert between km/h and mm/h','how many millimeters per hour in one kilometer per hour','km/h and mm/h conversion','millimeters per hour to kilometers per hour','how many kilometers per hour in one millimeter per hour','speed conversion','kilometers per hour to millimeters per hour','speed units','ultra-precision measurement','conversion between mm/h and km/h','km/h to mm/h conversion','micro-speed units','extremely slow speeds','kilometers per hour to millimeters per hour']
 const formRef = ref(null);
 const rules = {
   number:{
     required: true,
     type: 'number',
     trigger: "blur",
-    message: '请输入数字'
+    message: 'Please enter a number'
   },
   to:{
     required: true,
     trigger: "select",
-    message: '请选择转换单位'
+    message: 'Please select a conversion unit'
   },
   from:{
     required: true,
     trigger: "select",
-    message: '请选择原始单位'
+    message: 'Please select source unit'
   }
 }
 const form = reactive({
@@ -59,7 +59,7 @@ const form = reactive({
   to:'mm/h',
   from:'km/h',
   result:'',
-  title:'速度单位单位换算',
+  title:'Speed Unit Conversion',
 })
 const convertHandler = (e) => {
    e.preventDefault();
@@ -72,17 +72,17 @@ const convertHandler = (e) => {
 </script>
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="数值"  path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数值" />
+  <n-form-item label="Value"  path="number">
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="Enter the value to convert" />
   </n-form-item>
-  <n-form-item label="从" path="from">
-    <n-select  size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
+  <n-form-item label="From" path="from">
+    <n-select  size="large" :options="options" v-model:value="form.from" placeholder="Select source unit" />
   </n-form-item>
-  <n-form-item label="到" path="to">
-    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
+  <n-form-item label="To" path="to">
+    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="Select target unit" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
+    <n-button type="info" style="width:100%" @click="convertHandler">Convert</n-button>
   </n-form-item>
 </n-form>
 <n-card embedded :bordered="false" hoverable style="margin-top: 16px;">
@@ -104,213 +104,213 @@ const convertHandler = (e) => {
 </n-card>
 
 
-## 一、速度单位换算表（以 1 km/h 为基准）
+## I. Speed Unit Conversion Table (Based on 1 km/h)
 
-| 单位       | 符号   | 换算值      | 典型应用场景             |
-|------------|--------|-------------|-------------------------|
-| 千米每小时 | km/h   | 1           | 汽车限速、天气预报       |
-| 毫米每小时 | mm/h   | 1,000,000   | 材料腐蚀速率、极慢速过程 |
-| 英寸每小时 | in/h   | 39,370.1    | 地质沉降监测、精密测量   |
-| 米每秒     | m/s    | ≈0.277778   | 物理学、工程计算         |
-| 英里每小时 | mph    | ≈0.621371   | 英美国家车速（1 英里=1.609km） |
-| 节        | knot   | ≈0.539957   | 航海、航空（1 节=1 海里/小时=1.852km/h） |
-| 英尺每秒   | ft/s   | ≈0.911344   | 美国工程流体力学         |
+| Unit | Symbol | Conversion Value | Typical Application Scenarios |
+|------|--------|------------------|------------------------------|
+| Kilometers per Hour | km/h | 1 | Car speed limits, weather forecasts |
+| Millimeters per Hour | mm/h | 1,000,000 | Material corrosion rates, extremely slow processes |
+| Inches per Hour | in/h | 39,370.1 | Geological settlement monitoring, precision measurements |
+| Meters per Second | m/s | ≈0.277778 | Physics, engineering calculations |
+| Miles per Hour | mph | ≈0.621371 | Vehicle speeds in English-speaking countries (1 mile=1.609km) |
+| Knots | knot | ≈0.539957 | Maritime, aviation (1 knot=1 nautical mile/hour=1.852km/h) |
+| Feet per Second | ft/s | ≈0.911344 | American engineering fluid mechanics |
 
-注：换算公式示例 → km/h 转 mm/h: ( mm/h = km/h × 1,000,000 ) ；mm/h 转 km/h: ( km/h = mm/h ÷ 1,000,000 ) 。
+Note: Conversion formula examples → km/h to mm/h: (mm/h = km/h × 1,000,000); mm/h to km/h: (km/h = mm/h ÷ 1,000,000).
 
-## 二、km/h和mm/h换算公式详解
+## II. Detailed Explanation of km/h and mm/h Conversion Formulas
 
-### 千米每小时和毫米每小时怎么换算？
+### How to Convert Between Kilometers per Hour and Millimeters per Hour?
 
-**基础换算公式：**
-- **km/h 转 mm/h：** mm/h = km/h × 1,000,000
-- **mm/h 转 km/h：** km/h = mm/h ÷ 1,000,000
+**Basic Conversion Formulas:**
+- **km/h to mm/h:** mm/h = km/h × 1,000,000
+- **mm/h to km/h:** km/h = mm/h ÷ 1,000,000
 
-**公式推导过程：**
-1. 1 千米 = 1000 米 = 1,000,000 毫米
-2. 时间单位相同（小时）
+**Formula Derivation Process:**
+1. 1 kilometer = 1000 meters = 1,000,000 millimeters
+2. Time unit remains the same (hour)
 3. 1 km/h = 1,000,000 mm/h
 
-### 一千米每小时等于多少毫米每小时？
+### How Many Millimeters per Hour in One Kilometer per Hour?
 
-**精确答案：** 1 km/h = 1,000,000 mm/h
+**Precise Answer:** 1 km/h = 1,000,000 mm/h
 
-**常见速度换算示例：**
+**Common Speed Conversion Examples:**
 - 1 km/h = 1,000,000 mm/h
 - 0.1 km/h = 100,000 mm/h
 - 0.01 km/h = 10,000 mm/h
 - 0.001 km/h = 1,000 mm/h
 
-### 快速心算技巧
+### Quick Mental Calculation Tips
 
-**km/h 转 mm/h 心算法：**
-1. **精确计算：** km/h × 1,000,000 = mm/h
-2. **科学记数法：** km/h × 10⁶ = mm/h
-3. **记忆技巧：** 在km/h后面加6个零
+**km/h to mm/h Mental Calculation:**
+1. **Precise calculation:** km/h × 1,000,000 = mm/h
+2. **Scientific notation:** km/h × 10⁶ = mm/h
+3. **Memory trick:** Add 6 zeros after the km/h value
 
-**mm/h 转 km/h 心算法：**
-1. **精确计算：** mm/h ÷ 1,000,000 = km/h
-2. **科学记数法：** mm/h × 10⁻⁶ = km/h
-3. **记忆技巧：** 去掉mm/h后面6个零
+**mm/h to km/h Mental Calculation:**
+1. **Precise calculation:** mm/h ÷ 1,000,000 = km/h
+2. **Scientific notation:** mm/h × 10⁻⁶ = km/h
+3. **Memory trick:** Remove 6 zeros from the mm/h value
 
-## 三、速度单位科普：从日常到专业
+## III. Speed Units Explained: From Daily Use to Professional Applications
 
-### 为什么我们需要多种速度单位？
+### Why Do We Need Multiple Speed Units?
 
-不同领域的历史沿革和实用需求催生了多样单位：
+Different fields' historical developments and practical needs have given rise to diverse units:
 
-- **mm/h（毫米每小时）**：用于超精密测量和极慢速过程，如材料腐蚀、晶体生长、地质变化等。这个单位能够精确描述肉眼完全无法察觉的微小变化。
-- **km/h（千米每小时）**：日常交通和气象的标准单位，便于理解和应用。
+- **mm/h (Millimeters per Hour)**: Used for ultra-precision measurements and extremely slow processes, such as material corrosion, crystal growth, geological changes, etc. This unit can precisely describe microscopic changes that are completely imperceptible to the naked eye.
+- **km/h (Kilometers per Hour)**: Standard unit for daily transportation and meteorology, easy to understand and apply.
 
-### 单位混淆可能引发问题
+### Unit Confusion Can Cause Problems
 
-案例：若将材料腐蚀速度1000 mm/h误算为1000 km/h，会严重高估腐蚀速度（实际仅0.001 km/h），导致错误的材料选择和安全评估。
+Case study: If a material corrosion rate of 1000 mm/h is mistakenly calculated as 1000 km/h, it would severely overestimate the corrosion rate (actually only 0.001 km/h), leading to incorrect material selection and safety assessments.
 
-科学建议：超精密测量领域必须使用合适的单位，确保数值在合理范围内，便于理解和计算。
+Scientific recommendation: Ultra-precision measurement fields must use appropriate units to ensure values are within a reasonable range, facilitating understanding and calculation.
 
-### 毫米的历史与应用
+### History and Application of Millimeters
 
-- **毫米起源**：公制系统的基本单位，1毫米=1/1000米
-- **现代毫米**：1毫米 = 0.1厘米 = 0.001米（精确值）
-- **应用范围**：精密制造、科学研究、医学测量等
+- **Origin of Millimeter**: Basic unit in the metric system, 1 millimeter = 1/1000 meter
+- **Modern Millimeter**: 1 millimeter = 0.1 centimeter = 0.001 meter (exact value)
+- **Application Range**: Precision manufacturing, scientific research, medical measurements, etc.
 
-### 冷知识：极慢速度的世界
+### Fun Facts: The World of Extremely Slow Speeds
 
-- 钟乳石生长：约0.1-1毫米/年 ≈ 0.00001-0.0001 mm/h
-- 珊瑚生长：约10-20毫米/年 ≈ 0.001-0.002 mm/h
-- 树木年轮：约1-5毫米/年 ≈ 0.0001-0.0006 mm/h
-- 金属氧化：约0.01-0.1毫米/年 ≈ 0.000001-0.00001 mm/h
+- Stalactite growth: About 0.1-1 millimeter/year ≈ 0.00001-0.0001 mm/h
+- Coral growth: About 10-20 millimeters/year ≈ 0.001-0.002 mm/h
+- Tree ring growth: About 1-5 millimeters/year ≈ 0.0001-0.0006 mm/h
+- Metal oxidation: About 0.01-0.1 millimeter/year ≈ 0.000001-0.00001 mm/h
 
-## 四、速度单位详解：mm/h、mmh等缩写含义
+## IV. Detailed Speed Units: mm/h, mmh and Other Abbreviations
 
-### 常见速度单位缩写说明
+### Common Speed Unit Abbreviation Explanations
 
-**mm/h 相关说明：**
-- **mm/h：** millimeters per hour的标准缩写，毫米每小时
-- **mmh：** 简化缩写形式
-- **mm/hr：** hour的另一种缩写形式
-- **MMH：** 大写形式，含义相同
+**mm/h Related Explanations:**
+- **mm/h:** Standard abbreviation for millimeters per hour
+- **mmh:** Simplified abbreviation form
+- **mm/hr:** Another abbreviation form for hour
+- **MMH:** Uppercase form, same meaning
 
-**毫米相关概念：**
-- **毫米(millimeter)：** 1毫米 = 0.1厘米 = 0.001米
-- **mm：** millimeter的标准缩写
-- **公制单位：** 国际单位制的基本长度单位
+**Millimeter Related Concepts:**
+- **Millimeter (millimeter):** 1 millimeter = 0.1 centimeter = 0.001 meter
+- **mm:** Standard abbreviation for millimeter
+- **Metric Unit:** Basic length unit in the International System of Units
 
-### 毫米是什么单位？一毫米等于多少米？
+### What is a Millimeter Unit? How Many Meters in One Millimeter?
 
-**毫米(millimeter)详解：**
-- **1毫米 = 0.001米 = 0.1厘米 = 1000微米**
-- **毫米是什么单位：** 公制长度单位，千分之一米
-- **一毫米等于多少米：** 1毫米 = 0.001米
-- **毫米换算米：** 米 = 毫米 × 0.001
+**Millimeter (millimeter) Explained:**
+- **1 millimeter = 0.001 meter = 0.1 centimeter = 1000 micrometers**
+- **What is a millimeter unit:** Metric length unit, one-thousandth of a meter
+- **How many meters in one millimeter:** 1 millimeter = 0.001 meter
+- **Converting millimeters to meters:** meters = millimeters × 0.001
 
-**实际应用：**
-- 精密制造：机械零件公差
-- 医学测量：细胞尺寸、血管直径
-- 材料科学：薄膜厚度、涂层厚度
-- 电子工业：芯片尺寸、电路线宽
+**Practical Applications:**
+- Precision manufacturing: Mechanical part tolerances
+- Medical measurements: Cell sizes, blood vessel diameters
+- Materials science: Film thickness, coating thickness
+- Electronics industry: Chip dimensions, circuit line widths
 
-### 毫米每小时在超精密测量中的应用
+### Applications of Millimeters per Hour in Ultra-Precision Measurement
 
-**使用mm/h的领域：**
-- **材料科学：** 腐蚀速率、蠕变测试
-- **地质研究：** 岩石风化、矿物析出
-- **生物学：** 细胞生长、组织修复
-- **化学工程：** 结晶过程、沉积速率
+**Fields Using mm/h:**
+- **Materials Science:** Corrosion rates, creep tests
+- **Geological Research:** Rock weathering, mineral precipitation
+- **Biology:** Cell growth, tissue repair
+- **Chemical Engineering:** Crystallization processes, deposition rates
 
-## 五、实际应用中的速度换算场景
+## V. Speed Conversion Scenarios in Practical Applications
 
-### 材料科学
-- **金属腐蚀：** 年腐蚀0.1毫米 ≈ 0.00001 mm/h = 0.00000000001 km/h
-- **涂层磨损：** 年磨损1毫米 ≈ 0.0001 mm/h = 0.0000000001 km/h
-- **晶体生长：** 实验室条件10 mm/h = 0.00001 km/h
+### Materials Science
+- **Metal Corrosion:** Annual corrosion of 0.1 millimeter ≈ 0.00001 mm/h = 0.00000000001 km/h
+- **Coating Wear:** Annual wear of 1 millimeter ≈ 0.0001 mm/h = 0.0000000001 km/h
+- **Crystal Growth:** Laboratory conditions 10 mm/h = 0.00001 km/h
 
-### 生物研究
-- **细胞分裂：** 生长速率0.01 mm/h = 0.00000001 km/h
-- **伤口愈合：** 组织修复0.1 mm/h = 0.0000001 km/h
-- **植物根系：** 生长速率1 mm/h = 0.000001 km/h
+### Biological Research
+- **Cell Division:** Growth rate 0.01 mm/h = 0.00000001 km/h
+- **Wound Healing:** Tissue repair 0.1 mm/h = 0.0000001 km/h
+- **Plant Root Systems:** Growth rate 1 mm/h = 0.000001 km/h
 
-### 地质过程
-- **钟乳石：** 年生长0.1毫米 ≈ 0.00001 mm/h
-- **岩石风化：** 年风化0.01毫米 ≈ 0.000001 mm/h
-- **沉积作用：** 年沉积1毫米 ≈ 0.0001 mm/h
+### Geological Processes
+- **Stalactites:** Annual growth of 0.1 millimeter ≈ 0.00001 mm/h
+- **Rock Weathering:** Annual weathering of 0.01 millimeter ≈ 0.000001 mm/h
+- **Sedimentation:** Annual sedimentation of 1 millimeter ≈ 0.0001 mm/h
 
-## 六、常见问题 FAQ
+## VI. Frequently Asked Questions
 
-### Q1: 毫米每小时和千米每小时怎么换算？
-**A1**: 毫米每小时转千米每小时的公式是：km/h = mm/h ÷ 1,000,000。例如：2,000,000 mm/h = 2,000,000 ÷ 1,000,000 = 2 km/h。
+### Q1: How to convert between millimeters per hour and kilometers per hour?
+**A1**: The formula to convert millimeters per hour to kilometers per hour is: km/h = mm/h ÷ 1,000,000. For example: 2,000,000 mm/h = 2,000,000 ÷ 1,000,000 = 2 km/h.
 
-### Q2: 一毫米每小时等于多少千米每小时？
-**A2**: 1毫米每小时等于0.000001千米每小时。这是因为1毫米=0.001米=0.000001千米。
+### Q2: How many kilometers per hour in one millimeter per hour?
+**A2**: 1 millimeter per hour equals 0.000001 kilometers per hour. This is because 1 millimeter = 0.001 meter = 0.000001 kilometer.
 
-### Q3: km/h换算mm/h的公式是什么？
-**A3**: km/h转mm/h的公式是：mm/h = km/h × 1,000,000。例如：1 km/h = 1 × 1,000,000 = 1,000,000 mm/h。
+### Q3: What is the formula for converting km/h to mm/h?
+**A3**: The formula to convert km/h to mm/h is: mm/h = km/h × 1,000,000. For example: 1 km/h = 1 × 1,000,000 = 1,000,000 mm/h.
 
-### Q4: 为什么要使用毫米每小时这么小的单位？
-**A4**: 实用原因：
-- 超精密测量需要合适的数值范围
-- 避免使用过多小数点和科学记数法
-- 便于研究人员和技术人员理解
-- 与现有测量设备和标准兼容
+### Q4: Why use such a small unit as millimeters per hour?
+**A4**: Practical reasons:
+- Ultra-precision measurements require appropriate value ranges
+- Avoids using too many decimal points and scientific notation
+- Easier for researchers and technicians to understand
+- Compatible with existing measuring equipment and standards
 
-### Q5: 如何快速进行毫米每小时换算千米每小时？
-**A5**: 快速换算技巧：
-- 精确计算：mm/h ÷ 1,000,000 = km/h
-- 科学记数法：mm/h × 10⁻⁶ = km/h
-- 记忆技巧：去掉mm/h后面6个零
+### Q5: How to quickly convert millimeters per hour to kilometers per hour?
+**A5**: Quick conversion tips:
+- Precise calculation: mm/h ÷ 1,000,000 = km/h
+- Scientific notation: mm/h × 10⁻⁶ = km/h
+- Memory trick: Remove 6 zeros from the mm/h value
 
-### Q6: 毫米每小时换算时需要注意什么？
-**A6**: 注意事项包括：
-- 数值通常很大，注意科学记数法
-- 确认测量精度和有效数字
-- 避免单位混淆（毫米vs厘米vs米）
-- 考虑测量误差和环境因素
+### Q6: What should be noted when converting millimeters per hour?
+**A6**: Important considerations include:
+- Values are typically large, pay attention to scientific notation
+- Confirm measurement precision and significant figures
+- Avoid unit confusion (millimeters vs centimeters vs meters)
+- Consider measurement errors and environmental factors
 
-### Q7: 一千米每小时等于多少毫米每小时？
-**A7**: 1千米每小时 = 1,000,000毫米每小时。计算方法：1 km/h × 1,000,000 = 1,000,000 mm/h。
+### Q7: How many millimeters per hour in one kilometer per hour?
+**A7**: 1 kilometer per hour = 1,000,000 millimeters per hour. Calculation method: 1 km/h × 1,000,000 = 1,000,000 mm/h.
 
-### Q8: 公里每小时换算毫米每小时怎么算？
-**A8**: 公里每小时换算毫米每小时的方法：
-- **公式：** mm/h = km/h × 1,000,000
-- **示例：** 0.001 km/h = 0.001 × 1,000,000 = 1,000 mm/h
-- **记忆技巧：** km/h后面加6个零
+### Q8: How to convert kilometers per hour to millimeters per hour?
+**A8**: Method for converting kilometers per hour to millimeters per hour:
+- **Formula:** mm/h = km/h × 1,000,000
+- **Example:** 0.001 km/h = 0.001 × 1,000,000 = 1,000 mm/h
+- **Memory trick:** Add 6 zeros after the km/h value
 
-### Q9: 毫米每小时和千米每小时的换算关系是什么？
-**A9**: 毫米每小时和千米每小时的换算关系：
-- **mm/h → km/h：** 除以1,000,000
-- **km/h → mm/h：** 乘以1,000,000
-- **换算系数来源：** 1千米 = 1,000,000毫米
+### Q9: What is the conversion relationship between millimeters per hour and kilometers per hour?
+**A9**: The conversion relationship between millimeters per hour and kilometers per hour:
+- **mm/h → km/h:** Divide by 1,000,000
+- **km/h → mm/h:** Multiply by 1,000,000
+- **Source of conversion factor:** 1 kilometer = 1,000,000 millimeters
 
-### Q10: 毫米是什么单位？一毫米等于多少米？
-**A10**: 毫米的详细信息：
-- **毫米定义：** 公制长度单位，千分之一米
-- **一毫米等于多少米：** 1毫米 = 0.001米
-- **毫米换算米：** 米数 = 毫米数 × 0.001
-- **历史起源：** 公制系统的基本单位
+### Q10: What is a millimeter unit? How many meters in one millimeter?
+**A10**: Detailed information about millimeters:
+- **Millimeter definition:** Metric length unit, one-thousandth of a meter
+- **How many meters in one millimeter:** 1 millimeter = 0.001 meter
+- **Converting millimeters to meters:** Meters = Millimeters × 0.001
+- **Historical origin:** Basic unit in the metric system
 
-### Q11: mm/h和mmh有什么区别？
-**A11**: mm/h和mmh的区别：
-- **mm/h：** 标准科学表示法，millimeters per hour
-- **mmh：** 简化缩写，含义相同
-- **使用场景：** mm/h用于正式文档，mmh用于简化表示
-- **等价关系：** 1 mm/h = 1 mmh = 0.000001 km/h
+### Q11: What is the difference between mm/h and mmh?
+**A11**: Differences between mm/h and mmh:
+- **mm/h:** Standard scientific notation, millimeters per hour
+- **mmh:** Simplified abbreviation, same meaning
+- **Usage scenarios:** mm/h used in formal documents, mmh used for simplified representation
+- **Equivalence:** 1 mm/h = 1 mmh = 0.000001 km/h
 
-### Q12: 为什么要进行毫米和米的换算？
-**A12**: 换算的重要性：
-- **精度要求：** 不同精度需要不同单位
-- **数据处理：** 便于计算和比较
-- **国际标准：** 统一科学研究单位
-- **实用性：** 避免过多小数点
+### Q12: Why convert between millimeters and meters?
+**A12**: Importance of conversion:
+- **Precision requirements:** Different precision needs different units
+- **Data processing:** Facilitates calculation and comparison
+- **International standards:** Unifies scientific research units
+- **Practicality:** Avoids excessive decimal points
 
-### Q13: 毫米每小时在哪些场景下使用？
-**A13**: mm/h的使用场景：
-- **材料科学：** 腐蚀速率、磨损测试
-- **生物研究：** 细胞生长、组织修复
-- **地质学：** 岩石风化、沉积过程
-- **化学工程：** 结晶速率、反应过程
-- **精密制造：** 加工精度、表面处理
+### Q13: In which scenarios is millimeters per hour used?
+**A13**: mm/h usage scenarios:
+- **Materials Science:** Corrosion rates, wear tests
+- **Biological Research:** Cell growth, tissue repair
+- **Geology:** Rock weathering, sedimentation processes
+- **Chemical Engineering:** Crystallization rates, reaction processes
+- **Precision Manufacturing:** Processing precision, surface treatment
 
-## 七、相关连接
+## VII. Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Speed" :key="index">
     <n-button

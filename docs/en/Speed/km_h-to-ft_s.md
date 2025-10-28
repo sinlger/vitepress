@@ -4,20 +4,20 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Speed/
-      linkText: 速度单位换算
+      linkText: Speed Unit Conversion
   - - link: /Speed/index
-      linkText: 速度单位单位换算
+      linkText: Speed Unit Conversion
 head:
   - - meta
     - name: description
-      content: 千米每小时换算英尺每秒工具，km/h和ft/s换算公式详解。一千米每小时等于多少英尺每秒？千米每小时和英尺每秒怎么换算？提供kmh、kph、ft/s等速度单位换算，支持英制美制速度单位转换。
+      content: Kilometers per hour to feet per second conversion tool, detailed explanation of km/h and ft/s conversion formulas. How many feet per second in one kilometer per hour? How to convert between km/h and ft/s? Provides speed unit conversions for kmh, kph, ft/s, etc., supporting both imperial and US customary speed unit conversions.
   - - meta
     - name: keywords
-      content: 速度单位换算, 千米每小时换算英尺每秒, km/h和ft/s换算, 一千米每小时等于多少英尺每秒, 千米每小时和英尺每秒怎么换算, 速度换算, kmh, kph, ft/s, 英尺每秒, 速度的单位, 英尺是什么单位, 一英尺等于多少米, 英尺换算米, 速度转换, 公里每小时换算英尺每秒, 英尺每秒换算千米每小时, 一英尺每秒等于多少千米每小时, 英尺每秒和千米每小时的换算, ft/s km/h, 英制速度单位, 美制速度单位
+      content: speed unit conversion, kilometers per hour to feet per second, km/h and ft/s conversion, how many feet per second in one kilometer per hour, how to convert between kilometers per hour and feet per second, speed conversion, kmh, kph, ft/s, feet per second, speed units, what unit is foot, how many meters in one foot, feet to meters conversion, speed conversion, kilometers per hour to feet per second, feet per second to kilometers per hour, how many kilometers per hour in one foot per second, conversion between feet per second and kilometers per hour, ft/s km/h, imperial speed units, US customary speed units
 ---
-# 千米每小时换算英尺每秒 | km/h和ft/s速度单位换算工具
+# Kilometers per Hour to Feet per Second | km/h and ft/s Speed Unit Conversion Tool
 ---
 <script setup>
 import { onMounted, reactive, inject ,ref  } from 'vue'
@@ -26,32 +26,32 @@ import { defineClientComponent } from 'vitepress'
 import { Speed } from '../files';
 const convert = inject('convert')
 const options =  [
-  { "label": "千米每小时 (km/h)", "value": "km/h" },
-  { "label": "英尺每秒 (ft/s)", "value": "ft/s" },
-  { "label": "米每秒 (m/s)", "value": "m/s" },
-  { "label": "英里每小时 (mph)", "value": "mph" },
-  { "label": "节 (knot)", "value": "knot" },
-  { "label": "英寸每小时 (in/h)", "value": "in/h" },
-  { "label": "毫米每小时 (mm/h)", "value": "mm/h" }
+  { "label": "Kilometers per hour (km/h)", "value": "km/h" },
+  { "label": "Feet per second (ft/s)", "value": "ft/s" },
+  { "label": "Meters per second (m/s)", "value": "m/s" },
+  { "label": "Miles per hour (mph)", "value": "mph" },
+  { "label": "Knots (knot)", "value": "knot" },
+  { "label": "Inches per hour (in/h)", "value": "in/h" },
+  { "label": "Millimeters per hour (mm/h)", "value": "mm/h" }
 ];
-const seoKey = ['速度单位换算','英尺每秒换算','千米每小时换算','ft/s','英尺是什么单位','一英尺等于多少米','英尺换算米','速度的单位','ft/s km/h','英尺每秒','千米每小时和英尺每秒怎么换算','一千米每小时等于多少英尺每秒','km/h和ft/s换算','英尺每秒换算千米每小时','一英尺每秒等于多少千米每小时','速度转换','公里每小时换算英尺每秒','速度单位','英制速度单位','英尺每秒和千米每小时的换算','km/h换算ft/s','美制速度单位','千米每小时换算英尺每秒']
+const seoKey = ['speed unit conversion','feet per second conversion','kilometers per hour conversion','ft/s','what unit is foot','how many meters in one foot','feet to meters conversion','speed units','ft/s km/h','feet per second','how to convert between kilometers per hour and feet per second','how many feet per second in one kilometer per hour','km/h and ft/s conversion','feet per second to kilometers per hour','how many kilometers per hour in one foot per second','speed conversion','kilometers per hour to feet per second','speed units','imperial speed units','conversion between feet per second and kilometers per hour','km/h to ft/s conversion','US customary speed units','kilometers per hour to feet per second']
 const formRef = ref(null);
 const rules = {
   number:{
     required: true,
     type: 'number',
     trigger: "blur",
-    message: '请输入数字'
+    message: 'Please enter a number'
   },
   to:{
     required: true,
     trigger: "select",
-    message: '请选择转换单位'
+    message: 'Please select a conversion unit'
   },
   from:{
     required: true,
     trigger: "select",
-    message: '请选择原始单位'
+    message: 'Please select a conversion unit'
   }
 }
 const form = reactive({
@@ -59,7 +59,7 @@ const form = reactive({
   to:'ft/s',
   from:'km/h',
   result:'',
-  title:'速度单位单位换算',
+  title:'Speed Unit Conversion',
 })
 const convertHandler = (e) => {
    e.preventDefault();
@@ -72,17 +72,17 @@ const convertHandler = (e) => {
 </script>
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="数值"  path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数值" />
+  <n-form-item label="Value"  path="number">
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="Enter the value to convert" />
   </n-form-item>
-  <n-form-item label="从" path="from">
-    <n-select  size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
+  <n-form-item label="From" path="from">
+    <n-select  size="large" :options="options" v-model:value="form.from" placeholder="Select source unit" />
   </n-form-item>
-  <n-form-item label="到" path="to">
-    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
+  <n-form-item label="To" path="to">
+    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="Select target unit" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
+    <n-button type="info" style="width:100%" @click="convertHandler">Convert</n-button>
   </n-form-item>
 </n-form>
 <n-card embedded :bordered="false" hoverable style="margin-top: 16px;">
@@ -104,100 +104,100 @@ const convertHandler = (e) => {
 </n-card>
 
 
-## 一、速度单位换算表（以 1 km/h 为基准）
+## I. Speed Unit Conversion Table (Based on 1 km/h)
 
-| 单位       | 符号   | 换算值      | 典型应用场景             |
-|------------|--------|-------------|-------------------------|
-| 千米每小时 | km/h   | 1           | 汽车限速、天气预报       |
-| 英尺每秒   | ft/s   | ≈0.911344   | 美国工程流体力学         |
-| 米每秒     | m/s    | ≈0.277778   | 物理学、工程计算         |
-| 英里每小时 | mph    | ≈0.621371   | 英美国家车速（1 英里=1.609km） |
-| 节        | knot   | ≈0.539957   | 航海、航空（1 节=1 海里/小时=1.852km/h） |
-| 英寸每小时 | in/h   | 39,370.1    | 地质沉降监测             |
-| 毫米每小时 | mm/h   | 1,000,000   | 材料腐蚀速率、极慢速过程 |
+| Unit | Symbol | Conversion Value | Typical Applications |
+|------|--------|------------------|----------------------|
+| Kilometers per hour | km/h | 1 | Car speed limits, weather forecasts |
+| Feet per second | ft/s | ≈0.911344 | US engineering fluid dynamics |
+| Meters per second | m/s | ≈0.277778 | Physics, engineering calculations |
+| Miles per hour | mph | ≈0.621371 | Speed in UK/US countries (1 mile=1.609km) |
+| Knot | knot | ≈0.539957 | Maritime, aviation (1 knot=1 nautical mile/hour=1.852km/h) |
+| Inches per hour | in/h | 39,370.1 | Geological settlement monitoring |
+| Millimeters per hour | mm/h | 1,000,000 | Material corrosion rates, extremely slow processes |
 
-注：换算公式示例 → km/h 转 ft/s: ( ft/s = km/h × 0.911344 ) ；ft/s 转 km/h: ( km/h = ft/s × 1.09728 ) 。
+Note: Conversion formula examples → km/h to ft/s: (ft/s = km/h × 0.911344); ft/s to km/h: (km/h = ft/s × 1.09728).
 
-## 二、km/h和ft/s换算公式详解
+## II. Detailed Explanation of km/h and ft/s Conversion Formulas
 
-### 千米每小时和英尺每秒怎么换算？
+### How to Convert Between Kilometers per Hour and Feet per Second?
 
-**基础换算公式：**
-- **km/h 转 ft/s：** ft/s = km/h × 0.911344
-- **ft/s 转 km/h：** km/h = ft/s × 1.09728
+**Basic Conversion Formulas:**
+- **km/h to ft/s:** ft/s = km/h × 0.911344
+- **ft/s to km/h:** km/h = ft/s × 1.09728
 
-**公式推导过程：**
-1. 1 千米 = 3280.84 英尺（1 km = 1000 m，1 m = 3.28084 ft）
-2. 1 小时 = 3600 秒
+**Formula Derivation Process:**
+1. 1 kilometer = 3280.84 feet (1 km = 1000 m, 1 m = 3.28084 ft)
+2. 1 hour = 3600 seconds
 3. 1 km/h = 3280.84 ft ÷ 3600 s ≈ 0.911344 ft/s
 
-### 一千米每小时等于多少英尺每秒？
+### How Many Feet per Second in One Kilometer per Hour?
 
-**精确答案：** 1 km/h = 0.911344 ft/s
+**Precise Answer:** 1 km/h = 0.911344 ft/s
 
-**常见速度换算示例：**
-- 36 km/h ≈ 32.8 ft/s（约10 m/s）
-- 72 km/h ≈ 65.6 ft/s（约20 m/s）
-- 108 km/h ≈ 98.4 ft/s（约30 m/s）
-- 144 km/h ≈ 131.2 ft/s（约40 m/s）
+**Common Speed Conversion Examples:**
+- 36 km/h ≈ 32.8 ft/s (about 10 m/s)
+- 72 km/h ≈ 65.6 ft/s (about 20 m/s)
+- 108 km/h ≈ 98.4 ft/s (about 30 m/s)
+- 144 km/h ≈ 131.2 ft/s (about 40 m/s)
 
-### 快速心算技巧
+### Quick Mental Calculation Tips
 
-**km/h 转 ft/s 心算法：**
-1. **近似计算：** km/h × 0.9 ≈ ft/s（误差约1%）
-2. **简单技巧：** km/h ÷ 1.1 ≈ ft/s
-3. **记忆点：** 36 km/h ≈ 33 ft/s
+**km/h to ft/s Mental Calculation:**
+1. **Approximate Calculation:** km/h × 0.9 ≈ ft/s (error about 1%)
+2. **Simple Trick:** km/h ÷ 1.1 ≈ ft/s
+3. **Memory Point:** 36 km/h ≈ 33 ft/s
 
-**ft/s 转 km/h 心算法：**
-1. **近似计算：** ft/s × 1.1 ≈ km/h（误差约1%）
-2. **精确计算：** ft/s × 1.09728 = km/h
+**ft/s to km/h Mental Calculation:**
+1. **Approximate Calculation:** ft/s × 1.1 ≈ km/h (error about 1%)
+2. **Precise Calculation:** ft/s × 1.09728 = km/h
 
-## 三、速度单位科普：从日常到专业
+## III. Speed Units Explained: From Daily Use to Professional Applications
 
-### 为什么我们需要多种速度单位？
+### Why Do We Need Multiple Speed Units?
 
-不同领域的历史沿革和实用需求催生了多样单位：
+Different historical developments and practical needs across various fields have led to diverse units:
 
-- **ft/s（英尺每秒）**：美国工程领域常用，特别是流体力学、建筑工程和机械设计。便于与英制长度单位配合使用。
-- **km/h（千米每小时）**：国际通用单位，便于日常理解和陆地交通应用。
+- **ft/s (feet per second)**: Commonly used in US engineering, especially in fluid dynamics, construction engineering, and mechanical design. Convenient for use with imperial length units.
+- **km/h (kilometers per hour)**: Internationally used unit, easy to understand for daily use and land transportation applications.
 
-### 单位混淆可能引发问题
+### Unit Confusion Can Cause Problems
 
-案例：若将流体速度10 ft/s误算为10 km/h（实际≈10.97 km/h），在工程计算中会导致流量计算错误。
+Case study: If a fluid velocity of 10 ft/s is mistakenly calculated as 10 km/h (actually ≈10.97 km/h), it will lead to flow calculation errors in engineering.
 
-科学建议：美国工程项目必须熟悉英制单位换算，避免设计参数错误。
+Scientific recommendation: US engineering projects must be familiar with imperial unit conversions to avoid design parameter errors.
 
-### 英尺的历史与应用
+### History and Applications of the Foot
 
-- **英尺起源**：古代以人脚长度为标准，现代标准化为12英寸
-- **现代英尺**：1英尺 = 0.3048米 = 30.48厘米（精确值）
-- **应用范围**：美国建筑、工程、航空等领域广泛使用
+- **Origin of the Foot**: Based on the length of a human foot in ancient times, standardized to 12 inches in modern times
+- **Modern Foot**: 1 foot = 0.3048 meters = 30.48 centimeters (exact value)
+- **Application Range**: Widely used in US construction, engineering, aviation, and other fields
 
-### 冷知识：速度的极限与日常
+### Fun Facts: Speed Limits and Daily Life
 
-- 自由落体终端速度：约120 mph ≈ 176 ft/s
-- 棒球投球速度：最快约100 mph ≈ 147 ft/s
-- 水流速度：急流可达20-30 ft/s
+- Terminal velocity in free fall: about 120 mph ≈ 176 ft/s
+- Baseball pitch speed: fastest about 100 mph ≈ 147 ft/s
+- Water flow speed: rapids can reach 20-30 ft/s
 
-## 四、速度单位详解：ft/s、fps等缩写含义
+## IV. Detailed Speed Units: Meanings of ft/s, fps, and Other Abbreviations
 
-### 常见速度单位缩写说明
+### Common Speed Unit Abbreviation Explanations
 
-**ft/s 相关说明：**
-- **ft/s：** feet per second的标准缩写，英尺每秒
-- **fps：** 常用简化缩写
-- **ft/sec：** 完整形式缩写
-- **FPS：** 大写形式，含义相同
+**ft/s Related Explanations:**
+- **ft/s:** Standard abbreviation for feet per second
+- **fps:** Common simplified abbreviation
+- **ft/sec:** Complete form abbreviation
+- **FPS:** Uppercase form, same meaning
 
-**英尺相关概念：**
-- **英尺(foot)：** 1英尺 = 12英寸 = 0.3048米
-- **ft：** foot的标准缩写
-- **'：** 英尺的符号表示
+**Foot-Related Concepts:**
+- **Foot:** 1 foot = 12 inches = 0.3048 meters
+- **ft:** Standard abbreviation for foot
+- **':** Symbol representation for feet
 
-### 英尺是什么单位？一英尺等于多少米？
+### What Unit is Foot? How Many Meters in One Foot?
 
-**英尺(foot)详解：**
-- **1英尺 = 0.3048米 = 30.48厘米 = 12英寸**
+**Foot Detailed Explanation:**
+- **1 foot = 0.3048 meters = 30.48 centimeters = 12 inches**
 - **英尺是什么单位：** 英制长度单位，主要用于美国
 - **一英尺等于多少米：** 1英尺 = 0.3048米
 - **英尺换算米：** 米 = 英尺 × 0.3048

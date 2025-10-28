@@ -4,20 +4,20 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Speed/
-      linkText: 速度单位换算
+      linkText: Speed Unit Conversion
   - - link: /Speed/index
-      linkText: 速度单位单位换算
+      linkText: Speed Unit Conversion
 head:
   - - meta
     - name: description
-      content: 毫米每小时换算节工具，mm/h和knot换算公式详解。一毫米每小时等于多少节？毫米每小时和节怎么换算？提供mm/h、knot等速度单位换算，支持极慢速度单位转换。
+      content: Millimeters per hour to knots conversion tool, detailed explanation of mm/h and knot conversion formulas. How many knots in one millimeter per hour? How to convert between mm/h and knots? Provides conversion between speed units like mm/h, knot, supporting extremely slow speed unit conversions.
   - - meta
     - name: keywords
-      content: 速度单位换算, 毫米每小时换算节, mm/h和knot换算, 一毫米每小时等于多少节, 毫米每小时和节怎么换算, 速度换算, mm/h, knot, 节, 速度的单位, 毫米是什么单位, 一毫米等于多少海里, 毫米换算海里, 速度转换, 毫米每小时换算节, 节换算毫米每小时, 一节等于多少毫米每小时, 节和毫米每小时的换算, mm/h knot, 极慢速度单位, 航海速度单位
+      content: speed unit conversion, millimeters per hour to knots, mm/h and knot conversion, how many knots in one millimeter per hour, how to convert between mm/h and knots, speed conversion, mm/h, knot, speed units, what unit is millimeter, how many nautical miles in one millimeter, millimeter to nautical mile conversion, speed conversion, millimeters per hour to knots, knots to millimeters per hour, how many millimeters per hour in one knot, conversion between knots and millimeters per hour, mm/h knot, extremely slow speed units, maritime speed units
 ---
-# 毫米每小时换算节 | mm/h和knot速度单位换算工具
+# Millimeters per Hour to Knots | mm/h and Knot Speed Unit Conversion Tool
 ---
 <script setup>
 import { onMounted, reactive, inject ,ref  } from 'vue'
@@ -26,32 +26,32 @@ import { defineClientComponent } from 'vitepress'
 import { Speed } from '../files';
 const convert = inject('convert')
 const options =  [
-  { "label": "毫米每小时 (mm/h)", "value": "mm/h" },
-  { "label": "节 (knot)", "value": "knot" },
-  { "label": "千米每小时 (km/h)", "value": "km/h" },
-  { "label": "英里每小时 (mph)", "value": "mph" },
-  { "label": "米每秒 (m/s)", "value": "m/s" },
-  { "label": "英尺每秒 (ft/s)", "value": "ft/s" },
-  { "label": "英寸每小时 (in/h)", "value": "in/h" }
+  { "label": "Millimeters per Hour (mm/h)", "value": "mm/h" },
+  { "label": "Knot (knot)", "value": "knot" },
+  { "label": "Kilometers per Hour (km/h)", "value": "km/h" },
+  { "label": "Miles per Hour (mph)", "value": "mph" },
+  { "label": "Meters per Second (m/s)", "value": "m/s" },
+  { "label": "Feet per Second (ft/s)", "value": "ft/s" },
+  { "label": "Inches per Hour (in/h)", "value": "in/h" }
 ];
-const seoKey = ['速度单位换算','毫米每小时换算','节换算','mm/h','毫米是什么单位','一毫米等于多少海里','毫米换算海里','速度的单位','mm/h knot','节','毫米每小时和节怎么换算','一毫米每小时等于多少节','mm/h和knot换算','节换算毫米每小时','一节等于多少毫米每小时','速度转换','毫米每小时换算节','速度单位','极慢速度单位','节和毫米每小时的换算','mm/h换算knot','航海速度单位','毫米每小时换算节']
+const seoKey = ['Speed unit conversion','Millimeters per hour conversion','Knot conversion','mm/h','What unit is millimeter','How many nautical miles in one millimeter','Millimeter to nautical mile conversion','Speed units','mm/h knot','Knot','How to convert between mm/h and knots','How many knots in one millimeter per hour','mm/h and knot conversion','Knots to millimeters per hour','How many millimeters per hour in one knot','Speed conversion','Millimeters per hour to knots','Speed units','Extremely slow speed units','Conversion between knots and millimeters per hour','mm/h to knot conversion','Maritime speed units','Millimeters per hour to knots']
 const formRef = ref(null);
 const rules = {
   number:{
     required: true,
     type: 'number',
     trigger: "blur",
-    message: '请输入数字'
+    message: 'Please enter a number'
   },
   to:{
     required: true,
     trigger: "select",
-    message: '请选择转换单位'
+    message: 'Please select target unit'
   },
   from:{
     required: true,
     trigger: "select",
-    message: '请选择原始单位'
+    message: 'Please select source unit'
   }
 }
 const form = reactive({
@@ -59,7 +59,7 @@ const form = reactive({
   to:'knot',
   from:'mm/h',
   result:'',
-  title:'速度单位单位换算',
+  title:'Speed Unit Conversion',
 })
 const convertHandler = (e) => {
    e.preventDefault();
@@ -72,17 +72,17 @@ const convertHandler = (e) => {
 </script>
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="数值"  path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数值" />
+  <n-form-item label="Value"  path="number">
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="Enter the value to convert" />
   </n-form-item>
-  <n-form-item label="从" path="from">
-    <n-select  size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
+  <n-form-item label="From" path="from">
+    <n-select  size="large" :options="options" v-model:value="form.from" placeholder="Select source unit" />
   </n-form-item>
-  <n-form-item label="到" path="to">
-    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
+  <n-form-item label="To" path="to">
+    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="Select target unit" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
+    <n-button type="info" style="width:100%" @click="convertHandler">Convert</n-button>
   </n-form-item>
 </n-form>
 <n-card embedded :bordered="false" hoverable style="margin-top: 16px;">
@@ -104,214 +104,214 @@ const convertHandler = (e) => {
 </n-card>
 
 
-## 一、速度单位换算表（以 1 mm/h 为基准）
+## I. Speed Unit Conversion Table (Based on 1 mm/h)
 
-| 单位       | 符号   | 换算值      | 典型应用场景             |
-|------------|--------|-------------|-------------------------|
-| 毫米每小时 | mm/h   | 1           | 材料腐蚀速率、地质沉降   |
-| 节        | knot   | 5.400×10⁻⁷  | 航海、航空               |
-| 千米每小时 | km/h   | 1×10⁻⁶      | 汽车限速、天气预报       |
-| 英里每小时 | mph    | 6.214×10⁻⁷  | 英美国家车速             |
-| 米每秒     | m/s    | 2.778×10⁻⁷  | 物理学、工程计算         |
-| 英尺每秒   | ft/s   | 9.114×10⁻⁷  | 美国工程流体力学         |
-| 英寸每小时 | in/h   | 0.0393701   | 地质沉降监测             |
+| Unit                   | Symbol | Conversion Value | Typical Application Scenarios |
+|------------------------|--------|------------------|-------------------------------|
+| Millimeters per Hour   | mm/h   | 1                | Material corrosion rate, geological subsidence |
+| Knot                   | knot   | 5.400×10⁻⁷       | Maritime, aviation            |
+| Kilometers per Hour    | km/h   | 1×10⁻⁶           | Car speed limits, weather forecasts |
+| Miles per Hour         | mph    | 6.214×10⁻⁷       | UK/US vehicle speeds          |
+| Meters per Second      | m/s    | 2.778×10⁻⁷       | Physics, engineering calculations |
+| Feet per Second        | ft/s   | 9.114×10⁻⁷       | US engineering fluid mechanics |
+| Inches per Hour        | in/h   | 0.0393701        | Geological subsidence monitoring |
 
-注：换算公式示例 → mm/h 转 knot: ( knot = mm/h × 5.400×10⁻⁷ ) ；knot 转 mm/h: ( mm/h = knot × 1,852,000 ) 。
+Note: Conversion formula examples → mm/h to knot: (knot = mm/h × 5.400×10⁻⁷); knot to mm/h: (mm/h = knot × 1,852,000).
 
-## 二、mm/h和knot换算公式详解
+## II. Detailed Explanation of mm/h and knot Conversion Formulas
 
-### 毫米每小时和节怎么换算？
+### How to Convert Between Millimeters per Hour and Knots?
 
-**基础换算公式：**
-- **mm/h 转 knot：** knot = mm/h × 5.400×10⁻⁷
-- **knot 转 mm/h：** mm/h = knot × 1,852,000
+**Basic Conversion Formulas:**
+- **mm/h to knot:** knot = mm/h × 5.400×10⁻⁷
+- **knot to mm/h:** mm/h = knot × 1,852,000
 
-**公式推导过程：**
-1. 1 海里 = 1.852 千米 = 1,852,000 毫米
-2. 1 小时 = 1 小时（时间单位相同）
-3. 1 mm/h = 1 mm ÷ 1,852,000 mm/海里 = 5.400×10⁻⁷ knot
+**Formula Derivation Process:**
+1. 1 nautical mile = 1.852 kilometers = 1,852,000 millimeters
+2. 1 hour = 1 hour (time unit remains the same)
+3. 1 mm/h = 1 mm ÷ 1,852,000 mm/nautical mile = 5.400×10⁻⁷ knot
 
-### 一毫米每小时等于多少节？
+### How Many Knots in One Millimeter per Hour?
 
-**精确答案：** 1 mm/h = 5.400×10⁻⁷ knot
+**Precise Answer:** 1 mm/h = 5.400×10⁻⁷ knot
 
-**常见速度换算示例：**
-- 1 mm/h = 5.400×10⁻⁷ knot（极慢速度）
+**Common Speed Conversion Examples:**
+- 1 mm/h = 5.400×10⁻⁷ knot (extremely slow speed)
 - 10 mm/h = 5.400×10⁻⁶ knot
 - 100 mm/h = 5.400×10⁻⁵ knot
 - 1000 mm/h = 5.400×10⁻⁴ knot
 
-### 快速心算技巧
+### Quick Mental Calculation Tips
 
-**mm/h 转 knot 心算法：**
-1. **科学计数法：** mm/h ÷ 1,852,000 = knot
-2. **简化记忆：** mm/h × 5.4×10⁻⁷ ≈ knot
-3. **实用技巧：** 毫米数除以185万
+**mm/h to knot Mental Calculation:**
+1. **Scientific Notation:** mm/h ÷ 1,852,000 = knot
+2. **Simplified Memory:** mm/h × 5.4×10⁻⁷ ≈ knot
+3. **Practical Tip:** Divide millimeter value by 1.85 million
 
-**knot 转 mm/h 心算法：**
-1. **直接计算：** knot × 1,852,000 = mm/h
-2. **科学计数法：** knot × 1.85×10⁶ = mm/h
+**knot to mm/h Mental Calculation:**
+1. **Direct Calculation:** knot × 1,852,000 = mm/h
+2. **Scientific Notation:** knot × 1.85×10⁶ = mm/h
 
-## 三、速度单位科普：从极慢到航海
+## III. Speed Unit Education: From Extremely Slow to Maritime
 
-### 为什么我们需要毫米每小时这种单位？
+### Why Do We Need Units Like Millimeters per Hour?
 
-不同领域的精密测量需求催生了极小速度单位：
+Different fields' precision measurement needs have led to extremely small speed units:
 
-- **mm/h（毫米每小时）**：用于测量极慢速度过程，如材料腐蚀、地质变化、植物生长等。
-- **knot（节）**：航海和航空专用单位，基于海里，便于导航计算。
+- **mm/h (millimeters per hour)**: Used to measure extremely slow processes such as material corrosion, geological changes, plant growth, etc.
+- **knot**: Maritime and aviation specific unit, based on nautical miles, convenient for navigation calculations.
 
-### 单位混淆可能引发问题
+### Unit Confusion Can Cause Problems
 
-案例：若将腐蚀速度1 mm/h误算为1 knot，实际速度相差185万倍，会导致材料寿命预测严重错误。
+Case study: If a corrosion rate of 1 mm/h is miscalculated as 1 knot, the actual speed differs by 1.85 million times, leading to serious errors in material lifespan predictions.
 
-科学建议：精密测量必须准确使用单位，避免数量级错误。
+Scientific recommendation: Precision measurements must use units accurately to avoid order-of-magnitude errors.
 
-### 毫米与海里的关系
+### Relationship Between Millimeters and Nautical Miles
 
-- **毫米起源**：公制单位系统的一部分，1毫米 = 1/1000米
-- **海里起源**：航海单位，1海里 = 1.852千米（地球子午线1分）
-- **换算关系**：1海里 = 1,852,000毫米
-- **应用范围**：毫米用于精密测量，海里用于航海导航
+- **Millimeter Origin**: Part of the metric system, 1 millimeter = 1/1000 meter
+- **Nautical Mile Origin**: Maritime unit, 1 nautical mile = 1.852 kilometers (1 minute of Earth's meridian)
+- **Conversion Relationship**: 1 nautical mile = 1,852,000 millimeters
+- **Application Range**: Millimeters used for precision measurement, nautical miles used for maritime navigation
 
-### 冷知识：速度的巨大差异
+### Fun Facts: Huge Speed Differences
 
-- 人类头发生长速度：约4 mm/h = 2.16×10⁻⁶ knot
-- 蜗牛爬行速度：约1000 mm/h = 5.4×10⁻⁴ knot
-- 帆船速度：约10 knot = 18,520,000 mm/h
-- 货轮速度：约20 knot = 37,040,000 mm/h
+- Human hair growth rate: about 4 mm/h = 2.16×10⁻⁶ knot
+- Snail crawling speed: about 1000 mm/h = 5.4×10⁻⁴ knot
+- Sailing boat speed: about 10 knot = 18,520,000 mm/h
+- Cargo ship speed: about 20 knot = 37,040,000 mm/h
 
-## 四、速度单位详解：mm/h、knot等缩写含义
+## IV. Speed Unit Details: Meanings of mm/h, knot and Other Abbreviations
 
-### 常见速度单位缩写说明
+### Common Speed Unit Abbreviation Explanations
 
-**mm/h 相关说明：**
-- **mm/h：** millimeters per hour的标准缩写，毫米每小时
-- **mm/hr：** 完整形式缩写
-- **mmph：** 简化缩写形式
+**mm/h Related Terms:**
+- **mm/h:** Standard abbreviation for millimeters per hour
+- **mm/hr:** Complete form abbreviation
+- **mmph:** Simplified abbreviation form
 
-**knot 相关说明：**
-- **knot：** 节的英文名称，航海速度单位
-- **kn：** 国际标准缩写
-- **kt：** 航空常用缩写
-- **海里/小时：** 中文完整表述
+**knot Related Terms:**
+- **knot:** English name for the maritime speed unit
+- **kn:** International standard abbreviation
+- **kt:** Commonly used abbreviation in aviation
+- **nautical miles/hour:** Complete expression
 
-### 毫米是什么单位？一毫米等于多少海里？
+### What Unit is Millimeter? How Many Nautical Miles in One Millimeter?
 
-**毫米(millimeter)详解：**
-- **1毫米 = 0.001米 = 5.400×10⁻⁷海里**
-- **毫米是什么单位：** 公制长度单位，千分之一米
-- **一毫米等于多少海里：** 1毫米 = 5.400×10⁻⁷海里
-- **毫米换算海里：** 海里 = 毫米 × 5.400×10⁻⁷
+**Millimeter (millimeter) Explained:**
+- **1 millimeter = 0.001 meter = 5.400×10⁻⁷ nautical miles**
+- **What unit is millimeter:** Metric length unit, one-thousandth of a meter
+- **How many nautical miles in one millimeter:** 1 millimeter = 5.400×10⁻⁷ nautical miles
+- **Converting millimeters to nautical miles:** nautical miles = millimeters × 5.400×10⁻⁷
 
-**实际应用：**
-- 精密制造：零件尺寸、公差测量
-- 医学领域：细胞大小、病变测量
-- 材料科学：薄膜厚度、腐蚀深度
-- 地质学：岩层移动、沉降监测
+**Practical Applications:**
+- Precision manufacturing: Component dimensions, tolerance measurement
+- Medical field: Cell size, lesion measurement
+- Materials science: Film thickness, corrosion depth
+- Geology: Rock layer movement, subsidence monitoring
 
-### 节在航海中的应用
+### Applications of Knots in Maritime Navigation
 
-**使用knot的领域：**
-- **航海导航：** 船舶速度、航行计划
-- **航空飞行：** 飞机速度、风速测量
-- **气象预报：** 风速、洋流速度
-- **海洋科学：** 洋流、潮汐研究
+**Fields Using Knots:**
+- **Maritime Navigation:** Ship speed, voyage planning
+- **Aviation Flight:** Aircraft speed, wind speed measurement
+- **Weather Forecasting:** Wind speed, ocean current velocity
+- **Ocean Science:** Ocean currents, tidal research
 
-## 五、实际应用中的速度换算场景
+## V. Practical Application Scenarios for Speed Conversion
 
-### 材料科学领域
-- **金属腐蚀：** 海水中钢铁腐蚀0.1 mm/h = 5.4×10⁻⁸ knot
-- **磨损测试：** 轴承磨损0.05 mm/h = 2.7×10⁻⁸ knot
-- **薄膜生长：** 化学气相沉积10 mm/h = 5.4×10⁻⁶ knot
+### Materials Science Field
+- **Metal Corrosion:** Steel corrosion in seawater 0.1 mm/h = 5.4×10⁻⁸ knot
+- **Wear Testing:** Bearing wear 0.05 mm/h = 2.7×10⁻⁸ knot
+- **Film Growth:** Chemical vapor deposition 10 mm/h = 5.4×10⁻⁶ knot
 
-### 地质监测
-- **地面沉降：** 城市沉降1 mm/h = 5.4×10⁻⁷ knot
-- **冰川移动：** 冰川前进5 mm/h = 2.7×10⁻⁶ knot
-- **岩层位移：** 地震后位移0.1 mm/h = 5.4×10⁻⁸ knot
+### Geological Monitoring
+- **Ground Subsidence:** Urban subsidence 1 mm/h = 5.4×10⁻⁷ knot
+- **Glacier Movement:** Glacier advance 5 mm/h = 2.7×10⁻⁶ knot
+- **Rock Layer Displacement:** Post-earthquake displacement 0.1 mm/h = 5.4×10⁻⁸ knot
 
-### 生物过程
-- **植物生长：** 竹子生长20 mm/h = 1.08×10⁻⁵ knot
-- **细胞迁移：** 癌细胞迁移0.01 mm/h = 5.4×10⁻⁹ knot
-- **伤口愈合：** 皮肤愈合0.5 mm/h = 2.7×10⁻⁷ knot
+### Biological Processes
+- **Plant Growth:** Bamboo growth 20 mm/h = 1.08×10⁻⁵ knot
+- **Cell Migration:** Cancer cell migration 0.01 mm/h = 5.4×10⁻⁹ knot
+- **Wound Healing:** Skin healing 0.5 mm/h = 2.7×10⁻⁷ knot
 
-## 六、常见问题 FAQ
+## VI. Frequently Asked Questions
 
-### Q1: 毫米每小时和节怎么换算？
-**A1**: 毫米每小时转节的公式是：knot = mm/h × 5.400×10⁻⁷。例如：1000 mm/h = 1000 × 5.400×10⁻⁷ = 5.4×10⁻⁴ knot。
+### Q1: How to convert between millimeters per hour and knots?
+**A1**: The formula for converting millimeters per hour to knots is: knot = mm/h × 5.400×10⁻⁷. For example: 1000 mm/h = 1000 × 5.400×10⁻⁷ = 5.4×10⁻⁴ knot.
 
-### Q2: 一毫米每小时等于多少节？
-**A2**: 1毫米每小时等于5.400×10⁻⁷节。这是因为1毫米=5.400×10⁻⁷海里。
+### Q2: How many knots in one millimeter per hour?
+**A2**: 1 millimeter per hour equals 5.400×10⁻⁷ knots. This is because 1 millimeter = 5.400×10⁻⁷ nautical miles.
 
-### Q3: mm/h换算knot的公式是什么？
-**A3**: mm/h转knot的公式是：knot = mm/h × 5.400×10⁻⁷。例如：500 mm/h = 500 × 5.400×10⁻⁷ = 2.7×10⁻⁴ knot。
+### Q3: What is the formula for converting mm/h to knots?
+**A3**: The formula for converting mm/h to knots is: knot = mm/h × 5.400×10⁻⁷. For example: 500 mm/h = 500 × 5.400×10⁻⁷ = 2.7×10⁻⁴ knot.
 
-### Q4: 为什么航海要使用节这种单位？
-**A4**: 使用原因：
-- 基于海里，便于航海导航计算
-- 与地球经纬度系统匹配
-- 国际航海标准单位
-- 便于风速、洋流测量
+### Q4: Why do maritime applications use the knot unit?
+**A4**: Reasons for use:
+- Based on nautical miles, convenient for maritime navigation calculations
+- Compatible with Earth's latitude and longitude system
+- International maritime standard unit
+- Convenient for wind speed and ocean current measurement
 
-### Q5: 如何快速进行毫米每小时换算节？
-**A5**: 快速换算技巧：
-- 精确计算：mm/h ÷ 1,852,000 = knot
-- 科学计数法：mm/h × 5.4×10⁻⁷ = knot
-- 记忆技巧：毫米数除以185万
+### Q5: How to quickly convert millimeters per hour to knots?
+**A5**: Quick conversion tips:
+- Precise calculation: mm/h ÷ 1,852,000 = knot
+- Scientific notation: mm/h × 5.4×10⁻⁷ = knot
+- Memory trick: Divide millimeter value by 1.85 million
 
-### Q6: 毫米每小时换算时需要注意什么？
-**A6**: 注意事项包括：
-- 注意科学计数法的使用
-- 确认小数点位置正确
-- 避免数量级错误
-- 保持足够的有效数字
+### Q6: What should be noted when converting millimeters per hour?
+**A6**: Important considerations include:
+- Pay attention to the use of scientific notation
+- Confirm correct decimal point position
+- Avoid order-of-magnitude errors
+- Maintain sufficient significant figures
 
-### Q7: 一节等于多少毫米每小时？
-**A7**: 1节 = 1,852,000毫米每小时。计算方法：1 knot × 1,852,000 = 1,852,000 mm/h。
+### Q7: How many millimeters per hour in one knot?
+**A7**: 1 knot = 1,852,000 millimeters per hour. Calculation method: 1 knot × 1,852,000 = 1,852,000 mm/h.
 
-### Q8: 节换算毫米每小时怎么算？
-**A8**: 节换算毫米每小时的方法：
-- **公式：** mm/h = knot × 1,852,000
-- **示例：** 0.001 knot = 0.001 × 1,852,000 = 1852 mm/h
-- **记忆技巧：** knot × 185万 = mm/h
+### Q8: How to convert knots to millimeters per hour?
+**A8**: Method for converting knots to millimeters per hour:
+- **Formula:** mm/h = knot × 1,852,000
+- **Example:** 0.001 knot = 0.001 × 1,852,000 = 1852 mm/h
+- **Memory trick:** knot × 1.85 million = mm/h
 
-### Q9: 毫米每小时和节的换算关系是什么？
-**A9**: 毫米每小时和节的换算关系：
-- **mm/h → knot：** 除以1,852,000
-- **knot → mm/h：** 乘以1,852,000
-- **换算系数来源：** 1海里 = 1.852千米 = 1,852,000毫米
+### Q9: What is the conversion relationship between millimeters per hour and knots?
+**A9**: Conversion relationship between millimeters per hour and knots:
+- **mm/h → knot:** divide by 1,852,000
+- **knot → mm/h:** multiply by 1,852,000
+- **Source of conversion factor:** 1 nautical mile = 1.852 kilometers = 1,852,000 millimeters
 
-### Q10: 节是什么单位？一节等于多少千米每小时？
-**A10**: 节的详细信息：
-- **节定义：** 航海速度单位，等于1海里/小时
-- **一节等于多少千米每小时：** 1节 = 1.852千米每小时
-- **节的起源：** 基于地球子午线，1海里=地球子午线1分
-- **应用领域：** 航海、航空、气象等
+### Q10: What unit is knot? How many kilometers per hour in one knot?
+**A10**: Detailed information about knots:
+- **Knot definition:** Maritime speed unit, equals 1 nautical mile/hour
+- **How many kilometers per hour in one knot:** 1 knot = 1.852 kilometers per hour
+- **Origin of knot:** Based on Earth's meridian, 1 nautical mile = 1 minute of Earth's meridian
+- **Application fields:** Maritime, aviation, meteorology, etc.
 
-### Q11: mm/h在哪些场景下使用？
-**A11**: mm/h的使用场景：
-- **材料科学：** 腐蚀速率、磨损测量
-- **地质监测：** 地面沉降、岩层移动
-- **生物研究：** 植物生长、细胞迁移
-- **环境科学：** 污染扩散、侵蚀监测
-- **工程测量：** 结构变形、设备磨损
+### Q11: In which scenarios is mm/h used?
+**A11**: Scenarios where mm/h is used:
+- **Materials Science:** Corrosion rate, wear measurement
+- **Geological Monitoring:** Ground subsidence, rock layer movement
+- **Biological Research:** Plant growth, cell migration
+- **Environmental Science:** Pollution diffusion, erosion monitoring
+- **Engineering Measurement:** Structural deformation, equipment wear
 
-### Q12: 为什么要进行毫米和海里的换算？
-**A12**: 换算的重要性：
-- **跨领域应用：** 连接精密测量与航海导航
-- **科学研究：** 海洋地质、海底沉积研究
-- **工程项目：** 海洋工程、港口建设
-- **国际合作：** 统一不同领域的测量标准
+### Q12: Why is it important to convert between millimeters and nautical miles?
+**A12**: Importance of conversion:
+- **Cross-field Applications:** Connecting precision measurement with maritime navigation
+- **Scientific Research:** Marine geology, seabed sedimentation research
+- **Engineering Projects:** Marine engineering, port construction
+- **International Cooperation:** Unifying measurement standards across different fields
 
-### Q13: 极慢速度和航海速度的对比有什么意义？
-**A13**: 对比的意义：
-- **尺度认知：** 理解不同过程的时间尺度
-- **科学教育：** 培养数量级概念
-- **技术应用：** 选择合适的测量方法
-- **跨学科交流：** 促进不同领域的理解
-- **精度要求：** 认识不同应用的精度需求
+### Q13: What is the significance of comparing extremely slow speeds with maritime speeds?
+**A13**: Significance of comparison:
+- **Scale Cognition:** Understanding time scales of different processes
+- **Scientific Education:** Developing concepts of orders of magnitude
+- **Technical Application:** Selecting appropriate measurement methods
+- **Interdisciplinary Communication:** Promoting understanding between different fields
+- **Precision Requirements:** Recognizing precision needs for different applications
 
-## 七、相关连接
+## VII. Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Speed" :key="index">
     <n-button

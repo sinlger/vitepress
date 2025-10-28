@@ -4,20 +4,20 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Speed/
-      linkText: 速度单位换算
+      linkText: Speed Unit Conversion
   - - link: /Speed/index
-      linkText: 速度单位单位换算
+      linkText: Speed Unit Conversion
 head:
   - - meta
     - name: description
-      content: 千米每小时换算米每秒工具，km/h和m/s换算公式详解。一千米每小时等于多少米每秒？千米每小时和米每秒怎么换算？提供kmh、kph、km/s等速度单位换算，支持航速节(kt)、英里每小时(mph)等多种速度单位转换。
+      content: Kilometers per hour to meters per second conversion tool, detailed explanation of km/h and m/s conversion formulas. How many meters per second in one kilometer per hour? How to convert between km/h and m/s? Provides speed unit conversions for kmh, kph, km/s, etc., supporting various speed units like knots (kt), miles per hour (mph), and more.
   - - meta
     - name: keywords
-      content: 速度单位换算, 千米每小时换算米每秒, km/h和m/s换算, 一千米每小时等于多少米每秒, 千米每小时和米每秒怎么换算, 速度换算, kmh, kph, km s, kmph, 速度的单位, 一节是多少速度, kt是什么单位, 航速一节等于多少公里, 一节等于多少公里, 一节等于多少米每秒, 码是什么单位, 速度转换, 公里每小时换算米每秒, 米每秒换算千米每小时, 一米每秒等于多少千米每小时, 米每秒和千米每小时的换算, m/s km/h, m/s, 速度单位, kmhs
+      content: speed unit conversion, kilometers per hour to meters per second, km/h and m/s conversion, how many meters per second in one kilometer per hour, how to convert between km/h and m/s, speed conversion, kmh, kph, km s, kmph, speed units, what is a knot in speed, kt unit, how many kilometers in one knot, how many meters per second in one knot, yard unit, speed conversion, kilometers per hour to meters per second, meters per second to kilometers per hour, how many kilometers per hour in one meter per second, conversion between m/s and km/h, m/s km/h, m/s, speed units, kmhs
 ---
-# 千米每小时换算米每秒 | km/h和m/s速度单位换算工具
+# Kilometers per Hour to Meters per Second | km/h and m/s Speed Unit Conversion Tool
 ---
 <script setup>
 import { onMounted, reactive, inject ,ref  } from 'vue'
@@ -26,32 +26,32 @@ import { defineClientComponent } from 'vitepress'
 import { Speed } from '../files';
 const convert = inject('convert')
 const options =  [
-  { "label": "米每秒 (m/s)", "value": "m/s" },
-  { "label": "千米每小时 (km/h)", "value": "km/h" },
-  { "label": "英里每小时 (mph)", "value": "mph" },
-  { "label": "节 (knot)", "value": "knot" },
-  { "label": "英尺每秒 (ft/s)", "value": "ft/s" },
-  { "label": "英寸每小时 (in/h)", "value": "in/h" },
-  { "label": "毫米每小时 (mm/h)", "value": "mm/h" }
+  { "label": "Meters per Second (m/s)", "value": "m/s" },
+  { "label": "Kilometers per Hour (km/h)", "value": "km/h" },
+  { "label": "Miles per Hour (mph)", "value": "mph" },
+  { "label": "Knots (knot)", "value": "knot" },
+  { "label": "Feet per Second (ft/s)", "value": "ft/s" },
+  { "label": "Inches per Hour (in/h)", "value": "in/h" },
+  { "label": "Millimeters per Hour (mm/h)", "value": "mm/h" }
 ];
-const seoKey = ['速度单位换算','米每秒转换','千米每小时换算','kmhs','码是什么单位','km s','kmph','速度的单位','m/s km/h','一节是多少速度','千米每小时和米每秒怎么换算','一千米每小时等于多少米每秒','km/h和m/s换算','米每秒换算千米每小时','一节等于多少米每秒','一米每秒等于多少千米每小时','速度转换','公里每小时换算米每秒','速度单位','kt是什么单位','航速一节等于多少公里','m/s','一节等于多少公里','速度换算','kmh','米每秒和千米每小时的换算','km/h换算m/s','kph','千米每小时换算米每秒']
+const seoKey = ['speed unit conversion','meters per second conversion','kilometers per hour conversion','kmhs','what is a yard unit','km s','kmph','speed units','m/s km/h','what is a knot in speed','how to convert between km/h and m/s','how many meters per second in one kilometer per hour','km/h and m/s conversion','meters per second to kilometers per hour','how many meters per second in one knot','how many kilometers per hour in one meter per second','speed conversion','kilometers per hour to meters per second','speed units','what is kt unit','how many kilometers in one knot','m/s','knot to kilometer conversion','speed conversion','kmh','conversion between m/s and km/h','km/h to m/s conversion','kph','kilometers per hour to meters per second']
 const formRef = ref(null);
 const rules = {
   number:{
     required: true,
     type: 'number',
     trigger: "blur",
-    message: '请输入数字'
+    message: 'Please enter a number'
   },
   to:{
     required: true,
     trigger: "select",
-    message: '请选择转换单位'
+    message: 'Please select a conversion unit'
   },
   from:{
     required: true,
     trigger: "select",
-    message: '请选择原始单位'
+    message: 'Please select a source unit'
   }
 }
 const form = reactive({
@@ -59,7 +59,7 @@ const form = reactive({
   to:'m/s',
   from:'km/h',
   result:'',
-  title:'速度单位单位换算',
+  title:'Speed Unit Conversion',
 })
 const convertHandler = (e) => {
    e.preventDefault();
@@ -72,17 +72,17 @@ const convertHandler = (e) => {
 </script>
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="数值"  path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数值" />
+  <n-form-item label="Value"  path="number">
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="Enter the value to convert" />
   </n-form-item>
-  <n-form-item label="从" path="from">
-    <n-select  size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
+  <n-form-item label="From" path="from">
+    <n-select  size="large" :options="options" v-model:value="form.from" placeholder="Select source unit" />
   </n-form-item>
-  <n-form-item label="到" path="to">
-    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
+  <n-form-item label="To" path="to">
+    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="Select target unit" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
+    <n-button type="info" style="width:100%" @click="convertHandler">Convert</n-button>
   </n-form-item>
 </n-form>
 <n-card embedded :bordered="false" hoverable style="margin-top: 16px;">
@@ -104,213 +104,213 @@ const convertHandler = (e) => {
 </n-card>
 
 
-## 一、速度单位换算表（以 1 m/s 为基准）
+## I. Speed Unit Conversion Table (Based on 1 m/s)
 
-| 单位       | 符号   | 换算值      | 典型应用场景             |
-|------------|--------|-------------|-------------------------|
-| 米每秒     | m/s    | 1           | 物理学、工程计算         |
-| 千米每小时 | km/h   | 3.6         | 汽车限速、天气预报       |
-| 英里每小时 | mph    | ≈2.23694    | 英美国家车速（1 英里=1.609km） |
-| 节        | knot   | ≈1.94384    | 航海、航空（1 节=1 海里/小时=1.852km/h） |
-| 英尺每秒   | ft/s   | ≈3.28084    | 美国工程流体力学         |
-| 英寸每小时 | in/h   | 141,732     | 地质沉降监测             |
-| 毫米每小时 | mm/h   | 3,600,000   | 材料腐蚀速率、极慢速过程 |
+| Unit | Symbol | Conversion Value | Typical Application Scenarios |
+|------|--------|------------------|-------------------------------|
+| Meters per Second | m/s | 1 | Physics, Engineering Calculations |
+| Kilometers per Hour | km/h | 3.6 | Car Speed Limits, Weather Forecasts |
+| Miles per Hour | mph | ≈2.23694 | Vehicle Speed in UK/US (1 mile=1.609km) |
+| Knot | knot | ≈1.94384 | Maritime, Aviation (1 knot=1 nautical mile/hour=1.852km/h) |
+| Feet per Second | ft/s | ≈3.28084 | US Engineering Fluid Mechanics |
+| Inches per Hour | in/h | 141,732 | Geological Settlement Monitoring |
+| Millimeters per Hour | mm/h | 3,600,000 | Material Corrosion Rate, Extremely Slow Processes |
 
-注：换算公式示例 → km/h 转 mph: ( km/h = mph × 1.60934 ) ；m/s 转 knot: ( m/s = knot × 0.51444 ) 。
+Note: Conversion formula examples → km/h to mph: (km/h = mph × 1.60934); m/s to knot: (m/s = knot × 0.51444).
 
-## 二、km/h和m/s换算公式详解
+## II. Detailed Explanation of km/h and m/s Conversion Formulas
 
-### 千米每小时和米每秒怎么换算？
+### How to Convert Between Kilometers per Hour and Meters per Second?
 
-**基础换算公式：**
-- **km/h 转 m/s：** m/s = km/h ÷ 3.6
-- **m/s 转 km/h：** km/h = m/s × 3.6
+**Basic Conversion Formulas:**
+- **km/h to m/s:** m/s = km/h ÷ 3.6
+- **m/s to km/h:** km/h = m/s × 3.6
 
-**公式推导过程：**
-1. 1 km = 1000 m（千米转米）
-2. 1 h = 3600 s（小时转秒）
+**Formula Derivation Process:**
+1. 1 km = 1000 m (kilometers to meters)
+2. 1 h = 3600 s (hours to seconds)
 3. 1 km/h = 1000 m ÷ 3600 s = 1/3.6 m/s
 
-### 一千米每小时等于多少米每秒？
+### How Many Meters per Second in One Kilometer per Hour?
 
-**精确答案：** 1 km/h = 0.277777... m/s ≈ 0.278 m/s
+**Exact Answer:** 1 km/h = 0.277777... m/s ≈ 0.278 m/s
 
-**常见速度换算示例：**
-- 36 km/h = 10 m/s（常用记忆点）
+**Common Speed Conversion Examples:**
+- 36 km/h = 10 m/s (useful memory point)
 - 72 km/h = 20 m/s
 - 108 km/h = 30 m/s
 - 144 km/h = 40 m/s
 
-### 快速心算技巧
+### Quick Mental Calculation Tips
 
-**km/h 转 m/s 心算法：**
-1. **除法技巧：** km/h ÷ 3.6 ≈ km/h × 0.28
-2. **近似计算：** km/h ÷ 4 × 1.1（误差<3%）
-3. **整数技巧：** 记住36的倍数（36km/h=10m/s）
+**km/h to m/s Mental Calculation:**
+1. **Division Trick:** km/h ÷ 3.6 ≈ km/h × 0.28
+2. **Approximation:** km/h ÷ 4 × 1.1 (error <3%)
+3. **Integer Trick:** Remember multiples of 36 (36km/h=10m/s)
 
-**m/s 转 km/h 心算法：**
-1. **乘法技巧：** m/s × 3.6 ≈ m/s × 4 × 0.9
-2. **快速估算：** m/s × 4（高估约11%）
+**m/s to km/h Mental Calculation:**
+1. **Multiplication Trick:** m/s × 3.6 ≈ m/s × 4 × 0.9
+2. **Quick Estimation:** m/s × 4 (overestimates by about 11%)
 
-## 三、速度单位科普：从日常到专业
+## III. Speed Units Explained: From Everyday to Professional
 
-### 为什么我们需要多种速度单位？
+### Why Do We Need Multiple Speed Units?
 
-不同领域的历史沿革和实用需求催生了多样单位：
+Historical evolution and practical needs across different fields have given rise to diverse units:
 
-- **mph（英里每小时）**：源于英国度量衡，常见于英美汽车仪表盘。误区提示：国内常说的“跑80 迈”实际指80km/h，但1 迈=1.609km/h，若混淆可能超速！
-- **knot（节）**：航海传统单位，源于古代“测速绳结”。1 节=1 海里/小时，地球经度1分角对应的距离（约1.852km），至今仍是国际航行标准。
+- **mph (miles per hour)**: Originated from British measurement system, common on car dashboards in UK/US. Note: In some countries, "80 miles" might actually refer to 80km/h, but 1 mile=1.609km/h - confusion could lead to speeding!
+- **knot**: Traditional maritime unit, derived from ancient "knotted rope" speed measurements. 1 knot = 1 nautical mile/hour, the distance corresponding to 1 minute of longitude (about 1.852km), still the international standard for navigation.
 
-### 单位混淆可能引发问题
+### Problems That May Arise from Unit Confusion
 
-案例：若将飞机速度1000 km/h误算为1000 mph（实际≈1609 km/h），会导致航线严重偏差。
+Example: If an aircraft speed of 1000 km/h is miscalculated as 1000 mph (actually ≈1609 km/h), it would cause serious route deviation.
 
-科学建议：跨国工程必须统一单位，如航天器轨道计算需用m/s，避免单位换算累积误差。
+Scientific recommendation: International engineering projects must standardize units, such as using m/s for spacecraft orbital calculations, to avoid cumulative errors from unit conversion.
 
-### 超慢速世界的单位
+### Units for Ultra-Slow World
 
-- **mm/h 与 in/h**：用于监测冰川移动（年位移数米）或金属疲劳裂纹扩展。1 mm/h≈每世纪876米，揭示“肉眼不可见”的运动。
+- **mm/h and in/h**: Used to monitor glacier movement (annual displacement of several meters) or metal fatigue crack propagation. 1 mm/h ≈ 876 meters per century, revealing motion "invisible to the naked eye."
 
-### 冷知识：速度的极限与日常
+### Fun Facts: Speed Limits and Daily Life
 
-- 光速≈1.08亿 km/h（只能用科学计数法表示）
-- 蜗牛爬行≈0.05 mm/h→跑完1米需2.3年！
-- 民航巡航速度≈900 km/h（≈487 knot），跨太平洋仅需半日。
+- Light speed ≈ 108 million km/h (can only be expressed in scientific notation)
+- Snail crawling ≈ 0.05 mm/h → takes 2.3 years to complete 1 meter!
+- Commercial aircraft cruising speed ≈ 900 km/h (≈ 487 knots), crossing the Pacific Ocean in just half a day.
 
-## 四、速度单位详解：kmh、kph、km/s等缩写含义
+## IV. Detailed Speed Units: Meanings of Abbreviations like kmh, kph, km/s
 
-### 常见速度单位缩写说明
+### Common Speed Unit Abbreviations
 
-**km/h 相关缩写：**
-- **kmh：** 千米每小时的简写（无斜杠）
-- **kph：** kilometers per hour的英文缩写
-- **km/h：** 标准国际表示法
-- **kmph：** 完整英文缩写形式
+**km/h Related Abbreviations:**
+- **kmh:** Shorthand for kilometers per hour (without slash)
+- **kph:** English abbreviation for kilometers per hour
+- **km/h:** Standard international notation
+- **kmph:** Complete English abbreviation form
 
-**其他速度单位：**
-- **m/s：** 米每秒，国际单位制基本单位
-- **km/s：** 千米每秒，用于天体物理（如卫星轨道速度）
-- **mph：** 英里每小时（miles per hour）
+**Other Speed Units:**
+- **m/s:** Meters per second, basic unit in the International System of Units
+- **km/s:** Kilometers per second, used in astrophysics (e.g., satellite orbital velocity)
+- **mph:** Miles per hour
 
-### 一节是多少速度？kt是什么单位？
+### What Speed is One Knot? What Unit is kt?
 
-**节(knot)详解：**
-- **1节 = 1海里/小时 = 1.852 km/h = 0.514 m/s**
-- **kt：** knot的缩写，航海航空标准单位
-- **航速一节等于多少公里：** 1节 ≈ 1.852公里/小时
-- **一节等于多少米每秒：** 1节 ≈ 0.514 m/s
+**Knot Details:**
+- **1 knot = 1 nautical mile/hour = 1.852 km/h = 0.514 m/s**
+- **kt:** Abbreviation for knot, standard unit in maritime and aviation
+- **One knot equals how many kilometers:** 1 knot ≈ 1.852 kilometers/hour
+- **One knot equals how many meters per second:** 1 knot ≈ 0.514 m/s
 
-**实际应用：**
-- 船舶航行速度：货轮15-25节，快艇30-50节
-- 飞机速度：民航巡航约450-500节
-- 风速测量：气象预报常用节作单位
+**Practical Applications:**
+- Ship sailing speed: Cargo ships 15-25 knots, speedboats 30-50 knots
+- Aircraft speed: Commercial aviation cruising at approximately 450-500 knots
+- Wind speed measurement: Weather forecasts commonly use knots as units
 
-### 码是什么单位？
+### What Unit is Yard?
 
-**码(yard)基本信息：**
-- **1码 = 0.9144米 = 3英尺 = 36英寸**
-- **码/秒 转 m/s：** 1 yard/s = 0.9144 m/s
-- **码/小时 转 km/h：** 1 yard/h = 0.0009144 km/h
+**Yard (yard) Basic Information:**
+- **1 yard = 0.9144 meters = 3 feet = 36 inches**
+- **yard/second to m/s:** 1 yard/s = 0.9144 m/s
+- **yard/hour to km/h:** 1 yard/h = 0.0009144 km/h
 
-**注意：** 码主要用于长度测量，速度单位中较少使用，常见于美式橄榄球场地标记。
+**Note:** Yard is mainly used for length measurement, rarely used in speed units, commonly seen in American football field markings.
 
-## 五、实际应用中的速度换算场景
+## V. Speed Conversion Scenarios in Practical Applications
 
-### 交通运输领域
-- **汽车限速：** 高速公路120 km/h = 33.3 m/s
-- **火车速度：** 高铁350 km/h = 97.2 m/s
-- **飞机起降：** 起飞速度约250 km/h = 69.4 m/s
+### Transportation Field
+- **Car Speed Limits:** Highway 120 km/h = 33.3 m/s
+- **Train Speed:** High-speed rail 350 km/h = 97.2 m/s
+- **Aircraft Takeoff/Landing:** Takeoff speed approximately 250 km/h = 69.4 m/s
 
-### 体育运动
-- **百米冲刺：** 世界纪录约10秒 = 10 m/s = 36 km/h
-- **马拉松配速：** 3小时完赛 = 14.1 km/h = 3.9 m/s
-- **自行车：** 职业选手平路巡航45 km/h = 12.5 m/s
+### Sports
+- **100-meter Sprint:** World record approximately 10 seconds = 10 m/s = 36 km/h
+- **Marathon Pace:** 3-hour finish = 14.1 km/h = 3.9 m/s
+- **Cycling:** Professional riders cruising on flat terrain 45 km/h = 12.5 m/s
 
-### 自然现象
-- **风速：** 台风中心风速50 m/s = 180 km/h
-- **降雨：** 雨滴终端速度约9 m/s = 32.4 km/h
-- **河流：** 长江平均流速2 m/s = 7.2 km/h
+### Natural Phenomena
+- **Wind Speed:** Typhoon center wind speed 50 m/s = 180 km/h
+- **Rainfall:** Raindrop terminal velocity approximately 9 m/s = 32.4 km/h
+- **River Flow:** Yangtze River average flow rate 2 m/s = 7.2 km/h
 
-## 六、常见问题 FAQ
+## VI. Frequently Asked Questions
 
-### Q1: 米每秒和千米每小时怎么换算？
-**A1**: 米每秒转千米每小时的公式是：km/h = m/s × 3.6。例如：10 m/s = 10 × 3.6 = 36 km/h。
+### Q1: How do you convert between meters per second and kilometers per hour?
+**A1**: The formula to convert meters per second to kilometers per hour is: km/h = m/s × 3.6. For example: 10 m/s = 10 × 3.6 = 36 km/h.
 
-### Q2: 一米每秒等于多少千米每小时？
-**A2**: 1米每秒等于3.6千米每小时。这是因为1米=0.001千米，1秒=1/3600小时，所以转换系数为3.6。
+### Q2: How many kilometers per hour equal one meter per second?
+**A2**: 1 meter per second equals 3.6 kilometers per hour. This is because 1 meter = 0.001 kilometers, 1 second = 1/3600 hours, so the conversion factor is 3.6.
 
-### Q3: km/h换算m/s的公式是什么？
-**A3**: km/h转m/s的公式是：m/s = km/h ÷ 3.6。例如：72 km/h = 72 ÷ 3.6 = 20 m/s。
+### Q3: What is the formula for converting km/h to m/s?
+**A3**: The formula for converting km/h to m/s is: m/s = km/h ÷ 3.6. For example: 72 km/h = 72 ÷ 3.6 = 20 m/s.
 
-### Q4: 速度单位都有哪些？
-**A4**: 常见的速度单位包括：
-- 米每秒 (m/s) - 国际标准单位
-- 千米每小时 (km/h) - 日常常用
-- 英里每小时 (mph) - 英美国家使用
-- 节 (knot) - 航海航空专用
-- 英尺每秒 (ft/s) - 工程领域
-- 毫米每小时 (mm/h) - 精密测量
+### Q4: What are the different speed units?
+**A4**: Common speed units include:
+- Meters per second (m/s) - International standard unit
+- Kilometers per hour (km/h) - Commonly used in daily life
+- Miles per hour (mph) - Used in English-speaking countries
+- Knot (knot) - Specialized for maritime and aviation
+- Feet per second (ft/s) - Engineering field
+- Millimeters per hour (mm/h) - Precision measurement
 
-### Q5: 为什么要进行速度单位换算？
-**A5**: 速度单位换算在以下场景中非常重要：
-- 国际贸易和技术交流
-- 科学研究和工程计算
-- 交通运输和导航
-- 体育运动记录比较
-- 气象预报和海洋学研究
+### Q5: Why is speed unit conversion necessary?
+**A5**: Speed unit conversion is important in the following scenarios:
+- International trade and technical exchange
+- Scientific research and engineering calculations
+- Transportation and navigation
+- Comparing sports records
+- Weather forecasting and oceanographic research
 
-### Q6: 如何快速进行米每秒换算千米每小时？
-**A6**: 快速换算技巧：
-- 精确计算：m/s × 3.6 = km/h
-- 近似计算：m/s × 4 ≈ km/h（误差约11%）
-- 心算技巧：先乘以4，再减去10%
+### Q6: How can I quickly convert meters per second to kilometers per hour?
+**A6**: Quick conversion tips:
+- Exact calculation: m/s × 3.6 = km/h
+- Approximate calculation: m/s × 4 ≈ km/h (error about 11%)
+- Mental calculation trick: First multiply by 4, then subtract 10%
 
-### Q7: 速度换算时需要注意什么？
-**A7**: 注意事项包括：
-- 确认原始单位和目标单位
-- 选择合适的精度（通常1-3位小数）
-- 区分速度和速率的概念
-- 考虑应用场景的精度要求
+### Q7: What should I pay attention to when converting speed units?
+**A7**: Considerations include:
+- Confirming original and target units
+- Selecting appropriate precision (usually 1-3 decimal places)
+- Distinguishing between speed and velocity concepts
+- Considering precision requirements for the application scenario
 
-### Q8: 一千米每小时等于多少米每秒？
-**A8**: 1千米每小时 = 0.278米每秒（精确值为0.277777...）。计算方法：1 km/h ÷ 3.6 = 0.278 m/s。
+### Q8: How many meters per second equal one kilometer per hour?
+**A8**: 1 kilometer per hour = 0.278 meters per second (exact value is 0.277777...). Calculation method: 1 km/h ÷ 3.6 = 0.278 m/s.
 
-### Q9: 公里每小时换算米每秒怎么算？
-**A9**: 公里每小时换算米每秒的方法：
-- **公式：** m/s = km/h ÷ 3.6
-- **示例：** 60 km/h = 60 ÷ 3.6 = 16.67 m/s
-- **记忆技巧：** 36 km/h = 10 m/s，以此为基准推算
+### Q9: How do you calculate meters per second from kilometers per hour?
+**A9**: Method for converting kilometers per hour to meters per second:
+- **Formula:** m/s = km/h ÷ 3.6
+- **Example:** 60 km/h = 60 ÷ 3.6 = 16.67 m/s
+- **Memory tip:** 36 km/h = 10 m/s, use this as a reference point
 
-### Q10: 米每秒和千米每小时的换算关系是什么？
-**A10**: 米每秒和千米每小时的换算关系：
-- **m/s → km/h：** 乘以3.6
-- **km/h → m/s：** 除以3.6
-- **换算系数来源：** 1 km = 1000 m，1 h = 3600 s，所以系数为3600/1000 = 3.6
+### Q10: What is the conversion relationship between meters per second and kilometers per hour?
+**A10**: The conversion relationship between meters per second and kilometers per hour:
+- **m/s → km/h:** Multiply by 3.6
+- **km/h → m/s:** Divide by 3.6
+- **Conversion factor origin:** 1 km = 1000 m, 1 h = 3600 s, so the factor is 3600/1000 = 3.6
 
-### Q11: kmh、kph、kmph有什么区别？
-**A11**: 这些都是千米每小时的不同表示方法：
-- **km/h：** 国际标准写法，最正式
-- **kmh：** 简化写法，省略斜杠
-- **kph：** 英文缩写（kilometers per hour）
-- **kmph：** 完整英文缩写形式
-- **实际使用：** 含义完全相同，只是书写习惯不同
+### Q11: What are the differences between kmh, kph, and kmph?
+**A11**: These are all different notations for kilometers per hour:
+- **km/h:** International standard notation, most formal
+- **kmh:** Simplified notation, omitting the slash
+- **kph:** English abbreviation (kilometers per hour)
+- **kmph:** Complete English abbreviation form
+- **Practical usage:** They have identical meanings, only differing in writing convention
 
-### Q12: 速度的单位有哪些常见类型？
-**A12**: 速度的单位按使用场景分类：
-- **科学计算：** m/s（国际单位制）
-- **日常交通：** km/h、mph
-- **航海航空：** knot（节）、kt
-- **工程测量：** ft/s、in/h、mm/h
-- **特殊领域：** km/s（天体物理）、cm/s（流体力学）
+### Q12: What are the common types of speed units?
+**A12**: Speed units categorized by usage scenario:
+- **Scientific calculation:** m/s (International System of Units)
+- **Daily transportation:** km/h, mph
+- **Maritime and aviation:** knot, kt
+- **Engineering measurement:** ft/s, in/h, mm/h
+- **Special fields:** km/s (astrophysics), cm/s (fluid mechanics)
 
-### Q13: 一节等于多少公里？一节等于多少米每秒？
-**A13**: 节的换算关系：
-- **一节等于多少公里：** 1节 = 1.852公里/小时
-- **一节等于多少米每秒：** 1节 = 0.514米/秒
-- **航速一节等于多少公里：** 船舶以1节速度航行1小时，前进1.852公里
-- **kt单位说明：** kt是knot的缩写，国际航海航空标准单位
+### Q13: How many kilometers equal one knot? How many meters per second equal one knot?
+**A13**: Knot conversion relationships:
+- **One knot equals how many kilometers:** 1 knot = 1.852 kilometers/hour
+- **One knot equals how many meters per second:** 1 knot = 0.514 meters/second
+- **Nautical speed of one knot equals how many kilometers:** A vessel traveling at 1 knot for 1 hour advances 1.852 kilometers
+- **kt unit explanation:** kt is the abbreviation for knot, the international standard unit for maritime and aviation
 
-## 七、相关连接
+## VII. Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Speed" :key="index">
     <n-button

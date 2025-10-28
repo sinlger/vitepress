@@ -198,118 +198,118 @@ Note: Conversion formula examples → in/h to knot: (knot = in/h × 0.0000137149
 **Precision Manufacturing:**
 - Mechanical processing feed rate
 - Precision instrument calibration
-- 自动化设备控制
+- Automated equipment control
 
-### 冷知识：in/h在不同领域的速度
+### Fun Facts: in/h Speeds in Different Fields
 
-- **建筑沉降：** 约1-10 in/h（约0.0000137-0.000137 knot）
-- **地质变形：** 约0.1-1 in/h（约0.00000137-0.0000137 knot）
-- **精密加工：** 约100-1000 in/h（约0.00137-0.0137 knot）
-- **材料测试：** 约10-100 in/h（约0.000137-0.00137 knot）
+- **Building Settlement:** About 1-10 in/h (about 0.0000137-0.000137 knot)
+- **Geological Deformation:** About 0.1-1 in/h (about 0.00000137-0.0000137 knot)
+- **Precision Machining:** About 100-1000 in/h (about 0.00137-0.0137 knot)
+- **Materials Testing:** About 10-100 in/h (about 0.000137-0.00137 knot)
 
-## 四、速度单位详解：in/h、knot等缩写含义
+## IV. Speed Units Explained: Meanings of in/h, knot and Other Abbreviations
 
-### 常见速度单位缩写对照
+### Common Speed Unit Abbreviation Comparison
 
-| 英文缩写 | 英文全称 | 中文名称 | 换算关系（相对于1 in/h） |
+| English Abbreviation | Full English Term | Name | Conversion Relation (Relative to 1 in/h) |
 |----------|----------|----------|-------------------------|
-| **in/h** | inches per hour | 英寸每小时 | 1 |
-| **iph** | inches per hour | 英寸每小时 | 1 |
-| **in/hr** | inches per hour | 英寸每小时 | 1 |
-| **knot** | nautical mile per hour | 节 | 0.0000137149 |
-| **kn** | knot | 节 | 0.0000137149 |
-| **kt** | knot | 节 | 0.0000137149 |
-| **nmi/h** | nautical mile per hour | 海里每小时 | 0.0000137149 |
-| **nm/h** | nautical mile per hour | 海里每小时 | 0.0000137149 |
+| **in/h** | inches per hour | inches per hour | 1 |
+| **iph** | inches per hour | inches per hour | 1 |
+| **in/hr** | inches per hour | inches per hour | 1 |
+| **knot** | nautical mile per hour | knot | 0.0000137149 |
+| **kn** | knot | knot | 0.0000137149 |
+| **kt** | knot | knot | 0.0000137149 |
+| **nmi/h** | nautical mile per hour | nautical mile per hour | 0.0000137149 |
+| **nm/h** | nautical mile per hour | nautical mile per hour | 0.0000137149 |
 
-### in/h和knot的不同表示方法
+### Different Notation Methods for in/h and knot
 
-**in/h正式写法：**
-- in/h（最常用的标准写法）
-- iph（工程领域常用简写）
-- in/hr（完整时间单位写法）
+**Formal in/h Notation:**
+- in/h (most commonly used standard notation)
+- iph (common abbreviation in engineering)
+- in/hr (complete time unit notation)
 
-**knot正式写法：**
-- knot（最常用的标准写法）
-- kn（国际航海常用简写）
-- kt（航空领域常用简写）
-- nmi/h（完整单位写法）
+**Formal knot Notation:**
+- knot (most commonly used standard notation)
+- kn (common abbreviation in international maritime)
+- kt (common abbreviation in aviation)
+- nmi/h (complete unit notation)
 
-**注意事项：**
-- ✅ 正确：in/h, knot, iph, kn, kt
-- ❌ 错误：in/hour, nautical mile/hour（混合简写和全写）
-- ✅ 正确：inches per hour, nautical mile per hour（完整英文表达）
+**Important Notes:**
+- ✅ Correct: in/h, knot, iph, kn, kt
+- ❌ Incorrect: in/hour, nautical mile/hour (mixing abbreviations and full terms)
+- ✅ Correct: inches per hour, nautical mile per hour (complete English expressions)
 
-### 速度单位使用场景
+### Speed Unit Usage Scenarios
 
-**地质监测：** in/h（地面沉降、地质变形）
-**航海运输：** knot（船舶速度、海流速度）
-**精密测量：** in/h, mm/h（建筑监测、精密制造）
-**航空飞行：** knot（飞机速度、风速）
-**科学研究：** m/s（国际单位制标准）
-**海洋工程：** knot（海洋流速、潮汐速度）
+**Geological Monitoring:** in/h (ground subsidence, geological deformation)
+**Maritime Transport:** knot (ship speed, ocean current velocity)
+**Precision Measurement:** in/h, mm/h (building monitoring, precision manufacturing)
+**Aviation:** knot (aircraft speed, wind speed)
+**Scientific Research:** m/s (International System of Units standard)
+**Ocean Engineering:** knot (ocean current velocity, tidal speed)
 
-### 重要提醒
+### Important Reminders
 
-**单位使用注意事项：**
-1. **地质监测：** 广泛使用in/h，特别是美国地质调查
-2. **航海运输：** 优先使用knot（国际航海标准）
-3. **科学研究：** 必须使用m/s（SI基本单位）
-4. **工程协调：** 需要明确单位制，避免换算错误
+**Unit Usage Considerations:**
+1. **Geological Monitoring:** in/h widely used, especially in US Geological Survey
+2. **Maritime Transport:** knot preferred (international maritime standard)
+3. **Scientific Research:** m/s must be used (SI base unit)
+4. **Engineering Coordination:** Unit system must be clearly specified to avoid conversion errors
 
-**换算精度要求：**
-- **高精度计算：** 使用完整换算系数（0.0000137149）
-- **工程估算：** 可使用近似值（0.0000137）
-- **快速心算：** 记住关键换算点（72,913 in/h ≈ 1 knot）
+**Conversion Precision Requirements:**
+- **High-precision Calculation:** Use complete conversion factor (0.0000137149)
+- **Engineering Estimation:** Approximate value can be used (0.0000137)
+- **Quick Mental Calculation:** Remember key conversion point (72,913 in/h ≈ 1 knot)
 
-## 五、实际应用中的in/h速度换算场景
+## V. Practical Application Scenarios for in/h Speed Conversion
 
-### 地质监测
-- **建筑沉降：** 高层建筑沉降5 in/h = 0.0000686 knot
-- **桥梁变形：** 大桥位移2 in/h = 0.0000274 knot
-- **地面沉降：** 地质沉降10 in/h = 0.000137 knot
+### Geological Monitoring
+- **Building Settlement:** High-rise building settlement 5 in/h = 0.0000686 knot
+- **Bridge Deformation:** Bridge displacement 2 in/h = 0.0000274 knot
+- **Ground Subsidence:** Geological subsidence 10 in/h = 0.000137 knot
 
-### 海洋工程
-- **海岸侵蚀：** 海岸线变化500 in/h = 0.00686 knot
-- **潮汐影响：** 地质变化1000 in/h = 0.0137 knot
-- **海洋监测：** 海底变形100 in/h = 0.00137 knot
+### Ocean Engineering
+- **Coastal Erosion:** Coastline change 500 in/h = 0.00686 knot
+- **Tidal Influence:** Geological change 1000 in/h = 0.0137 knot
+- **Ocean Monitoring:** Seafloor deformation 100 in/h = 0.00137 knot
 
-### 精密制造
-- **机械加工：** 进给速度500 in/h = 0.00686 knot
-- **自动化设备：** 传送带速度1000 in/h = 0.0137 knot
-- **精密测量：** 测量头移动100 in/h = 0.00137 knot
+### Precision Manufacturing
+- **Mechanical Processing:** Feed rate 500 in/h = 0.00686 knot
+- **Automated Equipment:** Conveyor belt speed 1000 in/h = 0.0137 knot
+- **Precision Measurement:** Measuring head movement 100 in/h = 0.00137 knot
 
-### 数据交换
-- **跨专业协作：** 建筑数据与航海数据对比
-- **标准统一：** 不同行业间的速度标准
-- **国际合作：** 将专业数据转换为国际通用单位
+### Data Exchange
+- **Cross-disciplinary Collaboration:** Comparison of building data with maritime data
+- **Standard Unification:** Speed standards across different industries
+- **International Cooperation:** Converting specialized data to internationally common units
 
-## 六、常见问题 FAQ
+## VI. Frequently Asked Questions
 
-### Q1: 一英寸每小时等于多少节？
-**A1**: 1 in/h = 0.0000137149 knot（精确值）。这是因为1节 = 1海里/小时 = 1852米/小时，而1英寸 = 0.0254米，所以1 in/h = 0.0254 ÷ 1852 ≈ 0.0000137149 knot。
+### Q1: How many knots is one inch per hour?
+**A1**: 1 in/h = 0.0000137149 knot (exact value). This is because 1 knot = 1 nautical mile/hour = 1852 meters/hour, and 1 inch = 0.0254 meters, so 1 in/h = 0.0254 ÷ 1852 ≈ 0.0000137149 knot.
 
-### Q2: in/h to knot怎么换算？
-**A2**: in/h转knot的换算方法：
-- **公式：** knot = in/h × 0.0000137149
-- **示例：** 1000 in/h = 1000 × 0.0000137149 = 0.0137149 knot
-- **记忆技巧：** in/h × 0.0000137 ≈ knot（近似值，误差约0.1%）
+### Q2: How to convert in/h to knot?
+**A2**: Method for converting in/h to knot:
+- **Formula:** knot = in/h × 0.0000137149
+- **Example:** 1000 in/h = 1000 × 0.0000137149 = 0.0137149 knot
+- **Memory Trick:** in/h × 0.0000137 ≈ knot (approximate value, error about 0.1%)
 
-### Q3: knot转in/h的公式是什么？
-**A3**: knot转in/h的公式是：in/h = knot ÷ 0.0000137149。例如：1 knot = 1 ÷ 0.0000137149 ≈ 72,913 in/h。
+### Q3: What is the formula for converting knot to in/h?
+**A3**: The formula for converting knot to in/h is: in/h = knot ÷ 0.0000137149. For example: 1 knot = 1 ÷ 0.0000137149 ≈ 72,913 in/h.
 
-### Q4: 如何快速进行in/h和knot换算？
-**A4**: 快速换算技巧：
-- **in/h转knot：** in/h × 0.0000137 ≈ knot（误差约0.1%）
-- **knot转in/h：** knot × 73,000 ≈ in/h（快速估算）
-- **记忆要点：** 1 knot ≈ 72,913 in/h
+### Q4: How to quickly convert between in/h and knot?
+**A4**: Quick conversion tips:
+- **in/h to knot:** in/h × 0.0000137 ≈ knot (error about 0.1%)
+- **knot to in/h:** knot × 73,000 ≈ in/h (quick estimation)
+- **Memory Point:** 1 knot ≈ 72,913 in/h
 
-### Q5: in/h换算时需要注意什么？
-**A5**: 注意事项包括：
-- 确认使用的是国际英寸和国际海里标准
-- 区分in/h和knot的应用场景
-- 工程计算通常保留适当位数的小数
-- 注意单位一致性，避免混用不同长度单位
+### Q5: What should be noted when converting in/h?
+**A5**: Important considerations include:
+- Confirm using international inch and international nautical mile standards
+- Distinguish application scenarios for in/h and knot
+- Engineering calculations usually retain appropriate decimal places
+- Maintain unit consistency, avoid mixing different length units
 
 ### Q6: 为什么1 in/h等于0.0000137149 knot？
 **A6**: 因为：

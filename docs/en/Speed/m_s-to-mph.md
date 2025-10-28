@@ -4,20 +4,20 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Speed/
-      linkText: 速度单位换算
+      linkText: Speed Unit Conversion
   - - link: /Speed/index
-      linkText: 速度单位单位换算
+      linkText: Speed Unit Conversion
 head:
   - - meta
     - name: description
-      content: 专业的m/s到mph速度单位换算工具。一米每秒等于多少英里每小时？提供米每秒转换英里每小时的精确公式、换算表和实用技巧。支持m/s、mph、km/h、knot等多种速度单位互转。
+      content: Professional m/s to mph speed unit conversion tool. How many miles per hour is one meter per second? Provides precise formulas, conversion tables, and practical tips for converting meters per second to miles per hour. Supports conversion between m/s, mph, km/h, knot and other speed units.
   - - meta
     - name: keywords
-      content: 速度单位换算, 米每秒转换, m/s to mph, 一米每秒等于多少英里每小时, mph和m/s换算, 米每秒换算英里每小时, 速度转换, 速度单位, 米每秒和英里每小时的换算, mph换算m/s, 英里每小时换算米每秒, m/s mph, 米每秒, 英里每小时
+      content: speed unit conversion, meters per second conversion, m/s to mph, how many miles per hour is one meter per second, mph and m/s conversion, meters per second to miles per hour conversion, speed conversion, speed units, meters per second and miles per hour conversion, mph to m/s conversion, miles per hour to meters per second conversion, m/s mph, meters per second, miles per hour
 ---
-# 米每秒转换英里每小时 | m/s到mph速度单位换算工具
+# Meters per Second to Miles per Hour | m/s to mph Speed Unit Conversion Tool
 ---
 <script setup>
 import { onMounted, reactive, inject ,ref  } from 'vue'
@@ -26,32 +26,32 @@ import { defineClientComponent } from 'vitepress'
 import { Speed } from '../files';
 const convert = inject('convert')
 const options =  [
-  { "label": "米每秒 (m/s)", "value": "m/s" },
-  { "label": "千米每小时 (km/h)", "value": "km/h" },
-  { "label": "英里每小时 (mph)", "value": "mph" },
-  { "label": "节 (knot)", "value": "knot" },
-  { "label": "英尺每秒 (ft/s)", "value": "ft/s" },
-  { "label": "英寸每小时 (in/h)", "value": "in/h" },
-  { "label": "毫米每小时 (mm/h)", "value": "mm/h" }
+  { "label": "Meters per second (m/s)", "value": "m/s" },
+  { "label": "Kilometers per hour (km/h)", "value": "km/h" },
+  { "label": "Miles per hour (mph)", "value": "mph" },
+  { "label": "Knots (knot)", "value": "knot" },
+  { "label": "Feet per second (ft/s)", "value": "ft/s" },
+  { "label": "Inches per hour (in/h)", "value": "in/h" },
+  { "label": "Millimeters per hour (mm/h)", "value": "mm/h" }
 ];
-const seoKey = ['速度单位换算','米每秒转换','m/s to mph','一米每秒等于多少英里每小时','mph和m/s换算','米每秒换算英里每小时','速度转换','速度单位','米每秒和英里每小时的换算','mph换算m/s','英里每小时换算米每秒','m/s mph','米每秒','英里每小时']
+const seoKey = ['speed unit conversion','meters per second conversion','m/s to mph','how many miles per hour is one meter per second','mph and m/s conversion','meters per second to miles per hour conversion','speed conversion','speed units','meters per second and miles per hour conversion','mph to m/s conversion','miles per hour to meters per second conversion','m/s mph','meters per second','miles per hour']
 const formRef = ref(null);
 const rules = {
   number:{
     required: true,
     type: 'number',
     trigger: "blur",
-    message: '请输入数字'
+    message: 'Please enter a number'
   },
   to:{
     required: true,
     trigger: "change",
-    message: '请选择转换单位'
+    message: 'Please select conversion unit'
   },
   from:{
     required: true,
     trigger: "change",
-    message: '请选择原始单位'
+    message: 'Please select original unit'
   }
 }
 const form = reactive({
@@ -59,7 +59,7 @@ const form = reactive({
   to:'mph',
   from:'m/s',
   result:'',
-  title:'速度单位单位换算',
+  title:'Speed Unit Conversion',
 })
 const convertHandler = (e) => {
    e.preventDefault();
@@ -72,17 +72,17 @@ const convertHandler = (e) => {
 </script>
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="数值"  path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数值" />
+  <n-form-item label="Value"  path="number">
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="Please enter the value to convert" />
   </n-form-item>
-  <n-form-item label="从" path="from">
-    <n-select size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
+  <n-form-item label="From" path="from">
+    <n-select size="large" :options="options" v-model:value="form.from" placeholder="Please select original unit" />
   </n-form-item>
-  <n-form-item label="到" path="to">
-    <n-select size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
+  <n-form-item label="To" path="to">
+    <n-select size="large" :options="options" v-model:value="form.to" placeholder="Please select conversion unit" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
+    <n-button type="info" style="width:100%" @click="convertHandler">Convert</n-button>
   </n-form-item>
 </n-form>
 <n-card embedded :bordered="false" hoverable style="margin-top: 16px;">
@@ -104,149 +104,149 @@ const convertHandler = (e) => {
 </n-card>
 
 
-## 一、m/s到mph换算公式详解
+## 1. Detailed Explanation of m/s to mph Conversion Formula
 
-### 一米每秒等于多少英里每小时？
+### How many miles per hour is one meter per second?
 
-**核心公式：1 m/s ≈ 2.237 mph**
+**Core Formula: 1 m/s ≈ 2.237 mph**
 
-**推导过程：**
-- 1米 = 1/1609.344 英里（1英里 = 1609.344米）
-- 1秒 = 1/3600 小时
-- 因此：1 m/s = (1米/1秒) × (1英里/1609.344米) × (3600秒/1小时) ≈ 2.237 mph
+**Derivation Process:**
+- 1 meter = 1/1609.344 miles (1 mile = 1609.344 meters)
+- 1 second = 1/3600 hours
+- Therefore: 1 m/s = (1 meter/1 second) × (1 mile/1609.344 meters) × (3600 seconds/1 hour) ≈ 2.237 mph
 
-### 快速换算技巧
+### Quick Conversion Tips
 
-**m/s转mph：** 数值 × 2.237
-- 例：20 m/s = 20 × 2.237 ≈ 44.7 mph
+**m/s to mph:** Value × 2.237
+- Example: 20 m/s = 20 × 2.237 ≈ 44.7 mph
 
-**mph转m/s：** 数值 ÷ 2.237
-- 例：60 mph = 60 ÷ 2.237 ≈ 26.8 m/s
+**mph to m/s:** Value ÷ 2.237
+- Example: 60 mph = 60 ÷ 2.237 ≈ 26.8 m/s
 
-### 常用速度对照表
+### Common Speed Reference Table
 
-| m/s | mph | 实际应用场景 |
-|-----|-----|-------------|
-| 1   | 2.2 | 慢走速度 |
-| 5   | 11.2| 自行车速度 |
-| 10  | 22.4| 电动车速度 |
-| 20  | 44.7| 城市道路速度 |
-| 30  | 67.1| 高速公路速度 |
+| m/s | mph | Practical Application Scenarios |
+|-----|-----|--------------------------------|
+| 1   | 2.2 | Slow walking speed |
+| 5   | 11.2| Bicycle speed |
+| 10  | 22.4| Electric vehicle speed |
+| 20  | 44.7| City road speed |
+| 30  | 67.1| Highway speed |
 
-## 二、速度单位换算表（以 1 m/s 为基准）
+## 2. Speed Unit Conversion Table (Based on 1 m/s)
 
-| 单位       | 符号   | 换算值      | 典型应用场景             |
-|------------|--------|-------------|-------------------------|
-| 米每秒     | m/s    | 1           | 物理学、工程计算         |
-| 英里每小时 | mph    | ≈2.237      | 英美国家车速、体育记录   |
-| 千米每小时 | km/h   | 3.6         | 汽车限速、天气预报       |
-| 节        | knot   | ≈1.944      | 航海、航空               |
-| 英尺每秒   | ft/s   | ≈3.281      | 美国工程流体力学         |
-| 英寸每小时 | in/h   | 141,732     | 地质沉降监测             |
-| 毫米每小时 | mm/h   | 3,600,000   | 材料腐蚀速率、极慢速过程 |
+| Unit              | Symbol | Conversion Value | Typical Application Scenarios        |
+|-------------------|--------|------------------|--------------------------------------|
+| Meters per second | m/s    | 1                | Physics, engineering calculations    |
+| Miles per hour    | mph    | ≈2.237           | Vehicle speed in UK/US, sports records |
+| Kilometers per hour | km/h | 3.6              | Vehicle speed limits, weather forecasts |
+| Knots             | knot   | ≈1.944           | Maritime, aviation                   |
+| Feet per second   | ft/s   | ≈3.281           | US engineering fluid mechanics       |
+| Inches per hour   | in/h   | 141,732          | Geological settlement monitoring     |
+| Millimeters per hour | mm/h | 3,600,000        | Material corrosion rates, ultra-slow processes |
 
-注：换算公式示例 → mph 转 km/h: ( mph × 1.609 = km/h ) ；m/s 转 mph: ( m/s × 2.237 = mph ) 。
+Note: Conversion formula examples → mph to km/h: ( mph × 1.609 = km/h ) ; m/s to mph: ( m/s × 2.237 = mph ) .
 
-## 三、英里每小时(mph)单位科普
+## 3. Miles per Hour (mph) Unit Science
 
-### 英里每小时的历史背景
+### Historical Background of Miles per Hour
 
-**mph（Miles Per Hour）**起源于英国传统度量衡系统：
+**mph (Miles Per Hour)** originates from the British traditional measurement system:
 
-- **英里定义**：1英里 = 1609.344米，源于古罗马"千步"概念
-- **应用范围**：主要用于美国、英国等英语国家
-- **标准化**：1959年国际英里标准确立
+- **Mile Definition**: 1 mile = 1609.344 meters, derived from the ancient Roman "thousand paces" concept
+- **Application Range**: Mainly used in the United States, United Kingdom, and other English-speaking countries
+- **Standardization**: International mile standard established in 1959
 
-### 为什么美国仍使用mph？
+### Why does the United States still use mph?
 
-不同于大多数国家使用km/h，美国坚持使用mph的原因：
+Unlike most countries that use km/h, the United States persists in using mph for the following reasons:
 
-- **历史传统**：独立前继承英国度量衡
-- **基础设施**：道路标志、车辆仪表已标准化
-- **法律体系**：交通法规以mph为准
-- **民众习惯**：日常生活深度融入
+- **Historical Tradition**: Inherited British measurement system before independence
+- **Infrastructure**: Road signs and vehicle instruments are already standardized
+- **Legal System**: Traffic regulations are based on mph
+- **Public Habit**: Deeply integrated into daily life
 
-### mph在不同领域的应用
+### Applications of mph in Different Fields
 
-**汽车工业：**
-- 美国车辆仪表盘主刻度为mph
-- 0-60 mph加速是性能指标
-- 高速公路限速通常55-80 mph
+**Automotive Industry:**
+- US vehicle dashboards use mph as the primary scale
+- 0-60 mph acceleration is a performance indicator
+- Highway speed limits typically range from 55-80 mph
 
-**体育运动：**
-- 棒球投球速度（90-105 mph）
-- 网球发球速度（100-150 mph）
-- 高尔夫球速度（150-200 mph）
+**Sports:**
+- Baseball pitching speed (90-105 mph)
+- Tennis serve speed (100-150 mph)
+- Golf ball speed (150-200 mph)
 
-**航空领域：**
-- 小型飞机速度常用mph表示
-- 风速预报在美国用mph
-- 龙卷风等级按风速mph分类
+**Aviation Field:**
+- Small aircraft speeds are commonly expressed in mph
+- Wind speed forecasts in the US use mph
+- Tornado classifications are based on wind speed in mph
 
-### 实际应用场景中的m/s和mph换算
+### m/s and mph Conversion in Practical Application Scenarios
 
-在国际交流和专业领域中，**米每秒和英里每小时的换算**应用广泛：
+In international communication and professional fields, **conversion between meters per second and miles per hour** is widely applied:
 
-**国际贸易：**
-- 汽车出口需要速度单位转换
-- 工程设备技术规格对接
-- 国际运输速度标准统一
+**International Trade:**
+- Automotive exports require speed unit conversion
+- Engineering equipment technical specification alignment
+- Standardization of international transportation speeds
 
-**科学研究：**
-- 物理实验数据国际发表
-- 气象数据国际交换
-- 工程项目跨国合作
+**Scientific Research:**
+- International publication of physics experimental data
+- International exchange of meteorological data
+- Cross-national cooperation in engineering projects
 
-**体育竞技：**
-- 奥运会记录统一用m/s
-- 美国体育赛事用mph
-- 国际比赛需要单位换算
+**Sports Competition:**
+- Olympic records uniformly use m/s
+- US sports events use mph
+- International competitions require unit conversion
 
-**航空航天：**
-- 国际航班速度协调
-- 卫星轨道速度计算
-- 航天器对接速度匹配
+**Aerospace:**
+- International flight speed coordination
+- Satellite orbital velocity calculations
+- Spacecraft docking speed matching
 
-## 四、速度单位换算常见问题 FAQ
+## 4. Speed Unit Conversion FAQ
 
-### Q1: 米每秒和英里每小时怎么换算？
-**A1**: 米每秒转英里每小时的公式是：mph = m/s × 2.237。例如：10 m/s = 10 × 2.237 ≈ 22.4 mph。
+### Q1: How to convert between meters per second and miles per hour?
+**A1**: The formula for converting meters per second to miles per hour is: mph = m/s × 2.237. For example: 10 m/s = 10 × 2.237 ≈ 22.4 mph.
 
-### Q2: 一米每秒等于多少英里每小时？
-**A2**: 1米每秒约等于2.237英里每小时。这是因为1英里=1609.344米，1小时=3600秒，所以转换系数为2.237。
+### Q2: How many miles per hour is one meter per second?
+**A2**: 1 meter per second is approximately equal to 2.237 miles per hour. This is because 1 mile = 1609.344 meters and 1 hour = 3600 seconds, so the conversion factor is 2.237.
 
-### Q3: mph换算m/s的公式是什么？
-**A3**: mph转m/s的公式是：m/s = mph ÷ 2.237。例如：60 mph = 60 ÷ 2.237 ≈ 26.8 m/s。
+### Q3: What is the formula for converting mph to m/s?
+**A3**: The formula for converting mph to m/s is: m/s = mph ÷ 2.237. For example: 60 mph = 60 ÷ 2.237 ≈ 26.8 m/s.
 
-### Q4: 为什么美国使用mph而不是km/h？
-**A4**: 主要原因包括：
-- 历史传统：继承英国度量衡系统
-- 基础设施：道路标志和车辆仪表已标准化
-- 法律体系：交通法规以mph为基准
-- 民众习惯：日常生活深度融入
+### Q4: Why does the United States use mph instead of km/h?
+**A4**: Main reasons include:
+- Historical tradition: Inherited British measurement system
+- Infrastructure: Road signs and vehicle instruments are already standardized
+- Legal system: Traffic regulations are based on mph
+- Public habit: Deeply integrated into daily life
 
-### Q5: mph在哪些场景下使用？
-**A5**: mph主要应用于：
-- 美国、英国等国家的交通运输
-- 汽车工业的性能指标
-- 体育运动的速度记录
-- 气象预报的风速表示
-- 航空领域的小型飞机
+### Q5: In which scenarios is mph used?
+**A5**: mph is mainly used in:
+- Transportation in the United States, United Kingdom, and other countries
+- Performance indicators in the automotive industry
+- Speed records in sports
+- Wind speed representation in weather forecasts
+- Small aircraft in the aviation field
 
-### Q6: 如何快速进行米每秒换算英里每小时？
-**A6**: 快速换算技巧：
-- 精确计算：m/s × 2.237 = mph
-- 近似计算：m/s × 2.2 ≈ mph（误差约1.7%）
-- 心算技巧：先乘以2，再加上20%
+### Q6: How to quickly convert meters per second to miles per hour?
+**A6**: Quick conversion tips:
+- Precise calculation: m/s × 2.237 = mph
+- Approximate calculation: m/s × 2.2 ≈ mph (error about 1.7%)
+- Mental calculation trick: multiply by 2 first, then add 20%
 
-### Q7: m/s和mph换算时需要注意什么？
-**A7**: 注意事项包括：
-- 确认使用国际英里（1609.344米）
-- 保留适当的小数位数（通常1-2位）
-- 区分法定英里和海里
-- 考虑应用场景的精度要求
+### Q7: What should be noted when converting between m/s and mph?
+**A7**: Important considerations include:
+- Confirm using international miles (1609.344 meters)
+- Retain appropriate decimal places (usually 1-2 digits)
+- Distinguish between statute miles and nautical miles
+- Consider precision requirements for the application scenario
 
-## 五、更多速度单位换算工具
+## 5. More Speed Unit Conversion Tools
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Speed" :key="index">
     <n-button

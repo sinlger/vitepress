@@ -199,168 +199,168 @@ Note: Conversion formula examples → ft/s to knot: (knot = ft/s × 0.592484); k
 - Material impact testing
 - Environmental monitoring equipment
 
-### 冷知识：ft/s在不同领域的速度
+### Fun Facts: ft/s Speeds in Different Fields
 
-- **人类游泳速度：** 约3-4 ft/s（约1.8-2.4 knot）
-- **小型帆船：** 约8-15 ft/s（约4.7-8.9 knot）
-- **货船巡航：** 约25-35 ft/s（约14.8-20.7 knot）
-- **快艇高速：** 约85-135 ft/s（约50-80 knot）
+- **Human Swimming Speed:** About 3-4 ft/s (about 1.8-2.4 knot)
+- **Small Sailboat:** About 8-15 ft/s (about 4.7-8.9 knot)
+- **Cargo Ship Cruising:** About 25-35 ft/s (about 14.8-20.7 knot)
+- **High-Speed Boat:** About 85-135 ft/s (about 50-80 knot)
 
-## 四、速度单位详解：ft/s、knot等缩写含义
+## IV. Speed Units Explained: Meanings of ft/s, knot and Other Abbreviations
 
-### 常见速度单位缩写对照
+### Common Speed Unit Abbreviation Comparison
 
-| 英文缩写 | 英文全称 | 中文名称 | 换算关系（相对于1 ft/s） |
+| English Abbreviation | Full English Term | Name | Conversion Relation (Relative to 1 ft/s) |
 |----------|----------|----------|-------------------------|
-| **ft/s** | feet per second | 英尺每秒 | 1 |
-| **fps** | feet per second | 英尺每秒 | 1 |
-| **ft/sec** | feet per second | 英尺每秒 | 1 |
-| **knot** | knot | 节 | 0.592484 |
-| **kn** | knot | 节 | 0.592484 |
-| **kt** | knot | 节 | 0.592484 |
-| **mph** | miles per hour | 英里每小时 | 0.681818 |
-| **km/h** | kilometers per hour | 千米每小时 | 1.09728 |
-| **m/s** | meters per second | 米每秒 | 0.3048 |
+| **ft/s** | feet per second | feet per second | 1 |
+| **fps** | feet per second | feet per second | 1 |
+| **ft/sec** | feet per second | feet per second | 1 |
+| **knot** | knot | knot | 0.592484 |
+| **kn** | knot | knot | 0.592484 |
+| **kt** | knot | knot | 0.592484 |
+| **mph** | miles per hour | miles per hour | 0.681818 |
+| **km/h** | kilometers per hour | kilometers per hour | 1.09728 |
+| **m/s** | meters per second | meters per second | 0.3048 |
 
-### ft/s的不同表示方法
+### Different Notation Methods for ft/s
 
-**正式写法：**
-- ft/s（最常用的标准写法）
-- fps（工程领域常用简写）
-- ft/sec（完整时间单位写法）
+**Formal Notation:**
+- ft/s (most commonly used standard notation)
+- fps (common abbreviation in engineering)
+- ft/sec (complete time unit notation)
 
-**注意事项：**
-- ✅ 正确：ft/s, fps, ft/sec
-- ❌ 错误：ft/second（混合简写和全写）
-- ✅ 正确：feet per second（完整英文表达）
-- ❌ 错误：foot per second（单复数错误）
+**Important Notes:**
+- ✅ Correct: ft/s, fps, ft/sec
+- ❌ Incorrect: ft/second (mixing abbreviations and full terms)
+- ✅ Correct: feet per second (complete English expression)
+- ❌ Incorrect: foot per second (singular/plural error)
 
-### 速度单位使用场景
+### Speed Unit Usage Scenarios
 
-**工程计算：** ft/s, fps（美国工程）
-**航海运输：** knot（国际标准）
-**流体力学：** ft/s（美国标准）, m/s（国际标准）
-**建筑工程：** ft/s（风速、流速）
-**科学研究：** m/s（国际单位制标准）
-**航空航海：** knot（国际标准）
+**Engineering Calculations:** ft/s, fps (US engineering)
+**Maritime Transport:** knot (international standard)
+**Fluid Mechanics:** ft/s (US standard), m/s (international standard)
+**Building Engineering:** ft/s (wind speed, flow velocity)
+**Scientific Research:** m/s (International System of Units standard)
+**Aviation and Maritime:** knot (international standard)
 
-### 重要提醒
+### Important Reminders
 
-**单位使用注意事项：**
-1. **美国工程：** 广泛使用ft/s，特别是流体力学领域
-2. **国际航海：** 优先使用knot（国际标准）
-3. **科学研究：** 必须使用m/s（SI基本单位）
-4. **跨国项目：** 需要明确单位制，避免换算错误
+**Unit Usage Considerations:**
+1. **US Engineering:** ft/s widely used, especially in fluid mechanics
+2. **International Maritime:** knot preferred (international standard)
+3. **Scientific Research:** m/s must be used (SI base unit)
+4. **International Projects:** Unit system must be clearly specified to avoid conversion errors
 
-**换算精度要求：**
-- **高精度计算：** 使用完整换算系数（0.592484）
-- **工程估算：** 可使用近似值（0.59）
-- **快速心算：** 记住关键换算点（10 ft/s ≈ 5.9 knot）
+**Conversion Precision Requirements:**
+- **High-precision Calculation:** Use complete conversion factor (0.592484)
+- **Engineering Estimation:** Approximate value can be used (0.59)
+- **Quick Mental Calculation:** Remember key conversion point (10 ft/s ≈ 5.9 knot)
 
-## 五、实际应用中的ft/s速度换算场景
+## V. Practical Application Scenarios for ft/s Speed Conversion
 
-### 流体工程
-- **管道流速：** 给水管道流速5 ft/s = 2.962 knot
-- **泵送系统：** 离心泵出口速度15 ft/s = 8.887 knot
-- **通风系统：** 风管内风速8 ft/s = 4.740 knot
+### Fluid Engineering
+- **Pipeline Flow Velocity:** Water supply pipeline flow velocity 5 ft/s = 2.962 knot
+- **Pumping Systems:** Centrifugal pump outlet velocity 15 ft/s = 8.887 knot
+- **Ventilation Systems:** Air velocity in ducts 8 ft/s = 4.740 knot
 
-### 航海工程
-- **船舶设计：** 推进器流速30 ft/s = 17.775 knot
-- **港口设计：** 潮流速度4 ft/s = 2.370 knot
-- **海洋工程：** 海流监测6 ft/s = 3.555 knot
+### Marine Engineering
+- **Ship Design:** Propeller flow velocity 30 ft/s = 17.775 knot
+- **Port Design:** Tidal current velocity 4 ft/s = 2.370 knot
+- **Ocean Engineering:** Ocean current monitoring 6 ft/s = 3.555 knot
 
-### 机械设计
-- **传送带速度：** 生产线传送带3 ft/s = 1.777 knot
-- **旋转机械：** 叶轮叶片尖端速度100 ft/s = 59.248 knot
-- **液压系统：** 液压缸活塞速度2 ft/s = 1.185 knot
+### Mechanical Design
+- **Conveyor Belt Speed:** Production line conveyor belt 3 ft/s = 1.777 knot
+- **Rotating Machinery:** Impeller blade tip velocity 100 ft/s = 59.248 knot
+- **Hydraulic Systems:** Hydraulic cylinder piston velocity 2 ft/s = 1.185 knot
 
-### 环境监测
-- **风速测量：** 环境监测站风速25 ft/s = 14.812 knot
-- **水流监测：** 河流流速4 ft/s = 2.370 knot
-- **海洋监测：** 海流速度12 ft/s = 7.110 knot
+### Environmental Monitoring
+- **Wind Speed Measurement:** Environmental monitoring station wind speed 25 ft/s = 14.812 knot
+- **Water Flow Monitoring:** River flow velocity 4 ft/s = 2.370 knot
+- **Ocean Monitoring:** Ocean current velocity 12 ft/s = 7.110 knot
 
-## 六、常见问题 FAQ
+## VI. Frequently Asked Questions
 
-### Q1: 1英尺每秒等于多少节？
-**A1**: 1 ft/s = 0.592484 knot（精确值）。这是因为1海里 = 6076.12英尺，1小时 = 3600秒，所以1 ft/s = 3600 ÷ 6076.12 = 0.592484 knot。
+### Q1: How many knots is one foot per second?
+**A1**: 1 ft/s = 0.592484 knot (exact value). This is because 1 nautical mile = 6076.12 feet, 1 hour = 3600 seconds, so 1 ft/s = 3600 ÷ 6076.12 = 0.592484 knot.
 
-### Q2: ft/s to knot怎么换算？
-**A2**: ft/s转knot的换算方法：
-- **公式：** knot = ft/s × 0.592484
-- **示例：** 10 ft/s = 10 × 0.592484 = 5.925 knot
-- **记忆技巧：** ft/s × 0.59 ≈ knot（近似值，误差约0.4%）
+### Q2: How to convert ft/s to knot?
+**A2**: Method for converting ft/s to knot:
+- **Formula:** knot = ft/s × 0.592484
+- **Example:** 10 ft/s = 10 × 0.592484 = 5.925 knot
+- **Memory Trick:** ft/s × 0.59 ≈ knot (approximate value, error about 0.4%)
 
-### Q3: knot转ft/s的公式是什么？
-**A3**: knot转ft/s的公式是：ft/s = knot ÷ 0.592484。例如：20 knot = 20 ÷ 0.592484 ≈ 33.76 ft/s。
+### Q3: What is the formula for converting knot to ft/s?
+**A3**: The formula for converting knot to ft/s is: ft/s = knot ÷ 0.592484. For example: 20 knot = 20 ÷ 0.592484 ≈ 33.76 ft/s.
 
-### Q4: 如何快速进行ft/s和knot换算？
-**A4**: 快速换算技巧：
-- **ft/s转knot：** ft/s × 0.59 ≈ knot（误差约0.4%）
-- **knot转ft/s：** knot × 1.69 ≈ ft/s（快速估算）
-- **记忆要点：** 10 ft/s ≈ 5.9 knot
+### Q4: How to quickly convert between ft/s and knot?
+**A4**: Quick conversion tips:
+- **ft/s to knot:** ft/s × 0.59 ≈ knot (error about 0.4%)
+- **knot to ft/s:** knot × 1.69 ≈ ft/s (quick estimation)
+- **Memory Point:** 10 ft/s ≈ 5.9 knot
 
-### Q5: ft/s换算时需要注意什么？
-**A5**: 注意事项包括：
-- 确认使用的是国际海里（6076.12英尺）标准
-- 区分ft/s和knot的应用场景
-- 工程计算通常保留2-3位小数
-- 注意单位一致性，避免混用不同单位制
+### Q5: What should be noted when converting ft/s?
+**A5**: Important considerations include:
+- Confirm using the international nautical mile (6076.12 feet) standard
+- Distinguish application scenarios for ft/s and knot
+- Engineering calculations usually retain 2-3 decimal places
+- Maintain unit consistency, avoid mixing different unit systems
 
-### Q6: 为什么1 ft/s等于0.592484 knot？
-**A6**: 因为：
-- 1海里 = 6076.12英尺（国际标准定义）
-- 1小时 = 3600秒
-- 1 ft/s = 3600秒 ÷ 6076.12英尺 = 0.592484 knot
+### Q6: Why does 1 ft/s equal 0.592484 knot?
+**A6**: Because:
+- 1 nautical mile = 6076.12 feet (international standard definition)
+- 1 hour = 3600 seconds
+- 1 ft/s = 3600 seconds ÷ 6076.12 feet = 0.592484 knot
 
-### Q7: fps和ft/s有什么区别？
-**A7**: fps和ft/s的区别：
-- **ft/s：** 标准的分数形式写法
-- **fps：** feet per second的缩写形式
-- **实质相同：** 两者表示完全相同的单位
-- **使用场景：** ft/s更正式，fps在工程中常用
+### Q7: What is the difference between fps and ft/s?
+**A7**: Difference between fps and ft/s:
+- **ft/s:** Standard fractional notation
+- **fps:** Abbreviation for feet per second
+- **Essentially the same:** Both represent exactly the same unit
+- **Usage scenarios:** ft/s is more formal, fps is commonly used in engineering
 
-### Q8: 英尺每秒在哪些领域使用？
-**A8**: ft/s的使用场景：
-- **美国工程：** 流体力学、机械设计
-- **建筑工程：** 风速分析、通风系统
-- **工业应用：** 传送带速度、生产线
-- **航海分析：** 船舶设计、海洋工程
+### Q8: In which fields is feet per second used?
+**A8**: Usage scenarios for ft/s:
+- **US Engineering:** Fluid mechanics, mechanical design
+- **Building Engineering:** Wind speed analysis, ventilation systems
+- **Industrial Applications:** Conveyor belt speed, production lines
+- **Maritime Analysis:** Ship design, ocean engineering
 
-### Q9: ft/s和knot哪个更常用？
-**A9**: 使用场景对比：
-- **ft/s：** 美国工程、流体力学、建筑工程
-- **knot：** 国际航海标准、航空、海洋工程
-- **选择建议：** 航海应用优先使用knot，美国工程可用ft/s
+### Q9: Which is more commonly used, ft/s or knot?
+**A9**: Usage scenario comparison:
+- **ft/s:** US engineering, fluid mechanics, building engineering
+- **knot:** International maritime standard, aviation, ocean engineering
+- **Selection advice:** Maritime applications prefer knot, US engineering can use ft/s
 
-### Q10: 速度单位有哪些？
-**A10**: 常见速度单位包括：
-- **英尺每秒(ft/s)：** 美国工程常用，1 ft/s = 0.592 knot
-- **节(knot)：** 国际航海航空标准
-- **千米每小时(km/h)：** 国际交通标准
-- **米每秒(m/s)：** 国际标准单位
+### Q10: What are the speed units?
+**A10**: Common speed units include:
+- **Feet per second (ft/s):** Commonly used in US engineering, 1 ft/s = 0.592 knot
+- **Knot (knot):** International maritime and aviation standard
+- **Kilometers per hour (km/h):** International traffic standard
+- **Meters per second (m/s):** International standard unit
 
-### Q11: ft/s转mph怎么算？
-**A11**: ft/s转mph的换算：
-- **公式：** mph = ft/s × 0.681818
-- **示例：** 20 ft/s = 20 × 0.681818 ≈ 13.64 mph
-- **记忆技巧：** ft/s × 0.68 ≈ mph
+### Q11: How to convert ft/s to mph?
+**A11**: Converting ft/s to mph:
+- **Formula:** mph = ft/s × 0.681818
+- **Example:** 20 ft/s = 20 × 0.681818 ≈ 13.64 mph
+- **Memory Trick:** ft/s × 0.68 ≈ mph
 
-### Q12: 为什么航海要用knot而不用ft/s？
-**A12**: 使用knot的原因：
-- **国际标准：** 全球航海航空统一使用knot
-- **实用便利：** knot基于海里，适合海上导航
-- **安全标准：** 国际海事法规基于knot制定
-- **通用性：** 避免不同国家单位制差异
+### Q12: Why use knot instead of ft/s in maritime?
+**A12**: Reasons for using knot:
+- **International Standard:** Global maritime and aviation uniformly use knot
+- **Practical Convenience:** Knot is based on nautical miles, suitable for maritime navigation
+- **Safety Standards:** International maritime regulations are based on knot
+- **Universality:** Avoids differences in unit systems between countries
 
-### Q13: ft/s在航海中的典型应用？
-**A13**: ft/s的航海应用：
-- **船舶设计：** 推进器流速、船体阻力分析
-- **港口工程：** 潮流速度、泊位设计
-- **海洋工程：** 海流监测、海上平台设计
-- **环境监测：** 海洋流速、风速测量
-- **材料科学：** 海水冲击试验、腐蚀速率
+### Q13: Typical applications of ft/s in maritime?
+**A13**: Maritime applications of ft/s:
+- **Ship Design:** Propeller flow velocity, hull resistance analysis
+- **Port Engineering:** Tidal current velocity, berth design
+- **Ocean Engineering:** Ocean current monitoring, offshore platform design
+- **Environmental Monitoring:** Ocean current velocity, wind speed measurement
+- **Materials Science:** Seawater impact testing, corrosion rates
 
-## 七、相关连接
+## VII. Related Links
 
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Speed" :key="index">
