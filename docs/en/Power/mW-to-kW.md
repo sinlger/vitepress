@@ -178,5 +178,5 @@ Understanding this conversion helps engineers effectively design systems that in
 - [Milliwatt to Megawatt (mW to MW)](/Power/mW-to-MW)
 - [Milliwatt to Gigawatt (mW to GW)](/Power/mW-to-GW)
 - [Kilowatt to Watt (kW to W)](/Power/kW-to-W)
-- [Kilowatt to Megawatt (kW to MW)](/Power/kW-to-MW)
+- [Kilowatt to Milliwatt (kW to mW)](/Power/kW-to-mW)
 - [Kilowatt to Gigawatt (kW to GW)](/Power/kW-to-GW)

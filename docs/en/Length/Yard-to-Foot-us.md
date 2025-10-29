@@ -58,7 +58,6 @@ const convertHandler = () => {
   </n-form-item>
   
   <n-button type="info" @click="convertHandler" block>Convert</n-button>
-  </n-form-item>
 </n-form>
 
 <n-card embedded :bordered="false" hoverable>

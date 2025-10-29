@@ -205,7 +205,7 @@ Understanding this conversion helps engineers and planners work across different
 
 - [Metric Horsepower to Watt (PS to W)](/Power/PS-to-W)
 - [Metric Horsepower to Kilowatt (PS to kW)](/Power/PS-to-kW)
-- [Metric Horsepower to Megawatt (PS to MW)](/Power/PS-to-MW)
+- [Metric Horsepower to Milliwatt (PS to mW)](/Power/PS-to-mW)
 - [Gigawatt to Watt (GW to W)](/Power/GW-to-W)
 - [Gigawatt to Kilowatt (GW to kW)](/Power/GW-to-kW)
-- [Gigawatt to Megawatt (GW to MW)](/Power/GW-to-MW)
+- [Gigawatt to Milliwatt (GW to mW)](/Power/GW-to-mW)

@@ -308,7 +308,7 @@ This conversion helps bridge the gap between mechanical engineering calculations
 
 - [ft-lb/s to Watts (W)](/Power/ft-lb_s-to-W)
 - [ft-lb/s to Kilowatts (kW)](/Power/ft-lb_s-to-kW)
-- [ft-lb/s to Megawatts (MW)](/Power/ft-lb_s-to-MW)
+- [ft-lb/s to Milliwatts (mW)](/Power/ft-lb_s-to-mW)
 - [GW to Watts (W)](/Power/GW-to-W)
 - [GW to Kilowatts (kW)](/Power/GW-to-kW)
 - [GW to ft-lb/s](/Power/GW-to-ft-lb_s)
