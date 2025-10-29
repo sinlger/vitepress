@@ -221,31 +221,31 @@ Note: Conversion formula examples → in/h to mph: (mph = in/h × 0.0000157828);
 | **ft/h** | feet per hour | Feet per hour | 0.0833333 |
 | **yd/h** | yards per hour | Yards per hour | 0.0277778 |
 
-### in/h和mph的不同表示方法
+### Different Representations of in/h and mph
 
-**in/h正式写法：**
-- in/h（最常用的标准写法）
-- iph（工程领域常用简写）
-- in/hr（完整时间单位写法）
+**in/h formal notation:**
+- in/h (most commonly used standard notation)
+- iph (commonly used abbreviation in engineering)
+- in/hr (complete time unit notation)
 
-**mph正式写法：**
-- mph（最常用的标准写法）
-- mi/h（完整单位写法）
-- mi/hr（完整时间单位写法）
+**mph formal notation:**
+- mph (most commonly used standard notation)
+- mi/h (complete unit notation)
+- mi/hr (complete time unit notation)
 
-**注意事项：**
-- ✅ 正确：in/h, mph, iph, mi/h
-- ❌ 错误：in/hour, mile/hour（混合简写和全写）
-- ✅ 正确：inches per hour, miles per hour（完整英文表达）
+**Important notes:**
+- ✅ Correct: in/h, mph, iph, mi/h
+- ❌ Incorrect: in/hour, mile/hour (mixing abbreviations and full forms)
+- ✅ Correct: inches per hour, miles per hour (complete English expressions)
 
-### 速度单位使用场景
+### Speed Unit Usage Scenarios
 
-**地质监测：** in/h（地面沉降、地质变形）
-**交通运输：** mph（汽车限速、火车速度）
-**精密测量：** in/h, mm/h（建筑监测、精密制造）
-**英美工程：** mph, ft/s（英美标准）
-**科学研究：** m/s（国际单位制标准）
-**日常生活：** mph（车速、风速）
+**Geological monitoring:** in/h (ground subsidence, geological deformation)
+**Transportation:** mph (vehicle speed limits, train speeds)
+**Precision measurement:** in/h, mm/h (construction monitoring, precision manufacturing)
+**UK/US engineering:** mph, ft/s (UK/US standards)
+**Scientific research:** m/s (International System of Units standard)
+**Daily life:** mph (vehicle speed, wind speed)
 
 ### Important Reminders
 

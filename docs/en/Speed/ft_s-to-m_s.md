@@ -199,195 +199,195 @@ Note: Conversion formula examples → ft/s to m/s: (m/s = ft/s × 0.3048); m/s t
 - Material impact testing
 - Environmental monitoring equipment
 
-### 冷知识：ft/s在不同领域的速度
+### Fun Facts: ft/s Speeds in Different Fields
 
-- **人类行走速度**：约4-5 ft/s（正常步行）
-- **自行车骑行**：约15-20 ft/s（休闲骑行）
-- **汽车市区行驶**：约44 ft/s（30 mph）
-- **高速公路限速**：约88 ft/s（60 mph）
+- **Human walking speed**: About 4-5 ft/s (normal walking)
+- **Bicycle riding**: About 15-20 ft/s (leisure cycling)
+- **Urban vehicle driving**: About 44 ft/s (30 mph)
+- **Highway speed limit**: About 88 ft/s (60 mph)
 
-## 四、速度单位详解：ft/s、fps等缩写含义
+## IV. Speed Unit Explanation: ft/s, fps and Other Abbreviations
 
-### 常见速度单位缩写对照
+### Common Speed Unit Abbreviation Reference
 
-| 英文缩写 | 英文全称 | 中文名称 | 换算关系（相对于1 ft/s） |
+| English Abbreviation | English Full Name | Chinese Name | Conversion Relationship (relative to 1 ft/s) |
 |----------|----------|----------|-------------------------|
-| **ft/s** | feet per second | 英尺每秒 | 1 |
-| **fps** | feet per second | 英尺每秒 | 1 |
-| **ft/sec** | feet per second | 英尺每秒 | 1 |
-| **m/s** | meters per second | 米每秒 | 0.3048 |
-| **mps** | meters per second | 米每秒 | 0.3048 |
-| **mph** | miles per hour | 英里每小时 | 0.681818 |
-| **km/h** | kilometers per hour | 千米每小时 | 1.09728 |
-| **kph** | kilometers per hour | 千米每小时 | 1.09728 |
-| **knot** | knot | 节 | 0.592484 |
+| **ft/s** | feet per second | Feet per second | 1 |
+| **fps** | feet per second | Feet per second | 1 |
+| **ft/sec** | feet per second | Feet per second | 1 |
+| **m/s** | meters per second | Meters per second | 0.3048 |
+| **mps** | meters per second | Meters per second | 0.3048 |
+| **mph** | miles per hour | Miles per hour | 0.681818 |
+| **km/h** | kilometers per hour | Kilometers per hour | 1.09728 |
+| **kph** | kilometers per hour | Kilometers per hour | 1.09728 |
+| **knot** | knot | Knots | 0.592484 |
 
-### ft/s的不同表示方法
+### Different Representations of ft/s
 
-**正式写法：**
-- ft/s（最常用的标准写法）
-- fps（工程领域常用简写）
-- ft/sec（完整时间单位写法）
+**Formal notation:**
+- ft/s (most commonly used standard notation)
+- fps (commonly used abbreviation in engineering)
+- ft/sec (complete time unit notation)
 
-**注意事项：**
-- ✅ 正确：ft/s, fps, ft/sec
-- ❌ 错误：ft/second（混合简写和全写）
-- ✅ 正确：feet per second（完整英文表达）
-- ❌ 错误：foot per second（单复数错误）
+**Important notes:**
+- ✅ Correct: ft/s, fps, ft/sec
+- ❌ Incorrect: ft/second (mixing abbreviations and full forms)
+- ✅ Correct: feet per second (complete English expression)
+- ❌ Incorrect: foot per second (singular/plural error)
 
-**英尺每秒相关概念：**
-- **英尺每秒(ft/s)：** feet per second的标准缩写
-- **fps：** 另一种常用缩写形式
-- **foot：** 1英尺 = 0.3048米 = 12英寸
+**Feet per second related concepts:**
+- **Feet per second (ft/s):** Standard abbreviation for feet per second
+- **fps:** Another commonly used abbreviation form
+- **foot:** 1 foot = 0.3048 meters = 12 inches
 
-### 速度单位使用场景
+### Speed Unit Usage Scenarios
 
-**工程计算：** ft/s, fps（美国工程）
-**科学研究：** m/s（国际单位制标准）
-**流体力学：** ft/s（美国标准）, m/s（国际标准）
-**建筑工程：** ft/s（风速、流速）
-**汽车行业：** mph（美国）, km/h（国际）
-**航海航空：** knot（国际标准）
+**Engineering calculations:** ft/s, fps (US engineering)
+**Scientific research:** m/s (International System of Units standard)
+**Fluid mechanics:** ft/s (US standard), m/s (international standard)
+**Construction engineering:** ft/s (wind speed, flow velocity)
+**Automotive industry:** mph (US), km/h (international)
+**Maritime and aviation:** knot (international standard)
 
-### 重要提醒
+### Important Reminders
 
-**单位使用注意事项：**
-1. **美国工程：** 广泛使用ft/s，特别是流体力学领域
-2. **国际工程：** 优先使用m/s（国际单位制标准）
-3. **科学研究：** 必须使用m/s（SI基本单位）
-4. **跨国项目：** 需要明确单位制，避免换算错误
+**Unit Usage Considerations:**
+1. **US engineering:** Widely uses ft/s, especially in fluid mechanics
+2. **International engineering:** Prioritize m/s (International System of Units standard)
+3. **Scientific research:** Must use m/s (SI base unit)
+4. **International projects:** Need to clarify unit system, avoid conversion errors
 
-**换算精度要求：**
-- **高精度计算：** 使用完整换算系数（0.3048）
-- **工程估算：** 可使用近似值（0.3）
-- **快速心算：** 记住关键换算点（10 ft/s ≈ 3 m/s）
+**Conversion Precision Requirements:**
+- **High-precision calculation:** Use complete conversion factor (0.3048)
+- **Engineering estimation:** Can use approximate value (0.3)
+- **Quick mental calculation:** Remember key conversion point (10 ft/s ≈ 3 m/s)
 
-### 英尺每秒与其他速度单位的关系
+### Relationship Between Feet per Second and Other Speed Units
 
-**ft/s与常用速度单位换算：**
-- **1 ft/s = 0.3048 m/s**（米每秒）
-- **1 ft/s = 0.681818 mph**（英里每小时）
-- **1 ft/s = 1.09728 km/h**（千米每小时）
-- **1 ft/s = 0.592484 knot**（节）
+**ft/s conversion to common speed units:**
+- **1 ft/s = 0.3048 m/s** (meters per second)
+- **1 ft/s = 0.681818 mph** (miles per hour)
+- **1 ft/s = 1.09728 km/h** (kilometers per hour)
+- **1 ft/s = 0.592484 knot** (knots)
 
-**实际应用：**
-- 美国工程：流体力学计算、机械设计
-- 建筑工程：风速分析、通风系统设计
-- 工业生产：传送带速度、生产线控制
-- 科学研究：实验室测量、物理计算
+**Practical applications:**
+- US engineering: fluid mechanics calculations, mechanical design
+- Construction engineering: wind speed analysis, ventilation system design
+- Industrial production: conveyor belt speed, production line control
+- Scientific research: laboratory measurements, physics calculations
 
-### ft/s在美国工程中的应用
+### Applications of ft/s in US Engineering
 
-**使用ft/s的工程领域：**
-- **流体力学：** 管道设计、泵送系统
-- **建筑工程：** 风荷载分析、通风设计
-- **机械工程：** 传动系统、生产线设计
-- **环境工程：** 空气质量监测、水处理
+**Engineering fields using ft/s:**
+- **Fluid mechanics:** Pipeline design, pumping systems
+- **Construction engineering:** Wind load analysis, ventilation design
+- **Mechanical engineering:** Transmission systems, production line design
+- **Environmental engineering:** Air quality monitoring, water treatment
 
-## 五、实际应用中的ft/s速度换算场景
+## V. Practical ft/s Speed Conversion Scenarios in Applications
 
-### 流体工程
-- **管道流速：** 给水管道流速5 ft/s = 1.524 m/s
-- **泵送系统：** 离心泵出口速度15 ft/s = 4.572 m/s
-- **通风系统：** 风管内风速8 ft/s = 2.438 m/s
+### Fluid Engineering
+- **Pipeline flow velocity:** Water supply pipeline flow velocity 5 ft/s = 1.524 m/s
+- **Pumping systems:** Centrifugal pump outlet velocity 15 ft/s = 4.572 m/s
+- **Ventilation systems:** Air velocity in ducts 8 ft/s = 2.438 m/s
 
-### 建筑工程
-- **风荷载计算：** 设计风速90 ft/s = 27.432 m/s
-- **电梯速度：** 高速电梯20 ft/s = 6.096 m/s
-- **消防系统：** 喷淋系统压力对应速度12 ft/s = 3.658 m/s
+### Construction Engineering
+- **Wind load calculation:** Design wind speed 90 ft/s = 27.432 m/s
+- **Elevator speed:** High-speed elevator 20 ft/s = 6.096 m/s
+- **Fire protection systems:** Sprinkler system pressure corresponding velocity 12 ft/s = 3.658 m/s
 
-### 机械设计
-- **传送带速度：** 生产线传送带3 ft/s = 0.914 m/s
-- **旋转机械：** 叶轮叶片尖端速度100 ft/s = 30.48 m/s
-- **液压系统：** 液压缸活塞速度2 ft/s = 0.610 m/s
+### Mechanical Design
+- **Conveyor belt speed:** Production line conveyor belt 3 ft/s = 0.914 m/s
+- **Rotating machinery:** Impeller blade tip speed 100 ft/s = 30.48 m/s
+- **Hydraulic systems:** Hydraulic cylinder piston speed 2 ft/s = 0.610 m/s
 
-### 环境监测
-- **风速测量：** 环境监测站风速25 ft/s = 7.62 m/s
-- **水流监测：** 河流流速4 ft/s = 1.219 m/s
-- **空气质量：** 烟囱排放速度30 ft/s = 9.144 m/s
+### Environmental Monitoring
+- **Wind speed measurement:** Environmental monitoring station wind speed 25 ft/s = 7.62 m/s
+- **Water flow monitoring:** River flow velocity 4 ft/s = 1.219 m/s
+- **Air quality:** Chimney emission velocity 30 ft/s = 9.144 m/s
 
-## 六、常见问题 FAQ
+## VI. Frequently Asked Questions (FAQ)
 
-### Q1: 1英尺每秒等于多少米每秒？
-**A1**: 1 ft/s = 0.3048 m/s（精确值）。这是因为1英尺 = 0.3048米（国际标准定义），时间单位相同，所以1 ft/s = 0.3048 m/s。
+### Q1: How many meters per second equals one foot per second?
+**A1**: 1 ft/s = 0.3048 m/s (exact value). This is because 1 foot = 0.3048 meters (international standard definition), and the time units are the same, so 1 ft/s = 0.3048 m/s.
 
-### Q2: ft/s to m/s怎么换算？
-**A2**: ft/s转m/s的换算方法：
-- **公式：** m/s = ft/s × 0.3048
-- **示例：** 10 ft/s = 10 × 0.3048 = 3.048 m/s
-- **记忆技巧：** ft/s × 0.3 ≈ m/s（近似值，误差约1.6%）
+### Q2: How to convert ft/s to m/s?
+**A2**: Conversion method from ft/s to m/s:
+- **Formula:** m/s = ft/s × 0.3048
+- **Example:** 10 ft/s = 10 × 0.3048 = 3.048 m/s
+- **Memory trick:** ft/s × 0.3 ≈ m/s (approximate value, error about 1.6%)
 
-### Q3: m/s转ft/s的公式是什么？
-**A3**: m/s转ft/s的公式是：ft/s = m/s ÷ 0.3048。例如：5 m/s = 5 ÷ 0.3048 ≈ 16.40 ft/s。
+### Q3: What is the formula for converting m/s to ft/s?
+**A3**: The formula for converting m/s to ft/s is: ft/s = m/s ÷ 0.3048. For example: 5 m/s = 5 ÷ 0.3048 ≈ 16.40 ft/s.
 
-### Q4: 如何快速进行ft/s和m/s换算？
-**A4**: 快速换算技巧：
-- **ft/s转m/s：** ft/s × 0.3 ≈ m/s（误差约1.6%）
-- **m/s转ft/s：** m/s × 3.3 ≈ ft/s（快速估算）
-- **记忆要点：** 10 ft/s ≈ 3 m/s
+### Q4: How to quickly convert between ft/s and m/s?
+**A4**: Quick conversion techniques:
+- **ft/s to m/s:** ft/s × 0.3 ≈ m/s (error about 1.6%)
+- **m/s to ft/s:** m/s × 3.3 ≈ ft/s (quick estimation)
+- **Memory point:** 10 ft/s ≈ 3 m/s
 
-### Q5: ft/s换算时需要注意什么？
-**A5**: 注意事项包括：
-- 确认使用的是国际英尺（0.3048米）标准
-- 区分ft/s和m/s的应用场景
-- 工程计算通常保留2-3位小数
-- 注意单位一致性，避免混用不同单位制
+### Q5: What should be noted when converting ft/s?
+**A5**: Important considerations include:
+- Confirm using the international foot (0.3048 meters) standard
+- Distinguish between ft/s and m/s application scenarios
+- Engineering calculations usually retain 2-3 decimal places
+- Pay attention to unit consistency, avoid mixing different unit systems
 
-### Q6: 为什么1 ft/s等于0.3048 m/s？
-**A6**: 因为：
-- 1英尺 = 0.3048米（1959年国际标准定义）
-- 1秒 = 1秒（时间单位相同）
-- 所以：1 ft/s = 0.3048 m/s
+### Q6: Why does 1 ft/s equal 0.3048 m/s?
+**A6**: Because:
+- 1 foot = 0.3048 meters (1959 international standard definition)
+- 1 second = 1 second (same time unit)
+- Therefore: 1 ft/s = 0.3048 m/s
 
-### Q7: fps和ft/s有什么区别？
-**A7**: fps和ft/s的区别：
-- **ft/s：** 标准的分数形式写法
-- **fps：** feet per second的缩写形式
-- **实质相同：** 两者表示完全相同的单位
-- **使用场景：** ft/s更正式，fps在工程中常用
+### Q7: What's the difference between fps and ft/s?
+**A7**: Difference between fps and ft/s:
+- **ft/s:** Standard fractional form notation
+- **fps:** Abbreviation form of feet per second
+- **Essentially the same:** Both represent exactly the same unit
+- **Usage scenarios:** ft/s is more formal, fps is commonly used in engineering
 
-### Q8: 英尺每秒在哪些领域使用？
-**A8**: ft/s的使用场景：
-- **美国工程：** 流体力学、机械设计
-- **建筑工程：** 风速分析、通风系统
-- **工业应用：** 传送带速度、生产线
-- **科学实验：** 美国实验室测量
+### Q8: In which fields is feet per second used?
+**A8**: Usage scenarios for ft/s:
+- **US engineering:** Fluid mechanics, mechanical design
+- **Construction engineering:** Wind speed analysis, ventilation systems
+- **Industrial applications:** Conveyor belt speed, production lines
+- **Scientific experiments:** US laboratory measurements
 
-### Q9: ft/s和m/s哪个更常用？
-**A9**: 使用场景对比：
-- **ft/s：** 美国工程、流体力学、建筑工程
-- **m/s：** 国际标准、科学研究、物理计算
-- **选择建议：** 国际项目优先使用m/s，美国本土工程可用ft/s
+### Q9: Which is more commonly used, ft/s or m/s?
+**A9**: Usage scenario comparison:
+- **ft/s:** US engineering, fluid mechanics, construction engineering
+- **m/s:** International standard, scientific research, physics calculations
+- **Selection advice:** Prioritize m/s for international projects, ft/s can be used for US domestic engineering
 
-### Q10: 速度单位有哪些？
-**A10**: 常见速度单位包括：
-- **英尺每秒(ft/s)：** 美国工程常用，1 ft/s = 0.3048 m/s
-- **米每秒(m/s)：** 国际标准单位
-- **千米每小时(km/h)：** 陆地交通常用
-- **英里每小时(mph)：** 英美国家车速
+### Q10: What are the speed units?
+**A10**: Common speed units include:
+- **Feet per second (ft/s):** Commonly used in US engineering, 1 ft/s = 0.3048 m/s
+- **Meters per second (m/s):** International standard unit
+- **Kilometers per hour (km/h):** Commonly used for land transportation
+- **Miles per hour (mph):** Vehicle speeds in UK/US countries
 
-### Q11: ft/s转mph怎么算？
-**A11**: ft/s转mph的换算：
-- **公式：** mph = ft/s × 0.681818
-- **示例：** 20 ft/s = 20 × 0.681818 ≈ 13.64 mph
-- **记忆技巧：** ft/s × 0.68 ≈ mph
+### Q11: How to convert ft/s to mph?
+**A11**: Conversion from ft/s to mph:
+- **Formula:** mph = ft/s × 0.681818
+- **Example:** 20 ft/s = 20 × 0.681818 ≈ 13.64 mph
+- **Memory trick:** ft/s × 0.68 ≈ mph
 
-### Q12: 为什么美国工程界常用ft/s？
-**A12**: 使用ft/s的原因：
-- **历史传统：** 美国长期使用英制单位系统
-- **工程习惯：** 美国工程师熟悉英制单位计算
-- **标准规范：** 美国工程标准多基于英制单位
-- **实用便利：** 在美国本土项目中使用更方便
+### Q12: Why do US engineers commonly use ft/s?
+**A12**: Reasons for using ft/s:
+- **Historical tradition:** US has long used the imperial unit system
+- **Engineering habits:** US engineers are familiar with imperial unit calculations
+- **Standard specifications:** US engineering standards are mostly based on imperial units
+- **Practical convenience:** More convenient to use in US domestic projects
 
-### Q13: ft/s在工程中的典型应用？
-**A13**: ft/s的工程应用：
-- **流体力学：** 管道流速、泵送速度
-- **建筑工程：** 风速分析、通风设计
-- **机械工程：** 传送带速度、机械运动
-- **环境工程：** 空气流速、水流监测
-- **材料科学：** 冲击试验、变形速率
+### Q13: What are typical applications of ft/s in engineering?
+**A13**: Engineering applications of ft/s:
+- **Fluid mechanics:** Pipeline flow velocity, pumping speed
+- **Construction engineering:** Wind speed analysis, ventilation design
+- **Mechanical engineering:** Conveyor belt speed, mechanical motion
+- **Environmental engineering:** Air flow velocity, water flow monitoring
+- **Materials science:** Impact testing, deformation rate
 
-## 七、相关连接
+## VII. Related Links
 
 
 

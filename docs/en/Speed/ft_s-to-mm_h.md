@@ -199,168 +199,168 @@ Note: Conversion formula examples → ft/s to mm/h: (mm/h = ft/s × 1,097,280); 
 - Material impact testing
 - Environmental monitoring equipment
 
-### 冷知识：ft/s在不同领域的速度
+### Fun Facts: ft/s Speeds in Different Fields
 
-- **金属腐蚀：** 约0.000001-0.00001 ft/s（约1.1-11 mm/h）
-- **化学反应：** 约0.0000001-0.000001 ft/s（约0.11-1.1 mm/h）
-- **细胞生长：** 约0.00000001-0.0000001 ft/s（约0.011-0.11 mm/h）
-- **药物渗透：** 约0.000000001-0.00000001 ft/s（约0.0011-0.011 mm/h）
+- **Metal corrosion:** About 0.000001-0.00001 ft/s (about 1.1-11 mm/h)
+- **Chemical reactions:** About 0.0000001-0.000001 ft/s (about 0.11-1.1 mm/h)
+- **Cell growth:** About 0.00000001-0.0000001 ft/s (about 0.011-0.11 mm/h)
+- **Drug penetration:** About 0.000000001-0.00000001 ft/s (about 0.0011-0.011 mm/h)
 
-## 四、速度单位详解：ft/s、mm/h等缩写含义
+## IV. Speed Unit Explanation: ft/s, mm/h and Other Abbreviations
 
-### 常见速度单位缩写对照
+### Common Speed Unit Abbreviation Reference
 
-| 英文缩写 | 英文全称 | 中文名称 | 换算关系（相对于1 ft/s） |
+| English Abbreviation | English Full Name | Chinese Name | Conversion Relationship (relative to 1 ft/s) |
 |----------|----------|----------|-------------------------|
-| **ft/s** | feet per second | 英尺每秒 | 1 |
-| **fps** | feet per second | 英尺每秒 | 1 |
-| **ft/sec** | feet per second | 英尺每秒 | 1 |
-| **mm/h** | millimeters per hour | 毫米每小时 | 1,097,280 |
-| **mm/hr** | millimeters per hour | 毫米每小时 | 1,097,280 |
-| **in/h** | inches per hour | 英寸每小时 | 43,200 |
-| **μm/h** | micrometers per hour | 微米每小时 | 1,097,280,000 |
-| **km/h** | kilometers per hour | 千米每小时 | 1.09728 |
-| **m/s** | meters per second | 米每秒 | 0.3048 |
+| **ft/s** | feet per second | Feet per second | 1 |
+| **fps** | feet per second | Feet per second | 1 |
+| **ft/sec** | feet per second | Feet per second | 1 |
+| **mm/h** | millimeters per hour | Millimeters per hour | 1,097,280 |
+| **mm/hr** | millimeters per hour | Millimeters per hour | 1,097,280 |
+| **in/h** | inches per hour | Inches per hour | 43,200 |
+| **μm/h** | micrometers per hour | Micrometers per hour | 1,097,280,000 |
+| **km/h** | kilometers per hour | Kilometers per hour | 1.09728 |
+| **m/s** | meters per second | Meters per second | 0.3048 |
 
-### ft/s的不同表示方法
+### Different Representations of ft/s
 
-**正式写法：**
-- ft/s（最常用的标准写法）
-- fps（工程领域常用简写）
-- ft/sec（完整时间单位写法）
+**Formal notation:**
+- ft/s (most commonly used standard notation)
+- fps (commonly used abbreviation in engineering)
+- ft/sec (complete time unit notation)
 
-**注意事项：**
-- ✅ 正确：ft/s, fps, ft/sec
-- ❌ 错误：ft/second（混合简写和全写）
-- ✅ 正确：feet per second（完整英文表达）
-- ❌ 错误：foot per second（单复数错误）
+**Important notes:**
+- ✅ Correct: ft/s, fps, ft/sec
+- ❌ Incorrect: ft/second (mixing abbreviations and full forms)
+- ✅ Correct: feet per second (complete English expression)
+- ❌ Incorrect: foot per second (singular/plural error)
 
-### 速度单位使用场景
+### Speed Unit Usage Scenarios
 
-**工程计算：** ft/s, fps（美国工程）
-**超精密测量：** mm/h（材料科学、化学工程）
-**流体力学：** ft/s（美国标准）, m/s（国际标准）
-**建筑工程：** ft/s（风速、流速）
-**科学研究：** m/s（国际单位制标准）
-**材料科学：** mm/h, μm/h（腐蚀速率、扩散速度）
+**Engineering calculations:** ft/s, fps (US engineering)
+**Ultra-precision measurement:** mm/h (materials science, chemical engineering)
+**Fluid mechanics:** ft/s (US standard), m/s (international standard)
+**Construction engineering:** ft/s (wind speed, flow velocity)
+**Scientific research:** m/s (International System of Units standard)
+**Materials science:** mm/h, μm/h (corrosion rate, diffusion velocity)
 
-### 重要提醒
+### Important Reminders
 
-**单位使用注意事项：**
-1. **美国工程：** 广泛使用ft/s，特别是流体力学领域
-2. **超精密测量：** 优先使用mm/h（材料、化学研究）
-3. **科学研究：** 必须使用m/s（SI基本单位）
-4. **跨国项目：** 需要明确单位制，避免换算错误
+**Unit Usage Considerations:**
+1. **US engineering:** Widely uses ft/s, especially in fluid mechanics
+2. **Ultra-precision measurement:** Prioritize mm/h (materials, chemical research)
+3. **Scientific research:** Must use m/s (SI base unit)
+4. **International projects:** Need to clarify unit system, avoid conversion errors
 
-**换算精度要求：**
-- **高精度计算：** 使用完整换算系数（1,097,280）
-- **工程估算：** 可使用近似值（1,100,000）
-- **快速心算：** 记住关键换算点（1 ft/s ≈ 1,100,000 mm/h）
+**Conversion Precision Requirements:**
+- **High-precision calculation:** Use complete conversion factor (1,097,280)
+- **Engineering estimation:** Can use approximate value (1,100,000)
+- **Quick mental calculation:** Remember key conversion point (1 ft/s ≈ 1,100,000 mm/h)
 
-## 五、实际应用中的ft/s速度换算场景
+## V. Practical ft/s Speed Conversion Scenarios in Applications
 
-### 材料科学
-- **金属腐蚀：** 腐蚀速率0.00001 ft/s = 10.97 mm/h
-- **聚合物老化：** 降解速度0.000001 ft/s = 1.097 mm/h
-- **陶瓷磨损：** 磨损速率0.0001 ft/s = 109.7 mm/h
+### Materials Science
+- **Metal corrosion:** Corrosion rate 0.00001 ft/s = 10.97 mm/h
+- **Polymer aging:** Degradation speed 0.000001 ft/s = 1.097 mm/h
+- **Ceramic wear:** Wear rate 0.0001 ft/s = 109.7 mm/h
 
-### 化学工程
-- **反应速率：** 化学反应0.0000001 ft/s = 0.1097 mm/h
-- **扩散过程：** 分子扩散0.00000001 ft/s = 0.01097 mm/h
-- **结晶过程：** 晶体生长0.000001 ft/s = 1.097 mm/h
+### Chemical Engineering
+- **Reaction rate:** Chemical reaction 0.0000001 ft/s = 0.1097 mm/h
+- **Diffusion process:** Molecular diffusion 0.00000001 ft/s = 0.01097 mm/h
+- **Crystallization process:** Crystal growth 0.000001 ft/s = 1.097 mm/h
 
-### 生物医学
-- **细胞生长：** 细胞分裂0.00000001 ft/s = 0.01097 mm/h
-- **药物渗透：** 皮肤渗透0.000000001 ft/s = 0.001097 mm/h
-- **组织修复：** 伤口愈合0.0000001 ft/s = 0.1097 mm/h
+### Biomedical
+- **Cell growth:** Cell division 0.00000001 ft/s = 0.01097 mm/h
+- **Drug penetration:** Skin penetration 0.000000001 ft/s = 0.001097 mm/h
+- **Tissue repair:** Wound healing 0.0000001 ft/s = 0.1097 mm/h
 
-### 环境科学
-- **土壤侵蚀：** 微观侵蚀0.000001 ft/s = 1.097 mm/h
-- **污染扩散：** 污染物迁移0.00001 ft/s = 10.97 mm/h
-- **风化过程：** 岩石风化0.0000001 ft/s = 0.1097 mm/h
+### Environmental Science
+- **Soil erosion:** Microscopic erosion 0.000001 ft/s = 1.097 mm/h
+- **Pollution diffusion:** Pollutant migration 0.00001 ft/s = 10.97 mm/h
+- **Weathering process:** Rock weathering 0.0000001 ft/s = 0.1097 mm/h
 
-## 六、常见问题 FAQ
+## VI. Frequently Asked Questions (FAQ)
 
-### Q1: 1英尺每秒等于多少毫米每小时？
-**A1**: 1 ft/s = 1,097,280 mm/h（精确值）。这是因为1英尺 = 304.8毫米，1小时 = 3600秒，所以1 ft/s = 304.8 × 3600 = 1,097,280 mm/h。
+### Q1: How many millimeters per hour equals one foot per second?
+**A1**: 1 ft/s = 1,097,280 mm/h (exact value). This is because 1 foot = 304.8 millimeters, 1 hour = 3600 seconds, so 1 ft/s = 304.8 × 3600 = 1,097,280 mm/h.
 
-### Q2: ft/s to mm/h怎么换算？
-**A2**: ft/s转mm/h的换算方法：
-- **公式：** mm/h = ft/s × 1,097,280
-- **示例：** 0.001 ft/s = 0.001 × 1,097,280 = 1,097.28 mm/h
-- **记忆技巧：** ft/s × 1,100,000 ≈ mm/h（近似值，误差约0.3%）
+### Q2: How to convert ft/s to mm/h?
+**A2**: Conversion method from ft/s to mm/h:
+- **Formula:** mm/h = ft/s × 1,097,280
+- **Example:** 0.001 ft/s = 0.001 × 1,097,280 = 1,097.28 mm/h
+- **Memory trick:** ft/s × 1,100,000 ≈ mm/h (approximate value, error about 0.3%)
 
-### Q3: mm/h转ft/s的公式是什么？
-**A3**: mm/h转ft/s的公式是：ft/s = mm/h ÷ 1,097,280。例如：548,640 mm/h = 548,640 ÷ 1,097,280 = 0.5 ft/s。
+### Q3: What is the formula for converting mm/h to ft/s?
+**A3**: The formula for converting mm/h to ft/s is: ft/s = mm/h ÷ 1,097,280. For example: 548,640 mm/h = 548,640 ÷ 1,097,280 = 0.5 ft/s.
 
-### Q4: 如何快速进行ft/s和mm/h换算？
-**A4**: 快速换算技巧：
-- **ft/s转mm/h：** ft/s × 1,100,000 ≈ mm/h（误差约0.3%）
-- **mm/h转ft/s：** mm/h ÷ 1,100,000 ≈ ft/s（快速估算）
-- **记忆要点：** 1 ft/s ≈ 1,100,000 mm/h
+### Q4: How to quickly convert between ft/s and mm/h?
+**A4**: Quick conversion techniques:
+- **ft/s to mm/h:** ft/s × 1,100,000 ≈ mm/h (error about 0.3%)
+- **mm/h to ft/s:** mm/h ÷ 1,100,000 ≈ ft/s (quick estimation)
+- **Memory point:** 1 ft/s ≈ 1,100,000 mm/h
 
-### Q5: ft/s换算时需要注意什么？
-**A5**: 注意事项包括：
-- 确认使用的是国际英尺（304.8毫米）标准
-- 区分ft/s和mm/h的应用场景
-- 超精密测量通常保留更多位小数
-- 注意单位一致性，避免混用不同单位制
+### Q5: What should be noted when converting ft/s?
+**A5**: Important considerations include:
+- Confirm using the international foot (304.8 millimeters) standard
+- Distinguish between ft/s and mm/h application scenarios
+- Ultra-precision measurements usually retain more decimal places
+- Pay attention to unit consistency, avoid mixing different unit systems
 
-### Q6: 为什么1 ft/s等于1,097,280 mm/h？
-**A6**: 因为：
-- 1英尺 = 304.8毫米（国际标准定义）
-- 1小时 = 3600秒
-- 1 ft/s = 304.8毫米/秒 × 3600秒/小时 = 1,097,280 mm/h
+### Q6: Why does 1 ft/s equal 1,097,280 mm/h?
+**A6**: Because:
+- 1 foot = 304.8 millimeters (international standard definition)
+- 1 hour = 3600 seconds
+- 1 ft/s = 304.8 millimeters/second × 3600 seconds/hour = 1,097,280 mm/h
 
-### Q7: fps和ft/s有什么区别？
-**A7**: fps和ft/s的区别：
-- **ft/s：** 标准的分数形式写法
-- **fps：** feet per second的缩写形式
-- **实质相同：** 两者表示完全相同的单位
-- **使用场景：** ft/s更正式，fps在工程中常用
+### Q7: What's the difference between fps and ft/s?
+**A7**: Difference between fps and ft/s:
+- **ft/s:** Standard fractional form notation
+- **fps:** Abbreviation form of feet per second
+- **Essentially the same:** Both represent exactly the same unit
+- **Usage scenarios:** ft/s is more formal, fps is commonly used in engineering
 
-### Q8: 英尺每秒在哪些领域使用？
-**A8**: ft/s的使用场景：
-- **美国工程：** 流体力学、机械设计
-- **建筑工程：** 风速分析、通风系统
-- **工业应用：** 传送带速度、生产线
-- **超精密测量：** 材料科学、化学工程
+### Q8: In which fields is feet per second used?
+**A8**: Usage scenarios for ft/s:
+- **US engineering:** Fluid mechanics, mechanical design
+- **Construction engineering:** Wind speed analysis, ventilation systems
+- **Industrial applications:** Conveyor belt speed, production lines
+- **Ultra-precision measurement:** Materials science, chemical engineering
 
-### Q9: ft/s和mm/h哪个更常用？
-**A9**: 使用场景对比：
-- **ft/s：** 美国工程、流体力学、建筑工程
-- **mm/h：** 超精密测量、材料科学、化学工程
-- **选择建议：** 超精密测量优先使用mm/h，一般工程可用ft/s
+### Q9: Which is more commonly used, ft/s or mm/h?
+**A9**: Usage scenario comparison:
+- **ft/s:** US engineering, fluid mechanics, construction engineering
+- **mm/h:** Ultra-precision measurement, materials science, chemical engineering
+- **Selection advice:** Prioritize mm/h for ultra-precision measurements, ft/s can be used for general engineering
 
-### Q10: 速度单位有哪些？
-**A10**: 常见速度单位包括：
-- **英尺每秒(ft/s)：** 美国工程常用，1 ft/s = 1,097,280 mm/h
-- **毫米每小时(mm/h)：** 超精密测量常用
-- **英寸每小时(in/h)：** 精密测量常用
-- **米每秒(m/s)：** 国际标准单位
+### Q10: What are the speed units?
+**A10**: Common speed units include:
+- **Feet per second (ft/s):** Commonly used in US engineering, 1 ft/s = 1,097,280 mm/h
+- **Millimeters per hour (mm/h):** Commonly used for ultra-precision measurement
+- **Inches per hour (in/h):** Commonly used for precision measurement
+- **Meters per second (m/s):** International standard unit
 
-### Q11: ft/s转μm/h怎么算？
-**A11**: ft/s转μm/h的换算：
-- **公式：** μm/h = ft/s × 1,097,280,000
-- **示例：** 0.000001 ft/s = 0.000001 × 1,097,280,000 = 1,097.28 μm/h
-- **记忆技巧：** ft/s × 1,100,000,000 ≈ μm/h
+### Q11: How to convert ft/s to μm/h?
+**A11**: Conversion from ft/s to μm/h:
+- **Formula:** μm/h = ft/s × 1,097,280,000
+- **Example:** 0.000001 ft/s = 0.000001 × 1,097,280,000 = 1,097.28 μm/h
+- **Memory trick:** ft/s × 1,100,000,000 ≈ μm/h
 
-### Q12: 为什么超精密测量要用mm/h而不用ft/s？
-**A12**: 使用mm/h的原因：
-- **数值适中：** mm/h数值适合表示极慢速度
-- **国际标准：** 基于国际单位制
-- **精度要求：** 便于观察微观变化
-- **直观性：** 避免使用过小的小数
+### Q12: Why use mm/h instead of ft/s for ultra-precision measurement?
+**A12**: Reasons for using mm/h:
+- **Appropriate values:** mm/h values are suitable for expressing extremely slow speeds
+- **International standard:** Based on the International System of Units
+- **Precision requirements:** Convenient for observing microscopic changes
+- **Intuitiveness:** Avoids using excessively small decimals
 
-### Q13: ft/s在超精密测量中的典型应用？
-**A13**: ft/s的超精密测量应用：
-- **材料科学：** 腐蚀速率、蠕变测试、磨损分析
-- **化学工程：** 反应速率、扩散过程、结晶速度
-- **生物医学：** 细胞生长、药物渗透、组织修复
-- **环境科学：** 土壤侵蚀、污染扩散、风化过程
-- **纳米技术：** 纳米粒子移动、表面反应速率
+### Q13: What are typical applications of ft/s in ultra-precision measurement?
+**A13**: Ultra-precision measurement applications of ft/s:
+- **Materials science:** Corrosion rate, creep testing, wear analysis
+- **Chemical engineering:** Reaction rate, diffusion process, crystallization speed
+- **Biomedical:** Cell growth, drug penetration, tissue repair
+- **Environmental science:** Soil erosion, pollution diffusion, weathering process
+- **Nanotechnology:** Nanoparticle movement, surface reaction rate
 
-## 七、相关连接
+## VII. Related Links
 
 ### 英尺每秒换算工具
 
