@@ -4,21 +4,21 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Energy/index
-      linkText: 能量和功率单位换算
+      linkText: Energy and Power Unit Converter
   - - link: /Energy/index
-      linkText: 能量和功率单位单位换算
+      linkText: Energy and Power Unit Converter
 head:
   - - meta
     - name: description
-      content: 能量和功率单位换算指南，涵盖焦耳 (J)、千焦 (kJ)、兆焦 (MJ)、吉焦 (GJ)、瓦秒 (Ws)、瓦米 (Wm)、瓦时 (Wh)、毫瓦时 (mWh)、千瓦时 (kWh)、兆瓦时 (MWh)、吉瓦时 (GWh) 的详细换算公式与说明。
+      content: Energy and power unit conversion guide, covering detailed conversion formulas and explanations for Joule (J), Kilojoule (kJ), Megajoule (MJ), Gigajoule (GJ), Watt-second (Ws), Watt-meter (Wm), Watt-hour (Wh), Milliwatt-hour (mWh), Kilowatt-hour (kWh), Megawatt-hour (MWh), Gigawatt-hour (GWh).
   - - meta
     - name: keywords
-      content: 能量, 功率, 单位换算, 焦耳, 千焦, 兆焦, 吉焦, 瓦秒, 瓦米, 瓦时, 毫瓦时, 千瓦时, 兆瓦时, 吉瓦时, 换算公式, 能量和功率单位换算指南
+      content: energy, power, unit conversion, joule, kilojoule, megajoule, gigajoule, watt-second, watt-meter, watt-hour, milliwatt-hour, kilowatt-hour, megawatt-hour, gigawatt-hour, conversion formula, energy and power unit conversion guide
 ---
 
-# 能量和功率单位换算
+# Energy and Power Unit Converter
 ---
 <script setup>
 import { onMounted, reactive, inject ,ref  } from 'vue'
@@ -27,17 +27,17 @@ import { defineClientComponent } from 'vitepress'
 import { Force } from '../files';
 const convert = inject('convert')
 const options =  [
-  { "label": "焦耳 (J)", "value": "J" },
-  { "label": "千焦 (kJ)", "value": "kJ" },
-  { "label": "兆焦 (MJ)", "value": "MJ" },
-  { "label": "吉焦 (GJ)", "value": "GJ" },
-  { "label": "瓦秒 (Ws)", "value": "Ws" },
-  { "label": "瓦米 (Wm)", "value": "Wm" },
-  { "label": "瓦时 (Wh)", "value": "Wh" },
-  { "label": "毫瓦时 (mWh)", "value": "mWh" },
-  { "label": "千瓦时 (kWh)", "value": "kWh" },
-  { "label": "兆瓦时 (MWh)", "value": "MWh" },
-  { "label": "吉瓦时 (GWh)", "value": "GWh" }
+  { "label": "Joule (J)", "value": "J" },
+  { "label": "Kilojoule (kJ)", "value": "kJ" },
+  { "label": "Megajoule (MJ)", "value": "MJ" },
+  { "label": "Gigajoule (GJ)", "value": "GJ" },
+  { "label": "Watt-second (Ws)", "value": "Ws" },
+  { "label": "Watt-meter (Wm)", "value": "Wm" },
+  { "label": "Watt-hour (Wh)", "value": "Wh" },
+  { "label": "Milliwatt-hour (mWh)", "value": "mWh" },
+  { "label": "Kilowatt-hour (kWh)", "value": "kWh" },
+  { "label": "Megawatt-hour (MWh)", "value": "MWh" },
+  { "label": "Gigawatt-hour (GWh)", "value": "GWh" }
 ];
 const formRef = ref(null);
 const rules = {
@@ -45,17 +45,17 @@ const rules = {
     required: true,
     type: 'number',
     trigger: "blur",
-    message: '请输入数字'
+    message: 'Please enter a number'
   },
   to:{
     required: true,
     trigger: "select",
-    message: '请选择转换单位'
+    message: 'Please select target unit'
   },
   from:{
     required: true,
     trigger: "select",
-    message: '请选择原始单位'
+    message: 'Please select source unit'
   }
 }
 const form = reactive({
@@ -63,7 +63,7 @@ const form = reactive({
   to:'',
   from:'',
   result:'',
-  title:'面积单位换算',
+  title:'Energy Unit Converter',
 })
 const convertHandler = (e) => {
    e.preventDefault();
@@ -76,17 +76,17 @@ const convertHandler = (e) => {
 </script>
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="数值"  path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数值" />
+  <n-form-item label="Value"  path="number">
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="Enter the value to convert" />
   </n-form-item>
-  <n-form-item label="从" path="from">
-    <n-select  size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
+  <n-form-item label="From" path="from">
+    <n-select  size="large" :options="options" v-model:value="form.from" placeholder="Select source unit" />
   </n-form-item>
-  <n-form-item label="到" path="to">
-    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
+  <n-form-item label="To" path="to">
+    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="Select target unit" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
+    <n-button type="info" style="width:100%" @click="convertHandler">Convert</n-button>
   </n-form-item>
 </n-form>
 <n-card  embedded :bordered="false" hoverable>
@@ -96,64 +96,64 @@ const convertHandler = (e) => {
 </n-card>
 
 
-## 一、能量单位换算关系表
+## I. Energy Unit Conversion Table
 
-| 单位       | 等效值                | 常见应用场景                  |
+| Unit       | Equivalent Value      | Common Application Scenarios |
 |------------|-----------------------|-----------------------------|
-| Ws         | 1 瓦秒                | 瞬时功耗测量                 |
-| Wm         | 0.06 焦耳（J）        | 科研微型设备                 |
-| Wh         | 3.6×10³ 焦耳（J）     | 家用电器能耗                 |
-| mWh        | 3.6 焦耳（J）         | 小型电池容量（如蓝牙耳机）   |
-| kWh        | 3.6×10⁶ 焦耳（J）=1000Wh | 家庭用电计量（1 度电） [4] |
-| MWh        | 3.6×10⁹ 焦耳（J）=1000kWh | 中型储能电站、中央空调系统计量  |
-| GWh        | 3.6×10¹² 焦耳（J）=1000MWh | 大型电池工厂年产能（约供 1-30 万辆车）  |
-| J          | 国际标准单位          | 基础物理计算                 |
-| kJ         | 1000 焦耳（J）        | 食品热量标识                 |
-| MJ         | 10⁶ 焦耳（J）         | 汽车燃油能量值               |
-| GJ         | 10⁹ 焦耳（J）≈278kWh  | 区域供热/工业能源计量     |
+| Ws         | 1 Watt-second         | Instantaneous power consumption measurement |
+| Wm         | 0.06 Joule (J)        | Research micro devices       |
+| Wh         | 3.6×10³ Joule (J)     | Household appliance energy consumption |
+| mWh        | 3.6 Joule (J)         | Small battery capacity (e.g., Bluetooth earphones) |
+| kWh        | 3.6×10⁶ Joule (J)=1000Wh | Household electricity metering (1 kWh) |
+| MWh        | 3.6×10⁹ Joule (J)=1000kWh | Medium-scale energy storage stations, central air conditioning system metering |
+| GWh        | 3.6×10¹² Joule (J)=1000MWh | Large battery factory annual capacity (approximately for 100,000-300,000 vehicles) |
+| J          | International standard unit | Basic physics calculations   |
+| kJ         | 1000 Joule (J)        | Food calorie labeling        |
+| MJ         | 10⁶ Joule (J)         | Automotive fuel energy value |
+| GJ         | 10⁹ Joule (J)≈278kWh  | District heating/industrial energy metering |
 
-**关键换算公式：**
+**Key Conversion Formulas:**
 - 1kWh = 3.6×10⁶J
 - 1GJ = 10⁹J ≈ 278kWh
-- **电池能量（Wh）= 容量（Ah）× 电压（V）** 
+- **Battery Energy (Wh) = Capacity (Ah) × Voltage (V)** 
 
-## 二、科普解读：为什么需要多种能量单位？
+## II. Educational Explanation: Why Do We Need Multiple Energy Units?
 
-### 一、场景化需求驱动单位分化
+### 1. Scenario-Driven Unit Differentiation
 
-**微观与宏观的跨度**
+**Micro to Macro Scale**
 
-- 毫瓦时（mWh）用于纽扣电池等微型设备（如智能手表），而吉瓦时（GWh）描述特斯拉超级工厂的年产能。
-- 焦耳（J）作为国际单位，适合实验室精准计算，但日常生活更需直观单位（如 “度电”）。
+- Milliwatt-hours (mWh) are used for micro devices like button batteries (e.g., smartwatches), while gigawatt-hours (GWh) describe Tesla's Gigafactory annual capacity.
+- Joule (J) as an international unit is suitable for precise laboratory calculations, but daily life requires more intuitive units (like "kWh").
 
-**行业惯例差异**
+**Industry Convention Differences**
 
-- **电力行业**：以 kWh（度）为结算基础，发电量常用亿 kWh 统计（如四川年发电量 4329.5 亿 kWh≈43.3TWh）。
-- **暖通空调**：冷热量表常用 GJ 计量中央空调系统能耗（1GJ≈278kWh）。
-- **电池领域**：
-  - mAh 表示电荷容量（需 × 电压换算为能量）
-  - Wh/mWh 直接体现能量值
+- **Power Industry**: Uses kWh as the billing basis, with power generation often measured in hundreds of millions of kWh (e.g., Sichuan's annual power generation of 432.95 billion kWh ≈ 43.3TWh).
+- **HVAC**: Heating and cooling meters commonly use GJ to measure central air conditioning system energy consumption (1GJ ≈ 278kWh).
+- **Battery Field**:
+  - mAh represents charge capacity (needs × voltage to convert to energy)
+  - Wh/mWh directly represents energy value
 
-**💡 警惕虚标陷阱：** 某些商家用 11500mWh 替代 3100mAh 夸大数值（按 3.7V 换算）。
+**💡 Beware of False Advertising:** Some merchants use 11500mWh instead of 3100mAh to inflate numbers (calculated at 3.7V).
 
-### 二、单位混淆的典型问题
+### 2. Typical Problems with Unit Confusion
 
-**电池选购误区：**
-- “20000mAh 充电宝 = 1 度电”？错误！以 3.7V 电压计算，实际仅 74Wh（0.074 度电）。
+**Battery Purchase Misconceptions:**
+- "20000mAh power bank = 1 kWh"? Wrong! Calculated at 3.7V voltage, it's actually only 74Wh (0.074 kWh).
 
-**能源报告误读：**
-- “某储能电站容量 1GWh”≠“发电量 1GW”，后者是功率单位（1GW 持续供电 1 小时 =1GWh）。
+**Energy Report Misinterpretation:**
+- "Energy storage station capacity 1GWh" ≠ "Power generation 1GW", the latter is a power unit (1GW continuous power supply for 1 hour = 1GWh).
 
-### 三、未来趋势：TWh 时代的来临
+### 3. Future Trends: The Era of TWh
 
-随着全球电动化及可再生能源存储需求，太瓦时（TWh=10¹²Wh）正成为能源战略新标尺：
-- 1TWh≈1000GWh，可满足 500 万辆电动车年用电。
-- 相当于 1 万亿元产值（按 1 元 / Wh 成本估算）。
+With global electrification and renewable energy storage demands, terawatt-hours (TWh=10¹²Wh) are becoming the new benchmark for energy strategy:
+- 1TWh ≈ 1000GWh, can meet the annual electricity needs of 5 million electric vehicles.
+- Equivalent to 1 trillion yuan in output value (estimated at 1 yuan/Wh cost).
 
-### 总结建议
+### Summary and Recommendations
 
-- **日常用电：** 关注 kWh（度），降低待机能耗。
-- **电池选购：** 认准 Wh/mWh 而非 mAh，避免虚标。
-- **行业报告：** 注意 GWh/TWh 与 GW 的本质区别（能量 vs 功率）。
+- **Daily Electricity Use:** Focus on kWh, reduce standby power consumption.
+- **Battery Purchase:** Look for Wh/mWh rather than mAh, avoid false advertising.
+- **Industry Reports:** Pay attention to the essential difference between GWh/TWh and GW (energy vs power).
 
-单位是理解能源世界的钥匙，清晰换算方能穿透数据迷雾 🌟
+Units are the key to understanding the energy world, clear conversion can penetrate the data fog 🌟

@@ -278,7 +278,7 @@ A: Must use specialized measurement equipment, maintain safe distances, and ensu
 **Q: What are the advantages of digital voltage transformers?**
 A: High accuracy, strong anti-interference capability, easy networking, and support for intelligent functions.
 
-### 相关链接
+### Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Voltage" :key="index">
     <n-button

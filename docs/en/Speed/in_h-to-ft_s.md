@@ -199,181 +199,167 @@ Note: Conversion formula examples → in/h to ft/s: (ft/s = in/h × 0.0000231481
 - Precision instrument calibration
 - Automated equipment control
 
-### 冷知识：in/h在不同领域的速度
+### Fun Facts: in/h Speeds in Different Fields
 
-- **建筑沉降：** 约1-10 in/h（约0.000023-0.00023 ft/s）
-- **地质变形：** 约0.1-1 in/h（约0.0000023-0.000023 ft/s）
-- **精密加工：** 约100-1000 in/h（约0.0023-0.023 ft/s）
-- **材料测试：** 约10-100 in/h（约0.00023-0.0023 ft/s）
+- **Building Settlement:** Approximately 1-10 in/h (approximately 0.000023-0.00023 ft/s)
+- **Geological Deformation:** Approximately 0.1-1 in/h (approximately 0.0000023-0.000023 ft/s)
+- **Precision Machining:** Approximately 100-1000 in/h (approximately 0.0023-0.023 ft/s)
+- **Material Testing:** Approximately 10-100 in/h (approximately 0.00023-0.0023 ft/s)
 
-## 四、速度单位详解：in/h、ft/s等缩写含义
+## 4. Speed Unit Explanation: Abbreviation Meanings of in/h, ft/s, etc.
 
-### 常见速度单位缩写对照
+### Common Speed Unit Abbreviation Comparison
 
-| 英文缩写 | 英文全称 | 中文名称 | 换算关系（相对于1 in/h） |
+| English Abbreviation | English Full Name | Chinese Name | Conversion Relationship (relative to 1 in/h) |
 |----------|----------|----------|-------------------------|
-| **in/h** | inches per hour | 英寸每小时 | 1 |
-| **iph** | inches per hour | 英寸每小时 | 1 |
-| **in/hr** | inches per hour | 英寸每小时 | 1 |
-| **ft/s** | feet per second | 英尺每秒 | 0.0000231481 |
-| **fps** | feet per second | 英尺每秒 | 0.0000231481 |
-| **ft/sec** | feet per second | 英尺每秒 | 0.0000231481 |
-| **ft/min** | feet per minute | 英尺每分钟 | 0.00138889 |
-| **ft/h** | feet per hour | 英尺每小时 | 0.0833333 |
+| **in/h** | inches per hour | Inches per hour | 1 |
+| **iph** | inches per hour | Inches per hour | 1 |
+| **in/hr** | inches per hour | Inches per hour | 1 |
+| **ft/s** | feet per second | Feet per second | 0.0000231481 |
+| **fps** | feet per second | Feet per second | 0.0000231481 |
+| **ft/sec** | feet per second | Feet per second | 0.0000231481 |
+| **ft/min** | feet per minute | Feet per minute | 0.00138889 |
+| **ft/h** | feet per hour | Feet per hour | 0.0833333 |
 
-### in/h和ft/s的不同表示方法
+### Different Representation Methods for in/h and ft/s
 
-**in/h正式写法：**
-- in/h（最常用的标准写法）
-- iph（工程领域常用简写）
-- in/hr（完整时间单位写法）
+**Formal in/h notation:**
+- in/h (most commonly used standard notation)
+- iph (commonly used abbreviation in engineering)
+- in/hr (complete time unit notation)
 
-**ft/s正式写法：**
-- ft/s（最常用的标准写法）
-- fps（工程领域常用简写）
-- ft/sec（完整时间单位写法）
+**Formal ft/s notation:**
+- ft/s (most commonly used standard notation)
+- fps (commonly used abbreviation in engineering)
+- ft/sec (complete time unit notation)
 
-**注意事项：**
-- ✅ 正确：in/h, ft/s, iph, fps
-- ❌ 错误：in/hour, feet/second（混合简写和全写）
-- ✅ 正确：inches per hour, feet per second（完整英文表达）
+**Important Notes:**
+- ✅ Correct: in/h, ft/s, iph, fps
+- ❌ Incorrect: in/hour, feet/second (mixing abbreviations and full forms)
+- ✅ Correct: inches per hour, feet per second (complete English expressions)
 
-### 速度单位使用场景
+### Speed Unit Usage Scenarios
 
-**地质监测：** in/h（地面沉降、地质变形）
-**流体工程：** ft/s（管道流速、风速）
-**精密测量：** in/h, mm/h（建筑监测、精密制造）
-**机械工程：** ft/s（机械运动、传动系统）
-**科学研究：** m/s（国际单位制标准）
-**美国工程：** ft/s（美国工程标准）
+**Geological Monitoring:** in/h (ground subsidence, geological deformation)
+**Fluid Engineering:** ft/s (pipeline flow velocity, wind speed)
+**Precision Measurement:** in/h, mm/h (building monitoring, precision manufacturing)
+**Mechanical Engineering:** ft/s (mechanical motion, transmission systems)
+**Scientific Research:** m/s (International System of Units standard)
+**American Engineering:** ft/s (American engineering standard)
 
-### 重要提醒
+### Important Reminders
 
-**单位使用注意事项：**
-1. **地质监测：** 广泛使用in/h，特别是美国地质调查
-2. **流体工程：** 优先使用ft/s（美国工程标准）
-3. **科学研究：** 必须使用m/s（SI基本单位）
-4. **工程协调：** 需要明确单位制，避免换算错误
+**Unit Usage Considerations:**
+1. **Geological Monitoring:** Widely uses in/h, especially in US geological surveys
+2. **Fluid Engineering:** Prioritizes ft/s (American engineering standard)
+3. **Scientific Research:** Must use m/s (SI base unit)
+4. **Engineering Coordination:** Need to clarify unit systems to avoid conversion errors
 
-**换算精度要求：**
-- **高精度计算：** 使用完整换算系数（0.0000231481）
-- **工程估算：** 可使用近似值（0.000023）
-- **快速心算：** 记住关键换算点（43,200 in/h = 1 ft/s）
+**Conversion Precision Requirements:**
+- **High-precision calculations:** Use complete conversion coefficient (0.0000231481)
+- **Engineering estimates:** Can use approximate values (0.000023)
+- **Quick mental math:** Remember key conversion points (43,200 in/h = 1 ft/s)
 
-## 五、实际应用中的in/h速度换算场景
+## 5. Practical in/h Speed Conversion Scenarios
 
-### 地质监测
-- **建筑沉降：** 高层建筑沉降5 in/h = 0.000116 ft/s
-- **桥梁变形：** 大桥位移2 in/h = 0.0000463 ft/s
-- **地面沉降：** 地质沉降10 in/h = 0.000231 ft/s
+### Geological Monitoring
+- **Building Settlement:** High-rise building settlement 5 in/h = 0.000116 ft/s
+- **Bridge Deformation:** Bridge displacement 2 in/h = 0.0000463 ft/s
+- **Ground Subsidence:** Geological subsidence 10 in/h = 0.000231 ft/s
 
-### 工程对比
-- **流体影响：** 地质变化500 in/h = 0.0116 ft/s
-- **安全评估：** 变形速度1000 in/h = 0.0231 ft/s
-- **监测标准：** 警戒值100 in/h = 0.00231 ft/s
+### Engineering Comparison
+- **Fluid Impact:** Geological change 500 in/h = 0.0116 ft/s
+- **Safety Assessment:** Deformation speed 1000 in/h = 0.0231 ft/s
+- **Monitoring Standards:** Warning threshold 100 in/h = 0.00231 ft/s
 
-### 精密制造
-- **机械加工：** 进给速度500 in/h = 0.0116 ft/s
-- **自动化设备：** 传送带速度1000 in/h = 0.0231 ft/s
-- **精密测量：** 测量头移动100 in/h = 0.00231 ft/s
+### Precision Manufacturing
+- **Mechanical Processing:** Feed rate 500 in/h = 0.0116 ft/s
+- **Automated Equipment:** Conveyor belt speed 1000 in/h = 0.0231 ft/s
+- **Precision Measurement:** Measuring head movement 100 in/h = 0.00231 ft/s
 
-### 数据交换
-- **跨专业协作：** 建筑数据与流体工程数据对比
-- **标准统一：** 不同工程领域间的速度标准
-- **工程理解：** 将专业数据转换为工程常用单位
+### Data Exchange
+- **Cross-disciplinary Collaboration:** Comparison between building data and fluid engineering data
+- **Standard Unification:** Speed standards between different engineering fields
+- **Engineering Understanding:** Converting professional data to commonly used engineering units
 
-## 六、常见问题 FAQ
+## 6. Frequently Asked Questions (FAQ)
 
-### Q1: 一英寸每小时等于多少英尺每秒？
-**A1**: 1 in/h = 0.0000231481 ft/s（精确值）。这是因为1英尺 = 12英寸，1小时 = 3600秒，所以1 in/h = 1 ÷ (12 × 3600) = 1 ÷ 43,200 ≈ 0.0000231481 ft/s。
+### Q1: How many feet per second equals one inch per hour?
+**A1**: 1 in/h = 0.0000231481 ft/s (exact value). This is because 1 foot = 12 inches, 1 hour = 3600 seconds, so 1 in/h = 1 ÷ (12 × 3600) = 1 ÷ 43,200 ≈ 0.0000231481 ft/s.
 
-### Q2: in/h to ft/s怎么换算？
-**A2**: in/h转ft/s的换算方法：
-- **公式：** ft/s = in/h × 0.0000231481
-- **示例：** 1000 in/h = 1000 × 0.0000231481 = 0.0231481 ft/s
-- **记忆技巧：** in/h × 0.000023 ≈ ft/s（近似值，误差约0.6%）
+### Q2: How to convert in/h to ft/s?
+**A2**: Conversion method from in/h to ft/s:
+- **Formula:** ft/s = in/h × 0.0000231481
+- **Example:** 1000 in/h = 1000 × 0.0000231481 = 0.0231481 ft/s
+- **Memory trick:** in/h × 0.000023 ≈ ft/s (approximate value, error about 0.6%)
 
-### Q3: ft/s转in/h的公式是什么？
-**A3**: ft/s转in/h的公式是：in/h = ft/s ÷ 0.0000231481。例如：1 ft/s = 1 ÷ 0.0000231481 = 43,200 in/h。
+### Q3: What is the formula for converting ft/s to in/h?
+**A3**: The formula for converting ft/s to in/h is: in/h = ft/s ÷ 0.0000231481. For example: 1 ft/s = 1 ÷ 0.0000231481 = 43,200 in/h.
 
-### Q4: 如何快速进行in/h和ft/s换算？
-**A4**: 快速换算技巧：
-- **in/h转ft/s：** in/h × 0.000023 ≈ ft/s（误差约0.6%）
-- **ft/s转in/h：** ft/s × 43,000 ≈ in/h（快速估算）
-- **记忆要点：** 1 ft/s = 43,200 in/h
+### Q4: How to quickly convert between in/h and ft/s?
+**A4**: Quick conversion techniques:
+- **in/h to ft/s:** in/h × 0.000023 ≈ ft/s (error about 0.6%)
+- **ft/s to in/h:** ft/s × 43,000 ≈ in/h (quick estimate)
+- **Key point to remember:** 1 ft/s = 43,200 in/h
 
-### Q5: in/h换算时需要注意什么？
-**A5**: 注意事项包括：
-- 确认使用的是美制英寸和英尺标准
-- 区分in/h和ft/s的应用场景
-- 工程计算通常保留适当位数的小数
-- 注意单位一致性，避免混用不同时间单位
+### Q5: What should be noted when converting in/h?
+**A5**: Considerations include:
+- Confirm using US inch and foot standards
+- Distinguish between in/h and ft/s application scenarios
+- Engineering calculations usually retain appropriate decimal places
+- Pay attention to unit consistency, avoid mixing different time units
 
-### Q6: 为什么1 in/h等于0.0000231481 ft/s？
-**A6**: 因为：
-- 1英尺 = 12英寸（美制标准）
-- 1小时 = 3600秒
-- 1 in/h = 1英寸/小时 ÷ 12英寸/英尺 ÷ 3600秒/小时 = 1 ÷ 43,200 ft/s
+### Q6: Why does 1 in/h equal 0.0000231481 ft/s?
+**A6**: Because:
+- 1 foot = 12 inches (US standard)
+- 1 hour = 3600 seconds
+- 1 in/h = 1 inch/hour ÷ 12 inches/foot ÷ 3600 seconds/hour = 1 ÷ 43,200 ft/s
 
-### Q7: iph和fps分别是什么意思？
-**A7**: iph和fps的含义：
-- **iph：** inches per hour的缩写，等同于in/h
-- **fps：** feet per second的缩写，等同于ft/s
-- **使用场景：** iph在精密测量中常用，fps在工程计算中常用
+### Q7: What do iph and fps mean respectively?
+**A7**: Meanings of iph and fps:
+- **iph:** Abbreviation for inches per hour, equivalent to in/h
+- **fps:** Abbreviation for feet per second, equivalent to ft/s
+- **Usage scenarios:** iph commonly used in precision measurement, fps commonly used in engineering calculations
 
-### Q8: 英寸每小时在哪些领域使用？
-**A8**: in/h的使用场景：
-- **地质监测：** 地面沉降、地质变形监测
-- **建筑工程：** 建筑物、桥梁变形测量
-- **精密制造：** 机械加工、精密测量设备
-- **工程协调：** 与流体工程的数据对比
+### Q8: In which fields is inches per hour used?
+**A8**: Usage scenarios for in/h:
+- **Geological Monitoring:** Ground subsidence, geological deformation monitoring
+- **Building Engineering:** Building and bridge deformation measurement
+- **Precision Manufacturing:** Mechanical processing, precision measurement equipment
+- **Engineering Coordination:** Data comparison with fluid engineering
 
-### Q9: in/h和ft/s哪个更常用？
-**A9**: 使用场景对比：
-- **in/h：** 地质监测、建筑工程、精密制造
-- **ft/s：** 流体工程、机械工程、美国工程标准
-- **选择建议：** 工程计算优先使用ft/s，专业测量可用in/h
+### Q9: Which is more commonly used, in/h or ft/s?
+**A9**: Usage scenario comparison:
+- **in/h:** Geological monitoring, building engineering, precision manufacturing
+- **ft/s:** Fluid engineering, mechanical engineering, American engineering standards
+- **Selection advice:** Engineering calculations prioritize ft/s, professional measurements can use in/h
 
-### Q10: 速度单位有哪些？
-**A10**: 常见速度单位包括：
-- **英寸每小时(in/h)：** 地质监测常用，1 in/h = 0.0000231481 ft/s
-- **英尺每秒(ft/s)：** 美国工程标准
-- **千米每小时(km/h)：** 国际通用单位
-- **米每秒(m/s)：** 国际标准单位
+### Q10: What are the speed units?
+**A10**: Common speed units include:
+- **Inches per hour (in/h):** Commonly used in geological monitoring, 1 in/h = 0.0000231481 ft/s
+- **Feet per second (ft/s):** American engineering standard
+- **Kilometers per hour (km/h):** International common unit
+- **Meters per second (m/s):** International standard unit
 
-### Q11: in/h转ft/min怎么算？
-**A11**: in/h转ft/min的换算：
-- **公式：** ft/min = in/h × 0.00138889
-- **示例：** 120 in/h = 120 × 0.00138889 = 0.167 ft/min
-- **记忆技巧：** in/h ÷ 720 = ft/min（精确换算）
+### Q11: How to convert in/h to ft/min?
+**A11**: Conversion from in/h to ft/min:
+- **Formula:** ft/min = in/h × 0.00138889
+- **Example:** 120 in/h = 120 × 0.00138889 = 0.167 ft/min
+- **Memory trick:** in/h ÷ 720 = ft/min (exact conversion)
 
-### Q12: 为什么工程要用ft/s而不用in/h？
-**A12**: 使用ft/s的原因：
-- **数值适中：** ft/s数值适合表示工程速度
-- **历史传统：** 美国工程系统长期使用
-- **直观性：** 便于工程师理解和计算
-- **标准化：** 工程规范和标准的统一
+### Q12: Why do engineers use ft/s instead of in/h?
+**A12**: Reasons for using ft/s:
+- **Appropriate values:** ft/s values are suitable for expressing engineering speeds
+- **Historical tradition:** Long-term use in American engineering systems
+- **Intuitiveness:** Easy for engineers to understand and calculate
+- **Standardization:** Unification of engineering specifications and standards
 
-### Q13: in/h在工程协调中的典型应用？
-**A13**: in/h的工程协调应用：
-- **跨专业合作：** 地质工程师与机械工程师的数据交换
-- **安全评估：** 地质变形对机械系统的影响评估
-- **标准制定：** 工程项目中的速度标准统一
-- **工程理解：** 将专业监测数据转换为工程常用单位
-- **风险管理：** 地质变化对工程系统的影响分析
+### Q13: What are typical applications of in/h in engineering coordination?
+**A13**: Engineering coordination applications of in/h:
+- **Cross-disciplinary cooperation:** Data exchange between geological engineers and mechanical engineers
+- **Safety assessment:** Impact assessment of geological deformation on mechanical systems
+- **Standard setting:** Unification of speed standards in engineering projects
+- **Engineering understanding:** Converting professional monitoring data to commonly used engineering units
+- **Risk management:** Analysis of geological change impacts on engineering systems
 
-## 七、相关连接
-
-
-<n-grid x-gap="12" :cols="2">
-  <n-gi v-for="(file, index) in Speed" :key="index">
-    <n-button
-      text
-      tag="a"
-      :href="file.path"
-      type="info"
-    >
-      {{file.name}}
-    </n-button>
-  </n-gi>
-</n-grid>
+## 7. Related Links

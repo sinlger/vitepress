@@ -311,61 +311,61 @@ Note: Conversion formula examples → in/h to knot: (knot = in/h × 0.0000137149
 - Engineering calculations usually retain appropriate decimal places
 - Maintain unit consistency, avoid mixing different length units
 
-### Q6: 为什么1 in/h等于0.0000137149 knot？
-**A6**: 因为：
-- 1节 = 1海里/小时（国际标准）
-- 1海里 = 1852米
-- 1英寸 = 0.0254米
-- 1 in/h = 0.0254米/小时 ÷ 1852米/海里 = 0.0000137149 knot
+### Q6: Why does 1 in/h equal 0.0000137149 knot?
+**A6**: Because:
+- 1 knot = 1 nautical mile/hour (international standard)
+- 1 nautical mile = 1852 meters
+- 1 inch = 0.0254 meters
+- 1 in/h = 0.0254 meters/hour ÷ 1852 meters/nautical mile = 0.0000137149 knot
 
-### Q7: iph和knot分别是什么意思？
-**A7**: iph和knot的含义：
-- **iph：** inches per hour的缩写，等同于in/h
-- **knot：** 节，海里每小时的缩写，国际航海标准单位
-- **使用场景：** iph在精密测量中常用，knot在航海航空中常用
+### Q7: What do iph and knot mean respectively?
+**A7**: Meanings of iph and knot:
+- **iph:** Abbreviation for inches per hour, equivalent to in/h
+- **knot:** Knot, abbreviation for nautical miles per hour, international maritime standard unit
+- **Usage scenarios:** iph commonly used in precision measurement, knot commonly used in maritime and aviation
 
-### Q8: 英寸每小时在哪些领域使用？
-**A8**: in/h的使用场景：
-- **地质监测：** 地面沉降、地质变形监测
-- **建筑工程：** 建筑物、桥梁变形测量
-- **精密制造：** 机械加工、精密测量设备
-- **海洋工程：** 与航海工程的数据对比
+### Q8: In which fields is inches per hour used?
+**A8**: Usage scenarios for in/h:
+- **Geological Monitoring:** Ground subsidence, geological deformation monitoring
+- **Building Engineering:** Building and bridge deformation measurement
+- **Precision Manufacturing:** Mechanical processing, precision measurement equipment
+- **Ocean Engineering:** Data comparison with maritime engineering
 
-### Q9: in/h和knot哪个更常用？
-**A9**: 使用场景对比：
-- **in/h：** 地质监测、建筑工程、精密制造
-- **knot：** 航海运输、航空飞行、海洋工程
-- **选择建议：** 航海航空优先使用knot，专业测量可用in/h
+### Q9: Which is more commonly used, in/h or knot?
+**A9**: Usage scenario comparison:
+- **in/h:** Geological monitoring, building engineering, precision manufacturing
+- **knot:** Maritime transport, aviation flight, ocean engineering
+- **Selection advice:** Maritime and aviation prioritize knot, specialized measurement can use in/h
 
-### Q10: 速度单位有哪些？
-**A10**: 常见速度单位包括：
-- **英寸每小时(in/h)：** 地质监测常用，1 in/h = 0.0000137149 knot
-- **节(knot)：** 国际航海航空标准
-- **千米每小时(km/h)：** 国际通用单位
-- **米每秒(m/s)：** 国际标准单位
+### Q10: What are the speed units?
+**A10**: Common speed units include:
+- **Inches per hour (in/h):** Commonly used in geological monitoring, 1 in/h = 0.0000137149 knot
+- **Knot (knot):** International maritime and aviation standard
+- **Kilometers per hour (km/h):** International common unit
+- **Meters per second (m/s):** International standard unit
 
-### Q11: in/h转ft/h怎么算？
-**A11**: in/h转ft/h的换算：
-- **公式：** ft/h = in/h ÷ 12
-- **示例：** 120 in/h = 120 ÷ 12 = 10 ft/h
-- **记忆技巧：** in/h ÷ 12 = ft/h（精确换算）
+### Q11: How to convert in/h to ft/h?
+**A11**: Conversion from in/h to ft/h:
+- **Formula:** ft/h = in/h ÷ 12
+- **Example:** 120 in/h = 120 ÷ 12 = 10 ft/h
+- **Memory trick:** in/h ÷ 12 = ft/h (exact conversion)
 
-### Q12: 为什么航海要用knot而不用in/h？
-**A12**: 使用knot的原因：
-- **国际标准：** knot是国际航海通用单位
-- **历史传统：** 航海业长期使用海里和节
-- **实用性：** 便于航海导航和距离计算
-- **标准化：** 国际海事组织的统一标准
+### Q12: Why does maritime use knot instead of in/h?
+**A12**: Reasons for using knot:
+- **International Standard:** knot is the international maritime common unit
+- **Historical Tradition:** Maritime industry has long used nautical miles and knots
+- **Practicality:** Convenient for maritime navigation and distance calculation
+- **Standardization:** Unified standard of the International Maritime Organization
 
-### Q13: in/h在海洋工程中的典型应用？
-**A13**: in/h的海洋工程应用：
-- **跨专业合作：** 地质工程师与海洋工程师的数据交换
-- **海岸监测：** 海岸线变化对陆地工程的影响评估
-- **标准制定：** 海洋工程项目中的速度标准统一
-- **国际合作：** 将专业监测数据转换为国际通用单位
-- **风险管理：** 海洋地质变化对海洋工程的影响分析
+### Q13: What are typical applications of in/h in ocean engineering?
+**A13**: Ocean engineering applications of in/h:
+- **Cross-disciplinary Cooperation:** Data exchange between geological engineers and ocean engineers
+- **Coastal Monitoring:** Assessment of coastline changes' impact on land engineering
+- **Standard Setting:** Speed standard unification in ocean engineering projects
+- **International Cooperation:** Converting specialized monitoring data to internationally common units
+- **Risk Management:** Analysis of ocean geological changes' impact on ocean engineering
 
-## 七、相关连接
+## 7. Related Links
 
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Speed" :key="index">

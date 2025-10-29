@@ -4,21 +4,21 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Force/index
-      linkText: 力学单位换算
+      linkText: Force Unit Converter
   - - link: /Force/index
-      linkText: 力学单位单位换算
+      linkText: Force Unit Converter
 head:
   - - meta
     - name: description
-      content: "力学单位换算指南，涵盖牛顿 (N)、千牛顿 (kN)、磅力 (lbf)、千克力 (kgf) 的详细换算公式与说明。"
+      content: "Force unit conversion guide, covering detailed conversion formulas and explanations for Newton (N), Kilonewton (kN), Pound-force (lbf), Kilogram-force (kgf)."
   - - meta
     - name: keywords
-      content: "力学, 单位换算, 牛顿, 千牛顿, 磅力, 千克力, 换算公式, 力学单位换算指南"
+      content: "force, unit conversion, newton, kilonewton, pound-force, kilogram-force, conversion formula, force unit conversion guide"
 ---
 
-# 力学单位换算
+# Force Unit Converter
 ---
 <script setup>
 import { onMounted, reactive, inject ,ref  } from 'vue'
@@ -28,10 +28,10 @@ import { Force } from '../files';
 const convert = inject('convert')
 const seoKey = []
 const options =  [
-  { "label": "牛顿 (N)", "value": "N" },
-  { "label": "千牛顿 (kN)", "value": "kN" },
-  { "label": "磅力 (lbf)", "value": "lbf" },
-  { "label": "千克力 (kgf)", "value": "kgf" }
+  { "label": "Newton (N)", "value": "N" },
+  { "label": "Kilonewton (kN)", "value": "kN" },
+  { "label": "Pound-force (lbf)", "value": "lbf" },
+  { "label": "Kilogram-force (kgf)", "value": "kgf" }
 ];
 const formRef = ref(null);
 const rules = {
@@ -39,17 +39,17 @@ const rules = {
     required: true,
     type: 'number',
     trigger: "blur",
-    message: '请输入数字'
+    message: 'Please enter a number'
   },
   to:{
     required: true,
     trigger: "select",
-    message: '请选择转换单位'
+    message: 'Please select target unit'
   },
   from:{
     required: true,
     trigger: "select",
-    message: '请选择原始单位'
+    message: 'Please select source unit'
   }
 }
 const form = reactive({
@@ -57,7 +57,7 @@ const form = reactive({
   to:'',
   from:'',
   result:'',
-  title:'面积单位换算',
+  title:'Force Unit Converter',
 })
 const convertHandler = (e) => {
    e.preventDefault();
@@ -70,17 +70,17 @@ const convertHandler = (e) => {
 </script>
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="数值"  path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数值" />
+  <n-form-item label="Value"  path="number">
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="Enter the value to convert" />
   </n-form-item>
-  <n-form-item label="从" path="from">
-    <n-select  size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
+  <n-form-item label="From" path="from">
+    <n-select  size="large" :options="options" v-model:value="form.from" placeholder="Select source unit" />
   </n-form-item>
-  <n-form-item label="到" path="to">
-    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
+  <n-form-item label="To" path="to">
+    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="Select target unit" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
+    <n-button type="info" style="width:100%" @click="convertHandler">Convert</n-button>
   </n-form-item>
 </n-form>
 <n-card  embedded :bordered="false" hoverable>
@@ -90,9 +90,9 @@ const convertHandler = (e) => {
 </n-card>
 
 
-## 力学单位换算表（力值单位）
+## Force Unit Conversion Table
 
-原单位| 目标单位| 换算公式| 示例计算
+Source Unit| Target Unit| Conversion Formula| Example Calculation
 ---|---|---|---
 N| kN| 1 kN = 1000 N| 5000 N = 5 kN
 kN| N| 1 N = 0.001 kN| 3 kN = 3000 N
@@ -103,39 +103,46 @@ kgf| N| 1 N = 0.102 kgf| 10 kgf = 98.07 N
 kgf| lbf| 1 kgf ≈ 2.2046 lbf| 5 kgf ≈ 11.023 lbf
 kN| kgf| 1 kN = 101.97 kgf| 2 kN ≈ 203.94 kgf
 
-**注：**
-- 换算基于国际标准重力加速度（9.80665 m/s²）
-- lbf（磅力）是英制单位，kgf（千克力）属工程单位制
+**Notes:**
+- Conversions are based on standard gravitational acceleration (9.80665 m/s²)
+- lbf (pound-force) is an imperial unit, kgf (kilogram-force) belongs to the engineering unit system
 
-## 力学单位科普：从牛顿到千克力
+## Force Unit Education: From Newton to Kilogram-force
 
-### 一、核心单位解析
+### 1. Core Unit Analysis
 
-**牛顿（N）**
-- 定义：使1kg物体产生1m/s²加速度的力（国际单位制基础）
-- 应用：科学计算、材料强度测试（如螺栓预紧力）
+**Newton (N)**
+- Definition: The force that gives a 1kg object an acceleration of 1m/s² (International System of Units foundation)
+- Applications: Scientific calculations, material strength testing (such as bolt preload force)
 
-**千牛顿（kN）**
-- 关系：1 kN = 1000 N，常用于工程结构（桥梁承重、建筑荷载）
+**Kilonewton (kN)**
+- Relationship: 1 kN = 1000 N, commonly used in engineering structures (bridge load-bearing, building loads)
 
-**磅力（lbf）**
-- 背景：英制单位，1 lbf 定义为1磅质量（0.4536kg）在重力下的力
-- 场景：欧美机械规格（如扭矩扳手标定）
+**Pound-force (lbf)**
+- Background: Imperial unit, 1 lbf is defined as the force of 1 pound mass (0.4536kg) under gravity
+- Scenarios: European and American mechanical specifications (such as torque wrench calibration)
 
-**千克力（kgf）**
-- 历史：旧称“公斤力”，1kgf = 1kg物体在地球重力下的受力（≈9.8N）
-- 现状：逐步被牛顿取代，但仍在某些领域使用（如材料硬度测试）
+**Kilogram-force (kgf)**
+- History: Formerly called "kilogram-force", 1kgf = force on 1kg object under Earth's gravity (≈9.8N)
+- Current status: Gradually being replaced by Newton, but still used in certain fields (such as material hardness testing)
 
-### 二、单位换算的工程意义
+### 2. Engineering Significance of Unit Conversion
 
-- 安全设计：起重机吊重需将kgf换算为kN以确保结构安全
-- 设备兼容：进口设备标注lbf时需换算为N校准仪器
+In practical engineering, different industries prefer different force units:
+- **Construction Engineering**: Commonly uses kN to express structural loads (convenient for calculating large structural forces)
+- **Mechanical Manufacturing**: Often mixes N and lbf (specification alignment in international cooperation projects)
+- **Materials Science**: Prefers N (aligns with international standards, facilitates academic exchange)
 
-### 三、常见误区澄清
+### 3. Common Misconceptions Clarified
 
-- **错误认知**：“1 kgf = 1 kg”（混淆质量与力）
-- **正解**：kgf是力单位，kg是质量单位，二者通过重力加速度关联：1 kgf = 9.80665 N
+**Misconception 1: Kilogram-force equals kilogram**
+- Error: Confusing the concepts of mass and force
+- Correct: Kilogram-force is a unit of force, kilogram is a unit of mass
 
-### 总结
+**Misconception 2: All engineering should use Newton**
+- Reality: Industry conventions and historical factors lead to coexistence of multiple units
+- Recommendation: Understand the characteristics of each unit and choose according to specific scenarios
 
-理解力学单位的本质及换算关系，是工程设计和科学实验的基础。建议优先使用国际单位制（N、kN），必要时参考换算表确保数据准确性。如需完整单位体系（如力矩单位N·m与kgf·cm），可延伸阅读专业手册。
+### Summary
+
+Understanding the essence and conversion relationships of mechanical units is fundamental to engineering design and scientific experiments. It is recommended to prioritize the use of the International System of Units (N, kN), and refer to conversion tables when necessary to ensure data accuracy. For complete unit systems (such as torque units N·m and kgf·cm), extended reading of professional manuals is recommended.

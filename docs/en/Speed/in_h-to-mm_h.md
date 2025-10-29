@@ -198,18 +198,18 @@ Note: Conversion formula examples → in/h to mm/h: (mm/h = in/h × 25.4); mm/h 
 - Precision instrument calibration
 - Automated equipment control
 
-### 冷知识：in/h在不同领域的速度
+### Fun Facts: in/h Speeds in Different Fields
 
-- **建筑沉降：** 约1-10 in/h（约25.4-254 mm/h）
-- **地质变形：** 约0.1-1 in/h（约2.54-25.4 mm/h）
-- **精密加工：** 约100-1000 in/h（约2540-25400 mm/h）
-- **材料测试：** 约10-100 in/h（约254-2540 mm/h）
+- **Building Settlement:** Approximately 1-10 in/h (approximately 25.4-254 mm/h)
+- **Geological Deformation:** Approximately 0.1-1 in/h (approximately 2.54-25.4 mm/h)
+- **Precision Machining:** Approximately 100-1000 in/h (approximately 2540-25400 mm/h)
+- **Material Testing:** Approximately 10-100 in/h (approximately 254-2540 mm/h)
 
-## 四、速度单位详解：in/h、mm/h等缩写含义
+## 4. Speed Unit Explanation: Abbreviations for in/h, mm/h, etc.
 
-### 常见速度单位缩写对照
+### Common Speed Unit Abbreviation Reference
 
-| 英文缩写 | 英文全称 | 中文名称 | 换算关系（相对于1 in/h） |
+| English Abbreviation | English Full Name | Chinese Name | Conversion Ratio (relative to 1 in/h) |
 |----------|----------|----------|-------------------------|
 | **in/h** | inches per hour | 英寸每小时 | 1 |
 | **iph** | inches per hour | 英寸每小时 | 1 |
@@ -220,148 +220,148 @@ Note: Conversion formula examples → in/h to mm/h: (mm/h = in/h × 25.4); mm/h 
 | **m/h** | meters per hour | 米每小时 | 0.0254 |
 | **μm/h** | micrometers per hour | 微米每小时 | 25400 |
 
-### in/h和mm/h的不同表示方法
+### Different Representations of in/h and mm/h
 
-**in/h正式写法：**
-- in/h（最常用的标准写法）
-- iph（工程领域常用简写）
-- in/hr（完整时间单位写法）
+**Formal notation for in/h:**
+- in/h (most commonly used standard notation)
+- iph (commonly used abbreviation in engineering)
+- in/hr (complete time unit notation)
 
-**mm/h正式写法：**
-- mm/h（最常用的标准写法）
-- mm/hr（完整时间单位写法）
-- millimeters per hour（完整英文表达）
+**Formal notation for mm/h:**
+- mm/h (most commonly used standard notation)
+- mm/hr (complete time unit notation)
+- millimeters per hour (complete English expression)
 
-**注意事项：**
-- ✅ 正确：in/h, mm/h, iph
-- ❌ 错误：in/hour, mm/hour（混合简写和全写）
-- ✅ 正确：inches per hour, millimeters per hour（完整英文表达）
+**Important Notes:**
+- ✅ Correct: in/h, mm/h, iph
+- ❌ Incorrect: in/hour, mm/hour (mixing abbreviations and full forms)
+- ✅ Correct: inches per hour, millimeters per hour (complete English expressions)
 
-### 速度单位使用场景
+### Speed Unit Usage Scenarios
 
-**地质监测：** in/h（地面沉降、地质变形）
-**精密测量：** mm/h（材料腐蚀、精密制造）
-**国际标准：** mm/h, m/s（公制单位系统）
-**科学研究：** mm/h（材料科学、腐蚀研究）
-**工程协调：** in/h, mm/h（英制与公制转换）
-**质量控制：** mm/h（精密制造、质量检测）
+**Geological Monitoring:** in/h (ground settlement, geological deformation)
+**Precision Measurement:** mm/h (material corrosion, precision manufacturing)
+**International Standards:** mm/h, m/s (metric unit system)
+**Scientific Research:** mm/h (materials science, corrosion research)
+**Engineering Coordination:** in/h, mm/h (imperial to metric conversion)
+**Quality Control:** mm/h (precision manufacturing, quality testing)
 
-### 重要提醒
+### Important Reminders
 
-**单位使用注意事项：**
-1. **地质监测：** 广泛使用in/h，特别是美国地质调查
-2. **精密测量：** 优先使用mm/h（国际标准）
-3. **科学研究：** 必须使用m/s（SI基本单位）
-4. **工程协调：** 需要明确单位制，避免换算错误
+**Unit Usage Considerations:**
+1. **Geological Monitoring:** Widely uses in/h, especially in US geological surveys
+2. **Precision Measurement:** Prioritizes mm/h (international standard)
+3. **Scientific Research:** Must use m/s (SI base unit)
+4. **Engineering Coordination:** Requires clear unit system to avoid conversion errors
 
-**换算精度要求：**
-- **高精度计算：** 使用完整换算系数（25.4）
-- **工程估算：** 可使用近似值（25）
-- **快速心算：** 记住关键换算点（1 in/h = 25.4 mm/h）
+**Conversion Precision Requirements:**
+- **High-precision calculations:** Use complete conversion factor (25.4)
+- **Engineering estimates:** Can use approximate values (25)
+- **Quick mental math:** Remember key conversion points (1 in/h = 25.4 mm/h)
 
-## 五、实际应用中的in/h速度换算场景
+## 5. Practical in/h Speed Conversion Scenarios
 
-### 地质监测
-- **建筑沉降：** 高层建筑沉降5 in/h = 127 mm/h
-- **桥梁变形：** 大桥位移2 in/h = 50.8 mm/h
-- **地面沉降：** 地质沉降10 in/h = 254 mm/h
+### Geological Monitoring
+- **Building Settlement:** High-rise building settlement 5 in/h = 127 mm/h
+- **Bridge Deformation:** Bridge displacement 2 in/h = 50.8 mm/h
+- **Ground Settlement:** Geological settlement 10 in/h = 254 mm/h
 
-### 精密制造
-- **材料腐蚀：** 腐蚀速率0.1 in/h = 2.54 mm/h
-- **精密加工：** 进给速度500 in/h = 12700 mm/h
-- **自动化设备：** 传送带速度1000 in/h = 25400 mm/h
+### Precision Manufacturing
+- **Material Corrosion:** Corrosion rate 0.1 in/h = 2.54 mm/h
+- **Precision Machining:** Feed rate 500 in/h = 12700 mm/h
+- **Automated Equipment:** Conveyor belt speed 1000 in/h = 25400 mm/h
 
-### 质量控制
-- **精密测量：** 测量头移动100 in/h = 2540 mm/h
-- **材料测试：** 拉伸速度50 in/h = 1270 mm/h
-- **表面处理：** 处理速度200 in/h = 5080 mm/h
+### Quality Control
+- **Precision Measurement:** Measuring head movement 100 in/h = 2540 mm/h
+- **Material Testing:** Tensile speed 50 in/h = 1270 mm/h
+- **Surface Treatment:** Processing speed 200 in/h = 5080 mm/h
 
-### 数据交换
-- **跨国合作：** 美国数据与国际标准数据对比
-- **标准统一：** 英制与公制计量体系的换算
-- **精度提升：** 将专业数据转换为更精确的单位
+### Data Exchange
+- **International Cooperation:** Comparison of US data with international standard data
+- **Standard Unification:** Conversion between imperial and metric measurement systems
+- **Precision Enhancement:** Converting professional data to more precise units
 
-## 六、常见问题 FAQ
+## 6. Frequently Asked Questions (FAQ)
 
-### Q1: 一英寸每小时等于多少毫米每小时？
-**A1**: 1 in/h = 25.4 mm/h（精确值）。这是因为1英寸 = 25.4毫米（国际标准定义），时间单位相同，所以直接换算。
+### Q1: How many millimeters per hour equals one inch per hour?
+**A1**: 1 in/h = 25.4 mm/h (exact value). This is because 1 inch = 25.4 millimeters (international standard definition), and since the time unit is the same, direct conversion applies.
 
-### Q2: in/h to mm/h怎么换算？
-**A2**: in/h转mm/h的换算方法：
-- **公式：** mm/h = in/h × 25.4
-- **示例：** 10 in/h = 10 × 25.4 = 254 mm/h
-- **记忆技巧：** in/h × 25 ≈ mm/h（近似值，误差约1.6%）
+### Q2: How to convert in/h to mm/h?
+**A2**: Conversion method from in/h to mm/h:
+- **Formula:** mm/h = in/h × 25.4
+- **Example:** 10 in/h = 10 × 25.4 = 254 mm/h
+- **Memory trick:** in/h × 25 ≈ mm/h (approximate value, error about 1.6%)
 
-### Q3: mm/h转in/h的公式是什么？
-**A3**: mm/h转in/h的公式是：in/h = mm/h ÷ 25.4。例如：254 mm/h = 254 ÷ 25.4 = 10 in/h。
+### Q3: What is the formula for converting mm/h to in/h?
+**A3**: The formula for converting mm/h to in/h is: in/h = mm/h ÷ 25.4. For example: 254 mm/h = 254 ÷ 25.4 = 10 in/h.
 
-### Q4: 如何快速进行in/h和mm/h换算？
-**A4**: 快速换算技巧：
-- **in/h转mm/h：** in/h × 25 ≈ mm/h（误差约1.6%）
-- **mm/h转in/h：** mm/h ÷ 25 ≈ in/h（快速估算）
-- **记忆要点：** 1 in/h = 25.4 mm/h
+### Q4: How to quickly convert between in/h and mm/h?
+**A4**: Quick conversion techniques:
+- **in/h to mm/h:** in/h × 25 ≈ mm/h (error about 1.6%)
+- **mm/h to in/h:** mm/h ÷ 25 ≈ in/h (quick estimation)
+- **Key point:** 1 in/h = 25.4 mm/h
 
-### Q5: in/h换算时需要注意什么？
-**A5**: 注意事项包括：
-- 确认使用的是国际英寸标准（25.4毫米）
-- 区分in/h和mm/h的应用场景
-- 精密测量通常保留适当位数的小数
-- 注意单位一致性，避免混用不同长度单位
+### Q5: What should be noted when converting in/h?
+**A5**: Important considerations include:
+- Confirm using the international inch standard (25.4 millimeters)
+- Distinguish between in/h and mm/h application scenarios
+- Precision measurements usually retain appropriate decimal places
+- Ensure unit consistency, avoid mixing different length units
 
-### Q6: 为什么1 in/h等于25.4 mm/h？
-**A6**: 因为：
-- 1英寸 = 25.4毫米（1959年国际标准定义）
-- 时间单位相同（小时）
-- 1 in/h = 25.4 mm/h（直接换算）
+### Q6: Why does 1 in/h equal 25.4 mm/h?
+**A6**: Because:
+- 1 inch = 25.4 millimeters (1959 international standard definition)
+- Same time unit (hour)
+- 1 in/h = 25.4 mm/h (direct conversion)
 
-### Q7: iph和mm/h分别是什么意思？
-**A7**: iph和mm/h的含义：
-- **iph：** inches per hour的缩写，等同于in/h
-- **mm/h：** millimeters per hour的缩写，毫米每小时
-- **使用场景：** iph在精密测量中常用，mm/h在国际标准中常用
+### Q7: What do iph and mm/h mean respectively?
+**A7**: Meanings of iph and mm/h:
+- **iph:** Abbreviation for inches per hour, equivalent to in/h
+- **mm/h:** Abbreviation for millimeters per hour
+- **Usage scenarios:** iph commonly used in precision measurement, mm/h commonly used in international standards
 
-### Q8: 英寸每小时在哪些领域使用？
-**A8**: in/h的使用场景：
-- **地质监测：** 地面沉降、地质变形监测
-- **建筑工程：** 建筑物、桥梁变形测量
-- **精密制造：** 机械加工、精密测量设备
-- **材料科学：** 腐蚀速率、材料测试
+### Q8: In which fields is inches per hour used?
+**A8**: Usage scenarios for in/h:
+- **Geological Monitoring:** Ground settlement, geological deformation monitoring
+- **Construction Engineering:** Building and bridge deformation measurement
+- **Precision Manufacturing:** Mechanical processing, precision measuring equipment
+- **Materials Science:** Corrosion rates, material testing
 
-### Q9: in/h和mm/h哪个更常用？
-**A9**: 使用场景对比：
-- **in/h：** 地质监测、建筑工程、美国标准
-- **mm/h：** 精密制造、材料科学、国际标准
-- **选择建议：** 国际合作优先使用mm/h，美国工程可用in/h
+### Q9: Which is more commonly used, in/h or mm/h?
+**A9**: Usage scenario comparison:
+- **in/h:** Geological monitoring, construction engineering, US standards
+- **mm/h:** Precision manufacturing, materials science, international standards
+- **Selection advice:** Prioritize mm/h for international cooperation, in/h acceptable for US engineering
 
-### Q10: 速度单位有哪些？
-**A10**: 常见速度单位包括：
-- **英寸每小时(in/h)：** 地质监测常用，1 in/h = 25.4 mm/h
-- **毫米每小时(mm/h)：** 精密测量标准
-- **千米每小时(km/h)：** 国际通用单位
-- **米每秒(m/s)：** 国际标准单位
+### Q10: What are the speed units?
+**A10**: Common speed units include:
+- **Inches per hour (in/h):** Commonly used in geological monitoring, 1 in/h = 25.4 mm/h
+- **Millimeters per hour (mm/h):** Precision measurement standard
+- **Kilometers per hour (km/h):** International common unit
+- **Meters per second (m/s):** International standard unit
 
-### Q11: in/h转cm/h怎么算？
-**A11**: in/h转cm/h的换算：
-- **公式：** cm/h = in/h × 2.54
-- **示例：** 10 in/h = 10 × 2.54 = 25.4 cm/h
-- **记忆技巧：** in/h × 2.54 = cm/h（精确换算）
+### Q11: How to convert in/h to cm/h?
+**A11**: Conversion from in/h to cm/h:
+- **Formula:** cm/h = in/h × 2.54
+- **Example:** 10 in/h = 10 × 2.54 = 25.4 cm/h
+- **Memory trick:** in/h × 2.54 = cm/h (exact conversion)
 
-### Q12: 为什么精密测量要用mm/h而不用in/h？
-**A12**: 使用mm/h的原因：
-- **国际标准：** mm/h是国际通用的公制单位
-- **精度优势：** 毫米提供更高的测量精度
-- **数据交换：** 便于国际科研合作和数据交换
-- **标准化：** 符合ISO国际标准要求
+### Q12: Why use mm/h instead of in/h for precision measurement?
+**A12**: Reasons for using mm/h:
+- **International Standard:** mm/h is an internationally accepted metric unit
+- **Precision Advantage:** Millimeters provide higher measurement precision
+- **Data Exchange:** Facilitates international scientific cooperation and data exchange
+- **Standardization:** Complies with ISO international standard requirements
 
-### Q13: in/h在材料科学中的典型应用？
-**A13**: in/h的材料科学应用：
-- **腐蚀研究：** 材料腐蚀速率测量和评估
-- **材料测试：** 拉伸、压缩等机械性能测试
-- **表面处理：** 表面处理工艺的速度控制
-- **质量控制：** 生产过程中的速度监控
-- **国际合作：** 将美国标准数据转换为国际标准
+### Q13: What are typical applications of in/h in materials science?
+**A13**: Materials science applications of in/h:
+- **Corrosion Research:** Material corrosion rate measurement and evaluation
+- **Material Testing:** Mechanical property testing such as tensile and compression
+- **Surface Treatment:** Speed control in surface treatment processes
+- **Quality Control:** Speed monitoring in production processes
+- **International Cooperation:** Converting US standard data to international standards
 
-## 七、相关连接
+## 7. Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Speed" :key="index">
     <n-button

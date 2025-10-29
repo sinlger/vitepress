@@ -199,27 +199,27 @@ Note: Conversion formula examples → in/h to mph: (mph = in/h × 0.0000157828);
 - Precision instrument calibration
 - Automated equipment control
 
-### 冷知识：in/h在不同领域的速度
+### Fun Facts: in/h speeds in different fields
 
-- **建筑沉降：** 约1-10 in/h（约0.0000158-0.000158 mph）
-- **地质变形：** 约0.1-1 in/h（约0.00000158-0.0000158 mph）
-- **精密加工：** 约100-1000 in/h（约0.00158-0.0158 mph）
-- **材料测试：** 约10-100 in/h（约0.000158-0.00158 mph）
+- **Building settlement:** About 1-10 in/h (about 0.0000158-0.000158 mph)
+- **Geological deformation:** About 0.1-1 in/h (about 0.00000158-0.0000158 mph)
+- **Precision machining:** About 100-1000 in/h (about 0.00158-0.0158 mph)
+- **Material testing:** About 10-100 in/h (about 0.000158-0.00158 mph)
 
-## 四、速度单位详解：in/h、mph等缩写含义
+## IV. Speed Unit Details: Abbreviation meanings of in/h, mph, etc.
 
-### 常见速度单位缩写对照
+### Common Speed Unit Abbreviation Comparison
 
-| 英文缩写 | 英文全称 | 中文名称 | 换算关系（相对于1 in/h） |
+| English Abbr | English Full Name | Chinese Name | Conversion Ratio (relative to 1 in/h) |
 |----------|----------|----------|-------------------------|
-| **in/h** | inches per hour | 英寸每小时 | 1 |
-| **iph** | inches per hour | 英寸每小时 | 1 |
-| **in/hr** | inches per hour | 英寸每小时 | 1 |
-| **mph** | miles per hour | 英里每小时 | 0.0000157828 |
-| **mi/h** | miles per hour | 英里每小时 | 0.0000157828 |
-| **mi/hr** | miles per hour | 英里每小时 | 0.0000157828 |
-| **ft/h** | feet per hour | 英尺每小时 | 0.0833333 |
-| **yd/h** | yards per hour | 码每小时 | 0.0277778 |
+| **in/h** | inches per hour | Inches per hour | 1 |
+| **iph** | inches per hour | Inches per hour | 1 |
+| **in/hr** | inches per hour | Inches per hour | 1 |
+| **mph** | miles per hour | Miles per hour | 0.0000157828 |
+| **mi/h** | miles per hour | Miles per hour | 0.0000157828 |
+| **mi/hr** | miles per hour | Miles per hour | 0.0000157828 |
+| **ft/h** | feet per hour | Feet per hour | 0.0833333 |
+| **yd/h** | yards per hour | Yards per hour | 0.0277778 |
 
 ### in/h和mph的不同表示方法
 
@@ -247,123 +247,123 @@ Note: Conversion formula examples → in/h to mph: (mph = in/h × 0.0000157828);
 **科学研究：** m/s（国际单位制标准）
 **日常生活：** mph（车速、风速）
 
-### 重要提醒
+### Important Reminders
 
-**单位使用注意事项：**
-1. **地质监测：** 广泛使用in/h，特别是美国地质调查
-2. **交通运输：** 优先使用mph（英美交通标准）
-3. **科学研究：** 必须使用m/s（SI基本单位）
-4. **工程协调：** 需要明确单位制，避免换算错误
+**Unit Usage Considerations:**
+1. **Geological monitoring:** Widely uses in/h, especially in US geological surveys
+2. **Transportation:** Prioritize mph (UK/US transportation standard)
+3. **Scientific research:** Must use m/s (SI base unit)
+4. **Engineering coordination:** Need to clarify unit system, avoid conversion errors
 
-**换算精度要求：**
-- **高精度计算：** 使用完整换算系数（0.0000157828）
-- **工程估算：** 可使用近似值（0.000016）
-- **快速心算：** 记住关键换算点（63,360 in/h = 1 mph）
+**Conversion Precision Requirements:**
+- **High-precision calculation:** Use complete conversion factor (0.0000157828)
+- **Engineering estimation:** Can use approximate value (0.000016)
+- **Quick mental calculation:** Remember key conversion point (63,360 in/h = 1 mph)
 
-## 五、实际应用中的in/h速度换算场景
+## V. in/h Speed Conversion Scenarios in Practical Applications
 
-### 地质监测
-- **建筑沉降：** 高层建筑沉降5 in/h = 0.0000789 mph
-- **桥梁变形：** 大桥位移2 in/h = 0.0000316 mph
-- **地面沉降：** 地质沉降10 in/h = 0.000158 mph
+### Geological Monitoring
+- **Building settlement:** High-rise building settlement 5 in/h = 0.0000789 mph
+- **Bridge deformation:** Bridge displacement 2 in/h = 0.0000316 mph
+- **Ground subsidence:** Geological subsidence 10 in/h = 0.000158 mph
 
-### 工程对比
-- **交通影响：** 地质变化500 in/h = 0.00789 mph
-- **安全评估：** 变形速度1000 in/h = 0.0158 mph
-- **监测标准：** 警戒值100 in/h = 0.00158 mph
+### Engineering Comparison
+- **Traffic impact:** Geological change 500 in/h = 0.00789 mph
+- **Safety assessment:** Deformation speed 1000 in/h = 0.0158 mph
+- **Monitoring standards:** Warning value 100 in/h = 0.00158 mph
 
-### 精密制造
-- **机械加工：** 进给速度500 in/h = 0.00789 mph
-- **自动化设备：** 传送带速度1000 in/h = 0.0158 mph
-- **精密测量：** 测量头移动100 in/h = 0.00158 mph
+### Precision Manufacturing
+- **Mechanical processing:** Feed rate 500 in/h = 0.00789 mph
+- **Automated equipment:** Conveyor belt speed 1000 in/h = 0.0158 mph
+- **Precision measurement:** Measuring head movement 100 in/h = 0.00158 mph
 
-### 数据交换
-- **跨专业协作：** 建筑数据与交通数据对比
-- **标准统一：** 不同行业间的速度标准
-- **公众理解：** 将专业数据转换为易懂单位
+### Data Exchange
+- **Cross-disciplinary collaboration:** Comparison of construction data with traffic data
+- **Standard unification:** Speed standards between different industries
+- **Public understanding:** Converting professional data to understandable units
 
-## 六、常见问题 FAQ
+## VI. Frequently Asked Questions FAQ
 
-### Q1: 一英寸每小时等于多少英里每小时？
-**A1**: 1 in/h = 0.0000157828 mph（精确值）。这是因为1英里 = 63,360英寸，所以1 in/h = 1 ÷ 63,360 ≈ 0.0000157828 mph。
+### Q1: How many miles per hour equals one inch per hour?
+**A1**: 1 in/h = 0.0000157828 mph (exact value). This is because 1 mile = 63,360 inches, so 1 in/h = 1 ÷ 63,360 ≈ 0.0000157828 mph.
 
-### Q2: in/h to mph怎么换算？
-**A2**: in/h转mph的换算方法：
-- **公式：** mph = in/h × 0.0000157828
-- **示例：** 1000 in/h = 1000 × 0.0000157828 = 0.0157828 mph
-- **记忆技巧：** in/h × 0.000016 ≈ mph（近似值，误差约1.4%）
+### Q2: How to convert in/h to mph?
+**A2**: Conversion method from in/h to mph:
+- **Formula:** mph = in/h × 0.0000157828
+- **Example:** 1000 in/h = 1000 × 0.0000157828 = 0.0157828 mph
+- **Memory trick:** in/h × 0.000016 ≈ mph (approximate value, error about 1.4%)
 
-### Q3: mph转in/h的公式是什么？
-**A3**: mph转in/h的公式是：in/h = mph ÷ 0.0000157828。例如：1 mph = 1 ÷ 0.0000157828 = 63,360 in/h。
+### Q3: What is the formula for converting mph to in/h?
+**A3**: The formula for converting mph to in/h is: in/h = mph ÷ 0.0000157828. For example: 1 mph = 1 ÷ 0.0000157828 = 63,360 in/h.
 
-### Q4: 如何快速进行in/h和mph换算？
-**A4**: 快速换算技巧：
-- **in/h转mph：** in/h × 0.000016 ≈ mph（误差约1.4%）
-- **mph转in/h：** mph × 63,000 ≈ in/h（快速估算）
-- **记忆要点：** 1 mph = 63,360 in/h
+### Q4: How to quickly convert between in/h and mph?
+**A4**: Quick conversion tips:
+- **in/h to mph:** in/h × 0.000016 ≈ mph (error about 1.4%)
+- **mph to in/h:** mph × 63,000 ≈ in/h (quick estimation)
+- **Memory point:** 1 mph = 63,360 in/h
 
-### Q5: in/h换算时需要注意什么？
-**A5**: 注意事项包括：
-- 确认使用的是美制英寸和英里标准
-- 区分in/h和mph的应用场景
-- 工程计算通常保留适当位数的小数
-- 注意单位一致性，避免混用不同长度单位
+### Q5: What should I pay attention to when converting in/h?
+**A5**: Considerations include:
+- Confirm using US customary inch and mile standards
+- Distinguish between in/h and mph application scenarios
+- Engineering calculations usually retain appropriate decimal places
+- Pay attention to unit consistency, avoid mixing different length units
 
-### Q6: 为什么1 in/h等于0.0000157828 mph？
-**A6**: 因为：
-- 1英里 = 5280英尺（美制标准）
-- 1英尺 = 12英寸
-- 1英里 = 5280 × 12 = 63,360英寸
-- 1 in/h = 1英寸/小时 ÷ 63,360英寸/英里 = 0.0000157828 mph
+### Q6: Why does 1 in/h equal 0.0000157828 mph?
+**A6**: Because:
+- 1 mile = 5280 feet (US standard)
+- 1 foot = 12 inches
+- 1 mile = 5280 × 12 = 63,360 inches
+- 1 in/h = 1 inch/hour ÷ 63,360 inches/mile = 0.0000157828 mph
 
-### Q7: iph和mph分别是什么意思？
-**A7**: iph和mph的含义：
-- **iph：** inches per hour的缩写，等同于in/h
-- **mph：** miles per hour的缩写，英里每小时
-- **使用场景：** iph在精密测量中常用，mph在交通运输中常用
+### Q7: What do iph and mph mean respectively?
+**A7**: Meanings of iph and mph:
+- **iph:** Abbreviation for inches per hour, equivalent to in/h
+- **mph:** Abbreviation for miles per hour
+- **Usage scenarios:** iph commonly used in precision measurement, mph in transportation
 
-### Q8: 英寸每小时在哪些领域使用？
-**A8**: in/h的使用场景：
-- **地质监测：** 地面沉降、地质变形监测
-- **建筑工程：** 建筑物、桥梁变形测量
-- **精密制造：** 机械加工、精密测量设备
-- **工程协调：** 与交通工程的数据对比
+### Q8: In which fields is inches per hour used?
+**A8**: Usage scenarios for in/h:
+- **Geological monitoring:** Ground subsidence, geological deformation monitoring
+- **Construction engineering:** Building and bridge deformation measurement
+- **Precision manufacturing:** Mechanical processing, precision measuring equipment
+- **Engineering coordination:** Data comparison with traffic engineering
 
-### Q9: in/h和mph哪个更常用？
-**A9**: 使用场景对比：
-- **in/h：** 地质监测、建筑工程、精密制造
-- **mph：** 交通运输、日常生活、气象预报
-- **选择建议：** 公众交流优先使用mph，专业测量可用in/h
+### Q9: Which is more commonly used, in/h or mph?
+**A9**: Usage scenario comparison:
+- **in/h:** Geological monitoring, construction engineering, precision manufacturing
+- **mph:** Transportation, daily life, weather forecasting
+- **Selection advice:** Prioritize mph for public communication, use in/h for professional measurement
 
-### Q10: 速度单位有哪些？
-**A10**: 常见速度单位包括：
-- **英寸每小时(in/h)：** 地质监测常用，1 in/h = 0.0000157828 mph
-- **英里每小时(mph)：** 英美交通常用
-- **千米每小时(km/h)：** 国际通用单位
-- **米每秒(m/s)：** 国际标准单位
+### Q10: What are the speed units?
+**A10**: Common speed units include:
+- **Inches per hour (in/h):** Commonly used in geological monitoring, 1 in/h = 0.0000157828 mph
+- **Miles per hour (mph):** Commonly used in British and American transportation
+- **Kilometers per hour (km/h):** International common unit
+- **Meters per second (m/s):** International standard unit
 
-### Q11: in/h转ft/h怎么算？
-**A11**: in/h转ft/h的换算：
-- **公式：** ft/h = in/h ÷ 12
-- **示例：** 120 in/h = 120 ÷ 12 = 10 ft/h
-- **记忆技巧：** in/h ÷ 12 = ft/h（精确换算）
+### Q11: How to convert in/h to ft/h?
+**A11**: Conversion from in/h to ft/h:
+- **Formula:** ft/h = in/h ÷ 12
+- **Example:** 120 in/h = 120 ÷ 12 = 10 ft/h
+- **Memory trick:** in/h ÷ 12 = ft/h (exact conversion)
 
-### Q12: 为什么交通要用mph而不用in/h？
-**A12**: 使用mph的原因：
-- **数值适中：** mph数值适合表示交通速度
-- **历史传统：** 英美交通系统长期使用
-- **直观性：** 便于驾驶员理解和记忆
-- **标准化：** 交通标志和法规的统一标准
+### Q12: Why use mph instead of in/h for traffic?
+**A12**: Reasons for using mph:
+- **Appropriate values:** mph values suitable for expressing traffic speeds
+- **Historical tradition:** Long-term use in British and American transportation systems
+- **Intuitiveness:** Easy for drivers to understand and remember
+- **Standardization:** Unified standard for traffic signs and regulations
 
-### Q13: in/h在工程协调中的典型应用？
-**A13**: in/h的工程协调应用：
-- **跨专业合作：** 地质工程师与交通工程师的数据交换
-- **安全评估：** 地质变形对交通安全的影响评估
-- **标准制定：** 工程项目中的速度标准统一
-- **公众沟通：** 将专业监测数据转换为易懂单位
-- **风险管理：** 地质灾害对交通系统的影响分析
+### Q13: What are typical applications of in/h in engineering coordination?
+**A13**: Engineering coordination applications of in/h:
+- **Cross-disciplinary cooperation:** Data exchange between geological engineers and traffic engineers
+- **Safety assessment:** Impact assessment of geological deformation on traffic safety
+- **Standard setting:** Unified speed standards in engineering projects
+- **Public communication:** Converting professional monitoring data to understandable units
+- **Risk management:** Analysis of geological disaster impacts on transportation systems
 
-## 七、相关连接
+## VII. Related Links
 
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Speed" :key="index">

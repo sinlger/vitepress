@@ -72,17 +72,17 @@ const convertHandler = (e) => {
 </script>
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="数值"  path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数值" />
+  <n-form-item label="Value"  path="number">
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="Enter the value to convert" />
   </n-form-item>
-  <n-form-item label="从" path="from">
-    <n-select  size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
+  <n-form-item label="From" path="from">
+    <n-select  size="large" :options="options" v-model:value="form.from" placeholder="Select original unit" />
   </n-form-item>
-  <n-form-item label="到" path="to">
-    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
+  <n-form-item label="To" path="to">
+    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="Select conversion unit" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
+    <n-button type="info" style="width:100%" @click="convertHandler">Convert</n-button>
   </n-form-item>
 </n-form>
 <n-card embedded :bordered="false" hoverable style="margin-top: 16px;">
@@ -198,170 +198,170 @@ Note: Conversion formula examples → in/h to km/h: (km/h = in/h × 0.0000254); 
 - Precision instrument calibration
 - Automated equipment control
 
-### 冷知识：in/h在不同领域的速度
+### Fun Facts: in/h Speeds in Different Fields
 
-- **建筑沉降：** 约1-10 in/h（约0.0000254-0.000254 km/h）
-- **地质变形：** 约0.1-1 in/h（约0.00000254-0.0000254 km/h）
-- **精密加工：** 约100-1000 in/h（约0.00254-0.0254 km/h）
-- **材料测试：** 约10-100 in/h（约0.000254-0.00254 km/h）
+- **Building Settlement:** Approximately 1-10 in/h (approximately 0.0000254-0.000254 km/h)
+- **Geological Deformation:** Approximately 0.1-1 in/h (approximately 0.00000254-0.0000254 km/h)
+- **Precision Machining:** Approximately 100-1000 in/h (approximately 0.00254-0.0254 km/h)
+- **Material Testing:** Approximately 10-100 in/h (approximately 0.000254-0.00254 km/h)
 
-## 四、速度单位详解：in/h、km/h等缩写含义
+## 4. Speed Unit Explanation: Abbreviation Meanings of in/h, km/h, etc.
 
-### 常见速度单位缩写对照
+### Common Speed Unit Abbreviation Comparison
 
-| 英文缩写 | 英文全称 | 中文名称 | 换算关系（相对于1 in/h） |
+| English Abbreviation | English Full Name | Chinese Name | Conversion Relationship (relative to 1 in/h) |
 |----------|----------|----------|-------------------------|
-| **in/h** | inches per hour | 英寸每小时 | 1 |
-| **iph** | inches per hour | 英寸每小时 | 1 |
-| **in/hr** | inches per hour | 英寸每小时 | 1 |
-| **km/h** | kilometers per hour | 千米每小时 | 0.0000254 |
-| **kph** | kilometers per hour | 千米每小时 | 0.0000254 |
-| **km/hr** | kilometers per hour | 千米每小时 | 0.0000254 |
-| **m/h** | meters per hour | 米每小时 | 0.0254 |
-| **mm/h** | millimeters per hour | 毫米每小时 | 25.4 |
+| **in/h** | inches per hour | Inches per hour | 1 |
+| **iph** | inches per hour | Inches per hour | 1 |
+| **in/hr** | inches per hour | Inches per hour | 1 |
+| **km/h** | kilometers per hour | Kilometers per hour | 0.0000254 |
+| **kph** | kilometers per hour | Kilometers per hour | 0.0000254 |
+| **km/hr** | kilometers per hour | Kilometers per hour | 0.0000254 |
+| **m/h** | meters per hour | Meters per hour | 0.0254 |
+| **mm/h** | millimeters per hour | Millimeters per hour | 25.4 |
 
-### in/h和km/h的不同表示方法
+### Different Representation Methods for in/h and km/h
 
-**in/h正式写法：**
-- in/h（最常用的标准写法）
-- iph（工程领域常用简写）
-- in/hr（完整时间单位写法）
+**Formal in/h notation:**
+- in/h (most commonly used standard notation)
+- iph (commonly used abbreviation in engineering)
+- in/hr (complete time unit notation)
 
-**km/h正式写法：**
-- km/h（最常用的标准写法）
-- kph（kilometers per hour简写）
-- km/hr（完整时间单位写法）
+**Formal km/h notation:**
+- km/h (most commonly used standard notation)
+- kph (kilometers per hour abbreviation)
+- km/hr (complete time unit notation)
 
-**注意事项：**
-- ✅ 正确：in/h, km/h, iph, kph
-- ❌ 错误：in/hour, km/hour（混合简写和全写）
-- ✅ 正确：inches per hour, kilometers per hour（完整英文表达）
+**Important Notes:**
+- ✅ Correct: in/h, km/h, iph, kph
+- ❌ Incorrect: in/hour, km/hour (mixing abbreviations and full forms)
+- ✅ Correct: inches per hour, kilometers per hour (complete English expressions)
 
-### 速度单位使用场景
+### Speed Unit Usage Scenarios
 
-**地质监测：** in/h（地面沉降、地质变形）
-**交通运输：** km/h（汽车限速、火车速度）
-**精密测量：** in/h, mm/h（建筑监测、精密制造）
-**国际工程：** km/h, m/s（国际标准）
-**科学研究：** m/s（国际单位制标准）
-**气象预报：** km/h（风速、降水强度）
+**Geological Monitoring:** in/h (ground subsidence, geological deformation)
+**Transportation:** km/h (vehicle speed limits, train speeds)
+**Precision Measurement:** in/h, mm/h (building monitoring, precision manufacturing)
+**International Engineering:** km/h, m/s (international standards)
+**Scientific Research:** m/s (International System of Units standard)
+**Weather Forecasting:** km/h (wind speed, precipitation intensity)
 
-### 重要提醒
+### Important Reminders
 
-**单位使用注意事项：**
-1. **地质监测：** 广泛使用in/h，特别是美国地质调查
-2. **国际项目：** 优先使用km/h（国际通用标准）
-3. **科学研究：** 必须使用m/s（SI基本单位）
-4. **跨国合作：** 需要明确单位制，避免换算错误
+**Unit Usage Considerations:**
+1. **Geological Monitoring:** Widely uses in/h, especially in US geological surveys
+2. **International Projects:** Prioritizes km/h (international common standard)
+3. **Scientific Research:** Must use m/s (SI base unit)
+4. **International Cooperation:** Need to clarify unit systems to avoid conversion errors
 
-**换算精度要求：**
-- **高精度计算：** 使用完整换算系数（0.0000254）
-- **工程估算：** 可使用近似值（0.000025）
-- **快速心算：** 记住关键换算点（1,000,000 in/h = 25.4 km/h）
+**Conversion Precision Requirements:**
+- **High-precision calculations:** Use complete conversion coefficient (0.0000254)
+- **Engineering estimates:** Can use approximate values (0.000025)
+- **Quick mental math:** Remember key conversion points (1,000,000 in/h = 25.4 km/h)
 
-## 五、实际应用中的in/h速度换算场景
+## 5. Practical in/h Speed Conversion Scenarios
 
-### 地质监测
-- **建筑沉降：** 高层建筑沉降5 in/h = 0.000127 km/h
-- **桥梁变形：** 大桥位移2 in/h = 0.0000508 km/h
-- **地面沉降：** 地质沉降10 in/h = 0.000254 km/h
+### Geological Monitoring
+- **Building Settlement:** High-rise building settlement 5 in/h = 0.000127 km/h
+- **Bridge Deformation:** Bridge displacement 2 in/h = 0.0000508 km/h
+- **Ground Subsidence:** Geological subsidence 10 in/h = 0.000254 km/h
 
-### 国际工程
-- **跨国项目：** 美国数据500 in/h = 0.0127 km/h
-- **标准对比：** 国际标准1000 in/h = 0.0254 km/h
-- **数据交换：** 监测数据100 in/h = 0.00254 km/h
+### International Engineering
+- **Cross-border Projects:** US data 500 in/h = 0.0127 km/h
+- **Standard Comparison:** International standard 1000 in/h = 0.0254 km/h
+- **Data Exchange:** Monitoring data 100 in/h = 0.00254 km/h
 
-### 精密制造
-- **机械加工：** 进给速度500 in/h = 0.0127 km/h
-- **自动化设备：** 传送带速度1000 in/h = 0.0254 km/h
-- **精密测量：** 测量头移动100 in/h = 0.00254 km/h
+### Precision Manufacturing
+- **Mechanical Processing:** Feed rate 500 in/h = 0.0127 km/h
+- **Automated Equipment:** Conveyor belt speed 1000 in/h = 0.0254 km/h
+- **Precision Measurement:** Measuring head movement 100 in/h = 0.00254 km/h
 
-### 科学研究
-- **材料测试：** 蠕变速度0.1 in/h = 0.00000254 km/h
-- **环境监测：** 地表变形1 in/h = 0.0000254 km/h
-- **实验室测试：** 试验速度50 in/h = 0.00127 km/h
+### Scientific Research
+- **Material Testing:** Creep rate 0.1 in/h = 0.00000254 km/h
+- **Environmental Monitoring:** Surface deformation 1 in/h = 0.0000254 km/h
+- **Laboratory Testing:** Test speed 50 in/h = 0.00127 km/h
 
-## 六、常见问题 FAQ
+## 6. Frequently Asked Questions (FAQ)
 
-### Q1: 一英寸每小时等于多少千米每小时？
-**A1**: 1 in/h = 0.0000254 km/h（精确值）。这是因为1英寸 = 0.0254米，1千米 = 1000米，所以1 in/h = 0.0254 ÷ 1000 = 0.0000254 km/h。
+### Q1: How many kilometers per hour equals one inch per hour?
+**A1**: 1 in/h = 0.0000254 km/h (exact value). This is because 1 inch = 0.0254 meters, 1 kilometer = 1000 meters, so 1 in/h = 0.0254 ÷ 1000 = 0.0000254 km/h.
 
-### Q2: in/h to km/h怎么换算？
-**A2**: in/h转km/h的换算方法：
-- **公式：** km/h = in/h × 0.0000254
-- **示例：** 1000 in/h = 1000 × 0.0000254 = 0.0254 km/h
-- **记忆技巧：** in/h × 0.000025 ≈ km/h（近似值，误差约1.6%）
+### Q2: How to convert in/h to km/h?
+**A2**: Conversion method from in/h to km/h:
+- **Formula:** km/h = in/h × 0.0000254
+- **Example:** 1000 in/h = 1000 × 0.0000254 = 0.0254 km/h
+- **Memory trick:** in/h × 0.000025 ≈ km/h (approximate value, error about 1.6%)
 
-### Q3: km/h转in/h的公式是什么？
-**A3**: km/h转in/h的公式是：in/h = km/h ÷ 0.0000254。例如：1 km/h = 1 ÷ 0.0000254 ≈ 39,370.08 in/h。
+### Q3: What is the formula for converting km/h to in/h?
+**A3**: The formula for converting km/h to in/h is: in/h = km/h ÷ 0.0000254. For example: 1 km/h = 1 ÷ 0.0000254 ≈ 39,370.08 in/h.
 
-### Q4: 如何快速进行in/h和km/h换算？
-**A4**: 快速换算技巧：
-- **in/h转km/h：** in/h × 0.000025 ≈ km/h（误差约1.6%）
-- **km/h转in/h：** km/h × 40,000 ≈ in/h（快速估算）
-- **记忆要点：** 1 km/h ≈ 40,000 in/h
+### Q4: How to quickly convert between in/h and km/h?
+**A4**: Quick conversion techniques:
+- **in/h to km/h:** in/h × 0.000025 ≈ km/h (error about 1.6%)
+- **km/h to in/h:** km/h × 40,000 ≈ in/h (quick estimate)
+- **Key point to remember:** 1 km/h ≈ 40,000 in/h
 
-### Q5: in/h换算时需要注意什么？
-**A5**: 注意事项包括：
-- 确认使用的是国际英寸（25.4毫米）和国际千米标准
-- 区分in/h和km/h的应用场景
-- 国际项目通常保留适当位数的小数
-- 注意单位一致性，避免混用不同长度单位
+### Q5: What should be noted when converting in/h?
+**A5**: Considerations include:
+- Confirm using international inch (25.4 millimeters) and international kilometer standards
+- Distinguish between in/h and km/h application scenarios
+- International projects usually retain appropriate decimal places
+- Pay attention to unit consistency, avoid mixing different length units
 
-### Q6: 为什么1 in/h等于0.0000254 km/h？
-**A6**: 因为：
-- 1英寸 = 0.0254米（国际标准定义）
-- 1千米 = 1000米
-- 1 in/h = 0.0254米/小时 ÷ 1000米/千米 = 0.0000254 km/h
+### Q6: Why does 1 in/h equal 0.0000254 km/h?
+**A6**: Because:
+- 1 inch = 0.0254 meters (international standard definition)
+- 1 kilometer = 1000 meters
+- 1 in/h = 0.0254 meters/hour ÷ 1000 meters/kilometer = 0.0000254 km/h
 
-### Q7: iph和kph分别是什么意思？
-**A7**: iph和kph的含义：
-- **iph：** inches per hour的缩写，等同于in/h
-- **kph：** kilometers per hour的缩写，等同于km/h
-- **使用场景：** iph在美国工程中常用，kph在国际交通中常用
+### Q7: What do iph and kph mean respectively?
+**A7**: Meanings of iph and kph:
+- **iph:** Abbreviation for inches per hour, equivalent to in/h
+- **kph:** Abbreviation for kilometers per hour, equivalent to km/h
+- **Usage scenarios:** iph commonly used in American engineering, kph commonly used in international transportation
 
-### Q8: 英寸每小时在哪些领域使用？
-**A8**: in/h的使用场景：
-- **地质监测：** 地面沉降、地质变形监测
-- **建筑工程：** 建筑物、桥梁变形测量
-- **精密制造：** 机械加工、精密测量设备
-- **国际合作：** 跨国工程项目数据交换
+### Q8: In which fields is inches per hour used?
+**A8**: Usage scenarios for in/h:
+- **Geological Monitoring:** Ground subsidence, geological deformation monitoring
+- **Building Engineering:** Building and bridge deformation measurement
+- **Precision Manufacturing:** Mechanical processing, precision measurement equipment
+- **International Cooperation:** Cross-border engineering project data exchange
 
-### Q9: in/h和km/h哪个更常用？
-**A9**: 使用场景对比：
-- **in/h：** 美国地质监测、建筑工程、精密制造
-- **km/h：** 国际交通、气象预报、科学研究
-- **选择建议：** 国际项目优先使用km/h，美国本土可用in/h
+### Q9: Which is more commonly used, in/h or km/h?
+**A9**: Usage scenario comparison:
+- **in/h:** US geological monitoring, building engineering, precision manufacturing
+- **km/h:** International transportation, weather forecasting, scientific research
+- **Selection advice:** International projects prioritize km/h, US domestic can use in/h
 
-### Q10: 速度单位有哪些？
-**A10**: 常见速度单位包括：
-- **英寸每小时(in/h)：** 地质监测常用，1 in/h = 0.0000254 km/h
-- **千米每小时(km/h)：** 国际通用单位
-- **米每秒(m/s)：** 国际标准单位
-- **英里每小时(mph)：** 英美交通常用
+### Q10: What are the speed units?
+**A10**: Common speed units include:
+- **Inches per hour (in/h):** Commonly used in geological monitoring, 1 in/h = 0.0000254 km/h
+- **Kilometers per hour (km/h):** International common unit
+- **Meters per second (m/s):** International standard unit
+- **Miles per hour (mph):** Commonly used in Anglo-American transportation
 
-### Q11: in/h转m/h怎么算？
-**A11**: in/h转m/h的换算：
-- **公式：** m/h = in/h × 0.0254
-- **示例：** 100 in/h = 100 × 0.0254 = 2.54 m/h
-- **记忆技巧：** in/h × 0.0254 = m/h（精确换算）
+### Q11: How to convert in/h to m/h?
+**A11**: Conversion from in/h to m/h:
+- **Formula:** m/h = in/h × 0.0254
+- **Example:** 100 in/h = 100 × 0.0254 = 2.54 m/h
+- **Memory trick:** in/h × 0.0254 = m/h (exact conversion)
 
-### Q12: 为什么国际项目要用km/h而不用in/h？
-**A12**: 使用km/h的原因：
-- **国际标准：** 基于国际单位制的千米
-- **通用性：** 全球大多数国家使用公制
-- **便于交流：** 减少单位换算的复杂性
-- **科学性：** 与SI基本单位体系一致
+### Q12: Why do international projects use km/h instead of in/h?
+**A12**: Reasons for using km/h:
+- **International Standard:** Based on the International System of Units kilometer
+- **Universality:** Most countries worldwide use the metric system
+- **Ease of Communication:** Reduces complexity of unit conversions
+- **Scientific Nature:** Consistent with the SI base unit system
 
-### Q13: in/h在国际合作中的典型应用？
-**A13**: in/h的国际合作应用：
-- **跨国工程：** 美国公司与国际团队的数据交换
-- **科学研究：** 地质监测数据的国际比较
-- **标准制定：** 国际标准中的单位换算
-- **技术交流：** 工程技术文档的单位统一
-- **质量控制：** 国际项目的测量标准对接
+### Q13: What are typical applications of in/h in international cooperation?
+**A13**: International cooperation applications of in/h:
+- **Cross-border Engineering:** Data exchange between US companies and international teams
+- **Scientific Research:** International comparison of geological monitoring data
+- **Standard Setting:** Unit conversions in international standards
+- **Technical Communication:** Unit unification in engineering technical documents
+- **Quality Control:** Measurement standard alignment in international projects
 
-## 七、相关连接
+## 7. Related Links
 
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Speed" :key="index">

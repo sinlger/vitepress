@@ -237,80 +237,80 @@ Scientific recommendation: Precision measurement fields must use appropriate uni
 
 ## VI. Frequently Asked Questions
 
-### Q1: 英寸每小时和千米每小时怎么换算？
-**A1**: 英寸每小时转千米每小时的公式是：km/h = in/h ÷ 39,370.1。例如：100,000 in/h = 100,000 ÷ 39,370.1 = 2.54 km/h。
+### Q1: How to convert inches per hour to kilometers per hour?
+**A1**: The formula for converting inches per hour to kilometers per hour is: km/h = in/h ÷ 39,370.1. For example: 100,000 in/h = 100,000 ÷ 39,370.1 = 2.54 km/h.
 
-### Q2: 一英寸每小时等于多少千米每小时？
-**A2**: 1英寸每小时等于0.0000254千米每小时。这是因为1英寸=0.0254米=0.0000254千米。
+### Q2: How many kilometers per hour is one inch per hour?
+**A2**: 1 inch per hour equals 0.0000254 kilometers per hour. This is because 1 inch = 0.0254 meters = 0.0000254 kilometers.
 
-### Q3: km/h换算in/h的公式是什么？
-**A3**: km/h转in/h的公式是：in/h = km/h × 39,370.1。例如：1 km/h = 1 × 39,370.1 = 39,370.1 in/h。
+### Q3: What is the formula for converting km/h to in/h?
+**A3**: The formula for converting km/h to in/h is: in/h = km/h × 39,370.1. For example: 1 km/h = 1 × 39,370.1 = 39,370.1 in/h.
 
-### Q4: 为什么要使用英寸每小时这么小的单位？
-**A4**: 实用原因：
-- 精密测量需要合适的数值范围
-- 避免使用过多小数点
-- 便于工程师和技术人员理解
-- 与现有测量设备和标准兼容
+### Q4: Why use such a small unit as inches per hour?
+**A4**: Practical reasons:
+- Precision measurements require appropriate numerical ranges
+- Avoid using too many decimal places
+- Easy for engineers and technicians to understand
+- Compatible with existing measuring equipment and standards
 
-### Q5: 如何快速进行英寸每小时换算千米每小时？
-**A5**: 快速换算技巧：
-- 精确计算：in/h ÷ 39,370.1 = km/h
-- 近似计算：in/h ÷ 40,000 ≈ km/h（误差约1.6%）
-- 科学记数法：in/h × 2.54 × 10⁻⁵ = km/h
+### Q5: How to quickly convert inches per hour to kilometers per hour?
+**A5**: Quick conversion tips:
+- Precise calculation: in/h ÷ 39,370.1 = km/h
+- Approximate calculation: in/h ÷ 40,000 ≈ km/h (error about 1.6%)
+- Scientific notation: in/h × 2.54 × 10⁻⁵ = km/h
 
-### Q6: 英寸每小时换算时需要注意什么？
-**A6**: 注意事项包括：
-- 数值通常很大，注意科学记数法
-- 确认测量精度要求
-- 避免单位混淆（英寸vs毫米）
-- 考虑测量误差的影响
+### Q6: What should be noted when converting inches per hour?
+**A6**: Considerations include:
+- Values are usually large, pay attention to scientific notation
+- Confirm measurement precision requirements
+- Avoid unit confusion (inches vs millimeters)
+- Consider the impact of measurement errors
 
-### Q7: 一千米每小时等于多少英寸每小时？
-**A7**: 1千米每小时 = 39,370.1英寸每小时。计算方法：1 km/h × 39,370.1 = 39,370.1 in/h。
+### Q7: How many inches per hour is one kilometer per hour?
+**A7**: 1 kilometer per hour = 39,370.1 inches per hour. Calculation method: 1 km/h × 39,370.1 = 39,370.1 in/h.
 
-### Q8: 公里每小时换算英寸每小时怎么算？
-**A8**: 公里每小时换算英寸每小时的方法：
-- **公式：** in/h = km/h × 39,370.1
-- **示例：** 0.1 km/h = 0.1 × 39,370.1 = 3,937.01 in/h
-- **记忆技巧：** km/h × 40,000 ≈ in/h（近似值）
+### Q8: How to convert kilometers per hour to inches per hour?
+**A8**: Method for converting kilometers per hour to inches per hour:
+- **Formula:** in/h = km/h × 39,370.1
+- **Example:** 0.1 km/h = 0.1 × 39,370.1 = 3,937.01 in/h
+- **Memory tip:** km/h × 40,000 ≈ in/h (approximate value)
 
-### Q9: 英寸每小时和千米每小时的换算关系是什么？
-**A9**: 英寸每小时和千米每小时的换算关系：
-- **in/h → km/h：** 除以39,370.1
-- **km/h → in/h：** 乘以39,370.1
-- **换算系数来源：** 1千米 = 39,370.1英寸
+### Q9: What is the conversion relationship between inches per hour and kilometers per hour?
+**A9**: Conversion relationship between inches per hour and kilometers per hour:
+- **in/h → km/h:** Divide by 39,370.1
+- **km/h → in/h:** Multiply by 39,370.1
+- **Source of conversion factor:** 1 kilometer = 39,370.1 inches
 
-### Q10: 英寸是什么单位？一英寸等于多少毫米？
-**A10**: 英寸的详细信息：
-- **英寸定义：** 英制长度单位，等于1/12英尺
-- **一英寸等于多少毫米：** 1英寸 = 25.4毫米
-- **英寸换算毫米：** 毫米数 = 英寸数 × 25.4
-- **历史起源：** 古代以拇指宽度为标准
+### Q10: What unit is an inch? How many millimeters is one inch?
+**A10**: Detailed information about inches:
+- **Inch definition:** Imperial length unit, equal to 1/12 foot
+- **One inch equals how many millimeters:** 1 inch = 25.4 millimeters
+- **Inch to millimeter conversion:** millimeters = inches × 25.4
+- **Historical origin:** Ancient standard based on thumb width
 
-### Q11: in/h和iph有什么区别？
-**A11**: in/h和iph的区别：
-- **in/h：** 标准科学表示法，inches per hour
-- **iph：** 简化缩写，含义相同
-- **使用场景：** in/h用于正式文档，iph用于简化表示
-- **等价关系：** 1 in/h = 1 iph = 0.0000254 km/h
+### Q11: What's the difference between in/h and iph?
+**A11**: Difference between in/h and iph:
+- **in/h:** Standard scientific notation, inches per hour
+- **iph:** Simplified abbreviation, same meaning
+- **Usage scenarios:** in/h for formal documents, iph for simplified representation
+- **Equivalent relationship:** 1 in/h = 1 iph = 0.0000254 km/h
 
-### Q12: 为什么要进行英寸和毫米的换算？
-**A12**: 换算的重要性：
-- **国际标准：** 公制与英制的转换
-- **精密制造：** 设备规格的准确理解
-- **科学研究：** 数据标准化和比较
-- **质量控制：** 确保测量精度
+### Q12: Why convert between inches and millimeters?
+**A12**: Importance of conversion:
+- **International standards:** Conversion between metric and imperial systems
+- **Precision manufacturing:** Accurate understanding of equipment specifications
+- **Scientific research:** Data standardization and comparison
+- **Quality control:** Ensure measurement accuracy
 
-### Q13: 英寸每小时在哪些场景下使用？
-**A13**: in/h的使用场景：
-- **地质监测：** 地面沉降、滑坡监测
-- **材料测试：** 蠕变、疲劳试验
-- **建筑工程：** 结构变形监测
-- **生物研究：** 生长速率测量
-- **精密制造：** 微小变形监测
+### Q13: In which scenarios are inches per hour used?
+**A13**: Usage scenarios for in/h:
+- **Geological monitoring:** Ground subsidence, landslide monitoring
+- **Material testing:** Creep, fatigue testing
+- **Construction engineering:** Structural deformation monitoring
+- **Biological research:** Growth rate measurement
+- **Precision manufacturing:** Micro-deformation monitoring
 
-## 七、相关连接
+## VII. Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Speed" :key="index">
     <n-button

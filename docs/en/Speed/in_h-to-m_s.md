@@ -198,167 +198,167 @@ Note: Conversion formula examples → in/h to m/s: (m/s = in/h × 0.00000705556)
 - Precision instrument calibration
 - Materials testing equipment
 
-### 冷知识：in/h在不同领域的速度
+### Fun Facts: in/h Speeds in Different Fields
 
-- **建筑沉降：** 约1-10 in/h（约7.06×10⁻⁶-7.06×10⁻⁵ m/s）
-- **地质变形：** 约0.1-1 in/h（约7.06×10⁻⁷-7.06×10⁻⁶ m/s）
-- **精密加工：** 约100-1000 in/h（约7.06×10⁻⁴-7.06×10⁻³ m/s）
-- **材料测试：** 约10-100 in/h（约7.06×10⁻⁵-7.06×10⁻⁴ m/s）
+- **Building Settlement:** Approximately 1-10 in/h (approximately 7.06×10⁻⁶-7.06×10⁻⁵ m/s)
+- **Geological Deformation:** Approximately 0.1-1 in/h (approximately 7.06×10⁻⁷-7.06×10⁻⁶ m/s)
+- **Precision Machining:** Approximately 100-1000 in/h (approximately 7.06×10⁻⁴-7.06×10⁻³ m/s)
+- **Material Testing:** Approximately 10-100 in/h (approximately 7.06×10⁻⁵-7.06×10⁻⁴ m/s)
 
-## 四、速度单位详解：in/h、m/s等缩写含义
+## 4. Speed Unit Explanation: Abbreviation Meanings of in/h, m/s, etc.
 
-### 常见速度单位缩写对照
+### Common Speed Unit Abbreviation Comparison
 
-| 英文缩写 | 英文全称 | 中文名称 | 换算关系（相对于1 in/h） |
+| English Abbreviation | English Full Name | Chinese Name | Conversion Relationship (relative to 1 in/h) |
 |----------|----------|----------|-------------------------|
-| **in/h** | inches per hour | 英寸每小时 | 1 |
-| **iph** | inches per hour | 英寸每小时 | 1 |
-| **in/hr** | inches per hour | 英寸每小时 | 1 |
-| **m/s** | meters per second | 米每秒 | 0.00000705556 |
-| **mm/h** | millimeters per hour | 毫米每小时 | 25.4 |
-| **ft/h** | feet per hour | 英尺每小时 | 0.0833333 |
-| **km/h** | kilometers per hour | 千米每小时 | 0.0000254 |
-| **mph** | miles per hour | 英里每小时 | 0.0000157828 |
+| **in/h** | inches per hour | Inches per hour | 1 |
+| **iph** | inches per hour | Inches per hour | 1 |
+| **in/hr** | inches per hour | Inches per hour | 1 |
+| **m/s** | meters per second | Meters per second | 0.00000705556 |
+| **mm/h** | millimeters per hour | Millimeters per hour | 25.4 |
+| **ft/h** | feet per hour | Feet per hour | 0.0833333 |
+| **km/h** | kilometers per hour | Kilometers per hour | 0.0000254 |
+| **mph** | miles per hour | Miles per hour | 0.0000157828 |
 
-### in/h的不同表示方法
+### Different Representation Methods for in/h
 
-**正式写法：**
-- in/h（最常用的标准写法）
-- iph（工程领域常用简写）
-- in/hr（完整时间单位写法）
+**Formal notation:**
+- in/h (most commonly used standard notation)
+- iph (commonly used abbreviation in engineering)
+- in/hr (complete time unit notation)
 
-**注意事项：**
-- ✅ 正确：in/h, iph, in/hr
-- ❌ 错误：in/hour（混合简写和全写）
-- ✅ 正确：inches per hour（完整英文表达）
-- ❌ 错误：inch per hour（单复数错误）
+**Important Notes:**
+- ✅ Correct: in/h, iph, in/hr
+- ❌ Incorrect: in/hour (mixing abbreviations and full forms)
+- ✅ Correct: inches per hour (complete English expression)
+- ❌ Incorrect: inch per hour (singular/plural error)
 
-### 速度单位使用场景
+### Speed Unit Usage Scenarios
 
-**地质监测：** in/h（地面沉降、地质变形）
-**精密测量：** in/h, mm/h（建筑监测、精密制造）
-**工程计算：** m/s（国际标准）, ft/s（美国标准）
-**建筑工程：** in/h（结构变形、沉降监测）
-**科学研究：** m/s（国际单位制标准）
-**材料科学：** mm/h, μm/h（材料变形、蠕变测试）
+**Geological Monitoring:** in/h (ground subsidence, geological deformation)
+**Precision Measurement:** in/h, mm/h (building monitoring, precision manufacturing)
+**Engineering Calculations:** m/s (international standard), ft/s (US standard)
+**Building Engineering:** in/h (structural deformation, settlement monitoring)
+**Scientific Research:** m/s (International System of Units standard)
+**Materials Science:** mm/h, μm/h (material deformation, creep testing)
 
-### 重要提醒
+### Important Reminders
 
-**单位使用注意事项：**
-1. **地质监测：** 广泛使用in/h，特别是地面沉降领域
-2. **精密测量：** 优先使用in/h（建筑、地质研究）
-3. **科学研究：** 必须使用m/s（SI基本单位）
-4. **跨国项目：** 需要明确单位制，避免换算错误
+**Unit Usage Considerations:**
+1. **Geological Monitoring:** Widely uses in/h, especially in ground subsidence fields
+2. **Precision Measurement:** Prioritizes in/h (building, geological research)
+3. **Scientific Research:** Must use m/s (SI base unit)
+4. **International Projects:** Need to clarify unit systems to avoid conversion errors
 
-**换算精度要求：**
-- **高精度计算：** 使用完整换算系数（0.00000705556）
-- **工程估算：** 可使用近似值（0.000007）
-- **快速心算：** 记住关键换算点（1,000,000 in/h ≈ 7 m/s）
+**Conversion Precision Requirements:**
+- **High-precision calculations:** Use complete conversion coefficient (0.00000705556)
+- **Engineering estimates:** Can use approximate values (0.000007)
+- **Quick mental math:** Remember key conversion points (1,000,000 in/h ≈ 7 m/s)
 
-## 五、实际应用中的in/h速度换算场景
+## 5. Practical in/h Speed Conversion Scenarios
 
-### 地质监测
-- **建筑沉降：** 高层建筑沉降5 in/h = 0.0000352778 m/s
-- **桥梁变形：** 大桥位移2 in/h = 0.0000141111 m/s
-- **地面沉降：** 地质沉降10 in/h = 0.0000705556 m/s
+### Geological Monitoring
+- **Building Settlement:** High-rise building settlement 5 in/h = 0.0000352778 m/s
+- **Bridge Deformation:** Bridge displacement 2 in/h = 0.0000141111 m/s
+- **Ground Subsidence:** Geological subsidence 10 in/h = 0.0000705556 m/s
 
-### 精密制造
-- **机械加工：** 进给速度500 in/h = 0.00352778 m/s
-- **精密测量：** 测量头移动100 in/h = 0.000705556 m/s
-- **自动化设备：** 传送带速度1000 in/h = 0.00705556 m/s
+### Precision Manufacturing
+- **Mechanical Processing:** Feed rate 500 in/h = 0.00352778 m/s
+- **Precision Measurement:** Measuring head movement 100 in/h = 0.000705556 m/s
+- **Automated Equipment:** Conveyor belt speed 1000 in/h = 0.00705556 m/s
 
-### 建筑工程
-- **大坝监测：** 大坝位移1 in/h = 0.00000705556 m/s
-- **隧道变形：** 隧道收缩3 in/h = 0.0000211667 m/s
-- **地基沉降：** 地基下沉8 in/h = 0.0000564444 m/s
+### Building Engineering
+- **Dam Monitoring:** Dam displacement 1 in/h = 0.00000705556 m/s
+- **Tunnel Deformation:** Tunnel contraction 3 in/h = 0.0000211667 m/s
+- **Foundation Settlement:** Foundation subsidence 8 in/h = 0.0000564444 m/s
 
-### 材料测试
-- **蠕变测试：** 材料蠕变0.1 in/h = 7.05556×10⁻⁷ m/s
-- **疲劳试验：** 裂纹扩展0.5 in/h = 3.52778×10⁻⁶ m/s
-- **变形测试：** 材料变形20 in/h = 0.000141111 m/s
+### Material Testing
+- **Creep Testing:** Material creep 0.1 in/h = 7.05556×10⁻⁷ m/s
+- **Fatigue Testing:** Crack propagation 0.5 in/h = 3.52778×10⁻⁶ m/s
+- **Deformation Testing:** Material deformation 20 in/h = 0.000141111 m/s
 
-## 六、常见问题 FAQ
+## 6. Frequently Asked Questions (FAQ)
 
-### Q1: 一英寸每小时等于多少米每秒？
-**A1**: 1 in/h = 0.00000705556 m/s（精确值）。这是因为1英寸 = 0.0254米，1小时 = 3600秒，所以1 in/h = 0.0254 ÷ 3600 ≈ 0.00000705556 m/s。
+### Q1: How many meters per second equals one inch per hour?
+**A1**: 1 in/h = 0.00000705556 m/s (exact value). This is because 1 inch = 0.0254 meters, 1 hour = 3600 seconds, so 1 in/h = 0.0254 ÷ 3600 ≈ 0.00000705556 m/s.
 
-### Q2: in/h to m/s怎么换算？
-**A2**: in/h转m/s的换算方法：
-- **公式：** m/s = in/h × 0.00000705556
-- **示例：** 1000 in/h = 1000 × 0.00000705556 = 0.00705556 m/s
-- **记忆技巧：** in/h × 0.000007 ≈ m/s（近似值，误差约0.8%）
+### Q2: How to convert in/h to m/s?
+**A2**: Conversion method from in/h to m/s:
+- **Formula:** m/s = in/h × 0.00000705556
+- **Example:** 1000 in/h = 1000 × 0.00000705556 = 0.00705556 m/s
+- **Memory trick:** in/h × 0.000007 ≈ m/s (approximate value, error about 0.8%)
 
-### Q3: m/s转in/h的公式是什么？
-**A3**: m/s转in/h的公式是：in/h = m/s ÷ 0.00000705556。例如：0.01 m/s = 0.01 ÷ 0.00000705556 ≈ 1417.32 in/h。
+### Q3: What is the formula for converting m/s to in/h?
+**A3**: The formula for converting m/s to in/h is: in/h = m/s ÷ 0.00000705556. For example: 0.01 m/s = 0.01 ÷ 0.00000705556 ≈ 1417.32 in/h.
 
-### Q4: 如何快速进行in/h和m/s换算？
-**A4**: 快速换算技巧：
-- **in/h转m/s：** in/h × 0.000007 ≈ m/s（误差约0.8%）
-- **m/s转in/h：** m/s × 142,000 ≈ in/h（快速估算）
-- **记忆要点：** 1 m/s ≈ 142,000 in/h
+### Q4: How to quickly convert between in/h and m/s?
+**A4**: Quick conversion techniques:
+- **in/h to m/s:** in/h × 0.000007 ≈ m/s (error about 0.8%)
+- **m/s to in/h:** m/s × 142,000 ≈ in/h (quick estimate)
+- **Key point to remember:** 1 m/s ≈ 142,000 in/h
 
-### Q5: in/h换算时需要注意什么？
-**A5**: 注意事项包括：
-- 确认使用的是国际英寸（25.4毫米）标准
-- 区分in/h和m/s的应用场景
-- 地质监测通常保留更多位小数
-- 注意单位一致性，避免混用不同单位制
+### Q5: What should be noted when converting in/h?
+**A5**: Considerations include:
+- Confirm using international inch (25.4 millimeters) standard
+- Distinguish between in/h and m/s application scenarios
+- Geological monitoring usually retains more decimal places
+- Pay attention to unit consistency, avoid mixing different unit systems
 
-### Q6: 为什么1 in/h等于0.00000705556 m/s？
-**A6**: 因为：
-- 1英寸 = 0.0254米（国际标准定义）
-- 1小时 = 3600秒
-- 1 in/h = 0.0254米/小时 ÷ 3600秒/小时 = 0.00000705556 m/s
+### Q6: Why does 1 in/h equal 0.00000705556 m/s?
+**A6**: Because:
+- 1 inch = 0.0254 meters (international standard definition)
+- 1 hour = 3600 seconds
+- 1 in/h = 0.0254 meters/hour ÷ 3600 seconds/hour = 0.00000705556 m/s
 
-### Q7: iph和in/h有什么区别？
-**A7**: iph和in/h的区别：
-- **in/h：** 标准的分数形式写法
-- **iph：** inches per hour的缩写形式
-- **实质相同：** 两者表示完全相同的单位
-- **使用场景：** in/h更正式，iph在工程中常用
+### Q7: What is the difference between iph and in/h?
+**A7**: Differences between iph and in/h:
+- **in/h:** Standard fractional form notation
+- **iph:** Abbreviation form of inches per hour
+- **Essentially the same:** Both represent exactly the same unit
+- **Usage scenarios:** in/h is more formal, iph is commonly used in engineering
 
-### Q8: 英寸每小时在哪些领域使用？
-**A8**: in/h的使用场景：
-- **地质监测：** 地面沉降、地质变形监测
-- **建筑工程：** 建筑物、桥梁变形测量
-- **精密制造：** 机械加工、精密测量设备
-- **材料测试：** 蠕变试验、疲劳测试
+### Q8: In which fields is inches per hour used?
+**A8**: Usage scenarios for in/h:
+- **Geological Monitoring:** Ground subsidence, geological deformation monitoring
+- **Building Engineering:** Building and bridge deformation measurement
+- **Precision Manufacturing:** Mechanical processing, precision measurement equipment
+- **Material Testing:** Creep testing, fatigue testing
 
-### Q9: in/h和m/s哪个更常用？
-**A9**: 使用场景对比：
-- **in/h：** 地质监测、建筑工程、精密制造
-- **m/s：** 科学研究、国际工程、物理计算
-- **选择建议：** 科学研究优先使用m/s，地质监测可用in/h
+### Q9: Which is more commonly used, in/h or m/s?
+**A9**: Usage scenario comparison:
+- **in/h:** Geological monitoring, building engineering, precision manufacturing
+- **m/s:** Scientific research, international engineering, physics calculations
+- **Selection advice:** Scientific research prioritizes m/s, geological monitoring can use in/h
 
-### Q10: 速度单位有哪些？
-**A10**: 常见速度单位包括：
-- **英寸每小时(in/h)：** 地质监测常用，1 in/h = 0.00000705556 m/s
-- **米每秒(m/s)：** 国际标准单位
-- **毫米每小时(mm/h)：** 精密测量常用
-- **英尺每秒(ft/s)：** 美国工程常用
+### Q10: What are the speed units?
+**A10**: Common speed units include:
+- **Inches per hour (in/h):** Commonly used in geological monitoring, 1 in/h = 0.00000705556 m/s
+- **Meters per second (m/s):** International standard unit
+- **Millimeters per hour (mm/h):** Commonly used in precision measurement
+- **Feet per second (ft/s):** Commonly used in US engineering
 
-### Q11: in/h转mm/h怎么算？
-**A11**: in/h转mm/h的换算：
-- **公式：** mm/h = in/h × 25.4
-- **示例：** 10 in/h = 10 × 25.4 = 254 mm/h
-- **记忆技巧：** in/h × 25.4 = mm/h（精确换算）
+### Q11: How to convert in/h to mm/h?
+**A11**: Conversion from in/h to mm/h:
+- **Formula:** mm/h = in/h × 25.4
+- **Example:** 10 in/h = 10 × 25.4 = 254 mm/h
+- **Memory trick:** in/h × 25.4 = mm/h (exact conversion)
 
-### Q12: 为什么地质监测要用in/h而不用m/s？
-**A12**: 使用in/h的原因：
-- **数值适中：** in/h数值适合表示缓慢变化
-- **历史传统：** 英美工程界长期使用
-- **直观性：** 便于工程师理解和记录
-- **精度要求：** 适合地质变形的测量精度
+### Q12: Why does geological monitoring use in/h instead of m/s?
+**A12**: Reasons for using in/h:
+- **Appropriate values:** in/h values are suitable for representing slow changes
+- **Historical tradition:** Long-term use in Anglo-American engineering
+- **Intuitiveness:** Easy for engineers to understand and record
+- **Precision requirements:** Suitable for geological deformation measurement precision
 
-### Q13: in/h在精密测量中的典型应用？
-**A13**: in/h的精密测量应用：
-- **地质监测：** 地面沉降、地质构造运动、地震前兆观测
-- **建筑工程：** 建筑物沉降、桥梁变形、大坝位移监测
-- **精密制造：** 机械加工进给、精密仪器校准、自动化设备
-- **材料测试：** 蠕变试验、疲劳测试、变形测量
-- **环境监测：** 地表变形、土壤侵蚀、冰川运动
+### Q13: What are typical applications of in/h in precision measurement?
+**A13**: Precision measurement applications of in/h:
+- **Geological Monitoring:** Ground subsidence, geological structural movement, earthquake precursor observation
+- **Building Engineering:** Building settlement, bridge deformation, dam displacement monitoring
+- **Precision Manufacturing:** Mechanical processing feed, precision instrument calibration, automated equipment
+- **Material Testing:** Creep testing, fatigue testing, deformation measurement
+- **Environmental Monitoring:** Surface deformation, soil erosion, glacier movement
 
-## 七、相关连接
+## 7. Related Links
 
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Speed" :key="index">

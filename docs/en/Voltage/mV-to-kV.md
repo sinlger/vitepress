@@ -233,7 +233,7 @@ A: In practical applications, it's often necessary to convert weak control signa
 **Q: How to ensure precision in cross-magnitude measurements?**
 A: Use segmented calibration, multi-range design, and high-precision references.
 
-### 相关链接
+### Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Voltage" :key="index">
     <n-button

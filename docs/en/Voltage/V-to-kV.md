@@ -194,7 +194,7 @@ A: Kilovolt units are more concise, avoiding large numbers, and convenient for e
 **Q: How to safely measure high voltage?**
 A: Must use specialized high voltage measurement equipment and strictly follow safety operating procedures.
 
-### 相关链接
+### Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Voltage" :key="index">
     <n-button

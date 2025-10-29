@@ -198,117 +198,117 @@ Scientific recommendation: US engineering projects must be familiar with imperia
 
 **Foot Detailed Explanation:**
 - **1 foot = 0.3048 meters = 30.48 centimeters = 12 inches**
-- **英尺是什么单位：** 英制长度单位，主要用于美国
-- **一英尺等于多少米：** 1英尺 = 0.3048米
-- **英尺换算米：** 米 = 英尺 × 0.3048
+- **What is a foot unit:** Imperial length unit, mainly used in the United States
+- **How many meters in one foot:** 1 foot = 0.3048 meters
+- **Foot to meter conversion:** meters = feet × 0.3048
 
-**实际应用：**
-- 建筑工程：房屋高度、房间尺寸
-- 航空领域：飞行高度（如30,000英尺）
-- 体育运动：美式足球场长度（120码=360英尺）
-- 工程测量：管道直径、设备尺寸
+**Practical Applications:**
+- Construction engineering: building height, room dimensions
+- Aviation field: flight altitude (e.g., 30,000 feet)
+- Sports: American football field length (120 yards = 360 feet)
+- Engineering measurement: pipe diameter, equipment dimensions
 
-### 英尺每秒在工程中的应用
+### Applications of Feet per Second in Engineering
 
-**使用ft/s的领域：**
-- **流体力学：** 水流、气流速度测量
-- **建筑工程：** 风速、排水系统设计
-- **机械工程：** 传送带、旋转设备线速度
-- **环境工程：** 污水处理、通风系统
+**Fields using ft/s:**
+- **Fluid mechanics:** Water flow and airflow velocity measurement
+- **Construction engineering:** Wind speed and drainage system design
+- **Mechanical engineering:** Conveyor belt and rotating equipment linear velocity
+- **Environmental engineering:** Wastewater treatment and ventilation systems
 
-## 五、实际应用中的速度换算场景
+## 5. Speed Conversion Scenarios in Practical Applications
 
-### 工程领域
-- **水流速度：** 河流平均流速6 ft/s = 6.6 km/h
-- **风速测量：** 建筑设计风速50 ft/s = 54.9 km/h
-- **传送带速度：** 工厂生产线3 ft/s = 3.3 km/h
+### Engineering Fields
+- **Water flow velocity:** Average river flow 6 ft/s = 6.6 km/h
+- **Wind speed measurement:** Building design wind speed 50 ft/s = 54.9 km/h
+- **Conveyor belt speed:** Factory production line 3 ft/s = 3.3 km/h
 
-### 体育运动
-- **棒球投球：** 快球95 mph ≈ 139 ft/s = 153 km/h
-- **网球发球：** 职业选手120 mph ≈ 176 ft/s = 193 km/h
-- **游泳速度：** 世界纪录约7 ft/s = 7.7 km/h
+### Sports
+- **Baseball pitching:** Fastball 95 mph ≈ 139 ft/s = 153 km/h
+- **Tennis serve:** Professional player 120 mph ≈ 176 ft/s = 193 km/h
+- **Swimming speed:** World record approximately 7 ft/s = 7.7 km/h
 
-### 自然现象
-- **瀑布水流：** 尼亚加拉瀑布约100 ft/s = 109.7 km/h
-- **风暴风速：** 龙卷风中心200+ ft/s = 219+ km/h
-- **地震波速：** P波约16,000 ft/s = 17,555 km/h
+### Natural Phenomena
+- **Waterfall flow:** Niagara Falls approximately 100 ft/s = 109.7 km/h
+- **Storm wind speed:** Tornado center 200+ ft/s = 219+ km/h
+- **Seismic wave speed:** P-wave approximately 16,000 ft/s = 17,555 km/h
 
-## 六、常见问题 FAQ
+## 6. Frequently Asked Questions (FAQ)
 
-### Q1: 英尺每秒和千米每小时怎么换算？
-**A1**: 英尺每秒转千米每小时的公式是：km/h = ft/s × 1.09728。例如：30 ft/s = 30 × 1.09728 = 32.9 km/h。
+### Q1: How to convert feet per second to kilometers per hour?
+**A1**: The formula for converting feet per second to kilometers per hour is: km/h = ft/s × 1.09728. For example: 30 ft/s = 30 × 1.09728 = 32.9 km/h.
 
-### Q2: 一英尺每秒等于多少千米每小时？
-**A2**: 1英尺每秒等于1.09728千米每小时。这是因为1英尺=0.3048米，1秒=1/3600小时。
+### Q2: How many kilometers per hour equals one foot per second?
+**A2**: 1 foot per second equals 1.09728 kilometers per hour. This is because 1 foot = 0.3048 meters and 1 second = 1/3600 hour.
 
-### Q3: km/h换算ft/s的公式是什么？
-**A3**: km/h转ft/s的公式是：ft/s = km/h × 0.911344。例如：60 km/h = 60 × 0.911344 = 54.7 ft/s。
+### Q3: What is the formula for converting km/h to ft/s?
+**A3**: The formula for converting km/h to ft/s is: ft/s = km/h × 0.911344. For example: 60 km/h = 60 × 0.911344 = 54.7 ft/s.
 
-### Q4: 为什么美国工程要使用英尺每秒？
-**A4**: 历史和实用原因：
-- 美国工程体系基于英制单位
-- 便于与其他英制单位（英寸、英尺、码）配合
-- 工程图纸和标准都基于英制
-- 行业习惯和法规要求
+### Q4: Why does American engineering use feet per second?
+**A4**: Historical and practical reasons:
+- American engineering system is based on imperial units
+- Easy to coordinate with other imperial units (inches, feet, yards)
+- Engineering drawings and standards are all based on imperial system
+- Industry habits and regulatory requirements
 
-### Q5: 如何快速进行英尺每秒换算千米每小时？
-**A5**: 快速换算技巧：
-- 精确计算：ft/s × 1.09728 = km/h
-- 近似计算：ft/s × 1.1 ≈ km/h（误差约0.2%）
-- 心算技巧：ft/s + ft/s × 0.1
+### Q5: How to quickly convert feet per second to kilometers per hour?
+**A5**: Quick conversion techniques:
+- Precise calculation: ft/s × 1.09728 = km/h
+- Approximate calculation: ft/s × 1.1 ≈ km/h (error about 0.2%)
+- Mental calculation trick: ft/s + ft/s × 0.1
 
-### Q6: 英尺每秒换算时需要注意什么？
-**A6**: 注意事项包括：
-- 确认使用的是国际英尺（0.3048m）
-- 区分英尺每秒和英里每小时
-- 工程计算通常保留2-3位小数
-- 注意单位一致性，避免混用公制英制
+### Q6: What should be noted when converting feet per second?
+**A6**: Considerations include:
+- Confirm using international foot (0.3048m)
+- Distinguish between feet per second and miles per hour
+- Engineering calculations usually retain 2-3 decimal places
+- Pay attention to unit consistency, avoid mixing metric and imperial
 
-### Q7: 一千米每小时等于多少英尺每秒？
-**A7**: 1千米每小时 = 0.911344英尺每秒。计算方法：1 km/h × 0.911344 = 0.911 ft/s。
+### Q7: How many feet per second equals one kilometer per hour?
+**A7**: 1 kilometer per hour = 0.911344 feet per second. Calculation method: 1 km/h × 0.911344 = 0.911 ft/s.
 
-### Q8: 公里每小时换算英尺每秒怎么算？
-**A8**: 公里每小时换算英尺每秒的方法：
-- **公式：** ft/s = km/h × 0.911344
-- **示例：** 50 km/h = 50 × 0.911344 = 45.6 ft/s
-- **记忆技巧：** km/h × 0.9 ≈ ft/s（近似值）
+### Q8: How to convert kilometers per hour to feet per second?
+**A8**: Method for converting kilometers per hour to feet per second:
+- **Formula:** ft/s = km/h × 0.911344
+- **Example:** 50 km/h = 50 × 0.911344 = 45.6 ft/s
+- **Memory trick:** km/h × 0.9 ≈ ft/s (approximate value)
 
-### Q9: 英尺每秒和千米每小时的换算关系是什么？
-**A9**: 英尺每秒和千米每小时的换算关系：
-- **ft/s → km/h：** 乘以1.09728
-- **km/h → ft/s：** 乘以0.911344
-- **换算系数来源：** 1英尺 = 0.3048米，1小时 = 3600秒
+### Q9: What is the conversion relationship between feet per second and kilometers per hour?
+**A9**: The conversion relationship between feet per second and kilometers per hour:
+- **ft/s → km/h:** Multiply by 1.09728
+- **km/h → ft/s:** Multiply by 0.911344
+- **Source of conversion factor:** 1 foot = 0.3048 meters, 1 hour = 3600 seconds
 
-### Q10: 英尺是什么单位？一英尺等于多少米？
-**A10**: 英尺的详细信息：
-- **英尺定义：** 英制长度单位，等于12英寸
-- **一英尺等于多少米：** 1英尺 = 0.3048米
-- **英尺换算米：** 米数 = 英尺数 × 0.3048
-- **历史起源：** 古代以人脚长度为标准
+### Q10: What is a foot unit? How many meters equals one foot?
+**A10**: Detailed information about feet:
+- **Foot definition:** Imperial length unit, equal to 12 inches
+- **How many meters in one foot:** 1 foot = 0.3048 meters
+- **Foot to meter conversion:** meters = feet × 0.3048
+- **Historical origin:** Ancient standard based on human foot length
 
-### Q11: ft/s和fps有什么区别？
-**A11**: ft/s和fps的区别：
-- **ft/s：** 标准科学表示法，feet per second
-- **fps：** 简化缩写，含义相同
-- **使用场景：** ft/s用于正式文档，fps用于日常交流
-- **等价关系：** 1 ft/s = 1 fps = 1.09728 km/h
+### Q11: What is the difference between ft/s and fps?
+**A11**: Difference between ft/s and fps:
+- **ft/s:** Standard scientific notation, feet per second
+- **fps:** Simplified abbreviation, same meaning
+- **Usage scenarios:** ft/s for formal documents, fps for daily communication
+- **Equivalent relationship:** 1 ft/s = 1 fps = 1.09728 km/h
 
-### Q12: 为什么要进行英尺和米的换算？
-**A12**: 换算的重要性：
-- **国际合作：** 美国与其他国家的工程项目
-- **标准统一：** 科学研究需要统一单位
-- **设备兼容：** 进口设备的参数理解
-- **安全考虑：** 避免单位错误导致的事故
+### Q12: Why is it necessary to convert between feet and meters?
+**A12**: Importance of conversion:
+- **International cooperation:** Engineering projects between the US and other countries
+- **Standard unification:** Scientific research requires unified units
+- **Equipment compatibility:** Understanding parameters of imported equipment
+- **Safety considerations:** Avoiding accidents caused by unit errors
 
-### Q13: 英尺每秒在哪些场景下使用？
-**A13**: ft/s的使用场景：
-- **流体工程：** 水流、气流速度测量
-- **建筑设计：** 风荷载、排水计算
-- **机械工程：** 传送带、旋转设备速度
-- **环境工程：** 通风、污水处理系统
-- **体育科学：** 运动员速度分析
+### Q13: In which scenarios is feet per second used?
+**A13**: Usage scenarios for ft/s:
+- **Fluid engineering:** Water flow and airflow velocity measurement
+- **Building design:** Wind load and drainage calculations
+- **Mechanical engineering:** Conveyor belt and rotating equipment speed
+- **Environmental engineering:** Ventilation and wastewater treatment systems
+- **Sports science:** Athlete speed analysis
 
-## 七、相关连接
+## 7. Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Speed" :key="index">
     <n-button

@@ -215,7 +215,7 @@ A: mV signals have small amplitude and low signal-to-noise ratio, making them ea
 **Q: How to improve mV signal measurement accuracy?**
 A: Use high-precision instruments, good shielding, proper grounding, temperature compensation, and other methods.
 
-### 相关链接
+### Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Voltage" :key="index">
     <n-button
