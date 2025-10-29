@@ -4,15 +4,55 @@ import dayjs from 'dayjs'
 import type { DefaultTheme, LocaleSpecificConfig } from 'vitepress'
 
 export const enConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
-  themeConfig: { // 主题设置
+  themeConfig: { // Theme settings
+    lastUpdatedText: 'Last updated', // Last updated display text
+    returnToTopLabel: 'Return to top', // Mobile menu text display
+    search: {
+      provider: 'local',
+      options: {
+        locales: {
+          root: {
+            translations: {
+              button: {
+                buttonText: 'Search',
+                buttonAriaLabel: 'Search',
+              },
+              modal: {
+                displayDetails: 'Display detailed list',
+                resetButtonTitle: 'Reset search',
+                backButtonTitle: 'Close search',
+                noResultsText: 'No relevant results found',
+                footer: {
+                  selectText: 'Select',
+                  selectKeyAriaLabel: 'enter',
+                  navigateText: 'Navigate',
+                  navigateUpKeyAriaLabel: 'up arrow',
+                  navigateDownKeyAriaLabel: 'down arrow',
+                  closeText: 'Close',
+                  closeKeyAriaLabel: 'esc',
+                },
+              },
+            },
+          },
+        },
+      },
+    },
     nav: enNav,
-    sidebar: enSidebar, // 侧边栏
-    footer: { // 页脚
+    sidebar: enSidebar, // Sidebar
+    docFooter: { // Custom previous/next page names
+      prev: 'Previous', next: 'Next'
+    },
+    darkModeSwitchLabel: 'Dark/Light mode', // Mobile dark/light mode text
+    footer: { // Footer
       message: 'Released under the MIT License.',
       copyright: `Copyright © ${dayjs().format("YYYY")} xxx Information Technology Co., Ltd.`
     },
-    outline: { // 大纲显示 1-6 级标题
+    outline: { // Outline display 1-6 level headings
       level: [1, 6],
-    }
+      label: 'Table of Contents'
+    },
+    // outline:false
+    // Outline top title
+    outlineTitle: 'On this page',
   }
 }

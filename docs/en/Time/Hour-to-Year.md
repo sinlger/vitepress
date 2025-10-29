@@ -4,22 +4,22 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Time/index
-      linkText: 时间换算
+      linkText: Time Conversion
   - - link: /Time/Hour-to-Year
-      linkText: 小时到年
+      linkText: Hour to Year
 head:
   - - meta
     - name: description
-      content: "小时到年换算器 - 快速准确地将小时转换为年，支持长期项目规划、历史时间计算、工作经验统计等多种应用场景。提供详细的换算公式和实用示例。"
+      content: "Hour to Year Converter - Quickly and accurately convert hours to years, supporting long-term project planning, historical time calculation, work experience statistics, and various other application scenarios. Provides detailed conversion formulas and practical examples."
   - - meta
     - name: keywords
-      content: "小时到年换算,小时转年,时间单位转换,长期项目规划,历史时间计算,工作经验统计,时间换算器,小时年转换,时间计算,工时统计,年工作时间,时间管理工具"
+      content: "hour to year conversion,hour to year,time unit conversion,long-term project planning,historical time calculation,work experience statistics,time converter,hour year conversion,time calculation,work hour statistics,annual work time,time management tool"
 ---
-# 小时 (h) 到 年 (year) 的换算
+# Hour (h) to Year (year) Conversion
 
-小时到年的换算是将时间从小时单位转换为年单位的过程。在长期规划和历史分析中，小时到年的换算具有重要意义，广泛应用于长期项目规划、历史时间计算、工作经验统计和人生时间管理等场景。准确掌握这种换算方法，有助于更好地理解时间的宏观概念，进行长远的时间规划和人生决策。
+Hour to year conversion is the process of converting time from hour units to year units. In long-term planning and historical analysis, hour to year conversion has important significance and is widely used in long-term project planning, historical time calculation, work experience statistics, and life time management scenarios. Accurately mastering this conversion method helps better understand the macro concept of time and make long-term time planning and life decisions.
 
 ---
 <script setup>
@@ -33,13 +33,13 @@ const convert = inject('convert')
 const form = reactive({
   number: null,
   result: '',
-  title: '小时到年换算器',
+  title: 'Hour to Year Converter',
   seoKey: [
-    '小时到年换算', '小时转年', '时间单位转换', '长期项目规划',
-    '历史时间计算', '工作经验统计', '时间换算器', '小时年转换',
-    '时间计算', '工时统计', '年工作时间', '时间管理工具',
-    '人生时间规划', '时间概念', '长远规划', '时间单位',
-    '换算公式', '时间转换', '年度计算', '时间统计'
+    'hour to year conversion', 'hour to year', 'time unit conversion', 'long-term project planning',
+    'historical time calculation', 'work experience statistics', 'time converter', 'hour year conversion',
+    'time calculation', 'work hour statistics', 'annual work time', 'time management tool',
+    'life time planning', 'time concept', 'long-term planning', 'time unit',
+    'conversion formula', 'time conversion', 'annual calculation', 'time statistics'
   ]
 })
 
@@ -48,17 +48,17 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) / 8760
     form.result = `${form.number}h = ${convertedValue.toFixed(5)}year`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="小时 (h)">
-    <n-input-number v-model:value="form.number" placeholder="输入小时" style="width: 100%" />
+  <n-form-item label="Hours (h)">
+    <n-input-number v-model:value="form.number" placeholder="Enter hours" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
@@ -75,51 +75,51 @@ const convertHandler = () => {
   </template>
 </n-card>
 
-## 公式
+## Formula
 
-从 **小时 (h)** 换算到 **年 (year)** 的公式为：
+The formula for converting from **Hours (h)** to **Years (year)** is:
 $$ year = \frac{h}{8760} $$
 
-### 示例
+### Examples
 - 1h = 0.000114year
 - 8760h = 1year
 - 17520h = 2year
 
-## 实际应用场景
+## Practical Application Scenarios
 
-### 长期项目规划
-在大型工程项目和研发项目中，需要将预计投入的总工时转换为年数，用于制定长期规划、预算分配和资源配置。
+### Long-term Project Planning
+In large engineering projects and R&D projects, it's necessary to convert the estimated total work hours to years for long-term planning, budget allocation, and resource configuration.
 
-### 历史时间计算
-在历史研究和考古学中，需要将古代文献记录的时间单位转换为现代年份，用于历史事件的时间定位和年代推算。
+### Historical Time Calculation
+In historical research and archaeology, converting time units recorded in ancient documents to modern years is needed for historical event positioning and chronological estimation.
 
-### 工作经验统计
-在人力资源管理中，需要将员工的累计工作小时数转换为工作年限，用于职业发展评估、薪资调整和晋升决策。
+### Work Experience Statistics
+In human resource management, converting employees' cumulative work hours to years of service is used for career development evaluation, salary adjustment, and promotion decisions.
 
-### 人生时间管理
-在个人发展规划中，需要将投入某项技能或爱好的总时间转换为年数，用于评估时间投入效果和制定长期目标。
+### Life Time Management
+In personal development planning, converting total time invested in a skill or hobby to years is used for evaluating the effectiveness of time investment and setting long-term goals.
 
-## 常见问题 (FAQ)
+## Frequently Asked Questions (FAQ)
 
-### 1. 小时到年的换算公式是什么？
-小时到年的换算公式为：年数 = 小时数 ÷ 8760。这是因为1年 = 365天，1天 = 24小时，所以1年 = 8760小时。
+### 1. What is the formula for converting hours to years?
+The formula for converting hours to years is: years = hours ÷ 8760. This is because 1 year = 365 days, 1 day = 24 hours, so 1 year = 8760 hours.
 
-### 2. 为什么用8760作为除数？
-因为1年有365天（平年），每天有24小时，所以1年 = 365 × 24 = 8760小时。闰年有8784小时。
+### 2. Why use 8760 as the divisor?
+Because 1 year has 365 days (common year), and each day has 24 hours, so 1 year = 365 × 24 = 8760 hours. Leap years have 8784 hours.
 
-### 3. 闰年如何处理？
-闰年有366天，共8784小时。在精确计算中，可以根据具体年份是否为闰年来调整除数。
+### 3. How to handle leap years?
+Leap years have 366 days, totaling 8784 hours. In precise calculations, the divisor can be adjusted based on whether the specific year is a leap year.
 
-### 4. 如何处理小数年份？
-小于8760小时的时间会显示为小数年份，例如4380小时 = 0.5年。可以根据需要保留适当的小数位数。
+### 4. How to handle decimal years?
+Time less than 8760 hours will be displayed as decimal years, for example, 4380 hours = 0.5 years. You can retain appropriate decimal places as needed.
 
-### 5. 在项目管理中如何应用这个换算？
-项目管理中，将总工时转换为年数有助于制定长期项目计划、评估项目周期和进行资源规划。
+### 5. How to apply this conversion in project management?
+In project management, converting total work hours to years helps in creating long-term project plans, evaluating project cycles, and conducting resource planning.
 
-### 6. 如何验证换算结果的准确性？
-可以使用反向计算验证：将得到的年数乘以8760，应该等于原始的小时数（平年情况下）。
+### 6. How to verify the accuracy of conversion results?
+You can use reverse calculation for verification: multiply the obtained years by 8760, which should equal the original hours (for common years).
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Time" :key="index">
     <n-button

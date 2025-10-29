@@ -77,5 +77,51 @@ export const footer = {
   }, {
     "label": "加速度换算",
     "value": "../Acceleration/index"
+  }],
+  'en': [{
+    "label": "Length Conversion",
+    "value": "../Length/index"
+  }, {
+    "label": "Area Conversion",
+    "value": "../Area/index"
+  }, {
+    "label": "Mass Conversion",
+    "value": "../Mass/index"
+  }, {
+    "label": "Volume Conversion",
+    "value": "../Volume/index"
+  }, {
+    "label": "Temperature Conversion",
+    "value": "../Temperature/index"
+  }, {
+    "label": "Time Conversion",
+    "value": "../Time/index"
+  }, {
+    "label": "Speed Conversion",
+    "value": "../Speed/index"
+  }, {
+    "label": "Pressure Conversion",
+    "value": "../Pressure/index"
+  }, {
+    "label": "Digital Conversion",
+    "value": "../Digital/index"
+  }, {
+    "label": "Voltage Conversion",
+    "value": "../Voltage/index"
+  }, {
+    "label": "Current Conversion",
+    "value": "../Current/index"
+  }, {
+    "label": "Power Conversion",
+    "value": "../Power/index"
+  }, {
+    "label": "Energy Conversion",
+    "value": "../Energy/index"
+  }, {
+    "label": "Angle Conversion",
+    "value": "../Angle/index"
+  }, {
+    "label": "Force Conversion",
+    "value": "../Force/index"
   }]
 }

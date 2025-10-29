@@ -4,22 +4,22 @@ aside: false
 lastUpdated: false
 breadcrumb: 
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Time/index
-      linkText: 时间换算
+      linkText: Time Conversion
   - - link: /Time/index
-      linkText: 时间单位换算
+      linkText: Time Unit Conversion
 head:
   - - meta
     - name: description
-      content: "专业的时间单位换算器在线使用工具。支持纳秒、微秒、毫秒、秒、分钟、小时、天、周、月、年等时间单位转换。提供秒转分钟、毫秒转时间、秒换算小时等常用换算功能，ms是什么单位解答及一秒等于多少毫秒的精确计算。"
+      content: "Professional online time unit converter tool. Supports conversion between nanoseconds, microseconds, milliseconds, seconds, minutes, hours, days, weeks, months, years and other time units. Provides common conversion functions like seconds to minutes, milliseconds to time, seconds to hours, explains what ms unit means and precise calculation of how many milliseconds in one second."
   - - meta
     - name: keywords
-      content: "时间换算器在线使用, 时间单位转换, 秒转分钟, 毫秒转时间, 秒换算小时, 时间转换器, 毫秒和秒, 秒的换算, ms是什么单位, 一秒等于多少毫秒, 时间的单位, 秒的单位换算, 纳秒和秒的换算, 毫秒转换, 时间换算, 时间转换, us s, 时间秒, 时间单位, 秒换算, 时间换算单位"
+      content: "online time converter, time unit conversion, seconds to minutes, milliseconds to time, seconds to hours, time converter, milliseconds and seconds, second conversion, what is ms unit, how many milliseconds in one second, time units, second unit conversion, nanosecond to second conversion, millisecond conversion, time conversion, time transformation, us s, time second, time unit, second conversion, time unit conversion"
 ---
-# 时间单位换算
+# Time Unit Conversion
 
-时间单位换算是日常生活和专业工作中不可或缺的技能。无论是编程开发中的毫秒转时间计算、科学研究中的纳秒和秒的换算，还是日常生活中的秒转分钟、秒换算小时等基础换算，准确的时间单位转换都至关重要。我们的时间换算器在线使用工具支持从纳秒到年的全方位时间转换，帮助您快速完成各种时间换算需求。
+Time unit conversion is an indispensable skill in daily life and professional work. Whether it's millisecond to time calculations in programming development, nanosecond to second conversions in scientific research, or basic conversions like seconds to minutes and seconds to hours in daily life, accurate time unit conversion is crucial. Our online time converter tool supports comprehensive time conversion from nanoseconds to years, helping you quickly complete various time conversion needs.
 
 ---
 <script setup>
@@ -29,35 +29,35 @@ import { defineClientComponent } from 'vitepress'
 import { Time } from '../files';
 const convert = inject('convert')
 const options =  [
-{ label: '纳秒', value: 'ns' },
-{ label: '微秒', value: 'mu' },
-{ label: '毫秒', value: 'ms' },
-{ label: '秒', value: 's' },
-{ label: '分钟', value: 'min' },
-{ label: '小时', value: 'h' },
-{ label: '天', value: 'd' },
-{ label: '周', value: 'week' },
-{ label: '月', value: 'month' },
-{ label: '年', value: 'year' }];
+{ label: 'Nanosecond', value: 'ns' },
+{ label: 'Microsecond', value: 'mu' },
+{ label: 'Millisecond', value: 'ms' },
+{ label: 'Second', value: 's' },
+{ label: 'Minute', value: 'min' },
+{ label: 'Hour', value: 'h' },
+{ label: 'Day', value: 'd' },
+{ label: 'Week', value: 'week' },
+{ label: 'Month', value: 'month' },
+{ label: 'Year', value: 'year' }];
 const formRef = ref(null);
-const seoKey = ['时间','单位换算','纳秒','微秒','毫秒','秒','分钟','小时','天','周','月','年','时间换算指南','时间的单位','秒转分钟','秒的换算','秒换算小时','毫秒转时间','秒换算','时间换算单位','时间单位转换','毫秒和秒','时间换算器在线使用','秒转小时','秒的单位换算','纳秒和秒的换算','us s','毫秒转换','秒的单位','ms是什么单位','时间转换器','时间秒','时间单位','时间换算','时间转换','一秒等于多少毫秒','毫秒和秒的换算']
+const seoKey = ['time','unit conversion','nanosecond','microsecond','millisecond','second','minute','hour','day','week','month','year','time conversion guide','time units','seconds to minutes','second conversion','seconds to hours','milliseconds to time','second conversion','time unit conversion','time unit conversion','milliseconds and seconds','online time converter','seconds to hours','second unit conversion','nanosecond to second conversion','us s','millisecond conversion','second unit','what is ms unit','time converter','time second','time unit','time conversion','time transformation','how many milliseconds in one second','milliseconds and seconds conversion']
 
 const rules = {
   number:{
     required: true,
     type: 'number',
     trigger: "blur",
-    message: '请输入数字'
+    message: 'Please enter a number'
   },
   to:{
     required: true,
     trigger: "select",
-    message: '请选择转换单位'
+    message: 'Please select target unit'
   },
   from:{
     required: true,
     trigger: "select",
-    message: '请选择原始单位'
+    message: 'Please select source unit'
   }
 }
 const form = reactive({
@@ -65,7 +65,7 @@ const form = reactive({
   to:'',
   from:'',
   result:'',
-  title:'时间单位换算',
+  title:'Time Unit Conversion',
 })
 const convertHandler = (e) => {
    e.preventDefault;
@@ -79,17 +79,17 @@ const convertHandler = (e) => {
 </script>
 
 <n-form size="large" :model="form" ref='formRef' :rules="rules">
-  <n-form-item label="数值"  path="number">
-    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="请输入要换算的数值" />
+  <n-form-item label="Value"  path="number">
+    <n-input-number size="large" style="width:100%" :min="0" v-model:value="form.number"   placeholder="Enter the value to convert" />
   </n-form-item>
-  <n-form-item label="从" path="from">
-    <n-select  size="large" :options="options" v-model:value="form.from" placeholder="请选择原始单位" />
+  <n-form-item label="From" path="from">
+    <n-select  size="large" :options="options" v-model:value="form.from" placeholder="Select source unit" />
   </n-form-item>
-  <n-form-item label="到" path="to">
-    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="请选择换算单位" />
+  <n-form-item label="To" path="to">
+    <n-select  size="large" :options="options" v-model:value="form.to" placeholder="Select target unit" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" style="width:100%" @click="convertHandler">换算</n-button>
+    <n-button type="info" style="width:100%" @click="convertHandler">Convert</n-button>
   </n-form-item>
 </n-form>
 <n-card
@@ -109,96 +109,96 @@ const convertHandler = (e) => {
   </template>
 </n-card>
 
-## 时间单位识别与换算公式
-|单位符号|英文名称|单位名称|换算公式（以秒为单位）| 
+## Time Unit Identification and Conversion Formulas
+|Unit Symbol|English Name|Unit Name|Conversion Formula (in seconds)| 
 | ---- | ----| ---- | ---- | 
-|ns|Nanosecond|纳秒|$1\ ns = 10^{-9}\ s$| 
-|μs|Microsecond|微秒|$1\ \mu s = 10^{-6}\ s$（注：μ代表微秒，即 microsecond）| 
-|ms|Millisecond|毫秒|$1\ ms = 10^{-3}\ s$| 
-|s|Second|秒|$1\ s = 1\ s$| 
-|min|Minute|分钟|$1\ min = 60\ s$| 
-|h|Hour|小时|$1\ h = 3600\ s$| 
-|d|Day|天|$1\ d = 86400\ s$| 
-|week|Week|周|$1\ week = 604800\ s$（注：基于7天计算）| 
-|month|Month|月|$1\ month \approx 2,592,000\ s$（注：基于30天平均近似，实际月份天数不固定）| 
-|year|Year|年|$1\ year \approx 31,536,000\ s$（注：基于365天近似，忽略闰年；精确年约365.25天）|  
+|ns|Nanosecond|Nanosecond|$1\ ns = 10^{-9}\ s$| 
+|μs|Microsecond|Microsecond|$1\ \mu s = 10^{-6}\ s$ (Note: μ represents microsecond)| 
+|ms|Millisecond|Millisecond|$1\ ms = 10^{-3}\ s$| 
+|s|Second|Second|$1\ s = 1\ s$| 
+|min|Minute|Minute|$1\ min = 60\ s$| 
+|h|Hour|Hour|$1\ h = 3600\ s$| 
+|d|Day|Day|$1\ d = 86400\ s$| 
+|week|Week|Week|$1\ week = 604800\ s$ (Note: Based on 7 days)| 
+|month|Month|Month|$1\ month \approx 2,592,000\ s$ (Note: Based on 30-day average approximation, actual month days vary)| 
+|year|Year|Year|$1\ year \approx 31,536,000\ s$ (Note: Based on 365-day approximation, excluding leap years; precise year ≈ 365.25 days)|  
 
 
-## 实际应用场景
+## Practical Application Scenarios
 
-### 编程开发领域
-- **毫秒转时间**：Web开发中的动画效果、定时器设置
-- **纳秒和秒的换算**：高精度性能测试、系统延迟测量
-- **us s换算**：微服务响应时间监控、数据库查询优化
+### Programming and Development
+- **Milliseconds to Time**: Animation effects and timer settings in web development
+- **Nanosecond to Second Conversion**: High-precision performance testing and system latency measurement
+- **us s Conversion**: Microservice response time monitoring and database query optimization
 
-### 科学研究领域
-- **纳秒级测量**：激光脉冲实验、光速测量
-- **微秒精度**：化学反应动力学研究
-- **毫秒和秒**：生物反应时间测量
+### Scientific Research
+- **Nanosecond-level Measurement**: Laser pulse experiments and light speed measurement
+- **Microsecond Precision**: Chemical reaction kinetics research
+- **Milliseconds and Seconds**: Biological reaction time measurement
 
-### 日常生活应用
-- **秒转分钟**：运动计时、烹饪时间计算
-- **秒换算小时**：工作时间统计、学习时间规划
-- **时间单位转换**：国际时差计算、项目进度管理
+### Daily Life Applications
+- **Seconds to Minutes**: Sports timing and cooking time calculation
+- **Seconds to Hours**: Work time statistics and study time planning
+- **Time Unit Conversion**: International time zone calculation and project progress management
 
-### 工业制造领域
-- **毫秒转换**：自动化生产线控制
-- **秒的单位换算**：设备运行周期计算
-- **时间换算**：生产效率分析
+### Industrial Manufacturing
+- **Millisecond Conversion**: Automated production line control
+- **Second Unit Conversion**: Equipment operation cycle calculation
+- **Time Conversion**: Production efficiency analysis
 
-## 常用时间换算对照表
+## Common Time Conversion Reference Table
 
-| 原始值 | 单位 | 换算结果 | 应用场景 |
-|--------|------|----------|----------|
-| 1000 | 毫秒 | 1秒 | 网页加载时间 |
-| 60 | 秒 | 1分钟 | 基础时间单位 |
-| 3600 | 秒 | 1小时 | 工作时间计算 |
-| 86400 | 秒 | 1天 | 系统运行时间 |
-| 1000000 | 微秒 | 1秒 | 程序执行时间 |
-| 1000000000 | 纳秒 | 1秒 | 高精度测量 |
+| Original Value | Unit | Conversion Result | Application Scenario |
+|----------------|------|-------------------|----------------------|
+| 1000 | Milliseconds | 1 Second | Web page loading time |
+| 60 | Seconds | 1 Minute | Basic time unit |
+| 3600 | Seconds | 1 Hour | Work time calculation |
+| 86400 | Seconds | 1 Day | System runtime |
+| 1000000 | Microseconds | 1 Second | Program execution time |
+| 1000000000 | Nanoseconds | 1 Second | High-precision measurement |
 
-## 说明
+## Notes
 
-- 数据来源：单位换算基于搜索结果综合得出：
-  - 纳秒（ns）、微秒（mu/μs）、毫秒（ms）到秒的换算关系来自和，其中详细说明了皮秒、纳秒、微秒和毫秒的层级关系（如1 秒= \(10^9\) 纳秒）。
-  - 分钟（min）、小时（h）到秒的换算来自，其中给出了类似 “30 min = 1800 s” 的示例。
-  - 所有单位（包括周、月、年）的支持和常见近似值参考，该网站提供时间换算器工具。
-  - 微秒（mu）的识别和换算在中也被提及，确认 mu 作为微秒的可行表示。
+- Data Sources: Unit conversions are based on comprehensive search results:
+  - Conversion relationships from nanoseconds (ns), microseconds (mu/μs), milliseconds (ms) to seconds are derived from detailed explanations of the hierarchical relationships between picoseconds, nanoseconds, microseconds, and milliseconds (e.g., 1 second = \(10^9\) nanoseconds).
+  - Conversions from minutes (min) and hours (h) to seconds are based on examples like "30 min = 1800 s".
+  - Support for all units (including weeks, months, years) and common approximations reference time converter tools.
+  - Recognition and conversion of microseconds (mu) is also mentioned, confirming mu as a viable representation for microseconds.
 
-- 注意事项：
-  - mu 单位：mu 是微秒的非标准缩写（通常为μs 或 us），但根据您的查询和，我将其识别为微秒。
-  - 近似值处理：month 和 year 的长度不固定（如月有28-31 天，年有365/366 天）。表格中使用常见近似（month = 30 天、year = 365 天），便于计算。如需精确值，建议使用工具或考虑闰年（如1 年平均≈31,557,600 秒）。
-  - 换算基准：所有公式以秒为基准，便于单位间换算（如1 min = 60 s，则 min 到 h 可通过 s 间接计算）。
+- Important Notes:
+  - mu unit: mu is a non-standard abbreviation for microseconds (usually μs or us), but based on queries and references, it is recognized as microseconds.
+  - Approximation handling: The lengths of months and years are not fixed (e.g., months have 28-31 days, years have 365/366 days). The table uses common approximations (month = 30 days, year = 365 days) for ease of calculation. For precise values, it is recommended to use tools or consider leap years (e.g., 1 year average ≈ 31,557,600 seconds).
+  - Conversion standard: All formulas are based on seconds as the standard, facilitating conversions between units (e.g., 1 min = 60 s, so min to h can be calculated indirectly through s).
 
 
-## 常见问题 (FAQ)
+## Frequently Asked Questions (FAQ)
 
-### 1. ms是什么单位？
-ms是毫秒(millisecond)的缩写，1毫秒 = 0.001秒。在编程和计时器应用中广泛使用。
+### 1. What is the ms unit?
+ms is the abbreviation for millisecond. 1 millisecond = 0.001 seconds. It is widely used in programming and timer applications.
 
-### 2. 一秒等于多少毫秒？
-1秒 = 1000毫秒。这是最常用的时间换算关系之一。
+### 2. How many milliseconds are in one second?
+1 second = 1000 milliseconds. This is one of the most commonly used time conversion relationships.
 
-### 3. 如何进行秒转分钟的计算？
-秒转分钟：秒数 ÷ 60 = 分钟数。例如：120秒 ÷ 60 = 2分钟。
+### 3. How to calculate seconds to minutes conversion?
+Seconds to minutes: Number of seconds ÷ 60 = Number of minutes. For example: 120 seconds ÷ 60 = 2 minutes.
 
-### 4. 毫秒和秒的换算公式是什么？
-- 毫秒转秒：毫秒数 ÷ 1000 = 秒数
-- 秒转毫秒：秒数 × 1000 = 毫秒数
+### 4. What is the conversion formula between milliseconds and seconds?
+- Milliseconds to seconds: Number of milliseconds ÷ 1000 = Number of seconds
+- Seconds to milliseconds: Number of seconds × 1000 = Number of milliseconds
 
-### 5. us s是什么意思？
-us是微秒(microsecond)的缩写，s是秒(second)的缩写。1秒 = 1,000,000微秒。
+### 5. What does us s mean?
+us is the abbreviation for microsecond, and s is the abbreviation for second. 1 second = 1,000,000 microseconds.
 
-### 6. 纳秒和秒的换算关系？
-1秒 = 1,000,000,000纳秒(10^9纳秒)。纳秒主要用于高精度科学测量。
+### 6. What is the conversion relationship between nanoseconds and seconds?
+1 second = 1,000,000,000 nanoseconds (10^9 nanoseconds). Nanoseconds are mainly used for high-precision scientific measurements.
 
-### 7. 时间换算器在线使用有什么优势？
-在线时间换算器提供即时转换、多单位支持、高精度计算，无需手动计算，避免换算错误。
+### 7. What are the advantages of using an online time converter?
+Online time converters provide instant conversion, multi-unit support, high-precision calculations, no manual calculation required, and avoid conversion errors.
 
-### 8. 秒换算小时的公式？
-秒换算小时：秒数 ÷ 3600 = 小时数。例如：7200秒 ÷ 3600 = 2小时。
+### 8. What is the formula for converting seconds to hours?
+Seconds to hours: Number of seconds ÷ 3600 = Number of hours. For example: 7200 seconds ÷ 3600 = 2 hours.
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Time" :key="index">
     <n-button
