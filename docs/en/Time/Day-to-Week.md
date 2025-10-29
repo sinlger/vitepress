@@ -4,22 +4,22 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Time/index
-      linkText: 时间换算
+      linkText: Time Conversion
   - - link: /Time/Day-to-Week
-      linkText: 天到周
+      linkText: Day to Week
 head:
   - - meta
     - name: description
-      content: "专业的天到周换算器在线使用工具。快速进行天(d)到周(week)的时间单位转换，提供精确的换算公式和实用的时间计算功能。支持工作计划、项目管理等周期性时间换算应用场景。"
+      content: "Professional day to week converter online tool. Quickly convert days (d) to weeks with precise conversion formulas and practical time calculation functions. Supports work planning, project management, and other periodic time conversion application scenarios."
   - - meta
     - name: keywords
-      content: "天到周换算, 天换算周, 时间单位转换, 天周换算器, d到week换算, 时间换算器在线使用, 工作计划, 天数转周, 时间单位换算, 天转换周, 周换算, 时间转换器, 天换周公式, 项目管理, 周期计算"
+      content: "day to week conversion, day to week converter, time unit conversion, day week calculator, d to week conversion, online time converter, work planning, days to weeks, time unit calculator, week conversion, time converter, day to week formula, project management, cycle calculation"
 ---
-# 天 (d) 到 周 (week) 的换算
+# Day (d) to Week Conversion
 
-天到周换算是工作计划和项目管理中常用的时间单位转换。在制定工作计划、项目进度管理、学习安排、健身计划等场景中，经常需要将天数转换为周数进行更直观的时间规划和管理。我们的天到周换算器在线使用工具提供快速、精确的d到week换算功能，帮助您轻松完成各种周期性时间计算需求。
+Day to week conversion is a commonly used time unit conversion in work planning and project management. In scenarios such as work planning, project progress management, study scheduling, and fitness planning, it's often necessary to convert days to weeks for more intuitive time planning and management. Our day to week converter online tool provides fast and accurate d to week conversion functionality, helping you easily complete various periodic time calculation needs.
 
 ---
 <script setup>
@@ -30,12 +30,12 @@ import { Time } from '../files';
 
 const convert = inject('convert')
 
-const seoKey = ['天到周换算','天换算周','时间单位转换','天周换算器','d到week换算','时间换算器在线使用','工作计划','天数转周','天转换周','周换算','时间转换器','天换周公式','项目管理','周期计算','天','周','时间换算','时间单位']
+const seoKey = ['day to week conversion','day to week converter','time unit conversion','day week calculator','d to week conversion','online time converter','work planning','days to weeks','time unit calculator','week conversion','time converter','day to week formula','project management','cycle calculation','day','week','time conversion','time unit']
 
 const form = reactive({
   number: null,
   result: '',
-  title: '天到周换算器',
+  title: 'Day to Week Converter',
 })
 
 const convertHandler = () => {
@@ -43,17 +43,17 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) / 7
     form.result = `${form.number}d = ${convertedValue.toFixed(3)}week`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="天 (d)">
-    <n-input-number v-model:value="form.number" placeholder="输入天" style="width: 100%" />
+  <n-form-item label="Days (d)">
+    <n-input-number v-model:value="form.number" placeholder="Enter days" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
@@ -74,16 +74,16 @@ const convertHandler = () => {
   </template>
 </n-card>
 
-## 公式
+## Formula
 
-从 **天 (d)** 换算到 **周 (week)** 的公式为：
+The formula for converting from **Days (d)** to **Weeks** is:
 $$ week = \frac{d}{7} $$
 
-### 示例
+### Examples
 - 7d = 1week
 - 0.7d = 0.1week
 - 3.5d = 0.5week
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Time" :key="index">
     <n-button
@@ -97,50 +97,50 @@ $$ week = \frac{d}{7} $$
   </n-gi>
 </n-grid>
 
-## 实际应用场景
+## Practical Application Scenarios
 
-天到周换算在多个领域都有重要应用：
+Day to week conversion has important applications in multiple fields:
 
-### 工作计划
-- **项目管理**：项目周期的周数规划和里程碑设置
-- **工作安排**：工作任务的周期性分配和进度跟踪
-- **团队协作**：团队工作计划的周度安排
-- **绩效考核**：员工绩效的周期性评估
+### Work Planning
+- **Project Management**: Weekly planning and milestone setting for project cycles
+- **Work Scheduling**: Periodic allocation and progress tracking of work tasks
+- **Team Collaboration**: Weekly arrangement of team work plans
+- **Performance Evaluation**: Periodic assessment of employee performance
 
-### 学习教育
-- **课程安排**：学期课程的周数计算和安排
-- **学习计划**：个人学习进度的周期性规划
-- **考试准备**：备考时间的周数分配
-- **培训项目**：培训周期的时间管理
+### Education and Learning
+- **Course Scheduling**: Weekly calculation and arrangement of semester courses
+- **Study Planning**: Periodic planning of personal learning progress
+- **Exam Preparation**: Weekly allocation of study time for exams
+- **Training Programs**: Time management for training cycles
 
-### 健康生活
-- **健身计划**：锻炼计划的周期性安排
-- **饮食管理**：营养计划的周度规划
-- **作息调整**：生活习惯的周期性改善
-- **医疗康复**：康复计划的周期管理
+### Health and Lifestyle
+- **Fitness Planning**: Periodic arrangement of exercise plans
+- **Diet Management**: Weekly planning of nutrition plans
+- **Schedule Adjustment**: Periodic improvement of lifestyle habits
+- **Medical Rehabilitation**: Cycle management of rehabilitation plans
 
-### 商业运营
-- **营销活动**：促销活动的周期性策划
-- **库存管理**：库存周转的周期计算
-- **财务报告**：财务数据的周度统计
-- **客户服务**：服务周期的时间管理
+### Business Operations
+- **Marketing Activities**: Periodic planning of promotional campaigns
+- **Inventory Management**: Cycle calculation of inventory turnover
+- **Financial Reporting**: Weekly statistics of financial data
+- **Customer Service**: Time management of service cycles
 
-## 常见问题 (FAQ)
+## Frequently Asked Questions (FAQ)
 
-### Q: 天到周的换算公式是什么？
-A: 公式为：周 = 天 ÷ 7。即7天 = 1周。
+### Q: What is the conversion formula from days to weeks?
+A: The formula is: weeks = days ÷ 7. That is, 7 days = 1 week.
 
-### Q: 为什么一周是7天？
-A: 一周7天的制度源于古代文明，现已成为国际通用的时间单位标准。
+### Q: Why is one week 7 days?
+A: The 7-day week system originated from ancient civilizations and has become the internationally accepted time unit standard.
 
-### Q: 如何处理不足一周的天数？
-A: 可以用小数表示，如10天 = 1.43周，或者分别表示为1周3天。
+### Q: How to handle days less than one week?
+A: You can use decimals, such as 10 days = 1.43 weeks, or express separately as 1 week and 3 days.
 
-### Q: 工作日和自然日在换算中有区别吗？
-A: 通常天到周换算指自然日，如需计算工作周，需要明确工作日的定义（如5天工作制）。
+### Q: Is there a difference between working days and calendar days in conversion?
+A: Usually day to week conversion refers to calendar days. If calculating work weeks, you need to clarify the definition of working days (such as a 5-day work system).
 
-### Q: 项目管理中如何准确使用周数？
-A: 建议结合具体的起止日期，考虑节假日和工作日安排，制定更精确的项目时间表。
+### Q: How to accurately use weeks in project management?
+A: It's recommended to combine specific start and end dates, consider holidays and working day arrangements, and create more precise project schedules.
 
-### Q: 如何验证换算结果？
-A: 可以通过逆向计算验证，即将周数乘以7应该等于原始天数。
+### Q: How to verify conversion results?
+A: You can verify through reverse calculation - multiplying the weeks by 7 should equal the original number of days.

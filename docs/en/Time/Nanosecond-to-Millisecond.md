@@ -4,22 +4,22 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Time/index
-      linkText: 时间换算
+      linkText: Time Conversion
   - - link: /Time/Nanosecond-to-Millisecond
-      linkText: 纳秒到毫秒
+      linkText: Nanosecond to Millisecond
 head:
   - - meta
     - name: description
-      content: "纳秒到毫秒换算器 - 精确的ns到ms时间单位转换工具。支持纳秒(nanosecond)与毫秒(millisecond)之间的快速换算，适用于程序性能分析、网络延迟测量、科学计算等领域。提供详细的换算公式、实际应用场景和常见问题解答。"
+      content: "Nanosecond to Millisecond Converter - Precise ns to ms time unit conversion tool. Supports fast conversion between nanoseconds and milliseconds, suitable for program performance analysis, network latency measurement, scientific computing fields. Provides detailed conversion formulas, practical application scenarios, and frequently asked questions."
   - - meta
     - name: keywords
-      content: "纳秒, 毫秒, ns, ms, 时间单位换算, 纳秒到毫秒, 毫秒换算, nanosecond, millisecond, 时间换算器, 程序性能, 网络延迟, 科学计算, 响应时间, 执行时间, 时间单位转换, 纳秒毫秒换算, 时间计算工具"
+      content: "nanosecond, millisecond, ns, ms, time unit conversion, nanosecond to millisecond, millisecond conversion, nanosecond, millisecond, time converter, program performance, network latency, scientific computing, response time, execution time, time unit conversion, nanosecond millisecond conversion, time calculation tool"
 ---
-# 纳秒 (ns) 到 毫秒 (ms) 的换算
+# Nanosecond (ns) to Millisecond (ms) Conversion
 
-纳秒到毫秒的换算在程序性能分析和网络延迟测量中具有重要作用。无论是进行软件性能优化、网络响应时间分析，还是进行科学计算和数据处理，掌握纳秒(nanosecond)与毫秒(millisecond)之间的换算关系都是必备技能。理解各种时间单位的换算方法，包括纳秒的英文表示(ns)、毫秒符号(ms)等时间单位的使用，有助于我们在处理程序执行时间和系统响应时间的分析时更加准确。
+The conversion from nanoseconds to milliseconds plays an important role in program performance analysis and network latency measurement. Whether it's for software performance optimization, network response time analysis, or scientific computing and data processing, mastering the conversion relationship between nanoseconds and milliseconds is an essential skill. Understanding various time unit conversion methods, including the English representation of nanoseconds (ns), millisecond symbols (ms), and other time unit usage, helps us be more accurate when analyzing program execution time and system response time.
 
 ---
 <script setup>
@@ -29,11 +29,11 @@ import { defineClientComponent } from 'vitepress'
 import { Time } from '../files';
 
 const convert = inject('convert')
-const seoKey = ['ns','ms','毫秒','纳秒','时间单位换算','时间换算','毫秒微秒','分秒换算','秒单位换算','秒','毫秒','微秒','纳秒','ns和ms换算','时间的单位','毫秒的换算','一毫秒等于多少纳秒','微秒和纳秒','微秒单位','ms单位','一毫秒','ns是什么单位','秒单位','微妙和秒的换算','一秒多少毫秒','纳秒和微秒','秒换算','时间换算单位','us是多少秒','多少毫秒等于一秒','纳秒和毫秒的换算','一秒是多少毫秒','秒的单位','一毫秒等于多少秒','时间单位换算','nanosecond','ms是什么单位','millisecond','时间单位','微秒','秒','一秒等于多少毫秒','毫秒和秒的换算','毫秒','millisecond']
+const seoKey = ['ns','ms','millisecond','nanosecond','time unit conversion','time conversion','millisecond microsecond','time conversion','second unit conversion','second','millisecond','microsecond','nanosecond','ns and ms conversion','time units','millisecond conversion','how many nanoseconds in a millisecond','microsecond and nanosecond','microsecond unit','ms unit','one millisecond','what is ns unit','second unit','microsecond and second conversion','how many milliseconds in a second','nanosecond and microsecond','second conversion','time unit conversion','us is how many seconds','how many milliseconds equal one second','nanosecond and millisecond conversion','how many milliseconds in one second','second unit','how many seconds in one millisecond','time unit conversion','nanosecond','what is ms unit','millisecond','time unit','microsecond','second','how many milliseconds equal one second','millisecond and second conversion','millisecond','millisecond']
 const form = reactive({
   number: null,
   result: '',
-  title: '纳秒到毫秒换算器'
+  title: 'Nanosecond to Millisecond Converter'
 })
 
 const convertHandler = () => {
@@ -41,17 +41,17 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) / 1000000
     form.result = `${form.number}ns = ${convertedValue.toFixed(6)}ms`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="纳秒 (ns)">
-    <n-input-number v-model:value="form.number" placeholder="输入纳秒" style="width: 100%" />
+  <n-form-item label="Nanoseconds (ns)">
+    <n-input-number v-model:value="form.number" placeholder="Enter nanoseconds" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
@@ -68,50 +68,50 @@ const convertHandler = () => {
   </template>
 </n-card>
 
-## 公式
+## Formula
 
-从 **纳秒 (ns)** 换算到 **毫秒 (ms)** 的公式为：
+The formula for converting from **nanoseconds (ns)** to **milliseconds (ms)** is:
 $$ ms = \frac{ns}{1000000} $$
 
-### 示例
+### Examples
 - 1000000ns = 1ms
 - 5000000ns = 5ms
 - 1000000000ns = 1000ms
 
-## 实际应用场景
+## Practical Application Scenarios
 
-### 1. 程序性能分析
-在软件开发中，函数执行时间和算法性能通常以纳秒计量，需要转换为毫秒进行性能基准测试和优化分析。
+### 1. Program Performance Analysis
+In software development, function execution times and algorithm performance are typically measured in nanoseconds and need to be converted to milliseconds for performance benchmarking and optimization analysis.
 
-### 2. 网络延迟测量
-在网络通信中，数据包传输延迟和响应时间需要在纳秒和毫秒之间进行精确换算，用于网络性能监控。
+### 2. Network Latency Measurement
+In network communications, data packet transmission delays and response times require precise conversion between nanoseconds and milliseconds for network performance monitoring.
 
-### 3. 数据库查询优化
-在数据库性能调优中，查询执行时间和索引访问时间需要进行纳秒到毫秒的时间换算分析。
+### 3. Database Query Optimization
+In database performance tuning, query execution times and index access times require nanosecond to millisecond time conversion analysis.
 
-### 4. 实时系统设计
-在实时控制系统中，任务调度和响应时间要求纳秒到毫秒级别的精确时间计算和分析。
+### 4. Real-time System Design
+In real-time control systems, task scheduling and response times require precise nanosecond to millisecond level time calculations and analysis.
 
-## 常见问题 (FAQ)
+## Frequently Asked Questions (FAQ)
 
-### Q1: 纳秒和毫秒的换算关系是什么？
-A1: 1毫秒 = 1,000,000纳秒。这个换算基于10⁶的倍数关系，即1 ms = 1,000,000 ns。
+### Q1: What is the conversion relationship between nanoseconds and milliseconds?
+A1: 1 millisecond = 1,000,000 nanoseconds. This conversion is based on a 10⁶ multiple relationship, i.e., 1 ms = 1,000,000 ns.
 
-### Q2: 为什么换算系数是1,000,000？
-A2: 这个系数来源于国际单位制的前缀定义：纳秒(nano)表示10⁻⁹，毫秒(milli)表示10⁻³，两者相差10⁶ = 1,000,000倍。
+### Q2: Why is the conversion factor 1,000,000?
+A2: This factor comes from the International System of Units prefix definitions: nanosecond (nano) represents 10⁻⁹, millisecond (milli) represents 10⁻³, with a difference of 10⁶ = 1,000,000 times.
 
-### Q3: ms是什么单位？
-A3: ms是毫秒(millisecond)的标准缩写符号，表示千分之一秒，是常用的时间单位。
+### Q3: What unit is ms?
+A3: ms is the standard abbreviation for millisecond, representing one thousandth of a second, which is a commonly used time unit.
 
-### Q4: 一毫秒等于多少纳秒？
-A4: 1毫秒 = 1,000,000纳秒。这是程序性能分析中的重要换算关系。
+### Q4: How many nanoseconds equal one millisecond?
+A4: 1 millisecond = 1,000,000 nanoseconds. This is an important conversion relationship in program performance analysis.
 
-### Q5: 如何在程序开发中进行纳秒到毫秒的换算？
-A5: 可以使用除法运算：milliseconds = nanoseconds ÷ 1,000,000，或使用编程语言提供的时间处理函数进行转换。
+### Q5: How to perform nanosecond to millisecond conversion in program development?
+A5: You can use division: milliseconds = nanoseconds ÷ 1,000,000, or use time processing functions provided by programming languages for conversion.
 
-### Q6: 纳秒到毫秒的换算在什么情况下最常用？
-A6: 主要用于程序性能分析、网络延迟测量、数据库优化、实时系统设计等需要精确时间测量的技术领域。
-## 相关连接
+### Q6: When is nanosecond to millisecond conversion most commonly used?
+A6: It's mainly used in technical fields requiring precise time measurement such as program performance analysis, network latency measurement, database optimization, and real-time system design.
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Time" :key="index">
     <n-button

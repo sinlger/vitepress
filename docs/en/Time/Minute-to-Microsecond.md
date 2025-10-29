@@ -4,22 +4,22 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Time/index
-      linkText: 时间换算
+      linkText: Time Conversion
   - - link: /Time/Minute-to-Microsecond
-      linkText: 分钟到微秒
+      linkText: Minute to Microsecond
 head:
   - - meta
     - name: description
-      content: "分钟到微秒换算器 - 高精度时间单位转换工具，支持minutes到microseconds的快速换算。提供分钟(min)、微秒(μs)等时间单位的换算关系，适用于科学计算、精密测量等场景。在线时间换算器，支持时分秒符号转换。"
+      content: "Minute to Microsecond Converter - High-precision time unit conversion tool, supporting fast conversion from minutes to microseconds. Provides conversion relationships for time units like minutes (min) and microseconds (μs), suitable for scientific calculations, precision measurements, and other scenarios. Online time converter with support for time notation symbols."
   - - meta
     - name: keywords
-      content: "分钟转换成小时,秒转换,小时单位,秒换算小时,分钟英文,时间换算单位,时间换算器在线使用,时分秒符号,分秒,分钟换算小时,minutes是什么意思中文,分秒符号,分钟转小时,分钟的缩写,min是分钟吗,分钟单位,分钟的英文,时间单位换算,时间计算器在线计算分钟,时间转换器,分钟缩写,小时,分钟英文,时间换算,mins,秒,minute,minutes,min,微秒,microsecond,μs,科学计算"
+      content: "minute to microsecond conversion,time conversion,microsecond unit,minute to microsecond calculation,minutes in English,time unit conversion,online time converter,time notation symbols,minute microsecond conversion,minutes meaning,time symbols,minute to microsecond,minute abbreviation,min is minute,minute unit,minute in English,time unit conversion,online minute calculator,time converter,minute abbreviation,microsecond,minute English,time conversion,mins,second,minute,minutes,min,microsecond,μs,scientific calculation"
 ---
-# 分钟 (min) 到 微秒 (μs) 的换算
+# Minute (min) to Microsecond (μs) Conversion
 
-分钟到微秒的换算在科学计算和精密测量中具有重要意义。无论是进行物理实验、精密仪器校准，还是进行高精度的时间测量和科学研究，掌握分钟(minutes)与微秒(microseconds)之间的换算关系都是必不可少的。理解各种时间单位的换算方法，包括分钟的英文表示(min)、微秒的符号(μs)、时分秒符号的使用，有助于我们在处理超高精度时间计算时更加准确高效。
+The conversion from minutes to microseconds is of great significance in scientific calculations and precision measurements. Whether it's for physics experiments, precision instrument calibration, or high-precision time measurements and scientific research, mastering the conversion relationship between minutes and microseconds is essential. Understanding various time unit conversion methods, including the English representation of minutes (min), microsecond symbols (μs), and the use of time notation symbols, helps us be more accurate and efficient when dealing with ultra-high precision time calculations.
 
 ---
 <script setup>
@@ -28,19 +28,19 @@ import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage,N
 import { defineClientComponent } from 'vitepress'
 import { Time } from '../files';
 const seoKey = [
-  '分钟转换成小时', '秒转换', '小时单位', '秒换算小时', '分钟英文',
-  '时间换算单位', '时间换算器在线使用', '时分秒符号', '分秒', '分钟换算小时',
-  'minutes是什么意思中文', '分秒符号', '分钟转小时', '分钟的缩写', 'min是分钟吗',
-  '分钟单位', '分钟的英文', '时间单位换算', '时间计算器在线计算分钟', '时间转换器',
-  '分钟缩写', '小时', '分钟英文', '时间换算', 'mins', '秒', 'minute', 'minutes', 'min',
-  '微秒', 'microsecond', 'μs', '科学计算', '精密测量', '分钟到微秒'
+  'minute to microsecond conversion', 'time conversion', 'microsecond unit', 'minute to microsecond calculation', 'minutes in English',
+  'time unit conversion', 'online time converter', 'time notation symbols', 'minute microsecond conversion', 'minutes meaning',
+  'time symbols', 'minute to microsecond', 'minute abbreviation', 'min is minute', 'minute unit',
+  'minute in English', 'time unit conversion', 'online minute calculator', 'time converter',
+  'minute abbreviation', 'microsecond', 'minute English', 'time conversion', 'mins', 'second', 'minute', 'minutes', 'min',
+  'microsecond', 'μs', 'scientific calculation', 'precision measurement', 'minute to microsecond'
 ]
 const convert = inject('convert')
 
 const form = reactive({
   number: null,
   result: '',
-  title: '分钟到微秒换算器'
+  title: 'Minute to Microsecond Converter'
 })
 
 const convertHandler = () => {
@@ -48,17 +48,17 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) * 60000000
     form.result = `${form.number}min = ${convertedValue.toFixed(0)}μs`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="分钟 (min)">
-    <n-input-number v-model:value="form.number" placeholder="输入分钟" style="width: 100%" />
+  <n-form-item label="Minutes (min)">
+    <n-input-number v-model:value="form.number" placeholder="Enter minutes" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
@@ -75,51 +75,51 @@ const convertHandler = () => {
   </template>
 </n-card>
 
-## 公式
+## Formula
 
-从 **分钟 (min)** 换算到 **微秒 (μs)** 的公式为：
+The formula for converting from **minutes (min)** to **microseconds (μs)** is:
 $$ \mu s = min \times 6 \times 10^{7} $$
 
-### 示例
+### Examples
 - 1min = 6 × 10⁷ μs
 - 5min = 3 × 10⁸ μs
 - 0.1min = 6 × 10⁶ μs
 
-## 实际应用场景
+## Practical Application Scenarios
 
-### 1. 科学实验
-在物理、化学等科学实验中，需要将分钟级的实验时间转换为微秒，用于精确的时间控制和数据记录。
+### 1. Scientific Experiments
+In physics, chemistry, and other scientific experiments, it's necessary to convert minute-level experiment time to microseconds for precise time control and data recording.
 
-### 2. 精密仪器校准
-在精密仪器的校准过程中，将分钟级的校准周期转换为微秒，用于高精度的时间基准设定。
+### 2. Precision Instrument Calibration
+In the calibration process of precision instruments, converting minute-level calibration cycles to microseconds is used for high-precision time reference setting.
 
-### 3. 高频信号处理
-在电子工程和信号处理中，将分钟级的采样时间转换为微秒，用于高频信号的精确分析。
+### 3. High-Frequency Signal Processing
+In electronic engineering and signal processing, converting minute-level sampling time to microseconds is used for precise analysis of high-frequency signals.
 
-### 4. 激光技术应用
-在激光技术和光学测量中，将分钟级的测量时间转换为微秒，用于超精密的光学实验。
+### 4. Laser Technology Applications
+In laser technology and optical measurements, converting minute-level measurement time to microseconds is used for ultra-precision optical experiments.
 
-## 常见问题 (FAQ)
+## Frequently Asked Questions (FAQ)
 
-### Q1: 分钟和微秒的换算关系是什么？
-A1: 1分钟 = 60,000,000微秒。这个换算基于1分钟 = 60秒 × 1,000,000微秒 = 60,000,000微秒的时间关系。
+### Q1: What is the conversion relationship between minutes and microseconds?
+A1: 1 minute = 60,000,000 microseconds. This conversion is based on the time relationship: 1 minute = 60 seconds × 1,000,000 microseconds = 60,000,000 microseconds.
 
-### Q2: 为什么换算系数是60,000,000？
-A2: 这个系数来源于时间单位的层级关系：1分钟 = 60秒 × 1,000,000微秒/秒 = 60,000,000微秒。
+### Q2: Why is the conversion factor 60,000,000?
+A2: This factor comes from the hierarchical relationship of time units: 1 minute = 60 seconds × 1,000,000 microseconds/second = 60,000,000 microseconds.
 
-### Q3: microsecond是什么意思中文？
-A3: microsecond的中文意思是"微秒"，是时间单位的百万分之一秒，符号为μs。
+### Q3: What does "microsecond" mean in Chinese?
+A3: "Microsecond" means "微秒" in Chinese, which is one millionth of a second, symbolized as μs.
 
-### Q4: 分钟到微秒的换算在科学研究中有什么用途？
-A4: 主要用于精密实验、高精度测量、激光技术、信号处理等需要超高精度时间控制的科学研究领域。
+### Q4: What are the uses of minute to microsecond conversion in scientific research?
+A4: It's mainly used in precision experiments, high-precision measurements, laser technology, signal processing, and other scientific research fields requiring ultra-high precision time control.
 
-### Q5: 如何在科学计算中进行分钟转微秒的计算？
-A5: 可以使用乘法运算：microseconds = minutes × 60,000,000，在科学计算软件中都支持这种高精度计算。
+### Q5: How to perform minute to microsecond calculations in scientific computing?
+A5: You can use multiplication: microseconds = minutes × 60,000,000. This high-precision calculation is supported in scientific computing software.
 
-### Q6: 微秒在时间单位中的位置是什么？
-A6: 微秒是秒的百万分之一，在时间单位体系中：秒 > 毫秒 > 微秒 > 纳秒，常用于超高精度时间测量。
+### Q6: What is the position of microseconds in the time unit system?
+A6: Microseconds are one millionth of a second. In the time unit system: second > millisecond > microsecond > nanosecond, commonly used for ultra-high precision time measurements.
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Time" :key="index">
     <n-button

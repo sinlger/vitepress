@@ -4,22 +4,22 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Time/index
-      linkText: 时间换算
+      linkText: Time Conversion
   - - link: /Time/Minute-to-Month
-      linkText: 分钟到月
+      linkText: Minute to Month
 head:
   - - meta
     - name: description
-      content: "分钟到月换算器 - 长期时间单位转换工具，支持minutes到months的快速换算。提供分钟(min)、月(month)等时间单位的换算关系，适用于项目规划、时间统计等场景。在线时间换算器，支持时分秒符号转换。"
+      content: "Minute to Month Converter - Long-term time unit conversion tool, supporting fast conversion from minutes to months. Provides conversion relationships for time units like minutes (min) and months (month), suitable for project planning, time statistics, and other scenarios. Online time converter with support for time notation symbols."
   - - meta
     - name: keywords
-      content: "分钟转换成小时,秒转换,小时单位,秒换算小时,分钟英文,时间换算单位,时间换算器在线使用,时分秒符号,分秒,分钟换算小时,minutes是什么意思中文,分秒符号,分钟转小时,分钟的缩写,min是分钟吗,分钟单位,分钟的英文,时间单位换算,时间计算器在线计算分钟,时间转换器,分钟缩写,小时,分钟英文,时间换算,mins,秒,minute,minutes,min,月,month,项目规划"
+      content: "minute to month conversion,time conversion,month unit,minute to month calculation,minutes in English,time unit conversion,online time converter,time notation symbols,minute month conversion,minutes meaning,time symbols,minute to month,minute abbreviation,min is minute,minute unit,minute in English,time unit conversion,online minute calculator,time converter,minute abbreviation,month,minute English,time conversion,mins,second,minute,minutes,min,month,project planning"
 ---
-# 分钟 (min) 到 月 (month) 的换算
+# Minute (min) to Month (month) Conversion
 
-分钟到月的换算在项目规划和长期时间统计中具有重要意义。无论是进行项目时间估算、工作量统计，还是进行长期规划和时间管理，掌握分钟(minutes)与月(months)之间的换算关系都是必不可少的。理解各种时间单位的换算方法，包括分钟的英文表示(min)、月的英文(month)、时分秒符号的使用，有助于我们在处理长期时间计算时更加准确高效。
+The conversion from minutes to months is of great significance in project planning and long-term time statistics. Whether it's for project time estimation, workload statistics, or long-term planning and time management, mastering the conversion relationship between minutes and months is essential. Understanding various time unit conversion methods, including the English representation of minutes (min), month in English (month), and the use of time notation symbols, helps us be more accurate and efficient when dealing with long-term time calculations.
 
 ---
 <script setup>
@@ -28,19 +28,19 @@ import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage,N
 import { defineClientComponent } from 'vitepress'
 import { Time } from '../files';
 const seoKey = [
-  '分钟转换成小时', '秒转换', '小时单位', '秒换算小时', '分钟英文',
-  '时间换算单位', '时间换算器在线使用', '时分秒符号', '分秒', '分钟换算小时',
-  'minutes是什么意思中文', '分秒符号', '分钟转小时', '分钟的缩写', 'min是分钟吗',
-  '分钟单位', '分钟的英文', '时间单位换算', '时间计算器在线计算分钟', '时间转换器',
-  '分钟缩写', '小时', '分钟英文', '时间换算', 'mins', '秒', 'minute', 'minutes', 'min',
-  '月', 'month', '项目规划', '时间统计', '分钟到月'
+  'minute to month conversion', 'time conversion', 'month unit', 'minute to month calculation', 'minutes in English',
+  'time unit conversion', 'online time converter', 'time notation symbols', 'minute month conversion', 'minutes meaning',
+  'time symbols', 'minute to month', 'minute abbreviation', 'min is minute', 'minute unit',
+  'minute in English', 'time unit conversion', 'online minute calculator', 'time converter',
+  'minute abbreviation', 'month', 'minute English', 'time conversion', 'mins', 'second', 'minute', 'minutes', 'min',
+  'month', 'project planning', 'time statistics', 'minute to month'
 ]
 const convert = inject('convert')
 
 const form = reactive({
   number: null,
   result: '',
-  title: '分钟到月换算器'
+  title: 'Minute to Month Converter'
 })
 
 const convertHandler = () => {
@@ -48,17 +48,17 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) / 43200
     form.result = `${form.number}min = ${convertedValue.toFixed(6)}month`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="分钟 (min)">
-    <n-input-number v-model:value="form.number" placeholder="输入分钟" style="width: 100%" />
+  <n-form-item label="Minutes (min)">
+    <n-input-number v-model:value="form.number" placeholder="Enter minutes" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
@@ -75,51 +75,51 @@ const convertHandler = () => {
   </template>
 </n-card>
 
-## 公式
+## Formula
 
-从 **分钟 (min)** 换算到 **月 (month)** 的公式为：
+The formula for converting from **minutes (min)** to **months (month)** is:
 $$ month = \frac{min}{43800} $$
 
-### 示例
+### Examples
 - 43800min = 1month
 - 87600min = 2month
 - 21900min = 0.5month
 
-## 实际应用场景
+## Practical Application Scenarios
 
-### 1. 项目时间规划
-在项目管理中，需要将分钟级的工作时间累计转换为月，用于项目进度评估和资源分配规划。
+### 1. Project Time Planning
+In project management, it's necessary to convert accumulated minute-level work time to months for project progress assessment and resource allocation planning.
 
-### 2. 工作量统计
-在人力资源管理中，将员工的分钟级工作时间转换为月，用于工作量统计和绩效评估。
+### 2. Workload Statistics
+In human resource management, converting employees' minute-level work time to months is used for workload statistics and performance evaluation.
 
-### 3. 设备运行时间
-在设备管理中，将设备的分钟级运行时间转换为月，用于维护计划制定和设备寿命评估。
+### 3. Equipment Runtime
+In equipment management, converting equipment's minute-level runtime to months is used for maintenance planning and equipment lifespan assessment.
 
-### 4. 学习时间管理
-在教育培训中，将学习的分钟级时间转换为月，用于课程规划和学习进度跟踪。
+### 4. Learning Time Management
+In education and training, converting minute-level learning time to months is used for course planning and learning progress tracking.
 
-## 常见问题 (FAQ)
+## Frequently Asked Questions (FAQ)
 
-### Q1: 分钟和月的换算关系是什么？
-A1: 1个月 ≈ 43,800分钟。这个换算基于1个月 = 30天 × 24小时 × 60分钟 = 43,200分钟的近似计算。
+### Q1: What is the conversion relationship between minutes and months?
+A1: 1 month ≈ 43,800 minutes. This conversion is based on the approximate calculation: 1 month = 30 days × 24 hours × 60 minutes = 43,200 minutes.
 
-### Q2: 为什么换算系数是43,800？
-A2: 这个系数基于平均月长度：1个月 ≈ 30.42天 × 24小时 × 60分钟 ≈ 43,800分钟。
+### Q2: Why is the conversion factor 43,800?
+A2: This factor is based on the average month length: 1 month ≈ 30.42 days × 24 hours × 60 minutes ≈ 43,800 minutes.
 
-### Q3: month是什么意思中文？
-A3: month的中文意思是"月"，是时间单位，通常指日历中的一个月份。
+### Q3: What does "month" mean in Chinese?
+A3: "Month" means "月" in Chinese, which is a time unit, usually referring to a calendar month.
 
-### Q4: 分钟到月的换算在项目管理中有什么用途？
-A4: 主要用于项目时间估算、工作量统计、资源规划、进度跟踪等长期项目管理场景。
+### Q4: What are the uses of minute to month conversion in project management?
+A4: It's mainly used for project time estimation, workload statistics, resource planning, progress tracking, and other long-term project management scenarios.
 
-### Q5: 如何在项目规划中进行分钟转月的计算？
-A5: 可以使用除法运算：months = minutes ÷ 43,800，这样可以将累计的工作分钟数转换为月数。
+### Q5: How to perform minute to month calculations in project planning?
+A5: You can use division: months = minutes ÷ 43,800. This way, accumulated work minutes can be converted to months.
 
-### Q6: 月份长度不同会影响换算精度吗？
-A6: 是的，不同月份天数不同（28-31天），所以这个换算是基于平均月长度的近似值，实际应用中需要考虑具体月份。
+### Q6: Do different month lengths affect conversion accuracy?
+A6: Yes, different months have different numbers of days (28-31 days), so this conversion is an approximation based on average month length. In practical applications, specific months should be considered.
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Time" :key="index">
     <n-button

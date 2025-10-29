@@ -4,22 +4,22 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Time/index
-      linkText: 时间换算
+      linkText: Time Conversion
   - - link: /Time/Nanosecond-to-Second
-      linkText: 纳秒到秒
+      linkText: Nanosecond to Second
 head:
   - - meta
     - name: description
-      content: "纳秒到秒换算器 - 精确的时间单位转换工具，支持nanosecond到second的快速换算。提供纳秒(ns)、微秒、毫秒、秒等时间单位的换算关系，适用于计算机科学、物理实验等高精度时间测量场景。在线时间换算器，支持ns和s换算。"
+      content: "Nanosecond to Second Converter - Precise time unit conversion tool, supports fast conversion from nanosecond to second. Provides conversion relationships between nanoseconds (ns), microseconds, milliseconds, seconds and other time units, suitable for computer science, physics experiments and other high-precision time measurement scenarios. Online time converter, supports ns and s conversion."
   - - meta
     - name: keywords
-      content: "毫秒微秒,分秒换算,秒单位换算,秒,毫秒,微秒,纳秒,ns和s换算,时间的单位,秒的换算,一微秒等于多少秒,微秒和纳秒,微秒单位,ms单位,一毫秒,ns是什么单位,秒单位,微妙和秒的换算,一秒多少毫秒,纳秒和微秒,秒换算,时间换算单位,us是多少秒,多少毫秒等于一秒,纳秒和秒的换算,一秒是多少毫秒,秒的单位,一毫秒等于多少秒,时间单位换算,nanosecond,ms是什么单位,microseconds,时间单位,微秒,秒,一秒等于多少毫秒,毫秒和秒的换算"
+      content: "millisecond microsecond,minute second conversion,second unit conversion,second,millisecond,microsecond,nanosecond,ns and s conversion,time units,second conversion,how many seconds in a microsecond,microsecond and nanosecond,microsecond unit,ms unit,one millisecond,what is ns unit,second unit,microsecond and second conversion,how many milliseconds in a second,nanosecond and microsecond,second conversion,time unit conversion,us is how many seconds,how many milliseconds equal one second,nanosecond and second conversion,how many milliseconds in one second,second unit,how many seconds in one millisecond,time unit conversion,nanosecond,what is ms unit,microseconds,time unit,microsecond,second,how many milliseconds equal one second,millisecond and second conversion"
 ---
-# 纳秒 (ns) 到 秒 (s) 的换算
+# Nanosecond (ns) to Second (s) Conversion
 
-纳秒到秒的换算在计算机科学和精密时间测量中具有重要意义。无论是进行程序性能分析、网络延迟测量，还是进行物理实验的时间计算，掌握纳秒(nanosecond)与秒(second)之间的换算关系都是必不可少的。理解各种时间单位的换算方法，包括纳秒的英文表示(ns)、微秒(microseconds)、毫秒等时间单位符号的使用，有助于我们在处理高精度时间相关的计算和分析时更加准确。
+The conversion from nanoseconds to seconds has important significance in computer science and precision time measurement. Whether it's for program performance analysis, network latency measurement, or physics experiment time calculations, mastering the conversion relationship between nanoseconds and seconds is essential. Understanding various time unit conversion methods, including the English representation of nanoseconds (ns), microseconds, milliseconds, and other time unit symbols, helps us be more accurate when handling high-precision time-related calculations and analysis.
 
 ---
 <script setup>
@@ -29,11 +29,11 @@ import { defineClientComponent } from 'vitepress'
 import { Time } from '../files';
 
 const convert = inject('convert')
-const seoKey = ['ns','second','秒','纳秒','秒','时间单位换算','时间换算','毫秒微秒','分秒换算','秒单位换算','秒','毫秒','微秒','纳秒','ns和s换算','时间的单位','秒的换算','一微秒等于多少秒','微秒和纳秒','微秒单位','ms单位','一毫秒','ns是什么单位','秒单位','微妙和秒的换算','一秒多少毫秒','纳秒和微秒','秒换算','时间换算单位','us是多少秒','多少毫秒等于一秒','纳秒和秒的换算','一秒是多少毫秒','秒的单位','一毫秒等于多少秒','时间单位换算','nanosecond','ms是什么单位','microseconds','时间单位','微秒','秒','一秒等于多少毫秒','毫秒和秒的换算']
+const seoKey = ['ns','second','second','nanosecond','second','time unit conversion','time conversion','millisecond microsecond','minute second conversion','second unit conversion','second','millisecond','microsecond','nanosecond','ns and s conversion','time units','second conversion','how many seconds in a microsecond','microsecond and nanosecond','microsecond unit','ms unit','one millisecond','what is ns unit','second unit','microsecond and second conversion','how many milliseconds in a second','nanosecond and microsecond','second conversion','time unit conversion','us is how many seconds','how many milliseconds equal one second','nanosecond and second conversion','how many milliseconds in one second','second unit','how many seconds in one millisecond','time unit conversion','nanosecond','what is ms unit','microseconds','time unit','microsecond','second','how many milliseconds equal one second','millisecond and second conversion']
 const form = reactive({
   number: null,
   result: '',
-  title: '纳秒到秒换算器'
+  title: 'Nanosecond to Second Converter'
 })
 
 const convertHandler = () => {
@@ -41,17 +41,17 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) / 1000000000
     form.result = `${form.number}ns = ${convertedValue.toFixed(10)}s`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="纳秒 (ns)">
-    <n-input-number v-model:value="form.number" placeholder="输入纳秒" style="width: 100%" />
+  <n-form-item label="Nanoseconds (ns)">
+    <n-input-number v-model:value="form.number" placeholder="Enter nanoseconds" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
@@ -68,50 +68,50 @@ const convertHandler = () => {
   </template>
 </n-card>
 
-## 公式
+## Formula
 
-从 **纳秒 (ns)** 换算到 **秒 (s)** 的公式为：
+The formula for converting from **nanoseconds (ns)** to **seconds (s)** is:
 $$ s = \frac{ns}{10^{9}} $$
 
-### 示例
+### Examples
 - 1,000,000,000ns = 1s
 - 5,000,000,000ns = 5s
 - 1,000,000ns = 0.001s
 
-## 实际应用场景
+## Practical Application Scenarios
 
-### 1. 程序性能分析
-在软件开发中，程序执行时间通常以纳秒为单位测量，需要转换为秒进行性能评估和优化分析。
+### 1. Program Performance Analysis
+In software development, program execution times are typically measured in nanoseconds and need to be converted to seconds for performance evaluation and optimization analysis.
 
-### 2. 网络延迟测量
-在网络通信中，数据包传输延迟以纳秒计算，转换为秒有助于网络性能监控和故障诊断。
+### 2. Network Latency Measurement
+In network communications, data packet transmission delays are calculated in nanoseconds, and converting to seconds helps with network performance monitoring and fault diagnosis.
 
-### 3. 计算机系统时钟
-在操作系统和硬件设计中，系统时钟精度达到纳秒级，需要转换为秒进行时间同步和调度。
+### 3. Computer System Clock
+In operating system and hardware design, system clock precision reaches nanosecond level and needs to be converted to seconds for time synchronization and scheduling.
 
-### 4. 科学实验计时
-在物理、化学等科学实验中，反应时间和测量精度要求纳秒级，转换为秒便于数据分析和结果展示。
+### 4. Scientific Experiment Timing
+In physics, chemistry, and other scientific experiments, reaction times and measurement precision require nanosecond level accuracy, converted to seconds for data analysis and result presentation.
 
-## 常见问题 (FAQ)
+## Frequently Asked Questions (FAQ)
 
-### Q1: 纳秒和秒的换算关系是什么？
-A1: 1秒 = 10⁹纳秒 = 1,000,000,000纳秒。这是纳秒单位的基础换算关系。
+### Q1: What is the conversion relationship between nanoseconds and seconds?
+A1: 1 second = 10⁹ nanoseconds = 1,000,000,000 nanoseconds. This is the fundamental conversion relationship for nanosecond units.
 
-### Q2: 为什么换算系数是10⁹？
-A2: 这个系数来源于纳秒的定义：纳秒是10⁻⁹秒，因此1秒 = 10⁹纳秒。
+### Q2: Why is the conversion factor 10⁹?
+A2: This factor comes from the definition of nanosecond: a nanosecond is 10⁻⁹ seconds, therefore 1 second = 10⁹ nanoseconds.
 
-### Q3: ns是什么单位？
-A3: ns是纳秒(nanosecond)的标准缩写符号，表示10⁻⁹秒，是极短的时间单位。
+### Q3: What unit is ns?
+A3: ns is the standard abbreviation for nanosecond, representing 10⁻⁹ seconds, which is an extremely short time unit.
 
-### Q4: 一秒等于多少纳秒？
-A4: 1秒 = 10⁹纳秒 = 1,000,000,000纳秒，这是最基本的时间单位换算。
+### Q4: How many nanoseconds equal one second?
+A4: 1 second = 10⁹ nanoseconds = 1,000,000,000 nanoseconds, which is the most basic time unit conversion.
 
-### Q5: 如何在编程中进行纳秒到秒的换算？
-A5: 可以使用除法运算：seconds = nanoseconds ÷ 1,000,000,000，或使用编程语言提供的时间转换函数。
+### Q5: How to perform nanosecond to second conversion in programming?
+A5: You can use division: seconds = nanoseconds ÷ 1,000,000,000, or use time conversion functions provided by programming languages.
 
-### Q6: 纳秒和毫秒、微秒的关系是什么？
-A6: 1毫秒(ms) = 1,000,000纳秒(ns)，1微秒(μs) = 1,000纳秒(ns)。
-## 相关连接
+### Q6: What is the relationship between nanoseconds and milliseconds, microseconds?
+A6: 1 millisecond (ms) = 1,000,000 nanoseconds (ns), 1 microsecond (μs) = 1,000 nanoseconds (ns).
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Time" :key="index">
     <n-button

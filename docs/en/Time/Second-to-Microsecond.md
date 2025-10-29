@@ -4,22 +4,22 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Time/index
-      linkText: 时间换算
+      linkText: Time Conversion
   - - link: /Time/Second-to-Microsecond
-      linkText: 秒到微秒
+      linkText: Second to Microsecond
 head:
   - - meta
     - name: description
-      content: "秒到微秒换算器 - 精确的s到μs时间单位转换工具。支持秒(second)与微秒(microsecond)之间的快速换算，适用于高精度计时、科学实验、系统性能分析等领域。提供详细的换算公式、实际应用场景和常见问题解答。"
+      content: "Second to Microsecond Converter - Precise s to μs time unit conversion tool. Supports quick conversion between seconds and microseconds, suitable for high-precision timing, scientific experiments, system performance analysis, and more. Provides detailed conversion formulas, practical application scenarios, and frequently asked questions."
   - - meta
     - name: keywords
-      content: "秒, 微秒, s, μs, 时间单位换算, 秒到微秒, 微秒换算, second, microsecond, 时间换算器, 毫秒微秒, 分秒换算, 秒单位换算, 秒转换, s是什么单位, 小时单位, 秒的换算, 时间秒, 秒换算小时, 时间转化, 一秒, 秒的定义, 秒单位, 秒换算, 分秒符号, 一秒是多少毫秒, 一毫秒等于多少秒, 秒的英文, 纳秒, 时间秒, 时间单位, 时间换算, 分钟, 一秒等于多少毫秒"
+      content: "second, microsecond, s, μs, time unit conversion, second to microsecond, microsecond conversion, second, microsecond, time converter, millisecond microsecond, minute second conversion, second unit conversion, second conversion, what is s unit, hour unit, second conversion, time second, second to hour conversion, time transformation, one second, second definition, second unit, second conversion, minute second symbol, how many milliseconds in one second, how many seconds in one millisecond, second in English, nanosecond, time second, time unit, time conversion, minute, one second equals how many milliseconds"
 ---
-# 秒 (s) 到 微秒 (μs) 的换算
+# Second (s) to Microsecond (μs) Conversion
 
-秒到微秒的换算在高精度计时和科学实验中具有重要意义。无论是进行系统性能分析、电子设备测试，还是进行精密科学实验，掌握秒(second)与微秒(microsecond)之间的换算关系都是必要的技能。理解各种时间单位的换算方法，包括秒的英文表示(s)、微秒单位(μs)等时间概念的使用，有助于我们在处理高精度时间测量和技术分析时更加准确。
+Second to microsecond conversion is of great significance in high-precision timing and scientific experiments. Whether conducting system performance analysis, electronic device testing, or precision scientific experiments, mastering the conversion relationship between seconds and microseconds is a necessary skill. Understanding various time unit conversion methods, including the English representation of seconds (s) and microsecond units (μs), helps us be more accurate when handling high-precision time measurements and technical analysis.
 
 ---
 <script setup>
@@ -29,11 +29,11 @@ import { defineClientComponent } from 'vitepress'
 import { Time } from '../files';
 
 const convert = inject('convert')
-const seoKey = ['毫秒微秒','分秒换算','秒单位换算','秒转换','s是什么单位','小时单位','秒的换算','时间 秒','秒换算小时','时间转化','一秒','秒的定义','秒单位','秒 時間 変換','秒换算','分秒符号','一秒是多少毫秒','一毫秒等于多少秒','秒的英文','纳秒','时间秒','时间单位','时间换算','分钟','一秒等于多少毫秒']
+const seoKey = ['millisecond microsecond','minute second conversion','second unit conversion','second conversion','what is s unit','hour unit','second conversion','time second','second to hour conversion','time transformation','one second','second definition','second unit','second time conversion','second conversion','minute second symbol','how many milliseconds in one second','how many seconds in one millisecond','second in English','nanosecond','time second','time unit','time conversion','minute','one second equals how many milliseconds']
 const form = reactive({
   number: null,
   result: '',
-  title: '秒到微秒换算器'
+  title: 'Second to Microsecond Converter'
 })
 
 const convertHandler = () => {
@@ -41,18 +41,18 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) * 1000000
     form.result = `${form.number}s = ${convertedValue.toFixed(0)}μs`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-card :title="form.title" size="small" :bordered="false" style="margin-bottom: 16px">
   <n-form size="large" :model="form">
-    <n-form-item label="秒 (s)">
-      <n-input-number v-model:value="form.number" placeholder="输入秒" style="width: 100%" />
+    <n-form-item label="Second (s)">
+      <n-input-number v-model:value="form.number" placeholder="Enter seconds" style="width: 100%" />
     </n-form-item>
     <n-form-item>
-      <n-button type="info" @click="convertHandler" block>换算</n-button>
+      <n-button type="info" @click="convertHandler" block>Convert</n-button>
     </n-form-item>
   </n-form>
   <template #footer>
@@ -70,42 +70,42 @@ const convertHandler = () => {
   </div>
 </n-card>
 
-## 公式
+## Formula
 
-从 **秒 (s)** 换算到 **微秒 (μs)** 的公式为：
+The formula for converting from **seconds (s)** to **microseconds (μs)** is:
 $$ \mu s = s \times 10^{6} $$
 
-### 示例
+### Examples
 - 1s = 1,000,000μs
 - 5s = 5,000,000μs
 - 0.1s = 100,000μs
 
-## 实际应用场景
+## Practical Application Scenarios
 
-### 高精度计时系统
-在科学实验和精密测量中，需要将秒级时间转换为微秒单位，以实现更高精度的时间测量和数据记录。
+### High-Precision Timing Systems
+In scientific experiments and precision measurements, second-level time needs to be converted to microsecond units to achieve higher precision time measurement and data recording.
 
-### 电子设备测试
-在电子工程和硬件测试中，信号传输延迟、处理器响应时间等参数经常需要从秒转换为微秒进行精确分析。
+### Electronic Device Testing
+In electronic engineering and hardware testing, signal transmission delays, processor response times, and other parameters often need to be converted from seconds to microseconds for precise analysis.
 
-### 系统性能分析
-在软件性能优化中，将程序执行时间从秒转换为微秒，有助于识别性能瓶颈和进行细粒度的性能调优。
+### System Performance Analysis
+In software performance optimization, converting program execution time from seconds to microseconds helps identify performance bottlenecks and perform fine-grained performance tuning.
 
-### 科学实验数据处理
-在物理、化学等科学实验中，实验设备记录的秒级数据需要转换为微秒单位，以便进行精确的数据分析和结果验证。
+### Scientific Experiment Data Processing
+In physics, chemistry, and other scientific experiments, second-level data recorded by experimental equipment needs to be converted to microsecond units for precise data analysis and result verification.
 
-## 常见问题 (FAQ)
+## Frequently Asked Questions (FAQ)
 
-**Q: 为什么需要进行秒到微秒的换算？**
-A: 在高精度计时、科学实验和系统性能分析中，经常需要将秒级时间转换为微秒单位，以获得更精确的时间测量和分析结果。
+**Q: Why is second to microsecond conversion needed?**
+A: In high-precision timing, scientific experiments, and system performance analysis, it's often necessary to convert second-level time to microsecond units to obtain more precise time measurements and analysis results.
 
-**Q: 秒到微秒的换算精度如何保证？**
-A: 使用标准的换算公式 s × 1,000,000，其中1,000,000是一秒包含的微秒数，确保换算结果的准确性和精度。
+**Q: How is the accuracy of second to microsecond conversion ensured?**
+A: Using the standard conversion formula s × 1,000,000, where 1,000,000 is the number of microseconds in one second, ensuring the accuracy and precision of conversion results.
 
-**Q: 在什么情况下会用到秒到微秒的换算？**
-A: 主要用于高精度计时系统、电子设备测试、系统性能分析、科学实验数据处理等需要精确时间测量的技术领域。
+**Q: In what situations would second to microsecond conversion be used?**
+A: Mainly used in high-precision timing systems, electronic device testing, system performance analysis, scientific experiment data processing, and other technical fields requiring precise time measurement.
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Time" :key="index">
     <n-button

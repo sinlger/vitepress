@@ -12,9 +12,10 @@ breadcrumb:
 head:
   - - meta
     - name: description
-        content: "Professional yard (yd) to US foot (ft-us) length unit conversion tool and guide. Provides precise conversion formulas, practical application scenarios, and frequently asked questions, suitable for precision measurement needs in US construction engineering, manufacturing, real estate surveying, sports facility construction, and other fields."
-      - name: keywords
-        content: "yard to US foot conversion,yd to ft-us conversion,length unit conversion,US foot converter,US construction engineering,manufacturing measurement,real estate surveying,sports facility construction,US units,imperial conversion,construction measurement,engineering measurement,US standards,length converter,unit conversion table,US length units,construction design,engineering drawing,measurement tools,precision measurement"
+      content: "Professional yard (yd) to US foot (ft-us) length unit conversion tool and guide. Provides precise conversion formulas, practical application scenarios, and frequently asked questions, suitable for precision measurement needs in US construction engineering, manufacturing, real estate surveying, sports facility construction, and other fields."
+  - - meta
+    - name: keywords
+      content: "yard to US foot conversion, yd to ft-us conversion, length unit conversion, US foot converter, US construction engineering, manufacturing measurement, real estate surveying, sports facility construction"
 ---
 # Yard (yd) to US Foot (ft-us) Conversion
 

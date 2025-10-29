@@ -4,23 +4,23 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Time/index
-      linkText: 时间换算
+      linkText: Time Conversion
   - - link: /Time/Day-to-Minute
-      linkText: 天到分钟
+      linkText: Day to Minute
 head:
   - - meta
     - name: description
-      content: "专业的天到分钟换算器在线使用工具。快速进行天(d)到分钟(min)的时间单位转换，提供精确的换算公式和实用的时间计算功能。支持工作时间计算、会议安排等分钟级时间换算应用场景。"
+      content: "Professional day to minute converter online tool. Quickly convert days (d) to minutes (min) with precise conversion formulas and practical time calculation functions. Supports work time calculation, meeting scheduling, and other minute-level time conversion application scenarios."
   - - meta
     - name: keywords
-      content: "天到分钟换算, 天换算分钟, 时间单位转换, 天分钟换算器, d到min换算, 时间换算器在线使用, 工作时间计算, 天数转分钟, 时间单位换算, 天转换分钟, 分钟换算, 时间转换器, 天换分钟公式, 会议时间安排, 日程管理"
+      content: "day to minute conversion, day to min converter, time unit conversion, day minute calculator, d to min conversion, online time converter, work time calculation, days to minutes, time unit calculator, day to minute formula, meeting scheduling, schedule management"
 ---
 
-# 天 (d) 到 分钟 (min) 的换算
+# Day (d) to Minute (min) Conversion
 
-天到分钟换算是日常工作和生活中实用的时间单位转换。在工作时间计算、会议安排、项目管理等场景中，经常需要将天数转换为分钟进行精确的时间规划和统计。我们的天到分钟换算器在线使用工具提供快速、精确的d到min换算功能，帮助您轻松完成各种分钟级时间计算需求。
+Day to minute conversion is a practical time unit conversion in daily work and life. In work time calculation, meeting scheduling, project management, and other scenarios, it's often necessary to convert days to minutes for precise time planning and statistics. Our day to minute converter online tool provides fast and accurate d to min conversion functionality, helping you easily complete various minute-level time calculation needs.
 
 ---
 <script setup>
@@ -31,12 +31,12 @@ import { Time } from '../files';
 
 const convert = inject('convert')
 
-const seoKey = ['天到分钟换算','天换算分钟','时间单位转换','天分钟换算器','d到min换算','时间换算器在线使用','工作时间计算','天数转分钟','天转换分钟','分钟换算','时间转换器','天换分钟公式','会议时间安排','日程管理','天','分钟','时间换算','时间单位']
+const seoKey = ['day to minute conversion','day to min converter','time unit conversion','day minute calculator','d to min conversion','online time converter','work time calculation','days to minutes','time unit calculator','minute conversion','time converter','day to minute formula','meeting scheduling','schedule management','day','minute','time conversion','time unit']
 
 const form = reactive({
   number: null,
   result: '',
-  title: '天到分钟换算器',
+  title: 'Day to Minute Converter',
 })
 
 const convertHandler = () => {
@@ -44,17 +44,17 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) * 1440
     form.result = `${form.number}d = ${convertedValue.toFixed(2)}min`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="天 (d)">
-    <n-input-number v-model:value="form.number" placeholder="输入天" style="width: 100%" />
+  <n-form-item label="Days (d)">
+    <n-input-number v-model:value="form.number" placeholder="Enter days" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
@@ -75,68 +75,68 @@ const convertHandler = () => {
   </template>
 </n-card>
 
-## 公式
+## Formula
 
-从 **天 (d)** 换算到 **分钟 (min)** 的公式为：
+The formula for converting from **Days (d)** to **Minutes (min)** is:
 $$ min = d \times 1440 $$
 
-### 示例
+### Examples
 - 1d = 1440min
 - 5d = 7200min
 - 0.1d = 144min
 
-## 实际应用场景
+## Practical Application Scenarios
 
-### 工作时间管理
-- **工作时间统计**：计算员工工作天数对应的总分钟数
-- **加班时间计算**：精确统计超出标准工作日的分钟数
-- **薪资计算**：按分钟计费的工作时间精确计算
+### Work Time Management
+- **Work Time Statistics**: Calculate total minutes corresponding to employee work days
+- **Overtime Calculation**: Accurately calculate minutes exceeding standard work days
+- **Salary Calculation**: Precise calculation of work time billed by the minute
 
-### 会议与日程安排
-- **会议时间规划**：将会议天数转换为分钟进行精确安排
-- **项目时间管理**：计算项目周期对应的总分钟数
-- **培训课程安排**：安排多天培训课程的分钟级时间表
+### Meeting and Schedule Planning
+- **Meeting Time Planning**: Convert meeting days to minutes for precise scheduling
+- **Project Time Management**: Calculate total minutes corresponding to project cycles
+- **Training Course Arrangement**: Schedule minute-level timetables for multi-day training courses
 
-### 教育与学习
-- **学习时间统计**：计算学习天数对应的总学习分钟数
-- **课程时长计算**：统计多天课程的总分钟时长
-- **考试时间安排**：合理分配复习时间的分钟级规划
+### Education and Learning
+- **Study Time Statistics**: Calculate total study minutes corresponding to study days
+- **Course Duration Calculation**: Calculate total minute duration of multi-day courses
+- **Exam Time Arrangement**: Reasonable minute-level planning for review time allocation
 
-### 生活时间规划
-- **健身计划**：制定长期健身计划的分钟级统计
-- **旅行安排**：计算旅行天数对应的活动分钟数
-- **休息时间**：统计休假天数的总休息分钟数
+### Life Time Planning
+- **Fitness Plans**: Create minute-level statistics for long-term fitness plans
+- **Travel Arrangements**: Calculate activity minutes corresponding to travel days
+- **Rest Time**: Calculate total rest minutes for vacation days
 
-## 天到分钟换算对照表
+## Day to Minute Conversion Table
 
-| 天数 | 分钟数 | 应用场景 |
-|------|--------|----------|
-| 1天 | 1,440分钟 | 日常工作安排 |
-| 3天 | 4,320分钟 | 短期项目 |
-| 7天 | 10,080分钟 | 周工作时间 |
-| 30天 | 43,200分钟 | 月度计划 |
-| 365天 | 525,600分钟 | 年度统计 |
+| Days | Minutes | Application Scenario |
+|------|---------|---------------------|
+| 1 day | 1,440 minutes | Daily work arrangements |
+| 3 days | 4,320 minutes | Short-term projects |
+| 7 days | 10,080 minutes | Weekly work time |
+| 30 days | 43,200 minutes | Monthly planning |
+| 365 days | 525,600 minutes | Annual statistics |
 
-## 常见问题 (FAQ)
+## Frequently Asked Questions (FAQ)
 
-### 1. 天换算分钟的基本公式是什么？
-天换算分钟的公式为：分钟数 = 天数 × 1440。这是因为一天有24小时，一小时有60分钟。
+### 1. What is the basic formula for converting days to minutes?
+The formula for converting days to minutes is: minutes = days × 1440. This is because one day has 24 hours, and one hour has 60 minutes.
 
-### 2. 工作时间计算中如何使用天到分钟换算？
-在工作时间计算中，可以将工作天数转换为分钟，便于精确的薪资计算和时间统计。
+### 2. How to use day to minute conversion in work time calculation?
+In work time calculation, you can convert work days to minutes for precise salary calculation and time statistics.
 
-### 3. 1天等于多少分钟？
-1天 = 24小时 × 60分钟/小时 = 1440分钟。
+### 3. How many minutes are in 1 day?
+1 day = 24 hours × 60 minutes/hour = 1440 minutes.
 
-### 4. 会议安排中为什么需要分钟级精度？
-会议安排需要精确的时间控制，分钟级精度有助于合理安排议程和提高会议效率。
+### 4. Why is minute-level precision needed in meeting scheduling?
+Meeting scheduling requires precise time control. Minute-level precision helps arrange agendas reasonably and improve meeting efficiency.
 
-### 5. 如何在项目管理中应用天到分钟换算？
-项目管理中可以将项目周期转换为分钟，便于制定详细的时间计划和进度跟踪。
+### 5. How to apply day to minute conversion in project management?
+In project management, you can convert project cycles to minutes for creating detailed time plans and progress tracking.
 
-### 6. 天分钟换算器的计算准确性如何？
-我们的换算器提供精确的整数计算，确保时间转换的准确性，适用于各种专业和日常应用场景。
-## 相关连接
+### 6. How accurate is the day to minute converter calculation?
+Our converter provides precise integer calculations, ensuring accuracy in time conversion, suitable for various professional and daily application scenarios.
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Time" :key="index">
     <n-button

@@ -4,22 +4,22 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Time/index
-      linkText: 时间换算
+      linkText: Time Conversion
   - - link: /Time/Day-to-Millisecond
-      linkText: 天到毫秒
+      linkText: Day to Millisecond
 head:
   - - meta
     - name: description
-      content: "专业的天到毫秒换算器在线使用工具。快速进行天(d)到毫秒(ms)的时间单位转换，提供精确的换算公式和实用的时间计算功能。支持程序开发、系统监控等毫秒级时间换算应用场景。"
+      content: "Professional day to millisecond converter online tool. Quickly convert days (d) to milliseconds (ms) with precise conversion formulas and practical time calculation functions. Supports millisecond-level time conversion for program development, system monitoring, and other application scenarios."
   - - meta
     - name: keywords
-      content: "天到毫秒换算, 天换算毫秒, 时间单位转换, 天毫秒换算器, d到ms换算, 时间换算器在线使用, 程序开发时间, 天数转毫秒, 时间单位换算, 天转换毫秒, 毫秒换算, 时间转换器, 天换毫秒公式, 系统监控时间, JavaScript时间"
+      content: "day to millisecond conversion, day to ms converter, time unit conversion, day millisecond calculator, d to ms conversion, online time converter, programming time, days to milliseconds, time unit calculator, day to millisecond formula, system monitoring time, JavaScript time"
 ---
-# 天 (d) 到 毫秒 (ms) 的换算
+# Day (d) to Millisecond (ms) Conversion
 
-天到毫秒换算是程序开发和系统监控中常用的时间单位转换。在Web开发、移动应用、游戏开发等领域，经常需要将较大的时间单位转换为毫秒进行精确的时间控制和性能分析。我们的天到毫秒换算器在线使用工具提供快速、精确的d到ms换算功能，帮助您轻松完成各种毫秒级时间计算需求。
+Day to millisecond conversion is a commonly used time unit conversion in program development and system monitoring. In web development, mobile applications, game development, and other fields, it's often necessary to convert larger time units to milliseconds for precise time control and performance analysis. Our day to millisecond converter online tool provides fast and accurate d to ms conversion functionality, helping you easily complete various millisecond-level time calculation needs.
 
 ---
 <script setup>
@@ -30,12 +30,12 @@ import { Time } from '../files';
 
 const convert = inject('convert')
 
-const seoKey = ['天到毫秒换算','天换算毫秒','时间单位转换','天毫秒换算器','d到ms换算','时间换算器在线使用','程序开发时间','天数转毫秒','天转换毫秒','毫秒换算','时间转换器','天换毫秒公式','系统监控时间','JavaScript时间','天','毫秒','时间换算','时间单位']
+const seoKey = ['day to millisecond conversion','day to ms converter','time unit conversion','day millisecond calculator','d to ms conversion','online time converter','programming time','days to milliseconds','time unit calculator','millisecond conversion','time converter','day to millisecond formula','system monitoring time','JavaScript time','day','millisecond','time conversion','time unit']
 
 const form = reactive({
   number: null,
   result: '',
-  title: '天到毫秒换算器',
+  title: 'Day to Millisecond Converter',
 })
 
 const convertHandler = () => {
@@ -43,17 +43,17 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) * 86400000
     form.result = `${form.number}d = ${convertedValue.toFixed(0)}ms`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="天 (d)">
-    <n-input-number v-model:value="form.number" placeholder="输入天" style="width: 100%" />
+  <n-form-item label="Days (d)">
+    <n-input-number v-model:value="form.number" placeholder="Enter days" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
@@ -74,67 +74,67 @@ const convertHandler = () => {
   </template>
 </n-card>
 
-## 公式
+## Formula
 
-从 **天 (d)** 换算到 **毫秒 (ms)** 的公式为：
+The formula for converting from **Days (d)** to **Milliseconds (ms)** is:
 $$ ms = d \times 8.64 \times 10^{7} $$
 
-### 示例
+### Examples
 - 1d = 8.64 × 10⁷ ms
 - 5d = 4.32 × 10⁸ ms
 - 0.1d = 8.64 × 10⁶ ms
 
-## 实际应用场景
+## Practical Application Scenarios
 
-### 程序开发
-- **JavaScript开发**：setTimeout、setInterval等定时器函数使用毫秒单位
-- **移动应用开发**：动画效果、延迟执行等功能的时间设置
-- **游戏开发**：游戏循环、帧率控制、技能冷却时间计算
+### Program Development
+- **JavaScript Development**: Timer functions like setTimeout and setInterval use millisecond units
+- **Mobile App Development**: Time settings for animation effects, delayed execution, and other features
+- **Game Development**: Game loops, frame rate control, and skill cooldown time calculations
 
-### 系统监控
-- **性能监控**：监控系统长期运行状态的毫秒级统计
-- **日志分析**：分析系统日志中的时间间隔和响应时间
-- **服务器监控**：计算服务器运行时间的毫秒精度统计
+### System Monitoring
+- **Performance Monitoring**: Millisecond-level statistics for monitoring long-term system operation status
+- **Log Analysis**: Analyzing time intervals and response times in system logs
+- **Server Monitoring**: Calculating server uptime statistics with millisecond precision
 
-### Web开发
-- **前端开发**：页面加载时间、用户交互响应时间计算
-- **API开发**：接口响应时间监控和性能优化
-- **缓存策略**：设置缓存过期时间的毫秒级控制
+### Web Development
+- **Frontend Development**: Page load time and user interaction response time calculations
+- **API Development**: Interface response time monitoring and performance optimization
+- **Caching Strategy**: Millisecond-level control for setting cache expiration times
 
-### 数据分析
-- **时间序列分析**：处理长期数据的毫秒级时间戳
-- **业务分析**：计算用户行为数据的时间间隔
-- **统计分析**：生成时间相关的统计报表
+### Data Analysis
+- **Time Series Analysis**: Processing millisecond-level timestamps for long-term data
+- **Business Analysis**: Calculating time intervals in user behavior data
+- **Statistical Analysis**: Generating time-related statistical reports
 
-## 天到毫秒换算对照表
+## Day to Millisecond Conversion Table
 
-| 天数 | 毫秒数 | 应用场景 |
-|------|--------|----------|
-| 1天 | 86,400,000 ms | 日常开发周期 |
-| 7天 | 604,800,000 ms | 周期性任务 |
-| 30天 | 2,592,000,000 ms | 月度数据处理 |
-| 365天 | 31,536,000,000 ms | 年度系统统计 |
+| Days | Milliseconds | Application Scenario |
+|------|--------------|---------------------|
+| 1 day | 86,400,000 ms | Daily development cycles |
+| 7 days | 604,800,000 ms | Periodic tasks |
+| 30 days | 2,592,000,000 ms | Monthly data processing |
+| 365 days | 31,536,000,000 ms | Annual system statistics |
 
-## 常见问题 (FAQ)
+## Frequently Asked Questions (FAQ)
 
-### 1. 天换算毫秒的基本公式是什么？
-天换算毫秒的公式为：毫秒数 = 天数 × 86,400,000。这是因为一天有86400秒，一秒有1000毫秒。
+### 1. What is the basic formula for converting days to milliseconds?
+The formula for converting days to milliseconds is: milliseconds = days × 86,400,000. This is because one day has 86,400 seconds, and one second has 1,000 milliseconds.
 
-### 2. JavaScript中如何使用天到毫秒的换算？
-JavaScript的Date对象和定时器函数都使用毫秒作为时间单位，天到毫秒换算在设置长时间延迟时非常有用。
+### 2. How to use day to millisecond conversion in JavaScript?
+JavaScript's Date object and timer functions all use milliseconds as the time unit. Day to millisecond conversion is very useful when setting long-duration delays.
 
-### 3. 1天等于多少毫秒？
-1天 = 24小时 × 3600秒/小时 × 1000毫秒/秒 = 86,400,000毫秒。
+### 3. How many milliseconds are in 1 day?
+1 day = 24 hours × 3,600 seconds/hour × 1,000 milliseconds/second = 86,400,000 milliseconds.
 
-### 4. 程序开发中为什么常用毫秒？
-毫秒提供了足够的精度用于大多数应用场景，同时避免了浮点数计算的复杂性，是编程中理想的时间单位。
+### 4. Why are milliseconds commonly used in program development?
+Milliseconds provide sufficient precision for most application scenarios while avoiding the complexity of floating-point calculations, making them an ideal time unit in programming.
 
-### 5. 如何在系统监控中应用天到毫秒换算？
-系统监控通常需要计算长期运行时间的毫秒统计，天到毫秒换算帮助将监控周期转换为程序可处理的毫秒格式。
+### 5. How to apply day to millisecond conversion in system monitoring?
+System monitoring typically requires calculating millisecond statistics for long-term operation times. Day to millisecond conversion helps convert monitoring periods into millisecond format that programs can process.
 
-### 6. 天毫秒换算器的计算精度如何？
-我们的换算器提供精确的整数计算，确保大数值转换的准确性，适用于各种编程和系统应用场景。
-## 相关连接
+### 6. What is the calculation precision of the day to millisecond converter?
+Our converter provides precise integer calculations, ensuring accuracy for large value conversions, suitable for various programming and system application scenarios.
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Time" :key="index">
     <n-button

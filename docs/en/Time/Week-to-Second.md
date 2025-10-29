@@ -4,22 +4,22 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Time/index
-      linkText: 时间换算
+      linkText: Time Conversion
   - - link: /Time/Week-to-Second
-      linkText: 周到秒
+      linkText: Week to Second
 head:
   - - meta
     - name: description
-      content: "周到秒换算器 - 实用的时间单位转换工具。支持周(week)到秒(s)的精确换算，适用于项目管理、工作计划、科学计算等场景。提供详细换算公式和实际应用指南。"
+      content: "Week to Second Converter - Practical time unit conversion tool. Supports precise conversion from weeks to seconds (s), suitable for project management, work planning, scientific computing and other scenarios. Provides detailed conversion formulas and practical application guides."
   - - meta
     - name: keywords
-      content: "周到秒换算器, 时间单位换算, 周转秒, week to second, 秒计算器, 项目管理, 工作计划, 时间规划, 科学计算, 时间换算工具"
+      content: "week to second converter, time unit conversion, week to s, second calculator, project management, work planning, time planning, scientific computing, time conversion tool"
 ---
-# 周 (week) 到 秒 (s) 的换算
+# Week to Second (s) Conversion
 
-周到秒的换算在项目管理、工作计划和科学计算中非常实用。无论是制定详细的项目时间表、计算工作效率，还是进行科学实验的时间分析，准确的周到秒转换都能帮助您更好地掌控时间。我们的换算器提供精确的转换结果，满足各种专业需求。
+Week to second conversion is very practical in project management, work planning, and scientific computing. Whether creating detailed project schedules, calculating work efficiency, or conducting time analysis for scientific experiments, accurate week to second conversion helps you better control time. Our converter provides precise conversion results to meet various professional needs.
 
 ---
 <script setup>
@@ -33,8 +33,8 @@ const convert = inject('convert')
 const form = reactive({
   number: null,
   result: '',
-  title: '周到秒换算器',
-  seoKey: ['周到秒换算', '秒计算器', '项目管理', '工作计划', '时间规划', '科学计算', '效率计算', '时间管理']
+  title: 'Week to Second Converter',
+  seoKey: ['week to second conversion', 'second calculator', 'project management', 'work planning', 'time planning', 'scientific computing', 'efficiency calculation', 'time management']
 })
 
 const seoKey = form.seoKey
@@ -42,20 +42,20 @@ const seoKey = form.seoKey
 const convertHandler = () => {
   if (form.number !== null && !isNaN(form.number)) {
     const convertedValue = parseFloat(form.number) * 604800
-    form.result = `${form.number}week = ${convertedValue.toFixed(2)}s`
+    form.result = `${form.number} week = ${convertedValue.toFixed(2)} s`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-card :title="form.title" size="small" :bordered="false" style="margin-bottom: 16px">
   <n-form size="large" :model="form">
-    <n-form-item label="周 (week)">
-      <n-input-number v-model:value="form.number" placeholder="输入周" style="width: 100%" />
+    <n-form-item label="Week">
+      <n-input-number v-model:value="form.number" placeholder="Enter weeks" style="width: 100%" />
     </n-form-item>
     <n-form-item>
-      <n-button type="info" @click="convertHandler" block>换算</n-button>
+      <n-button type="info" @click="convertHandler" block>Convert</n-button>
     </n-form-item>
   </n-form>
   <template #footer>
@@ -73,38 +73,39 @@ const convertHandler = () => {
   </div>
 </n-card>
 
-## 公式
+## Formula
 
-从 **周 (week)** 换算到 **秒 (s)** 的公式为：
+The formula for converting from **weeks** to **seconds (s)** is:
 $$ s = week \times 604800 $$
 
-### 示例
-- 1week = 604800s
-- 5week = 3,024,000s
-- 0.1week = 60,480s
+### Examples
+- 1 week = 604,800 s
+- 5 weeks = 3,024,000 s
+- 0.1 week = 60,480 s
 
-## 实际应用场景
+## Practical Application Scenarios
 
-### 项目管理
-在项目管理中，周到秒的换算帮助项目经理精确计算项目时长和资源分配。例如，一个8周的项目包含4,838,400秒的工作时间，便于制定详细的任务分解和进度跟踪。
+### Project Management
+In project management, week to second conversion helps project managers accurately calculate project duration and resource allocation. For example, an 8-week project contains 4,838,400 seconds of work time, facilitating detailed task breakdown and progress tracking.
 
-### 工作计划
-制定工作计划时，将周期性任务转换为秒有助于更精确的时间管理。比如，每周40小时的工作时间相当于144,000秒，便于计算工作效率和产出。
+### Work Planning
+When creating work plans, converting periodic tasks to seconds helps with more precise time management. For instance, 40 hours of work per week equals 144,000 seconds, making it easier to calculate work efficiency and output.
 
-### 科学计算
-在科学研究和数据分析中，实验周期需要转换为秒进行精确计算。例如，一个为期12周的观测实验包含7,257,600秒的数据采集时间。
+### Scientific Computing
+In scientific research and data analysis, experimental cycles need to be converted to seconds for precise calculations. For example, a 12-week observation experiment includes 7,257,600 seconds of data collection time.
 
-## 常见问题 (FAQ)
+## Frequently Asked Questions (FAQ)
 
-**Q: 周到秒的换算公式是如何得出的？**
-A: 1周 = 7天 × 24小时 × 3600秒 = 604,800秒。这是基于标准时间单位的精确换算。
+**Q: How is the week to second conversion formula derived?**
+A: 1 week = 7 days × 24 hours × 3600 seconds = 604,800 seconds. This is a precise conversion based on standard time units.
 
-**Q: 这个换算在项目管理中实用吗？**
-A: 非常实用，特别是在需要精确时间控制的项目中，如软件开发、制造业等领域。
+**Q: Is this conversion practical in project management?**
+A: Very practical, especially in projects requiring precise time control, such as software development, manufacturing, and other fields.
 
-**Q: 如何处理不完整的周？**
-A: 可以使用小数表示，例如1.5周 = 907,200秒，换算器支持小数输入。
-## 相关连接
+**Q: How to handle incomplete weeks?**
+A: You can use decimals, for example, 1.5 weeks = 907,200 seconds. The converter supports decimal input.
+
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Time" :key="index">
     <n-button

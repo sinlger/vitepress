@@ -4,22 +4,22 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Time/index
-      linkText: 时间换算
+      linkText: Time Conversion
   - - link: /Time/Day-to-Year
-      linkText: 天到年
+      linkText: Day to Year
 head:
   - - meta
     - name: description
-      content: "专业的天到年换算器在线使用工具。快速进行天(d)到年(year)的时间单位转换，提供精确的换算公式和实用的时间计算功能。支持历史研究、长期规划等年度时间换算应用场景。"
+      content: "Professional day to year converter online tool. Quickly convert days (d) to years with precise conversion formulas and practical time calculation functions. Supports historical research, long-term planning, and other annual time conversion application scenarios."
   - - meta
     - name: keywords
-      content: "天到年换算, 天换算年, 时间单位转换, 天年换算器, d到year换算, 时间换算器在线使用, 历史研究, 天数转年, 时间单位换算, 天转换年, 年换算, 时间转换器, 天换年公式, 长期规划, 年度计算"
+      content: "day to year conversion, day to year converter, time unit conversion, day year calculator, d to year conversion, online time converter, historical research, days to years, time unit calculator, year conversion, time converter, day to year formula, long-term planning, annual calculation"
 ---
-# 天 (d) 到 年 (year) 的换算
+# Day (d) to Year Conversion
 
-天到年换算是历史研究和长期规划中重要的时间单位转换。在历史事件分析、人生规划、投资理财、学术研究等场景中，经常需要将天数转换为年份进行宏观的时间分析和长期规划。我们的天到年换算器在线使用工具提供快速、精确的d到year换算功能，帮助您轻松完成各种年度时间计算需求。
+Day to year conversion is an important time unit conversion in historical research and long-term planning. In scenarios such as historical event analysis, life planning, investment and finance, and academic research, it's often necessary to convert days to years for macro time analysis and long-term planning. Our day to year converter online tool provides fast and accurate d to year conversion functionality, helping you easily complete various annual time calculation needs.
 
 ---
 <script setup>
@@ -30,12 +30,12 @@ import { Time } from '../files';
 
 const convert = inject('convert')
 
-const seoKey = ['天到年换算','天换算年','时间单位转换','天年换算器','d到year换算','时间换算器在线使用','历史研究','天数转年','天转换年','年换算','时间转换器','天换年公式','长期规划','年度计算','天','年','时间换算','时间单位']
+const seoKey = ['day to year conversion','day to year converter','time unit conversion','day year calculator','d to year conversion','online time converter','historical research','days to years','time unit calculator','year conversion','time converter','day to year formula','long-term planning','annual calculation','day','year','time conversion','time unit']
 
 const form = reactive({
   number: null,
   result: '',
-  title: '天到年换算器',
+  title: 'Day to Year Converter',
 })
 
 const convertHandler = () => {
@@ -43,17 +43,17 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) / 365
     form.result = `${form.number}d = ${convertedValue.toFixed(4)}year`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="天 (d)">
-    <n-input-number v-model:value="form.number" placeholder="输入天" style="width: 100%" />
+  <n-form-item label="Days (d)">
+    <n-input-number v-model:value="form.number" placeholder="Enter days" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
@@ -74,16 +74,16 @@ const convertHandler = () => {
   </template>
 </n-card>
 
-## 公式
+## Formula
 
-从 **天 (d)** 换算到 **年 (year)** 的公式为：
+The formula for converting from **Days (d)** to **Years** is:
 $$ year = \frac{d}{365} $$
 
-### 示例
+### Examples
 - 365d = 1year
 - 36.5d = 0.1year
 - 182.5d = 0.5year
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Time" :key="index">
     <n-button
@@ -97,50 +97,50 @@ $$ year = \frac{d}{365} $$
   </n-gi>
 </n-grid>
 
-## 实际应用场景
+## Practical Application Scenarios
 
-天到年换算在多个领域都有重要应用：
+Day to year conversion has important applications in multiple fields:
 
-### 历史研究
-- **历史事件分析**：历史事件持续时间的年份计算
-- **考古学研究**：文物年代和历史时期的时间换算
-- **文献研究**：古代文献中时间记录的现代换算
-- **历史比较**：不同历史时期时间跨度的对比分析
+### Historical Research
+- **Historical Event Analysis**: Year calculation for the duration of historical events
+- **Archaeological Research**: Time conversion for artifact dating and historical periods
+- **Literature Research**: Modern conversion of time records in ancient documents
+- **Historical Comparison**: Comparative analysis of time spans across different historical periods
 
-### 人生规划
-- **职业规划**：工作经验和职业发展的年限计算
-- **教育规划**：学习时间和教育周期的年度安排
-- **退休规划**：退休储蓄和养老规划的时间计算
-- **人生目标**：长期目标实现时间的年度规划
+### Life Planning
+- **Career Planning**: Year calculation for work experience and career development
+- **Education Planning**: Annual arrangement of study time and educational cycles
+- **Retirement Planning**: Time calculation for retirement savings and pension planning
+- **Life Goals**: Annual planning for long-term goal achievement
 
-### 投资理财
-- **投资周期**：投资项目持续时间的年度计算
-- **复利计算**：长期投资收益的年化计算
-- **保险规划**：保险期限和缴费年限的计算
-- **财务规划**：长期财务目标的时间规划
+### Investment and Finance
+- **Investment Cycles**: Annual calculation for investment project duration
+- **Compound Interest Calculation**: Annualized calculation for long-term investment returns
+- **Insurance Planning**: Calculation of insurance terms and premium payment periods
+- **Financial Planning**: Time planning for long-term financial goals
 
-### 学术研究
-- **科学实验**：长期实验项目的年度时间规划
-- **数据分析**：长期数据收集和分析的时间计算
-- **项目管理**：大型研究项目的年度进度管理
-- **学术生涯**：学术研究和发表的时间规划
+### Academic Research
+- **Scientific Experiments**: Annual time planning for long-term experimental projects
+- **Data Analysis**: Time calculation for long-term data collection and analysis
+- **Project Management**: Annual progress management for large research projects
+- **Academic Career**: Time planning for academic research and publications
 
-## 常见问题 (FAQ)
+## Frequently Asked Questions (FAQ)
 
-### Q: 天到年的换算公式是什么？
-A: 基本公式为：年 = 天 ÷ 365。但需要考虑闰年，更精确的平均值是365.25天/年。
+### Q: What is the conversion formula from days to years?
+A: The basic formula is: years = days ÷ 365. However, considering leap years, the more accurate average is 365.25 days/year.
 
-### Q: 为什么要考虑闰年？
-A: 每4年有一个闰年（366天），所以平均每年365.25天。长期计算时使用这个值更准确。
+### Q: Why consider leap years?
+A: Every 4 years there is a leap year (366 days), so the average is 365.25 days per year. Using this value is more accurate for long-term calculations.
 
-### Q: 如何处理不足一年的天数？
-A: 可以用小数表示，如400天 ≈ 1.1年，或者分别表示为1年35天。
+### Q: How to handle days less than one year?
+A: You can use decimals, such as 400 days ≈ 1.1 years, or express separately as 1 year and 35 days.
 
-### Q: 历史研究中如何准确换算？
-A: 历史研究需要考虑不同历法系统，如儒略历、格里高利历等，换算时需要特别注意。
+### Q: How to accurately convert in historical research?
+A: Historical research needs to consider different calendar systems, such as Julian calendar, Gregorian calendar, etc. Special attention is needed during conversion.
 
-### Q: 投资计算中年的定义？
-A: 金融计算中通常使用365天或360天作为一年，具体取决于计算标准和金融产品类型。
+### Q: How is a year defined in investment calculations?
+A: In financial calculations, usually 365 days or 360 days are used as one year, depending on calculation standards and financial product types.
 
-### Q: 如何验证换算结果？
-A: 可以通过逆向计算验证，即将年数乘以365（或365.25）应该接近原始天数。
+### Q: How to verify conversion results?
+A: You can verify through reverse calculation - multiplying the years by 365 (or 365.25) should be close to the original number of days.

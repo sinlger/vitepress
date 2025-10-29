@@ -4,22 +4,22 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Time/index
-      linkText: 时间换算
+      linkText: Time Conversion
   - - link: /Time/Microsecond-to-Day
-      linkText: 微秒到天
+      linkText: Microsecond to Day
 head:
   - - meta
     - name: description
-      content: "专业的微秒(μs)到天(d)换算器，支持精确的时间单位转换。了解微秒、毫秒、纳秒、秒等时间单位换算公式和实际应用。提供microseconds、milliseconds等英文单位换算指南。"
+      content: "Professional microsecond (μs) to day (d) converter, supporting precise time unit conversion. Learn about microsecond, millisecond, nanosecond, second time unit conversion formulas and practical applications. Provides microseconds, milliseconds and other English unit conversion guides."
   - - meta
     - name: keywords
-      content: "微秒到天, μs, microseconds, 时间单位, 单位换算, 微秒单位, 毫秒, milliseconds, 纳秒, ns, 秒, seconds, ms是毫秒吗, us和ns, ps和ns换算, s和ms, microsecond, 微秒符号, 时间换算器, 微秒和秒的换算, 毫秒和秒, 飞秒, 皮秒"
+      content: "microsecond to day, μs, microseconds, time units, unit conversion, microsecond unit, millisecond, milliseconds, nanosecond, ns, second, seconds, is ms millisecond, us and ns, ps and ns conversion, s and ms, microsecond, microsecond symbol, time converter, microsecond and second conversion, millisecond and second, femtosecond, picosecond"
 ---
-# 微秒 (μs) 到 天 (d) 的换算
+# Microsecond (μs) to Day (d) Conversion
 
-微秒到天的换算在科学计算、数据分析和长期时间统计中具有重要意义。微秒(μs)作为极小的时间单位，常用于精密测量和高频计算，而天(d)则是日常生活中常用的时间单位。了解微秒、毫秒(ms)、纳秒(ns)、秒(s)等时间单位之间的换算关系，对于处理大数据时间序列分析、科学实验数据处理以及系统性能监控等场景至关重要。本换算器支持microseconds到天的精确转换，帮助您快速完成时间单位换算。
+Microsecond to day conversion is of great significance in scientific calculations, data analysis, and long-term time statistics. Microseconds (μs) as extremely small time units are commonly used in precision measurements and high-frequency calculations, while days (d) are time units commonly used in daily life. Understanding the conversion relationships between time units such as microseconds, milliseconds (ms), nanoseconds (ns), and seconds (s) is crucial for handling big data time series analysis, scientific experimental data processing, and system performance monitoring scenarios. This converter supports precise conversion from microseconds to days, helping you quickly complete time unit conversions.
 
 ---
 <script setup>
@@ -30,21 +30,21 @@ import { Time } from '../files';
 
 const convert = inject('convert')
 const seoKey = [
-  'us和ns', 'ms是毫秒吗', 'ps和ns换算', 's和ms', 'ms等于多少s',
-  'ns和s换算', 'ms与s的换算', '一微秒等于多少秒', '微秒单位', 'microseconds是多少秒',
-  's和ms换算', '皮秒和飞秒', '秒 毫秒', 'ns是什么单位', 'μs是什么单位',
-  '秒单位', '微妙和秒的换算', '微妙单位', 'ms和s', '毫秒英文',
-  'milliseconds是多少秒', '微秒 毫秒', '毫秒和秒', '微秒和秒的换算', 'us是多少秒',
-  '微秒和秒', 'µs', 'microsec', '微秒符号', 'ms和s的换算',
-  'sec是什么单位', '秒的英文', 'μs', 'microsecond', 'ms是什么单位',
-  '纳秒', 'microseconds', 'ms to s', '时间单位', '飞秒',
-  'millisecond', 'milliseconds', '毫秒', '一秒等于多少毫秒', 'seconds',
-  '毫秒和秒的换算'
+  'us and ns', 'is ms millisecond', 'ps and ns conversion', 's and ms', 'how many s equals ms',
+  'ns and s conversion', 'ms and s conversion', 'one microsecond equals how many seconds', 'microsecond unit', 'how many seconds is microseconds',
+  's and ms conversion', 'picosecond and femtosecond', 'second millisecond', 'what unit is ns', 'what unit is μs',
+  'second unit', 'microsecond and second conversion', 'microsecond unit', 'ms and s', 'millisecond english',
+  'how many seconds is milliseconds', 'microsecond millisecond', 'millisecond and second', 'microsecond and second conversion', 'how many seconds is us',
+  'microsecond and second', 'µs', 'microsec', 'microsecond symbol', 'ms and s conversion',
+  'what unit is sec', 'second english', 'μs', 'microsecond', 'what unit is ms',
+  'nanosecond', 'microseconds', 'ms to s', 'time units', 'femtosecond',
+  'millisecond', 'milliseconds', 'millisecond', 'one second equals how many milliseconds', 'seconds',
+  'millisecond and second conversion'
 ]
 const form = reactive({
   number: null,
   result: '',
-  title:'微秒（μs）到天（d）换算器',
+  title:'Microsecond (μs) to Day (d) Converter',
 })
 
 const convertHandler = () => {
@@ -52,17 +52,17 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) / 86400000000
     form.result = `${form.number}μs = ${convertedValue.toFixed(12)}d`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="微秒 (μs)">
-    <n-input-number v-model:value="form.number" placeholder="输入微秒" style="width: 100%" />
+  <n-form-item label="Microseconds (μs)">
+    <n-input-number v-model:value="form.number" placeholder="Enter microseconds" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
@@ -79,50 +79,50 @@ const convertHandler = () => {
   </template>
 </n-card>
 
-## 公式
+## Formula
 
-从 **微秒 (μs)** 换算到 **天 (d)** 的公式为：
+The formula for converting from **Microseconds (μs)** to **Days (d)** is:
 $$ d = \frac{\mu s}{8.64 \times 10^{10}} $$
 
-### 示例
+### Examples
 - 8.64 × 10¹⁰ μs = 1d
 - 8.64 × 10⁹ μs = 0.1d
 - 4.32 × 10¹⁰ μs = 0.5d
 
-## 实际应用场景
+## Practical Application Scenarios
 
-### 科学数据分析
-在处理大型科学实验数据时，经常需要将微秒级的测量数据转换为天数，用于长期趋势分析和数据可视化。
+### Scientific Data Analysis
+When processing large-scale scientific experimental data, it's often necessary to convert microsecond-level measurement data to days for long-term trend analysis and data visualization.
 
-### 系统性能监控
-服务器和数据库系统的性能监控中，微秒级的响应时间数据需要转换为天数，以便进行长期性能评估和容量规划。
+### System Performance Monitoring
+In server and database system performance monitoring, microsecond-level response time data needs to be converted to days for long-term performance evaluation and capacity planning.
 
-### 时间序列分析
-在金融、气象、物联网等领域的时间序列数据分析中，微秒精度的时间戳需要转换为天数进行周期性分析。
+### Time Series Analysis
+In time series data analysis in finance, meteorology, IoT and other fields, microsecond-precision timestamps need to be converted to days for periodic analysis.
 
-### 精密计时应用
-在GPS定位、原子钟同步、高频交易等需要极高时间精度的应用中，微秒到天的换算用于校准和同步。
+### Precision Timing Applications
+In applications requiring extremely high time precision such as GPS positioning, atomic clock synchronization, and high-frequency trading, microsecond to day conversion is used for calibration and synchronization.
 
-## 常见问题 (FAQ)
+## Frequently Asked Questions (FAQ)
 
-### Q: 微秒(μs)和毫秒(ms)有什么区别？
-A: 1毫秒(ms) = 1000微秒(μs)。毫秒是milliseconds的缩写，微秒是microseconds的缩写，微秒比毫秒更小的时间单位。
+### Q: What's the difference between microseconds (μs) and milliseconds (ms)?
+A: 1 millisecond (ms) = 1000 microseconds (μs). Millisecond is the abbreviation for milliseconds, microsecond is the abbreviation for microseconds, and microseconds are smaller time units than milliseconds.
 
-### Q: 为什么要用8.64×10¹⁰来除？
-A: 因为1天 = 24小时 × 3600秒/小时 × 1,000,000微秒/秒 = 86,400,000,000微秒，即8.64×10¹⁰微秒。
+### Q: Why divide by 8.64×10¹⁰?
+A: Because 1 day = 24 hours × 3600 seconds/hour × 1,000,000 microseconds/second = 86,400,000,000 microseconds, which is 8.64×10¹⁰ microseconds.
 
-### Q: 微秒符号μs中的μ怎么输入？
-A: μ是希腊字母mu，可以通过输入法的特殊符号或者复制粘贴获得。在编程中也常用"us"代替"μs"。
+### Q: How to input the μ symbol in microseconds μs?
+A: μ is the Greek letter mu, which can be obtained through special symbols in input methods or copy-paste. In programming, "us" is often used instead of "μs".
 
-### Q: 纳秒(ns)和微秒(μs)的换算关系是什么？
-A: 1微秒(μs) = 1000纳秒(ns)。纳秒是比微秒更小的时间单位。
+### Q: What's the conversion relationship between nanoseconds (ns) and microseconds (μs)?
+A: 1 microsecond (μs) = 1000 nanoseconds (ns). Nanoseconds are smaller time units than microseconds.
 
-### Q: 在编程中如何处理微秒到天的换算？
-A: 可以使用公式 days = microseconds / 86400000000，注意处理浮点数精度问题，建议使用高精度数值类型。
+### Q: How to handle microsecond to day conversion in programming?
+A: You can use the formula days = microseconds / 86400000000, paying attention to floating-point precision issues, and it's recommended to use high-precision numeric types.
 
-### Q: 如何验证换算结果的准确性？
-A: 可以通过反向计算验证：将结果的天数乘以86,400,000,000，应该等于原始的微秒数值。
-## 相关连接
+### Q: How to verify the accuracy of conversion results?
+A: You can verify through reverse calculation: multiply the resulting days by 86,400,000,000, which should equal the original microsecond value.
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Time" :key="index">
     <n-button

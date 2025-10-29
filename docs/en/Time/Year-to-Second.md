@@ -4,22 +4,22 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Time/index
-      linkText: 时间换算
+      linkText: Time Conversion
   - - link: /Time/Year-to-Second
-      linkText: 年到秒
+      linkText: Year to Second
 head:
   - - meta
     - name: description
-      content: "年到秒换算器 - 精确的年(year)到秒(second)时间单位转换工具。支持科学计算、工程设计、数据分析等应用场景。使用公式 year × 31557600 进行换算，提供详细的计算步骤和实际应用案例。"
+      content: "Year to Second Converter - Accurate year to second time unit conversion tool. Supports scientific computing, engineering calculations, data analysis and other application scenarios. Uses the formula year × 31536000 for conversion, providing detailed calculation steps and practical application cases."
   - - meta
     - name: keywords
-      content: "年到秒换算器, 时间单位换算, 年转秒, year to second, 科学计算, 工程设计, 数据分析, 时间规划, 年秒转换, 时间计算器"
+      content: "year to second converter, time unit conversion, year to second, year to second, scientific computing, engineering calculations, data analysis, time measurement, year second conversion, time calculator"
 ---
-# 年 (year) 到 秒 (s) 的换算
+# Year to Second Conversion
 
-年到秒的换算在科学计算、工程设计和数据分析中具有重要意义。通过将年份转换为秒，我们可以进行精确的时间计算，支持物理实验、工程项目和数据处理。这种换算特别适用于科学研究、系统设计和性能分析等场景。
+Year to second conversion is of great significance in scientific computing, engineering calculations, and data analysis. Second-level time precision is the foundation of many scientific calculations and engineering applications. By converting years to seconds, we can perform precise time calculations, data processing, and scientific analysis.
 
 ---
 <script setup>
@@ -33,27 +33,27 @@ const convert = inject('convert')
 const form = reactive({
   number: null,
   result: '',
-  title: '年到秒换算器',
-  seoKey: ['年到秒', '科学计算', '工程设计', '数据分析', '时间规划', '年秒转换', '时间计算器', 'year to second']
+  title: 'Year to Second Converter',
+  seoKey: ['year to second', 'scientific computing', 'engineering calculations', 'data analysis', 'time measurement', 'year second conversion', 'time calculator', 'year to second']
 })
 
 const convertHandler = () => {
   if (form.number !== null && !isNaN(form.number)) {
     const convertedValue = parseFloat(form.number) * 31536000
-    form.result = `${form.number}年 = ${convertedValue.toFixed(0)}秒`
+    form.result = `${form.number} year = ${convertedValue.toFixed(0)} seconds`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-card :title="form.title" embedded hoverable>
   <n-form size="large" :model="form">
-    <n-form-item label="年">
-      <n-input-number v-model:value="form.number" placeholder="输入年数" style="width: 100%" />
+    <n-form-item label="Year">
+      <n-input-number v-model:value="form.number" placeholder="Enter years" style="width: 100%" />
     </n-form-item>
     <n-form-item>
-      <n-button type="info" @click="convertHandler" block>换算</n-button>
+      <n-button type="info" @click="convertHandler" block>Convert</n-button>
     </n-form-item>
   </n-form>
 
@@ -72,48 +72,48 @@ const convertHandler = () => {
   </template>
 </n-card>
 
-## 公式
+## Formula
 
-从 **年** 换算到 **秒** 的公式为：
-$$ s = year \times 31557600 $$
+The formula for converting from **year** to **second** is:
+$$ s = year \times 31536000 $$
 
-### 示例
-- 1年 = 31557600秒
-- 2年 = 63115200秒
-- 0.5年 = 15778800秒
+### Examples
+- 1 year = 31536000 seconds
+- 2 years = 63072000 seconds
+- 0.5 year = 15768000 seconds
 
-## 实际应用场景
+## Practical Application Scenarios
 
-### 科学计算
-在科学研究和实验中：
-- 物理实验的时间测量
-- 天文观测的时间计算
-- 化学反应的时间分析
+### Scientific Computing
+In scientific research and data analysis:
+- Time series data processing
+- Physical experiment duration calculation
+- Statistical analysis time intervals
 
-### 工程设计
-在工程项目和系统设计中：
-- 系统运行时间计算
-- 设备寿命评估
-- 项目周期规划
+### Engineering Calculations
+In engineering design and analysis:
+- System operation time calculation
+- Equipment lifecycle analysis
+- Process duration optimization
 
-### 数据分析
-在数据处理和统计分析中：
-- 时间序列数据处理
-- 性能指标计算
-- 趋势分析和预测
+### Data Analysis
+In data science and analytics:
+- Time-based data aggregation
+- Performance metrics calculation
+- Temporal pattern analysis
 
-## 常见问题 (FAQ)
+## Frequently Asked Questions (FAQ)
 
-**Q: 31557600这个数值是如何计算的？**
-A: 1年 = 365.25天 × 24小时 × 3600秒 = 31,557,600秒。这里使用365.25天是考虑了闰年的平均值。
+**Q: Why is the year to second conversion commonly used in scientific computing?**
+A: Seconds are the standard SI unit for time, making them essential for scientific calculations, data processing, and international standard compliance.
 
-**Q: 为什么不是365天而是365.25天？**
-A: 因为每4年有一个闰年，所以平均每年是365.25天，这样计算更准确。
+**Q: How is the value 31536000 calculated?**
+A: 1 year = 365 days × 24 hours × 3600 seconds = 31,536,000 seconds. This is based on a standard year calculation.
 
-**Q: 这种换算在编程中有什么用途？**
-A: 在编程中经常需要处理时间戳、计算时间间隔、设置定时器等，年到秒的换算是基础的时间计算。
+**Q: How to handle leap years in conversion?**
+A: A leap year has 366 days, so 1 leap year = 366 days × 24 hours × 3600 seconds = 31,622,400 seconds.
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Time" :key="index">
     <n-button

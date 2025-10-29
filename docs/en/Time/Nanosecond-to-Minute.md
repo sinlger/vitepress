@@ -4,22 +4,22 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Time/index
-      linkText: 时间换算
+      linkText: Time Conversion
   - - link: /Time/Nanosecond-to-Minute
-      linkText: 纳秒到分钟
+      linkText: Nanosecond to Minute
 head:
   - - meta
     - name: description
-      content: "纳秒到分钟换算器 - 精确的ns到min时间单位转换工具。支持纳秒(nanosecond)与分钟(minute)之间的快速换算，适用于科学实验、系统监控、工程计算等领域。提供详细的换算公式、实际应用场景和常见问题解答。"
+      content: "Nanosecond to Minute Converter - Precise ns to min time unit conversion tool. Supports fast conversion between nanoseconds and minutes, suitable for scientific experiments, system monitoring, engineering calculations fields. Provides detailed conversion formulas, practical application scenarios, and frequently asked questions."
   - - meta
     - name: keywords
-      content: "纳秒, 分钟, ns, min, 时间单位换算, 纳秒到分钟, 分钟换算, nanosecond, minute, 时间换算器, 科学实验, 系统监控, 工程计算, 时间测量, 精密计时, 时间单位转换, 纳秒分钟换算, 时间计算工具"
+      content: "nanosecond, minute, ns, min, time unit conversion, nanosecond to minute, minute conversion, nanosecond, minute, time converter, scientific experiments, system monitoring, engineering calculations, time measurement, precision timing, time unit conversion, nanosecond minute conversion, time calculation tool"
 ---
-# 纳秒 (ns) 到 分钟 (min) 的换算
+# Nanosecond (ns) to Minute (min) Conversion
 
-纳秒到分钟的换算在科学实验和系统监控中具有重要意义。无论是进行长期实验数据分析、系统性能监控，还是进行工程项目的时间计算，掌握纳秒(nanosecond)与分钟(minute)之间的换算关系都是必要技能。理解各种时间单位的换算方法，包括纳秒的英文表示(ns)、分钟符号(min)等时间单位的使用，有助于我们在处理跨时间尺度的精密计算和分析时更加准确。
+The conversion from nanoseconds to minutes has important significance in scientific experiments and system monitoring. Whether it's for long-term experimental data analysis, system performance monitoring, or engineering project time calculations, mastering the conversion relationship between nanoseconds and minutes is a necessary skill. Understanding various time unit conversion methods, including the English representation of nanoseconds (ns), minute symbols (min), and other time unit usage, helps us be more accurate when handling precision calculations and analysis across time scales.
 
 ---
 <script setup>
@@ -29,11 +29,11 @@ import { defineClientComponent } from 'vitepress'
 import { Time } from '../files';
 
 const convert = inject('convert')
-const seoKey = ['ns','min','分钟','纳秒','时间单位换算','时间换算','毫秒微秒','分秒换算','秒单位换算','秒','毫秒','微秒','纳秒','ns和min换算','时间的单位','分钟的换算','一分钟等于多少纳秒','微秒和纳秒','微秒单位','ms单位','一毫秒','ns是什么单位','秒单位','微妙和秒的换算','一秒多少毫秒','纳秒和微秒','秒换算','时间换算单位','us是多少秒','多少毫秒等于一秒','纳秒和分钟的换算','一秒是多少毫秒','秒的单位','一毫秒等于多少秒','时间单位换算','nanosecond','ms是什么单位','minute','时间单位','微秒','秒','一秒等于多少毫秒','毫秒和秒的换算','分钟','minute']
+const seoKey = ['ns','min','minute','nanosecond','time unit conversion','time conversion','millisecond microsecond','minute second conversion','second unit conversion','second','millisecond','microsecond','nanosecond','ns and min conversion','time units','minute conversion','how many nanoseconds in a minute','microsecond and nanosecond','microsecond unit','ms unit','one millisecond','what is ns unit','second unit','microsecond and second conversion','how many milliseconds in a second','nanosecond and microsecond','second conversion','time unit conversion','us is how many seconds','how many milliseconds equal one second','nanosecond and minute conversion','how many milliseconds in one second','second unit','how many seconds in one millisecond','time unit conversion','nanosecond','what is ms unit','minute','time unit','microsecond','second','how many milliseconds equal one second','millisecond and second conversion','minute','minute']
 const form = reactive({
   number: null,
   result: '',
-  title: '纳秒到分钟换算器'
+  title: 'Nanosecond to Minute Converter'
 })
 
 const convertHandler = () => {
@@ -41,17 +41,17 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) / 60000000000
     form.result = `${form.number}ns = ${convertedValue.toFixed(12)}min`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="纳秒 (ns)">
-    <n-input-number v-model:value="form.number" placeholder="输入纳秒" style="width: 100%" />
+  <n-form-item label="Nanoseconds (ns)">
+    <n-input-number v-model:value="form.number" placeholder="Enter nanoseconds" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
@@ -68,50 +68,50 @@ const convertHandler = () => {
   </template>
 </n-card>
 
-## 公式
+## Formula
 
-从 **纳秒 (ns)** 换算到 **分钟 (min)** 的公式为：
+The formula for converting from **nanoseconds (ns)** to **minutes (min)** is:
 $$ min = \frac{ns}{6 \times 10^{10}} $$
 
-### 示例
+### Examples
 - 60,000,000,000ns = 1min
 - 300,000,000,000ns = 5min
 - 6,000,000,000ns = 0.1min
 
-## 实际应用场景
+## Practical Application Scenarios
 
-### 1. 科学实验数据分析
-在物理和化学实验中，反应时间和测量数据通常以纳秒记录，需要转换为分钟进行实验周期分析和结果评估。
+### 1. Scientific Experimental Data Analysis
+In physics and chemistry experiments, reaction times and measurement data are typically recorded in nanoseconds and need to be converted to minutes for experimental cycle analysis and result evaluation.
 
-### 2. 系统性能监控
-在计算机系统监控中，累积的纳秒级操作时间需要转换为分钟进行系统运行状态评估和性能报告。
+### 2. System Performance Monitoring
+In computer system monitoring, accumulated nanosecond-level operation times need to be converted to minutes for system operational status assessment and performance reporting.
 
-### 3. 工程项目时间计算
-在精密工程项目中，设备运行时间和工艺过程时间需要进行纳秒到分钟的换算，用于项目进度管理。
+### 3. Engineering Project Time Calculations
+In precision engineering projects, equipment operation times and process times require nanosecond to minute conversion for project progress management.
 
-### 4. 实验设备校准
-在精密测量设备的校准过程中，时间精度验证需要进行纳秒到分钟级别的时间换算和分析。
+### 4. Experimental Equipment Calibration
+In the calibration process of precision measurement equipment, time accuracy verification requires nanosecond to minute level time conversion and analysis.
 
-## 常见问题 (FAQ)
+## Frequently Asked Questions (FAQ)
 
-### Q1: 纳秒和分钟的换算关系是什么？
-A1: 1分钟 = 6 × 10¹⁰纳秒。这个换算基于1分钟 = 60秒 = 6 × 10¹⁰纳秒的时间关系。
+### Q1: What is the conversion relationship between nanoseconds and minutes?
+A1: 1 minute = 6 × 10¹⁰ nanoseconds. This conversion is based on the time relationship of 1 minute = 60 seconds = 6 × 10¹⁰ nanoseconds.
 
-### Q2: 为什么换算系数是6 × 10¹⁰？
-A2: 这个系数来源于时间单位的层级关系：1分钟 = 60秒 × 10⁹纳秒/秒 = 6 × 10¹⁰纳秒。
+### Q2: Why is the conversion factor 6 × 10¹⁰?
+A2: This factor comes from the hierarchical relationship of time units: 1 minute = 60 seconds × 10⁹ nanoseconds/second = 6 × 10¹⁰ nanoseconds.
 
-### Q3: min是什么单位？
-A3: min是分钟(minute)的标准缩写符号，表示60秒，是常用的时间单位。
+### Q3: What unit is min?
+A3: min is the standard abbreviation for minute, representing 60 seconds, which is a commonly used time unit.
 
-### Q4: 一分钟等于多少纳秒？
-A4: 1分钟 = 6 × 10¹⁰纳秒 = 60,000,000,000纳秒，这是跨时间尺度的重要换算。
+### Q4: How many nanoseconds equal one minute?
+A4: 1 minute = 6 × 10¹⁰ nanoseconds = 60,000,000,000 nanoseconds, which is an important conversion across time scales.
 
-### Q5: 如何在科学计算中进行纳秒到分钟的换算？
-A5: 可以使用除法运算：minutes = nanoseconds ÷ (6 × 10¹⁰)，或使用科学计算软件进行精确转换。
+### Q5: How to perform nanosecond to minute conversion in scientific calculations?
+A5: You can use division: minutes = nanoseconds ÷ (6 × 10¹⁰), or use scientific computing software for precise conversion.
 
-### Q6: 纳秒到分钟的换算在什么情况下最常用？
-A6: 主要用于科学实验分析、系统性能监控、工程时间计算、精密设备校准等需要跨时间尺度分析的场景。
-## 相关连接
+### Q6: When is nanosecond to minute conversion most commonly used?
+A6: It's mainly used in scenarios requiring cross-time scale analysis such as scientific experimental analysis, system performance monitoring, engineering time calculations, and precision equipment calibration.
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Time" :key="index">
     <n-button

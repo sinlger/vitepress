@@ -4,20 +4,20 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Time/index
-      linkText: 时间换算
+      linkText: Time Conversion
   - - link: /Time/Month-to-Microsecond
-      linkText: 月到微秒
+      linkText: Month to Microsecond
 head:
   - - meta
     - name: description
-      content: "月 (month) 到 微秒 (μs) 的时间单位换算指南。了解如何通过公式 month × 2.628 × 10¹⁵ 换算为微秒。"
+      content: "Month (month) to Microsecond (μs) time unit conversion guide. Learn how to convert using the formula month × 2.592 × 10¹² to microseconds."
   - - meta
     - name: keywords
-      content: "时间, 单位换算, 月, 微秒, month, μs, 月到微秒, 时间换算指南"
+      content: "time, unit conversion, month, microsecond, month, μs, month to microsecond, time conversion guide"
 ---
-# 月 (month) 到 微秒 (μs) 的换算
+# Month (month) to Microsecond (μs) Conversion
 
 ---
 <script setup>
@@ -38,17 +38,17 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) * 2592000000000
     form.result = `${form.number}month = ${convertedValue.toFixed(0)}μs`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="月 (month)">
-    <n-input-number v-model:value="form.number" placeholder="输入月" style="width: 100%" />
+  <n-form-item label="Months (month)">
+    <n-input-number v-model:value="form.number" placeholder="Enter months" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
@@ -58,16 +58,16 @@ const convertHandler = () => {
   </div>
 </n-card>
 
-## 公式
+## Formula
 
-从 **月 (month)** 换算到 **微秒 (μs)** 的公式为：
+The formula for converting from **months (month)** to **microseconds (μs)** is:
 $$ \mu s = month \times 2.592 \times 10^{12} $$
 
-### 示例
+### Examples
 - 1month = 2.592 × 10¹² μs
 - 5month = 1.296 × 10¹³ μs
 - 0.1month = 2.592 × 10¹¹ μs
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Time" :key="index">
     <n-button

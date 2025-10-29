@@ -4,22 +4,22 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Time/index
-      linkText: 时间换算
+      linkText: Time Conversion
   - - link: /Time/Microsecond-to-Millisecond
-      linkText: 微秒到毫秒
+      linkText: Microsecond to Millisecond
 head:
   - - meta
     - name: description
-      content: "专业的微秒(μs)到毫秒(ms)换算器，支持精确的时间单位转换。了解微秒、毫秒、纳秒、秒等时间单位换算公式和实际应用。提供microseconds、milliseconds等英文单位换算指南。"
+      content: "Professional microsecond (μs) to millisecond (ms) converter, supporting precise time unit conversion. Learn about microsecond, millisecond, nanosecond, second time unit conversion formulas and practical applications. Provides microseconds, milliseconds and other English unit conversion guides."
   - - meta
     - name: keywords
-      content: "微秒到毫秒, μs, ms, microseconds, milliseconds, 时间单位, 单位换算, 微秒单位, 毫秒单位, 纳秒, ns, 秒, seconds, ms是毫秒吗, us和ns, ps和ns换算, s和ms, microsecond, 微秒符号, 时间换算器, 微秒和秒的换算, 毫秒和秒"
+      content: "microsecond to millisecond, μs, ms, microseconds, milliseconds, time units, unit conversion, microsecond unit, millisecond unit, nanosecond, ns, second, seconds, is ms millisecond, us and ns, ps and ns conversion, s and ms, microsecond, microsecond symbol, time converter, microsecond and second conversion, millisecond and second"
 ---
-# 微秒 (μs) 到 毫秒 (ms) 的换算
+# Microsecond (μs) to Millisecond (ms) Conversion
 
-微秒到毫秒的换算在程序开发、性能测试和系统监控中具有重要意义。微秒(μs)和毫秒(ms)都是常用的精密时间单位，其中毫秒在Web开发、移动应用和游戏开发中应用广泛。了解微秒、毫秒、纳秒(ns)、秒(s)等时间单位之间的换算关系，对于处理JavaScript定时器、数据库查询优化、API响应时间分析等场景至关重要。本换算器支持microseconds到milliseconds的精确转换，帮助您快速完成时间单位换算。
+Microsecond to millisecond conversion is of great significance in program development, performance testing, and system monitoring. Both microseconds (μs) and milliseconds (ms) are commonly used precision time units, with milliseconds being widely used in web development, mobile applications, and game development. Understanding the conversion relationships between time units such as microseconds, milliseconds, nanoseconds (ns), and seconds (s) is crucial for handling JavaScript timers, database query optimization, API response time analysis, and other scenarios. This converter supports precise conversion from microseconds to milliseconds, helping you quickly complete time unit conversions.
 
 ---
 <script setup>
@@ -30,21 +30,21 @@ import { Time } from '../files';
 
 const convert = inject('convert')
 const seoKey = [
-  'us和ns', 'ms是毫秒吗', 'ps和ns换算', 's和ms', 'ms等于多少s',
-  'ns和s换算', 'ms与s的换算', '一微秒等于多少秒', '微秒单位', 'microseconds是多少秒',
-  's和ms换算', '皮秒和飞秒', '秒 毫秒', 'ns是什么单位', 'μs是什么单位',
-  '秒单位', '微妙和秒的换算', '微妙单位', 'ms和s', '毫秒英文',
-  'milliseconds是多少秒', '微秒 毫秒', '毫秒和秒', '微秒和秒的换算', 'us是多少秒',
-  '微秒和秒', 'µs', 'microsec', '微秒符号', 'ms和s的换算',
-  'sec是什么单位', '秒的英文', 'μs', 'microsecond', 'ms是什么单位',
-  '纳秒', 'microseconds', 'ms to s', '时间单位', '飞秒',
-  'millisecond', 'milliseconds', '毫秒', '一秒等于多少毫秒', 'seconds',
-  '毫秒和秒的换算'
+  'us and ns', 'is ms millisecond', 'ps and ns conversion', 's and ms', 'how many s equals ms',
+  'ns and s conversion', 'ms and s conversion', 'one microsecond equals how many seconds', 'microsecond unit', 'how many seconds is microseconds',
+  's and ms conversion', 'picosecond and femtosecond', 'second millisecond', 'what unit is ns', 'what unit is μs',
+  'second unit', 'microsecond and second conversion', 'microsecond unit', 'ms and s', 'millisecond english',
+  'how many seconds is milliseconds', 'microsecond millisecond', 'millisecond and second', 'microsecond and second conversion', 'how many seconds is us',
+  'microsecond and second', 'µs', 'microsec', 'microsecond symbol', 'ms and s conversion',
+  'what unit is sec', 'second english', 'μs', 'microsecond', 'what unit is ms',
+  'nanosecond', 'microseconds', 'ms to s', 'time units', 'femtosecond',
+  'millisecond', 'milliseconds', 'millisecond', 'one second equals how many milliseconds', 'seconds',
+  'millisecond and second conversion'
 ]
 const form = reactive({
   number: null,
   result: '',
-  title:'微秒到毫秒换算器',
+  title:'Microsecond to Millisecond Converter',
 })
 
 const convertHandler = () => {
@@ -52,17 +52,17 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) / 1000
     form.result = `${form.number}μs = ${convertedValue.toFixed(6)}ms`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="微秒 (μs)">
-    <n-input-number v-model:value="form.number" placeholder="输入微秒" style="width: 100%" />
+  <n-form-item label="Microseconds (μs)">
+    <n-input-number v-model:value="form.number" placeholder="Enter microseconds" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
@@ -79,50 +79,50 @@ const convertHandler = () => {
   </template>
 </n-card>
 
-## 公式
+## Formula
 
-从 **微秒 (μs)** 换算到 **毫秒 (ms)** 的公式为：
+The formula for converting from **Microseconds (μs)** to **Milliseconds (ms)** is:
 $$ ms = \frac{\mu s}{1000} $$
 
-### 示例
+### Examples
 - 1000μs = 1ms
 - 5000μs = 5ms
 - 1000000μs = 1000ms
 
-## 实际应用场景
+## Practical Application Scenarios
 
-### Web开发
-在JavaScript开发中，setTimeout和setInterval函数使用毫秒作为时间单位，而某些性能监控工具可能提供微秒级数据，需要进行换算。
+### Web Development
+In JavaScript development, setTimeout and setInterval functions use milliseconds as time units, while some performance monitoring tools may provide microsecond-level data that needs conversion.
 
-### 数据库优化
-数据库查询性能分析中，微秒级的执行时间数据需要转换为毫秒，便于开发人员理解和优化查询性能。
+### Database Optimization
+In database query performance analysis, microsecond-level execution time data needs to be converted to milliseconds for developers to understand and optimize query performance.
 
-### API响应时间分析
-RESTful API和微服务的响应时间监控中，微秒级的精确测量数据需要转换为毫秒，用于性能基准测试和SLA监控。
+### API Response Time Analysis
+In RESTful API and microservice response time monitoring, microsecond-level precise measurement data needs to be converted to milliseconds for performance benchmarking and SLA monitoring.
 
-### 游戏开发
-在游戏引擎中，帧率计算和动画时间控制常使用毫秒，而底层系统可能提供微秒级的时间戳数据。
+### Game Development
+In game engines, frame rate calculation and animation time control commonly use milliseconds, while underlying systems may provide microsecond-level timestamp data.
 
-## 常见问题 (FAQ)
+## Frequently Asked Questions (FAQ)
 
-### Q: 微秒(μs)和毫秒(ms)有什么区别？
-A: 1毫秒(ms) = 1000微秒(μs)。毫秒是milliseconds的缩写，微秒是microseconds的缩写，毫秒比微秒大1000倍。
+### Q: What's the difference between microseconds (μs) and milliseconds (ms)?
+A: 1 millisecond (ms) = 1000 microseconds (μs). Millisecond is the abbreviation for milliseconds, microsecond is the abbreviation for microseconds, and milliseconds are 1000 times larger than microseconds.
 
-### Q: 为什么要除以1000？
-A: 因为1毫秒 = 1000微秒，所以微秒数除以1000就得到毫秒数。这是最简单的换算关系。
+### Q: Why divide by 1000?
+A: Because 1 millisecond = 1000 microseconds, dividing microseconds by 1000 gives milliseconds. This is the simplest conversion relationship.
 
-### Q: JavaScript中如何处理毫秒？
-A: JavaScript的Date.now()返回毫秒时间戳，setTimeout()和setInterval()也使用毫秒作为时间单位。
+### Q: How to handle milliseconds in JavaScript?
+A: JavaScript's Date.now() returns millisecond timestamps, and setTimeout() and setInterval() also use milliseconds as time units.
 
-### Q: 毫秒在编程中有什么用途？
-A: 毫秒广泛用于定时器、动画、性能测量、网络延迟计算等场景，是程序开发中最常用的时间精度。
+### Q: What are the uses of milliseconds in programming?
+A: Milliseconds are widely used in timers, animations, performance measurement, network latency calculation, and other scenarios. They are the most commonly used time precision in program development.
 
-### Q: 如何在代码中进行微秒到毫秒的换算？
-A: 使用公式 milliseconds = microseconds / 1000，大多数编程语言都支持这种简单的除法运算。
+### Q: How to perform microsecond to millisecond conversion in code?
+A: Use the formula milliseconds = microseconds / 1000. Most programming languages support this simple division operation.
 
-### Q: 换算结果的精度如何保证？
-A: 由于是除以1000的整数运算，精度损失很小。如需更高精度，可以使用浮点数或高精度数值类型。
-## 相关连接
+### Q: How to ensure the precision of conversion results?
+A: Since it's a division by 1000 integer operation, precision loss is minimal. For higher precision, you can use floating-point numbers or high-precision numeric types.
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Time" :key="index">
     <n-button

@@ -4,22 +4,22 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Time/index
-      linkText: 时间换算
+      linkText: Time Conversion
   - - link: /Time/Hour-to-Day
-      linkText: 小时到天
+      linkText: Hour to Day
 head:
   - - meta
     - name: description
-      content: "专业的小时到天在线换算器，支持h到d的精确转换。提供时间单位换算公式、实时计算器和详细换算指南，满足工程计算、项目管理等各种应用需求。"
+      content: "Professional hour to day online converter, supporting precise h to d conversion. Provides time unit conversion formulas, real-time calculator, and detailed conversion guide to meet various application needs in engineering calculations, project management, and more."
   - - meta
     - name: keywords
-      content: "小时到天换算器, 时间单位转换, h到d转换, 小时单位, 时间换算器在线使用, 时间计算器 小时, 小时的单位, 时间符号, 小时英文, hours, hour, 时间换算, 分钟, 秒"
+      content: "hour to day converter, time unit conversion, h to d conversion, hour unit, online time converter, hour calculator, hour unit, time symbol, hour english, hours, hour, time conversion, minute, second"
 ---
-# 小时 (h) 到 天 (d) 的换算
+# Hour (h) to Day (d) Conversion
 
-小时到天的换算是时间单位转换中的重要环节，广泛应用于工程计算、项目管理、工作时间统计等领域。我们的在线时间换算器提供精确的h到d转换功能，帮助您快速完成各种时间单位换算需求。无论是计算工作小时数对应的天数，还是进行科学研究中的时间计算，这个工具都能为您提供准确可靠的结果。
+Hour to day conversion is an important part of time unit conversion, widely used in engineering calculations, project management, work time statistics, and other fields. Our online time converter provides precise h to d conversion functionality, helping you quickly complete various time unit conversion needs. Whether calculating the number of days corresponding to work hours or performing time calculations in scientific research, this tool can provide you with accurate and reliable results.
 
 ---
 <script setup>
@@ -30,40 +30,40 @@ import { Time } from '../files';
 
 const convert = inject('convert')
 const seoKey = [
-  '时分等于秒的单位',
-  '秒转换',
-  '秒的符号',
-  '小时单位',
-  '小时的单位',
-  '时间符号',
-  '秒换算小时',
-  'hours什么意思',
-  '分钟的单位',
-  'h是什么单位',
-  '时间计算器 小时',
-  '时间换算单位',
-  '时间单位转换',
-  'hr是什么单位',
-  '时间换算器在线使用',
-  '时分秒符号',
-  '小时的英文',
-  '小时英文',
-  '秒的单位换算',
-  '分秒符号',
-  '分钟单位',
-  '时间单位换算',
-  '时间转换器',
-  '分钟缩写',
-  '时间换算',
-  '分钟',
-  '秒',
+  'time units equal to seconds',
+  'second conversion',
+  'second symbol',
+  'hour unit',
+  'hour unit',
+  'time symbol',
+  'second to hour conversion',
+  'hours meaning',
+  'minute unit',
+  'h unit',
+  'hour calculator',
+  'time conversion units',
+  'time unit conversion',
+  'hr unit',
+  'online time converter',
+  'hour minute second symbol',
+  'hour english',
+  'hour english',
+  'second unit conversion',
+  'minute second symbol',
+  'minute unit',
+  'time unit conversion',
+  'time converter',
+  'minute abbreviation',
+  'time conversion',
+  'minute',
+  'second',
   'hour',
   'hours'
 ]
 const form = reactive({
   number: null,
   result: '',
-  title: '小时到天换算器'
+  title: 'Hour to Day Converter'
 })
 
 const convertHandler = () => {
@@ -71,17 +71,17 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) / 24
     form.result = `${form.number}h = ${convertedValue.toFixed(3)}d`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="小时 (h)">
-    <n-input-number v-model:value="form.number" placeholder="输入小时" style="width: 100%" />
+  <n-form-item label="Hours (h)">
+    <n-input-number v-model:value="form.number" placeholder="Enter hours" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
@@ -98,50 +98,50 @@ const convertHandler = () => {
   </template>
 </n-card>
 
-## 公式
+## Formula
 
-从 **小时 (h)** 换算到 **天 (d)** 的公式为：
+The formula for converting from **Hours (h)** to **Days (d)** is:
 $$ d = \frac{h}{24} $$
 
-### 示例
+### Examples
 - 24h = 1d
 - 12h = 0.5d
 - 2.4h = 0.1d
 
-## 实际应用场景
+## Practical Application Scenarios
 
-### 工程计算
-在工程项目中，经常需要将设备运行小时数转换为天数，用于维护计划制定和成本核算。
+### Engineering Calculations
+In engineering projects, it's often necessary to convert equipment operating hours to days for maintenance planning and cost accounting.
 
-### 项目管理
-项目经理需要将工作小时数转换为工作天数，便于制定项目进度计划和资源分配。
+### Project Management
+Project managers need to convert work hours to work days for project schedule planning and resource allocation.
 
-### 工作时间统计
-人力资源部门在计算员工工作时间时，需要将累计工作小时数转换为工作天数进行统计分析。
+### Work Time Statistics
+Human resources departments need to convert accumulated work hours to work days for statistical analysis when calculating employee work time.
 
-### 科学研究
-在实验数据分析中，研究人员经常需要将观测小时数转换为天数，便于数据可视化和趋势分析。
+### Scientific Research
+In experimental data analysis, researchers often need to convert observation hours to days for data visualization and trend analysis.
 
-## 常见问题 (FAQ)
+## Frequently Asked Questions (FAQ)
 
-### 1. 小时到天的换算公式是什么？
-小时到天的换算公式为：天数 = 小时数 ÷ 24。这是因为一天等于24小时。
+### 1. What is the conversion formula from hours to days?
+The conversion formula from hours to days is: days = hours ÷ 24. This is because one day equals 24 hours.
 
-### 2. 为什么一天是24小时？
-一天24小时的划分源于古代文明的时间计量系统，现已成为国际标准时间单位。
+### 2. Why is one day 24 hours?
+The division of one day into 24 hours originates from ancient civilization time measurement systems and has now become the international standard time unit.
 
-### 3. 如何快速心算小时到天的转换？
-可以记住常用换算：24小时=1天，12小时=0.5天，6小时=0.25天，这样可以快速估算。
+### 3. How to quickly calculate hour to day conversion mentally?
+You can remember common conversions: 24 hours = 1 day, 12 hours = 0.5 day, 6 hours = 0.25 day, which allows for quick estimation.
 
-### 4. 工作日和自然日在换算中有区别吗？
-在时间单位换算中，通常指自然日（24小时），工作日的概念主要用于工作时间计算。
+### 4. Is there a difference between working days and natural days in conversion?
+In time unit conversion, it usually refers to natural days (24 hours), while the concept of working days is mainly used for work time calculations.
 
-### 5. 如何在编程中实现小时到天的转换？
-在大多数编程语言中，可以使用除法运算：days = hours / 24。
+### 5. How to implement hour to day conversion in programming?
+In most programming languages, you can use division: days = hours / 24.
 
-### 6. 如何验证换算结果的准确性？
-可以使用反向计算验证：将得到的天数乘以24，应该等于原始的小时数。
-## 相关连接
+### 6. How to verify the accuracy of conversion results?
+You can use reverse calculation for verification: multiply the obtained days by 24, which should equal the original number of hours.
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Time" :key="index">
     <n-button

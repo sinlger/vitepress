@@ -4,22 +4,22 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Time/index
-      linkText: 时间换算
+      linkText: Time Conversion
   - - link: /Time/Second-to-Day
-      linkText: 秒到天
+      linkText: Second to Day
 head:
   - - meta
     - name: description
-      content: "秒到天换算器 - 精确的s到d时间单位转换工具。支持秒(second)与天(day)之间的快速换算，适用于时间管理、项目规划、科学计算等领域。提供详细的换算公式、实际应用场景和常见问题解答。"
+      content: "Second to Day Converter - Precise s to d time unit conversion tool. Supports quick conversion between seconds and days, suitable for time management, project planning, scientific calculations, and more. Provides detailed conversion formulas, practical application scenarios, and frequently asked questions."
   - - meta
     - name: keywords
-      content: "秒, 天, s, d, 时间单位换算, 秒到天, 天换算, second, day, 时间换算器, 毫秒微秒, 分秒换算, 秒单位换算, 秒转换, s是什么单位, 小时单位, 秒的换算, 时间秒, 秒换算小时, 时间转化, 一秒, 秒的定义, 秒单位, 秒换算, 分秒符号, 一秒是多少毫秒, 一毫秒等于多少秒, 秒的英文, 纳秒, 时间秒, 时间单位, 时间换算, 分钟, 一秒等于多少毫秒"
+      content: "second, day, s, d, time unit conversion, second to day, day conversion, second, day, time converter, millisecond microsecond, minute second conversion, second unit conversion, second conversion, what is s unit, hour unit, second conversion, time second, second to hour conversion, time transformation, one second, second definition, second unit, second conversion, minute second symbol, how many milliseconds in one second, how many seconds in one millisecond, second in English, nanosecond, time second, time unit, time conversion, minute, one second equals how many milliseconds"
 ---
-# 秒 (s) 到 天 (d) 的换算
+# Second (s) to Day (d) Conversion
 
-秒到天的换算在时间管理和项目规划中具有重要作用。无论是进行工作时间统计、项目进度计算，还是进行科学研究的时间分析，掌握秒(second)与天(day)之间的换算关系都是必要的技能。理解各种时间单位的换算方法，包括秒的英文表示(s)、天单位等时间概念的使用，有助于我们在处理日常时间计算和长期规划时更加准确。
+Second to day conversion plays an important role in time management and project planning. Whether conducting work time statistics, project progress calculations, or time analysis in scientific research, mastering the conversion relationship between seconds and days is a necessary skill. Understanding various time unit conversion methods, including the English representation of seconds (s) and day units, helps us be more accurate when handling daily time calculations and long-term planning.
 
 ---
 <script setup>
@@ -29,11 +29,11 @@ import { defineClientComponent } from 'vitepress'
 import { Time } from '../files';
 
 const convert = inject('convert')
-const seoKey = ['毫秒微秒','分秒换算','秒单位换算','秒转换','s是什么单位','小时单位','秒的换算','时间 秒','秒换算小时','时间转化','一秒','秒的定义','秒单位','秒 時間 変換','秒换算','分秒符号','一秒是多少毫秒','一毫秒等于多少秒','秒的英文','纳秒','时间秒','时间单位','时间换算','分钟','一秒等于多少毫秒']
+const seoKey = ['millisecond microsecond','minute second conversion','second unit conversion','second conversion','what is s unit','hour unit','second conversion','time second','second to hour conversion','time transformation','one second','second definition','second unit','second time conversion','second conversion','minute second symbol','how many milliseconds in one second','how many seconds in one millisecond','second in English','nanosecond','time second','time unit','time conversion','minute','one second equals how many milliseconds']
 const form = reactive({
   number: null,
   result: '',
-  title: '秒到天换算器'
+  title: 'Second to Day Converter'
 })
 
 const convertHandler = () => {
@@ -41,18 +41,18 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) / 86400
     form.result = `${form.number}s = ${convertedValue.toFixed(5)}d`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-card :title="form.title" size="small" :bordered="false" style="margin-bottom: 16px">
   <n-form size="large" :model="form">
-    <n-form-item label="秒 (s)">
-      <n-input-number v-model:value="form.number" placeholder="输入秒" style="width: 100%" />
+    <n-form-item label="Second (s)">
+      <n-input-number v-model:value="form.number" placeholder="Enter seconds" style="width: 100%" />
     </n-form-item>
     <n-form-item>
-      <n-button type="info" @click="convertHandler" block>换算</n-button>
+      <n-button type="info" @click="convertHandler" block>Convert</n-button>
     </n-form-item>
   </n-form>
   <template #footer>
@@ -70,41 +70,41 @@ const convertHandler = () => {
   </div>
 </n-card>
 
-## 公式
+## Formula
 
-从 **秒 (s)** 换算到 **天 (d)** 的公式为：
+The formula for converting from **seconds (s)** to **days (d)** is:
 $$ d = \frac{s}{86400} $$
 
-### 示例
+### Examples
 - 86400s = 1d
 - 43200s = 0.5d
 - 8640s = 0.1d
 
-## 实际应用场景
+## Practical Application Scenarios
 
-### 工作时间统计
-在人力资源管理中，将员工的工作秒数转换为天数，有助于计算工作日、加班时间和项目工期的统计分析。
+### Work Time Statistics
+In human resource management, converting employee work seconds to days helps calculate working days, overtime hours, and statistical analysis of project duration.
 
-### 项目进度管理
-项目管理中经常需要将任务执行的秒数转换为天数，以便制定项目计划、评估项目进度和资源分配。
+### Project Progress Management
+Project management often requires converting task execution seconds to days for project planning, progress evaluation, and resource allocation.
 
-### 科学实验数据分析
-在科学研究中，实验设备记录的秒级数据需要转换为天的单位，便于进行长期趋势分析和实验结果的统计。
+### Scientific Experiment Data Analysis
+In scientific research, second-level data recorded by experimental equipment needs to be converted to day units for long-term trend analysis and statistical analysis of experimental results.
 
-### 系统运行时间计算
-服务器和系统监控中，将系统运行的秒数转换为天数，有助于评估系统稳定性和维护周期的规划。
+### System Runtime Calculation
+In server and system monitoring, converting system runtime seconds to days helps evaluate system stability and maintenance cycle planning.
 
-## 常见问题 (FAQ)
+## Frequently Asked Questions (FAQ)
 
-**Q: 为什么需要进行秒到天的换算？**
-A: 在时间管理、项目规划和数据分析中，经常需要将精确的秒级时间转换为更直观的天数单位，以便进行长期规划和统计分析。
+**Q: Why is second to day conversion needed?**
+A: In time management, project planning, and data analysis, it's often necessary to convert precise second-level time to more intuitive day units for long-term planning and statistical analysis.
 
-**Q: 秒到天的换算精度如何保证？**
-A: 使用标准的换算公式 s ÷ 86,400，其中86,400是一天的总秒数（24小时 × 60分钟 × 60秒），确保换算结果的准确性。
+**Q: How is the accuracy of second to day conversion ensured?**
+A: Using the standard conversion formula s ÷ 86,400, where 86,400 is the total seconds in a day (24 hours × 60 minutes × 60 seconds), ensuring the accuracy of conversion results.
 
-**Q: 在什么情况下会用到秒到天的换算？**
-A: 主要用于工作时间统计、项目进度管理、科学实验数据分析、系统运行时间计算等需要将短时间单位累积为长时间单位的场景。
-## 相关连接
+**Q: In what situations would second to day conversion be used?**
+A: Mainly used in work time statistics, project progress management, scientific experiment data analysis, system runtime calculation, and other scenarios that require accumulating short time units into long time units.
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Time" :key="index">
     <n-button

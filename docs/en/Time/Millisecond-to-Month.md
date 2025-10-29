@@ -4,24 +4,24 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Time/index
-      linkText: 时间换算
+      linkText: Time Conversion
   - - link: /Time/Millisecond-to-Month
-      linkText: 毫秒到月
+      linkText: Millisecond to Month
 head:
   - - meta
     - name: description
-      content: "毫秒到月换算器 - 精确的时间单位转换工具，支持milliseconds到months的快速换算。适用于长期数据分析、项目周期管理、历史数据处理等场景，提供毫秒(ms)、秒(s)、月等时间单位的换算关系和实际应用指导。"
+      content: "Millisecond to Month Converter - Precise time unit conversion tool, supporting fast conversion from milliseconds to months. Suitable for long-term data analysis, project cycle management, historical data processing and other scenarios, providing conversion relationships and practical application guidance for time units such as milliseconds (ms), seconds (s), months."
   - - meta
     - name: keywords
-      content: "毫秒到月,milliseconds to months,时间单位换算,ms转月,毫秒换算器,月换算,时间转换,长期数据分析,项目周期管理,历史数据处理,毫秒符号,时间单位,milliseconds,months,时间测量,长期计时"
+      content: "millisecond to month,milliseconds to months,time unit conversion,ms to month,millisecond converter,month conversion,time conversion,long-term data analysis,project cycle management,historical data processing,millisecond symbol,time unit,milliseconds,months,time measurement,long-term timing"
 ---
-# 毫秒 (ms) 到 月 (month) 的换算
+# Millisecond (ms) to Month (month) Conversion
 
-毫秒到月的换算在长期数据分析、项目周期管理和历史数据处理等应用中具有重要意义。无论是进行业务数据统计、项目进度跟踪，还是进行长期趋势分析，掌握毫秒与月之间的换算关系都是必不可少的。理解各种时间单位的换算方法，有助于我们在处理企业管理系统、数据分析平台和长期监控工具时更加得心应手。
+Millisecond to month conversion is of great significance in applications such as long-term data analysis, project cycle management, and historical data processing. Whether conducting business data statistics, project progress tracking, or long-term trend analysis, mastering the conversion relationship between milliseconds and months is essential. Understanding the conversion methods of various time units helps us become more proficient when dealing with enterprise management systems, data analysis platforms, and long-term monitoring tools.
 
-毫秒到月的换算是时间单位转换中的一个重要环节。
+Millisecond to month conversion is an important part of time unit conversion.
 
 ---
 <script setup>
@@ -35,16 +35,16 @@ const convert = inject('convert')
 const form = reactive({
   number: null,
   result: '',
-  title: '毫秒到月换算器',
+  title: 'Millisecond to Month Converter',
   seoKey: [
-    '毫秒到月', 'milliseconds to months', '时间单位换算', 'ms转月', '毫秒换算器',
-    '月换算', '时间转换', '长期数据分析', '项目周期管理', '历史数据处理', '毫秒符号',
-    '时间单位', 'milliseconds', 'months', '时间测量', '长期计时', '时间计算',
-    '单位转换', '时间工具', '换算公式', '时间换算表', '毫秒定义', '月定义',
-    '时间精度', '计时精度', '时间标准', '国际单位制', 'SI单位', '时间基准',
-    '时间刻度', '时间间隔', '持续时间', '时间跨度', '时间范围', '时间周期',
-    '时间频率', '时间节拍', '时间节奏', '时间控制', '时间同步', '时间校准',
-    '时间误差'
+    'millisecond to month', 'milliseconds to months', 'time unit conversion', 'ms to month', 'millisecond converter',
+    'month conversion', 'time conversion', 'long-term data analysis', 'project cycle management', 'historical data processing', 'millisecond symbol',
+    'time unit', 'milliseconds', 'months', 'time measurement', 'long-term timing', 'time calculation',
+    'unit conversion', 'time tool', 'conversion formula', 'time conversion table', 'millisecond definition', 'month definition',
+    'time precision', 'timing precision', 'time standard', 'international system of units', 'SI unit', 'time reference',
+    'time scale', 'time interval', 'duration', 'time span', 'time range', 'time period',
+    'time frequency', 'time beat', 'time rhythm', 'time control', 'time synchronization', 'time calibration',
+    'time error'
   ]
 })
 
@@ -53,17 +53,17 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) / 2592000000
     form.result = `${form.number}ms = ${convertedValue.toFixed(10)}month`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="毫秒 (ms)">
-    <n-input-number v-model:value="form.number" placeholder="输入毫秒" style="width: 100%" />
+  <n-form-item label="Milliseconds (ms)">
+    <n-input-number v-model:value="form.number" placeholder="Enter milliseconds" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
@@ -80,50 +80,50 @@ const convertHandler = () => {
     </template>
   </n-card>
 
-## 公式
+## Formula
 
-从 **毫秒 (ms)** 换算到 **月 (month)** 的公式为：
+The formula for converting from **milliseconds (ms)** to **months (month)** is:
 $$ month = \frac{ms}{2.592 \times 10^{9}} $$
 
-### 示例
+### Examples
 - 2.592 × 10⁹ ms = 1month
 - 2.592 × 10⁸ ms = 0.1month
 - 1.296 × 10⁹ ms = 0.5month
 
-## 实际应用场景
+## Practical Application Scenarios
 
-### 1. 长期数据分析
-在商业智能和数据分析系统中，需要将毫秒级的事件时间戳转换为月级别进行长期趋势分析和业务周期研究。
+### 1. Long-term Data Analysis
+In business intelligence and data analysis systems, millisecond-level event timestamps need to be converted to month level for long-term trend analysis and business cycle research.
 
-### 2. 项目周期管理
-在项目管理和企业资源规划系统中，毫秒级的任务执行时间需要转换为月级别进行项目进度跟踪和资源分配规划。
+### 2. Project Cycle Management
+In project management and enterprise resource planning systems, millisecond-level task execution times need to be converted to month level for project progress tracking and resource allocation planning.
 
-### 3. 历史数据处理
-在数据仓库和历史数据归档系统中，毫秒级的日志记录需要转换为月级别进行数据聚合和长期存储优化。
+### 3. Historical Data Processing
+In data warehouses and historical data archiving systems, millisecond-level log records need to be converted to month level for data aggregation and long-term storage optimization.
 
-### 4. 业务报表统计
-在财务系统和业务报表中，毫秒级的交易时间需要转换为月级别进行月度报表生成和业绩分析。
+### 4. Business Report Statistics
+In financial systems and business reports, millisecond-level transaction times need to be converted to month level for monthly report generation and performance analysis.
 
-## 常见问题 (FAQ)
+## Frequently Asked Questions (FAQ)
 
-### Q1: 毫秒和月的换算关系是什么？
-A1: 1个月约等于2,678,400,000毫秒（按30.44天计算）。这个换算基于平均月长度，实际月份天数会有所不同。
+### Q1: What is the conversion relationship between milliseconds and months?
+A1: 1 month equals approximately 2,678,400,000 milliseconds (calculated based on 30.44 days). This conversion is based on average month length, as actual month days vary.
 
-### Q2: 为什么换算系数是2,678,400,000？
-A2: 这个系数基于平均月长度30.44天计算：30.44天 × 24小时 × 3600秒 × 1000毫秒 = 2,678,400,000毫秒。
+### Q2: Why is the conversion factor 2,678,400,000?
+A2: This factor is calculated based on average month length of 30.44 days: 30.44 days × 24 hours × 3600 seconds × 1000 milliseconds = 2,678,400,000 milliseconds.
 
-### Q3: 不同月份的天数不同，如何处理？
-A3: 通常使用平均月长度（30.44天）进行换算。如需精确计算，应根据具体月份的实际天数进行换算。
+### Q3: How to handle different numbers of days in different months?
+A3: Usually the average month length (30.44 days) is used for conversion. For precise calculations, convert based on the actual number of days in the specific month.
 
-### Q4: 毫秒到月的换算在什么情况下有用？
-A4: 主要用于长期数据分析、项目周期管理、历史数据处理等需要将精确时间转换为月度统计的场景。
+### Q4: When is millisecond to month conversion useful?
+A4: It is mainly used in scenarios requiring conversion of precise time to monthly statistics, such as long-term data analysis, project cycle management, and historical data processing.
 
-### Q5: 编程中如何处理毫秒到月的换算？
-A5: 可以使用除法运算：months = milliseconds ÷ 2,678,400,000。注意处理浮点数精度和闰年等特殊情况。
+### Q5: How to handle millisecond to month conversion in programming?
+A5: You can use division: months = milliseconds ÷ 2,678,400,000. Pay attention to floating-point precision and special cases like leap years.
 
-### Q6: 如何验证毫秒到月换算结果的准确性？
-A6: 可以通过逆向换算验证：将结果（月）乘以2,678,400,000应该接近原始的毫秒数值，考虑到月份长度差异，允许一定误差范围。
-## 相关连接
+### Q6: How to verify the accuracy of millisecond to month conversion results?
+A6: You can verify through reverse conversion: multiply the result (months) by 2,678,400,000, which should be close to the original millisecond value. Consider month length differences and allow for some margin of error.
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Time" :key="index">
     <n-button

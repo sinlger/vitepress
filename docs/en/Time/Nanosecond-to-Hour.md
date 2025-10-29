@@ -4,22 +4,22 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Time/index
-      linkText: 时间换算
+      linkText: Time Conversion
   - - link: /Time/Nanosecond-to-Hour
-      linkText: 纳秒到小时
+      linkText: Nanosecond to Hour
 head:
   - - meta
     - name: description
-      content: "纳秒到小时换算器 - 精确的时间单位转换工具，支持nanosecond到hour的快速换算。提供纳秒(ns)、微秒、毫秒、秒、小时等时间单位的换算关系，适用于科学计算、工程测量等场景。在线时间换算器，支持ns和h换算。"
+      content: "Nanosecond to Hour Converter - Precise time unit conversion tool, supporting fast conversion from nanoseconds to hours. Provides conversion relationships for time units like nanoseconds (ns), microseconds, milliseconds, seconds, hours, suitable for scientific computing, engineering measurement scenarios. Online time converter with support for ns and h conversion."
   - - meta
     - name: keywords
-      content: "毫秒微秒,分秒换算,秒单位换算,秒,毫秒,微秒,纳秒,ns和s换算,时间的单位,秒的换算,一微秒等于多少秒,微秒和纳秒,微秒单位,ms单位,一毫秒,ns是什么单位,秒单位,微妙和秒的换算,一秒多少毫秒,纳秒和微秒,秒换算,时间换算单位,us是多少秒,多少毫秒等于一秒,纳秒和秒的换算,一秒是多少毫秒,秒的单位,一毫秒等于多少秒,时间单位换算,nanosecond,ms是什么单位,microseconds,时间单位,微秒,秒,一秒等于多少毫秒,毫秒和秒的换算,小时,hour"
+      content: "millisecond microsecond,time conversion,second unit conversion,second,millisecond,microsecond,nanosecond,ns and s conversion,time units,second conversion,how many seconds in a microsecond,microsecond and nanosecond,microsecond unit,ms unit,one millisecond,what is ns unit,second unit,microsecond and second conversion,how many milliseconds in a second,nanosecond and microsecond,second conversion,time unit conversion,how many seconds is us,how many milliseconds equal one second,nanosecond and second conversion,how many milliseconds in one second,second unit,how many seconds in one millisecond,time unit conversion,nanosecond,what is ms unit,microseconds,time unit,microsecond,second,how many milliseconds equal one second,millisecond and second conversion,hour,hours"
 ---
-# 纳秒 (ns) 到 小时 (h) 的换算
+# Nanosecond (ns) to Hour (h) Conversion
 
-纳秒到小时的换算在科学计算和工程测量中具有重要意义。无论是进行长期实验数据分析、系统运行时间统计，还是进行工程项目的时间规划，掌握纳秒(nanosecond)与小时(hour)之间的换算关系都是必不可少的。理解各种时间单位的换算方法，包括纳秒的英文表示(ns)、微秒(microseconds)、毫秒等时间单位符号的使用，有助于我们在处理跨时间尺度的计算和分析时更加准确。
+The conversion from nanoseconds to hours is of great significance in scientific computing and engineering measurement. Whether it's for long-term experimental data analysis, system runtime statistics, or time planning for engineering projects, mastering the conversion relationship between nanoseconds and hours is essential. Understanding various time unit conversion methods, including the English representation of nanoseconds (ns), microseconds, milliseconds, and other time unit symbols, helps us be more accurate when dealing with cross-timescale calculations and analysis.
 
 ---
 <script setup>
@@ -29,11 +29,11 @@ import { defineClientComponent } from 'vitepress'
 import { Time } from '../files';
 
 const convert = inject('convert')
-const seoKey = ['ns','hour','小时','纳秒','小时','时间单位换算','时间换算','毫秒微秒','分秒换算','秒单位换算','秒','毫秒','微秒','纳秒','ns和s换算','时间的单位','秒的换算','一微秒等于多少秒','微秒和纳秒','微秒单位','ms单位','一毫秒','ns是什么单位','秒单位','微妙和秒的换算','一秒多少毫秒','纳秒和微秒','秒换算','时间换算单位','us是多少秒','多少毫秒等于一秒','纳秒和秒的换算','一秒是多少毫秒','秒的单位','一毫秒等于多少秒','时间单位换算','nanosecond','ms是什么单位','microseconds','时间单位','微秒','秒','一秒等于多少毫秒','毫秒和秒的换算','小时','hour']
+const seoKey = ['ns','hour','hours','nanosecond','hours','time unit conversion','time conversion','millisecond microsecond','time conversion','second unit conversion','second','millisecond','microsecond','nanosecond','ns and s conversion','time units','second conversion','how many seconds in a microsecond','microsecond and nanosecond','microsecond unit','ms unit','one millisecond','what is ns unit','second unit','microsecond and second conversion','how many milliseconds in a second','nanosecond and microsecond','second conversion','time unit conversion','how many seconds is us','how many milliseconds equal one second','nanosecond and second conversion','how many milliseconds in one second','second unit','how many seconds in one millisecond','time unit conversion','nanosecond','what is ms unit','microseconds','time unit','microsecond','second','how many milliseconds equal one second','millisecond and second conversion','hour','hours']
 const form = reactive({
   number: null,
   result: '',
-  title: '纳秒到小时换算器'
+  title: 'Nanosecond to Hour Converter'
 })
 
 const convertHandler = () => {
@@ -41,17 +41,17 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) / 3600000000000
     form.result = `${form.number}ns = ${convertedValue.toFixed(12)}h`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="纳秒 (ns)">
-    <n-input-number v-model:value="form.number" placeholder="输入纳秒" style="width: 100%" />
+  <n-form-item label="Nanoseconds (ns)">
+    <n-input-number v-model:value="form.number" placeholder="Enter nanoseconds" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
@@ -68,50 +68,50 @@ const convertHandler = () => {
   </template>
 </n-card>
 
-## 公式
+## Formula
 
-从 **纳秒 (ns)** 换算到 **小时 (h)** 的公式为：
+The formula for converting from **nanoseconds (ns)** to **hours (h)** is:
 $$ h = \frac{ns}{3.6 \times 10^{12}} $$
 
-### 示例
+### Examples
 - 3.6 × 10¹² ns = 1h
 - 1.8 × 10¹³ ns = 5h
 - 3.6 × 10¹¹ ns = 0.1h
 
-## 实际应用场景
+## Practical Application Scenarios
 
-### 1. 长期实验数据分析
-在科学研究中，实验设备的纳秒级测量数据需要转换为小时进行长期趋势分析和实验周期评估。
+### 1. Long-term Experimental Data Analysis
+In scientific research, nanosecond-level measurement data from experimental equipment needs to be converted to hours for long-term trend analysis and experimental cycle evaluation.
 
-### 2. 系统运行时间统计
-在计算机系统监控中，累积的纳秒级操作时间需要转换为小时进行系统性能评估和维护计划制定。
+### 2. System Runtime Statistics
+In computer system monitoring, accumulated nanosecond-level operation times need to be converted to hours for system performance evaluation and maintenance planning.
 
-### 3. 工程项目时间规划
-在精密工程项目中，纳秒级的工艺时间需要转换为小时进行项目进度管理和资源分配。
+### 3. Engineering Project Time Planning
+In precision engineering projects, nanosecond-level process times need to be converted to hours for project progress management and resource allocation.
 
-### 4. 设备寿命评估
-在工业设备管理中，设备的纳秒级运行时间累积需要转换为小时进行寿命预测和维护安排。
+### 4. Equipment Lifetime Assessment
+In industrial equipment management, accumulated nanosecond-level equipment runtime needs to be converted to hours for lifetime prediction and maintenance scheduling.
 
-## 常见问题 (FAQ)
+## Frequently Asked Questions (FAQ)
 
-### Q1: 纳秒和小时的换算关系是什么？
-A1: 1小时 = 3.6 × 10¹²纳秒。这个换算基于1小时 = 3,600秒 = 3.6 × 10¹²纳秒的时间关系。
+### Q1: What is the conversion relationship between nanoseconds and hours?
+A1: 1 hour = 3.6 × 10¹² nanoseconds. This conversion is based on the time relationship: 1 hour = 3,600 seconds = 3.6 × 10¹² nanoseconds.
 
-### Q2: 为什么换算系数是3.6 × 10¹²？
-A2: 这个系数来源于时间单位的层级关系：1小时 = 3,600秒 × 10⁹纳秒/秒 = 3.6 × 10¹²纳秒。
+### Q2: Why is the conversion factor 3.6 × 10¹²?
+A2: This factor comes from the hierarchical relationship of time units: 1 hour = 3,600 seconds × 10⁹ nanoseconds/second = 3.6 × 10¹² nanoseconds.
 
-### Q3: ns是什么单位？
-A3: ns是纳秒(nanosecond)的标准缩写符号，表示10⁻⁹秒，是极短的时间单位。
+### Q3: What unit is ns?
+A3: ns is the standard abbreviation for nanosecond, representing 10⁻⁹ seconds, which is an extremely short time unit.
 
-### Q4: 一小时等于多少纳秒？
-A4: 1小时 = 3.6 × 10¹²纳秒 = 3,600,000,000,000纳秒，这是跨时间尺度的重要换算。
+### Q4: How many nanoseconds equal one hour?
+A4: 1 hour = 3.6 × 10¹² nanoseconds = 3,600,000,000,000 nanoseconds, which is an important cross-timescale conversion.
 
-### Q5: 如何在科学计算中进行纳秒到小时的换算？
-A5: 可以使用除法运算：hours = nanoseconds ÷ (3.6 × 10¹²)，或使用科学计算软件进行精确转换。
+### Q5: How to perform nanosecond to hour conversion in scientific calculations?
+A5: You can use division: hours = nanoseconds ÷ (3.6 × 10¹²), or use scientific computing software for precise conversion.
 
-### Q6: 纳秒到小时的换算在什么情况下最常用？
-A6: 主要用于长期数据分析、系统性能监控、实验周期规划等需要跨时间尺度分析的场景。
-## 相关连接
+### Q6: When is nanosecond to hour conversion most commonly used?
+A6: It's mainly used in scenarios requiring cross-timescale analysis such as long-term data analysis, system performance monitoring, and experimental cycle planning.
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Time" :key="index">
     <n-button

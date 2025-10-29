@@ -4,22 +4,22 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Time/index
-      linkText: 时间换算
+      linkText: Time Conversion
   - - link: /Time/Minute-to-Day
-      linkText: 分钟到天
+      linkText: Minutes to Days
 head:
   - - meta
     - name: description
-      content: "分钟到天换算器 - 精确的时间单位转换工具，支持minutes到days的快速换算。提供分钟(min)、小时、秒等时间单位的换算关系，适用于时间计算、工作规划等场景。在线时间换算器，支持时分秒符号转换。"
+      content: "Minutes to days converter - Precise time unit conversion tool supporting fast conversion from minutes to days. Provides conversion relationships for time units like minutes (min), hours, seconds, suitable for time calculation, work planning scenarios. Online time converter supporting hour-minute-second symbol conversion."
   - - meta
     - name: keywords
-      content: "分钟转换成小时,秒转换,小时单位,秒换算小时,分钟英文,时间换算单位,时间换算器在线使用,时分秒符号,分秒,分钟换算小时,minutes是什么意思中文,分秒符号,分钟转小时,分钟的缩写,min是分钟吗,分钟单位,分钟的英文,时间单位换算,时间计算器在线计算分钟,时间转换器,分钟缩写,小时,分钟英文,时间换算,mins,秒,minute,minutes,min"
+      content: "minutes to hours conversion,second conversion,hour unit,seconds to hours conversion,minute english,time unit conversion,online time converter,hour minute second symbols,minute second,minute to hour conversion,minutes meaning in chinese,minute second symbols,minute to hour,minute abbreviation,is min minute,minute unit,minute english,time unit conversion,online minute time calculator,time converter,minute abbreviation,hour,minute english,time conversion,mins,second,minute,minutes,min"
 ---
-# 分钟 (min) 到 天 (d) 的换算
+# Minutes (min) to Days (d) Conversion
 
-分钟到天的换算在日常生活和工作规划中具有重要意义。无论是进行时间计算、工作时间统计，还是进行项目规划，掌握分钟(minutes)与天(days)之间的换算关系都是必不可少的。理解各种时间单位的换算方法，包括分钟的英文表示(min)、时分秒符号的使用，有助于我们在处理时间相关的计算和规划时更加得心应手。
+The conversion from minutes to days is of great significance in daily life and work planning. Whether conducting time calculations, work time statistics, or project planning, mastering the conversion relationship between minutes and days is essential. Understanding the conversion methods of various time units, including the English representation of minutes (min) and the use of hour-minute-second symbols, helps us handle time-related calculations and planning with greater ease.
 
 ---
 <script setup>
@@ -28,18 +28,18 @@ import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage,N
 import { defineClientComponent } from 'vitepress'
 import { Time } from '../files';
 const seoKey = [
-  '分钟转换成小时', '秒转换', '小时单位', '秒换算小时', '分钟 英文',
-  '时间换算单位', '时间换算器在线使用', '时分秒符号', '分秒', '分钟换算小时',
-  'minutes是什么意思中文', '分秒符号', '分钟转小时', '分钟的缩写', 'min是分钟吗',
-  '分钟单位', '分钟的英文', '时间单位换算', '时间计算器在线计算 分钟', '时间转换器',
-  '分钟缩写', '小时', '分钟英文', '时间换算', 'mins', '秒', 'minute', 'minutes', 'min'
+  'minutes to hours conversion', 'second conversion', 'hour unit', 'seconds to hours conversion', 'minute english',
+  'time unit conversion', 'online time converter', 'hour minute second symbols', 'minute second', 'minute to hour conversion',
+  'minutes meaning in chinese', 'minute second symbols', 'minute to hour', 'minute abbreviation', 'is min minute',
+  'minute unit', 'minute english', 'time unit conversion', 'online minute time calculator', 'time converter',
+  'minute abbreviation', 'hour', 'minute english', 'time conversion', 'mins', 'second', 'minute', 'minutes', 'min'
 ]
 const convert = inject('convert')
 
 const form = reactive({
   number: null,
   result: '',
-  title: '分钟到天换算器'
+  title: 'Minutes to Days Converter'
 })
 
 const convertHandler = () => {
@@ -47,17 +47,17 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) / 1440
     form.result = `${form.number}min = ${convertedValue.toFixed(5)}d`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="分钟 (min)">
-    <n-input-number v-model:value="form.number" placeholder="输入分钟" style="width: 100%" />
+  <n-form-item label="Minutes (min)">
+    <n-input-number v-model:value="form.number" placeholder="Enter minutes" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
@@ -74,50 +74,50 @@ const convertHandler = () => {
   </template>
 </n-card>
 
-## 公式
+## Formula
 
-从 **分钟 (min)** 换算到 **天 (d)** 的公式为：
+The formula for converting from **minutes (min)** to **days (d)** is:
 $$ d = \frac{min}{1440} $$
 
-### 示例
+### Examples
 - 1440min = 1d
 - 144min = 0.1d
 - 720min = 0.5d
 
-## 实际应用场景
+## Practical Application Scenarios
 
-### 1. 工作时间统计
-在企业管理中，需要将员工的分钟级工作时间转换为天数进行薪资计算、绩效评估和工作量统计。
+### 1. Work Time Statistics
+In enterprise management, employee minute-level work time needs to be converted to days for salary calculation, performance evaluation, and workload statistics.
 
-### 2. 项目规划管理
-在项目管理中，将任务的分钟级执行时间转换为天数，便于制定项目计划、评估项目周期和资源分配。
+### 2. Project Planning Management
+In project management, converting minute-level task execution time to days facilitates project planning, project cycle assessment, and resource allocation.
 
-### 3. 设备运行时间
-在工业生产中，机器设备的分钟级运行时间需要转换为天数进行维护计划制定和设备寿命评估。
+### 3. Equipment Operating Time
+In industrial production, minute-level machine operating time needs to be converted to days for maintenance planning and equipment lifespan assessment.
 
-### 4. 学习时间管理
-在教育培训中，学生的分钟级学习时间需要转换为天数进行学习进度跟踪和课程安排优化。
+### 4. Learning Time Management
+In education and training, students' minute-level learning time needs to be converted to days for learning progress tracking and course scheduling optimization.
 
-## 常见问题 (FAQ)
+## Frequently Asked Questions (FAQ)
 
-### Q1: 分钟和天的换算关系是什么？
-A1: 1天 = 1,440分钟。这个换算基于1天 = 24小时 = 1,440分钟的时间关系。
+### Q1: What is the conversion relationship between minutes and days?
+A1: 1 day = 1,440 minutes. This conversion is based on the time relationship of 1 day = 24 hours = 1,440 minutes.
 
-### Q2: 为什么换算系数是1,440？
-A2: 这个系数来源于时间单位的层级关系：1天 = 24小时 × 60分钟 = 1,440分钟。
+### Q2: Why is the conversion factor 1,440?
+A2: This factor comes from the hierarchical relationship of time units: 1 day = 24 hours × 60 minutes = 1,440 minutes.
 
-### Q3: minutes是什么意思中文？
-A3: minutes的中文意思是"分钟"，是时间单位minute的复数形式，缩写为min。
+### Q3: What does "minutes" mean in Chinese?
+A3: "Minutes" means "分钟" in Chinese, which is the plural form of the time unit "minute", abbreviated as "min".
 
-### Q4: min是分钟吗？
-A4: 是的，min是分钟(minute)的标准缩写符号，在时分秒符号体系中广泛使用。
+### Q4: Is "min" minute?
+A4: Yes, "min" is the standard abbreviation symbol for minute, widely used in the hour-minute-second symbol system.
 
-### Q5: 如何在时间计算器中进行分钟到天的换算？
-A5: 可以使用除法运算：days = minutes ÷ 1,440，或使用在线时间换算器进行快速转换。
+### Q5: How to perform minute to day conversion in a time calculator?
+A5: You can use division: days = minutes ÷ 1,440, or use an online time converter for quick conversion.
 
-### Q6: 分钟转小时和分钟转天有什么区别？
-A6: 分钟转小时的系数是60（1小时=60分钟），而分钟转天的系数是1,440（1天=1,440分钟）。
-## 相关连接
+### Q6: What's the difference between minute to hour and minute to day conversion?
+A6: The factor for minute to hour conversion is 60 (1 hour = 60 minutes), while the factor for minute to day conversion is 1,440 (1 day = 1,440 minutes).
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Time" :key="index">
     <n-button

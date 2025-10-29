@@ -4,24 +4,24 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Time/index
-      linkText: 时间换算
+      linkText: Time Conversion
   - - link: /Time/Millisecond-to-Second
-      linkText: 毫秒到秒
+      linkText: Milliseconds to Seconds
 head:
   - - meta
     - name: description
-      content: "毫秒到秒换算器 - 精确的时间单位转换工具，支持milliseconds到seconds的快速换算。适用于编程开发、性能测试、计时应用等场景，提供毫秒(ms)、秒(s)等时间单位的换算关系和实际应用指导。"
+      content: "Milliseconds to seconds converter - Precise time unit conversion tool supporting fast conversion from milliseconds to seconds. Suitable for programming development, performance testing, timing applications, providing conversion relationships and practical application guidance for time units like milliseconds (ms), seconds (s)."
   - - meta
     - name: keywords
-      content: "毫秒到秒,milliseconds to seconds,时间单位换算,ms转秒,毫秒换算器,秒换算,时间转换,编程开发,性能测试,计时应用,毫秒符号,时间单位,milliseconds,seconds,时间测量,程序计时"
+      content: "milliseconds to seconds,time unit conversion,ms to s,millisecond converter,second conversion,time conversion,programming development,performance testing,timing applications,millisecond symbol,time units,milliseconds,seconds,time measurement,program timing"
 ---
-# 毫秒 (ms) 到 秒 (s) 的换算
+# Milliseconds (ms) to Seconds (s) Conversion
 
-毫秒到秒的换算在编程开发、性能测试和计时应用等技术领域中具有重要意义。无论是进行程序性能分析、API响应时间测量，还是进行精确的计时控制，掌握毫秒与秒之间的换算关系都是必不可少的。理解各种时间单位的换算方法，有助于我们在处理软件开发项目、系统性能优化和实时应用开发时更加得心应手。
+The conversion from milliseconds to seconds is of great significance in technical fields such as programming development, performance testing, and timing applications. Whether conducting program performance analysis, API response time measurement, or precise timing control, mastering the conversion relationship between milliseconds and seconds is essential. Understanding the conversion methods of various time units helps us handle software development projects, system performance optimization, and real-time application development with greater ease.
 
-毫秒到秒的换算是时间单位转换中的一个重要环节。
+The conversion from milliseconds to seconds is an important aspect of time unit conversion.
 
 ---
 <script setup>
@@ -35,16 +35,16 @@ const convert = inject('convert')
 const form = reactive({
   number: null,
   result: '',
-  title: '毫秒到秒换算器',
+  title: 'Milliseconds to Seconds Converter',
   seoKey: [
-    '毫秒到秒', 'milliseconds to seconds', '时间单位换算', 'ms转秒', '毫秒换算器',
-    '秒换算', '时间转换', '编程开发', '性能测试', '计时应用', '毫秒符号',
-    '时间单位', 'milliseconds', 'seconds', '时间测量', '程序计时', '时间计算',
-    '单位转换', '时间工具', '换算公式', '时间换算表', '毫秒定义', '秒定义',
-    '时间精度', '计时精度', '时间标准', '国际单位制', 'SI单位', '时间基准',
-    '时间刻度', '时间间隔', '持续时间', '时间跨度', '时间范围', '时间周期',
-    '时间频率', '时间节拍', '时间节奏', '时间控制', '时间同步', '时间校准',
-    '时间误差'
+    'milliseconds to seconds', 'time unit conversion', 'ms to s', 'millisecond converter',
+    'second conversion', 'time conversion', 'programming development', 'performance testing', 'timing applications', 'millisecond symbol',
+    'time units', 'milliseconds', 'seconds', 'time measurement', 'program timing', 'time calculation',
+    'unit conversion', 'time tools', 'conversion formula', 'time conversion table', 'millisecond definition', 'second definition',
+    'time precision', 'timing precision', 'time standard', 'international system of units', 'SI units', 'time reference',
+    'time scale', 'time interval', 'duration', 'time span', 'time range', 'time period',
+    'time frequency', 'time beat', 'time rhythm', 'time control', 'time synchronization', 'time calibration',
+    'time error'
   ]
 })
 
@@ -53,17 +53,17 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) / 1000
     form.result = `${form.number}ms = ${convertedValue.toFixed(3)}s`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="毫秒 (ms)">
-    <n-input-number v-model:value="form.number" placeholder="输入毫秒" style="width: 100%" />
+  <n-form-item label="Milliseconds (ms)">
+    <n-input-number v-model:value="form.number" placeholder="Enter milliseconds" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
@@ -80,50 +80,50 @@ const convertHandler = () => {
   </template>
 </n-card>
 
-## 公式
+## Formula
 
-从 **毫秒 (ms)** 换算到 **秒 (s)** 的公式为：
+The formula for converting from **milliseconds (ms)** to **seconds (s)** is:
 $$ s = \frac{ms}{1000} $$
 
-### 示例
+### Examples
 - 1ms = 0.001s
 - 1000ms = 1s
 - 5000ms = 5s
 
-## 实际应用场景
+## Practical Application Scenarios
 
-### 1. 编程开发
-在软件开发中，需要将毫秒级的程序执行时间转换为秒级别进行性能分析、代码优化和执行效率评估。
+### 1. Programming Development
+In software development, millisecond-level program execution times need to be converted to second levels for performance analysis, code optimization, and execution efficiency evaluation.
 
-### 2. 性能测试
-在系统性能测试和压力测试中，毫秒级的响应时间需要转换为秒级别进行性能指标分析和系统瓶颈识别。
+### 2. Performance Testing
+In system performance testing and stress testing, millisecond-level response times need to be converted to second levels for performance metric analysis and system bottleneck identification.
 
-### 3. API响应时间监控
-在Web服务和API监控中，毫秒级的接口响应时间需要转换为秒级别进行服务质量评估和用户体验优化。
+### 3. API Response Time Monitoring
+In web services and API monitoring, millisecond-level interface response times need to be converted to second levels for service quality assessment and user experience optimization.
 
-### 4. 实时应用开发
-在游戏开发、音视频处理等实时应用中，毫秒级的帧间隔需要转换为秒级别进行帧率计算和同步控制。
+### 4. Real-time Application Development
+In game development, audio/video processing, and other real-time applications, millisecond-level frame intervals need to be converted to second levels for frame rate calculation and synchronization control.
 
-## 常见问题 (FAQ)
+## Frequently Asked Questions (FAQ)
 
-### Q1: 毫秒和秒的换算关系是什么？
-A1: 1秒 = 1,000毫秒。这个换算基于毫秒(ms)是秒(s)的千分之一，即1ms = 0.001s。
+### Q1: What is the conversion relationship between milliseconds and seconds?
+A1: 1 second = 1,000 milliseconds. This conversion is based on the fact that milliseconds (ms) are thousandths of a second (s), i.e., 1ms = 0.001s.
 
-### Q2: 为什么换算系数是1,000？
-A2: 这个系数来源于单位前缀的定义：milli(毫)表示10⁻³，因此1ms = 10⁻³s = 0.001s，反之1s = 1,000ms。
+### Q2: Why is the conversion factor 1,000?
+A2: This factor comes from the definition of unit prefixes: milli represents 10⁻³, so 1ms = 10⁻³s = 0.001s, and conversely 1s = 1,000ms.
 
-### Q3: 在编程中如何处理毫秒到秒的换算？
-A3: 可以使用除法运算：seconds = milliseconds ÷ 1,000。大多数编程语言都提供了相应的时间处理函数和库。
+### Q3: How to handle millisecond to second conversion in programming?
+A3: You can use division: seconds = milliseconds ÷ 1,000. Most programming languages provide corresponding time handling functions and libraries.
 
-### Q4: 毫秒到秒的换算在什么情况下最常用？
-A4: 主要用于编程开发、性能测试、API监控、实时应用等需要精确时间测量和性能分析的技术场景。
+### Q4: When is millisecond to second conversion most commonly used?
+A4: It is mainly used in programming development, performance testing, API monitoring, real-time applications, and other technical scenarios requiring precise time measurement and performance analysis.
 
-### Q5: 如何在不同编程语言中实现毫秒到秒的换算？
-A5: 大多数语言都支持：JavaScript中使用Date.now()/1000，Python中使用time.time()，Java中使用System.currentTimeMillis()/1000等。
+### Q5: How to implement millisecond to second conversion in different programming languages?
+A5: Most languages support it: JavaScript uses Date.now()/1000, Python uses time.time(), Java uses System.currentTimeMillis()/1000, etc.
 
-### Q6: 如何验证毫秒到秒换算结果的准确性？
-A6: 可以通过逆向换算验证：将结果（秒）乘以1,000应该等于原始的毫秒数值，或使用编程语言的内置时间函数进行验证。
-## 相关连接
+### Q6: How to verify the accuracy of millisecond to second conversion results?
+A6: You can verify through reverse conversion: multiplying the result (seconds) by 1,000 should equal the original millisecond value, or use built-in time functions in programming languages for verification.
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Time" :key="index">
     <n-button

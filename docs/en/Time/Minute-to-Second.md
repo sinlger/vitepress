@@ -4,22 +4,22 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Time/index
-      linkText: 时间换算
+      linkText: Time Conversion
   - - link: /Time/Minute-to-Second
-      linkText: 分钟到秒
+      linkText: Minute to Second
 head:
   - - meta
     - name: description
-      content: "分钟到秒换算器 - 精确的时间单位转换工具，支持minutes到seconds的快速换算。提供分钟(min)、秒(s)等时间单位的换算关系，适用于精确计时、运动计时等场景。在线时间换算器，支持时分秒符号转换。"
+      content: "Minute to Second Converter - Precise time unit conversion tool, supporting fast conversion from minutes to seconds. Provides conversion relationships for time units like minutes (min) and seconds (s), suitable for precise timing, sports timing, and other scenarios. Online time converter with support for time notation symbols."
   - - meta
     - name: keywords
-      content: "分钟转换成小时,秒转换,小时单位,秒换算小时,分钟英文,时间换算单位,时间换算器在线使用,时分秒符号,分秒,分钟换算小时,minutes是什么意思中文,分秒符号,分钟转小时,分钟的缩写,min是分钟吗,分钟单位,分钟的英文,时间单位换算,时间计算器在线计算分钟,时间转换器,分钟缩写,小时,分钟英文,时间换算,mins,秒,minute,minutes,min,second,seconds,s,精确计时"
+      content: "minute to second conversion,time conversion,second unit,minute to second calculation,minutes in English,time unit conversion,online time converter,time notation symbols,minute second conversion,minutes meaning,time symbols,minute to second,minute abbreviation,min is minute,minute unit,minute in English,time unit conversion,online minute calculator,time converter,minute abbreviation,second,minute English,time conversion,mins,second,minute,minutes,min,second,seconds,s,precise timing"
 ---
-# 分钟 (min) 到 秒 (s) 的换算
+# Minute (min) to Second (s) Conversion
 
-分钟到秒的换算在精确计时和运动计时中具有重要意义。无论是进行体育比赛计时、科学实验记录，还是进行精确的时间测量和分析，掌握分钟(minutes)与秒(seconds)之间的换算关系都是必不可少的。理解各种时间单位的换算方法，包括分钟的英文表示(min)、秒的缩写(s)、时分秒符号的使用，有助于我们在处理精确时间计算时更加准确可靠。
+The conversion from minutes to seconds is of great significance in precise timing and sports timing. Whether it's for sports competition timing, scientific experiment recording, or precise time measurement and analysis, mastering the conversion relationship between minutes and seconds is essential. Understanding various time unit conversion methods, including the English representation of minutes (min), second abbreviation (s), and the use of time notation symbols, helps us be more accurate and reliable when dealing with precise time calculations.
 
 ---
 <script setup>
@@ -31,18 +31,18 @@ import { Time } from '../files';
 const convert = inject('convert')
 
 const seoKey = [
-  '分钟转换成小时', '秒转换', '小时单位', '秒换算小时', '分钟英文',
-  '时间换算单位', '时间换算器在线使用', '时分秒符号', '分秒', '分钟换算小时',
-  'minutes是什么意思中文', '分秒符号', '分钟转小时', '分钟的缩写', 'min是分钟吗',
-  '分钟单位', '分钟的英文', '时间单位换算', '时间计算器在线计算分钟', '时间转换器',
-  '分钟缩写', '小时', '分钟英文', '时间换算', 'mins', '秒', 'minute', 'minutes', 'min',
-  'second', 'seconds', 's', '精确计时', '运动计时', '分钟到秒'
+  'minute to second conversion', 'time conversion', 'second unit', 'minute to second calculation', 'minutes in English',
+  'time unit conversion', 'online time converter', 'time notation symbols', 'minute second conversion', 'minutes meaning',
+  'time symbols', 'minute to second', 'minute abbreviation', 'min is minute', 'minute unit',
+  'minute in English', 'time unit conversion', 'online minute calculator', 'time converter',
+  'minute abbreviation', 'second', 'minute English', 'time conversion', 'mins', 'second', 'minute', 'minutes', 'min',
+  'second', 'seconds', 's', 'precise timing', 'sports timing', 'minute to second'
 ]
 
 const form = reactive({
   number: null,
   result: '',
-  title: '分钟到秒换算器'
+  title: 'Minute to Second Converter'
 })
 
 const convertHandler = () => {
@@ -50,17 +50,17 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) * 60
     form.result = `${form.number}min = ${convertedValue.toFixed(2)}s`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="分钟 (min)">
-    <n-input-number v-model:value="form.number" placeholder="输入分钟" style="width: 100%" />
+  <n-form-item label="Minutes (min)">
+    <n-input-number v-model:value="form.number" placeholder="Enter minutes" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
@@ -77,51 +77,51 @@ const convertHandler = () => {
   </template>
 </n-card>
 
-## 公式
+## Formula
 
-从 **分钟 (min)** 换算到 **秒 (s)** 的公式为：
+The formula for converting from **minutes (min)** to **seconds (s)** is:
 $$ s = min \times 60 $$
 
-### 示例
+### Examples
 - 1min = 60s
 - 5min = 300s
 - 0.1min = 6s
 
-## 实际应用场景
+## Practical Application Scenarios
 
-### 1. 体育比赛计时
-在体育比赛中，需要将分钟级的比赛时间转换为秒数，用于精确记录比赛成绩、计算时间差和进行成绩分析。
+### 1. Sports Competition Timing
+In sports competitions, it's necessary to convert minute-level competition time to seconds for precise recording of competition results, calculating time differences, and analyzing performance.
 
-### 2. 科学实验记录
-在科学研究和实验中，将实验过程的分钟级时间转换为秒数，用于精确记录实验数据和分析实验结果。
+### 2. Scientific Experiment Recording
+In scientific research and experiments, converting minute-level experimental time to seconds is used for precise recording of experimental data and analyzing experimental results.
 
-### 3. 工业生产监控
-在工业生产线上，将设备运行的分钟级时间转换为秒数，用于精确监控生产节拍和优化生产效率。
+### 3. Industrial Production Monitoring
+In industrial production lines, converting minute-level equipment operation time to seconds is used for precise monitoring of production rhythm and optimizing production efficiency.
 
-### 4. 音视频制作
-在音频和视频制作中，将分钟级的时长转换为秒数，用于精确剪辑、同步和时间轴管理。
+### 4. Audio and Video Production
+In audio and video production, converting minute-level duration to seconds is used for precise editing, synchronization, and timeline management.
 
-## 常见问题 (FAQ)
+## Frequently Asked Questions (FAQ)
 
-### Q1: 分钟和秒的换算关系是什么？
-A1: 1分钟 = 60秒。这是国际标准时间单位的基本换算关系。
+### Q1: What is the conversion relationship between minutes and seconds?
+A1: 1 minute = 60 seconds. This is the basic conversion relationship of international standard time units.
 
-### Q2: 为什么换算系数是60？
-A2: 这个系数来源于古代巴比伦的60进制计时系统，后来被国际标准采用：1分钟 = 60秒。
+### Q2: Why is the conversion factor 60?
+A2: This factor comes from the ancient Babylonian sexagesimal (base-60) timekeeping system, which was later adopted by international standards: 1 minute = 60 seconds.
 
-### Q3: seconds是什么意思中文？
-A3: seconds的中文意思是"秒"，是时间单位second的复数形式，缩写为s。
+### Q3: What does "seconds" mean in Chinese?
+A3: "Seconds" means "秒" in Chinese, which is the plural form of the time unit "second", abbreviated as "s".
 
-### Q4: 分钟到秒的换算在什么场景下最常用？
-A4: 主要用于体育计时、科学实验、工业监控、音视频制作等需要精确时间测量的场景。
+### Q4: In what scenarios is minute to second conversion most commonly used?
+A4: It's mainly used in scenarios requiring precise time measurement such as sports timing, scientific experiments, industrial monitoring, and audio/video production.
 
-### Q5: 如何快速进行分钟转秒的计算？
-A5: 可以使用乘法运算：seconds = minutes × 60，或使用在线时间换算器进行快速转换。
+### Q5: How to quickly perform minute to second calculations?
+A5: You can use multiplication: seconds = minutes × 60, or use an online time converter for quick conversion.
 
-### Q6: 分秒符号在时间表示中如何使用？
-A6: 在时分秒符号体系中，分钟用"min"或"′"表示，秒用"s"或"″"表示，如：5min 30s 或 5′30″。
+### Q6: How are minute and second symbols used in time representation?
+A6: In the time notation system, minutes are represented by "min" or "′", and seconds by "s" or "″", such as: 5min 30s or 5′30″.
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Time" :key="index">
     <n-button

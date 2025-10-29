@@ -4,22 +4,22 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Time/index
-      linkText: 时间换算
+      linkText: Time Conversion
   - - link: /Time/Day-to-Microsecond
-      linkText: 天到微秒
+      linkText: Day to Microsecond
 head:
   - - meta
     - name: description
-      content: "专业的天到微秒换算器在线使用工具。快速进行天(d)到微秒(μs)的时间单位转换，提供精确的换算公式和实用的时间计算功能。支持科学计算、精密测量等高精度时间换算应用场景。"
+      content: "Professional day to microsecond converter online tool. Quickly convert days (d) to microseconds (μs) with precise conversion formulas and practical time calculation functions. Supports scientific computing, precision measurement, and other high-precision time conversion application scenarios."
   - - meta
     - name: keywords
-      content: "天到微秒换算, 天换算微秒, 时间单位转换, 天微秒换算器, d到μs换算, 时间换算器在线使用, 精密时间计算, 天数转微秒, 时间单位换算, 天转换微秒, 微秒换算, 时间转换器, 天换微秒公式, 科学计算时间, 精密测量时间"
+      content: "day to microsecond conversion, days to microseconds converter, time unit conversion, day microsecond calculator, d to μs conversion, online time converter, precision time calculation, days to microseconds, time unit converter, day to microsecond formula, scientific computing time, precision measurement time"
 ---
-# 天 (d) 到 微秒 (μs) 的换算
+# Day (d) to Microsecond (μs) Conversion
 
-天到微秒换算是科学计算和精密测量中的重要时间单位转换。在物理实验、计算机科学、电子工程等领域，经常需要将较大的时间单位转换为极小的微秒单位进行精确计算。我们的天到微秒换算器在线使用工具提供快速、精确的d到μs换算功能，帮助您轻松完成各种高精度时间计算需求。
+Day to microsecond conversion is an important time unit conversion in scientific computing and precision measurement. In fields such as physics experiments, computer science, and electronic engineering, it is often necessary to convert larger time units to extremely small microsecond units for precise calculations. Our day to microsecond converter online tool provides fast and precise d to μs conversion functionality, helping you easily complete various high-precision time calculation needs.
 
 ---
 <script setup>
@@ -30,12 +30,12 @@ import { Time } from '../files';
 
 const convert = inject('convert')
 
-const seoKey = ['天到微秒换算','天换算微秒','时间单位转换','天微秒换算器','d到μs换算','时间换算器在线使用','精密时间计算','天数转微秒','天转换微秒','微秒换算','时间转换器','天换微秒公式','科学计算时间','精密测量时间','天','微秒','时间换算','时间单位']
+const seoKey = ['day to microsecond conversion','days to microseconds converter','time unit conversion','day microsecond calculator','d to μs conversion','online time converter','precision time calculation','days to microseconds','day to microsecond formula','scientific computing time','precision measurement time','day','microsecond','time conversion','time unit']
 
 const form = reactive({
   number: null,
   result: '',
-  title: '天到微秒换算器',
+  title: 'Day to Microsecond Converter',
 })
 
 const convertHandler = () => {
@@ -43,17 +43,17 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) * 86400000000
     form.result = `${form.number}d = ${convertedValue.toFixed(0)}μs`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="天 (d)">
-    <n-input-number v-model:value="form.number" placeholder="输入天" style="width: 100%" />
+  <n-form-item label="Days (d)">
+    <n-input-number v-model:value="form.number" placeholder="Enter days" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
@@ -69,72 +69,72 @@ const convertHandler = () => {
   </div>
   <template #footer>
     <div>
-      <span v-for="item of seoKey" :key="item">{{item}}，</span>
+      <span v-for="item of seoKey" :key="item">{{item}}, </span>
     </div>
   </template>
 </n-card>
 
-## 公式
+## Formula
 
-从 **天 (d)** 换算到 **微秒 (μs)** 的公式为：
+The formula for converting from **Days (d)** to **Microseconds (μs)** is:
 $$ \mu s = d \times 8.64 \times 10^{10} $$
 
-### 示例
+### Examples
 - 1d = 8.64 × 10¹⁰ μs
 - 5d = 4.32 × 10¹¹ μs
 - 0.1d = 8.64 × 10⁹ μs
 
-## 实际应用场景
+## Practical Application Scenarios
 
-### 科学计算与研究
-- **物理实验**：粒子物理、原子物理实验中的时间测量
-- **天体物理**：计算天体运动周期对应的微秒级精度
-- **化学反应**：分析长期化学过程的微观时间尺度
+### Scientific Computing and Research
+- **Physics Experiments**: Time measurement in particle physics and atomic physics experiments
+- **Astrophysics**: Calculate celestial body motion cycles with microsecond precision
+- **Chemical Reactions**: Analyze microscopic time scales of long-term chemical processes
 
-### 计算机科学
-- **性能分析**：评估长时间运行程序的微秒级性能指标
-- **数据库优化**：计算大型数据处理任务的精确时间消耗
-- **系统监控**：监控服务器长期运行状态的微秒级统计
+### Computer Science
+- **Performance Analysis**: Evaluate microsecond-level performance metrics of long-running programs
+- **Database Optimization**: Calculate precise time consumption of large data processing tasks
+- **System Monitoring**: Monitor microsecond-level statistics of long-term server operation
 
-### 工程技术
-- **电子工程**：计算电子设备长期工作时间的微秒精度
-- **通信系统**：分析长距离通信延迟的微秒级计算
-- **精密制造**：工业生产周期的高精度时间换算
+### Engineering Technology
+- **Electronic Engineering**: Calculate microsecond precision of electronic device long-term operation time
+- **Communication Systems**: Analyze microsecond-level calculations of long-distance communication delays
+- **Precision Manufacturing**: High-precision time conversion for industrial production cycles
 
-### 金融科技
-- **高频交易**：计算交易策略长期执行的微秒级时间分析
-- **风险管理**：评估长期投资组合的微秒级时间风险
-- **算法优化**：金融算法长期运行的精确时间测量
+### Financial Technology
+- **High-Frequency Trading**: Calculate microsecond-level time analysis of long-term trading strategy execution
+- **Risk Management**: Evaluate microsecond-level time risks of long-term investment portfolios
+- **Algorithm Optimization**: Precise time measurement of long-term financial algorithm operation
 
-## 天到微秒换算对照表
+## Day to Microsecond Conversion Table
 
-| 天数 | 微秒数 | 应用场景 |
-|------|--------|----------|
-| 1天 | 8.64 × 10¹⁰ μs | 日常实验周期 |
-| 7天 | 6.048 × 10¹¹ μs | 周期性测试 |
-| 30天 | 2.592 × 10¹² μs | 月度数据分析 |
-| 365天 | 3.1536 × 10¹³ μs | 年度系统统计 |
+| Days | Microseconds | Application Scenario |
+|------|--------------|---------------------|
+| 1 day | 8.64 × 10¹⁰ μs | Daily experiment cycle |
+| 7 days | 6.048 × 10¹¹ μs | Periodic testing |
+| 30 days | 2.592 × 10¹² μs | Monthly data analysis |
+| 365 days | 3.1536 × 10¹³ μs | Annual system statistics |
 
-## 常见问题 (FAQ)
+## Frequently Asked Questions (FAQ)
 
-### 1. 天换算微秒的基本公式是什么？
-天换算微秒的公式为：微秒数 = 天数 × 8.64 × 10¹⁰。这是因为一天有86400秒，一秒有1000000微秒。
+### 1. What is the basic formula for converting days to microseconds?
+The formula for converting days to microseconds is: Microseconds = Days × 8.64 × 10¹⁰. This is because there are 86400 seconds in a day and 1000000 microseconds in a second.
 
-### 2. 为什么需要天到微秒的精确换算？
-在科学计算、精密测量和高频系统中，需要将长时间周期转换为微秒级精度进行分析和计算。
+### 2. Why is precise day to microsecond conversion needed?
+In scientific computing, precision measurement, and high-frequency systems, it is necessary to convert long time periods to microsecond precision for analysis and calculation.
 
-### 3. 1天等于多少微秒？
-1天 = 24小时 × 3600秒/小时 × 1000000微秒/秒 = 86400000000微秒 = 8.64 × 10¹⁰微秒。
+### 3. How many microseconds are in 1 day?
+1 day = 24 hours × 3600 seconds/hour × 1000000 microseconds/second = 86400000000 microseconds = 8.64 × 10¹⁰ microseconds.
 
-### 4. 天微秒换算器的精度如何？
-我们的换算器提供高精度计算，支持科学计数法显示，确保大数值计算的准确性。
+### 4. What is the precision of the day to microsecond converter?
+Our converter provides high-precision calculations, supports scientific notation display, and ensures accuracy of large number calculations.
 
-### 5. 哪些领域常用天到微秒换算？
-主要应用于物理实验、计算机科学、电子工程、精密制造、金融科技等需要高精度时间计算的领域。
+### 5. Which fields commonly use day to microsecond conversion?
+Mainly applied in physics experiments, computer science, electronic engineering, precision manufacturing, financial technology, and other fields requiring high-precision time calculations.
 
-### 6. 如何验证天到微秒换算的准确性？
-可以通过逆向计算验证：将微秒数除以8.64 × 10¹⁰应该等于原始天数。
-## 相关连接
+### 6. How to verify the accuracy of day to microsecond conversion?
+You can verify through reverse calculation: dividing the microsecond number by 8.64 × 10¹⁰ should equal the original number of days.
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Time" :key="index">
     <n-button

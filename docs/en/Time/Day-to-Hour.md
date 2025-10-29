@@ -4,22 +4,22 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Time/index
-      linkText: 时间换算
+      linkText: Time Conversion
   - - link: /Time/Day-to-Hour
-      linkText: 天到小时
+      linkText: Day to Hour
 head:
   - - meta
     - name: description
-      content: "专业的天到小时换算器在线使用工具。快速进行天(d)到小时(h)的时间单位转换，提供精确的换算公式和实用的时间计算功能。支持工作时间统计、项目进度管理等应用场景。"
+      content: "Professional day to hour converter online tool. Quickly convert days (d) to hours (h) with precise conversion formulas and practical time calculation functions. Supports work time statistics, project progress management, and other application scenarios."
   - - meta
     - name: keywords
-      content: "天到小时换算, 天换算小时, 时间单位转换, 天小时换算器, d到h换算, 时间换算器在线使用, 工作时间计算, 天数转小时, 时间单位换算, 天转换小时, 小时换算, 时间转换器, 天换小时公式, 24小时换算"
+      content: "day to hour conversion, days to hours converter, time unit conversion, day hour calculator, d to h conversion, online time converter, work time calculation, days to hours, time unit converter, day to hour formula, 24 hour conversion"
 ---
-# 天 (d) 到 小时 (h) 的换算
+# Day (d) to Hour (h) Conversion
 
-天到小时换算是日常工作和生活中最常用的时间单位转换之一。无论是工作时间计算、项目进度管理，还是学习计划制定，准确的天换算小时都是必不可少的技能。我们的天到小时换算器在线使用工具提供快速、精确的d到h换算功能，帮助您轻松完成各种时间计算需求。
+Day to hour conversion is one of the most commonly used time unit conversions in daily work and life. Whether for work time calculation, project progress management, or study plan development, accurate day to hour conversion is an essential skill. Our day to hour converter online tool provides fast and precise d to h conversion functionality, helping you easily complete various time calculation needs.
 
 ---
 <script setup>
@@ -30,12 +30,12 @@ import { Time } from '../files';
 
 const convert = inject('convert')
 
-const seoKey = ['天到小时换算','天换算小时','时间单位转换','天小时换算器','d到h换算','时间换算器在线使用','工作时间计算','天数转小时','天转换小时','小时换算','时间转换器','天换小时公式','24小时换算','天','小时','时间换算','时间单位','时间转换']
+const seoKey = ['day to hour conversion','days to hours converter','time unit conversion','day hour calculator','d to h conversion','online time converter','work time calculation','days to hours','day to hour formula','24 hour conversion','day','hour','time conversion','time unit','time converter']
 
 const form = reactive({
   number: null,
   result: '',
-  title: '天到小时换算器',
+  title: 'Day to Hour Converter',
 })
 
 const convertHandler = () => {
@@ -43,17 +43,17 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) * 24
     form.result = `${form.number}d = ${convertedValue.toFixed(2)}h`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="天 (d)">
-    <n-input-number v-model:value="form.number" placeholder="输入天" style="width: 100%" />
+  <n-form-item label="Days (d)">
+    <n-input-number v-model:value="form.number" placeholder="Enter days" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
@@ -69,75 +69,75 @@ const convertHandler = () => {
   </div>
   <template #footer>
     <div>
-      <span v-for="item of seoKey" :key="item">{{item}}，</span>
+      <span v-for="item of seoKey" :key="item">{{item}}, </span>
     </div>
   </template>
 </n-card>
 
-## 公式
+## Formula
 
-从 **天 (d)** 换算到 **小时 (h)** 的公式为：
+The formula for converting from **Days (d)** to **Hours (h)** is:
 $$ h = d \times 24 $$
 
-### 示例
+### Examples
 - 1d = 24h
 - 5d = 120h
 - 0.1d = 2.4h
 
-## 实际应用场景
+## Practical Application Scenarios
 
-### 工作时间管理
-- **工作时间计算**：将工作天数转换为具体小时数，便于薪资计算
-- **项目进度管理**：评估项目所需工作小时，制定合理的时间安排
-- **加班时间统计**：准确计算超出标准工作日的额外小时数
+### Work Time Management
+- **Work Time Calculation**: Convert working days to specific hours for salary calculation
+- **Project Progress Management**: Evaluate required work hours for projects and create reasonable time schedules
+- **Overtime Statistics**: Accurately calculate extra hours beyond standard working days
 
-### 学习计划制定
-- **学习时间规划**：将学习天数转换为小时，制定详细的学习计划
-- **课程时长计算**：计算培训课程或在线学习的总时长
-- **考试准备时间**：合理分配复习时间，提高学习效率
+### Study Plan Development
+- **Study Time Planning**: Convert study days to hours to create detailed study plans
+- **Course Duration Calculation**: Calculate total duration of training courses or online learning
+- **Exam Preparation Time**: Reasonably allocate review time to improve study efficiency
 
-### 生活时间安排
-- **旅行计划**：计算旅行天数对应的总小时数，安排行程
-- **健身计划**：制定长期健身计划，计算总训练时间
-- **休假时间**：计算假期总小时数，合理安排休息时间
+### Life Time Arrangement
+- **Travel Planning**: Calculate total hours corresponding to travel days and arrange itineraries
+- **Fitness Planning**: Create long-term fitness plans and calculate total training time
+- **Vacation Time**: Calculate total vacation hours and reasonably arrange rest time
 
-### 商业运营管理
-- **营业时间计算**：计算商店或服务机构的总营业小时数
-- **设备运行时间**：监控设备连续运行的小时数
-- **生产计划**：制定生产周期，计算所需的总工作小时
+### Business Operations Management
+- **Operating Hours Calculation**: Calculate total operating hours for stores or service institutions
+- **Equipment Runtime**: Monitor continuous operating hours of equipment
+- **Production Planning**: Develop production cycles and calculate required total work hours
 
-## 天到小时换算对照表
+## Day to Hour Conversion Table
 
-| 天数 | 小时数 | 应用场景 |
-|------|--------|----------|
-| 1天 | 24小时 | 标准工作日 |
-| 3天 | 72小时 | 短期项目 |
-| 7天 | 168小时 | 一周时间 |
-| 15天 | 360小时 | 半月工期 |
-| 30天 | 720小时 | 月度计划 |
-| 365天 | 8760小时 | 年度统计 |
+| Days | Hours | Application Scenario |
+|------|-------|---------------------|
+| 1 day | 24 hours | Standard working day |
+| 3 days | 72 hours | Short-term project |
+| 7 days | 168 hours | One week |
+| 15 days | 360 hours | Half-month duration |
+| 30 days | 720 hours | Monthly plan |
+| 365 days | 8760 hours | Annual statistics |
 
-## 常见问题 (FAQ)
+## Frequently Asked Questions (FAQ)
 
-### 1. 天换算小时的基本公式是什么？
-天换算小时的公式为：小时数 = 天数 × 24。这是因为一天有24小时。
+### 1. What is the basic formula for converting days to hours?
+The formula for converting days to hours is: Hours = Days × 24. This is because there are 24 hours in a day.
 
-### 2. 工作时间计算中如何使用天到小时换算？
-在工作时间计算中，可以将工作天数乘以每天的工作小时数。例如：5个工作日 × 8小时/天 = 40工作小时。
+### 2. How to use day to hour conversion in work time calculation?
+In work time calculation, multiply working days by working hours per day. For example: 5 working days × 8 hours/day = 40 working hours.
 
-### 3. 0.5天等于多少小时？
-0.5天 = 0.5 × 24 = 12小时。半天等于12小时。
+### 3. How many hours is 0.5 days?
+0.5 days = 0.5 × 24 = 12 hours. Half a day equals 12 hours.
 
-### 4. 如何计算项目进度的小时数？
-将项目预计天数乘以24得到总小时数，再根据每天实际工作小时数调整。例如：10天项目 × 8小时/天 = 80工作小时。
+### 4. How to calculate project progress hours?
+Multiply the estimated project days by 24 to get total hours, then adjust based on actual working hours per day. For example: 10-day project × 8 hours/day = 80 working hours.
 
-### 5. 天小时换算器有什么优势？
-天小时换算器提供快速、准确的计算，避免手动计算错误，支持小数点精确计算，适用于各种专业场景。
+### 5. What are the advantages of a day to hour converter?
+The day to hour converter provides fast and accurate calculations, avoids manual calculation errors, supports precise decimal calculations, and is suitable for various professional scenarios.
 
-### 6. 一个月有多少小时？
-按30天计算：30天 × 24小时 = 720小时。按31天计算：31天 × 24小时 = 744小时。
+### 6. How many hours are in a month?
+Based on 30 days: 30 days × 24 hours = 720 hours. Based on 31 days: 31 days × 24 hours = 744 hours.
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Time" :key="index">
     <n-button

@@ -4,22 +4,22 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Time/index
-      linkText: 时间换算
+      linkText: Time Conversion
   - - link: /Time/Nanosecond-to-Microsecond
-      linkText: 纳秒到微秒
+      linkText: Nanosecond to Microsecond
 head:
   - - meta
     - name: description
-      content: "纳秒到微秒换算器 - 精确的ns到μs时间单位转换工具。支持纳秒(nanosecond)与微秒(microsecond)之间的快速换算，适用于高精度时间测量、电子工程、科学计算等领域。提供详细的换算公式、实际应用场景和常见问题解答。"
+      content: "Nanosecond to Microsecond Converter - Precise ns to μs time unit conversion tool. Supports fast conversion between nanoseconds and microseconds, suitable for high-precision time measurement, electronic engineering, scientific computing fields. Provides detailed conversion formulas, practical application scenarios, and frequently asked questions."
   - - meta
     - name: keywords
-      content: "纳秒, 微秒, ns, μs, us, 时间单位换算, 纳秒到微秒, 微秒换算, nanosecond, microsecond, 时间换算器, 精密时间测量, 电子工程, 科学计算, 高频信号, 处理器时钟, 时间单位转换, 纳秒微秒换算, 时间计算工具"
+      content: "nanosecond, microsecond, ns, μs, us, time unit conversion, nanosecond to microsecond, microsecond conversion, nanosecond, microsecond, time converter, precision time measurement, electronic engineering, scientific computing, high frequency signals, processor clock, time unit conversion, nanosecond microsecond conversion, time calculation tool"
 ---
-# 纳秒 (ns) 到 微秒 (μs) 的换算
+# Nanosecond (ns) to Microsecond (μs) Conversion
 
-纳秒到微秒的换算在高精度时间测量和电子工程中极为重要。无论是进行处理器性能分析、高频信号处理，还是进行精密科学实验，掌握纳秒(nanosecond)与微秒(microsecond)之间的换算关系都是基础技能。理解各种时间单位的换算方法，包括纳秒的英文表示(ns)、微秒符号(μs或us)等时间单位的使用，有助于我们在处理微观时间尺度的计算和分析时更加精确。
+The conversion from nanoseconds to microseconds is extremely important in high-precision time measurement and electronic engineering. Whether it's for processor performance analysis, high-frequency signal processing, or precision scientific experiments, mastering the conversion relationship between nanoseconds and microseconds is a fundamental skill. Understanding various time unit conversion methods, including the English representation of nanoseconds (ns), microsecond symbols (μs or us), and other time unit usage, helps us be more precise when dealing with microscopic timescale calculations and analysis.
 
 ---
 <script setup>
@@ -29,11 +29,11 @@ import { defineClientComponent } from 'vitepress'
 import { Time } from '../files';
 
 const convert = inject('convert')
-const seoKey = ['ns','μs','us','微秒','纳秒','时间单位换算','时间换算','毫秒微秒','分秒换算','秒单位换算','秒','毫秒','微秒','纳秒','ns和μs换算','时间的单位','微秒的换算','一微秒等于多少纳秒','微秒和纳秒','微秒单位','ms单位','一毫秒','ns是什么单位','秒单位','微妙和秒的换算','一秒多少毫秒','纳秒和微秒','秒换算','时间换算单位','us是多少秒','多少毫秒等于一秒','纳秒和微秒的换算','一秒是多少毫秒','秒的单位','一毫秒等于多少秒','时间单位换算','nanosecond','ms是什么单位','microsecond','时间单位','微秒','秒','一秒等于多少毫秒','毫秒和秒的换算','微秒','microsecond']
+const seoKey = ['ns','μs','us','microsecond','nanosecond','time unit conversion','time conversion','millisecond microsecond','time conversion','second unit conversion','second','millisecond','microsecond','nanosecond','ns and μs conversion','time units','microsecond conversion','how many nanoseconds in a microsecond','microsecond and nanosecond','microsecond unit','ms unit','one millisecond','what is ns unit','second unit','microsecond and second conversion','how many milliseconds in a second','nanosecond and microsecond','second conversion','time unit conversion','us is how many seconds','how many milliseconds equal one second','nanosecond and microsecond conversion','how many milliseconds in one second','second unit','how many seconds in one millisecond','time unit conversion','nanosecond','what is ms unit','microsecond','time unit','microsecond','second','how many milliseconds equal one second','millisecond and second conversion','microsecond','microsecond']
 const form = reactive({
   number: null,
   result: '',
-  title: '纳秒到微秒换算器'
+  title: 'Nanosecond to Microsecond Converter'
 })
 
 const convertHandler = () => {
@@ -41,17 +41,17 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) / 1000
     form.result = `${form.number}ns = ${convertedValue.toFixed(6)}μs`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="纳秒 (ns)">
-    <n-input-number v-model:value="form.number" placeholder="输入纳秒" style="width: 100%" />
+  <n-form-item label="Nanoseconds (ns)">
+    <n-input-number v-model:value="form.number" placeholder="Enter nanoseconds" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
@@ -68,50 +68,50 @@ const convertHandler = () => {
   </template>
 </n-card>
 
-## 公式
+## Formula
 
-从 **纳秒 (ns)** 换算到 **微秒 (μs)** 的公式为：
+The formula for converting from **nanoseconds (ns)** to **microseconds (μs)** is:
 $$ \mu s = \frac{ns}{1000} $$
 
-### 示例
+### Examples
 - 1000ns = 1μs
 - 5000ns = 5μs
 - 1000000ns = 1000μs
 
-## 实际应用场景
+## Practical Application Scenarios
 
-### 1. 处理器性能分析
-在CPU性能测试中，指令执行时间通常以纳秒计量，需要转换为微秒进行性能基准测试和优化分析。
+### 1. Processor Performance Analysis
+In CPU performance testing, instruction execution times are typically measured in nanoseconds and need to be converted to microseconds for performance benchmarking and optimization analysis.
 
-### 2. 高频信号处理
-在射频和微波工程中，信号传播延迟和处理时间需要在纳秒和微秒之间进行精确换算。
+### 2. High-Frequency Signal Processing
+In RF and microwave engineering, signal propagation delays and processing times require precise conversion between nanoseconds and microseconds.
 
-### 3. 精密科学实验
-在物理实验和化学反应研究中，反应时间和测量精度要求纳秒到微秒级别的时间换算。
+### 3. Precision Scientific Experiments
+In physics experiments and chemical reaction research, reaction times and measurement precision require nanosecond to microsecond level time conversion.
 
-### 4. 电子设备时序设计
-在数字电路设计中，时钟信号、延迟线路和同步时序需要进行纳秒到微秒的精确计算。
+### 4. Electronic Device Timing Design
+In digital circuit design, clock signals, delay lines, and synchronization timing require precise nanosecond to microsecond calculations.
 
-## 常见问题 (FAQ)
+## Frequently Asked Questions (FAQ)
 
-### Q1: 纳秒和微秒的换算关系是什么？
-A1: 1微秒 = 1,000纳秒。这个换算基于10³的倍数关系，即1 μs = 1,000 ns。
+### Q1: What is the conversion relationship between nanoseconds and microseconds?
+A1: 1 microsecond = 1,000 nanoseconds. This conversion is based on a 10³ multiple relationship, i.e., 1 μs = 1,000 ns.
 
-### Q2: 为什么换算系数是1,000？
-A2: 这个系数来源于国际单位制的前缀定义：纳秒(nano)表示10⁻⁹，微秒(micro)表示10⁻⁶，两者相差10³ = 1,000倍。
+### Q2: Why is the conversion factor 1,000?
+A2: This factor comes from the International System of Units prefix definitions: nanosecond (nano) represents 10⁻⁹, microsecond (micro) represents 10⁻⁶, with a difference of 10³ = 1,000 times.
 
-### Q3: μs和us有什么区别？
-A3: μs是微秒的标准符号(使用希腊字母μ)，us是在无法显示希腊字母时的替代写法，两者表示相同的时间单位。
+### Q3: What's the difference between μs and us?
+A3: μs is the standard symbol for microsecond (using the Greek letter μ), us is an alternative notation when the Greek letter cannot be displayed, both represent the same time unit.
 
-### Q4: 一微秒等于多少纳秒？
-A4: 1微秒 = 1,000纳秒。这是微观时间测量中的基础换算关系。
+### Q4: How many nanoseconds equal one microsecond?
+A4: 1 microsecond = 1,000 nanoseconds. This is a fundamental conversion relationship in microscopic time measurement.
 
-### Q5: 如何在电子工程中进行纳秒到微秒的换算？
-A5: 可以使用除法运算：microseconds = nanoseconds ÷ 1,000，或使用专业的时间计算工具进行精确转换。
+### Q5: How to perform nanosecond to microsecond conversion in electronic engineering?
+A5: You can use division: microseconds = nanoseconds ÷ 1,000, or use professional time calculation tools for precise conversion.
 
-### Q6: 纳秒到微秒的换算在什么情况下最重要？
-A6: 主要用于高精度时间测量、电子电路设计、信号处理、科学实验等需要微观时间精度的技术领域。
-## 相关连接
+### Q6: When is nanosecond to microsecond conversion most important?
+A6: It's mainly used in technical fields requiring microscopic time precision such as high-precision time measurement, electronic circuit design, signal processing, and scientific experiments.
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Time" :key="index">
     <n-button

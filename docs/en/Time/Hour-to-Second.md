@@ -4,22 +4,22 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Time/index
-      linkText: 时间换算
+      linkText: Time Conversion
   - - link: /Time/Hour-to-Second
-      linkText: 小时到秒
+      linkText: Hour to Second
 head:
   - - meta
     - name: description
-      content: "专业的小时到秒换算器，支持高精度在线小时(h)转秒(s)计算。提供详细换算公式、实际应用场景和常见问题解答，适用于科学计算、工程测量、体育计时等领域的时间单位转换需求。"
+      content: "Professional hour to second converter, supporting high-precision online hour (h) to second (s) calculation. Provides detailed conversion formulas, practical application scenarios, and frequently asked questions, suitable for scientific calculations, engineering measurements, sports timing, and other time unit conversion needs."
   - - meta
     - name: keywords
-      content: "小时到秒换算器,小时转秒,h转s,时间单位换算,秒计算器,小时秒转换,在线时间换算,科学计算工具,工程时间测量,体育计时器,时间换算公式,小时单位,秒单位,时间计算器,时秒换算"
+      content: "hour to second converter,hour to second,h to s,time unit conversion,second calculator,hour second conversion,online time converter,scientific calculation tool,engineering time measurement,sports timer,time conversion formula,hour unit,second unit,time calculator,hour second conversion"
 ---
-# 小时 (h) 到 秒 (s) 的换算
+# Hour (h) to Second (s) Conversion
 
-小时到秒的换算是基础的时间单位转换。在科学研究、工程计算、体育竞技和日常生活中，我们经常需要将时间从小时转换为秒来进行精确的计算和测量。无论是进行物理实验、工程设计、体育计时，还是编程开发，掌握准确的小时到秒换算方法都是非常重要的基础技能。我们的在线换算器提供简单快捷的转换功能，帮助您轻松完成各种时间单位的换算工作。
+Hour to second conversion is a fundamental time unit conversion. In scientific research, engineering calculations, sports competitions, and daily life, we often need to convert time from hours to seconds for precise calculations and measurements. Whether conducting physics experiments, engineering design, sports timing, or programming development, mastering accurate hour to second conversion methods is a very important basic skill. Our online converter provides simple and quick conversion functionality to help you easily complete various time unit conversion tasks.
 
 ---
 <script setup>
@@ -30,40 +30,40 @@ import { Time } from '../files';
 
 const convert = inject('convert')
 const seoKey = [
-  '时分等于秒的单位',
-  '秒转换',
-  '秒的符号',
-  '小时单位',
-  '小时的单位',
-  '时间符号',
-  '秒换算小时',
-  'hours什么意思',
-  '分钟的单位',
-  'h是什么单位',
-  '时间计算器 小时',
-  '时间换算单位',
-  '时间单位转换',
-  'hr是什么单位',
-  '时间换算器在线使用',
-  '时分秒符号',
-  '小时的英文',
-  '小时英文',
-  '秒的单位换算',
-  '分秒符号',
-  '分钟单位',
-  '时间单位换算',
-  '时间转换器',
-  '分钟缩写',
-  '时间换算',
-  '分钟',
-  '秒',
+  'time units equal to seconds',
+  'second conversion',
+  'second symbol',
+  'hour unit',
+  'hour unit',
+  'time symbol',
+  'second to hour conversion',
+  'hours meaning',
+  'minute unit',
+  'h unit',
+  'hour calculator',
+  'time conversion units',
+  'time unit conversion',
+  'hr unit',
+  'online time converter',
+  'hour minute second symbol',
+  'hour english',
+  'hour english',
+  'second unit conversion',
+  'minute second symbol',
+  'minute unit',
+  'time unit conversion',
+  'time converter',
+  'minute abbreviation',
+  'time conversion',
+  'minute',
+  'second',
   'hour',
   'hours'
 ]
 const form = reactive({
   number: null,
   result: '',
-  title: '小时到秒换算器'
+  title: 'Hour to Second Converter'
 })
 
 const convertHandler = () => {
@@ -71,17 +71,17 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) * 3600
     form.result = `${form.number}h = ${convertedValue.toFixed(2)}s`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="小时 (h)">
-    <n-input-number v-model:value="form.number" placeholder="输入小时" style="width: 100%" />
+  <n-form-item label="Hours (h)">
+    <n-input-number v-model:value="form.number" placeholder="Enter hours" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
@@ -98,51 +98,51 @@ const convertHandler = () => {
   </template>
 </n-card>
 
-## 公式
+## Formula
 
-从 **小时 (h)** 换算到 **秒 (s)** 的公式为：
+The formula for converting from **Hours (h)** to **Seconds (s)** is:
 $$ s = h \times 3600 $$
 
-### 示例
+### Examples
 - 1h = 3600s
 - 5h = 18000s
 - 0.1h = 360s
 
-## 实际应用场景
+## Practical Application Scenarios
 
-### 科学实验
-在物理、化学实验中，需要将实验持续时间从小时转换为秒，用于精确记录实验过程和数据分析。
+### Scientific Experiments
+In physics and chemistry experiments, it's necessary to convert experiment duration from hours to seconds for precise recording of experimental processes and data analysis.
 
-### 工程计算
-工程设计和施工中，需要将工作时间从小时转换为秒，用于精确的时间控制和进度管理。
+### Engineering Calculations
+In engineering design and construction, it's necessary to convert work time from hours to seconds for precise time control and progress management.
 
-### 体育计时
-体育比赛和训练中，需要将训练时间从小时转换为秒，用于制定详细的训练计划和成绩统计。
+### Sports Timing
+In sports competitions and training, it's necessary to convert training time from hours to seconds for creating detailed training plans and performance statistics.
 
-### 编程开发
-软件开发中，需要将时间间隔从小时转换为秒，用于定时器设置、性能测试和系统监控。
+### Programming Development
+In software development, it's necessary to convert time intervals from hours to seconds for timer settings, performance testing, and system monitoring.
 
-## 常见问题 (FAQ)
+## Frequently Asked Questions (FAQ)
 
-### 1. 小时到秒的换算公式是什么？
-小时到秒的换算公式为：秒数 = 小时数 × 3600。这是因为1小时 = 60分钟，1分钟 = 60秒。
+### 1. What is the conversion formula from hours to seconds?
+The conversion formula from hours to seconds is: seconds = hours × 3600. This is because 1 hour = 60 minutes, and 1 minute = 60 seconds.
 
-### 2. 为什么1小时等于3600秒？
-因为1小时 = 60分钟，1分钟 = 60秒，所以1小时 = 60 × 60 = 3600秒。
+### 2. Why does 1 hour equal 3600 seconds?
+Because 1 hour = 60 minutes, and 1 minute = 60 seconds, so 1 hour = 60 × 60 = 3600 seconds.
 
-### 3. 如何快速进行心算换算？
-记住基本关系：1小时=3600秒，0.5小时=1800秒，0.25小时=900秒，然后进行相应的乘法运算。
+### 3. How to quickly perform mental calculations for conversion?
+Remember the basic relationships: 1 hour = 3600 seconds, 0.5 hours = 1800 seconds, 0.25 hours = 900 seconds, then perform the corresponding multiplication.
 
-### 4. 在编程中如何应用这个换算？
-编程中经常需要将用户输入的小时数转换为秒数，用于setTimeout、setInterval等时间相关函数。
+### 4. How to apply this conversion in programming?
+In programming, it's often necessary to convert user-input hours to seconds for use in time-related functions like setTimeout and setInterval.
 
-### 5. 小数小时如何转换为秒？
-将小数小时乘以3600即可。例如：2.5小时 = 2.5 × 3600 = 9000秒。
+### 5. How to convert decimal hours to seconds?
+Multiply the decimal hours by 3600. For example: 2.5 hours = 2.5 × 3600 = 9000 seconds.
 
-### 6. 如何验证换算结果的准确性？
-可以使用反向计算验证：将得到的秒数除以3600，应该等于原始的小时数。
+### 6. How to verify the accuracy of conversion results?
+You can use reverse calculation for verification: divide the obtained seconds by 3600, which should equal the original number of hours.
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Time" :key="index">
     <n-button

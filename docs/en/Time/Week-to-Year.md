@@ -4,22 +4,22 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Time/index
-      linkText: 时间换算
+      linkText: Time Conversion
   - - link: /Time/Week-to-Year
-      linkText: 周到年
+      linkText: Week to Year
 head:
   - - meta
     - name: description
-      content: "周到年换算器 - 长期规划的时间转换工具。支持周(week)到年(year)的精确换算，适用于项目规划、学习计划、职业发展等长期目标制定。提供详细换算公式和规划建议。"
+      content: "Week to Year Converter - Long-term planning time conversion tool. Supports precise conversion from weeks to years, suitable for project planning, study plans, career development and other long-term goal setting. Provides detailed conversion formulas and planning suggestions."
   - - meta
     - name: keywords
-      content: "周到年换算器, 时间单位换算, 周转年, week to year, 年计算器, 长期规划, 项目规划, 学习计划, 职业发展, 时间管理工具"
+      content: "week to year converter, time unit conversion, week to year, year calculator, long-term planning, project planning, study plan, career development, time management tool"
 ---
-# 周 (week) 到 年 (year) 的换算
+# Week to Year Conversion
 
-周到年的换算对于长期规划和目标制定具有重要意义。无论是制定多年的学习计划、职业发展规划，还是大型项目的时间安排，准确的周到年转换都能帮助您更好地把握时间节奏。我们的换算器提供精确的转换结果，助力您的长远规划。
+Week to year conversion is of great significance for long-term planning and goal setting. Whether creating multi-year study plans, career development planning, or scheduling large projects, accurate week to year conversion helps you better grasp the rhythm of time. Our converter provides precise conversion results to support your long-term planning.
 
 ---
 <script setup>
@@ -33,8 +33,8 @@ const convert = inject('convert')
 const form = reactive({
   number: null,
   result: '',
-  title: '周到年换算器',
-  seoKey: ['周到年换算', '年计算器', '长期规划', '项目规划', '学习计划', '职业发展', '时间管理', '目标制定']
+  title: 'Week to Year Converter',
+  seoKey: ['week to year conversion', 'year calculator', 'long-term planning', 'project planning', 'study plan', 'career development', 'time management', 'goal setting']
 })
 
 const seoKey = form.seoKey
@@ -42,20 +42,20 @@ const seoKey = form.seoKey
 const convertHandler = () => {
   if (form.number !== null && !isNaN(form.number)) {
     const convertedValue = parseFloat(form.number) / 52.143
-    form.result = `${form.number}week = ${convertedValue.toFixed(4)}year`
+    form.result = `${form.number} week = ${convertedValue.toFixed(4)} year`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-card :title="form.title" size="small" :bordered="false" style="margin-bottom: 16px">
   <n-form size="large" :model="form">
-    <n-form-item label="周 (week)">
-      <n-input-number v-model:value="form.number" placeholder="输入周" style="width: 100%" />
+    <n-form-item label="Week">
+      <n-input-number v-model:value="form.number" placeholder="Enter weeks" style="width: 100%" />
     </n-form-item>
     <n-form-item>
-      <n-button type="info" @click="convertHandler" block>换算</n-button>
+      <n-button type="info" @click="convertHandler" block>Convert</n-button>
     </n-form-item>
   </n-form>
   <template #footer>
@@ -73,38 +73,39 @@ const convertHandler = () => {
   </div>
 </n-card>
 
-## 公式
+## Formula
 
-从 **周 (week)** 换算到 **年 (year)** 的公式为：
+The formula for converting from **weeks** to **years** is:
 $$ year = \frac{week}{52.143} $$
 
-### 示例
-- 52.143week = 1year
-- 5.2143week = 0.1year
-- 26.0715week = 0.5year
+### Examples
+- 52.143 weeks = 1 year
+- 5.2143 weeks = 0.1 year
+- 26.0715 weeks = 0.5 year
 
-## 实际应用场景
+## Practical Application Scenarios
 
-### 长期项目规划
-在大型项目管理中，周到年的换算帮助项目经理制定多年期的项目规划。例如，一个104周的项目相当于约2年的开发周期，便于资源配置和里程碑设定。
+### Long-term Project Planning
+In large project management, week to year conversion helps project managers create multi-year project plans. For example, a 104-week project equals approximately 2 years of development cycle, facilitating resource allocation and milestone setting.
 
-### 学习计划制定
-制定长期学习目标时，将学习周期转换为年份有助于更好的规划。比如，完成某项技能需要78周的学习时间，相当于约1.5年的持续努力。
+### Study Plan Development
+When setting long-term learning goals, converting study periods to years helps with better planning. For instance, mastering a skill requiring 78 weeks of study time equals approximately 1.5 years of continuous effort.
 
-### 职业发展规划
-在职业规划中，将工作经验和技能积累时间从周转换为年，有助于制定清晰的职业发展路径。例如，积累260周的工作经验相当于约5年的职业历程。
+### Career Development Planning
+In career planning, converting work experience and skill accumulation time from weeks to years helps establish clear career development paths. For example, accumulating 260 weeks of work experience equals approximately 5 years of professional journey.
 
-## 常见问题 (FAQ)
+## Frequently Asked Questions (FAQ)
 
-**Q: 为什么一年不是正好52周？**
-A: 一年有365.25天（考虑闰年），除以7天得到52.143周，所以一年略多于52周。
+**Q: Why isn't a year exactly 52 weeks?**
+A: A year has 365.25 days (considering leap years), divided by 7 days gives 52.143 weeks, so a year is slightly more than 52 weeks.
 
-**Q: 这个换算在长期规划中准确吗？**
-A: 对于长期规划很有用，但具体执行时建议结合实际日历和节假日进行调整。
+**Q: Is this conversion accurate for long-term planning?**
+A: Very useful for long-term planning, but for specific execution, it's recommended to adjust based on actual calendars and holidays.
 
-**Q: 如何处理闰年的影响？**
-A: 本换算器使用平均年长度（365.25天）进行计算，已考虑闰年因素，适用于长期规划。
-## 相关连接
+**Q: How to handle the impact of leap years?**
+A: This converter uses the average year length (365.25 days) for calculation, which already considers leap year factors and is suitable for long-term planning.
+
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Time" :key="index">
     <n-button

@@ -4,22 +4,22 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Time/index
-      linkText: 时间换算
+      linkText: Time Conversion
   - - link: /Time/Year-to-Hour
-      linkText: 年到小时
+      linkText: Year to Hour
 head:
   - - meta
     - name: description
-      content: "年到小时换算器 - 精确的年(year)到小时(hour)时间单位转换工具。支持项目管理、工作计划、时间规划等应用场景。使用公式 year × 8760 进行换算，提供详细的计算步骤和实际应用案例。"
+      content: "Year to Hour Converter - Precise year to hour time unit conversion tool. Supports project management, work planning, time planning and other application scenarios. Uses the formula year × 8760 for conversion, providing detailed calculation steps and practical application cases."
   - - meta
     - name: keywords
-      content: "年到小时换算器, 时间单位换算, 年转小时, year to hour, 时间换算工具, 项目管理, 工作计划, 时间规划, 年小时转换, 时间计算器"
+      content: "year to hour converter, time unit conversion, year to hour, time conversion tool, project management, work planning, time planning, year hour conversion, time calculator"
 ---
-# 年 (year) 到 小时 (h) 的换算
+# Year to Hour Conversion
 
-年到小时的换算在项目管理、工作计划和时间规划中具有重要意义。通过将年份转换为小时，我们可以更精确地计算项目周期、工作时长和资源分配。这种换算特别适用于长期项目规划、年度工作安排和时间成本核算等场景。
+Year to hour conversion is of great significance in project management, work planning, and time planning. By converting years to hours, we can more precisely calculate project cycles, work duration, and resource allocation. This conversion is particularly suitable for long-term project planning, annual work arrangements, and time cost accounting scenarios.
 
 ---
 <script setup>
@@ -33,27 +33,27 @@ const convert = inject('convert')
 const form = reactive({
   number: null,
   result: '',
-  title: '年到小时换算器',
-  seoKey: ['年到小时', '时间换算', '项目管理', '工作计划', '时间规划', '年小时转换', '时间计算器', 'year to hour']
+  title: 'Year to Hour Converter',
+  seoKey: ['year to hour', 'time conversion', 'project management', 'work planning', 'time planning', 'year hour conversion', 'time calculator', 'year to hour']
 })
 
 const convertHandler = () => {
   if (form.number !== null && !isNaN(form.number)) {
     const convertedValue = parseFloat(form.number) * 8760
-    form.result = `${form.number}年 = ${convertedValue.toFixed(0)}小时`
+    form.result = `${form.number} year = ${convertedValue.toFixed(0)} hours`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-card :title="form.title" embedded hoverable>
   <n-form size="large" :model="form">
-    <n-form-item label="年">
-      <n-input-number v-model:value="form.number" placeholder="输入年数" style="width: 100%" />
+    <n-form-item label="Year">
+      <n-input-number v-model:value="form.number" placeholder="Enter years" style="width: 100%" />
     </n-form-item>
     <n-form-item>
-      <n-button type="info" @click="convertHandler" block>换算</n-button>
+      <n-button type="info" @click="convertHandler" block>Convert</n-button>
     </n-form-item>
   </n-form>
 
@@ -72,48 +72,48 @@ const convertHandler = () => {
   </template>
 </n-card>
 
-## 公式
+## Formula
 
-从 **年** 换算到 **小时** 的公式为：
+The formula for converting from **year** to **hour** is:
 $$ h = year \times 8760 $$
 
-### 示例
-- 1年 = 8760小时
-- 2年 = 17520小时
-- 0.5年 = 4380小时
+### Examples
+- 1 year = 8760 hours
+- 2 years = 17520 hours
+- 0.5 year = 4380 hours
 
-## 实际应用场景
+## Practical Application Scenarios
 
-### 项目管理
-在长期项目规划中，将项目周期从年转换为小时有助于：
-- 精确计算项目总工时
-- 合理分配人力资源
-- 制定详细的时间进度表
+### Project Management
+In long-term project planning, converting project cycles from years to hours helps with:
+- Precisely calculating total project hours
+- Reasonably allocating human resources
+- Developing detailed time schedules
 
-### 工作计划
-年度工作安排转换为小时便于：
-- 计算年度有效工作时间
-- 评估工作负荷和效率
-- 制定合理的工作目标
+### Work Planning
+Converting annual work arrangements to hours facilitates:
+- Calculating annual effective working hours
+- Evaluating workload and efficiency
+- Setting reasonable work goals
 
-### 时间成本核算
-在财务和成本管理中：
-- 计算年度人工成本
-- 评估设备运行时间
-- 分析时间投入回报率
+### Time Cost Accounting
+In financial and cost management:
+- Calculating annual labor costs
+- Evaluating equipment operating time
+- Analyzing time investment return rates
 
-## 常见问题 (FAQ)
+## Frequently Asked Questions (FAQ)
 
-**Q: 为什么1年等于8760小时？**
-A: 1年 = 365天 × 24小时/天 = 8760小时。这是基于标准年（非闰年）的计算。
+**Q: Why does 1 year equal 8760 hours?**
+A: 1 year = 365 days × 24 hours/day = 8760 hours. This is based on a standard year (non-leap year) calculation.
 
-**Q: 闰年如何计算？**
-A: 闰年有366天，所以1闰年 = 366天 × 24小时/天 = 8784小时。
+**Q: How to calculate leap years?**
+A: Leap years have 366 days, so 1 leap year = 366 days × 24 hours/day = 8784 hours.
 
-**Q: 这个换算在项目管理中有什么用途？**
-A: 可以帮助项目经理将长期项目目标分解为具体的工时安排，便于资源配置和进度控制。
+**Q: What is the purpose of this conversion in project management?**
+A: It can help project managers break down long-term project goals into specific hour arrangements, facilitating resource allocation and progress control.
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Time" :key="index">
     <n-button

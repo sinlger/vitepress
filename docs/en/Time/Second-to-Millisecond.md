@@ -4,22 +4,22 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Time/index
-      linkText: 时间换算
+      linkText: Time Conversion
   - - link: /Time/Second-to-Millisecond
-      linkText: 秒到毫秒
+      linkText: Second to Millisecond
 head:
   - - meta
     - name: description
-      content: "秒到毫秒换算器 - 精确的s到ms时间单位转换工具。支持秒(second)与毫秒(millisecond)之间的快速换算，适用于程序开发、系统监控、科学计算等领域。提供详细的换算公式、实际应用场景和常见问题解答。"
+      content: "Second to Millisecond Converter - Precise s to ms time unit conversion tool. Supports quick conversion between seconds and milliseconds, suitable for program development, system monitoring, scientific computing, and more. Provides detailed conversion formulas, practical application scenarios, and frequently asked questions."
   - - meta
     - name: keywords
-      content: "秒, 毫秒, s, ms, 时间单位换算, 秒到毫秒, 毫秒换算, second, millisecond, 时间换算器, 毫秒微秒, 分秒换算, 秒单位换算, 秒转换, s是什么单位, 小时单位, 秒的换算, 时间秒, 秒换算小时, 时间转化, 一秒, 秒的定义, 秒单位, 秒换算, 分秒符号, 一秒是多少毫秒, 一毫秒等于多少秒, 秒的英文, 纳秒, 时间秒, 时间单位, 时间换算, 分钟, 一秒等于多少毫秒"
+      content: "second, millisecond, s, ms, time unit conversion, second to millisecond, millisecond conversion, second, millisecond, time converter, millisecond microsecond, minute second conversion, second unit conversion, second conversion, what is s unit, hour unit, second conversion, time second, second to hour conversion, time transformation, one second, second definition, second unit, second conversion, minute second symbol, how many milliseconds in one second, how many seconds in one millisecond, second in English, nanosecond, time second, time unit, time conversion, minute, one second equals how many milliseconds"
 ---
-# 秒 (s) 到 毫秒 (ms) 的换算
+# Second (s) to Millisecond (ms) Conversion
 
-秒到毫秒的换算在程序开发和系统监控中具有重要作用。无论是进行网络延迟测试、程序性能分析，还是进行实时系统开发，掌握秒(second)与毫秒(millisecond)之间的换算关系都是必要的技能。理解各种时间单位的换算方法，包括秒的英文表示(s)、毫秒单位(ms)等时间概念的使用，有助于我们在处理程序计时和系统优化时更加准确。
+Second to millisecond conversion plays an important role in program development and system monitoring. Whether conducting network latency testing, program performance analysis, or real-time system development, mastering the conversion relationship between seconds and milliseconds is a necessary skill. Understanding various time unit conversion methods, including the English representation of seconds (s) and millisecond units (ms), helps us be more accurate when handling program timing and system optimization.
 
 ---
 <script setup>
@@ -29,11 +29,11 @@ import { defineClientComponent } from 'vitepress'
 import { Time } from '../files';
 
 const convert = inject('convert')
-const seoKey = ['毫秒微秒','分秒换算','秒单位换算','秒转换','s是什么单位','小时单位','秒的换算','时间 秒','秒换算小时','时间转化','一秒','秒的定义','秒单位','秒 時間 変換','秒换算','分秒符号','一秒是多少毫秒','一毫秒等于多少秒','秒的英文','纳秒','时间秒','时间单位','时间换算','分钟','一秒等于多少毫秒']
+const seoKey = ['millisecond microsecond','minute second conversion','second unit conversion','second conversion','what is s unit','hour unit','second conversion','time second','second to hour conversion','time transformation','one second','second definition','second unit','second time conversion','second conversion','minute second symbol','how many milliseconds in one second','how many seconds in one millisecond','second in English','nanosecond','time second','time unit','time conversion','minute','one second equals how many milliseconds']
 const form = reactive({
   number: null,
   result: '',
-  title: '秒到毫秒换算器'
+  title: 'Second to Millisecond Converter'
 })
 
 const convertHandler = () => {
@@ -41,18 +41,18 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) * 1000
     form.result = `${form.number}s = ${convertedValue.toFixed(0)}ms`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-card :title="form.title" size="small" :bordered="false" style="margin-bottom: 16px">
   <n-form size="large" :model="form">
-    <n-form-item label="秒 (s)">
-      <n-input-number v-model:value="form.number" placeholder="输入秒" style="width: 100%" />
+    <n-form-item label="Second (s)">
+      <n-input-number v-model:value="form.number" placeholder="Enter seconds" style="width: 100%" />
     </n-form-item>
     <n-form-item>
-      <n-button type="info" @click="convertHandler" block>换算</n-button>
+      <n-button type="info" @click="convertHandler" block>Convert</n-button>
     </n-form-item>
   </n-form>
   <template #footer>
@@ -70,47 +70,48 @@ const convertHandler = () => {
   </div>
 </n-card>
 
-## 公式
+## Formula
 
-从 **秒 (s)** 换算到 **毫秒 (ms)** 的公式为：
+The formula for converting from **seconds (s)** to **milliseconds (ms)** is:
 $$ ms = s \times 1000 $$
 
-### 示例
+### Examples
 - 1s = 1000ms
 - 5s = 5000ms
 - 0.1s = 100ms
 
-## 实际应用场景
+## Practical Application Scenarios
 
-### 程序开发
-- **网络请求超时设置**：设置HTTP请求的超时时间，通常以毫秒为单位
-- **动画效果控制**：前端开发中控制CSS动画和JavaScript动画的持续时间
-- **定时器设置**：JavaScript中setTimeout和setInterval函数使用毫秒作为时间参数
+### Program Development
+- **Network Request Timeout Settings**: Setting timeout periods for HTTP requests, typically in milliseconds
+- **Animation Effect Control**: Controlling the duration of CSS animations and JavaScript animations in frontend development
+- **Timer Settings**: JavaScript setTimeout and setInterval functions use milliseconds as time parameters
 
-### 系统监控
-- **响应时间测量**：监控系统API响应时间，评估系统性能
-- **数据库查询优化**：分析SQL查询执行时间，优化数据库性能
-- **服务器性能分析**：监控服务器处理请求的时间，识别性能瓶颈
+### System Monitoring
+- **Response Time Measurement**: Monitoring system API response times to evaluate system performance
+- **Database Query Optimization**: Analyzing SQL query execution times to optimize database performance
+- **Server Performance Analysis**: Monitoring server request processing times to identify performance bottlenecks
 
-### 科学计算
-- **实验数据记录**：记录实验过程中的精确时间间隔
-- **信号处理**：数字信号处理中的采样频率和时间窗口计算
-- **物理测量**：测量物理现象的持续时间和频率
+### Scientific Computing
+- **Experimental Data Recording**: Recording precise time intervals during experimental processes
+- **Signal Processing**: Sampling frequency and time window calculations in digital signal processing
+- **Physical Measurements**: Measuring the duration and frequency of physical phenomena
 
-## 常见问题 (FAQ)
+## Frequently Asked Questions (FAQ)
 
-### Q: 一秒等于多少毫秒？
-A: 1秒 = 1,000毫秒。这是国际标准时间单位的换算关系。
+### Q: How many milliseconds are in one second?
+A: 1 second = 1,000 milliseconds. This is the standard international time unit conversion relationship.
 
-### Q: 毫秒和微秒有什么区别？
-A: 毫秒(ms)是千分之一秒，微秒(μs)是百万分之一秒。1毫秒 = 1,000微秒。
+### Q: What's the difference between milliseconds and microseconds?
+A: A millisecond (ms) is one thousandth of a second, while a microsecond (μs) is one millionth of a second. 1 millisecond = 1,000 microseconds.
 
-### Q: 在编程中如何精确测量毫秒级时间？
-A: 可以使用各种编程语言的高精度时间函数，如JavaScript的performance.now()、Python的time.perf_counter()等。
+### Q: How to accurately measure millisecond-level time in programming?
+A: You can use high-precision time functions in various programming languages, such as performance.now() in JavaScript, time.perf_counter() in Python, etc.
 
-### Q: 网络延迟通常是多少毫秒？
-A: 本地网络通常在1-10毫秒，互联网连接通常在20-200毫秒，具体取决于距离和网络质量。
-## 相关连接
+### Q: What is typical network latency in milliseconds?
+A: Local networks typically range from 1-10 milliseconds, internet connections typically range from 20-200 milliseconds, depending on distance and network quality.
+
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Time" :key="index">
     <n-button

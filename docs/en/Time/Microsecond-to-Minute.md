@@ -4,22 +4,22 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Time/index
-      linkText: 时间换算
+      linkText: Time Conversion
   - - link: /Time/Microsecond-to-Minute
-      linkText: 微秒到分钟
+      linkText: Microsecond to Minute
 head:
   - - meta
     - name: description
-      content: "微秒到分钟换算器 - 精确的时间单位转换工具，支持microseconds到minutes的快速换算。适用于科学计算、系统性能分析、数据处理等场景，提供微秒(μs)、毫秒(ms)、纳秒(ns)、秒(s)、分钟等时间单位的换算关系和实际应用指导。"
+      content: "Microsecond to minute converter - Precise time unit conversion tool, supporting fast conversion from microseconds to minutes. Suitable for scientific calculations, system performance analysis, data processing and other scenarios, providing conversion relationships and practical application guidance for time units such as microseconds (μs), milliseconds (ms), nanoseconds (ns), seconds (s), and minutes."
   - - meta
     - name: keywords
-      content: "微秒到分钟,microseconds to minutes,时间单位换算,μs转分钟,微秒换算器,分钟换算,时间转换,科学计算,性能分析,数据处理,微秒符号,时间单位,microseconds,minutes,时间测量,精密计时"
+      content: "microsecond to minute,microseconds to minutes,time unit conversion,μs to minute,microsecond converter,minute conversion,time conversion,scientific calculation,performance analysis,data processing,microsecond symbol,time units,microseconds,minutes,time measurement,precision timing"
 ---
-# 微秒 (μs) 到 分钟 (min) 的换算
+# Microsecond (μs) to Minute (min) Conversion
 
-微秒到分钟的换算在科学研究、数据分析和长时间性能监控中具有重要意义。微秒(μs)作为精密时间单位，常用于测量极短时间间隔，而分钟(min)则用于表示较长的时间周期。了解微秒、毫秒(ms)、纳秒(ns)、秒(s)、分钟等时间单位之间的换算关系，对于处理大数据时间序列分析、科学实验数据处理、系统性能长期监控等场景至关重要。本换算器支持microseconds到minutes的精确转换，帮助您快速完成时间单位换算。
+Microsecond to minute conversion is of great significance in scientific research, data analysis, and long-term performance monitoring. Microseconds (μs) as precision time units are commonly used to measure extremely short time intervals, while minutes (min) are used to represent longer time periods. Understanding the conversion relationships between time units such as microseconds, milliseconds (ms), nanoseconds (ns), seconds (s), and minutes is crucial for handling big data time series analysis, scientific experimental data processing, and long-term system performance monitoring scenarios. This converter supports precise conversion from microseconds to minutes, helping you quickly complete time unit conversions.
 
 ---
 <script setup>
@@ -30,21 +30,21 @@ import { Time } from '../files';
 
 const convert = inject('convert')
 const seoKey = [
-  'us和ns', 'ms是毫秒吗', 'ps和ns换算', 's和ms', 'ms等于多少s',
-  'ns和s换算', 'ms与s的换算', '一微秒等于多少秒', '微秒单位', 'microseconds是多少秒',
-  's和ms换算', '皮秒和飞秒', '秒 毫秒', 'ns是什么单位', 'μs是什么单位',
-  '秒单位', '微妙和秒的换算', '微妙单位', 'ms和s', '毫秒英文',
-  'milliseconds是多少秒', '微秒 毫秒', '毫秒和秒', '微秒和秒的换算', 'us是多少秒',
-  '微秒和秒', 'µs', 'microsec', '微秒符号', 'ms和s的换算',
-  'sec是什么单位', '秒的英文', 'μs', 'microsecond', 'ms是什么单位',
-  '纳秒', 'microseconds', 'ms to s', '时间单位', '飞秒',
-  'millisecond', 'milliseconds', '毫秒', '一秒等于多少毫秒', 'seconds',
-  '毫秒和秒的换算', '分钟', 'minutes', '微秒到分钟', 'microseconds to minutes'
+  'us and ns', 'is ms millisecond', 'ps and ns conversion', 's and ms', 'how many s equals ms',
+  'ns and s conversion', 'ms and s conversion', 'one microsecond equals how many seconds', 'microsecond unit', 'how many seconds is microseconds',
+  's and ms conversion', 'picosecond and femtosecond', 'second millisecond', 'what unit is ns', 'what unit is μs',
+  'second unit', 'microsecond and second conversion', 'microsecond unit', 'ms and s', 'millisecond english',
+  'how many seconds is milliseconds', 'microsecond millisecond', 'millisecond and second', 'microsecond and second conversion', 'how many seconds is us',
+  'microsecond and second', 'µs', 'microsec', 'microsecond symbol', 'ms and s conversion',
+  'what unit is sec', 'second english', 'μs', 'microsecond', 'what unit is ms',
+  'nanosecond', 'microseconds', 'ms to s', 'time units', 'femtosecond',
+  'millisecond', 'milliseconds', 'millisecond', 'one second equals how many milliseconds', 'seconds',
+  'millisecond and second conversion', 'minute', 'minutes', 'microsecond to minute', 'microseconds to minutes'
 ]
 const form = reactive({
   number: null,
   result: '',
-  title:'微秒到分钟换算器',
+  title:'Microsecond to Minute Converter',
 })
 
 const convertHandler = () => {
@@ -52,17 +52,17 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) / 60000000
     form.result = `${form.number}μs = ${convertedValue.toFixed(10)}min`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="微秒 (μs)">
-    <n-input-number v-model:value="form.number" placeholder="输入微秒" style="width: 100%" />
+  <n-form-item label="Microseconds (μs)">
+    <n-input-number v-model:value="form.number" placeholder="Enter microseconds" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
@@ -79,51 +79,51 @@ const convertHandler = () => {
   </template>
 </n-card>
 
-## 公式
+## Formula
 
-从 **微秒 (μs)** 换算到 **分钟 (min)** 的公式为：
+The formula for converting from **Microseconds (μs)** to **Minutes (min)** is:
 $$ min = \frac{\mu s}{6 \times 10^{7}} $$
 
-### 示例
+### Examples
 - 60,000,000μs = 1min
 - 300,000,000μs = 5min
 - 6,000,000μs = 0.1min
 
-## 实际应用场景
+## Practical Application Scenarios
 
-### 科学数据分析
-在物理实验和化学反应研究中，微秒级的测量数据需要转换为分钟，用于分析长期趋势和周期性变化。
+### Scientific Data Analysis
+In physics experiments and chemical reaction research, microsecond-level measurement data needs to be converted to minutes for analyzing long-term trends and periodic changes.
 
-### 系统性能监控
-服务器和应用程序的长期性能监控中，将微秒级的响应时间数据聚合为分钟级统计，便于生成性能报告和趋势分析。
+### System Performance Monitoring
+In long-term performance monitoring of servers and applications, microsecond-level response time data is aggregated to minute-level statistics for generating performance reports and trend analysis.
 
-### 大数据处理
-在处理大规模时间序列数据时，需要将微秒级的时间戳转换为分钟级别，用于数据聚合和可视化展示。
+### Big Data Processing
+When processing large-scale time series data, microsecond-level timestamps need to be converted to minute-level for data aggregation and visualization display.
 
-### 工业自动化
-工业控制系统中，微秒级的传感器数据需要转换为分钟级的统计信息，用于设备状态监控和预测性维护。
+### Industrial Automation
+In industrial control systems, microsecond-level sensor data needs to be converted to minute-level statistical information for equipment status monitoring and predictive maintenance.
 
-## 常见问题 (FAQ)
+## Frequently Asked Questions (FAQ)
 
-### Q: 微秒(μs)和分钟(min)的换算关系是什么？
-A: 1分钟 = 60,000,000微秒。因此微秒数除以60,000,000就得到分钟数。
+### Q: What's the conversion relationship between microseconds (μs) and minutes (min)?
+A: 1 minute = 60,000,000 microseconds. Therefore, dividing microseconds by 60,000,000 gives minutes.
 
-### Q: 为什么要除以60,000,000？
-A: 因为1分钟 = 60秒，1秒 = 1,000,000微秒，所以1分钟 = 60 × 1,000,000 = 60,000,000微秒。
+### Q: Why divide by 60,000,000?
+A: Because 1 minute = 60 seconds, and 1 second = 1,000,000 microseconds, so 1 minute = 60 × 1,000,000 = 60,000,000 microseconds.
 
-### Q: 如何输入微秒符号μ？
-A: 可以直接输入"us"或"μs"，也可以使用Alt+230(Windows)或Option+M(Mac)输入μ符号。
+### Q: How to input the microsecond symbol μ?
+A: You can directly input "us" or "μs", or use Alt+230 (Windows) or Option+M (Mac) to input the μ symbol.
 
-### Q: 微秒和纳秒的换算关系？
-A: 1微秒 = 1000纳秒(ns)。纳秒是比微秒更小的时间单位。
+### Q: What's the conversion relationship between microseconds and nanoseconds?
+A: 1 microsecond = 1000 nanoseconds (ns). Nanoseconds are smaller time units than microseconds.
 
-### Q: 在编程中如何处理这种换算？
-A: 使用公式 minutes = microseconds / 60000000，注意处理浮点数精度和大数值运算。
+### Q: How to handle this conversion in programming?
+A: Use the formula minutes = microseconds / 60000000, paying attention to floating-point precision and large number operations.
 
-### Q: 如何验证换算结果？
-A: 可以反向计算：分钟数 × 60,000,000 应该等于原始的微秒数。
+### Q: How to verify conversion results?
+A: You can calculate in reverse: minutes × 60,000,000 should equal the original microsecond value.
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Time" :key="index">
     <n-button

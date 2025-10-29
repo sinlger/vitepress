@@ -4,22 +4,22 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Time/index
-      linkText: 时间换算
+      linkText: Time Conversion
   - - link: /Time/Hour-to-Minute
-      linkText: 小时到分钟
+      linkText: Hour to Minute
 head:
   - - meta
     - name: description
-      content: "专业的小时到分钟换算器，支持高精度在线小时(h)转分钟(min)计算。提供详细换算公式、实际应用场景和常见问题解答，适用于工作时间计算、项目管理、学习规划等领域的时间单位转换需求。"
+      content: "Professional hour to minute converter, supporting high-precision online hour (h) to minute (min) calculation. Provides detailed conversion formulas, practical application scenarios, and frequently asked questions, suitable for work time calculation, project management, study planning, and other time unit conversion needs."
   - - meta
     - name: keywords
-      content: "小时到分钟换算器,小时转分钟,h转min,时间单位换算,分钟计算器,小时分钟转换,在线时间换算,工作时间计算,项目时间管理,学习时间规划,时间换算公式,小时单位,分钟单位,时间计算器,时分换算"
+      content: "hour to minute converter,hour to minute,h to min,time unit conversion,minute calculator,hour minute conversion,online time converter,work time calculation,project time management,study time planning,time conversion formula,hour unit,minute unit,time calculator,hour minute conversion"
 ---
-# 小时 (h) 到 分钟 (min) 的换算
+# Hour (h) to Minute (min) Conversion
 
-小时到分钟的换算是最常用的时间单位转换之一。在日常工作、学习和生活中，我们经常需要将小时转换为分钟来进行更精确的时间计算和规划。无论是计算工作时长、安排会议时间、制定学习计划，还是进行项目时间管理，掌握准确的小时到分钟换算方法都是非常实用的技能。我们的在线换算器提供简单易用的转换功能，帮助您快速完成时间单位的换算工作。
+Hour to minute conversion is one of the most commonly used time unit conversions. In daily work, study, and life, we often need to convert hours to minutes for more precise time calculation and planning. Whether calculating work duration, scheduling meeting times, making study plans, or managing project timelines, mastering accurate hour to minute conversion methods is a very practical skill. Our online converter provides simple and easy-to-use conversion functionality to help you quickly complete time unit conversion tasks.
 
 ---
 <script setup>
@@ -30,40 +30,40 @@ import { Time } from '../files';
 
 const convert = inject('convert')
 const seoKey = [
-  '时分等于秒的单位',
-  '秒转换',
-  '秒的符号',
-  '小时单位',
-  '小时的单位',
-  '时间符号',
-  '秒换算小时',
-  'hours什么意思',
-  '分钟的单位',
-  'h是什么单位',
-  '时间计算器 小时',
-  '时间换算单位',
-  '时间单位转换',
-  'hr是什么单位',
-  '时间换算器在线使用',
-  '时分秒符号',
-  '小时的英文',
-  '小时英文',
-  '秒的单位换算',
-  '分秒符号',
-  '分钟单位',
-  '时间单位换算',
-  '时间转换器',
-  '分钟缩写',
-  '时间换算',
-  '分钟',
-  '秒',
+  'time units equal to seconds',
+  'second conversion',
+  'second symbol',
+  'hour unit',
+  'hour unit',
+  'time symbol',
+  'second to hour conversion',
+  'hours meaning',
+  'minute unit',
+  'h unit',
+  'hour calculator',
+  'time conversion units',
+  'time unit conversion',
+  'hr unit',
+  'online time converter',
+  'hour minute second symbol',
+  'hour english',
+  'hour english',
+  'second unit conversion',
+  'minute second symbol',
+  'minute unit',
+  'time unit conversion',
+  'time converter',
+  'minute abbreviation',
+  'time conversion',
+  'minute',
+  'second',
   'hour',
   'hours'
 ]
 const form = reactive({
   number: null,
   result: '',
-  title: '小时到分钟换算器'
+  title: 'Hour to Minute Converter'
 })
 
 const convertHandler = () => {
@@ -71,17 +71,17 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) * 60
     form.result = `${form.number}h = ${convertedValue.toFixed(2)}min`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="小时 (h)">
-    <n-input-number v-model:value="form.number" placeholder="输入小时" style="width: 100%" />
+  <n-form-item label="Hours (h)">
+    <n-input-number v-model:value="form.number" placeholder="Enter hours" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
@@ -98,50 +98,50 @@ const convertHandler = () => {
   </template>
 </n-card>
 
-## 公式
+## Formula
 
-从 **小时 (h)** 换算到 **分钟 (min)** 的公式为：
+The formula for converting from **Hours (h)** to **Minutes (min)** is:
 $$ min = h \times 60 $$
 
-### 示例
+### Examples
 - 1h = 60min
 - 5h = 300min
 - 0.1h = 6min
 
-## 实际应用场景
+## Practical Application Scenarios
 
-### 工作时间计算
-在计算员工工作时长、加班时间或项目投入时间时，需要将小时转换为分钟进行更精确的统计和薪资计算。
+### Work Time Calculation
+When calculating employee work hours, overtime, or project time investment, it's necessary to convert hours to minutes for more precise statistics and salary calculations.
 
-### 会议安排
-安排会议时间时，需要将会议持续时间从小时转换为分钟，便于制定详细的议程安排和时间分配。
+### Meeting Scheduling
+When arranging meeting times, it's necessary to convert meeting duration from hours to minutes for creating detailed agenda arrangements and time allocation.
 
-### 学习规划
-制定学习计划时，需要将学习时间从小时转换为分钟，帮助更好地分配学习任务和休息时间。
+### Study Planning
+When making study plans, it's necessary to convert study time from hours to minutes to better allocate study tasks and break times.
 
-### 项目管理
-项目时间管理中，需要将任务预估时间从小时转换为分钟，用于制定详细的项目进度计划和资源分配。
+### Project Management
+In project time management, it's necessary to convert estimated task time from hours to minutes for creating detailed project schedules and resource allocation.
 
-## 常见问题 (FAQ)
+## Frequently Asked Questions (FAQ)
 
-### 1. 小时到分钟的换算公式是什么？
-小时到分钟的换算公式为：分钟数 = 小时数 × 60。这是最基础的时间单位换算。
+### 1. What is the conversion formula from hours to minutes?
+The conversion formula from hours to minutes is: minutes = hours × 60. This is the most basic time unit conversion.
 
-### 2. 为什么1小时等于60分钟？
-这是历史上约定俗成的时间计量标准，源于古巴比伦的60进制计数系统。
+### 2. Why does 1 hour equal 60 minutes?
+This is a historically established time measurement standard, originating from the ancient Babylonian sexagesimal (base-60) counting system.
 
-### 3. 如何快速进行心算换算？
-记住基本倍数关系：1小时=60分钟，0.5小时=30分钟，0.25小时=15分钟，然后进行简单的乘法运算。
+### 3. How to quickly perform mental calculation conversions?
+Remember basic multiple relationships: 1 hour = 60 minutes, 0.5 hours = 30 minutes, 0.25 hours = 15 minutes, then perform simple multiplication.
 
-### 4. 在工作中如何应用这个换算？
-工作时间统计、会议安排、项目进度管理等场景都需要进行小时到分钟的换算。
+### 4. How to apply this conversion in work?
+Work time statistics, meeting arrangements, project progress management, and other scenarios all require hour to minute conversions.
 
-### 5. 小数小时如何转换为分钟？
-将小数小时乘以60即可。例如：1.5小时 = 1.5 × 60 = 90分钟。
+### 5. How to convert decimal hours to minutes?
+Multiply decimal hours by 60. For example: 1.5 hours = 1.5 × 60 = 90 minutes.
 
-### 6. 如何验证换算结果的准确性？
-可以使用反向计算验证：将得到的分钟数除以60，应该等于原始的小时数。
-## 相关连接
+### 6. How to verify the accuracy of conversion results?
+You can use reverse calculation for verification: divide the obtained minutes by 60, which should equal the original number of hours.
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Time" :key="index">
     <n-button

@@ -4,22 +4,22 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Time/index
-      linkText: 时间换算
+      linkText: Time Conversion
   - - link: /Time/Year-to-Week
-      linkText: 年到周
+      linkText: Year to Week
 head:
   - - meta
     - name: description
-      content: "年到周换算器 - 精确的年(year)到周(week)时间单位转换工具。支持工作计划、项目管理、学期安排等应用场景。使用公式 year × 52.1775 进行换算，提供详细的计算步骤和实际应用案例。"
+      content: "Year to Week Converter - Accurate year to week time unit conversion tool. Supports project management, schedule planning, work arrangement and other application scenarios. Uses the formula year × 52.14 for conversion, providing detailed calculation steps and practical application cases."
   - - meta
     - name: keywords
-      content: "年到周换算器, 时间单位换算, 年转周, year to week, 工作计划, 项目管理, 学期安排, 时间规划, 年周转换, 时间计算器"
+      content: "year to week converter, time unit conversion, year to week, year to week, project management, schedule planning, work arrangement, time planning, year week conversion, time calculator"
 ---
-# 年 (year) 到 周 (week) 的换算
+# Year to Week Conversion
 
-年到周的换算在工作计划、项目管理和学期安排中具有重要意义。通过将年份转换为周数，我们可以更精确地制定工作计划、安排项目进度和规划学习周期。这种换算特别适用于企业管理、教育规划和个人时间管理等场景。
+Year to week conversion is very practical in project management, schedule planning, and work arrangement. Week is a commonly used time unit in daily life and work, making it convenient for planning and organizing various activities. By converting years to weeks, we can better understand and plan long-term projects and goals.
 
 ---
 <script setup>
@@ -33,27 +33,27 @@ const convert = inject('convert')
 const form = reactive({
   number: null,
   result: '',
-  title: '年到周换算器',
-  seoKey: ['年到周', '工作计划', '项目管理', '学期安排', '时间规划', '年周转换', '时间计算器', 'year to week']
+  title: 'Year to Week Converter',
+  seoKey: ['year to week', 'project management', 'schedule planning', 'work arrangement', 'time planning', 'year week conversion', 'time calculator', 'year to week']
 })
 
 const convertHandler = () => {
   if (form.number !== null && !isNaN(form.number)) {
-    const convertedValue = parseFloat(form.number) * 52
-    form.result = `${form.number}年 = ${convertedValue.toFixed(0)}周`
+    const convertedValue = parseFloat(form.number) * 52.14
+    form.result = `${form.number} year = ${convertedValue.toFixed(2)} weeks`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-card :title="form.title" embedded hoverable>
   <n-form size="large" :model="form">
-    <n-form-item label="年">
-      <n-input-number v-model:value="form.number" placeholder="输入年数" style="width: 100%" />
+    <n-form-item label="Year">
+      <n-input-number v-model:value="form.number" placeholder="Enter years" style="width: 100%" />
     </n-form-item>
     <n-form-item>
-      <n-button type="info" @click="convertHandler" block>换算</n-button>
+      <n-button type="info" @click="convertHandler" block>Convert</n-button>
     </n-form-item>
   </n-form>
 
@@ -72,48 +72,48 @@ const convertHandler = () => {
   </template>
 </n-card>
 
-## 公式
+## Formula
 
-从 **年** 换算到 **周** 的公式为：
-$$ week = year \times 52.1428571429 $$
+The formula for converting from **year** to **week** is:
+$$ week = year \times 52.14 $$
 
-### 示例
-- 1年 = 52.1428571429周
-- 2年 = 104.2857142857周
-- 0.5年 = 26.0714285714周
+### Examples
+- 1 year = 52.14 weeks
+- 2 years = 104.29 weeks
+- 0.5 year = 26.07 weeks
 
-## 实际应用场景
+## Practical Application Scenarios
 
-### 工作计划
-在企业管理和职业规划中：
-- 制定年度工作计划的周度分解
-- 安排项目里程碑和交付节点
-- 规划员工培训和发展计划
+### Project Management
+In project planning and management:
+- Long-term project timeline planning
+- Milestone setting and tracking
+- Resource allocation planning
 
-### 项目管理
-在项目执行和监控中：
-- 计算项目总工期的周数
-- 制定详细的项目时间表
-- 安排资源分配和进度跟踪
+### Schedule Planning
+In personal and work schedule arrangement:
+- Annual work plan breakdown
+- Study schedule planning
+- Goal achievement timeline
 
-### 学期安排
-在教育和培训领域：
-- 规划学年和学期的周数安排
-- 制定课程进度和教学计划
-- 安排考试和评估时间
+### Work Arrangement
+In work organization and planning:
+- Team work schedule coordination
+- Task assignment and tracking
+- Performance evaluation cycles
 
-## 常见问题 (FAQ)
+## Frequently Asked Questions (FAQ)
 
-**Q: 为什么1年不是52周而是52.14周？**
-A: 因为1年 = 365.25天（考虑闰年），而1周 = 7天，所以1年 = 365.25 ÷ 7 = 52.1428571429周。
+**Q: Why is the conversion factor 52.14 instead of 52?**
+A: Because a year has 365.25 days (considering leap years), and 365.25 ÷ 7 = 52.14 weeks, this calculation is more accurate.
 
-**Q: 在项目管理中如何使用这个换算？**
-A: 可以将年度项目目标分解为周度任务，便于制定详细的工作计划和进度跟踪。
+**Q: How to handle leap years in conversion?**
+A: A leap year has 366 days, so 1 leap year = 366 ÷ 7 = 52.29 weeks. For general calculations, using 52.14 is sufficient.
 
-**Q: 这种换算在学校教育中有什么用途？**
-A: 帮助教育工作者规划学年课程，合理分配教学内容，确保教学进度的科学性和可行性。
+**Q: What is the practical significance of this conversion in project management?**
+A: Converting years to weeks helps break down long-term goals into manageable weekly tasks, making project planning more specific and executable.
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Time" :key="index">
     <n-button

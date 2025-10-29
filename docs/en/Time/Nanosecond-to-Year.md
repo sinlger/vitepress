@@ -4,22 +4,22 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Time/index
-      linkText: 时间换算
+      linkText: Time Conversion
   - - link: /Time/Nanosecond-to-Year
-      linkText: 纳秒到年
+      linkText: Nanosecond to Year
 head:
   - - meta
     - name: description
-      content: "纳秒到年换算器 - 精确的ns到year时间单位转换工具。支持纳秒(nanosecond)与年(year)之间的快速换算，适用于长期数据分析、历史研究、天文计算等领域。提供详细的换算公式、实际应用场景和常见问题解答。"
+      content: "Nanosecond to Year Converter - Precise ns to year time unit conversion tool. Supports fast conversion between nanoseconds and years, suitable for long-term data analysis, historical research, astronomical calculations and other fields. Provides detailed conversion formulas, practical application scenarios and frequently asked questions."
   - - meta
     - name: keywords
-      content: "纳秒, 年, ns, year, 时间单位换算, 纳秒到年, 年换算, nanosecond, year, 时间换算器, 长期数据分析, 历史研究, 天文计算, 时间测量, 年度分析, 时间单位转换, 纳秒年换算, 时间计算工具"
+      content: "nanosecond, year, ns, year, time unit conversion, nanosecond to year, year conversion, nanosecond, year, time converter, long-term data analysis, historical research, astronomical calculations, time measurement, annual analysis, time unit conversion, nanosecond year conversion, time calculation tool"
 ---
-# 纳秒 (ns) 到 年 (year) 的换算
+# Nanosecond (ns) to Year (year) Conversion
 
-纳秒到年的换算在长期数据分析和历史研究中具有重要意义。无论是进行天文计算、地质年代研究，还是进行系统的长期性能分析，掌握纳秒(nanosecond)与年(year)之间的换算关系都是必要的技能。理解各种时间单位的换算方法，包括纳秒的英文表示(ns)、年单位等时间概念的使用，有助于我们在处理超长时间跨度的计算和分析时更加准确。
+The conversion from nanoseconds to years has important significance in long-term data analysis and historical research. Whether it's for astronomical calculations, geological age research, or long-term system performance analysis, mastering the conversion relationship between nanoseconds and years is a necessary skill. Understanding various time unit conversion methods, including the English representation of nanoseconds (ns), year units and other time concepts, helps us be more accurate when handling ultra-long time span calculations and analysis.
 
 ---
 <script setup>
@@ -29,11 +29,11 @@ import { defineClientComponent } from 'vitepress'
 import { Time } from '../files';
 
 const convert = inject('convert')
-const seoKey = ['ns','year','年','纳秒','时间单位换算','时间换算','毫秒微秒','分秒换算','秒单位换算','秒','毫秒','微秒','纳秒','ns和year换算','时间的单位','年的换算','一年等于多少纳秒','微秒和纳秒','微秒单位','ms单位','一毫秒','ns是什么单位','秒单位','微妙和秒的换算','一秒多少毫秒','纳秒和微秒','秒换算','时间换算单位','us是多少秒','多少毫秒等于一秒','纳秒和年的换算','一秒是多少毫秒','秒的单位','一毫秒等于多少秒','时间单位换算','nanosecond','ms是什么单位','year','时间单位','微秒','秒','一秒等于多少毫秒','毫秒和秒的换算','年','year']
+const seoKey = ['ns','year','year','nanosecond','time unit conversion','time conversion','millisecond microsecond','minute second conversion','second unit conversion','second','millisecond','microsecond','nanosecond','ns and year conversion','time units','year conversion','how many nanoseconds in a year','microsecond and nanosecond','microsecond unit','ms unit','one millisecond','what is ns unit','second unit','microsecond and second conversion','how many milliseconds in a second','nanosecond and microsecond','second conversion','time unit conversion','us is how many seconds','how many milliseconds equal one second','nanosecond and year conversion','how many milliseconds in one second','second unit','how many seconds in one millisecond','time unit conversion','nanosecond','what is ms unit','year','time unit','microsecond','second','how many milliseconds equal one second','millisecond and second conversion','year','year']
 const form = reactive({
   number: null,
   result: '',
-  title: '纳秒到年换算器'
+  title: 'Nanosecond to Year Converter'
 })
 
 const convertHandler = () => {
@@ -41,18 +41,18 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) / 31536000000000000
     form.result = `${form.number}ns = ${convertedValue.toFixed(15)}year`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-card :title="form.title" size="small" :bordered="false" style="margin-bottom: 16px">
 <n-form size="large" :model="form">
-  <n-form-item label="纳秒 (ns)">
-    <n-input-number v-model:value="form.number" placeholder="输入纳秒" style="width: 100%" />
+  <n-form-item label="Nanoseconds (ns)">
+    <n-input-number v-model:value="form.number" placeholder="Enter nanoseconds" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
   <template #footer>
@@ -70,41 +70,41 @@ const convertHandler = () => {
   </div>
 </n-card>
 
-## 公式
+## Formula
 
-从 **纳秒 (ns)** 换算到 **年 (year)** 的公式为：
+The formula for converting from **nanoseconds (ns)** to **years (year)** is:
 $$ year = \frac{ns}{3.1536 \times 10^{16}} $$
 
-### 示例
+### Examples
 - 3.1536 × 10¹⁶ ns = 1year
 - 3.1536 × 10¹⁵ ns = 0.1year
 - 1.5768 × 10¹⁶ ns = 0.5year
 
-## 实际应用场景
+## Practical Application Scenarios
 
-### 天文计算与宇宙研究
-在天体物理学研究中，需要将精密的纳秒级观测数据转换为年的时间尺度，用于分析恒星演化、宇宙膨胀等长期天文现象。
+### Astronomical Calculations and Cosmic Research
+In astrophysics research, it's necessary to convert precise nanosecond-level observational data to year time scales for analyzing long-term astronomical phenomena such as stellar evolution and cosmic expansion.
 
-### 地质年代学研究
-地质学家在研究地球历史时，经常需要将实验室中纳秒级的测量结果转换为地质年代的年份单位，以便进行地层年代分析。
+### Geological Chronology Research
+Geologists studying Earth's history often need to convert laboratory nanosecond-level measurement results to geological age year units for stratigraphic age analysis.
 
-### 长期系统性能分析
-在大型计算机系统和数据中心的长期运营分析中，将累积的纳秒级操作时间转换为年度统计，有助于评估系统的整体性能和寿命。
+### Long-term System Performance Analysis
+In long-term operational analysis of large computer systems and data centers, converting accumulated nanosecond-level operation times to annual statistics helps evaluate overall system performance and lifespan.
 
-### 历史数据归档分析
-在处理历史数据归档时，需要将微观的时间戳数据转换为年的单位，以便进行长期趋势分析和历史数据挖掘。
+### Historical Data Archive Analysis
+When processing historical data archives, it's necessary to convert microscopic timestamp data to year units for long-term trend analysis and historical data mining.
 
-## 常见问题 (FAQ)
+## Frequently Asked Questions (FAQ)
 
-**Q: 为什么需要进行纳秒到年的换算？**
-A: 在天文学、地质学、长期数据分析等领域，经常需要将微观的时间测量结果转换为宏观的年度时间单位，以便进行长期趋势分析和历史研究。
+**Q: Why is nanosecond to year conversion needed?**
+A: In astronomy, geology, long-term data analysis and other fields, it's often necessary to convert microscopic time measurements to macroscopic annual time units for long-term trend analysis and historical research.
 
-**Q: 纳秒到年的换算精度如何保证？**
-A: 使用标准的换算公式 ns ÷ 3.154 × 10¹⁶，确保换算结果的准确性。对于科学计算，建议使用高精度计算器并保留足够的有效数字。
+**Q: How is the accuracy of nanosecond to year conversion ensured?**
+A: Using the standard conversion formula ns ÷ 3.154 × 10¹⁶ ensures accuracy of conversion results. For scientific calculations, it's recommended to use high-precision calculators and retain sufficient significant digits.
 
-**Q: 在什么情况下会用到如此巨大的时间跨度换算？**
-A: 主要用于天文观测数据分析、地质年代研究、长期系统性能统计、历史数据归档分析等需要跨越微观到宏观时间尺度的科学研究领域。
-## 相关连接
+**Q: In what situations would such enormous time span conversions be used?**
+A: Mainly used in astronomical observation data analysis, geological age research, long-term system performance statistics, historical data archive analysis and other scientific research fields that require spanning from microscopic to macroscopic time scales.
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Time" :key="index">
     <n-button

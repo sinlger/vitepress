@@ -4,22 +4,22 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Time/index
-      linkText: 时间换算
+      linkText: Time Conversion
   - - link: /Time/Year-to-Minute
-      linkText: 年到分钟
+      linkText: Year to Minute
 head:
   - - meta
     - name: description
-      content: "年到分钟换算器 - 精确的年(year)到分钟(minute)时间单位转换工具。支持时间管理、工作计划、学习安排等应用场景。使用公式 year × 525600 进行换算，提供详细的计算步骤和实际应用案例。"
+      content: "Year to Minute Converter - Accurate year to minute time unit conversion tool. Supports time management, work planning, study scheduling and other application scenarios. Uses the formula year × 525600 for conversion, providing detailed calculation steps and practical application cases."
   - - meta
     - name: keywords
-      content: "年到分钟换算器, 时间单位换算, 年转分钟, year to minute, 时间管理, 工作计划, 学习安排, 时间规划, 年分钟转换, 时间计算器"
+      content: "year to minute converter, time unit conversion, year to minute, year to minute, time management, work planning, study scheduling, time planning, year minute conversion, time calculator"
 ---
-# 年 (year) 到 分钟 (min) 的换算
+# Year to Minute Conversion
 
-年到分钟的换算在时间管理、工作计划和学习安排中具有重要意义。通过将年份转换为分钟，我们可以更精确地计算时间投入、制定详细的计划安排和评估时间效率。这种换算特别适用于个人时间管理、项目进度规划和学习目标设定等场景。
+Year to minute conversion is of great significance in time management, work planning, and study scheduling. By converting years to minutes, we can more precisely calculate time investment, create detailed planning arrangements, and evaluate time efficiency. This conversion is particularly suitable for personal time management, project progress planning, and learning goal setting scenarios.
 
 ---
 <script setup>
@@ -33,27 +33,27 @@ const convert = inject('convert')
 const form = reactive({
   number: null,
   result: '',
-  title: '年到分钟换算器',
-  seoKey: ['年到分钟', '时间管理', '工作计划', '学习安排', '时间规划', '年分钟转换', '时间计算器', 'year to minute']
+  title: 'Year to Minute Converter',
+  seoKey: ['year to minute', 'time management', 'work planning', 'study scheduling', 'time planning', 'year minute conversion', 'time calculator', 'year to minute']
 })
 
 const convertHandler = () => {
   if (form.number !== null && !isNaN(form.number)) {
     const convertedValue = parseFloat(form.number) * 525600
-    form.result = `${form.number}年 = ${convertedValue.toFixed(0)}分钟`
+    form.result = `${form.number} year = ${convertedValue.toFixed(0)} minutes`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-card :title="form.title" embedded hoverable>
   <n-form size="large" :model="form">
-    <n-form-item label="年">
-      <n-input-number v-model:value="form.number" placeholder="输入年数" style="width: 100%" />
+    <n-form-item label="Year">
+      <n-input-number v-model:value="form.number" placeholder="Enter years" style="width: 100%" />
     </n-form-item>
     <n-form-item>
-      <n-button type="info" @click="convertHandler" block>换算</n-button>
+      <n-button type="info" @click="convertHandler" block>Convert</n-button>
     </n-form-item>
   </n-form>
 
@@ -72,48 +72,48 @@ const convertHandler = () => {
   </template>
 </n-card>
 
-## 公式
+## Formula
 
-从 **年** 换算到 **分钟** 的公式为：
+The formula for converting from **year** to **minute** is:
 $$ min = year \times 525600 $$
 
-### 示例
-- 1年 = 525600分钟
-- 2年 = 1051200分钟
-- 0.5年 = 262800分钟
+### Examples
+- 1 year = 525600 minutes
+- 2 years = 1051200 minutes
+- 0.5 year = 262800 minutes
 
-## 实际应用场景
+## Practical Application Scenarios
 
-### 时间管理
-在个人时间管理中，分钟级精度用于：
-- 制定详细的日程安排
-- 计算年度可用时间总量
-- 评估时间利用效率
+### Time Management
+In personal time management, minute-level precision is used for:
+- Creating detailed schedule arrangements
+- Calculating total annual available time
+- Evaluating time utilization efficiency
 
-### 工作计划
-在职业规划和工作安排中：
-- 计算年度工作时间分配
-- 制定项目时间预算
-- 评估任务完成时间
+### Work Planning
+In career planning and work arrangements:
+- Calculating annual work time allocation
+- Creating project time budgets
+- Evaluating task completion time
 
-### 学习安排
-在教育和培训领域：
-- 制定年度学习计划
-- 计算课程总时长
-- 安排学习进度和复习时间
+### Study Scheduling
+In education and training fields:
+- Creating annual study plans
+- Calculating total course duration
+- Arranging study progress and review time
 
-## 常见问题 (FAQ)
+## Frequently Asked Questions (FAQ)
 
-**Q: 525600这个数值是如何计算的？**
-A: 1年 = 365天 × 24小时 × 60分钟 = 525,600分钟。这是基于标准年的计算。
+**Q: How is the value 525600 calculated?**
+A: 1 year = 365 days × 24 hours × 60 minutes = 525,600 minutes. This is based on a standard year calculation.
 
-**Q: 闰年如何计算？**
-A: 闰年有366天，所以1闰年 = 366天 × 24小时 × 60分钟 = 527,040分钟。
+**Q: How to calculate leap years?**
+A: A leap year has 366 days, so 1 leap year = 366 days × 24 hours × 60 minutes = 527,040 minutes.
 
-**Q: 这种换算在时间管理中有什么用途？**
-A: 可以帮助我们更精确地规划时间，将长期目标分解为具体的时间投入，提高时间利用效率。
+**Q: What is the purpose of this conversion in time management?**
+A: It can help us plan time more precisely, break down long-term goals into specific time investments, and improve time utilization efficiency.
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Time" :key="index">
     <n-button

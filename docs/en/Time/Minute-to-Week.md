@@ -4,22 +4,22 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Time/index
-      linkText: 时间换算
+      linkText: Time Conversion
   - - link: /Time/Minute-to-Week
-      linkText: 分钟到周
+      linkText: Minute to Week
 head:
   - - meta
     - name: description
-      content: "分钟到周换算器 - 实用的时间单位转换工具，支持minutes到weeks的快速换算。提供分钟(min)、周(week)等时间单位的换算关系，适用于工作计划、项目管理等场景。在线时间换算器，支持时分秒符号转换。"
+      content: "Minute to Week Converter - Practical time unit conversion tool, supporting fast conversion from minutes to weeks. Provides conversion relationships for time units like minutes (min) and weeks (week), suitable for work planning, project management, and other scenarios. Online time converter with support for time notation symbols."
   - - meta
     - name: keywords
-      content: "分钟转换成小时,秒转换,小时单位,秒换算小时,分钟英文,时间换算单位,时间换算器在线使用,时分秒符号,分秒,分钟换算小时,minutes是什么意思中文,分秒符号,分钟转小时,分钟的缩写,min是分钟吗,分钟单位,分钟的英文,时间单位换算,时间计算器在线计算分钟,时间转换器,分钟缩写,小时,分钟英文,时间换算,mins,秒,minute,minutes,min,周,week,工作计划"
+      content: "minute to week conversion,time conversion,week unit,minute to week calculation,minutes in English,time unit conversion,online time converter,time notation symbols,minute week conversion,minutes meaning,time symbols,minute to week,minute abbreviation,min is minute,minute unit,minute in English,time unit conversion,online minute calculator,time converter,minute abbreviation,week,minute English,time conversion,mins,second,minute,minutes,min,week,work planning"
 ---
-# 分钟 (min) 到 周 (week) 的换算
+# Minute (min) to Week (week) Conversion
 
-分钟到周的换算在工作计划和项目管理中具有重要意义。无论是进行工作时间统计、项目进度规划，还是进行周期性任务安排和时间管理，掌握分钟(minutes)与周(weeks)之间的换算关系都是必不可少的。理解各种时间单位的换算方法，包括分钟的英文表示(min)、周的英文(week)、时分秒符号的使用，有助于我们在处理中期时间计算时更加准确高效。
+The conversion from minutes to weeks is of great significance in work planning and project management. Whether it's for work time statistics, project progress planning, or periodic task arrangement and time management, mastering the conversion relationship between minutes and weeks is essential. Understanding various time unit conversion methods, including the English representation of minutes (min), week in English (week), and the use of time notation symbols, helps us be more accurate and efficient when dealing with medium-term time calculations.
 
 ---
 <script setup>
@@ -28,19 +28,19 @@ import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage,N
 import { defineClientComponent } from 'vitepress'
 import { Time } from '../files';
 const seoKey = [
-  '分钟转换成小时', '秒转换', '小时单位', '秒换算小时', '分钟英文',
-  '时间换算单位', '时间换算器在线使用', '时分秒符号', '分秒', '分钟换算小时',
-  'minutes是什么意思中文', '分秒符号', '分钟转小时', '分钟的缩写', 'min是分钟吗',
-  '分钟单位', '分钟的英文', '时间单位换算', '时间计算器在线计算分钟', '时间转换器',
-  '分钟缩写', '小时', '分钟英文', '时间换算', 'mins', '秒', 'minute', 'minutes', 'min',
-  '周', 'week', '工作计划', '项目管理', '分钟到周'
+  'minute to week conversion', 'time conversion', 'week unit', 'minute to week calculation', 'minutes in English',
+  'time unit conversion', 'online time converter', 'time notation symbols', 'minute week conversion', 'minutes meaning',
+  'time symbols', 'minute to week', 'minute abbreviation', 'min is minute', 'minute unit',
+  'minute in English', 'time unit conversion', 'online minute calculator', 'time converter',
+  'minute abbreviation', 'week', 'minute English', 'time conversion', 'mins', 'second', 'minute', 'minutes', 'min',
+  'week', 'work planning', 'project management', 'minute to week'
 ]
 const convert = inject('convert')
 
 const form = reactive({
   number: null,
   result: '',
-  title: '分钟到周换算器'
+  title: 'Minute to Week Converter'
 })
 
 const convertHandler = () => {
@@ -48,17 +48,17 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) / 10080
     form.result = `${form.number}min = ${convertedValue.toFixed(6)}week`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="分钟 (min)">
-    <n-input-number v-model:value="form.number" placeholder="输入分钟" style="width: 100%" />
+  <n-form-item label="Minutes (min)">
+    <n-input-number v-model:value="form.number" placeholder="Enter minutes" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
@@ -75,51 +75,51 @@ const convertHandler = () => {
   </template>
 </n-card>
 
-## 公式
+## Formula
 
-从 **分钟 (min)** 换算到 **周 (week)** 的公式为：
+The formula for converting from **minutes (min)** to **weeks (week)** is:
 $$ week = \frac{min}{10080} $$
 
-### 示例
+### Examples
 - 10080min = 1week
 - 20160min = 2week
 - 5040min = 0.5week
 
-## 实际应用场景
+## Practical Application Scenarios
 
-### 1. 工作时间统计
-在人力资源管理中，需要将员工的分钟级工作时间累计转换为周，用于工作量统计和薪资计算。
+### 1. Work Time Statistics
+In human resource management, it's necessary to convert employees' accumulated minute-level work time to weeks for workload statistics and salary calculations.
 
-### 2. 项目进度规划
-在项目管理中，将项目任务的分钟级时间估算转换为周，用于项目进度安排和里程碑设定。
+### 2. Project Progress Planning
+In project management, converting minute-level time estimates for project tasks to weeks is used for project scheduling and milestone setting.
 
-### 3. 学习计划制定
-在教育培训中，将学习的分钟级时间转换为周，用于课程安排和学习进度跟踪。
+### 3. Learning Plan Development
+In education and training, converting minute-level learning time to weeks is used for course arrangement and learning progress tracking.
 
-### 4. 设备维护周期
-在设备管理中，将设备的分钟级运行时间转换为周，用于维护计划制定和设备保养安排。
+### 4. Equipment Maintenance Cycles
+In equipment management, converting equipment's minute-level operation time to weeks is used for maintenance planning and equipment servicing schedules.
 
-## 常见问题 (FAQ)
+## Frequently Asked Questions (FAQ)
 
-### Q1: 分钟和周的换算关系是什么？
-A1: 1周 = 10,080分钟。这个换算基于1周 = 7天 × 24小时 × 60分钟 = 10,080分钟的时间关系。
+### Q1: What is the conversion relationship between minutes and weeks?
+A1: 1 week = 10,080 minutes. This conversion is based on the time relationship: 1 week = 7 days × 24 hours × 60 minutes = 10,080 minutes.
 
-### Q2: 为什么换算系数是10,080？
-A2: 这个系数来源于时间单位的层级关系：1周 = 7天 × 24小时 × 60分钟 = 10,080分钟。
+### Q2: Why is the conversion factor 10,080?
+A2: This factor comes from the hierarchical relationship of time units: 1 week = 7 days × 24 hours × 60 minutes = 10,080 minutes.
 
-### Q3: week是什么意思中文？
-A3: week的中文意思是"周"或"星期"，是时间单位，等于7天的时间长度。
+### Q3: What does "week" mean in Chinese?
+A3: "Week" means "周" or "星期" in Chinese, which is a time unit equal to 7 days in length.
 
-### Q4: 分钟到周的换算在工作中有什么用途？
-A4: 主要用于工作时间统计、项目进度规划、学习计划制定、设备维护周期等需要周期性时间管理的场景。
+### Q4: What are the uses of minute to week conversion in work?
+A4: It's mainly used in scenarios requiring periodic time management such as work time statistics, project progress planning, learning plan development, and equipment maintenance cycles.
 
-### Q5: 如何在项目管理中进行分钟转周的计算？
-A5: 可以使用除法运算：weeks = minutes ÷ 10,080，这样可以将累计的工作分钟数转换为周数。
+### Q5: How to perform minute to week calculations in project management?
+A5: You can use division: weeks = minutes ÷ 10,080. This way, accumulated work minutes can be converted to weeks.
 
-### Q6: 工作周和自然周在换算中有区别吗？
-A6: 这个换算基于自然周（7天），如果是工作周（通常5天），需要根据实际工作天数调整换算系数。
+### Q6: Is there a difference between work weeks and natural weeks in conversion?
+A6: This conversion is based on natural weeks (7 days). If it's a work week (usually 5 days), the conversion factor needs to be adjusted according to the actual working days.
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Time" :key="index">
     <n-button

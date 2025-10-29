@@ -4,22 +4,22 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Time/index
-      linkText: 时间换算
+      linkText: Time Conversion
   - - link: /Time/Minute-to-Millisecond
-      linkText: 分钟到毫秒
+      linkText: Minute to Millisecond
 head:
   - - meta
     - name: description
-      content: "分钟到毫秒换算器 - 精确的时间单位转换工具，支持minutes到milliseconds的快速换算。提供分钟(min)、毫秒(ms)等时间单位的换算关系，适用于编程开发、系统监控等场景。在线时间换算器，支持时分秒符号转换。"
+      content: "Minute to Millisecond Converter - Precise time unit conversion tool, supporting fast conversion from minutes to milliseconds. Provides conversion relationships for time units like minutes (min) and milliseconds (ms), suitable for programming development, system monitoring, and other scenarios. Online time converter with support for time notation symbols."
   - - meta
     - name: keywords
-      content: "分钟转换成小时,秒转换,小时单位,秒换算小时,分钟英文,时间换算单位,时间换算器在线使用,时分秒符号,分秒,分钟换算小时,minutes是什么意思中文,分秒符号,分钟转小时,分钟的缩写,min是分钟吗,分钟单位,分钟的英文,时间单位换算,时间计算器在线计算分钟,时间转换器,分钟缩写,小时,分钟英文,时间换算,mins,秒,minute,minutes,min,毫秒,millisecond,ms,编程开发"
+      content: "minute to millisecond conversion,time conversion,millisecond unit,minute to millisecond calculation,minutes in English,time unit conversion,online time converter,time notation symbols,minute millisecond conversion,minutes meaning,time symbols,minute to millisecond,minute abbreviation,min is minute,minute unit,minute in English,time unit conversion,online minute calculator,time converter,minute abbreviation,millisecond,minute English,time conversion,mins,second,minute,minutes,min,millisecond,ms,programming development"
 ---
-# 分钟 (min) 到 毫秒 (ms) 的换算
+# Minute (min) to Millisecond (ms) Conversion
 
-分钟到毫秒的换算在编程开发和系统监控中具有重要意义。无论是进行性能测试、API响应时间监控，还是进行精确的时间计算和系统优化，掌握分钟(minutes)与毫秒(milliseconds)之间的换算关系都是必不可少的。理解各种时间单位的换算方法，包括分钟的英文表示(min)、毫秒的缩写(ms)、时分秒符号的使用，有助于我们在处理高精度时间计算时更加准确高效。
+The conversion from minutes to milliseconds is of great significance in programming development and system monitoring. Whether it's for performance testing, API response time monitoring, or precise time calculations and system optimization, mastering the conversion relationship between minutes and milliseconds is essential. Understanding various time unit conversion methods, including the English representation of minutes (min), millisecond abbreviations (ms), and the use of time notation symbols, helps us be more accurate and efficient when dealing with high-precision time calculations.
 
 ---
 <script setup>
@@ -28,19 +28,19 @@ import { NButton,NForm ,NFormItem,NInput,NInputNumber,NSelect,NCard,useMessage,N
 import { defineClientComponent } from 'vitepress'
 import { Time } from '../files';
 const seoKey = [
-  '分钟转换成小时', '秒转换', '小时单位', '秒换算小时', '分钟英文',
-  '时间换算单位', '时间换算器在线使用', '时分秒符号', '分秒', '分钟换算小时',
-  'minutes是什么意思中文', '分秒符号', '分钟转小时', '分钟的缩写', 'min是分钟吗',
-  '分钟单位', '分钟的英文', '时间单位换算', '时间计算器在线计算分钟', '时间转换器',
-  '分钟缩写', '小时', '分钟英文', '时间换算', 'mins', '秒', 'minute', 'minutes', 'min',
-  '毫秒', 'millisecond', 'ms', '编程开发', '系统监控', '分钟到毫秒'
+  'minute to millisecond conversion', 'time conversion', 'millisecond unit', 'minute to millisecond calculation', 'minutes in English',
+  'time unit conversion', 'online time converter', 'time notation symbols', 'minute millisecond conversion', 'minutes meaning',
+  'time symbols', 'minute to millisecond', 'minute abbreviation', 'min is minute', 'minute unit',
+  'minute in English', 'time unit conversion', 'online minute calculator', 'time converter',
+  'minute abbreviation', 'millisecond', 'minute English', 'time conversion', 'mins', 'second', 'minute', 'minutes', 'min',
+  'millisecond', 'ms', 'programming development', 'system monitoring', 'minute to millisecond'
 ]
 const convert = inject('convert')
 
 const form = reactive({
   number: null,
   result: '',
-  title: '分钟到毫秒换算器'
+  title: 'Minute to Millisecond Converter'
 })
 
 const convertHandler = () => {
@@ -48,17 +48,17 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) * 60000
     form.result = `${form.number}min = ${convertedValue.toFixed(0)}ms`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="分钟 (min)">
-    <n-input-number v-model:value="form.number" placeholder="输入分钟" style="width: 100%" />
+  <n-form-item label="Minutes (min)">
+    <n-input-number v-model:value="form.number" placeholder="Enter minutes" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
@@ -75,51 +75,51 @@ const convertHandler = () => {
   </template>
 </n-card>
 
-## 公式
+## Formula
 
-从 **分钟 (min)** 换算到 **毫秒 (ms)** 的公式为：
+The formula for converting from **minutes (min)** to **milliseconds (ms)** is:
 $$ ms = min \times 60000 $$
 
-### 示例
+### Examples
 - 1min = 60000ms
 - 5min = 300000ms
 - 0.1min = 6000ms
 
-## 实际应用场景
+## Practical Application Scenarios
 
-### 1. 编程开发
-在软件开发中，需要将分钟级的时间间隔转换为毫秒，用于定时器设置、延迟执行和性能优化。
+### 1. Programming Development
+In software development, it's necessary to convert minute-level time intervals to milliseconds for timer settings, delayed execution, and performance optimization.
 
-### 2. 系统监控
-在系统性能监控中，将分钟级的监控周期转换为毫秒，用于精确的性能指标采集和实时监控。
+### 2. System Monitoring
+In system performance monitoring, converting minute-level monitoring cycles to milliseconds is used for precise performance metric collection and real-time monitoring.
 
-### 3. API响应时间
-在API性能测试中，将分钟级的超时设置转换为毫秒，用于精确控制请求超时和响应时间分析。
+### 3. API Response Time
+In API performance testing, converting minute-level timeout settings to milliseconds is used for precise control of request timeouts and response time analysis.
 
-### 4. 数据库操作
-在数据库查询优化中，将分钟级的执行时间转换为毫秒，用于性能分析和查询优化。
+### 4. Database Operations
+In database query optimization, converting minute-level execution time to milliseconds is used for performance analysis and query optimization.
 
-## 常见问题 (FAQ)
+## Frequently Asked Questions (FAQ)
 
-### Q1: 分钟和毫秒的换算关系是什么？
-A1: 1分钟 = 60,000毫秒。这个换算基于1分钟 = 60秒 × 1,000毫秒 = 60,000毫秒的时间关系。
+### Q1: What is the conversion relationship between minutes and milliseconds?
+A1: 1 minute = 60,000 milliseconds. This conversion is based on the time relationship: 1 minute = 60 seconds × 1,000 milliseconds = 60,000 milliseconds.
 
-### Q2: 为什么换算系数是60,000？
-A2: 这个系数来源于时间单位的层级关系：1分钟 = 60秒 × 1,000毫秒/秒 = 60,000毫秒。
+### Q2: Why is the conversion factor 60,000?
+A2: This factor comes from the hierarchical relationship of time units: 1 minute = 60 seconds × 1,000 milliseconds/second = 60,000 milliseconds.
 
-### Q3: millisecond是什么意思中文？
-A3: millisecond的中文意思是"毫秒"，是时间单位的千分之一秒，缩写为ms。
+### Q3: What does "millisecond" mean in Chinese?
+A3: "Millisecond" means "毫秒" in Chinese, which is one thousandth of a second, abbreviated as ms.
 
-### Q4: 分钟到毫秒的换算在编程中有什么用途？
-A4: 主要用于定时器设置、性能测试、API超时控制、系统监控等需要高精度时间控制的场景。
+### Q4: What are the uses of minute to millisecond conversion in programming?
+A4: It's mainly used for timer settings, performance testing, API timeout control, system monitoring, and other scenarios requiring high-precision time control.
 
-### Q5: 如何在编程中进行分钟转毫秒的计算？
-A5: 可以使用乘法运算：milliseconds = minutes × 60000，大多数编程语言都支持这种计算。
+### Q5: How to perform minute to millisecond calculations in programming?
+A5: You can use multiplication: milliseconds = minutes × 60000. Most programming languages support this calculation.
 
-### Q6: 毫秒在时间单位中的位置是什么？
-A6: 毫秒是秒的千分之一，在时间单位体系中：秒 > 毫秒 > 微秒 > 纳秒，常用于高精度时间测量。
+### Q6: What is the position of milliseconds in the time unit system?
+A6: Milliseconds are one thousandth of a second. In the time unit system: second > millisecond > microsecond > nanosecond, commonly used for high-precision time measurements.
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Time" :key="index">
     <n-button

@@ -4,22 +4,22 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Time/index
-      linkText: 时间换算
+      linkText: Time Conversion
   - - link: /Time/Year-to-Nanosecond
-      linkText: 年到纳秒
+      linkText: Year to Nanosecond
 head:
   - - meta
     - name: description
-      content: "年到纳秒换算器 - 精确的年(year)到纳秒(nanosecond)时间单位转换工具。支持超高精度科学计算、量子物理研究、原子级时间测量等应用场景。使用公式 year × 31557600000000000 进行换算，提供详细的计算步骤和实际应用案例。"
+      content: "Year to Nanosecond Converter - Ultra-precise year to nanosecond time unit conversion tool. Supports quantum computing, precision measurement, scientific research and other application scenarios. Uses the formula year × 3.1536 × 10¹⁶ for conversion, providing detailed calculation steps and practical application cases."
   - - meta
     - name: keywords
-      content: "年到纳秒换算器, 时间单位换算, 年转纳秒, year to nanosecond, 超高精度计算, 量子物理, 原子级测量, 科学研究, 年纳秒转换, 时间计算器"
+      content: "year to nanosecond converter, time unit conversion, year to nanosecond, year to nanosecond, quantum computing, precision measurement, scientific research, ultra-precision timing, year nanosecond conversion, time calculator"
 ---
-# 年 (year) 到 纳秒 (ns) 的换算
+# Year to Nanosecond Conversion
 
-年到纳秒的换算在超高精度科学计算、量子物理研究和原子级时间测量中具有重要意义。通过将年份转换为纳秒，我们可以进行极其精确的时间计算，支持量子实验、原子钟校准和高精度物理测量。这种换算特别适用于科学研究、精密仪器校准和量子技术开发等场景。
+Year to nanosecond conversion is of great significance in quantum computing, precision measurement, and scientific research. Nanosecond-level time precision is crucial for quantum experiments, atomic clock calibration, high-frequency signal processing, and other scenarios requiring ultra-high precision. By converting years to nanoseconds, we can perform extremely precise time calculations and scientific analysis.
 
 ---
 <script setup>
@@ -33,27 +33,27 @@ const convert = inject('convert')
 const form = reactive({
   number: null,
   result: '',
-  title: '年到纳秒换算器',
-  seoKey: ['年到纳秒', '超高精度计算', '量子物理', '原子级测量', '科学研究', '年纳秒转换', '时间计算器', 'year to nanosecond']
+  title: 'Year to Nanosecond Converter',
+  seoKey: ['year to nanosecond', 'quantum computing', 'precision measurement', 'scientific research', 'ultra-precision timing', 'year nanosecond conversion', 'time calculator', 'year to nanosecond']
 })
 
 const convertHandler = () => {
   if (form.number !== null && !isNaN(form.number)) {
     const convertedValue = parseFloat(form.number) * 31536000000000000
-    form.result = `${form.number}年 = ${convertedValue.toFixed(0)}纳秒`
+    form.result = `${form.number} year = ${convertedValue.toFixed(0)} nanoseconds`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-card :title="form.title" embedded hoverable>
   <n-form size="large" :model="form">
-    <n-form-item label="年">
-      <n-input-number v-model:value="form.number" placeholder="输入年数" style="width: 100%" />
+    <n-form-item label="Year">
+      <n-input-number v-model:value="form.number" placeholder="Enter years" style="width: 100%" />
     </n-form-item>
     <n-form-item>
-      <n-button type="info" @click="convertHandler" block>换算</n-button>
+      <n-button type="info" @click="convertHandler" block>Convert</n-button>
     </n-form-item>
   </n-form>
 
@@ -72,48 +72,48 @@ const convertHandler = () => {
   </template>
 </n-card>
 
-## 公式
+## Formula
 
-从 **年** 换算到 **纳秒** 的公式为：
+The formula for converting from **year** to **nanosecond** is:
 $$ ns = year \times 3.1536 \times 10^{16} $$
 
-### 示例
-- 1年 = 31,536,000,000,000,000纳秒
-- 2年 = 63,072,000,000,000,000纳秒
-- 0.5年 = 15,768,000,000,000,000纳秒
+### Examples
+- 1 year = 3.1536 × 10¹⁶ nanoseconds
+- 2 years = 6.3072 × 10¹⁶ nanoseconds
+- 0.5 year = 1.5768 × 10¹⁶ nanoseconds
 
-## 实际应用场景
+## Practical Application Scenarios
 
-### 超高精度科学计算
-在前沿科学研究中：
-- 量子实验的时间精度控制
-- 粒子物理实验的时序分析
-- 天体物理学的精密时间测量
+### Quantum Computing
+In quantum computing and quantum physics research:
+- Quantum state measurement timing
+- Quantum gate operation precision control
+- Quantum entanglement time analysis
 
-### 量子物理研究
-在量子技术开发中：
-- 量子态演化的时间计算
-- 量子纠缠持续时间分析
-- 量子计算机的时钟同步
+### Precision Measurement
+In ultra-precision measurement and calibration:
+- Atomic clock precision verification
+- Laser interferometer timing control
+- GPS satellite time synchronization
 
-### 原子级时间测量
-在精密仪器和标准制定中：
-- 原子钟的校准和验证
-- 时间标准的建立和维护
-- 高精度导航系统的时间基准
+### Scientific Research
+In advanced scientific research fields:
+- Particle physics experiment timing
+- Astronomical observation data processing
+- High-energy physics event analysis
 
-## 常见问题 (FAQ)
+## Frequently Asked Questions (FAQ)
 
-**Q: 为什么需要如此高精度的时间换算？**
-A: 在量子物理、原子物理等领域，许多现象发生在纳秒甚至更短的时间尺度上，需要极高的时间精度来进行准确测量和分析。
+**Q: Why is nanosecond precision needed in scientific research?**
+A: In quantum physics, particle physics, and precision measurement, nanosecond-level precision is essential for accurate experimental results and data analysis.
 
-**Q: 这个换算公式是如何得出的？**
-A: 1年 = 365.25天 × 24小时 × 3600秒 × 10⁹纳秒 = 31,557,600,000,000,000纳秒，约等于3.1536 × 10¹⁶纳秒。
+**Q: How is the value 3.1536 × 10¹⁶ derived?**
+A: 1 year = 365 days × 24 hours × 3600 seconds × 1,000,000,000 nanoseconds = 31,536,000,000,000,000 nanoseconds = 3.1536 × 10¹⁶ nanoseconds.
 
-**Q: 在实际应用中如何处理如此大的数值？**
-A: 通常使用科学计数法表示，并借助专业的科学计算软件进行精确计算，避免数值溢出和精度损失。
+**Q: Is this level of precision meaningful in practical applications?**
+A: Yes, in fields such as quantum computing, atomic clocks, GPS systems, and high-frequency trading, nanosecond precision is crucial and directly impacts system performance and accuracy.
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Time" :key="index">
     <n-button

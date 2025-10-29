@@ -4,22 +4,22 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Time/index
-      linkText: 时间换算
+      linkText: Time Conversion
   - - link: /Time/Second-to-Minute
-      linkText: 秒到分钟
+      linkText: Second to Minute
 head:
   - - meta
     - name: description
-      content: "秒到分钟换算器 - 精确的s到min时间单位转换工具。支持秒(second)与分钟(minute)之间的快速换算，适用于时间管理、工作统计、运动计时等场景。提供详细的换算公式、实际应用场景和常见问题解答。"
+      content: "Second to Minute Converter - Precise s to min time unit conversion tool. Supports quick conversion between seconds and minutes, suitable for time management, work statistics, sports timing, and more. Provides detailed conversion formulas, practical application scenarios, and frequently asked questions."
   - - meta
     - name: keywords
-      content: "秒, 分钟, s, min, 时间单位换算, 秒到分钟, 分钟换算, second, minute, 时间换算器, 分秒换算, 秒单位换算, 秒转换, s是什么单位, 小时单位, 秒的换算, 时间秒, 秒换算小时, 时间转化, 一秒, 秒的定义, 秒单位, 秒换算, 分秒符号, 一分钟等于多少秒, 60秒等于几分钟, 秒的英文, 时间秒, 时间单位, 时间换算, 分钟符号, 一分钟多少秒"
+      content: "second, minute, s, min, time unit conversion, second to minute, minute conversion, second, minute, time converter, minute second conversion, second unit conversion, second conversion, what is s unit, hour unit, second conversion, time second, second to hour conversion, time transformation, one second, second definition, second unit, second conversion, minute second symbol, how many seconds in one minute, 60 seconds equals how many minutes, second in English, time second, time unit, time conversion, minute symbol, how many seconds in one minute"
 ---
-# 秒 (s) 到 分钟 (min) 的换算
+# Second (s) to Minute (min) Conversion
 
-秒到分钟的换算在日常生活和工作中应用广泛。无论是进行时间管理、工作效率统计，还是运动计时、学习时间记录，掌握秒(second)与分钟(minute)之间的换算关系都是基础技能。理解各种时间单位的换算方法，包括秒的英文表示(s)、分钟符号(min)等时间概念，有助于我们更好地规划和管理时间，提高工作和学习效率。
+Second to minute conversion is widely used in daily life and work. Whether for time management, work efficiency statistics, sports timing, or study time recording, mastering the conversion relationship between seconds and minutes is a fundamental skill. Understanding various time unit conversion methods, including the English representation of seconds (s) and minute symbols (min), helps us better plan and manage time, improving work and study efficiency.
 
 ---
 <script setup>
@@ -29,11 +29,11 @@ import { defineClientComponent } from 'vitepress'
 import { Time } from '../files';
 
 const convert = inject('convert')
-const seoKey = ['分秒换算','秒单位换算','秒转换','s是什么单位','小时单位','秒的换算','时间 秒','秒换算小时','时间转化','一秒','秒的定义','秒单位','秒换算','分秒符号','一分钟等于多少秒','60秒等于几分钟','秒的英文','时间秒','时间单位','时间换算','分钟符号','一分钟多少秒']
+const seoKey = ['minute second conversion','second unit conversion','second conversion','what is s unit','hour unit','second conversion','time second','second to hour conversion','time transformation','one second','second definition','second unit','second conversion','minute second symbol','how many seconds in one minute','60 seconds equals how many minutes','second in English','time second','time unit','time conversion','minute symbol','how many seconds in one minute']
 const form = reactive({
   number: null,
   result: '',
-  title: '秒到分钟换算器'
+  title: 'Second to Minute Converter'
 })
 
 const convertHandler = () => {
@@ -41,18 +41,18 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) / 60
     form.result = `${form.number}s = ${convertedValue.toFixed(2)}min`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-card :title="form.title" size="small" :bordered="false" style="margin-bottom: 16px">
   <n-form size="large" :model="form">
-    <n-form-item label="秒 (s)">
-      <n-input-number v-model:value="form.number" placeholder="输入秒" style="width: 100%" />
+    <n-form-item label="Second (s)">
+      <n-input-number v-model:value="form.number" placeholder="Enter seconds" style="width: 100%" />
     </n-form-item>
     <n-form-item>
-      <n-button type="info" @click="convertHandler" block>换算</n-button>
+      <n-button type="info" @click="convertHandler" block>Convert</n-button>
     </n-form-item>
   </n-form>
   <template #footer>
@@ -70,47 +70,53 @@ const convertHandler = () => {
   </div>
 </n-card>
 
-## 公式
+## Formula
 
-从 **秒 (s)** 换算到 **分钟 (min)** 的公式为：
-$$ min = \frac{s}{60} $$
+The formula for converting from **seconds (s)** to **minutes (min)** is:
+$$ min = s \div 60 $$
 
-### 示例
+### Examples
 - 60s = 1min
+- 120s = 2min
 - 30s = 0.5min
-- 6s = 0.1min
 
-## 实际应用场景
+## Practical Application Scenarios
 
-### 时间管理
-- **工作效率统计**：记录完成任务所用的时间，将秒数转换为分钟便于分析
-- **会议时间控制**：控制会议发言时间，确保会议按时进行
-- **项目时间追踪**：跟踪项目各阶段的耗时，进行时间成本分析
+### Time Management
+- **Work Time Statistics**: Converting work duration from seconds to minutes for better time tracking and productivity analysis
+- **Meeting Duration Recording**: Converting meeting times for scheduling and time allocation planning
+- **Task Time Analysis**: Analyzing task completion times to optimize workflow efficiency
 
-### 运动健身
-- **运动计时**：记录跑步、游泳等运动的持续时间
-- **间歇训练**：设置高强度间歇训练的工作和休息时间
-- **健身房锻炼**：控制每组动作的持续时间和组间休息
+### Sports and Fitness
+- **Exercise Duration Tracking**: Converting workout times from seconds to minutes for fitness planning
+- **Sports Performance Analysis**: Analyzing athletic performance times in minute format for easier comparison
+- **Training Session Planning**: Planning training sessions with minute-based time intervals
 
-### 学习教育
-- **学习时间记录**：统计每日学习时间，制定合理的学习计划
-- **考试时间分配**：合理分配考试答题时间，提高考试效率
-- **课堂活动安排**：安排课堂讨论、演讲等活动的时间
+### Educational Applications
+- **Study Time Recording**: Converting study session durations for academic planning and progress tracking
+- **Exam Time Management**: Converting exam duration from seconds to minutes for better time allocation
+- **Learning Progress Analysis**: Analyzing learning time patterns in minute format for educational insights
 
-## 常见问题 (FAQ)
+### System and Technical Applications
+- **Process Duration Monitoring**: Converting system process times for performance analysis
+- **Network Response Time Analysis**: Converting response times to minutes for long-duration operations
+- **Data Processing Time Tracking**: Monitoring data processing durations in minute format
 
-### Q: 一分钟等于多少秒？
-A: 1分钟 = 60秒。这是国际标准时间单位的基础换算关系。
+## Frequently Asked Questions (FAQ)
 
-### Q: 60秒等于几分钟？
-A: 60秒 = 1分钟。当秒数达到60时，就等于1分钟。
+**Q: How many seconds are in one minute?**
+A: 1 minute = 60 seconds. This is the standard international time unit conversion relationship.
 
-### Q: 如何快速计算秒到分钟的换算？
-A: 将秒数除以60即可得到分钟数。例如：300秒 ÷ 60 = 5分钟。
+**Q: How to convert seconds to minutes accurately?**
+A: Divide the number of seconds by 60. For example, 120 seconds ÷ 60 = 2 minutes.
 
-### Q: 分钟的英文缩写是什么？
-A: 分钟的英文是minute，常用缩写为min或m。在正式文档中通常使用min。
-## 相关连接
+**Q: When would second to minute conversion be commonly used?**
+A: Commonly used in time management, sports timing, work efficiency analysis, educational time tracking, and system performance monitoring.
+
+**Q: What's the difference between seconds and minutes in practical applications?**
+A: Seconds are used for precise, short-duration measurements, while minutes are more suitable for general time management and longer duration tracking.
+
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Time" :key="index">
     <n-button

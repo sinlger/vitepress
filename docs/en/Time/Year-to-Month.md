@@ -4,22 +4,22 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Time/index
-      linkText: 时间换算
+      linkText: Time Conversion
   - - link: /Time/Year-to-Month
-      linkText: 年到月
+      linkText: Year to Month
 head:
   - - meta
     - name: description
-      content: "年到月换算器 - 精确的年(year)到月(month)时间单位转换工具。支持财务规划、项目管理、合同期限等应用场景。使用公式 year × 12 进行换算，提供详细的计算步骤和实际应用案例。"
+      content: "Year to Month Converter - Accurate year to month time unit conversion tool. Supports financial planning, project management, contract terms and other application scenarios. Uses the formula year × 12 for conversion, providing detailed calculation steps and practical application cases."
   - - meta
     - name: keywords
-      content: "年到月换算器, 时间单位换算, 年转月, year to month, 财务规划, 项目管理, 合同期限, 时间规划, 年月转换, 时间计算器"
+      content: "year to month converter, time unit conversion, year to month, year to month, financial planning, project management, contract terms, time planning, year month conversion, time calculator"
 ---
-# 年 (year) 到 月 (month) 的换算
+# Year to Month Conversion
 
-年到月的换算在财务规划、项目管理和合同期限计算中具有重要意义。通过将年份转换为月份，我们可以更精确地制定预算计划、安排项目进度和管理合同周期。这种换算特别适用于财务分析、项目时间线规划和法律合同管理等场景。
+Year to month conversion is of great significance in financial planning, project management, and contract term calculations. By converting years to months, we can more precisely create budget plans, arrange project schedules, and manage contract cycles. This conversion is particularly suitable for financial analysis, project timeline planning, and legal contract management scenarios.
 
 ---
 <script setup>
@@ -33,27 +33,27 @@ const convert = inject('convert')
 const form = reactive({
   number: null,
   result: '',
-  title: '年到月换算器',
-  seoKey: ['年到月', '财务规划', '项目管理', '合同期限', '时间规划', '年月转换', '时间计算器', 'year to month']
+  title: 'Year to Month Converter',
+  seoKey: ['year to month', 'financial planning', 'project management', 'contract terms', 'time planning', 'year month conversion', 'time calculator', 'year to month']
 })
 
 const convertHandler = () => {
   if (form.number !== null && !isNaN(form.number)) {
     const convertedValue = parseFloat(form.number) * 12
-    form.result = `${form.number}年 = ${convertedValue.toFixed(0)}月`
+    form.result = `${form.number} year = ${convertedValue.toFixed(0)} months`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-card :title="form.title" embedded hoverable>
   <n-form size="large" :model="form">
-    <n-form-item label="年">
-      <n-input-number v-model:value="form.number" placeholder="输入年数" style="width: 100%" />
+    <n-form-item label="Year">
+      <n-input-number v-model:value="form.number" placeholder="Enter years" style="width: 100%" />
     </n-form-item>
     <n-form-item>
-      <n-button type="info" @click="convertHandler" block>换算</n-button>
+      <n-button type="info" @click="convertHandler" block>Convert</n-button>
     </n-form-item>
   </n-form>
 
@@ -72,48 +72,48 @@ const convertHandler = () => {
   </template>
 </n-card>
 
-## 公式
+## Formula
 
-从 **年** 换算到 **月** 的公式为：
+The formula for converting from **year** to **month** is:
 $$ month = year \times 12 $$
 
-### 示例
-- 1年 = 12月
-- 2年 = 24月
-- 0.5年 = 6月
+### Examples
+- 1 year = 12 months
+- 2 years = 24 months
+- 0.5 year = 6 months
 
-## 实际应用场景
+## Practical Application Scenarios
 
-### 财务规划
-在财务管理和预算制定中：
-- 制定年度预算的月度分解
-- 计算投资回报周期
-- 规划储蓄和支出计划
+### Financial Planning
+In financial management and budgeting, month-level precision is used for:
+- Creating annual budget breakdowns
+- Planning monthly cash flow
+- Calculating investment return cycles
 
-### 项目管理
-在项目规划和执行中：
-- 制定项目时间线和里程碑
-- 计算项目总工期
-- 安排资源分配和进度控制
+### Project Management
+In project planning and execution:
+- Creating project timeline schedules
+- Allocating monthly resource budgets
+- Setting milestone deadlines
 
-### 合同期限
-在法律和商务合同中：
-- 计算合同有效期
-- 确定租赁期限
-- 规划服务协议周期
+### Contract Management
+In legal and business contract management:
+- Calculating contract duration
+- Planning renewal schedules
+- Managing payment cycles
 
-## 常见问题 (FAQ)
+## Frequently Asked Questions (FAQ)
 
-**Q: 为什么1年等于12个月？**
-A: 这是基于公历（格里高利历）的标准，一年被划分为12个月，这是国际通用的时间计算标准。
+**Q: Why is year to month conversion commonly used in business?**
+A: Monthly units are more practical for business operations, budgeting, and planning, making it easier to track progress and manage resources.
 
-**Q: 在财务计算中如何处理不足整月的情况？**
-A: 通常按比例计算，例如0.5年 = 6个月，或者根据具体需求进行四舍五入处理。
+**Q: How to handle partial years in conversion?**
+A: Partial years can be converted proportionally. For example, 1.5 years = 1.5 × 12 = 18 months.
 
-**Q: 这种换算在项目管理中有什么实际意义？**
-A: 可以帮助项目经理更好地规划项目时间线，制定月度目标，便于进度跟踪和资源调配。
+**Q: What is the significance of this conversion in financial planning?**
+A: It helps break down annual financial goals into manageable monthly targets, making budgeting and cash flow management more effective.
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Time" :key="index">
     <n-button

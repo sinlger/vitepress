@@ -4,22 +4,22 @@ aside: false
 lastUpdated: false
 breadcrumb:
   - - link: /
-      linkText: 首页
+      linkText: Home
   - - link: /Time/index
-      linkText: 时间换算
+      linkText: Time Conversion
   - - link: /Time/Minute-to-Hour
-      linkText: 分钟到小时
+      linkText: Minute to Hour
 head:
   - - meta
     - name: description
-      content: "分钟到小时换算器 - 精确的时间单位转换工具，支持minutes到hours的快速换算。提供分钟(min)、小时(h)等时间单位的换算关系，适用于工作时间计算、日程安排等场景。在线时间换算器，支持时分秒符号转换。"
+      content: "Minute to Hour Converter - Precise time unit conversion tool, supporting fast conversion from minutes to hours. Provides conversion relationships for time units like minutes (min) and hours (h), suitable for work time calculation, schedule planning, and other scenarios. Online time converter with support for time notation symbols."
   - - meta
     - name: keywords
-      content: "分钟转换成小时,秒转换,小时单位,秒换算小时,分钟英文,时间换算单位,时间换算器在线使用,时分秒符号,分秒,分钟换算小时,minutes是什么意思中文,分秒符号,分钟转小时,分钟的缩写,min是分钟吗,分钟单位,分钟的英文,时间单位换算,时间计算器在线计算分钟,时间转换器,分钟缩写,小时,分钟英文,时间换算,mins,秒,minute,minutes,min,hour,hours,h"
+      content: "minute to hour conversion,time conversion,hour unit,minute to hour calculation,minutes in English,time unit conversion,online time converter,time notation symbols,minute hour conversion,minutes meaning,time symbols,minute to hour,minute abbreviation,min is minute,minute unit,minute in English,time unit conversion,online minute calculator,time converter,minute abbreviation,hour,minute English,time conversion,mins,second,minute,minutes,min,hour,hours,h"
 ---
-# 分钟 (min) 到 小时 (h) 的换算
+# Minute (min) to Hour (h) Conversion
 
-分钟到小时的换算在日常工作和生活中具有重要意义。无论是进行工作时间统计、日程安排规划，还是进行时间管理和效率分析，掌握分钟(minutes)与小时(hours)之间的换算关系都是必不可少的。理解各种时间单位的换算方法，包括分钟的英文表示(min)、小时的缩写(h)、时分秒符号的使用，有助于我们在处理时间相关的计算和规划时更加准确高效。
+The conversion from minutes to hours is of great significance in daily work and life. Whether it's for work time statistics, schedule planning, or time management and efficiency analysis, mastering the conversion relationship between minutes and hours is essential. Understanding various time unit conversion methods, including the English representation of minutes (min), hour abbreviations (h), and the use of time notation symbols, helps us be more accurate and efficient when dealing with time-related calculations and planning.
 
 ---
 <script setup>
@@ -31,18 +31,18 @@ import { Time } from '../files';
 const convert = inject('convert')
 
 const seoKey = [
-  '分钟转换成小时', '秒转换', '小时单位', '秒换算小时', '分钟英文',
-  '时间换算单位', '时间换算器在线使用', '时分秒符号', '分秒', '分钟换算小时',
-  'minutes是什么意思中文', '分秒符号', '分钟转小时', '分钟的缩写', 'min是分钟吗',
-  '分钟单位', '分钟的英文', '时间单位换算', '时间计算器在线计算分钟', '时间转换器',
-  '分钟缩写', '小时', '分钟英文', '时间换算', 'mins', '秒', 'minute', 'minutes', 'min',
-  'hour', 'hours', 'h', '工作时间', '日程安排'
+  'minute to hour conversion', 'time conversion', 'hour unit', 'minute to hour calculation', 'minutes in English',
+  'time unit conversion', 'online time converter', 'time notation symbols', 'minute hour conversion', 'minutes meaning',
+  'time symbols', 'minute to hour', 'minute abbreviation', 'min is minute', 'minute unit',
+  'minute in English', 'time unit conversion', 'online minute calculator', 'time converter',
+  'minute abbreviation', 'hour', 'minute English', 'time conversion', 'mins', 'second', 'minute', 'minutes', 'min',
+  'hour', 'hours', 'h', 'work time', 'schedule planning'
 ]
 
 const form = reactive({
   number: null,
   result: '',
-  title: '分钟到小时换算器'
+  title: 'Minute to Hour Converter'
 })
 
 const convertHandler = () => {
@@ -50,17 +50,17 @@ const convertHandler = () => {
     const convertedValue = parseFloat(form.number) / 60
     form.result = `${form.number}min = ${convertedValue.toFixed(2)}h`
   } else {
-    form.result = '请输入有效的数值。'
+    form.result = 'Please enter a valid number.'
   }
 }
 </script>
 
 <n-form size="large" :model="form">
-  <n-form-item label="分钟 (min)">
-    <n-input-number v-model:value="form.number" placeholder="输入分钟" style="width: 100%" />
+  <n-form-item label="Minutes (min)">
+    <n-input-number v-model:value="form.number" placeholder="Enter minutes" style="width: 100%" />
   </n-form-item>
   <n-form-item>
-    <n-button type="info" @click="convertHandler" block>换算</n-button>
+    <n-button type="info" @click="convertHandler" block>Convert</n-button>
   </n-form-item>
 </n-form>
 
@@ -77,51 +77,51 @@ const convertHandler = () => {
   </template>
 </n-card>
 
-## 公式
+## Formula
 
-从 **分钟 (min)** 换算到 **小时 (h)** 的公式为：
+The formula for converting from **minutes (min)** to **hours (h)** is:
 $$ h = \frac{min}{60} $$
 
-### 示例
+### Examples
 - 60min = 1h
 - 30min = 0.5h
 - 6min = 0.1h
 
-## 实际应用场景
+## Practical Application Scenarios
 
-### 1. 工作时间统计
-在企业人力资源管理中，需要将员工的分钟级工作时间转换为小时，用于考勤统计、加班费计算和工作效率分析。
+### 1. Work Time Statistics
+In enterprise human resource management, it's necessary to convert employees' minute-level work time to hours for attendance statistics, overtime pay calculation, and work efficiency analysis.
 
-### 2. 日程安排规划
-在日常生活和工作中，将会议、任务的分钟级时长转换为小时，便于制定日程安排和时间管理规划。
+### 2. Schedule Planning
+In daily life and work, converting minute-level durations of meetings and tasks to hours facilitates schedule planning and time management.
 
-### 3. 项目时间管理
-在项目管理中，将各个任务的分钟级执行时间转换为小时，用于项目进度跟踪和资源分配优化。
+### 3. Project Time Management
+In project management, converting minute-level execution time of various tasks to hours is used for project progress tracking and resource allocation optimization.
 
-### 4. 学习时间记录
-在教育培训中，将学生的分钟级学习时间转换为小时，用于学习进度评估和课程时长统计。
+### 4. Learning Time Recording
+In education and training, converting students' minute-level learning time to hours is used for learning progress assessment and course duration statistics.
 
-## 常见问题 (FAQ)
+## Frequently Asked Questions (FAQ)
 
-### Q1: 分钟和小时的换算关系是什么？
-A1: 1小时 = 60分钟。这是国际标准时间单位的基本换算关系。
+### Q1: What is the conversion relationship between minutes and hours?
+A1: 1 hour = 60 minutes. This is the basic conversion relationship of international standard time units.
 
-### Q2: 为什么换算系数是60？
-A2: 这个系数来源于古代巴比伦的60进制计时系统，后来被国际标准采用：1小时 = 60分钟。
+### Q2: Why is the conversion factor 60?
+A2: This factor originates from the ancient Babylonian sexagesimal (base-60) timekeeping system, which was later adopted by international standards: 1 hour = 60 minutes.
 
-### Q3: minutes是什么意思中文？
-A3: minutes的中文意思是"分钟"，是时间单位minute的复数形式，缩写为min。
+### Q3: What does "minutes" mean in Chinese?
+A3: "Minutes" means "分钟" in Chinese, which is the plural form of the time unit "minute," abbreviated as "min."
 
-### Q4: min是分钟吗？
-A4: 是的，min是分钟(minute)的标准缩写符号，在时分秒符号体系中广泛使用。
+### Q4: Is "min" minutes?
+A4: Yes, "min" is the standard abbreviation for minute, widely used in the time notation symbol system.
 
-### Q5: 如何快速进行分钟转小时的计算？
-A5: 可以使用除法运算：hours = minutes ÷ 60，或使用在线时间换算器进行快速转换。
+### Q5: How to quickly calculate minute to hour conversion?
+A5: You can use division: hours = minutes ÷ 60, or use an online time converter for quick conversion.
 
-### Q6: 分钟转小时在工作中有什么用途？
-A6: 主要用于工作时间统计、日程安排、项目管理、学习时间记录等需要精确时间计算的场景。
+### Q6: What are the uses of minute to hour conversion in work?
+A6: It's mainly used for work time statistics, schedule planning, project management, learning time recording, and other scenarios requiring precise time calculations.
 
-## 相关连接
+## Related Links
 <n-grid x-gap="12" :cols="2">
   <n-gi v-for="(file, index) in Time" :key="index">
     <n-button
