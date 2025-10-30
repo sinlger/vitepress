@@ -16,7 +16,7 @@ head:
       content: unit conversion, quick conversion tool, temperature conversion, length conversion, area conversion, time conversion, physical quantity conversion, online unit conversion tool
 hero:
   image:
-    src: /public/undraw_designing-components_kb05.svg
+    src: undraw_designing-components_kb05.svg
     alt: Unit Converter
   name: "Unit Converter"
   text: "Online Unit Conversion Tool"
@@ -30,43 +30,43 @@ hero:
     #   link: https://github.com/vuejs/vitepress
 features:
   - icon: 
-      dark: /public/temperature-svgrepo-com.svg
-      light: /public/temperature-svgrepo-com.svg
+      dark: temperature-svgrepo-com.svg
+      light: temperature-svgrepo-com.svg
     title: Temperature Conversion
     details: Celsius （℃）, Fahrenheit (°F), Kelvin (K), Rankine (°R)
     linkText: Get Started
     link: /en/Temperature/index
   - icon: 
-      dark: /public/time-svgrepo-com.svg
-      light: /public/time-svgrepo-com.svg
+      dark: time-svgrepo-com.svg
+      light: time-svgrepo-com.svg
     title: Time Conversion
     details: Millisecond (ms), Second (s), Minute (min), Hour (h), Day (d)
     linkText: Get Started
     link: /en/Time/index
   - icon: 
-      dark: /public/cm-inch-length-svgrepo-com.svg
-      light: /public/cm-inch-length-svgrepo-com.svg
+      dark: cm-inch-length-svgrepo-com.svg
+      light: cm-inch-length-svgrepo-com.svg
     title: Length Conversion
     details: Nanometer (nm), Micrometer (μm), Millimeter (mm), Centimeter (cm), Kilometer (km)
     linkText: Get Started
     link: /en/Length/index
   - icon: 
-      dark: /public/area-chart-business-analytics-statistics-svgrepo-com.svg
-      light: /public/area-chart-business-analytics-statistics-svgrepo-com.svg
+      dark: area-chart-business-analytics-statistics-svgrepo-com.svg
+      light: area-chart-business-analytics-statistics-svgrepo-com.svg
     title: Area Conversion
     details: Square meter (m²), Square millimeter (mm²), Square centimeter (cm²), Square kilometer (km²)
     linkText: Get Started
     link: /en/Area/index
   - icon: 
-      dark: /public/weight-scale-svgrepo-com.svg
-      light: /public/weight-scale-svgrepo-com.svg
+      dark: weight-scale-svgrepo-com.svg
+      light: weight-scale-svgrepo-com.svg
     title: Mass Conversion
     details: Gram (g), Kilogram (kg), Microgram (mcg), Milligram (mg), Ton (t)
     linkText: Get Started
     link: /en/Mass/index
   - icon: 
-      dark: /public/more-circle-horizontal-svgrepo-com.svg
-      light: /public/more-circle-horizontal-svgrepo-com.svg
+      dark: more-circle-horizontal-svgrepo-com.svg
+      light: more-circle-horizontal-svgrepo-com.svg
     title: More Unit Conversions
     details: Volume, Frequency, Speed, Pressure, Digital
     linkText: Coming Soon

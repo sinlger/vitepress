@@ -45,7 +45,7 @@ export const enConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
     darkModeSwitchLabel: 'Dark/Light mode', // Mobile dark/light mode text
     footer: { // Footer
       message: 'Released under the MIT License.',
-      copyright: `Copyright © ${dayjs().format("YYYY")} xxx Information Technology Co., Ltd.`
+      copyright: `Copyright © ${dayjs().format("YYYY")}  All rights reserved.`
     },
     outline: { // Outline display 1-6 level headings
       level: [1, 6],
